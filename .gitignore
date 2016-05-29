@@ -18,6 +18,7 @@
 *.jar
 *.war
 *.ear
+*.sar
 *.rar
 *.tar
 *.zip
@@ -53,7 +54,6 @@ derby.log
 spring-test/test-output/
 .gradle
 argfile*
-pom.xml
 activemq-data/
 
 build
@@ -61,15 +61,20 @@ build
 buildSrc/build
 /spring-*/build
 /src/asciidoc/build
+
+# Maven #
+######################
 target/
 
 
-# Eclipse artifacts, including WTP generated manifests
+# Eclipse #
+######################
 .classpath
 .project
 spring-*/src/main/java/META-INF/MANIFEST.MF
 
-# IDEA artifacts and output dirs
+# Intellij #
+############
 *.iml
 *.ipr
 *.iws
@@ -79,3 +84,9 @@ test-output
 atlassian-ide-plugin.xml
 .gradletasknamecache
 
+# Other #
+#########
+*.*~
+*.orig
+
+maven-java-formatter-cache.properties
