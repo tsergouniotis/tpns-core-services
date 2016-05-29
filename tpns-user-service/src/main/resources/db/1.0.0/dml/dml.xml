@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+
+
+	<changeSet author="thanasis.sergouniotis" id="insert-users">
+
+		<insert tableName="users">
+			<column name="user_id" valueSequenceNext="userseq" />
+			<column name="username" value="admin" />
+			<column name="password" value="admin" />
+		</insert>
+
+		<insert tableName="users">
+			<column name="user_id" valueSequenceNext="userseq" />
+			<column name="username" value="author" />
+			<column name="password" value="author" />
+			<column name="firstname" value="Carl" />
+			<column name="surname" value="Bernstein" />
+		</insert>
+
+		<insert tableName="users">
+			<column name="user_id" valueSequenceNext="userseq" />
+			<column name="username" value="chief" />
+			<column name="password" value="chief" />
+		</insert>
+
+		<insert tableName="users">
+			<column name="user_id" valueSequenceNext="userseq" />
+			<column name="username" value="onsports" />
+			<column name="password" value="onsports" />
+		</insert>
+
+	</changeSet>
+
+	<changeSet author="thanasis.sergouniotis" id="insert-users-roles">
+
+		<insert tableName="users_roles">
+			<column name="user_id"
+				valueComputed="(select user_id from users where username='admin')" />
+			<column name="role" value="ADMIN" />
+		</insert>
+
+		<insert tableName="users_roles">
+			<column name="user_id"
+				valueComputed="(select user_id from users where username='author')" />
+			<column name="role" value="AUTHOR" />
+		</insert>
+
+		<insert tableName="users_roles">
+			<column name="user_id"
+				valueComputed="(select user_id from users where username='chief')" />
+			<column name="role" value="CHIEF_EDITOR" />
+		</insert>
+
+		<insert tableName="users_roles">
+			<column name="user_id"
+				valueComputed="(select user_id from users where username='onsports')" />
+			<column name="role" value="APPLICATION" />
+		</insert>
+
+	</changeSet>
+
+</databaseChangeLog>
+

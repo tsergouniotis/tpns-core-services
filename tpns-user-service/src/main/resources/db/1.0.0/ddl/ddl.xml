@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+
+	<changeSet author="thanasis.sergouniotis" id="create-users-table">
+
+		<createTable tableName="users">
+			<column name="user_id" type="BIGINT">
+				<constraints nullable="false" />
+			</column>
+			<column name="username" type="VARCHAR(255)">
+				<constraints unique="true" />
+			</column>
+			<column name="firstname" type="VARCHAR(255)" />
+			<column name="surname" type="VARCHAR(255)" />
+			<column name="password" type="VARCHAR(255)" />
+			<column name="phone" type="VARCHAR(255)" />
+			<column name="fax" type="VARCHAR(255)" />
+			<column name="email" type="VARCHAR(255)" />
+			<column name="street" type="VARCHAR(255)" />
+			<column name="number" type="VARCHAR(255)" />
+			<column name="city" type="VARCHAR(255)" />
+			<column name="created_at" type="DATETIME"
+				defaultValueComputed="CURRENT_TIMESTAMP" />
+			<column name="updated_at" type="DATETIME" />
+		</createTable>
+
+		<addPrimaryKey tableName="users" columnNames="user_id" />
+
+		<createSequence sequenceName="userseq" incrementBy="1"
+			startValue="1" />
+
+		<createIndex tableName="users" indexName="username_idx">
+			<column name="username" />
+		</createIndex>
+	</changeSet>
+
+	<changeSet author="thanasis.sergouniotis" id="create-users-roles-table">
+
+		<createTable tableName="users_roles">
+			<column name="user_id" type="SMALLINT">
+				<constraints nullable="false" />
+			</column>
+			<column name="role" type="VARCHAR(255)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+
+		<addPrimaryKey tableName="users_roles" columnNames="user_id, role"
+			constraintName="users_pk" />
+
+		<addForeignKeyConstraint baseTableName="users_roles"
+			baseColumnNames="user_id" constraintName="user_role_fk"
+			referencedTableName="users" referencedColumnNames="user_id" />
+
+	</changeSet>
+
+</databaseChangeLog>
+

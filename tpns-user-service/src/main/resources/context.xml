@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop.xsd 
+http://www.springframework.org/schema/data/jpa 
+http://www.springframework.org/schema/data/jpa/spring-jpa.xsd 
+http://www.springframework.org/schema/util 
+http://www.springframework.org/schema/util/spring-util.xsd
+http://www.springframework.org/schema/task
+http://www.springframework.org/schema/task/spring-task.xsd 
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<context:component-scan base-package="com.tpns.article" />
+	<aop:aspectj-autoproxy />
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	<jpa:repositories base-package="com.tpns.user.repository" />
+	<import resource="classpath:security/security-oauth.xml" />
+
+
+	<bean id="jpaVendorAdapter"
+		class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+		<property name="database" value="POSTGRESQL" />
+		<property name="generateDdl" value="false" />
+	</bean>
+
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
+		<property name="packagesToScan" value="com.tpns" />
+		<property name="mappingResources" value="META-INF/orm.xml" />
+		<property name="persistenceUnitName" value="user" />
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+
+	<bean id="liquibase" class="liquibase.integration.spring.SpringLiquibase">
+		<property name="dataSource" ref="dataSource" />
+		<property name="changeLog" value="classpath:db/db.changelog-master.xml" />
+	</bean>
+
+	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource"
+		destroy-method="close">
+		<property name="dataSourceClassName" value="org.postgresql.ds.PGSimpleDataSource" />
+		<property name="autoCommit" value="false" />
+		<property name="dataSourceProperties" ref="hikaryConfigurationProperties" />
+	</bean>
+
+	<util:properties id="hikaryConfigurationProperties">
+		<prop key="url">jdbc:postgresql://${USER_DB_HOST}:${USER_DB_PORT}/${USER_DB_USER}
+		</prop>
+		<prop key="user">${USER_DB_USER}</prop>
+		<prop key="password">${USER_DB_PASS}</prop>
+		<prop key="preparedStatementCacheSizeMiB">250</prop>
+		<prop key="preparedStatementCacheQueries">2048</prop>
+		<prop key="databaseName">${USER_DB_USER}</prop>
+	</util:properties>
+
+
+</beans>

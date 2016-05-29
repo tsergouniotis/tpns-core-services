@@ -1,0 +1,13 @@
+server:
+  port: 8081
+  contextPath: /user-service
+spring:
+  datasource:
+    url: jdbc:postgresql://${USER_DB_HOST}:${USER_DB_PORT}/${USER_DB_USER}
+    username: ${USER_DB_USER}
+    password: ${USER_DB_PASS}
+    driver-class-name: org.postgresql.Driver
+logging:
+  level:
+    root: WARN
+    org.springframework.security: DEBUG

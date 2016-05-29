@@ -1,0 +1,63 @@
+version: '2'
+services:
+  article_db:
+    container_name: article_db
+    image: postgres:9.5
+    ports:
+    - 5432:5432
+    environment:
+    - POSTGRES_USER=tpns_article_db
+    - POSTGRES_PASSWORD=tpns
+    volumes:
+    - ${HOME}/projects/tpns/data/article/pgdata:/var/lib/postgresql/data
+    networks:
+    - core_net
+  user_db:
+    container_name: user_db
+    image: postgres:9.5
+    ports:
+    - 5433:5432
+    environment:
+    - POSTGRES_USER=tpns_user_db
+    - POSTGRES_PASSWORD=tpns
+    volumes:
+    - ${HOME}/projects/tpns/data/user/pgdata:/var/lib/postgresql/data
+    networks:
+    - core_net
+  articleService:
+    container_name: articleService
+    image: tsergouniotis/tpns-article-service
+    ports:
+    - 8080:8080
+    environment:
+    - ARTICLE_SERVER_PORT=8080
+    - ARTICLE_DB_HOST=article_db
+    - ARTICLE_DB_PORT=5432
+    - ARTICLE_DB_USER=tpns_article_db
+    - ARTICLE_DB_PASS=tpns
+    depends_on:
+    - article_db
+    env_file:
+    - prod.env
+    networks:
+    - core_net
+  userService:
+    container_name: userService
+    image: tsergouniotis/tpns-user-service
+    ports:
+    - 8081:8081
+    environment:
+    - USER_SERVER_PORT=8081
+    - USER_DB_HOST=user_db
+    - USER_DB_PORT=5432
+    - USER_DB_USER=tpns_user_db
+    - USER_DB_PASS=tpns
+    depends_on:
+    - user_db
+    env_file:
+    - prod.env
+    networks:
+    - core_net
+networks:
+  core_net:
+    driver: bridge

@@ -1,0 +1,13 @@
+server:
+  port: 8080
+  contextPath: /article-service
+spring:
+  datasource:
+    url: jdbc:postgresql://${ARTICLE_DB_HOST}:${ARTICLE_DB_PORT}/${ARTICLE_DB_USER}
+    username: ${ARTICLE_DB_USER}
+    password: ${ARTICLE_DB_PASS}
+    driver-class-name: org.postgresql.Driver
+logging:
+  level:
+    root: WARN
+    org.springframework.security: DEBUG

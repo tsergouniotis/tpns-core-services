@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+
+	<changeSet author="thanasis.sergouniotis" id="insert-categories">
+
+		<insert tableName="categories">
+			<column name="category_id" valueSequenceNext="CATEGORYSEQ" />
+			<column name="category_name" value="politics" />
+		</insert>
+
+		<insert tableName="categories">
+			<column name="category_id" valueSequenceNext="CATEGORYSEQ" />
+			<column name="category_name" value="economy" />
+		</insert>
+
+		<insert tableName="categories">
+			<column name="category_id" valueSequenceNext="CATEGORYSEQ" />
+			<column name="category_name" value="sports" />
+		</insert>
+
+		<insert tableName="categories">
+			<column name="category_id" valueSequenceNext="CATEGORYSEQ" />
+			<column name="category_name" value="technology" />
+		</insert>
+
+		<insert tableName="categories">
+			<column name="category_id" valueSequenceNext="CATEGORYSEQ" />
+			<column name="category_name" value="social" />
+		</insert>
+
+	</changeSet>
+
+	<changeSet author="thanasis.sergouniotis" id="insert-application-parameters">
+
+		<insert tableName="application_parameters">
+			<column name="key" value="article.lucene.directory" />
+			<column name="value" value="/home/sergouniotis/Downloads/tpns/index" />
+		</insert>
+
+		<insert tableName="application_parameters">
+			<column name="key" value="cassandra.contact.point.address" />
+			<column name="value" value="localhost" />
+		</insert>
+
+		<insert tableName="application_parameters">
+			<column name="key" value="cassandra.core.connections.per.host" />
+			<column name="value" value="4" />
+		</insert>
+
+		<insert tableName="application_parameters">
+			<column name="key" value="cassandra.max.connections.per.host" />
+			<column name="value" value="8" />
+		</insert>
+
+		<insert tableName="application_parameters">
+			<column name="key" value="user.service.uri" />
+			<column name="value" value="http://localhost:8080/user-service/v1/user" />
+		</insert>
+
+	</changeSet>
+
+</databaseChangeLog>
+
