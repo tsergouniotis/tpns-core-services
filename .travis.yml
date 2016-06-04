@@ -10,8 +10,11 @@ services:
     - docker
 before_install:
     - docker pull postgres:9.5
-    - docker run -d -e POSTGRES_USER=tpns_article_db -e POSTGRES_PASS=tpns -p 5432:5432 postgres:9.5 
+    - sudo service postgresql stop
+    - docker run --name articledb -d -e POSTGRES_USER=tpns_article_db -e POSTGRES_PASS=tpns -p 5432:5432 postgres:9.5 
 script:
     - mvn -f tpns-parent/pom.xml clean install docker:build
+    - docker stop articledb
+    - docker rm articledb
     - docker push tsergouniotis/tpns-article-service
     - docker push tsergouniotis/tpns-user-service
