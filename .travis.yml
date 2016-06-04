@@ -1,0 +1,5 @@
+language: java
+java:
+- 8.0
+script: mvn -f tpns-parent/pom.xml clean install docker:build -Dmaven.test.skip=true
+
