@@ -33,7 +33,7 @@ public class RepositoryTestCase {
 		System.setProperty("ARTICLE_DB_USER", "tpns_article_db");
 		System.setProperty("ARTICLE_DB_PASS", "tpns");
 
-		startContainer();
+//		startContainer();
 	}
 
 	private static void startContainer() {
@@ -49,7 +49,7 @@ public class RepositoryTestCase {
 	@After
 	public void stopContainer() {
 		try {
-			TpnsDockerClientManager.getInstance().stop();
+//			TpnsDockerClientManager.getInstance().stop();
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
