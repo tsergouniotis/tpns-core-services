@@ -38,7 +38,7 @@ public class RepositoryTestCase {
 
 	private static void startContainer() {
 		try {
-			TpnsDockerClientManager.getInstance().startContainers();
+			TpnsDockerClientManager.getInstance().start();
 
 			Thread.sleep(TimeUnit.SECONDS.toMillis(5));
 		} catch (Exception e) {
@@ -49,9 +49,9 @@ public class RepositoryTestCase {
 	@After
 	public void stopContainer() {
 		try {
-			TpnsDockerClientManager.getInstance().stopContainer();
+			TpnsDockerClientManager.getInstance().stop();
 		} catch (Exception e) {
-			Assert.fail("Could not start docker containers.");
+			throw new RuntimeException(e);
 		}
 	}
 
@@ -64,7 +64,6 @@ public class RepositoryTestCase {
 			repository.save(articles);
 
 		} catch (Exception e) {
-			e.printStackTrace();
 			Assert.fail(e.getMessage());
 		}
 

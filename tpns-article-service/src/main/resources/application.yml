@@ -10,4 +10,5 @@ spring:
 logging:
   level:
     root: WARN
-    org.springframework: DEBUG
+    org.springframework.data: DEBUG
+    org.springframework.validation: DEBUG

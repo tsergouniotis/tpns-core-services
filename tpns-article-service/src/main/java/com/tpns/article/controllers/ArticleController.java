@@ -61,14 +61,14 @@ public class ArticleController {
 	}
 
 	@RequestMapping(consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }, produces = { MediaType.APPLICATION_JSON_VALUE,
-			MediaType.APPLICATION_XML_VALUE }, method = RequestMethod.PUT)
+			MediaType.APPLICATION_XML_VALUE }, method = RequestMethod.POST)
 	public ResponseEntity<Article> save(@Valid @RequestBody Article article) throws Exception {
 		articleRepository.save(article);
 		return new ResponseEntity<Article>(article, HttpStatus.OK);
 	}
 
 	@RequestMapping(consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }, produces = { MediaType.APPLICATION_JSON_VALUE,
-			MediaType.APPLICATION_XML_VALUE }, method = RequestMethod.POST)
+			MediaType.APPLICATION_XML_VALUE }, method = RequestMethod.PUT)
 	public ResponseEntity<Article> update(@Valid @RequestBody Article article) throws Exception {
 		// TODO create update method on repository level
 		// articleRepository.update(article);

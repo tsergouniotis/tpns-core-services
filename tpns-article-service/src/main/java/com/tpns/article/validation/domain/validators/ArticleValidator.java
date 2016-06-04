@@ -4,12 +4,14 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.tpns.article.repository.CategoryRepository;
 import com.tpns.article.validation.domain.constraints.ValidArticle;
 import com.tpns.domain.article.Article;
 import com.tpns.domain.article.Category;
 
+@Component
 public class ArticleValidator implements ConstraintValidator<ValidArticle, Article> {
 
 	@Autowired

@@ -7,11 +7,12 @@ import java.util.Map;
 
 import com.spotify.docker.client.DefaultDockerClient;
 import com.spotify.docker.client.DockerClient;
+import com.spotify.docker.client.exceptions.DockerException;
 import com.spotify.docker.client.messages.ContainerConfig;
 import com.spotify.docker.client.messages.ContainerCreation;
-import com.spotify.docker.client.messages.ContainerInfo;
 import com.spotify.docker.client.messages.HostConfig;
 import com.spotify.docker.client.messages.PortBinding;
+import com.tpns.domain.utils.StringUtils;
 
 public class TpnsDockerClientManager {
 
@@ -29,7 +30,7 @@ public class TpnsDockerClientManager {
 	public TpnsDockerClientManager() {
 	}
 
-	public void startContainers() throws Exception {
+	public void start() throws Exception {
 
 		this.docker = DefaultDockerClient.fromEnv().build();
 
@@ -49,23 +50,34 @@ public class TpnsDockerClientManager {
 		this.articledb = docker.createContainer(containerConfig);
 		this.postgresContainerId = articledb.id();
 
-		final ContainerInfo info = docker.inspectContainer(postgresContainerId);
-
-		System.out.println(info);
-
 		docker.startContainer(postgresContainerId);
 
 	}
 
-	public void stopContainer() throws Exception {
-		docker.killContainer(postgresContainerId);
+	public void stop() throws Exception {
 
-		// Remove container
-		docker.removeContainer(postgresContainerId);
+		if (null != docker) {
+			stopRemoveContainer();
 
+			closeClient();
+		}
+
+	}
+
+	private void closeClient() {
 		// Close the docker client
 		docker.close();
+	}
 
+	private void stopRemoveContainer() throws DockerException, InterruptedException {
+		if (StringUtils.hasText(this.postgresContainerId)) {
+			docker.killContainer(postgresContainerId);
+
+			// Remove container
+			docker.removeContainer(postgresContainerId);
+
+			this.postgresContainerId = null;
+		}
 	}
 
 	public static TpnsDockerClientManager getInstance() {
