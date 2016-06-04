@@ -1,7 +1,9 @@
 package com.tpns.article.repository.test;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,6 +26,34 @@ public class RepositoryTestCase {
 
 	@Autowired
 	private ArticleRepository repository;
+
+	static {
+		System.setProperty("ARTICLE_DB_HOST", "localhost");
+		System.setProperty("ARTICLE_DB_PORT", "5432");
+		System.setProperty("ARTICLE_DB_USER", "tpns_article_db");
+		System.setProperty("ARTICLE_DB_PASS", "tpns");
+
+		startContainer();
+	}
+
+	private static void startContainer() {
+		try {
+			TpnsDockerClientManager.getInstance().startContainers();
+
+			Thread.sleep(TimeUnit.SECONDS.toMillis(5));
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	@After
+	public void stopContainer() {
+		try {
+			TpnsDockerClientManager.getInstance().stopContainer();
+		} catch (Exception e) {
+			Assert.fail("Could not start docker containers.");
+		}
+	}
 
 	@Test
 	public void testNews24Parser() {

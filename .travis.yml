@@ -1,7 +1,14 @@
+env:
+  DOCKER_EMAIL: tsergouniotis@yahoo.gr
+  DOCKER_USERNAME: tsergouniotis
+  DOCKER_PASSWORD: c0@st1010
 sudo: required
 language: java
 jdk:
-  - oraclejdk8
+    - oraclejdk8
 services:
-  - docker
-script: mvn -f tpns-parent/pom.xml clean install docker:build -Dmaven.test.skip=true
+    - docker
+script:
+    - mvn -f tpns-parent/pom.xml clean install docker:build
+    - docker push tsergouniotis/tpns-article-service
+    - docker push tsergouniotis/tpns-user-service

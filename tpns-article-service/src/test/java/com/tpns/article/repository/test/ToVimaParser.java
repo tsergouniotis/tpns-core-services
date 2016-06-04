@@ -14,7 +14,7 @@ import com.tpns.domain.article.Article;
 import com.tpns.domain.article.ArticleStatus;
 import com.tpns.domain.article.MediaResource;
 import com.tpns.domain.article.MediaResourceType;
-import com.tpns.utils.StringUtils;
+import com.tpns.domain.utils.StringUtils;
 
 @Component("toVima")
 public class ToVimaParser implements Parser {

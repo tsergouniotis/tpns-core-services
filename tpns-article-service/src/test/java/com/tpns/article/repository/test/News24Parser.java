@@ -8,6 +8,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.junit.Assert;
 import org.springframework.stereotype.Component;
 
 import com.tpns.domain.article.Article;
@@ -43,8 +44,7 @@ public class News24Parser implements Parser {
 			}
 
 		} catch (final IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			// do nothing
 		}
 
 		return result;
@@ -70,7 +70,6 @@ public class News24Parser implements Parser {
 			return article;
 
 		} catch (final Exception e) {
-
 			return null;
 		}
 

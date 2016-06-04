@@ -30,8 +30,8 @@
 				<constraints nullable="false" />
 			</column>
 			<column name="subject" type="VARCHAR(255)" />
-			<column name="content" type="VARCHAR(20480)" />
-			<column name="short_description" type="VARCHAR(1024)" />
+			<column name="content" type="VARCHAR(40960)" />
+			<column name="short_description" type="VARCHAR(4096)" />
 			<column name="category_id" type="SMALLINT" />
 			<column name="author" type="VARCHAR(255)" />
 			<column name="status" type="VARCHAR(50)">
