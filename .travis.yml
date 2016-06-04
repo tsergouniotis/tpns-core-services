@@ -1,5 +1,7 @@
+sudo: required
 language: java
 jdk:
   - oraclejdk8
+services:
+  - docker
 script: mvn -f tpns-parent/pom.xml clean install docker:build -Dmaven.test.skip=true
-
