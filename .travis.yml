@@ -16,5 +16,6 @@ script:
     - mvn -f tpns-parent/pom.xml clean install docker:build
     - docker stop articledb
     - docker rm articledb
+    - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
     - docker push tsergouniotis/tpns-article-service
     - docker push tsergouniotis/tpns-user-service
