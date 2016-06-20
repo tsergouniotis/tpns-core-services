@@ -18,6 +18,7 @@
 		<module>../tpns-article-service</module>
 		<module>../tpns-user-service</module>
 		<module>../tpns-docker</module>
+		<module>../tpns-scripts</module>
 	</modules>
 
 	<organization>

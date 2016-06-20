@@ -24,7 +24,9 @@ http://www.springframework.org/schema/security/spring-security-oauth2.xsd">
 
 	<!-- Token Store -->
 	<bean id="tokenStore"
-		class="org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore" />
+		class="org.springframework.security.oauth2.provider.token.store.JdbcTokenStore">
+		<constructor-arg name="dataSource" ref="dataSource" />
+	</bean>
 
 	<bean id="tokenServices"
 		class="org.springframework.security.oauth2.provider.token.DefaultTokenServices">
@@ -32,20 +34,11 @@ http://www.springframework.org/schema/security/spring-security-oauth2.xsd">
 		<property name="supportRefreshToken" value="true" />
 		<property name="clientDetailsService" ref="client-details-service" />
 	</bean>
-
-	<oauth2:client-details-service id="client-details-service">
-		<oauth2:client client-id="my-trusted-client"
-			authorized-grant-types="password,authorization_code,refresh_token,implicit"
-			scope="read,write,trust" resource-ids="user-resources,article-resources"
-			access-token-validity="60" authorities="ROLE_AUTHOR" />
-		<oauth2:client client-id="my-client-with-registered-redirect"
-			authorized-grant-types="authorization_code" scope="read,trust"
-			resource-ids="user-resources,article-resources" authorities="ROLE_AUTHOR" redirect-uri="http://anywhere?key=value" />
-		<oauth2:client client-id="article-app" secret="secret"
-			authorized-grant-types="password,client_credentials" scope="read"
-			resource-ids="user-resources,article-resources" access-token-validity="3600"
-			authorities="ROLE_AUTHOR" />
-	</oauth2:client-details-service>
+	
+	<bean id="client-details-service"
+		class="org.springframework.security.oauth2.provider.client.JdbcClientDetailsService">
+		<constructor-arg name="dataSource" ref="dataSource" />
+	</bean>	
 
 	<oauth2:authorization-server
 		token-endpoint-url="/oauth/token" authorization-endpoint-url="/oauth/authorize"
@@ -57,9 +50,11 @@ http://www.springframework.org/schema/security/spring-security-oauth2.xsd">
 		<oauth2:client-credentials />
 		<oauth2:password />
 	</oauth2:authorization-server>
-	
-	<bean id="checkTokenEndpoint" class="org.springframework.security.oauth2.provider.endpoint.CheckTokenEndpoint">
-		<constructor-arg name="resourceServerTokenServices" ref="tokenServices"/>
+
+	<bean id="checkTokenEndpoint"
+		class="org.springframework.security.oauth2.provider.endpoint.CheckTokenEndpoint">
+		<constructor-arg name="resourceServerTokenServices"
+			ref="tokenServices" />
 	</bean>
 
 	<sec:http create-session="stateless" use-expressions="false"

@@ -9,5 +9,6 @@ ADD dockerfiles/run.sh /run.sh
 RUN bash -c 'touch /app.jar'
 
 EXPOSE 8080
+EXPOSE 5005
 
 CMD ["bash","./run.sh"]
