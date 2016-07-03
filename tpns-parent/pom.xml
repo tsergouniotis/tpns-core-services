@@ -19,6 +19,7 @@
 		<module>../tpns-user-service</module>
 		<module>../tpns-docker</module>
 		<module>../tpns-scripts</module>
+		<module>../tpns-web-app</module>
 	</modules>
 
 	<organization>

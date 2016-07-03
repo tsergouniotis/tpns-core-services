@@ -1,6 +1,8 @@
 // JavaScript Document
-
-
+var user_service_host = 'localhost'
+var user_service_port = '8081' 
+var user_service_name = 'user-service'
+var user_service_url = 'http://'+user_service_host+':'+user_service_port+'/'+user_service_name
 
 
 // jQuery
@@ -33,3 +35,4 @@ $(document).ready(function() {
 	});
 	// *********************** ENDS HERE **********************
 });
+
