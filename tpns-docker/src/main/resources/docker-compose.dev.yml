@@ -60,6 +60,18 @@ services:
     - dev.env
     networks:
     - core_net
+  webapp:
+    container_name: webapp
+    image: tsergouniotis/tpns-web-app
+    ports:
+    - 80:80
+    depends_on:
+    - articleService
+    - userService
+    env_file:
+    - prod.env
+    networks:
+    - core_net
 networks:
   core_net:
     driver: bridge
