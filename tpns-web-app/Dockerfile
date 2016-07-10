@@ -8,4 +8,5 @@ EXPOSE  80
 COPY access-module /usr/share/nginx/html/tpns/access-module
 COPY dashboard-module /usr/share/nginx/html/tpns/dashboard-module
 COPY global-module /usr/share/nginx/html/tpns/global-module
+COPY user-module /usr/share/nginx/html/tpns/user-module
 

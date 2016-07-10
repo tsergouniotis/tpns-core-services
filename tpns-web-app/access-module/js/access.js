@@ -23,7 +23,7 @@ function doLogin(){
 	var request = $.ajax({
 		type: 'POST',
 		url: user_service_url,
-	   	contentType: 'application/json; charset=utf-8',
+	   	contentType: 'application/x-www-form-urlencoded',
 		dataType: 'json',
 		cache: false
 	});
