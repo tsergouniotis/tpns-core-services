@@ -20,7 +20,7 @@ function doLogin(){
 
 	var loginUrl=user_service_url.concat('/oauth/token?client_id=user-webapp&client_secret=secret&username=').concat(username).concat('&password=').concat(password).concat('&grant_type=password');
 
-	var request = $.ajax({
+	var request = $.post({
 		type: 'POST',
 		url: user_service_url,
 	   	contentType: 'application/x-www-form-urlencoded',
@@ -34,6 +34,8 @@ function doLogin(){
 	});
 	 
 	request.fail(function( jqXHR, textStatus ) {
+	        console.log(jqXHR.status);
+	        console.log(jqXHR.header);
 		console.log('Login failed!');
 	});
 
