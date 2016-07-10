@@ -14,29 +14,28 @@ $(document).on('submit','.access-form',function (e) {
 })
 
 function doLogin(){
-	console.log('Attempting to login...');
-	var success = false;
+	
+	var username = 'admin';
+	var password = 'admin';
+
+	var loginUrl=user_service_url.concat('/oauth/token?client_id=user-webapp&client_secret=secret&username=').concat(username).concat('&password=').concat(password).concat('&grant_type=password');
+
 	var request = $.ajax({
-	    type: 'POST',
-	    url: user_service_url+'/oauth/token',
-	    contentType: 'application/json; charset=utf-8',
-	    data: { client_id: 'user-webapp', 
-			client_secret: 'secret', 
-			username: 'admin', 
-			password: 'admin', 
-			grant_type: 'password'},
-	    dataType: 'json',
-	    cache: false
+		type: 'POST',
+		url: user_service_url,
+	   	contentType: 'application/json; charset=utf-8',
+		dataType: 'json',
+		cache: false
 	});
 
-	request.done(function( msg) {
+	request.done(function( data) {
 		console.log('Login success!');
-		success = true;
+		console.log('data = '+ data);
 	});
 	 
 	request.fail(function( jqXHR, textStatus ) {
 		console.log('Login failed!');
 	});
 
-	return success;
+	return false;
 }
