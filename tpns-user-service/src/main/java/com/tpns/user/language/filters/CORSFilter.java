@@ -1,7 +1,6 @@
 package com.tpns.user.language.filters;
 
 import java.io.IOException;
-import java.util.Enumeration;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -21,19 +20,6 @@ public class CORSFilter extends OncePerRequestFilter {
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 		response.addHeader("Access-Control-Allow-Origin", "*");
-
-		LOGGER.debug("Received Request");
-		LOGGER.debug("Method: " + request.getMethod());
-		Enumeration headerNames = request.getHeaderNames();
-		while (headerNames.hasMoreElements()) {
-			String headerName = (String) headerNames.nextElement();
-			LOGGER.debug("Header Name - " + headerName + ", Value - " + request.getHeader(headerName));
-		}
-		Enumeration params = request.getParameterNames();
-		while (params.hasMoreElements()) {
-			String paramName = (String) params.nextElement();
-			LOGGER.debug("Parameter Name - " + paramName + ", Value - " + request.getParameter(paramName));
-		}
 
 		if (isPreFlightRequest(request)) {
 			LOGGER.trace("Sending Header....");

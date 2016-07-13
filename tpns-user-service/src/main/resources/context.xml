@@ -19,7 +19,7 @@ http://www.springframework.org/schema/task/spring-task.xsd
 http://www.springframework.org/schema/tx
 http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-	<context:component-scan base-package="com.tpns.article" />
+	<context:component-scan base-package="com.tpns.user" />
 	<aop:aspectj-autoproxy />
 	<tx:annotation-driven transaction-manager="transactionManager" />
 	<jpa:repositories base-package="com.tpns.user.repository" />
@@ -44,8 +44,6 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
-
-	<bean id="corsFilter" class="com.tpns.user.language.filters.CORSFilter"/>
 
 	<bean id="liquibase" class="liquibase.integration.spring.SpringLiquibase">
 		<property name="dataSource" ref="dataSource" />

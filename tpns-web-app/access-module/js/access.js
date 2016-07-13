@@ -20,10 +20,10 @@ function doLogin(){
 
 	var loginUrl=user_service_url.concat('/oauth/token?client_id=user-webapp&client_secret=secret&username=').concat(username).concat('&password=').concat(password).concat('&grant_type=password');
 
-	var request = $.post({
+	var request = $.ajax({
 		type: 'POST',
 		url: user_service_url,
-	   	contentType: 'application/x-www-form-urlencoded',
+	   	contentType: 'application/json',
 		dataType: 'json',
 		cache: false
 	});
