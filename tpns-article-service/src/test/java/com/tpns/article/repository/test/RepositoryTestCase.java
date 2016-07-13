@@ -33,7 +33,7 @@ public class RepositoryTestCase {
 		System.setProperty("ARTICLE_DB_USER", "tpns_article_db");
 		System.setProperty("ARTICLE_DB_PASS", "tpns");
 
-		// startContainer();
+		startContainer();
 	}
 
 	private static void startContainer() {
