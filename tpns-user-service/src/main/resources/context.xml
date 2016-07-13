@@ -45,6 +45,7 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
 
+	<bean id="corsFilter" class="com.tpns.user.language.filters.CORSFilter"/>
 
 	<bean id="liquibase" class="liquibase.integration.spring.SpringLiquibase">
 		<property name="dataSource" ref="dataSource" />
