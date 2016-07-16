@@ -37,7 +37,7 @@
 	<![endif]-->
 </head>
 
-<body>
+<body onload="readName();">
 	<!-- Advise to user to enable JS in their browser -->
     <noscript>
     	<h1 style="width:95%; background:#f7ca18; color:#FFFFFF; text-align:center; font-family:'Trebuchet MS', Arial, Helvetica, sans-serif; padding:1% 2.5% 0% 2.5%; margin:0%;">Please enable Javascript in you browser.</h1>
@@ -63,7 +63,8 @@
                         <div class="global-textfield">
                         	<!-- important: do not change the order of the items in this div -->
                             <!-- The following HTML5 validation pattern will restrict the user to inputing the following UpperCase, LowerCase, Number/SpecialChar and min 8 Chars -->
-                            <input type="password" id="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="Remember your password is at least 8 characters and makes use of upper case, lower case, a number and or a special character" required>
+                            <!--<input type="password" id="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="Remember your password is at least 8 characters and makes use of upper case, lower case, a number and or a special character" required>-->
+			     <input type="password" id="password" required>
                             <span class="bar"></span>
                             <label for="password">Enter your password</label>
                         </div>

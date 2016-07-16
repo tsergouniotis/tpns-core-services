@@ -9,15 +9,21 @@ function OpenWindow() {
 	}
 }
 
-function forwardName(){
+function forwardUsername(){
 	var uname = document.getElementById("username").value;
-	location.href = 'access.html?username='+uname;
+	window.location.replace("access.html?username="+uname);
+	return false;
+}
+
+function readName(){
+	var uname = getHttpRequestParameter("username");
+	document.getElementById("username").value = uname;
 }
 
 function doLogin(){
 	
-	var username = 'admin';
-	var password = 'admin';
+	var username = document.getElementById("username").value;
+	var password = document.getElementById("password").value;
 
 	var loginUrl=user_service_url.concat('/oauth/token?client_id=user-webapp&client_secret=secret&username=').concat(username).concat('&password=').concat(password).concat('&grant_type=password');
 
