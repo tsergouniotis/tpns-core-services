@@ -9,10 +9,6 @@ function OpenWindow() {
 	}
 }
 
-$(document).on('submit','.access-form',function (e) {
-	return doLogin();
-})
-
 function doLogin(){
 	
 	var username = 'admin';
@@ -23,7 +19,7 @@ function doLogin(){
 	var request = $.ajax({
 		type: 'POST',
 		url: user_service_url,
-	   	contentType: 'application/json',
+                contentType: 'application/x-www-form-urlencoded',
 		dataType: 'json',
 		cache: false
 	});
@@ -31,6 +27,8 @@ function doLogin(){
 	request.done(function( data) {
 		console.log('Login success!');
 		console.log('data = '+ data);
+		console.log('token = '+ data.access_token);
+		location.href = "../dashboard-module/business-intelligence-dashboard.html"
 	});
 	 
 	request.fail(function( jqXHR, textStatus ) {
