@@ -9,6 +9,11 @@ function OpenWindow() {
 	}
 }
 
+function forwardName(){
+	var uname = document.getElementById("username").value;
+	location.href = 'access.html?username='+uname;
+}
+
 function doLogin(){
 	
 	var username = 'admin';
