@@ -13,28 +13,28 @@ import com.tpns.user.repository.UserRepository;
 public class UserService {
 
 	@Autowired
-	private UserRepository userDAO;
+	private UserRepository userRepository;
 
 	public void save(@Valid User User) {
-		userDAO.save(User);
+		userRepository.save(User);
 	}
 
 	public User find(Long id) {
-		return userDAO.findOne(id);
+		return userRepository.findOne(id);
 	}
 
 	public User findByUsername(String username) {
-		return userDAO.findByUsername(username);
+		return userRepository.findByUsername(username);
 	}
 
 	public void delete(Long id) {
-		User user = userDAO.findOne(id);
+		User user = userRepository.findOne(id);
 		Assert.notNull(user);
-		userDAO.delete(user);
+		userRepository.delete(user);
 	}
 
 	public void update(@Valid User user) {
-		User persistent = userDAO.findOne(user.getId());
+		User persistent = userRepository.findOne(user.getId());
 		Assert.notNull(persistent);
 		persistent.update(user);
 	}

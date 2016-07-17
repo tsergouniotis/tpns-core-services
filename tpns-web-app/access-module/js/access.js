@@ -16,18 +16,30 @@ function forwardUsername(){
 	var uname = document.getElementById("username").value;
 	
 	var findNameUrl=user_service_complete_url.concat('/find/').concat(uname);
-	var encodedFindNameUrl = encodeURIComponent(findNameUrl);
+//	var encodedFindNameUrl = encodeURIComponent(findNameUrl);
 
-	console.log('findNameUrl = '+ findNameUrl);	
-	console.log('encodedFindNameUrl = '+ encodedFindNameUrl);	
+//	console.log('findNameUrl = '+ findNameUrl);	
+//	console.log('encodedFindNameUrl = '+ encodedFindNameUrl);	
 
 	var request = $.ajax({
 		type: 'GET',
-		url: encodedFindNameUrl,
-                contentType: 'application/json',
+		url: findNameUrl,
+        contentType: 'application/json',
 		dataType: 'json',
 		cache: false
 	});
+	
+/*	var request = fetch(findNameUrl, {
+		  method: 'GET',
+		  headers: {
+		    'Accept': 'application/json',
+		    'Content-Type': 'application/json'
+		  },
+		  body: JSON.stringify({
+		    name: 'Hubot',
+		    login: 'hubot',
+		  })
+		});	*/
 
 	request.done(function( data) {
 		console.log('Username found!');
@@ -58,7 +70,7 @@ function doLogin(){
 	var request = $.ajax({
 		type: 'POST',
 		url: user_service_url,
-                contentType: 'application/x-www-form-urlencoded',
+        contentType: 'application/x-www-form-urlencoded',
 		dataType: 'json',
 		cache: false
 	});

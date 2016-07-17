@@ -21,7 +21,7 @@ public class UserController {
 	@Autowired
 	private UserService service;
 
-	@RequestMapping(produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }, method = RequestMethod.GET, value = "/find/{username}")
+	@RequestMapping(produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }, method = RequestMethod.GET, value = "/find/{username:.+}")
 	public ResponseEntity<User> find(@PathVariable("username") String username) {
 		User user = service.findByUsername(username);
 		return response(user);

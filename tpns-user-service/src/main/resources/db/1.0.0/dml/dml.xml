@@ -43,25 +43,25 @@
 
 		<insert tableName="users_roles">
 			<column name="user_id"
-				valueComputed="(select user_id from users where username='admin')" />
+				valueComputed="(select user_id from users where username='admin@tpns.com')" />
 			<column name="role" value="ADMIN" />
 		</insert>
 
 		<insert tableName="users_roles">
 			<column name="user_id"
-				valueComputed="(select user_id from users where username='author')" />
+				valueComputed="(select user_id from users where username='author@tpns.com')" />
 			<column name="role" value="AUTHOR" />
 		</insert>
 
 		<insert tableName="users_roles">
 			<column name="user_id"
-				valueComputed="(select user_id from users where username='chief')" />
+				valueComputed="(select user_id from users where username='chief@tpns.com')" />
 			<column name="role" value="CHIEF_EDITOR" />
 		</insert>
 
 		<insert tableName="users_roles">
 			<column name="user_id"
-				valueComputed="(select user_id from users where username='onsports')" />
+				valueComputed="(select user_id from users where username='onsports@tpns.com')" />
 			<column name="role" value="APPLICATION" />
 		</insert>
 
