@@ -52,7 +52,7 @@
 		<spring.boot.version>1.3.5.RELEASE</spring.boot.version>
 		<plugins.version.jgitflow-maven-plugin>1.0-m5.1</plugins.version.jgitflow-maven-plugin>
 		<plugins.version.maven-surefire-plugin>2.12.4</plugins.version.maven-surefire-plugin>
-		<docker.image.prefix>tsergouniotis</docker.image.prefix>
+		<docker.image.prefix>pzografos</docker.image.prefix>
 	</properties>
 
 	<build>

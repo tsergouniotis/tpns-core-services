@@ -29,7 +29,6 @@ services:
     image: pzografos/tpns-article-service
     ports:
     - 8080:8080
-    - 5005:5005
     environment:
     - ARTICLE_SERVER_PORT=8080
     - ARTICLE_DB_HOST=articledb
@@ -39,7 +38,7 @@ services:
     depends_on:
     - articledb
     env_file:
-    - dev.env
+    - prod.env
     networks:
     - core_net
   userService:
@@ -47,7 +46,6 @@ services:
     image: pzografos/tpns-user-service
     ports:
     - 8081:8080
-    - 5006:5005
     environment:
     - USER_SERVER_PORT=8080
     - USER_DB_HOST=userdb
@@ -57,7 +55,7 @@ services:
     depends_on:
     - userdb
     env_file:
-    - dev.env
+    - prod.env
     networks:
     - core_net
   webapp:
@@ -70,6 +68,11 @@ services:
     - userService
     env_file:
     - prod.env
+    volumes:
+    - ${HOME}/Dev/tpns-core-services/tpns-web-app/access-module:/usr/share/nginx/html/tpns/access-module
+    - ${HOME}/Dev/tpns-core-services/tpns-web-app/dashboard-module:/usr/share/nginx/html/tpns/dashboard-module
+    - ${HOME}/Dev/tpns-core-services/tpns-web-app/global-module:/usr/share/nginx/html/tpns/global-module
+    - ${HOME}/Dev/tpns-core-services/tpns-web-app/user-module:/usr/share/nginx/html/tpns/user-module
     networks:
     - core_net
 networks:
