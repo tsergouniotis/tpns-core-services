@@ -27,10 +27,19 @@ http://www.springframework.org/schema/security/spring-security-oauth2.xsd">
 	<sec:http create-session="never" use-expressions="true"
 		pattern="/v1/user/**" authentication-manager-ref="oauthAuthenticationManager"
 		entry-point-ref="oauthAuthenticationEntryPoint">
-		<sec:intercept-url pattern="/v1/user/find/**" access="permitAll()" />			
 		<sec:intercept-url pattern="/v1/user/**"
 			access="hasAnyRole('ROLE_ADMIN', 'ROLE_AUTHOR')" /><!-- #oauth2.hasScope('read') 
 			and #oauth2.hasScope('write') and #oauth2.hasAnyRole('ROLE_USER','ROLE_ADMIN') -->
+		<sec:csrf disabled="true" />
+		<sec:anonymous enabled="true" />
+		<sec:custom-filter ref="oauthResourceFilter"
+			position="PRE_AUTH_FILTER" />
+	</sec:http>
+
+	<sec:http create-session="never" use-expressions="true"
+		pattern="/v1/login/**" authentication-manager-ref="oauthAuthenticationManager"
+		entry-point-ref="oauthAuthenticationEntryPoint">
+		<sec:intercept-url pattern="/v1/login/**" access="permitAll()" />
 		<sec:csrf disabled="true" />
 		<sec:anonymous enabled="true" />
 		<sec:custom-filter ref="oauthResourceFilter"
