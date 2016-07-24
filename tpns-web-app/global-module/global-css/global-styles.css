@@ -338,10 +338,10 @@ em, .texti, .global-textfield input, .global-textfield textarea {
 .global-textfield input:focus ~ .bar:before, .global-textfield input:focus ~ .bar:after, .global-textfield textarea:focus ~ .bar:before, .global-textfield textarea:focus ~ .bar:after {
 	width: 50%;
 }
-.global-textfield h6, .validation-error input:valid ~ h6, .validation-error textarea:valid ~ h6 {
+.global-textfield .validation-message, .validation-error input:valid ~ .validation-message, .validation-error textarea:valid ~ .validation-message {
 	display:none;
 }
-.validation-error h6 {
+.validation-error .validation-message {
 	display:block; line-height:120%; color: #e7505a; padding:1% 2%; margin: 0;
 }
 

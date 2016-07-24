@@ -11,7 +11,7 @@ function OpenWindow() {
 
 }
 
-function forwardUsername(){
+function validateUsername(){
 
 	var uname = document.getElementById("username").value;
 	

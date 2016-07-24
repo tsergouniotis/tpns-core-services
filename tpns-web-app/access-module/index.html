@@ -51,7 +51,7 @@
             	<h5 class="textc">Sign in to your TPNS account</h5>
                 <div class="access-inner-container">
                 	<!-- ACCESS FORM STARTS HERE -->
-                    <form class="access-form" onSubmit="return forwardUsername();">
+                    <form class="access-form" onSubmit="return validateUsername();">
                     	<div class="user-avatar textc">
                         	<!-- As this page is only used if the user is accessing the admin for the first time or from a new location or browser we do not show their personal avatar here only following successful validation -->
                             <img src="../access-module/images/placeholder-avatar.png" width="100" height="100" alt="The users avatar" />
@@ -62,7 +62,7 @@
                             <input type="email" id="username" required>
                             <span class="bar"></span>
                             <label for="username">Enter your user name</label>
-                            <h6>An error message</h6>
+                            <h6 class="validation-message"></h6>
                         </div>
                         <div class="access-form-submit-container textc">
                         	<!-- form submit button -->
@@ -90,6 +90,7 @@
         </article>
     </div>
     <script type="text/javascript" src="../global-module/global-js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="../global-module/global-js/addtohomescreen.min.js"></script>
     <script type="text/javascript" src="../global-module/global-js/tpns.js"></script>
     <script type="text/javascript" src="../access-module/js/index.js"></script>
     <!-- A freindly upgrade site override screen for those using IE9 or less -->

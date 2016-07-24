@@ -12,10 +12,12 @@ function OpenWindow() {
 }
 
 function readName(){
-
 	var uname = getHttpRequestParameter("username");
-	document.getElementById("username").value = uname;
-
+	if (uname){
+		document.getElementById("username").value = uname;
+	} else {
+		window.location.replace("index.html");
+	}
 }
 
 function doLogin(){
@@ -25,28 +27,48 @@ function doLogin(){
 
 	var loginUrl=user_service_base_url.concat('/oauth/token?client_id=user-webapp&client_secret=secret&username=').concat(username).concat('&password=').concat(password).concat('&grant_type=password');
 
-	console.log('loginUrl = '+ loginUrl);	
-
 	var request = $.ajax({
 		type: 'POST',
-		url: user_service_url,
-        contentType: 'application/x-www-form-urlencoded',
+		url: loginUrl,
+		accept: 'application/json',
+        	contentType: 'application/json',
 		dataType: 'json',
 		cache: false
 	});
 
 	request.done(function( data) {
-		console.log('Login success!');
 		location.href = "../dashboard-module/business-intelligence-dashboard.html"
 	});
 	 
-	request.fail(function( jqXHR, textStatus ) {
-	        console.log(jqXHR.status);
-	        console.log(jqXHR.header);
-		console.log('Login failed!');
-	});
-
 	return false;
 
 }
+
+$(document).ajaxError( function(e, x, settings, exception) {
+	var message;
+	var statusErrorMap = {
+		'401' : "Unauthorized access.",
+		'403' : "Forbidden resource can't be accessed.",
+		'500' : "Internal server error.",
+		'503' : "Service unavailable."
+ 	};
+	if (x.status===400){
+		message="Invalid Password. Please try again";
+	} else if (x.status) {
+		message =statusErrorMap[x.status];
+	     	if(!message){
+			message="Unknown Error.";
+		}
+	} else if(exception=='parsererror'){
+		message="Error.\nParsing JSON Request failed.";
+	} else if(exception=='timeout'){
+		message="Request Time out.";
+	} else if(exception=='abort'){
+		message="Request was aborted by the server";
+	} else {
+		message="Unknown Error \n.";
+	}
+	$("#password").parent().addClass('validation-error');
+	$("#password").parent().find("h6").show().html(message);
+});
 
