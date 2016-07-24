@@ -333,9 +333,19 @@ em, .texti, .global-textfield input, .global-textfield textarea {
 .bar:after {
 	right: 50%; 
 }
+
+/* ----- Input Error Message Management ----- */
 .global-textfield input:focus ~ .bar:before, .global-textfield input:focus ~ .bar:after, .global-textfield textarea:focus ~ .bar:before, .global-textfield textarea:focus ~ .bar:after {
 	width: 50%;
 }
+.global-textfield h6, .validation-error input:valid ~ h6, .validation-error textarea:valid ~ h6 {
+	display:none;
+}
+.validation-error h6 {
+	display:block; line-height:120%; color: #e7505a; padding:1% 2%; margin: 0;
+}
+
+
 
 /* -------------------------- Button --------------------------- */
 button.global-form-submit-button, h5.global-form-submit-button a {

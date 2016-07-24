@@ -37,7 +37,7 @@
 	<![endif]-->
 </head>
 
-<body onload="readName();">
+<body>
 	<!-- Advise to user to enable JS in their browser -->
     <noscript>
     	<h1 style="width:95%; background:#f7ca18; color:#FFFFFF; text-align:center; font-family:'Trebuchet MS', Arial, Helvetica, sans-serif; padding:1% 2.5% 0% 2.5%; margin:0%;">Please enable Javascript in you browser.</h1>
@@ -54,18 +54,20 @@
                     	<p><small><a href="index.html" title="Takes you back to the previous page"><span class="icon tpns-ai-arrow-left"></span>BACK</a></small></p>
                     </div>
                 	<!-- ACCESS FORM STARTS HERE -->
-                    <form class="access-form" onSubmit="return doLogin();" method="post">
+                    <form class="access-form" action="return forwardUsername();" method="post">
                     	<div class="user-avatar global-textfield textc">
                         	<!-- Replace this image with the users image stored in the cache, note the image must be resized on upload to 100px x 100px and the user should be able to upload images in the following format jpg, png and/or gif -->
                             <img src="../user-module/user-images-100x100/profile-user-100x100.jpg" width="100" height="100" alt="The users avatar" />
                     		<input type="email" id="username" value="john@tpns.com" readonly>
                         </div>
+                        <!-- To show the error message please add to the div below the class validation-error -->
                         <div class="global-textfield">
                         	<!-- important: do not change the order of the items in this div -->
                             <!-- The following HTML5 validation pattern will restrict the user to inputing the following UpperCase, LowerCase, Number/SpecialChar and min 8 Chars -->
                             <input type="password" id="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="Remember your password is at least 8 characters and makes use of upper case, lower case, a number and or a special character" required>
                             <span class="bar"></span>
                             <label for="password">Enter your password</label>
+                            <h6>The email you provided above does not exist, please enter another one in order to continue.</h6>
                         </div>
                         <div class="access-form-submit-container textc">
                         	<!-- form submit button -->

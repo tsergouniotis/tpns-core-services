@@ -51,16 +51,18 @@
             	<h5 class="textc">Sign in to your TPNS account</h5>
                 <div class="access-inner-container">
                 	<!-- ACCESS FORM STARTS HERE -->
-                    <form class="access-form" onSubmit="return forwardUsername();" method="post">
+                    <form class="access-form" action="access.html" method="post">
                     	<div class="user-avatar textc">
                         	<!-- As this page is only used if the user is accessing the admin for the first time or from a new location or browser we do not show their personal avatar here only following successful validation -->
                             <img src="../access-module/images/placeholder-avatar.png" width="100" height="100" alt="The users avatar" />
                         </div>
+                        <!-- To show the error message please add to the div below the class validation-error -->
                         <div class="global-textfield">
                         	<!-- important: do not change the order of the items in this div -->
                             <input type="email" id="username" required>
                             <span class="bar"></span>
                             <label for="username">Enter your user name</label>
+                            <h6>The email you provided above does not exist, please enter another one in order to continue.</h6>
                         </div>
                         <div class="access-form-submit-container textc">
                         	<!-- form submit button -->
@@ -87,7 +89,6 @@
             </div>
         </article>
     </div>
-    <script type="text/javascript" src="../global-module/global-js/jquery-2.1.3.min.js"></script>
     <script type="text/javascript" src="../global-module/global-js/tpns.js"></script>
     <script type="text/javascript" src="../access-module/js/access.js"></script>
     <!-- A freindly upgrade site override screen for those using IE9 or less -->

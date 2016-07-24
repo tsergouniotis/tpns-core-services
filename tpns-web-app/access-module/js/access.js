@@ -16,35 +16,25 @@ function forwardUsername(){
 	var uname = document.getElementById("username").value;
 	
 	var findNameUrl=user_service_complete_url.concat('/find/').concat(uname);
-//	var encodedFindNameUrl = encodeURIComponent(findNameUrl);
-
-//	console.log('findNameUrl = '+ findNameUrl);	
-//	console.log('encodedFindNameUrl = '+ encodedFindNameUrl);	
 
 	var request = $.ajax({
 		type: 'GET',
 		url: findNameUrl,
-        contentType: 'application/json',
+		accept: 'application/json',
+        	contentType: 'application/json',
 		dataType: 'json',
 		cache: false
 	});
 	
-/*	var request = fetch(findNameUrl, {
-		  method: 'GET',
-		  headers: {
-		    'Accept': 'application/json',
-		    'Content-Type': 'application/json'
-		  },
-		  body: JSON.stringify({
-		    name: 'Hubot',
-		    login: 'hubot',
-		  })
-		});	*/
-
 	request.done(function( data) {
-		console.log('Username found!');
-		console.log('data = '+ data);
 		window.location.replace("access.html?username="+uname);
+	});
+
+	request.fail(function( jqXHR, textStatus ) {
+		if (jqXHR.status===404){
+			var unameParentNode =  document.getElementById("username").parentNode;
+			unameParentNode.className += " validation-error";
+		}
 	});
 
 	return false;

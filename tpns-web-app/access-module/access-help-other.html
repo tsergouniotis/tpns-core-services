@@ -55,17 +55,21 @@
                     </div>
                 	<!-- ACCESS FORM STARTS HERE -->
                     <form class="access-form" action="access-help-success.html" method="post">
+                        <!-- To show the error message please add to the div below the class validation-error -->
                         <div class="global-textfield">
                         	<!-- important: do not change the order of the items in this div -->
                             <input type="email" id="username" required>
                             <span class="bar"></span>
                             <label for="username">Enter your email</label>
+                            <h6>The email you provided above does not exist, please enter another one in order to continue.</h6>
                         </div>
+                        <!-- To show the error message please add to the div below the class validation-error -->
                         <div class="global-textfield">
                         	<!-- important: do not change the order of the items in this div -->
                             <textarea type="text" rows= "3" id="access-other-problems" required></textarea>
                             <span class="bar"></span>
                             <label for="access-other-problems">Tell us all about it here</label>
+                            <h6>Please complete the field above.</h6>
                         	<p class="access-help-input-descriptor">When you click on the submit button below we will receive an email from you with your problem, we may contact you to discuss this further.</p>
                         </div>
                         <div class="google-recaptcha">
