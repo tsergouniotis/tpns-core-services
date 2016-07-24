@@ -11,36 +11,6 @@ function OpenWindow() {
 
 }
 
-function forwardUsername(){
-
-	var uname = document.getElementById("username").value;
-	
-	var findNameUrl=user_service_complete_url.concat('/find/').concat(uname);
-
-	var request = $.ajax({
-		type: 'GET',
-		url: findNameUrl,
-		accept: 'application/json',
-        	contentType: 'application/json',
-		dataType: 'json',
-		cache: false
-	});
-	
-	request.done(function( data) {
-		window.location.replace("access.html?username="+uname);
-	});
-
-	request.fail(function( jqXHR, textStatus ) {
-		if (jqXHR.status===404){
-			var unameParentNode =  document.getElementById("username").parentNode;
-			unameParentNode.className += " validation-error";
-		}
-	});
-
-	return false;
-
-}
-
 function readName(){
 
 	var uname = getHttpRequestParameter("username");
@@ -67,8 +37,6 @@ function doLogin(){
 
 	request.done(function( data) {
 		console.log('Login success!');
-		console.log('data = '+ data);
-		console.log('token = '+ data.access_token);
 		location.href = "../dashboard-module/business-intelligence-dashboard.html"
 	});
 	 
@@ -81,3 +49,4 @@ function doLogin(){
 	return false;
 
 }
+
