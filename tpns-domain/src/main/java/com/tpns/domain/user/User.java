@@ -14,39 +14,23 @@ public class User implements Serializable {
 
 	private Long id;
 
-	private String firstname;
-
-	private String surname;
-
 	private String username;
 
 	private String password;
+	
+	private Boolean enabled;
+	
+	private Boolean accountNonExpired;
+	
+	private Boolean accountNonLocked;
 
-	private ContactInfo contact;
-
+	private Profile profile;
+	
 	private Collection<Role> roles;
 
 	@XmlTransient
 	public Long getId() {
 		return id;
-	}
-
-	@XmlElement(name = "name")
-	public String getFirstname() {
-		return firstname;
-	}
-
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
-
-	@XmlElement(name = "surname")
-	public String getSurname() {
-		return surname;
-	}
-
-	public void setSurname(String surname) {
-		this.surname = surname;
 	}
 
 	@XmlElement(name = "username")
@@ -56,7 +40,7 @@ public class User implements Serializable {
 
 	public void setUsername(String username) {
 		this.username = username;
-	}
+	}		
 
 	@XmlTransient
 	public String getPassword() {
@@ -65,6 +49,15 @@ public class User implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}		
+	
+	@XmlElement(name = "profile")
+	public Profile getProfile() {
+		return profile;
+	}
+
+	public void setProfile(Profile profile) {
+		this.profile = profile;
 	}
 
 	@XmlElement
@@ -76,19 +69,39 @@ public class User implements Serializable {
 		this.roles = roles;
 	}
 
-	public ContactInfo getContact() {
-		return contact;
+	@XmlElement
+	public Boolean getEnabled() {
+		return enabled;
 	}
 
-	public void setContact(ContactInfo contact) {
-		this.contact = contact;
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
 	}
 
-	public void update(User user) {
-		this.firstname = user.getFirstname();
-		this.surname = user.getSurname();
+	@XmlElement
+	public Boolean getAccountNonExpired() {
+		return accountNonExpired;
+	}
+
+	public void setAccountNonExpired(Boolean accountNonExpired) {
+		this.accountNonExpired = accountNonExpired;
+	}
+
+	@XmlElement
+	public Boolean getAccountNonLocked() {
+		return accountNonLocked;
+	}
+
+	public void setAccountNonLocked(Boolean accountNonLocked) {
+		this.accountNonLocked = accountNonLocked;
+	}
+
+	public void update(User user) {		
 		this.username = user.getUsername();
 		this.password = user.getPassword();
+		this.enabled = user.getEnabled();		
+		this.accountNonExpired=user.getAccountNonExpired();		
+		this.accountNonLocked = user.getAccountNonLocked();
 	}
 
 	public boolean hasRole(Role theRole) {
