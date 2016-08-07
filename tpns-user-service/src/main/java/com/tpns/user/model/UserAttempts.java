@@ -3,22 +3,22 @@ package com.tpns.user.model;
 import java.util.Date;
 
 public class UserAttempts {
-	
+
 	private Long id;
-	
+
 	private String username;
-	
+
 	private int attempts;
-	
+
 	private Date lastModified;
-	
-	public UserAttempts(){
-		
+
+	public UserAttempts() {
+
 	}
 
 	public Long getId() {
 		return id;
-	}	
+	}
 
 	public void setId(Long id) {
 		this.id = id;
@@ -46,6 +46,6 @@ public class UserAttempts {
 
 	public void setLastModified(Date lastModified) {
 		this.lastModified = lastModified;
-	}	
-	
+	}
+
 }

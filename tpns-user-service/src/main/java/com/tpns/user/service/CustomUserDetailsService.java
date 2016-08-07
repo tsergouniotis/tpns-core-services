@@ -43,48 +43,42 @@ public class CustomUserDetailsService extends JdbcDaoImpl {
 	public void setAuthoritiesByUsernameQuery(String queryString) {
 		super.setAuthoritiesByUsernameQuery(queryString);
 	}
-	
+
 	@Override
 	@Value("ROLE_")
 	public void setRolePrefix(String rolePrefix) {
 		super.setRolePrefix(rolePrefix);
 	}
 
-	//override to get accountNonLocked
+	// override to get accountNonLocked
 	@Override
 	public List<UserDetails> loadUsersByUsername(String username) {
-	  return getJdbcTemplate().query(super.getUsersByUsernameQuery(), new String[] { username },
-		new RowMapper<UserDetails>() {
-		  public UserDetails mapRow(ResultSet rs, int rowNum) throws SQLException {
-			String username = rs.getString("username");
-			String password = rs.getString("password");
-			boolean enabled = rs.getBoolean("enabled");
-			boolean accountNonExpired = rs.getBoolean("accountNonExpired");
-			boolean credentialsNonExpired = rs.getBoolean("credentialsNonExpired");
-			boolean accountNonLocked = rs.getBoolean("accountNonLocked");
+		return getJdbcTemplate().query(super.getUsersByUsernameQuery(), new String[] { username }, new RowMapper<UserDetails>() {
+			public UserDetails mapRow(ResultSet rs, int rowNum) throws SQLException {
+				String username = rs.getString("username");
+				String password = rs.getString("password");
+				boolean enabled = rs.getBoolean("enabled");
+				boolean accountNonExpired = rs.getBoolean("accountNonExpired");
+				boolean credentialsNonExpired = rs.getBoolean("credentialsNonExpired");
+				boolean accountNonLocked = rs.getBoolean("accountNonLocked");
 
-			return new User(username, password, enabled, accountNonExpired, credentialsNonExpired,
-				accountNonLocked, AuthorityUtils.NO_AUTHORITIES);
-		  }
+				return new User(username, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, AuthorityUtils.NO_AUTHORITIES);
+			}
 
-	  });
+		});
 	}
 
-	//override to pass accountNonLocked
+	// override to pass accountNonLocked
 	@Override
-	public UserDetails createUserDetails(String username, UserDetails userFromUserQuery,
-			List<GrantedAuthority> combinedAuthorities) {
+	public UserDetails createUserDetails(String username, UserDetails userFromUserQuery, List<GrantedAuthority> combinedAuthorities) {
 		String returnUsername = userFromUserQuery.getUsername();
 
 		if (super.isUsernameBasedPrimaryKey()) {
-		  returnUsername = username;
+			returnUsername = username;
 		}
 
-		return new User(returnUsername, userFromUserQuery.getPassword(),
-                       userFromUserQuery.isEnabled(),
-		       userFromUserQuery.isAccountNonExpired(),
-                       userFromUserQuery.isCredentialsNonExpired(),
-			userFromUserQuery.isAccountNonLocked(), combinedAuthorities);
+		return new User(returnUsername, userFromUserQuery.getPassword(), userFromUserQuery.isEnabled(), userFromUserQuery.isAccountNonExpired(),
+				userFromUserQuery.isCredentialsNonExpired(), userFromUserQuery.isAccountNonLocked(), combinedAuthorities);
 	}
 
 }

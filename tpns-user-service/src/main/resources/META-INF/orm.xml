@@ -13,6 +13,9 @@
 
 	<entity class="com.tpns.domain.user.User">
 		<table name="users" />
+        <secondary-table name="user_profiles">
+            <primary-key-join-column name="user_id" referenced-column-name="user_id"/>
+        </secondary-table>		
 		<attributes>
 			<id name="id" access="FIELD">
 				<column name="user_id" />
@@ -26,12 +29,6 @@
 			<basic name="password">
 				<column name="password" length="2048" />
 			</basic>
-			<element-collection name="profile" fetch="EAGER">
-				<column name="profile"/>
-				<collection-table name="user_profiles">
-					<join-column name="user_id" />
-				</collection-table>
-			</element-collection>			
 			<element-collection name="roles" fetch="EAGER">
 				<column name="role"/>
 				<enumerated>STRING</enumerated>
@@ -39,6 +36,7 @@
 					<join-column name="user_id" />
 				</collection-table>
 			</element-collection>
+			<embedded name="profile" />						
 		</attributes>
 	</entity>
 

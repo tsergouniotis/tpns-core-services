@@ -33,15 +33,15 @@
 
 	</changeSet>
 	
-	<changeSet author="thanasis.sergouniotis" id="insert-user-profiles">
+	<changeSet author="panagiotis.zografos" id="insert-user-profiles">
 
-		<insert tableName="users">
+		<insert tableName="user_profiles">
 			<column name="user_id"
 				valueComputed="(select user_id from users where username='admin@tpns.com')" />		
 			<column name="email" value="admin@tpns.com" />
 		</insert>
 
-		<insert tableName="users">
+		<insert tableName="user_profiles">
 			<column name="user_id"
 				valueComputed="(select user_id from users where username='author@tpns.com')" />			
 			<column name="firstname" value="Carl" />
@@ -49,13 +49,13 @@
 			<column name="email" value="author@tpns.com" />			
 		</insert>
 
-		<insert tableName="users">
+		<insert tableName="user_profiles">
 			<column name="user_id"
 				valueComputed="(select user_id from users where username='chief@tpns.com')" />			
 			<column name="email" value="chief@tpns.com" />
 		</insert>
 
-		<insert tableName="users">
+		<insert tableName="user_profiles">
 			<column name="user_id"
 				valueComputed="(select user_id from users where username='onsports@tpns.com')" />		
 			<column name="email" value="onsports@tpns.com" />

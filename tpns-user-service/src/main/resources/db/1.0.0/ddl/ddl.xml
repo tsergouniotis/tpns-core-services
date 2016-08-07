@@ -13,17 +13,18 @@
 			<column name="username" type="VARCHAR(255)">
 				<constraints unique="true" />
 			</column>
+			<column name="password" type="VARCHAR(255)" />			
 			<column name="enabled" type="BOOLEAN" defaultValueBoolean="true">
-				<constraints unique="true" />
+				<constraints nullable="false" />
 			</column>
 			<column name="accountNonExpired" type="BOOLEAN" defaultValueBoolean="true">
-				<constraints unique="true" />
+				<constraints nullable="false" />
 			</column>
 			<column name="accountNonLocked" type="BOOLEAN" defaultValueBoolean="true">
-				<constraints unique="true" />
+				<constraints nullable="false" />
 			</column>								
 			<column name="credentialsNonExpired" type="BOOLEAN" defaultValueBoolean="true">
-				<constraints unique="true" />
+				<constraints nullable="false" />
 			</column>	
 		</createTable>
 
@@ -57,9 +58,9 @@
 			<column name="updated_at" type="DATETIME" />
 		</createTable>
 
-		<addPrimaryKey tableName="users_profile" columnNames="user_id" />
+		<addPrimaryKey tableName="user_profiles" columnNames="user_id" />
 				
-		<addForeignKeyConstraint baseTableName="users_profile"
+		<addForeignKeyConstraint baseTableName="user_profiles"
 			baseColumnNames="user_id" constraintName="user_profile_fk"
 			referencedTableName="users" referencedColumnNames="user_id" />			
 
@@ -153,7 +154,7 @@
 			</column>
 		</createTable>
 
-		<addPrimaryKey tableName="users" columnNames="user_id" />
+		<addPrimaryKey tableName="user_attempts" columnNames="user_attempt_id" />
 
 		<createSequence sequenceName="userattemptseq" incrementBy="1"
 			startValue="1" />

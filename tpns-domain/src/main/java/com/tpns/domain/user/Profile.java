@@ -1,14 +1,11 @@
 package com.tpns.domain.user;
 
 import java.io.Serializable;
-import java.util.Collection;
 
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "profile", namespace = "{urn:com.tpns}")
 public class Profile implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	private String firstname;
@@ -16,9 +13,9 @@ public class Profile implements Serializable {
 	private String surname;
 
 	private ContactInfo contact;
-	
-	public Profile(){
-		
+
+	public Profile() {
+
 	}
 
 	@XmlElement(name = "name")
@@ -46,7 +43,7 @@ public class Profile implements Serializable {
 	public void setContact(ContactInfo contact) {
 		this.contact = contact;
 	}
-	
+
 	public void update(Profile profile) {
 		this.firstname = profile.getFirstname();
 		this.surname = profile.getSurname();

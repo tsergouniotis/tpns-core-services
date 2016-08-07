@@ -17,15 +17,15 @@ public class User implements Serializable {
 	private String username;
 
 	private String password;
-	
+
 	private Boolean enabled;
-	
+
 	private Boolean accountNonExpired;
-	
+
 	private Boolean accountNonLocked;
 
 	private Profile profile;
-	
+
 	private Collection<Role> roles;
 
 	@XmlTransient
@@ -40,7 +40,7 @@ public class User implements Serializable {
 
 	public void setUsername(String username) {
 		this.username = username;
-	}		
+	}
 
 	@XmlTransient
 	public String getPassword() {
@@ -49,8 +49,8 @@ public class User implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}		
-	
+	}
+
 	@XmlElement(name = "profile")
 	public Profile getProfile() {
 		return profile;
@@ -96,11 +96,11 @@ public class User implements Serializable {
 		this.accountNonLocked = accountNonLocked;
 	}
 
-	public void update(User user) {		
+	public void update(User user) {
 		this.username = user.getUsername();
 		this.password = user.getPassword();
-		this.enabled = user.getEnabled();		
-		this.accountNonExpired=user.getAccountNonExpired();		
+		this.enabled = user.getEnabled();
+		this.accountNonExpired = user.getAccountNonExpired();
 		this.accountNonLocked = user.getAccountNonLocked();
 	}
 

@@ -15,12 +15,12 @@ import org.springframework.stereotype.Component;
 import com.tpns.user.dao.UserDetailsDao;
 import com.tpns.user.model.UserAttempts;
 
-@Component
+@Component("limitLoginAuthenticationProvider")
 public class LimitLoginAuthenticationProvider extends DaoAuthenticationProvider {
 
 	@Autowired
 	UserDetailsDao userDetailsDao;
-	
+
 	@Autowired
 	@Qualifier("userDetailsService")
 	@Override
@@ -30,7 +30,7 @@ public class LimitLoginAuthenticationProvider extends DaoAuthenticationProvider 
 
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-		
+
 		try {
 
 			Authentication auth = super.authenticate(authentication);
@@ -56,8 +56,7 @@ public class LimitLoginAuthenticationProvider extends DaoAuthenticationProvider 
 
 			if (userAttempts != null) {
 				Date lastAttempts = userAttempts.getLastModified();
-				error = "User account is locked! <br><br>Username : " + authentication.getName()
-						+ "<br>Last Attempts : " + lastAttempts;
+				error = "User account is locked! <br><br>Username : " + authentication.getName() + "<br>Last Attempts : " + lastAttempts;
 			} else {
 				error = e.getMessage();
 			}

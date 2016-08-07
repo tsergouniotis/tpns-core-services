@@ -12,16 +12,6 @@
 				<element name="max">10</element>
 			</constraint>
 		</field>
-		<field name="contact">
-			<valid />
-		</field>
 	</bean>
-
-	<bean class="com.tpns.domain.user.ContactInfo">
-		<field name="email">
-			<constraint annotation="com.tpns.user.validation.constraints.Email" />
-		</field>
-	</bean>
-
 
 </constraint-mappings>
