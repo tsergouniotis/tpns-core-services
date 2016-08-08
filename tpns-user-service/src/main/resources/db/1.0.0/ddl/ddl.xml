@@ -17,13 +17,13 @@
 			<column name="enabled" type="BOOLEAN" defaultValueBoolean="true">
 				<constraints nullable="false" />
 			</column>
-			<column name="accountNonExpired" type="BOOLEAN" defaultValueBoolean="true">
+			<column name="accountnonexpired" type="BOOLEAN" defaultValueBoolean="true">
 				<constraints nullable="false" />
 			</column>
-			<column name="accountNonLocked" type="BOOLEAN" defaultValueBoolean="true">
+			<column name="accountnonlocked" type="BOOLEAN" defaultValueBoolean="true">
 				<constraints nullable="false" />
 			</column>								
-			<column name="credentialsNonExpired" type="BOOLEAN" defaultValueBoolean="true">
+			<column name="credentialsnonexpired" type="BOOLEAN" defaultValueBoolean="true">
 				<constraints nullable="false" />
 			</column>	
 		</createTable>

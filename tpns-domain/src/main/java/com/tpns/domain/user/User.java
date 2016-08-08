@@ -24,6 +24,8 @@ public class User implements Serializable {
 
 	private Boolean accountNonLocked;
 
+	private Boolean credentialsNonExpired;
+
 	private Profile profile;
 
 	private Collection<Role> roles;
@@ -96,12 +98,22 @@ public class User implements Serializable {
 		this.accountNonLocked = accountNonLocked;
 	}
 
+	@XmlElement
+	public Boolean getCredentialsNonExpired() {
+		return credentialsNonExpired;
+	}
+
+	public void setCredentialsNonExpired(Boolean credentialsNonExpired) {
+		this.credentialsNonExpired = credentialsNonExpired;
+	}
+
 	public void update(User user) {
 		this.username = user.getUsername();
 		this.password = user.getPassword();
 		this.enabled = user.getEnabled();
 		this.accountNonExpired = user.getAccountNonExpired();
 		this.accountNonLocked = user.getAccountNonLocked();
+		this.credentialsNonExpired = user.getCredentialsNonExpired();
 	}
 
 	public boolean hasRole(Role theRole) {

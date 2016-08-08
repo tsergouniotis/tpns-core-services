@@ -3,10 +3,13 @@ package com.tpns.domain.user;
 import java.io.Serializable;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 public class Profile implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+
+	private Long id;
 
 	private String firstname;
 
@@ -16,6 +19,11 @@ public class Profile implements Serializable {
 
 	public Profile() {
 
+	}
+
+	@XmlTransient
+	public Long getId() {
+		return id;
 	}
 
 	@XmlElement(name = "name")

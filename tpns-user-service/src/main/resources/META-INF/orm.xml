@@ -12,10 +12,7 @@
 	</persistence-unit-metadata>
 
 	<entity class="com.tpns.domain.user.User">
-		<table name="users" />
-        <secondary-table name="user_profiles">
-            <primary-key-join-column name="user_id" referenced-column-name="user_id"/>
-        </secondary-table>		
+		<table name="users" />	
 		<attributes>
 			<id name="id" access="FIELD">
 				<column name="user_id" />
@@ -24,24 +21,39 @@
 					allocation-size="1" />
 			</id>
 			<basic name="username">
-				<column name="username" length="255" />
+				<column name="username" table="users" length="255" />
 			</basic>
 			<basic name="password">
-				<column name="password" length="2048" />
+				<column name="password" table="users" length="255" />
 			</basic>
+			<basic name="accountNonExpired">
+				<column name="accountnonexpired" table="users"/>
+			</basic>
+			<basic name="accountNonLocked">
+				<column name="accountnonlocked" table="users"/>
+			</basic>	
+			<basic name="credentialsNonExpired">
+				<column name="credentialsnonexpired" table="users"/>
+			</basic>	
+			<one-to-one name="profile" target-entity="com.tpns.domain.user.Profile" fetch="EAGER">			
+				<join-column name="user_id" referenced-column-name="user_id"/>
+			</one-to-one>				
 			<element-collection name="roles" fetch="EAGER">
 				<column name="role"/>
 				<enumerated>STRING</enumerated>
 				<collection-table name="user_roles">
 					<join-column name="user_id" />
 				</collection-table>
-			</element-collection>
-			<embedded name="profile" />						
+			</element-collection>					
 		</attributes>
 	</entity>
-
-	<embeddable class="com.tpns.domain.user.Profile">
+	
+	<entity class="com.tpns.domain.user.Profile">
+		<table name="user_profiles" />	
 		<attributes>
+			<id name="id" access="FIELD">
+				<column name="user_id" />
+			</id>		
 			<basic name="firstname">
 				<column name="firstname" length="255" />
 			</basic>
@@ -49,8 +61,8 @@
 				<column name="surname" length="255" />
 			</basic>
 			<embedded name="contact" />
-		</attributes>
-	</embeddable>
+		</attributes>	
+	</entity>		
 	
 	<embeddable class="com.tpns.domain.user.ContactInfo">
 		<attributes>
@@ -63,20 +75,20 @@
 			<basic name="email">
 				<column name="email" />
 			</basic>
-			<embedded name="address" />
+			<embedded name="address"/>
 		</attributes>
 	</embeddable>
 
 	<embeddable class="com.tpns.domain.user.Address">
 		<attributes>
 			<basic name="street">
-				<column name="street" />
+				<column name="street"/>
 			</basic>
 			<basic name="number">
-				<column name="number" />
+				<column name="number"/>
 			</basic>
 			<basic name="city">
-				<column name="city" />
+				<column name="city"/>
 			</basic>
 		</attributes>
 	</embeddable>
