@@ -39,7 +39,7 @@ public class CustomUserDetailsService extends JdbcDaoImpl {
 	}
 
 	@Override
-	@Value("select username, role from user_roles where username =?")
+	@Value("select u.username, r.role from users u inner join user_roles r on r.user_id=u.user_id where username = ?")
 	public void setAuthoritiesByUsernameQuery(String queryString) {
 		super.setAuthoritiesByUsernameQuery(queryString);
 	}

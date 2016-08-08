@@ -19,7 +19,7 @@ import com.tpns.user.model.UserAttempts;
 @Repository
 public class UserDetailsDaoImpl extends JdbcDaoSupport implements UserDetailsDao {
 
-	private static final String SQL_USERS_UPDATE_LOCKED = "UPDATE USERS SET accountNonLocked = ? WHERE username = ?";
+	private static final String SQL_USERS_UPDATE_LOCKED = "UPDATE USERS SET accountnonlocked = ? WHERE username = ?";
 	private static final String SQL_USERS_COUNT = "SELECT count(*) FROM USERS WHERE username = ?";
 
 	private static final String SQL_USER_ATTEMPTS_GET = "SELECT * FROM USER_ATTEMPTS WHERE username = ?";
@@ -73,7 +73,6 @@ public class UserDetailsDaoImpl extends JdbcDaoSupport implements UserDetailsDao
 				public UserAttempts mapRow(ResultSet rs, int rowNum) throws SQLException {
 
 					UserAttempts user = new UserAttempts();
-					user.setId(rs.getLong("id"));
 					user.setUsername(rs.getString("username"));
 					user.setAttempts(rs.getInt("attempts"));
 					user.setLastModified(rs.getDate("lastModified"));

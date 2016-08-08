@@ -4,8 +4,6 @@ import java.util.Date;
 
 public class UserAttempts {
 
-	private Long id;
-
 	private String username;
 
 	private int attempts;
@@ -14,14 +12,6 @@ public class UserAttempts {
 
 	public UserAttempts() {
 
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getUsername() {

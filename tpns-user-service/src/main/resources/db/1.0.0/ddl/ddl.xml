@@ -140,24 +140,18 @@
 	<changeSet author="panagiotis.zografos" id="create-user-attempts-table">
 
 		<createTable tableName="user_attempts">
-			<column name="user_attempt_id" type="BIGINT">
-				<constraints nullable="false" />
-			</column>
 			<column name="username" type="VARCHAR(255)">
 				<constraints nullable="false" />
 			</column>
 			<column name="attempts" type="INT">
 				<constraints nullable="false" />
 			</column>			
-			<column name="lastModified" type="DATETIME" >
+			<column name="lastmodified" type="DATETIME" >
 				<constraints nullable="false" />
 			</column>
 		</createTable>
 
-		<addPrimaryKey tableName="user_attempts" columnNames="user_attempt_id" />
-
-		<createSequence sequenceName="userattemptseq" incrementBy="1"
-			startValue="1" />
+		<addPrimaryKey tableName="user_attempts" columnNames="username" />
 
 		<addForeignKeyConstraint baseTableName="users"
 			baseColumnNames="username" constraintName="user_name_fk"

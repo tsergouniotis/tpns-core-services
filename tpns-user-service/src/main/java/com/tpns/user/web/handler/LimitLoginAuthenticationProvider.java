@@ -2,6 +2,8 @@ package com.tpns.user.web.handler;
 
 import java.util.Date;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -17,6 +19,8 @@ import com.tpns.user.model.UserAttempts;
 
 @Component("limitLoginAuthenticationProvider")
 public class LimitLoginAuthenticationProvider extends DaoAuthenticationProvider {
+
+	private static final Log LOG = LogFactory.getLog(LimitLoginAuthenticationProvider.class);
 
 	@Autowired
 	UserDetailsDao userDetailsDao;
@@ -45,6 +49,8 @@ public class LimitLoginAuthenticationProvider extends DaoAuthenticationProvider 
 		} catch (BadCredentialsException e) {
 
 			// invalid login, update to user_attempts
+			LOG.debug("Updating failed attempts for user " + authentication.getName());
+
 			userDetailsDao.updateFailAttempts(authentication.getName());
 			throw e;
 
@@ -62,6 +68,7 @@ public class LimitLoginAuthenticationProvider extends DaoAuthenticationProvider 
 			}
 
 			throw new LockedException(error);
+
 		}
 	}
 
