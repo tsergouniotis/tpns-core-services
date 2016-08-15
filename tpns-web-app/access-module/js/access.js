@@ -53,7 +53,12 @@ $(document).ajaxError( function(e, x, settings, exception) {
 		'503' : "Service unavailable."
  	};
 	if (x.status===400){
-		message="Invalid Password. Please try again";
+	        var jsonResponseText = $.parseJSON(x.responseText);
+		if (jsonResponseText.error_description==='USER_LOCKED'){
+			message="This user has been locked. Please contact your administrator";
+		} else {
+			message="Invalid Password. Please try again";
+		}
 	} else if (x.status) {
 		message =statusErrorMap[x.status];
 	     	if(!message){
