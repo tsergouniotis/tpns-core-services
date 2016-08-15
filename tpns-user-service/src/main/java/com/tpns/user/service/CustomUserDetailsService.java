@@ -4,51 +4,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
-import javax.sql.DataSource;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl;
-import org.springframework.stereotype.Service;
 
 /**
  * Reference org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl
  *
  */
-@Service("userDetailsService")
 public class CustomUserDetailsService extends JdbcDaoImpl {
-
-	@Autowired
-	private DataSource dataSource;
-
-	@PostConstruct
-	private void initialize() {
-		setDataSource(dataSource);
-	}
-
-	@Override
-	@Value("select * from users where username = ?")
-	public void setUsersByUsernameQuery(String usersByUsernameQueryString) {
-		super.setUsersByUsernameQuery(usersByUsernameQueryString);
-	}
-
-	@Override
-	@Value("select u.username, r.role from users u inner join user_roles r on r.user_id=u.user_id where username = ?")
-	public void setAuthoritiesByUsernameQuery(String queryString) {
-		super.setAuthoritiesByUsernameQuery(queryString);
-	}
-
-	@Override
-	@Value("ROLE_")
-	public void setRolePrefix(String rolePrefix) {
-		super.setRolePrefix(rolePrefix);
-	}
 
 	// override to get accountNonLocked
 	@Override

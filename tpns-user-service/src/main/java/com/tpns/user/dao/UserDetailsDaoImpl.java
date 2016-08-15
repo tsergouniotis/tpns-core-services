@@ -4,19 +4,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 
-import javax.annotation.PostConstruct;
-import javax.sql.DataSource;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.security.authentication.LockedException;
-import org.springframework.stereotype.Repository;
 
 import com.tpns.user.model.UserAttempts;
 
-@Repository
 public class UserDetailsDaoImpl extends JdbcDaoSupport implements UserDetailsDao {
 
 	private static final String SQL_USERS_UPDATE_LOCKED = "UPDATE USERS SET accountnonlocked = ? WHERE username = ?";
@@ -28,14 +22,6 @@ public class UserDetailsDaoImpl extends JdbcDaoSupport implements UserDetailsDao
 	private static final String SQL_USER_ATTEMPTS_RESET_ATTEMPTS = "UPDATE USER_ATTEMPTS SET attempts = 0, lastmodified = null WHERE username = ?";
 
 	private static final int MAX_ATTEMPTS = 3;
-
-	@Autowired
-	private DataSource dataSource;
-
-	@PostConstruct
-	private void initialize() {
-		setDataSource(dataSource);
-	}
 
 	@Override
 	public void updateFailAttempts(String username) {

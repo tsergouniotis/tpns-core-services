@@ -39,6 +39,26 @@ http://www.springframework.org/schema/security/spring-security-oauth2.xsd">
 		class="org.springframework.security.oauth2.provider.client.JdbcClientDetailsService">
 		<constructor-arg name="dataSource" ref="dataSource" />
 	</bean>	
+	
+	<!-- Custom Limit Login Authentication Provider start -->	
+	
+	<bean id="userDetailsDao" class="com.tpns.user.dao.UserDetailsDaoImpl">
+		<property name="dataSource" ref="dataSource" />	
+	</bean>
+	
+	<bean id="customUserDetailsService" class="com.tpns.user.service.CustomUserDetailsService">
+		<property name="dataSource" ref="dataSource" />			
+		<property name="usersByUsernameQuery" value="select * from users where username = ?" />	
+		<property name="authoritiesByUsernameQuery" value="select u.username, r.role from users u inner join user_roles r on r.user_id=u.user_id where username = ?" />	
+		<property name="rolePrefix" value="ROLE_" />			
+	</bean>
+	
+	<bean id="limitLoginAuthenticationProvider" class="com.tpns.user.web.handler.LimitLoginAuthenticationProvider">
+		<property name="userDetailsDao" ref="userDetailsDao" />
+		<property name="userDetailsService" ref="customUserDetailsService" />		
+	</bean>
+	
+	<!-- Custom Limit Login Authentication Provider end -->	
 
 	<oauth2:authorization-server
 		token-endpoint-url="/oauth/token" authorization-endpoint-url="/oauth/authorize"

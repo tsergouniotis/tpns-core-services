@@ -2,35 +2,18 @@ package com.tpns.user.web.handler;
 
 import java.util.Date;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.LockedException;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.stereotype.Component;
 
 import com.tpns.user.dao.UserDetailsDao;
 import com.tpns.user.model.UserAttempts;
 
-@Component("limitLoginAuthenticationProvider")
 public class LimitLoginAuthenticationProvider extends DaoAuthenticationProvider {
 
-	private static final Log LOG = LogFactory.getLog(LimitLoginAuthenticationProvider.class);
-
-	@Autowired
-	UserDetailsDao userDetailsDao;
-
-	@Autowired
-	@Qualifier("userDetailsService")
-	@Override
-	public void setUserDetailsService(UserDetailsService userDetailsService) {
-		super.setUserDetailsService(userDetailsService);
-	}
+	private UserDetailsDao userDetailsDao;
 
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
@@ -49,7 +32,6 @@ public class LimitLoginAuthenticationProvider extends DaoAuthenticationProvider 
 		} catch (BadCredentialsException e) {
 
 			// invalid login, update to user_attempts
-			LOG.debug("Updating failed attempts for user " + authentication.getName());
 
 			userDetailsDao.updateFailAttempts(authentication.getName());
 			throw e;
@@ -70,6 +52,14 @@ public class LimitLoginAuthenticationProvider extends DaoAuthenticationProvider 
 			throw new LockedException(error);
 
 		}
+	}
+
+	public UserDetailsDao getUserDetailsDao() {
+		return userDetailsDao;
+	}
+
+	public void setUserDetailsDao(UserDetailsDao userDetailsDao) {
+		this.userDetailsDao = userDetailsDao;
 	}
 
 }
