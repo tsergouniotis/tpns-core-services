@@ -8,10 +8,15 @@ public class UserAttempts {
 
 	private int attempts;
 
-	private Date lastModified;
+	private Date lastmodified;
 
 	public UserAttempts() {
 
+	}
+
+	public UserAttempts(String username) {
+		super();
+		this.username = username;
 	}
 
 	public String getUsername() {
@@ -30,12 +35,21 @@ public class UserAttempts {
 		this.attempts = attempts;
 	}
 
-	public Date getLastModified() {
-		return lastModified;
+	public Date getLastmodified() {
+		return lastmodified;
 	}
 
-	public void setLastModified(Date lastModified) {
-		this.lastModified = lastModified;
+	public void setLastmodified(Date lastmodified) {
+		this.lastmodified = lastmodified;
+	}
+
+	public void increaseAttempts() {
+		attempts++;
+	}
+
+	@Override
+	public String toString() {
+		return "UserAttempts [username=" + username + ", attempts=" + attempts + ", lastmodified=" + lastmodified + "]";
 	}
 
 }

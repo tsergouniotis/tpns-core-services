@@ -64,6 +64,21 @@
 		</attributes>	
 	</entity>		
 	
+	<entity class="com.tpns.user.model.UserAttempts">
+		<table name="user_attempts" />	
+		<attributes>
+			<id name="username" access="FIELD">
+				<column name="username"/>
+			</id>			
+			<basic name="attempts">
+				<column name="attempts"/>
+			</basic>
+			<basic name="lastmodified">
+				<column name="lastmodified"/>
+			</basic>							
+		</attributes>	
+	</entity>	
+	
 	<embeddable class="com.tpns.domain.user.ContactInfo">
 		<attributes>
 			<basic name="phone">
