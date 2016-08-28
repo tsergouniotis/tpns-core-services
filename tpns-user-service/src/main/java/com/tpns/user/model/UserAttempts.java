@@ -1,6 +1,6 @@
 package com.tpns.user.model;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class UserAttempts {
 
@@ -8,7 +8,7 @@ public class UserAttempts {
 
 	private int attempts;
 
-	private Date lastmodified;
+	private LocalDateTime lastmodified;
 
 	public UserAttempts() {
 
@@ -35,11 +35,11 @@ public class UserAttempts {
 		this.attempts = attempts;
 	}
 
-	public Date getLastmodified() {
+	public LocalDateTime getLastmodified() {
 		return lastmodified;
 	}
 
-	public void setLastmodified(Date lastmodified) {
+	public void setLastmodified(LocalDateTime lastmodified) {
 		this.lastmodified = lastmodified;
 	}
 

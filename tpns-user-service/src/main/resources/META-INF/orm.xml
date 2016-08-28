@@ -108,4 +108,8 @@
 		</attributes>
 	</embeddable>
 
+	<converter
+		class="com.tpns.user.repository.persistence.converters.LocalDateTimeAttributeConverter"
+		auto-apply="true" />
+		
 </entity-mappings>
