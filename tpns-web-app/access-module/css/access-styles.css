@@ -26,6 +26,9 @@ ins { background-color:#364150; color:#c6cfda; text-decoration: none; }
 mark { background-color:#364150; color:#c6cfda; font-style: italic; font-weight: bold; }
 
 /* --------------------- Access Container ---------------------- */
+h1.tpns-logo img {
+	padding:12px 0px;
+}
 .access-outer-container {
 	padding:12% 0% 0%;
 }

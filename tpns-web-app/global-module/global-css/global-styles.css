@@ -14,9 +14,9 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, blockquote, 
 
 article, aside, figure, footer, header, hgroup, nav, section { display: block; }
 
-img, object, embed { max-width: 100%; }
+img, object, embed { max-width:100%; height:auto; }
 
-html { overflow-x: hidden; overflow-y: scroll; }
+html { height:100%; min-height:100%; padding:0; margin:0; overflow-x: hidden; overflow-y: auto; }
 
 ol, ul, li { font-size: 100%; margin: 0; padding: 0; border: 0; list-style: none; }
 
@@ -50,9 +50,8 @@ button, input, select, textarea { margin: 0; }
 
 button { width: auto; overflow: visible; }
 
-.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
-.clearfix:after { clear: both; }  
-.clearfix { zoom: 1; }  
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
 
 
 /* --------------------- Ok, this is where the fun starts. --------------------- */
@@ -192,6 +191,34 @@ url("../global-fonts/tpns-admin-icons.svg#tpns-admin-icons") format("svg");
 .tpns-ai-arrow-left:before { content: "\52"; }
 .tpns-ai-arrow-right:before { content: "\53"; }
 .tpns-ai-arrow-up:before { content: "\54"; }
+.tpns-ai-nav-maximise:before { content: "\55"; }
+.tpns-ai-nav-minimise:before { content: "\56"; }
+.tpns-ai-bi-chart:before { content: "\57"; }
+.tpns-ai-mobile-menu:before { content: "\58"; }
+.tpns-ai-delete:before { content: "\5a"; }
+.tpns-ai-user:before { content: "\50"; }
+.tpns-ai-users:before { content: "\59"; }
+.tpns-ai-add-property:before { content: "\30"; }
+.tpns-ai-megaphone:before { content: "\31"; }
+.tpns-ai-settings:before { content: "\32"; }
+.tpns-ai-comments:before { content: "\33"; }
+.tpns-ai-articles:before { content: "\34"; }
+.tpns-ai-staff:before { content: "\35"; }
+.tpns-ai-sub-category:before { content: "\36"; }
+.tpns-ai-category:before { content: "\37"; }
+.tpns-ai-filter:before { content: "\38"; }
+.tpns-ai-status:before { content: "\39"; }
+.tpns-ai-article-search:before { content: "\21"; }
+.tpns-ai-camera:before { content: "\23"; }
+.tpns-ai-network:before { content: "\24"; }
+.tpns-ai-video:before { content: "\29"; }
+.tpns-ai-audio:before { content: "\22"; }
+.tpns-ai-tag-remove:before { content: "\25"; }
+.tpns-ai-tag-checked:before { content: "\26"; }
+.tpns-ai-tag-cancel:before { content: "\27"; }
+.tpns-ai-tag-add:before { content: "\28"; }
+.tpns-ai-editors-choice:before { content: "\2a"; }
+.tpns-ai-editors-choice-selected:before { content: "\2b"; }
 
 /* --------------------- Headers ---------------------- */
 h1 {
@@ -252,6 +279,8 @@ em, .texti, .global-textfield input, .global-textfield textarea {
 .texts {
 	text-decoration: line-through;
 }
+/* ----- Remove browser styles ----- */
+i, u { text-decoration:none; }
 
 /* --------------------- Single/Special use global-fonts --------------------- */
 /* Special Use global-fonts normally do not have a font-size and start with a class of .text100 as it is inherited by the header font size, if they do have a font-size then the class starts from .text200 upwards */
@@ -391,7 +420,7 @@ button.global-form-submit-button:hover, h5.global-form-submit-button a:hover {
 .global-table-row {
 	display:table-row; width:100%; padding:0; margin:0;
 }
-.global-table-cell {
+.global-header-cell, .global-table-cell {
 	display:table-cell; vertical-align:middle; padding:0; margin:0;
 }
 
