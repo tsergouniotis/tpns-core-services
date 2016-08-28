@@ -1,5 +1,6 @@
 package com.tpns.user.service;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,7 @@ public class UserLockingService {
 			userAttempts = new UserAttempts(username);
 		}
 		userAttempts.increaseAttempts();
-		userAttempts.setLastmodified(new Date());
+		userAttempts.setLastmodified(LocalDateTime.now());
 
 		userAttemptRepository.save(userAttempts);
 
