@@ -1,0 +1,803 @@
+/* CSS Document */
+/*   
+Theme Name: TPNS
+Description: Global Information Distibrution Network
+Author: Handmade Solutions for TPNS
+Author URI: http://www.handmadesolutions.net/ for tpns.com
+Version: 1.0
+*/
+
+body { background:#FFFFFF; font-size:16px; font-family:OpenSans-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif; font-weight:normal; text-rendering:optimizelegibility; color:#2b3643; -webkit-touch-callout:none; -webkit-text-size-adjust:none; -webkit-user-select:none; -webkit-highlight:none; -webkit-tap-highlight-color:rgba(0,0,0,0); user-select:none; overflow-x:hidden; }
+
+a { color:#2b3643; cursor:pointer; }
+a:hover { color:#3598dc; }
+
+p { line-height:120%; padding-top:0.7%; padding-bottom:0.7%; margin:0px; }
+
+::-moz-selection{ background:#435060; color:#c6cfda; text-shadow:none; }
+::selection { background:#435060; color:#c6cfda; text-shadow:none; } 
+
+a:link { -webkit-tap-highlight-color:#435060; } 
+
+ins { background-color:#364150; color:#c6cfda; text-decoration: none; }
+mark { background-color:#364150; color:#c6cfda; font-style:italic; font-weight: bold; }
+
+/* ------------------------- Admin Date Picker ------------------------ */
+/* ----- Admin Checkboxes ----- */
+.admin-global-checkbox label span.admin-global-checkbox-label:before {
+	content:"\4d"; line-height:20px; font-family:"tpns-admin-icons"; vertical-align:middle; cursor:pointer; padding:0px 5px; margin:0;
+}
+.admin-global-checkbox input[type=checkbox] {
+	display:none;
+}
+.admin-global-checkbox input[type=checkbox]:checked + span.admin-global-checkbox-label:before {
+    content:"\67"; font-family:"tpns-admin-icons";
+}
+/* ----- Datepicker cells ----- */
+.datepicker--cells {
+	padding:10px;
+}
+.datepicker--cell {
+	display:inline-block; position:relative; line-height:32px; text-align:center; cursor:pointer; box-sizing:border-box; -webkit-border-radius:4px; border-radius:4px;
+}
+.datepicker--cell.-focus- {
+	background:#f0f0f0;
+}
+.datepicker--cell.-current- {
+	background:#2b3643; color:#FFFFFF; -webkit-border-radius:100%; border-radius:100%;
+}
+.datepicker--cell.-current-.-focus- {
+	background:#f0f0f0; color:#3598dc; -webkit-border-radius:4px; border-radius:4px;
+}
+.datepicker--cell.-current-.-in-range- {
+	cursor:not-allowed; line-height:30px; background:#e1fcf1; color:#26c281; border:1px solid #26c281; -webkit-border-radius:0 4px 4px 0; border-radius:0 4px 4px 0;
+}
+.datepicker--cell.-in-range-, .datepicker--cell.datepicker--cell-day.-other-month-.-in-range- {
+	background:#eef9fd; color:#3598dc; -webkit-border-radius:0; border-radius:0;
+}
+.-disabled-.datepicker--cell-day, .-disabled-.datepicker--cell-day.-weekend-, .-disabled-.datepicker--cell.datepicker--cell-day.-other-month-, .datepicker--cell.datepicker--cell-month.-disabled-, .datepicker--cell.datepicker--cell-year.-disabled-  {
+	cursor:not-allowed; color:#dedede;
+}
+.datepicker--cell.-disabled-.-in-range-, .datepicker--cell.-disabled-.-current-.-focus- {
+	cursor:not-allowed; background:#ffeeef; color:#e7505a; -webkit-border-radius:0; border-radius:0;
+}
+.-disabled-.-focus-.datepicker--cell-day.-other-month-, .-disabled-.-focus-.datepicker--cell-year.-other-decade-, .datepicker--cell.-disabled-.-focus-, .-disabled-.datepicker--cell-day.-weekend-.-focus-, .-disabled-.datepicker--cell-day.-weekend-.-in-range-, .-disabled-.datepicker--cell.datepicker--cell-day.-other-month-.-in-range- {
+	cursor:not-allowed; background:#ffeeef; color:#e7505a;
+}
+.datepicker--cell.-range-from-, .datepicker--cell.-range-to- {
+	line-height:30px; border:1px solid #3598dc; background-color:#eef9fd; color:#3598dc;
+}
+.datepicker--cell.-range-from-.-disabled-, .datepicker--cell.-range-to-.-disabled-, .-disabled-.datepicker--cell.datepicker--cell-day.-other-month-.-range-to- {
+	line-height:30px; border:1px solid #e7505a; background-color:#ffeeef; color:#e7505a;
+}
+.datepicker--cell.-range-from-, .datepicker--cell.datepicker--cell-day.-range-from-.-current-.-selected-.-focus-, .datepicker--cell.datepicker--cell-day.-range-from-.-current-.-focus- {
+	-webkit-border-radius:4px 0 0 4px; border-radius:4px 0 0 4px;
+}
+.datepicker--cell.-range-to-, .datepicker--cell.datepicker--cell-day.-range-to-.-current-.-selected-.-focus-, .datepicker--cell.datepicker--cell-day.-range-to-.-current-.-focus- {
+	-webkit-border-radius:0 4px 4px 0; border-radius:0 4px 4px 0;
+}
+.datepicker--cell.-range-from-.-range-to-, .datepicker--cell.datepicker--cell-day.-range-from-.-current-.-selected-.-focus- {
+	-webkit-border-radius:4px; border-radius:4px;
+}
+.datepicker--cell.-selected-, .datepicker--cell.datepicker--cell-day.-range-to-.-current-.-selected-.-focus-, .datepicker--cell.datepicker--cell-day.-range-from-.-current-.-selected-.-focus-, .datepicker--cell.datepicker--cell-day.-other-month-.-range-from-.-selected-, .datepicker--cell.datepicker--cell-day.-other-month-.-range-to-.-selected- {
+	background:#3598dc; color:#FFFFFF; border:none;
+}
+.datepicker--cell:empty {
+	cursor:default;
+}
+.datepicker--days-names {
+	display:table; table-layout:fixed; width:230px; padding:0px 10px;
+background:#2b3643;
+}
+
+.datepicker--day-name {
+	display:table-cell; text-align:center; padding:4px 0 8px; font-size:0.857em; color:#FFFFFF; text-transform:uppercase; white-space:nowrap; overflow:hidden;
+}
+.datepicker--cell-day {
+	width:14.28571%;
+}
+/* Keep this just in case we need it in the future
+.datepicker--cell-month {
+	width:33.33%; line-height:300%;
+}
+*/
+.datepicker--cell-month, .datepicker--cell-year {
+	width:25%; line-height:400%;
+}
+.datepicker--cells-months, .datepicker--years, .datepicker--cells-years {
+	height:auto;
+}
+
+/* ----- Datepicker ----- */
+.datepickers-container {
+	position:absolute; left:-10px; top:-3px;
+}
+.datepicker {
+	opacity:0; position:absolute; left:-100000px; width:250px; background:#FFFFFF; font-size:0.875em; color:#2b3643; transition:opacity 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease; transition:opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s; transition:opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease; -webkit-border-radius:10px; border-radius:10px; border:1px solid #2b3643; box-sizing:content-box;
+}
+.datepicker.-from-top- {
+	-webkit-transform:translateY(-8px); transform:translateY(-8px);
+}
+.datepicker.-from-right- {
+	-webkit-transform:translateX(8px); transform:translateX(8px);
+}
+.datepicker.-from-bottom- {
+	-webkit-transform:translateY(8px); transform:translateY(8px);
+}
+.datepicker.-from-left- {
+	-webkit-transform:translateX(-8px); transform:translateX(-8px);
+}
+.datepicker.active {
+	opacity:1; -webkit-transform:translate(0); transform:translate(0); transition:opacity 0.3s ease, left 0s 0s, -webkit-transform 0.3s ease; transition:opacity 0.3s ease, transform 0.3s ease, left 0s 0s; transition:opacity 0.3s ease, transform 0.3s ease, left 0s 0s, -webkit-transform 0.3s ease;
+}
+.datepicker-inline .datepicker {
+	opacity:1; position:static; left:auto; right:auto; border-color:#2b3643; -webkit-transform:none; transform:none;
+}
+.datepicker-inline .datepicker--pointer {
+	display:none;
+}
+.datepicker--content {
+	display:table-row; width:100%; box-sizing:content-box;
+}
+.datepicker--content:after {
+	display:table-row;
+}
+.datepicker--pointer {
+	position:absolute; background:#2b3643; width:6px; height:6px; border-top:1px solid #2b3643; border-right:1px solid #2b3643;
+}
+.-top-left- .datepicker--pointer, .-top-center- .datepicker--pointer, .-top-right- .datepicker--pointer {
+	top:calc(100% - 3px); -webkit-transform:rotate(135deg); transform:rotate(135deg);
+}
+.-right-top- .datepicker--pointer, .-right-center- .datepicker--pointer, .-right-bottom- .datepicker--pointer {
+	right:calc(100% - 3px); -webkit-transform:rotate(225deg); transform:rotate(225deg);
+}
+.-bottom-left- .datepicker--pointer, .-bottom-center- .datepicker--pointer, .-bottom-right- .datepicker--pointer {
+	bottom:calc(100% - 3px); -webkit-transform:rotate(315deg); transform:rotate(315deg);
+}
+.-left-top- .datepicker--pointer, .-left-center- .datepicker--pointer, .-left-bottom- .datepicker--pointer {
+	left:calc(100% - 3px); -webkit-transform:rotate(45deg); transform:rotate(45deg);
+}
+.-top-left- .datepicker--pointer, .-bottom-left- .datepicker--pointer {
+	left:20px;
+}
+.-top-right- .datepicker--pointer, .-bottom-right- .datepicker--pointer {
+	right:20px;
+}
+.-top-center- .datepicker--pointer, .-bottom-center- .datepicker--pointer {
+	left:calc(50% - 20px / 2);
+}
+.-left-top- .datepicker--pointer, .-right-top- .datepicker--pointer {
+	top:20px;
+}
+.-left-bottom- .datepicker--pointer, .-right-bottom- .datepicker--pointer {
+	bottom:20px;
+}
+.-left-center- .datepicker--pointer, .-right-center- .datepicker--pointer {
+	top:calc(50% - 20px / 2);
+}
+.datepicker--body {
+	display:none;
+}
+.datepicker--body.active {
+	display:table; table-layout:fixed; width:100%;
+}
+/* ----- Date Picker Navigation ----- */
+.datepicker--nav {
+	display:table; width:100%; min-height:30px; -webkit-border-radius:8px 8px 0 0; border-radius:8px 8px 0 0; overflow:hidden;
+}
+.datepicker--nav-title, .datepicker--nav-action {
+	display:table-cell; text-align:center; vertical-align:middle; background:#2b3643; color:#9aa7b6; white-space:nowrap; overflow:hidden;
+}
+.datepicker--nav-action {
+	width:30px; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; cursor:pointer;
+}
+.datepicker--nav-action.-disabled-, .datepicker--nav-title.-disabled-, .datepicker--nav-title.-disabled-:hover {
+	cursor:not-allowed; background:#2b3643; color:#2b3643;
+}
+.datepicker--nav-action svg {
+	width:30px; height:30px;
+}
+.datepicker--nav-action path {
+	fill:none; stroke:#9aa7b6; stroke-width:2px;
+}
+.datepicker--nav-action:first-child {
+	border-color:#2b3643; -webkit-border-radius:9px 0 0 0; border-radius:9px 0 0 0;
+}
+.datepicker--nav-action:last-child {
+	border-color:#2b3643; -webkit-border-radius:0 9px 0 0; border-radius:0 9px 0 0;
+}
+.datepicker--nav-action:hover path {
+	stroke:#3598dc;
+}
+.datepicker--nav-action.-disabled- path {
+	stroke:#2b3643;
+}
+.datepicker--nav-title {
+	width:174px; padding:0px 8px; cursor:pointer;
+}
+.datepicker--nav-title:hover {
+	color:#3598dc;
+}
+.datepicker--nav-title i {
+	font-style:normal; color:#999999; margin-left:5px;
+}
+.datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade- {
+	color:#999999;
+}
+.datepicker--cell-day.-other-month-:hover, .datepicker--cell-year.-other-decade-:hover {
+	color:#364150;
+}
+/* --------------------- Admin header controllers --------------------- */
+.admin-header-controllers {
+	position:relative; display:table; width:100%; height:92px; table-layout:fixed; padding:0; margin:0;
+}
+/* ----- Admin Controlers Area ----- */
+.admin-controllers {
+	position:fixed; display:table-row; top:0; width:100%; height:92px; padding:0; margin:0;
+}
+.admin-controllers a, .admin-controllers-container a, .admin-left-column a {
+	color:#9aa7b6;
+}
+.admin-controllers a:hover, .admin-controllers-container a:hover, .admin-left-column a:hover {
+	color:#FFFFFF;
+}
+/* ----- Admin Logo Area ----- */
+.admin-logo-nav-container {
+	display:table-cell; width:235px; height:92px; background:#364150; padding:13px 20px; margin:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; border-bottom:1px solid #435060;
+}
+.admin-logo-image {
+	float:left; width:157px; height:64px;
+}
+.admin-logo-image p {
+	display:table-cell; height:64px; vertical-align:middle;
+}
+.admin-logo-image p img {
+	max-width:100%; height:auto;
+}
+/* ----- Admin Navigation Controllers Area ----- */
+.admin-nav-controller {
+	width:38px; height:64px; margin-left:157px;
+}
+.admin-nav-controller p a {
+	display:block; height:64px; line-height:100%;
+}
+.admin-main-navigation {
+	padding:11px 0px 10px;
+}
+.admin-nav-mobile-controller {
+	display:none; width:38px; height:64px; margin-left:157px;
+}
+.admin-controllers-container {
+	display:table-cell; width:100%; height:92px; vertical-align:top; padding:0; margin:0;
+}
+/* ----- Admin Global Controllers Area ----- */
+.admin-global-controllers {
+	display:table; width:100%; height:46px; background:#2b3643; padding:0; margin:0;
+}
+.admin-global-controllers-inner, .admin-local-controllers-inner {
+	display:table-row; width:100%; height:46px;
+}
+.admin-global-controllers-left, .admin-global-controllers-right, .admin-local-controllers-left, .admin-local-controllers-right {
+	display:table-cell; vertical-align:middle;
+}
+.admin-global-controllers-left-items, .admin-global-controllers-right-items, .admin-local-controllers-left-items, .admin-local-controllers-right-items, .admin-user-information-desktop {
+	position:relative; display:inline-block; vertical-align:top;
+}
+.admin-global-controllers-left-items {
+	margin-right:10px;
+}
+.admin-global-controllers-left-items:last-child {
+	margin-right:0px;
+}
+.admin-global-controllers-left-items:first-child, .admin-local-controllers-left-items:first-child {
+	margin-left:20px;
+}
+.admin-global-controllers-right-items:last-child, .admin-local-controllers-right-items:last-child {
+	margin-right:20px;
+}
+.admin-user-information-mobile {
+	display:none;
+}
+/* ----- Admin Global Controllers Area - Button ----- */
+.admin-global-controllers-button a {
+	display:block; background:#3598dc; font-family:OpenSans-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif; color:#FFFFFF; line-height:28px; -webkit-border-radius:6px; border-radius:6px;
+}
+.admin-global-controllers-button a:hover {
+	background:#26c281;
+}
+/* ----- Admin Global Controllers Area - Transparent Button ----- */
+.admin-global-controllers-transparent-button a {
+	background:transparent; border:1px solid #c6cfda; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+.admin-global-controllers-transparent-button a:hover {
+	background:#f2784b; border:1px solid #f2784b;
+}
+/* ----- Admin Global Controllers Area - Total New Items Number ----- */
+.admin-global-controllers-totals {
+	position:absolute; top:5px; right:0; min-width:12px; max-width:33px; height:12px; background:#3598dc; color:#FFFFFF; line-height:100%; text-align:center; text-overflow:ellipsis; white-space:nowrap; overflow:hidden; padding:3px; -webkit-border-radius:9px; border-radius:9px;
+}
+.admin-global-controllers-totals small {
+	font-family:OpenSans-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif; line-height:12px; vertical-align:top; color:#FFFFFF;
+}
+.main-nav-category-loop-title .nav-totals, .main-nav-accordian .nav-totals {
+	right:10px; top:9px;
+}
+.main-nav-category-loop-title.nav-minimised .nav-totals {
+	right:10px; top:-3px;
+}
+/* ----- Admin Global Controllers Area - Tabs ----- */
+.admin-global-controllers-tab-container, .admin-click-menu-container, .admin-click-sub-menu-container {
+	display:inline-block; position:relative; cursor:pointer; vertical-align:top;
+}
+.admin-global-controllers-tab-button, .admin-click-menu-button, .admin-click-sub-menu-button {
+	position:relative; width:100%;
+}
+.admin-global-controllers-tab-button p, .admin-click-menu-button p, .admin-click-sub-menu-button p {
+	padding:0; line-height:100%;
+}
+.admin-global-controllers-tab-button a, .admin-global-controllers-tab-button a p.admin-global-controllers-tab-show, .admin-click-menu-button a, .admin-click-sub-menu-button a {
+	display:block; position:relative; height:46px; line-height:46px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;
+}
+.admin-click-menu-button a i, .admin-click-menu-button a u, .admin-click-sub-menu-button a i, .admin-click-sub-menu-button a u {
+	font-size:150%;
+}
+.admin-click-menu-button a [class^="tpns-ai-"]:before, .admin-click-menu-button a [class*=" tpns-ai-"]:before, .admin-click-sub-menu-button a [class^="tpns-ai-"]:before, .admin-click-sub-menu-button a [class*=" tpns-ai-"]:before {
+	padding-left:0px;
+}
+.admin-click-menu-button a u img, .admin-click-sub-menu-button a u img {
+	width:30px; height:30px; vertical-align:text-bottom; -webkit-border-radius:17px; border-radius:17px; padding-top:9px; margin-right:5px;
+}
+
+
+
+
+
+.admin-global-controllers-tab-button a p.admin-global-controllers-tab-show {
+	padding:0px 5px 0px 10px;
+}
+.admin-global-controllers-tab-button a i {
+	position:relative; padding-left:10px;
+}
+.admin-global-controllers-tab-hide.open a, a .admin-global-controllers-tab-hide.open {
+	background:#364150; color:#FFFFFF; -webkit-border-radius:10px 10px 0 0; border-radius:10px 10px 0 0;
+}
+.admin-global-controllers-tab-hide.open a {
+	padding:0px 5px 0px 10px; margin-left:-10px; margin-right:-5px;
+}
+a .admin-global-controllers-tab-hide.open {
+	height:46px; line-height:46px; padding:0px 5px 0px 10px;
+}
+.admin-global-controllers-tab-content {
+	position:absolute; top:100%; min-width:120%; max-width:400px; background:#364150; color:#c6cfda; padding:10px; overflow:auto; cursor:default; z-index:100001;
+}
+.admin-global-controllers-tab-content-left {
+	left:0; margin-left:-10px; -webkit-border-radius:0 10px 10px 10px; border-radius:0 10px 10px 10px;
+}
+.admin-global-controllers-tab-content-right {
+	right:0; -webkit-border-radius:10px 0 10px 10px; border-radius:10px 0 10px 10px;
+}
+/* ----- Admin Global Controllers Area - Click Menu ----- */
+.admin-click-menu-button a, .admin-click-menu-button a:hover, a.input-reset-button, .admin-click-sub-menu-button a, .admin-click-sub-menu-button a:hover, .admin-mobile-only-click-menu-button a {
+	color:#2b3643;
+}
+.admin-click-menu-button a:hover span.icon, .admin-click-sub-menu-button a:hover span.icon, .admin-mobile-only-click-menu-button a:hover {
+	color:#3598dc;
+}
+a.input-reset-button {
+	display:inline-block; font-size:120%; vertical-align:top; line-height:36px; padding-bottom:10px;
+}
+a.input-reset-button:hover {
+	color:#f2784b;
+}
+.admin-click-menu-content, .admin-click-sub-menu-content {
+	position:absolute; top:100%; min-width:185%; max-width:300px; background:#364150; font-size:0.875em; color:#c6cfda; padding:10px; cursor:default; margin-top:3px; -webkit-border-radius:6px; border-radius:6px;
+}
+.admin-click-menu-content:after, .admin-click-sub-menu-content:after {
+	content:" "; position:absolute; bottom:100%; left:22px; height:0; width:0; border:solid transparent; border-color:rgba(136, 183, 213, 0); border-bottom-color:#364150; border-width:6px; margin-left:-6px; pointer-events:none;
+}
+.admin-click-menu-filter-pc a span.icon:before {
+	padding-left: 10px;
+}
+.admin-click-menu-content-left, .admin-click-sub-menu-content-left {
+	left:-10px;
+}
+.admin-click-menu-content-right, .admin-click-sub-menu-content-right {
+	right:-10px;
+}
+/* ----- Admin Global Mobile Only Controller Area - Click Menu ----- */
+.admin-mobile-only-click-menu-button {
+	display:none;
+}
+/* ----- Global Controller Left Column ------ */
+/* ----- Admin Dashboard Area Navigation ----- */
+.admin-global-controllers-tab-list {
+	font-size:0.875em;
+}
+.admin-click-menu-content-list {
+	max-height:220px; overflow-y:auto;
+}
+.admin-global-controllers-tab-list li, .admin-click-menu-content-list li {
+	display:block; position:relative; white-space:nowrap; margin:0;
+}
+.admin-global-controllers-tab-list li a, .admin-click-menu-content-list li a {
+	position:relative; display:block; line-height:22px; text-align:left; color:#9aa7b6; text-overflow:ellipsis; white-space:nowrap; padding:5px 38px 5px 10px; margin:0; overflow:hidden;
+}
+.admin-global-controllers-tab-list li a, .admin-click-menu-content-list li a:hover {
+	color:#FFFFFF;
+}
+.admin-click-menu-content-list li a u {
+	display:inline-block; margin-right:10px; vertical-align:top; height:22px;
+}
+.admin-click-menu-content-list li a u.icon:before {
+	font-size:160%; padding:0;
+}
+.admin-click-menu-content-list li a u img {
+	width:22px; height:22px; -webkit-border-radius:11px; border-radius:11px;
+}
+.admin-global-controllers-tab-list li a i, .admin-click-menu-content-list li a i {
+	visibility:hidden; position:absolute; right:5px; text-align:right;
+}
+.admin-global-controllers-tab-list li.current a, .admin-click-menu-content-list li.current a {
+	background:#2b3643; color:#FFFFFF; cursor:text;
+}
+.admin-global-controllers-tab-list li.current a i, .admin-click-menu-content-list li.current a i {
+	visibility:visible; color:#26c281;
+}
+.admin-global-controllers-tab-list li.current a:hover i, .admin-click-menu-content-list li.current a:hover i {
+	color:#26c281;
+}
+/* ----- New Article Button ----- */
+.articles-new-article-button p, .admin-global-controllers-admin-info-container p {
+	padding:0;
+}
+.articles-new-article-button p {
+	line-height:42px;
+}
+.articles-new-article-button a {
+	display:inline-block; font-size: 0.875em; line-height:28px; padding:0px 5px 0px 10px; border:1px solid #c6cfda; -webkit-border-radius:14px; border-radius:14px;
+}
+.articles-new-article-button a:hover {
+	border:1px solid #FFFFFF;
+}
+/* ----- Global Controller Right Column ------ */
+/* ----- Info Buttons ----- */
+.admin-global-controllers-admin-info-container {
+	display:inline-block; position:relative; cursor:pointer; vertical-align:bottom; width:100%;
+}
+.admin-global-controllers-admin-info-container p a {
+	display:block; position:relative; height:46px; line-height:46px; padding:0px 1px; margin:0;
+}
+.admin-global-controllers-admin-info-container p a i {
+	font-size:120%; 
+}
+/* ----- User Profile ----- */
+.admin-user-profile-preview-nav-img-container img {
+	position:relative; width:30px; height:30px; vertical-align:middle; margin-right:10px; -webkit-border-radius:50%; border-radius:50%;
+}
+.admin-user-information-mobile-has-notifications {
+	display:none;
+}
+.admin-user-profile-preview-nav p {
+	font-size: 0.875em; vertical-align:middle;
+}
+.admin-user-profile-preview-nav .admin-global-controllers-tab-content {
+	padding:20px;
+}
+.admin-user-profile-preview-content-details {
+    min-width:230px; max-width:380px; padding-bottom:20px; margin-bottom:20px; border-bottom:1px solid #435060;
+}
+.admin-user-profile-preview-content-details .global-table-cell {
+	vertical-align:top; line-height:120%; padding:0; margin:0;
+}
+.admin-user-profile-preview-content-details .global-table-cell:first-child {
+	width:90px;
+}
+.admin-user-profile-preview-content-details .global-table-cell:last-child {
+	min-width:190px; max-width:270px;
+}
+.admin-user-profile-preview-content-image img {
+	width:80px; height:auto; margin-right:10px; -webkit-border-radius:6px; border-radius:6px;
+}
+.admin-user-profile-preview-content-username {
+	padding-bottom:6px;
+}
+.admin-user-profile-preview-content-email {
+	padding-bottom:13px;
+}
+.admin-user-profile-preview-content-email small, .admin-user-profile-preview-content-username h5 {
+	display:block; text-overflow:ellipsis; white-space:nowrap; padding:0; margin:0; overflow:hidden;
+}
+.admin-user-profile-preview-content-access-level {
+	margin-bottom:20px; min-width:360px;
+}
+.admin-user-profile-preview-content-access-level .global-table-cell p {
+	line-height:20px;
+}
+.access-level-newspapers {
+	clear:both; position:relative; width:100%; padding:0; margin:0;
+}
+.access-level-newspapers li {
+	display:inline-block; font-size:120%; padding:0; margin:0;
+}
+.access-level-newspapers li:first-child [class^="tpns-nti-"]:before, .access-level-newspapers li:first-child [class*=" tpns-nti-"]:before {
+	padding-left:1px;
+}
+.access-level-newspapers li a {
+	display:block; line-height:100%; padding:0; margin:0;
+}
+/* ----- Admin Local Controllers Area ----- */
+/* ----- Local Controller Left Column ------ */
+.admin-local-controllers {
+	display:table; width:100%; height:46px; background:#f1f3fa; padding:0; margin:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; border-bottom:1px solid #dce0ec;
+}
+.admin-bi-date-filter-selected-item-contents {
+	position:relative; display:inline-block;
+}
+.admin-bi-date-filter-items {
+	position:relative; display:inline-block; white-space:nowrap; line-height:46px; color:#999999;
+}
+.admin-bi-date-filter-items input {
+	width:150px; background:transparent; color:#999999; padding:5px; border:none; -webkit-border-radius:0px; border-radius:0px; border-bottom:1px dotted #999999;
+}
+.admin-bi-date-filter-items input::-webkit-input-placeholder { color:#999999; font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif; }
+.admin-bi-date-filter-items input:-moz-placeholder { color:#999999; font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif; }
+.admin-bi-date-filter-items input::-moz-placeholder { color:#999999; font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif; }
+.admin-bi-date-filter-items input:-ms-input-placeholder { color:#999999; font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif; }
+/* ----- Local Controller Right Column ------ */
+/* ----- Article Search ----- */
+.admin-article-search-form input {
+	position:relative; width:130px; height:38px; background:transparent; color:#435060; padding:0; margin:0; border:none; -webkit-border-radius:0 0 0 0; border-radius: 0 0 0 0; outline-color:transparent; outline-style:none; -webkit-appearance:none;
+}
+.admin-article-search-form input::-webkit-input-placeholder { color:#2b3643; font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif; }
+.admin-article-search-form input:-moz-placeholder { color:#2b3643; font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif; }
+.admin-article-search-form input::-moz-placeholder { color:#2b3643; font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif; }
+.admin-article-search-form input:-ms-input-placeholder { color:#2b3643; font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif; }
+.admin-article-search-form button {
+	position:relative; width:30px; height:38px; background:transparent; font-size:120%; padding:0; margin:0; color:#435060; border:none; -webkit-appearance:none;
+}
+.admin-article-search-form button:hover {
+	color:#3598dc;
+}
+
+/* --------------------- Admin 2 column layout --------------------- */
+/* ----- Left Column Layout ----- */
+.admin-left-column {
+    float:left; position:fixed; width:235px; height:100%; background:#364150;
+}
+.admin-left-column .current a:hover {
+	cursor:text;
+}
+.admin-left-column .current a {
+	color:#FFFFFF;
+}
+/* ----- Right Column Layout ----- */
+.admin-right-column {
+    margin-left:235px; padding:20px;
+}
+/* ----- Admin Main Navigation Area ----- */
+.main-nav-category-loop {
+	position:relative; font-size:0.875em; padding:0; margin:0; margin-top:-1px;
+}
+.main-nav-category-loop-title p, .main-nav-accordian p {
+	padding:0;
+}
+.main-nav-category-loop .main-nav-category-loop-title p a, .main-nav-category-loop .main-nav-accordian p a {
+	display:block; position:relative; padding:8px 15px 9px; border-top:1px solid #435060; border-bottom:1px solid #435060; cursor:text;
+}
+.main-nav-category-loop:first-child .main-nav-category-loop-title p a, .main-nav-category-loop:first-child:hover .main-nav-category-loop-title.current p a, .main-nav-category-loop:first-child .main-nav-accordian p a {
+	border-top:1px solid #364150;
+}
+.main-nav-accordian.tab-open p a {
+	background:#2b3643; color:#FFFFFF;
+}
+.main-nav-category-loop-title p a span:first-child, .main-nav-accordian p a span:first-child {
+	font-size:120%; padding-right:5px;
+}
+.main-nav-category-loop-title.current p a, .main-nav-category-loop:hover .main-nav-category-loop-title.current p a, .main-nav-accordian.current p a {
+	background:#3598dc; color:#FFFFFF; border-top:1px solid #3598dc; border-bottom:1px solid #3598dc;
+}
+
+.main-nav-category-loop-title.current p a:after {
+	content:''; display:block; position:absolute; left:100%; top:0%; width:0; margin-top:0px; border-style:solid; border-width:19px 0 19px 8px; border-color:transparent #3598dc; z-index:-1;
+}
+.main-nav-category-loop ul, .main-nav-category-loop:hover .main-nav-category-loop-title.current ~ .main-nav-category-loop-list ul {
+	position:relative; margin-left:28px; margin-bottom:20px; min-width:200px;
+}
+.main-nav-category-loop ul:after, .main-nav-category-loop:hover .main-nav-category-loop-title.current ~ .main-nav-category-loop-list ul:after {
+	display:block; content:""; position:absolute; top:0; bottom:10px; left:0; border-left:1px dotted #9aa7b6; -webkit-border-radius: 0 10px 10px 0;
+border-radius: 0 10px 10px 0;
+}
+.main-nav-category-loop li, .main-nav-category-loop:hover .main-nav-category-loop-title.current ~ .main-nav-category-loop-list li {
+	position:relative; padding-left:20px;
+}
+.main-nav-category-loop li:first-child, .main-nav-category-loop:hover .main-nav-category-loop-title.current ~ .main-nav-category-loop-list li:first-child {
+	padding-top:5px;
+}
+.main-nav-category-loop li:before, .main-nav-category-loop:hover .main-nav-category-loop-title.current ~ .main-nav-category-loop-list li:before {
+	display:block; content:""; position:absolute; top:0; bottom:10px; left:0; width:14px; border-bottom:1px dotted #9aa7b6;
+}
+.main-nav-category-loop li a, .main-nav-category-loop:hover .main-nav-category-loop-title.current ~ .main-nav-category-loop-list li a {
+	display:block; line-height:20px; padding:0; white-space:nowrap;
+}
+.main-nav-other {
+	font-size:0.875em;
+}
+.main-nav-other p a {
+	display:block; line-height:20px;
+}
+.main-nav-other.textc p a {
+	padding:0; padding-top:10px;
+}
+.main-nav-other p a span:first-child {
+	font-size:120%; padding-right:10px;
+}
+.main-nav-other p a [class^="tpns-ai-"]::before, .main-nav-other p a [class*=" tpns-ai-"]::before {
+	padding:0;
+}
+/* ----- Main Nav Open Hover State ----- */
+.main-nav-category-loop .main-nav-category-loop-title.current ~ .main-nav-category-loop-list, .main-nav-category-loop:hover .main-nav-category-loop-list {
+	display:block;
+}
+.main-nav-category-loop:hover .main-nav-category-loop-title p a {
+	background:#2b3643; color:#FFFFFF;
+}
+.main-nav-category-loop:hover .main-nav-category-loop-list {
+	position:absolute; top:0; left:100%; background:#2b3643; border:1px solid #435060;
+}
+.main-nav-category-loop:hover .main-nav-category-loop-list ul:after, .main-nav-category-loop:hover .main-nav-category-loop-list li:before {
+	display:none;
+}
+.main-nav-category-loop:hover .main-nav-category-loop-list ul {
+	margin:0;
+}
+.main-nav-category-loop:hover .main-nav-category-loop-list li {
+	padding:0;
+}
+.main-nav-category-loop:hover .main-nav-category-loop-list li:first-child {
+	border-left:1px solid #2b3643; margin-left:-1px; padding-left:1px;
+}
+.main-nav-category-loop:hover .main-nav-category-loop-list li a {
+	padding:7px 15px;
+}
+.main-nav-category-loop:hover .main-nav-category-loop-title.current ~ .main-nav-category-loop-list {
+	position:relative; left:0; background:transparent; border:none;
+}
+/* ----- Main Nav Min State ----- */
+.admin-min-nav-controller {
+	margin-left:0px; width:18px;
+}
+.admin-min-nav-controller .admin-maximise-nav a {
+	line-height:64px;
+}
+.admin-min-nav-controller .admin-maximise-nav a [class^="tpns-ai-"]:before, .admin-min-nav-controller .admin-maximise-nav a [class*=" tpns-ai-"]:before {
+	padding:0;
+}
+.main-nav-category-loop-title.min-current p a {
+	color:#3598dc;
+}
+.main-nav-other.textl p a {
+	padding:10px 20px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----- Mobile and Tablet Views ----- */
+@media handheld, only screen and (max-device-width: 1200px) {
+	body { cursor:pointer; }
+}
+@media handheld, only screen and (max-width: 1120px) {
+	.admin-click-menu-mobile, .admin-mobile-only-click-menu-content { display:none; }
+	/* ----- Admin Global Mobile Only Controller Area - Click Menu ----- */
+	.admin-mobile-only-click-menu-button { display:block; }
+	.admin-mobile-only-click-menu-button a { display:inline-block; height:46px; line-height:46px; font-size:150%; padding-right:5px; }
+	.admin-mobile-only-click-menu-content { position:absolute; top:100%; min-width:170px; max-width:300px; background:#364150; font-size:0.875em; color:#c6cfda; padding:10px; cursor:default; margin-top:3px; -webkit-border-radius:6px; border-radius:6px; }
+	.admin-mobile-only-click-menu-content:after { content:" "; position:absolute; bottom:100%; right:22px; height:0; width:0; border:solid transparent; border-color:rgba(136, 183, 213, 0); border-bottom-color:#364150; border-width:6px; margin-left:-6px; pointer-events:none; }
+	.admin-mobile-only-click-menu-content-right { right:-5px; }
+	.admin-article-search-form input { color:#FFFFFF; }
+	.admin-article-search-form input::-webkit-input-placeholder { color:#9aa7b6; }
+	.admin-article-search-form input:-moz-placeholder { color:#9aa7b6; }
+	.admin-article-search-form input::-moz-placeholder { color:#9aa7b6; }
+	.admin-article-search-form input:-ms-input-placeholder { color:#9aa7b6; }
+	.admin-article-search-form button { color:#9aa7b6; }
+	.admin-article-search-form button:hover { color:#FFFFFF; }
+}
+@media handheld, only screen and (max-width: 1000px) {
+	.admin-left-column { position:absolute; height:auto; }
+	.admin-logo-nav-controller { position:fixed; width:235px; }
+	.admin-nav-controller, .admin-mobile-nav-hidden { display:none; }
+	.admin-nav-mobile-controller { display:block; }
+	.admin-nav-mobile-controller p { text-align:right; }
+	.admin-nav-mobile-controller p a { display:block; height:64px; line-height:100%; }
+	.admin-main-navigation { position:absolute; background:#364150; width:235px; }
+	.main-nav-category-loop-title.current a:hover { cursor:pointer; }
+	.main-nav-category-loop-title.current p a:after { display:none; }
+	.main-nav-category-loop:hover .main-nav-category-loop-title p a, .main-nav-category-loop-list { background:transparent; }
+	.main-nav-category-loop:hover .main-nav-category-loop-list { display:none; position:relative; top:0; left:0; background:transparent; border:none; }
+	.main-nav-category-loop:hover .main-nav-category-loop-list ul { position:relative; margin-left:28px; margin-bottom:20px; }
+	.main-nav-category-loop:hover .main-nav-category-loop-list ul:after { display:block; content:""; position:absolute; top:0; bottom:10px; border-left:1px dotted #9aa7b6; }
+	.main-nav-category-loop:hover .main-nav-category-loop-list li:before { display:block; content:""; position:absolute; top:0; bottom:10px; left:0; width:14px; border-bottom:1px dotted #9aa7b6; }
+	.main-nav-category-loop:hover .main-nav-category-loop-list li:first-child { padding-top:5px; }
+	.main-nav-category-loop:hover .main-nav-category-loop-list li, .main-nav-category-loop:hover .main-nav-category-loop-list li:first-child { position:relative; padding-left:20px; }
+	.main-nav-category-loop:hover .main-nav-category-loop-list li a { padding:0; }
+	.admin-right-column { margin-left:0px; }
+	.admin-global-controllers-right-items:last-child, .admin-local-controllers-right-items:last-child { margin-right:10px; }
+	.admin-main-navigation { -webkit-border-radius:0 0px 10px 0px; border-radius:0 0px 10px 0px; }
+	.admin-global-controllers-tab-button .username { display:none; }
+}
+@media handheld, only screen and (max-width: 792px) {
+	.admin-left-column { width:58px; }
+	.admin-right-column { margin-left:0; }
+	.admin-logo-image { display:none; }
+	.admin-logo-nav-controller { padding:0; width:58px; }
+	.admin-logo-nav-container { padding:0; }
+	.admin-nav-mobile-controller { margin-left:0px; width:100%; }
+	.admin-nav-mobile-controller p a { line-height:60px; text-align:left; padding:14px 20px; }
+	.admin-nav-mobile-controller p a [class^="tpns-ai-"]:before, .admin-nav-mobile-controller p a [class*=" tpns-ai-"]:before { padding:0; }
+	.admin-user-profile-preview-nav-img-container img { margin-right:5px; }
+}
+@media handheld, only screen and (max-width: 650px) {
+	.admin-user-information-mobile-has-notifications { display:block; position:absolute; top:8px; right:8px; width:10px; height:10px; background:#3598dc; border:1px solid #FFFFFF; -webkit-border-radius:50%; border-radius:50%; }
+	.admin-user-information-desktop { display:none; }
+	.admin-user-information-mobile { display:block; font-size:120%; padding-bottom:10px; margin-top:-10px; margin-bottom:20px; border-bottom:1px solid #435060; }
+	
+}
+@media handheld, only screen and (max-width: 480px) {
+	.admin-user-profile-preview-content-access-level { min-width:250px; }
+	.admin-click-menu-content, .admin-click-sub-menu-content { max-width:180px; }
+}
+@media handheld, only screen and (max-width: 370px) {
+	.articles-new-article-button { display:none; }
+}
+@media handheld, only screen and (max-width: 310px) {
+	.admin-bi-date-filter-items input { width:120px; }
+	.admin-user-profile-preview-content-access-level { min-width:100%; }
+}
+
+
+
+@media print {
+	.datepickers-container { display:none; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
