@@ -389,6 +389,54 @@
                                 <textarea class="new-article-textbox" id="new-article-subhead" maxlength="150" placeholder="Add Subhead here"></textarea>
                             </div>
                         </div>
+                        <div class="new-article-form-content-container-half-width">
+                        	<div class="new-article-form-content-header">
+                            	<div class="new-article-form-content-header-left">
+                                	<h3>Soft-Lead</h3>
+                                </div>
+                            	<div class="new-article-form-content-header-right">
+                                    <div class="admin-click-menu-container">
+                                        <div class="admin-click-menu-button">
+                                            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a title="Open the Article Filter">?</a></p>
+                                            <p class="admin-click-menu-button-pc-close admin-click-menu-filter-pc hidden"><a title="Close the Article Filter">?</a></p>
+                                        </div>
+                                        <div class="admin-click-menu-content admin-click-menu-content-right hidden">
+                                            <p>The most important structural element of a story is the lead (also intro or lede in journalism jargon), including the story's first, or leading, sentence or two, which may or may not form its own paragraph. The lead is usually the first sentence, or in some cases the first two sentences, and is ideally 20–25 words in length.</p>
+                                            <p>e.g.: Humans will be going to the moon again. The NASA announcement came as the agency requested ten billion dollars of appropriations for the project.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        	<div class="new-article-form-content-body">
+                                <textarea name="editor1" id="editor1" rows="10" cols="80">
+                                    This is my textarea to be replaced with CKEditor.
+                                </textarea>
+                            </div>
+                        </div>
+                        <div class="new-article-form-content-container-half-width">
+                        	<div class="new-article-form-content-header">
+                            	<div class="new-article-form-content-header-left">
+                                	<h3>Hard-Lead</h3>
+                                </div>
+                            	<div class="new-article-form-content-header-right">
+                                    <div class="admin-click-menu-container">
+                                        <div class="admin-click-menu-button">
+                                            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a title="Open the Article Filter">?</a></p>
+                                            <p class="admin-click-menu-button-pc-close admin-click-menu-filter-pc hidden"><a title="Close the Article Filter">?</a></p>
+                                        </div>
+                                        <div class="admin-click-menu-content admin-click-menu-content-right hidden">
+                                            <p>The most important structural element of a story is the lead (also intro or lede in journalism jargon), including the story's first, or leading, sentence or two, which may or may not form its own paragraph. The lead is usually the first sentence, or in some cases the first two sentences, and is ideally 20–25 words in length.</p>
+                                            <p>e.g.: Humans will be going to the moon again. The NASA announcement came as the agency requested ten billion dollars of appropriations for the project.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        	<div class="new-article-form-content-body">
+                                <textarea name="editor2" id="editor2" rows="10" cols="80">
+                                    This is my textarea to be replaced with CKEditor.
+                                </textarea>
+                            </div>
+                        </div>
                         
                         
                         
@@ -396,7 +444,7 @@
                         
                         
                         
-                        
+                        <div class="clearfix"></div>
                     </div>
                     <div class="new-article-content-right-column">
                         <div class="new-article-form-content-container-full-width">
@@ -454,5 +502,35 @@
     <script type="text/javascript" src="../global-module/global-js/admin-interface.js"></script>
     <!-- Local JS files -->
     <script type="text/javascript" src="js/admin-articles.js"></script>
+    
+        <script src="ckeditor/ckeditor.js"></script>
+            <script>
+			/*
+					CKEDITOR.editorConfig = function( config ) {
+						config.toolbarGroups = [
+							{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+							{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
+							{ name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
+							{ name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
+							{ name: 'links', groups: [ 'links' ] },
+							{ name: 'insert', groups: [ 'insert' ] },
+							{ name: 'forms', groups: [ 'forms' ] },
+							{ name: 'tools', groups: [ 'tools' ] },
+							{ name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
+							{ name: 'others', groups: [ 'others' ] },
+							'/',
+							{ name: 'styles', groups: [ 'styles' ] },
+							{ name: 'colors', groups: [ 'colors' ] },
+							{ name: 'about', groups: [ 'about' ] }
+						];
+					
+						config.removeButtons = 'Subscript,Superscript,Source,Maximize,Image,EmbedSemantic,Table,HorizontalRule,Anchor,Strike,RemoveFormat,NumberedList,Outdent,Blockquote,BulletedList,Indent,Cut,Copy,Styles,Format,About';
+					};
+			*/
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'editor1' );
+                CKEDITOR.replace( 'editor2' );
+            </script>
 </body>
 </html>

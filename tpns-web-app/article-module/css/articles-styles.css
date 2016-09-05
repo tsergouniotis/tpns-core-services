@@ -167,6 +167,12 @@
 .new-article-form-content-container-full-width {
 	position:relative; width:100%; padding:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; border:1px solid #dce0ec; margin:20px 0px;
 }
+.new-article-form-content-container-half-width {
+	float:left; position:relative; width:49%; padding:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; border:1px solid #dce0ec; margin:0px 0px 20px;
+}
+.new-article-form-content-container-half-width:nth-child(2n+1) {
+	margin-right:2%;
+}
 .new-article-form-content-header {
 	position:relative; width:100%; background:#f1f3fa; padding:10px; margin:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; border-bottom:1px solid #dce0ec;
 }
