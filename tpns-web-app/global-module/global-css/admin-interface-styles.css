@@ -229,7 +229,7 @@ background:#2b3643;
 }
 /* --------------------- Admin header controllers --------------------- */
 .admin-header-controllers {
-	position:relative; display:table; width:100%; height:92px; table-layout:fixed; padding:0; margin:0;
+	position:relative; display:table; width:100%; height:92px; table-layout:fixed; padding:0; margin:0; z-index:100000;
 }
 /* ----- Admin Controlers Area ----- */
 .admin-controllers {
@@ -390,19 +390,22 @@ a.input-reset-button:hover {
 	color:#f2784b;
 }
 .admin-click-menu-content, .admin-click-sub-menu-content {
-	position:absolute; top:100%; min-width:185%; max-width:300px; background:#364150; font-size:0.875em; color:#c6cfda; padding:10px; cursor:default; margin-top:3px; -webkit-border-radius:6px; border-radius:6px;
+	position:absolute; top:100%; min-width:185%; max-width:300px; background:#364150; font-size:0.875em; color:#c6cfda; padding:10px; cursor:default; margin-top:3px; -webkit-border-radius:6px; border-radius:6px; z-index:1;
 }
-.admin-click-menu-content:after, .admin-click-sub-menu-content:after {
-	content:" "; position:absolute; bottom:100%; left:22px; height:0; width:0; border:solid transparent; border-color:rgba(136, 183, 213, 0); border-bottom-color:#364150; border-width:6px; margin-left:-6px; pointer-events:none;
-}
-.admin-click-menu-filter-pc a span.icon:before {
-	padding-left: 10px;
-}
-.admin-click-menu-content-left, .admin-click-sub-menu-content-left {
+.admin-click-menu-content.admin-click-menu-content-left, .admin-click-menu-content.admin-click-sub-menu-content-left {
 	left:-10px;
 }
-.admin-click-menu-content-right, .admin-click-sub-menu-content-right {
+.admin-click-menu-content.admin-click-menu-content-right, .admin-click-menu-content.admin-click-sub-menu-content-right {
 	right:-10px;
+}
+.admin-click-menu-content.admin-click-menu-content-left:after, .admin-click-sub-menu-content.admin-click-menu-content-left:after, .admin-click-menu-content.admin-click-menu-content-right:after, .admin-click-sub-menu-content.admin-click-menu-content-right:after {
+	content:" "; position:absolute; bottom:100%; left:22px; height:0; width:0; border:solid transparent; border-color:rgba(136, 183, 213, 0); border-bottom-color:#364150; border-width:6px; margin-left:-6px; pointer-events:none;
+}
+.admin-click-menu-content.admin-click-menu-content-right:after, .admin-click-sub-menu-content.admin-click-menu-content-right:after {
+	left:auto; right:22px;
+}
+.admin-click-menu-filter-pc a span.icon:before {
+	padding-left:10px;
 }
 /* ----- Admin Global Mobile Only Controller Area - Click Menu ----- */
 .admin-mobile-only-click-menu-button {
@@ -562,7 +565,7 @@ a.input-reset-button:hover {
 /* --------------------- Admin 2 column layout --------------------- */
 /* ----- Left Column Layout ----- */
 .admin-left-column {
-    float:left; position:fixed; width:235px; height:100%; background:#364150;
+    float:left; position:fixed; width:235px; height:100%; background:#364150; z-index:100000;
 }
 .admin-left-column .current a:hover {
 	cursor:text;

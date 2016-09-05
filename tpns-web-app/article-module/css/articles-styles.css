@@ -1,17 +1,32 @@
 /* CSS Document */
-/* ----- Admin Global Content Area - Warning Button ----- */
-.admin-content-controllers-warning-button a {
-	display:inline-block; background:#2b3643; color:#9aa7b6; line-height:26px; padding:0px 10px 2px; -webkit-border-radius:6px; border-radius:6px;
+/* ---------- Admin Global Content Area - Warning Button ---------- */
+.articles-content-button a {
+	display:inline-block; background:#2b3643; color:#9aa7b6; line-height:24px; vertical-align:bottom; padding:0px 10px 4px; -webkit-border-radius:6px; border-radius:6px;
 }
-.admin-content-controllers-warning-button a:hover {
-	background:#f2784b; color:#FFFFFF;
+.articles-content-button a:hover { color:#FFFFFF; }
+.articles-content-button.warning-button a:hover { background:#f2784b; }
+.articles-content-button.stop-button a:hover { background:#e7505a; }
+.articles-content-button.go-button a:hover { background:#26c281; }
+.articles-content-button.schedule-button a:hover { background:#8e44ad; }
+.articles-content-button a [class^="tpns-ai-"]:before, .articles-content-button a [class*=" tpns-ai-"]:before {
+	padding-left:0px; padding-right:10px; font-size:110%;
 }
-.admin-content-controllers-warning-button a [class^="tpns-ai-"]:before, .admin-content-controllers-warning-button a [class*=" tpns-ai-"]:before {
-	padding-left:0px; padding-right:10px; font-size:80%;
+.articles-content-button a [class^="tpns-ai-close"]:before, .articles-content-button a [class*=" tpns-ai-close"]:before {
+	font-size:80%;
 }
 
+/* ---------- Admin Global Content Area Form - Textarea ---------- */
+.new-article-form-content-body textarea {
+	width:100%; min-height:30px; max-height:200px; color:#2b3643; font-family:OpenSans-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:1.125em; line-height:30px; padding:0; margin:0%; border:0px solid #2b3643; border-bottom:1px dotted #2b3643; resize:vertical; overflow:hidden; outline:none;
+}
+.new-article-form-content-body textarea::-webkit-input-placeholder { color:#2b3643; font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif; }
+.new-article-form-content-body textarea:-moz-placeholder { color:#2b3643; font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif; }
+.new-article-form-content-body textarea::-moz-placeholder { color:#2b3643; font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif; }
+.new-article-form-content-body textarea:-ms-input-placeholder { color:#2b3643; font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif; }
 
-/* ----- Articles Filter Results Area ----- */
+
+
+/* ---------- Articles Filter Results Area ---------- */
 .filter-inactive h2, .filter-active h3, .filter-active p {
 	height:30px; line-height:30px; vertical-align:top;
 }
@@ -39,10 +54,9 @@
 .filter-active p {
 	padding:0;
 }
-.filter-active-items.admin-content-controllers-warning-button a {
+.filter-active-items.articles-content-button a {
 	margin-left:10px;
 }
-
 
 /* ----- Articles Data Table ----- */
 .global-table.all-articles-table {
@@ -101,7 +115,7 @@
 .select-all-rows-container, .admin-articles-bulk-actions-controller {
 	display:inline-block; vertical-align:text-top;
 }
-.select-all-rows-button-check a [class^="tpns-ai-"]:before, .select-all-rows-button-check a [class*=" tpns-ai-"]:before {
+.select-all-rows-button-check a [class^="tpns-ai-"]:before, .select-all-rows-button-check a [class*=" tpns-ai-"]:before, .select-all-rows-button-uncheck a [class^="tpns-ai-"]:before, .select-all-rows-button-uncheck a [class*=" tpns-ai-"]:before {
 	padding:0px 0px 0px 5px;
 }
 .admin-articles-bulk-actions-controller a [class^="tpns-ai-"]:before, .admin-articles-bulk-actions-controller a [class*=" tpns-ai-"]:before {
@@ -136,6 +150,53 @@
 	color:#26c281;
 }
 
+/* ---------- New Article Content Container ---------- */
+.new-article-content-container {
+	position:relative; width:100%; padding:0; margin:0;
+}
+.new-article-content-container h3, .new-article-content-container p {
+	line-height:100%; padding:0; margin:0;
+}
+.new-article-content-left-column {
+	float:left; width:71.7%; pading:0; margin:0;
+}
+.new-article-content-right-column {
+	float:left; width:27%; pading:0; margin:0; margin-left:1.3%;
+}
+/* ----- Form Containers ----- */
+.new-article-form-content-container-full-width {
+	position:relative; width:100%; padding:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; border:1px solid #dce0ec; margin:20px 0px;
+}
+.new-article-form-content-header {
+	position:relative; width:100%; background:#f1f3fa; padding:10px; margin:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; border-bottom:1px solid #dce0ec;
+}
+.new-article-form-content-header-left, .new-article-form-content-header-right {
+	display:inline-block;
+}
+.new-article-form-content-header h3, .new-article-form-content-header-right p a {
+	font-family:OpenSans-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif; 
+}
+.new-article-form-content-header-right {
+	float:right;
+}
+.new-article-form-content-header-right p a {
+	display:block; width:24px; height:24px; background:#FFFFFF; line-height:24px; text-align:center; font-size:1.063em; padding:0; border:1px solid #2b3643; -webkit-border-radius:6px; border-radius:6px; margin:0;
+}
+.new-article-form-content-header-right p a:hover, .new-article-form-content-header-right .admin-click-menu-button-pc-close a {
+	background:#2b3643; color:#FFFFFF;
+}
+.new-article-form-content-header-right .admin-click-menu-button-pc-close a:hover {
+	background:#FFFFFF; color:#2b3643;
+}
+.new-article-form-content-header-right .admin-click-menu-content.admin-click-menu-content-right, .new-article-form-content-header-right .admin-click-menu-content.admin-click-sub-menu-content-right {
+    right:-15px; margin-top:14px;
+}
+.new-article-form-content-header-right .admin-click-menu-content {
+	min-width:300px; color:#FFFFFF;
+}
+.new-article-form-content-header-right .admin-click-menu-content p {
+	line-height:120%;
+}
 
 
 
@@ -144,6 +205,10 @@
 
 
 
+
+.new-article-form-content-body {
+	position:relative; width:100%; padding:10px; margin:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
 
 
 

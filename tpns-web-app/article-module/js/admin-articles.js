@@ -1,6 +1,23 @@
 // JavaScript Document
+// CountChars in form based on html maxlength attribute
+(function($) {
+  'use strict';
+  $.fn.countChar = function() {
+    return this.each(function(i, element) {
+      $(element).keyup(function updateCharCounter() {
+        var $countCharInput = $(this),
+          maxLength = parseInt($countCharInput.attr('maxlength'), 10),
+          charCount = $countCharInput.val().length,
+          $counter = $countCharInput.siblings('.limit');$counter.text(maxLength - charCount);
+      });
+    });
+  };
+}(jQuery));
+
 $(document).ready( function() {
 	'use strict';
+	// Initialize CountChars in form
+	$(".new-article-textbox").countChar();
 	// Reset Articles Filter on click of the close button
 	$(".filter-active").find("a").click(function(e) {
 		$(this).parent().parent().find(".filter-active-sub-category-container, .filter-active-first-seperator").addClass("hidden");
@@ -21,7 +38,6 @@ $(document).ready( function() {
 	$(".admin-global-checkbox input:checkbox").removeAttr('checked').removeAttr('checked');
     function check() {
         var $checkbox = $(this);
-        var num = $checkbox.parent().hasClass("admin-global-checkbox-checked");
         if ($checkbox.is(":checked")) {
             $(this).attr('checked','checked').parent().parent().parent().parent().addClass("admin-global-checkbox-checked");
         } else {
@@ -29,6 +45,24 @@ $(document).ready( function() {
         }
     }
     $("input[type=checkbox]").each(check).change(check);
+	// Select all checkboxes
+	$(".select-all-rows-button-check, .select-all-rows-button-uncheck").on("click", function () {
+        var check = $(".admin-global-checkbox input:checkbox").is(":checked") ? false:true;
+        $(".admin-global-checkbox input:checkbox").prop('checked', check).attr('checked','checked').parent().parent().parent().parent().addClass("admin-global-checkbox-checked");
+		
+		if ($(".admin-global-checkbox input:checkbox").is(':checked')) {
+			$(".select-all-rows-button-check").addClass("hidden");
+			$(".select-all-rows-button-uncheck").removeClass("hidden");
+		}
+    });
+	$(".select-all-rows-button-uncheck").on("click", function () {
+        var check = $(".admin-global-checkbox input:checkbox").is(":checked") ? false:true;
+        $(".admin-global-checkbox input:checkbox").prop('checked', check).removeAttr('checked').parent().parent().parent().parent().removeClass("admin-global-checkbox-checked");
+		if ($(".admin-global-checkbox input:checkbox").is(':checked') !== true) {
+			$(".select-all-rows-button-check").removeClass("hidden");
+			$(".select-all-rows-button-uncheck").addClass("hidden");
+		}
+    });
 	
 	
 	

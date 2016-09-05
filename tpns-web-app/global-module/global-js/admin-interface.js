@@ -107,14 +107,8 @@ $(document).ready( function() {
 		$(this).parent().parent().parent().find(".admin-click-sub-menu-content").removeClass("hidden").show();
 		e.preventDefault();
 	});
-	
-	
-	
-
-
-	
 	// Options for Open Click Menu
-	$('.admin-click-menu-content-list li a').on('click', function(){
+	$(".admin-click-menu-content-list li a").on('click', function(e){
 		$(this).parent().siblings().removeClass('current');
 		$(this).parent().parent().parent().parent().parent().find(".admin-bi-date-filter-selected-" + $(this).parent().attr("class")).removeClass("hidden").siblings().addClass("hidden");
 		$(this).parent().addClass('current');
@@ -125,6 +119,8 @@ $(document).ready( function() {
 			$(this).closest("body").find(".filter-active").removeClass("hidden").find(".filter-active-reporter").addClass("reporter-active").html($(this).find("u, span").clone());
 			if($(".filter-active-category").hasClass("category-active")) {
 				$(".filter-active-first-seperator").removeClass("hidden");
+				$(".admin-click-menu-button-pc-close").trigger("click");
+				e.stopPropogation();
 			} else {
 				$(".filter-active-first-seperator").addClass("hidden");
 			}
@@ -140,27 +136,11 @@ $(document).ready( function() {
 			}
 		}
 		// If this is the Sub Category Filter List being clicked then add results in the relevant div
-		/*
-		var subCategoryConditionOne = $(this).parent().parent().parent().find(".admin-bi-sub-category-list").length;
-		var subCategoryConditionTwo = $(this).parent().parent().parent().parent().parent().parent(".admin-bi-date-filter-selected-").children().length;
-		if ( subCategoryConditionOne === 1 && subCategoryConditionTwo === 0 ) {
-			$(this).closest("body").find(".filter-active-sub-category-container").removeClass("hidden").find(".filter-active-sub-category").html($(this).find("u, span").clone());
-		} 
-		if ( subCategoryConditionOne === 0 && subCategoryConditionTwo === 0 ) {
-			$(this).closest("body").find(".filter-active-sub-category-container").addClass("hidden");
-		}
-		
-		*/
 		if ( $(this).parent().parent().parent().find(".admin-bi-sub-category-list").length ) {
 			$(this).closest("body").find(".filter-active-sub-category-container").removeClass("hidden").find(".filter-active-sub-category").html($(this).find("u, span").clone());
 		} else {
 			$(this).closest("body").find(".filter-active-sub-category-container").addClass("hidden");
 		}
-		
-		
-		
-		
-		
 		if ( $(this).find("u").length ) {
 			$(this).parent().parent().parent().parent().find('.selected-admin-bi-reporter-image').html($(this).find("u").clone());
 		}

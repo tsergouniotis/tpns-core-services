@@ -219,6 +219,10 @@ url("../global-fonts/tpns-admin-icons.svg#tpns-admin-icons") format("svg");
 .tpns-ai-tag-add:before { content: "\28"; }
 .tpns-ai-editors-choice:before { content: "\2a"; }
 .tpns-ai-editors-choice-selected:before { content: "\2b"; }
+.tpns-ai-preview-hide:before { content: "\2c"; }
+.tpns-ai-preview-show:before { content: "\2d"; }
+.tpns-ai-save:before { content: "\2e"; }
+.tpns-ai-cloud-upload:before { content: "\2f"; }
 
 /* --------------------- Headers ---------------------- */
 h1 {
