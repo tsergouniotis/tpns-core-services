@@ -408,8 +408,8 @@
                                 </div>
                             </div>
                         	<div class="new-article-form-content-body">
-                                <textarea name="editor1" id="editor1" rows="10" cols="80">
-                                    This is my textarea to be replaced with CKEditor.
+                                <textarea name="softLeadEditor" id="softLeadEditor" rows="10" cols="80">
+                                    Add Soft-lead Sentence here
                                 </textarea>
                             </div>
                         </div>
@@ -432,8 +432,8 @@
                                 </div>
                             </div>
                         	<div class="new-article-form-content-body">
-                                <textarea name="editor2" id="editor2" rows="10" cols="80">
-                                    This is my textarea to be replaced with CKEditor.
+                                <textarea name="hardLeadEditor" id="hardLeadEditor" rows="10" cols="80">
+                                    Add Hard-lead Paragraph here
                                 </textarea>
                             </div>
                         </div>
@@ -502,35 +502,10 @@
     <script type="text/javascript" src="../global-module/global-js/admin-interface.js"></script>
     <!-- Local JS files -->
     <script type="text/javascript" src="js/admin-articles.js"></script>
-    
-        <script src="ckeditor/ckeditor.js"></script>
-            <script>
-			/*
-					CKEDITOR.editorConfig = function( config ) {
-						config.toolbarGroups = [
-							{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-							{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
-							{ name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
-							{ name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
-							{ name: 'links', groups: [ 'links' ] },
-							{ name: 'insert', groups: [ 'insert' ] },
-							{ name: 'forms', groups: [ 'forms' ] },
-							{ name: 'tools', groups: [ 'tools' ] },
-							{ name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
-							{ name: 'others', groups: [ 'others' ] },
-							'/',
-							{ name: 'styles', groups: [ 'styles' ] },
-							{ name: 'colors', groups: [ 'colors' ] },
-							{ name: 'about', groups: [ 'about' ] }
-						];
-					
-						config.removeButtons = 'Subscript,Superscript,Source,Maximize,Image,EmbedSemantic,Table,HorizontalRule,Anchor,Strike,RemoveFormat,NumberedList,Outdent,Blockquote,BulletedList,Indent,Cut,Copy,Styles,Format,About';
-					};
-			*/
-                // Replace the <textarea id="editor1"> with a CKEditor
-                // instance, using default configuration.
-                CKEDITOR.replace( 'editor1' );
-                CKEDITOR.replace( 'editor2' );
-            </script>
+    <script src="ckeditor/ckeditor.js"></script>
+	<script>
+		CKEDITOR.replace( 'softLeadEditor', { customConfig : 'tpns-custom-editors/softleadconfig.js' });
+		CKEDITOR.replace( 'hardLeadEditor', { customConfig : 'tpns-custom-editors/hardleadconfig.js' });
+    </script>
 </body>
 </html>
