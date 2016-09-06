@@ -219,8 +219,16 @@
 
 
 
-
-
+/* --------------- CKEditor Temp styles ------------------ */
+.cke_chrome {
+	margin-bottom:30px !important;
+}
+.cke_bottom {
+    min-height:20px !important; overflow:visible !important;
+}
+.cke_wordcount {
+	float:none !important; margin-right:3px !important; margin-top:3px !important; position:absolute !important; right:0 !important; top:100% !important;
+}
 
 
 
