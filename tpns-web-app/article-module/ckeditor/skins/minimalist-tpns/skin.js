@@ -31,7 +31,7 @@ For this skin, the following tasks are achieved in this file:
 // used on config.skin to tell the editor to use the skin.
 //
 // This is the only mandatory property to be defined in this file.
-CKEDITOR.skin.name = 'minimalist';
+CKEDITOR.skin.name = 'minimalist-tpns';
 
 // 2. Register browser specific skin files
 // -----------------------------------------
@@ -279,7 +279,7 @@ CKEDITOR.skin.chameleon = ( function() {
 // ----------------------------------------------------------
 // (http://docs.cksource.com/CKEditor_4.x/Skin_SDK/Icons)
 //
-// Note: As "minimalist" is the default CKEditor skin, it provides no custom icons,
+// Note: As "minimalist-tpns" is the default CKEditor skin, it provides no custom icons,
 // thus this code is commented out.
 //
 // This code is here just to make the skin work fully when using its "source"

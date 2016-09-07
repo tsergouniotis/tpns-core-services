@@ -23,7 +23,7 @@
 .new-article-form-content-body textarea:-moz-placeholder { color:#2b3643; font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif; }
 .new-article-form-content-body textarea::-moz-placeholder { color:#2b3643; font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif; }
 .new-article-form-content-body textarea:-ms-input-placeholder { color:#2b3643; font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif; }
-
+.new-article-form-content-body .limit { padding:3px 0 3px 4px; }
 
 
 /* ---------- Articles Filter Results Area ---------- */
@@ -221,16 +221,26 @@
 
 /* --------------- CKEditor Temp styles ------------------ */
 .cke_chrome {
-	margin-bottom:30px !important;
+	margin-bottom:30px !important; border:0px solid #FFFFFF !important; border-bottom:1px dotted #2b3643 !important;
+}
+.cke_top {
+	padding:0px !important;
+}
+.cke_editable {
+	margin:5px !important;
 }
 .cke_bottom {
     min-height:20px !important; overflow:visible !important;
 }
-.cke_wordcount {
-	float:none !important; margin-right:3px !important; margin-top:3px !important; position:absolute !important; right:0 !important; top:100% !important;
+.cke_path_item, .cke_path_empty {
+	font-weight:normal !important; text-shadow:none !important; font-family:OpenSans-Light, "Trebuchet MS", Arial, Helvetica, sans-serif !important; margin:0px !important;
 }
-
-
+.cke_wordcount {
+	float:none !important; margin-right:0px !important; margin-top:3px !important; position:absolute !important; right:0 !important; top:100% !important;
+}
+.cke_wordcount .cke_path_item {
+	font-size:1.273em !important; padding:3px 0 3px 4px !important;
+}
 
 
 

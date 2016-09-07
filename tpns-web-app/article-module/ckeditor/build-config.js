@@ -25,7 +25,7 @@
  */
 
 var CKBUILDER_CONFIG = {
-	skin: 'minimalist',
+	skin: 'minimalist-tpns',
 	preset: 'standard',
 	ignore: [
 		'.bender',
