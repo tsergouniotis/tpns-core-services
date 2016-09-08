@@ -223,6 +223,8 @@ url("../global-fonts/tpns-admin-icons.svg#tpns-admin-icons") format("svg");
 .tpns-ai-preview-show:before { content: "\2d"; }
 .tpns-ai-save:before { content: "\2e"; }
 .tpns-ai-cloud-upload:before { content: "\2f"; }
+.tpns-ai-radio-button-off:before { content: "\3a"; }
+.tpns-ai-radio-button-on:before { content: "\3b"; }
 
 /* --------------------- Headers ---------------------- */
 h1 {

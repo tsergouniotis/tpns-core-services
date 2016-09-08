@@ -479,9 +479,17 @@
                                 <!-- NOTE: Remember to add the maxlength number in the p below -->
                                 <textarea class="new-article-textbox" id="new-article-kicker" maxlength="50" placeholder="Add Kicker here..."></textarea>
                                 <h6 class="limit textr">50</h6>
-                                <h5>Kicker Background Image</h5>
-                                <div class="new-article-form-content-body-extras">
-                                
+                                <div class="image-upload-container">
+                                	<h5>Kicker Image</h5>
+                                	<div id="kickerUploader"></div>
+                                </div>
+                                <div class="new-article-content-options">
+                                	<p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label">Use Soft-lead Text</span></label></p>
+                                    <div class="new-article-content-text-options-container">
+                                        <p class="admin-global-radio"><label><input type="radio" name="billboard-img-options" value="img-before" checked><span class="admin-global-radio-label">Image before text</span></label></p>
+                                        <p class="admin-global-radio"><label><input type="radio" name="billboard-img-options" value="img-after"><span class="admin-global-radio-label">Image after text</span></label></p>
+                                        <p class="admin-global-radio"><label><input type="radio" name="billboard-img-options" value="img-bkg"><span class="admin-global-radio-label">Image as background</span></label></p>
+                                    </div> 
                                 </div>
                             </div>
                         </div>
@@ -550,6 +558,7 @@
     <script type="text/javascript" src="../global-module/global-js/admin-interface.js"></script>
     <!-- Local JS files -->
     <script type="text/javascript" src="js/admin-articles.js"></script>
+    <script type="text/javascript" src="js/jquery.uploadfile.js"></script>
     <!-- Inline JS files -->
     <script src="ckeditor/ckeditor.js"></script>
 	<script>

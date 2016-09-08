@@ -33,6 +33,16 @@ mark { background-color:#364150; color:#c6cfda; font-style:italic; font-weight: 
 .admin-global-checkbox input[type=checkbox]:checked + span.admin-global-checkbox-label:before {
     content:"\67"; font-family:"tpns-admin-icons";
 }
+/* ----- Admin Radio Buttons ----- */
+.admin-global-radio label span.admin-global-radio-label:before {
+	content:"\3a"; line-height:20px; font-family:"tpns-admin-icons"; vertical-align:middle; cursor:pointer; padding:0px 5px; margin:0;
+}
+.admin-global-radio input[type=radio] {
+	display:none;
+}
+.admin-global-radio input[type=radio]:checked + span.admin-global-radio-label:before {
+    content:"\3b"; font-family:"tpns-admin-icons";
+}
 /* ----- Datepicker cells ----- */
 .datepicker--cells {
 	padding:10px;
