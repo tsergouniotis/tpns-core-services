@@ -163,9 +163,15 @@
 .new-article-content-right-column {
 	float:left; width:27%; pading:0; margin:0; margin-left:1.3%;
 }
+.new-article-form-content-header-right .admin-click-menu-content p {
+	padding-bottom:10px;
+}
+.new-article-form-content-header-right .admin-click-menu-content p:last-child {
+	padding-bottom:0px;
+}
 /* ----- Form Containers ----- */
 .new-article-form-content-container-full-width {
-	position:relative; width:100%; padding:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; border:1px solid #dce0ec; margin:20px 0px;
+	clear:both; position:relative; width:100%; padding:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; border:1px solid #dce0ec; margin:20px 0px;
 }
 .new-article-form-content-container-half-width {
 	float:left; position:relative; width:49%; padding:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; border:1px solid #dce0ec; margin:0px 0px 20px;
@@ -239,6 +245,6 @@
 	float:none !important; margin-right:0px !important; margin-top:3px !important; position:absolute !important; right:0 !important; top:100% !important;
 }
 .cke_wordcount .cke_path_item {
-	font-size:1.273em !important; padding:3px 0 3px 4px !important;
+	font-size:1.125em !important; padding:3px 0 3px 4px !important;
 }
 
