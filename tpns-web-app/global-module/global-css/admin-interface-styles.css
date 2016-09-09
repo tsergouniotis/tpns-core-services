@@ -24,6 +24,9 @@ mark { background-color:#364150; color:#c6cfda; font-style:italic; font-weight: 
 
 /* ------------------------- Admin Date Picker ------------------------ */
 /* ----- Admin Checkboxes ----- */
+.admin-global-checkbox label {
+	cursor:pointer;
+}
 .admin-global-checkbox label span.admin-global-checkbox-label:before {
 	content:"\4d"; line-height:20px; font-family:"tpns-admin-icons"; vertical-align:middle; cursor:pointer; padding:0px 5px; margin:0;
 }
@@ -34,6 +37,9 @@ mark { background-color:#364150; color:#c6cfda; font-style:italic; font-weight: 
     content:"\67"; font-family:"tpns-admin-icons";
 }
 /* ----- Admin Radio Buttons ----- */
+.admin-global-radio label {
+	cursor:pointer;
+}
 .admin-global-radio label span.admin-global-radio-label:before {
 	content:"\3a"; line-height:20px; font-family:"tpns-admin-icons"; vertical-align:middle; cursor:pointer; padding:0px 5px; margin:0;
 }

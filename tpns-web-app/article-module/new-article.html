@@ -485,10 +485,73 @@
                                 </div>
                                 <div class="new-article-content-options">
                                 	<p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label">Use Soft-lead Text</span></label></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-article-form-content-container-half-width">
+                        	<div class="new-article-form-content-header">
+                            	<div class="new-article-form-content-header-left">
+                                	<h3>Billboard</h3>
+                                </div>
+                            	<div class="new-article-form-content-header-right">
+                                    <div class="admin-click-menu-container">
+                                        <div class="admin-click-menu-button">
+                                            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a title="Open the Article Filter">?</a></p>
+                                            <p class="admin-click-menu-button-pc-close admin-click-menu-filter-pc hidden"><a title="Close the Article Filter">?</a></p>
+                                        </div>
+                                        <div class="admin-click-menu-content admin-click-menu-content-right hidden">
+                                            <p>An article billboard is capsule summary text, often just one sentence or fragment, which is put into a sidebar or text box (reminiscent of an outdoor billboard) on the same page to grab the reader's attention as they are flipping through the pages to encourage them to stop and read that article.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        	<div class="new-article-form-content-body">
+                                <textarea name="billboardEditor" id="billboardEditor" rows="10" cols="80" placeholder="Add Billboard text here..."></textarea>
+                                <div class="image-upload-container">
+                                	<h5>Billboard Image</h5>
+                                	<div id="billboardUploader"></div>
+                                </div>
+                                <div class="new-article-content-options">
+                                	<p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label">Use Kicker Image</span></label></p>
                                     <div class="new-article-content-text-options-container">
-                                        <p class="admin-global-radio"><label><input type="radio" name="billboard-img-options" value="img-before" checked><span class="admin-global-radio-label">Image before text</span></label></p>
+                                        <p class="admin-global-radio"><label><input type="radio" name="billboard-img-options" value="img-above" checked><span class="admin-global-radio-label">Image above text</span></label></p>
+                                        <p class="admin-global-radio"><label><input type="radio" name="billboard-img-options" value="img-before"><span class="admin-global-radio-label">Image before text</span></label></p>
                                         <p class="admin-global-radio"><label><input type="radio" name="billboard-img-options" value="img-after"><span class="admin-global-radio-label">Image after text</span></label></p>
                                         <p class="admin-global-radio"><label><input type="radio" name="billboard-img-options" value="img-bkg"><span class="admin-global-radio-label">Image as background</span></label></p>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-article-form-content-container-half-width">
+                        	<div class="new-article-form-content-header">
+                            	<div class="new-article-form-content-header-left">
+                                	<h3>Nutshell</h3>
+                                </div>
+                            	<div class="new-article-form-content-header-right">
+                                    <div class="admin-click-menu-container">
+                                        <div class="admin-click-menu-button">
+                                            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a title="Open the Article Filter">?</a></p>
+                                            <p class="admin-click-menu-button-pc-close admin-click-menu-filter-pc hidden"><a title="Close the Article Filter">?</a></p>
+                                        </div>
+                                        <div class="admin-click-menu-content admin-click-menu-content-right hidden">
+                                            <p>A nutshell paragraph (also simply nutshell, or nut 'graph, nut graf, nutgraf, etc., in journalism jargon) is a brief paragraph (occasionally there can be more than one) that summarizes the news value of the story, sometimes bullet-pointed and/or set off in a box. Nut-shell paragraphs are used particularly in feature stories.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        	<div class="new-article-form-content-body">
+                                <textarea name="nutshellEditor" id="nutshellEditor" rows="10" cols="80" placeholder="Add Nutshell text here..."></textarea>
+                                <div class="image-upload-container">
+                                	<h5>Nutshell Image</h5>
+                                	<div id="nutshellUploader"></div>
+                                </div>
+                                <div class="new-article-content-options">
+                                	<p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label">Use Kicker Image</span></label></p>
+                                    <div class="new-article-content-text-options-container">
+                                        <p class="admin-global-radio"><label><input type="radio" name="nutshell-img-options" value="img-above" checked><span class="admin-global-radio-label">Image above text</span></label></p>
+                                        <p class="admin-global-radio"><label><input type="radio" name="nutshell-img-options" value="img-before"><span class="admin-global-radio-label">Image before text</span></label></p>
+                                        <p class="admin-global-radio"><label><input type="radio" name="nutshell-img-options" value="img-after"><span class="admin-global-radio-label">Image after text</span></label></p>
+                                        <p class="admin-global-radio"><label><input type="radio" name="nutshell-img-options" value="img-bkg"><span class="admin-global-radio-label">Image as background</span></label></p>
                                     </div> 
                                 </div>
                             </div>
@@ -565,6 +628,8 @@
 		CKEDITOR.replace( 'softLeadEditor', { customConfig : 'tpns-custom-editors/softleadconfig.js' });
 		CKEDITOR.replace( 'hardLeadEditor', { customConfig : 'tpns-custom-editors/hardleadconfig.js' });
 		CKEDITOR.replace( 'articleEditor', { customConfig : 'tpns-custom-editors/articleconfig.js' });
+		CKEDITOR.replace( 'billboardEditor', { customConfig : 'tpns-custom-editors/billboardconfig.js' });
+		CKEDITOR.replace( 'nutshellEditor', { customConfig : 'tpns-custom-editors/nutshellconfig.js' });
     </script>
 </body>
 </html>
