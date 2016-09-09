@@ -80,7 +80,7 @@ $(document).ready( function() {
 			previewHeight: "100px",
 			previewWidth: "auto",
 			multiDragErrorStr: "You can only add one image to the Kicker",
-			dragDropStr: "<span>Drag &amp; Drop Files Here...</span>",
+			dragDropStr: "<br /><span>Drag &amp; Drop Image Here...</span>",
 			showDelete: true,
 			deleteCallback: function (data, pd) {
 			for (var i = 0; i < data.length; i++) {
@@ -106,8 +106,8 @@ $(document).ready( function() {
 			showPreview:true,
 			previewHeight: "100px",
 			previewWidth: "auto",
-			multiDragErrorStr: "You can only add one image to the Kicker",
-			dragDropStr: "<span>Drag &amp; Drop Files Here...</span>",
+			multiDragErrorStr: "You can only add one image to the Billboard",
+			dragDropStr: "<br /><span>Drag &amp; Drop Image Here...</span>",
 			showDelete: true,
 			deleteCallback: function (data, pd) {
 			for (var i = 0; i < data.length; i++) {
@@ -133,8 +133,8 @@ $(document).ready( function() {
 			showPreview:true,
 			previewHeight: "100px",
 			previewWidth: "auto",
-			multiDragErrorStr: "You can only add one image to the Kicker",
-			dragDropStr: "<span>Drag &amp; Drop Files Here...</span>",
+			multiDragErrorStr: "You can only add one image to the Nutshell",
+			dragDropStr: "<br /><span>Drag &amp; Drop Image Here...</span>",
 			showDelete: true,
 			deleteCallback: function (data, pd) {
 			for (var i = 0; i < data.length; i++) {

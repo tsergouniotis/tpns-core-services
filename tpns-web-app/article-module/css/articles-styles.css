@@ -211,6 +211,41 @@
 
 
 
+/* ----- Categories Container ----- */
+.new-article-categories-container {
+	max-height:400px; overflow-y:auto;
+}
+.new-article-categories-container ul li h5 i:before, .new-article-categories-container ul li h5 .admin-global-checkbox-label:before {
+	padding-right:10px;
+}
+.new-article-categories-container ul li h5 label {
+	line-height:40px;
+}
+.new-article-categories-container ul ul {
+	position:relative; margin-left:15px;
+}
+.new-article-categories-container ul ul:after {
+	display:block; content:""; position:absolute; top:-5px; bottom:10px; left:0; border-left:1px dotted #2b3643; -webkit-border-radius: 0 10px 10px 0;
+border-radius: 0 10px 10px 0;
+}
+.new-article-categories-container ul ul li {
+	position:relative; padding-left:10px;
+}
+.new-article-categories-container ul ul li:before {
+	display:block; content:""; position:absolute; top:0; bottom:10px; left:0; width:15px; border-bottom:1px dotted #9aa7b6;
+}
+.new-article-categories-container ul ul li p {
+	display:block; line-height:26px; padding:0; margin:0; white-space:nowrap;
+}
+.new-article-categories-container ul ul li p label {
+	width:100%; display:inline-block;
+}
+.new-article-categories-container ul ul li p.admin-global-checkbox label span.admin-global-checkbox-label:before {
+	padding:0 10px 0 5px;
+}
+
+
+
 
 
 
@@ -255,17 +290,8 @@
 .image-upload-container, .new-article-content-options {
 	display:inline-block; vertical-align:top;
 }
-.new-article-form-content-container-full-width .image-upload-container {
-	width:48%;
-}
-.new-article-form-content-container-half-width .image-upload-container {
-	width:100%;
-}
-.new-article-form-content-container-full-width .new-article-content-options .admin-global-checkbox {
-	margin-left:20px;
-}
-.new-article-form-content-container-half-width .new-article-content-options .admin-global-checkbox {
-	margin-top:20px;
+.new-article-content-options {
+	margin-left:10px;
 }
 .ajax-file-upload:before {
 	content:"\23"; font-family:"tpns-admin-icons"; font-size:120%; vertical-align:bottom; padding-right:5px;
@@ -292,7 +318,7 @@
 	position:absolute; display:inline-block; top:3px; left:48%; color:#f1f3fa;
 }
 .ajax-upload-dragdrop {
-	background:#f1f3fa; width:auto; text-align:left; vertical-align:middle; padding:20px 10px; margin-top:10px; border:1px dotted #2b3643;
+	background:#f1f3fa; width:auto; text-align:center; vertical-align:middle; padding:20px 10px; margin-top:10px; border:1px solid #dce0ec;
 }
 .ajax-upload-dragdrop span {
 	line-height:30px; padding-left:10px;
@@ -300,3 +326,21 @@
 .state-hover {
 	border:1px solid #2b3643;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

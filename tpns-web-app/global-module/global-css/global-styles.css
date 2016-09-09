@@ -290,7 +290,7 @@ i, u { text-decoration:none; }
 
 /* --------------------- Single/Special use global-fonts --------------------- */
 /* Special Use global-fonts normally do not have a font-size and start with a class of .text100 as it is inherited by the header font size, if they do have a font-size then the class starts from .text200 upwards */
-.text100, button.global-form-submit-button {
+.textn, .text100, button.global-form-submit-button {
 	font-family: OpenSans-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 /*
