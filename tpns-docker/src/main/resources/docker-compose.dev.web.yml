@@ -69,10 +69,7 @@ services:
     env_file:
     - prod.env
     volumes:
-    - ${HOME}/Dev/tpns-core-services/tpns-web-app/access-module:/usr/share/nginx/html/tpns/access-module
-    - ${HOME}/Dev/tpns-core-services/tpns-web-app/dashboard-module:/usr/share/nginx/html/tpns/dashboard-module
-    - ${HOME}/Dev/tpns-core-services/tpns-web-app/global-module:/usr/share/nginx/html/tpns/global-module
-    - ${HOME}/Dev/tpns-core-services/tpns-web-app/user-module:/usr/share/nginx/html/tpns/user-module
+    - ${HOME}/Dev/tpns-core-services/tpns-web-app:/usr/share/nginx/html/tpns
     networks:
     - core_net
 networks:

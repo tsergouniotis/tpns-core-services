@@ -170,7 +170,12 @@ $(document).ready( function() {
 });
 
 
-
+function readArticles(){
+	var username = getCookie("username");
+	var authtoken = getCookie("authtoken");
+	console.log("username = "+username);
+	console.log("authtoken = "+authtoken);
+}
 
 
 

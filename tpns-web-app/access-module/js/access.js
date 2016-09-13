@@ -12,7 +12,6 @@ function OpenWindow() {
 }
 
 function readName(){
-	console.log("hello");
 	var uname = getHttpRequestParameter("username");
 	if (uname){
 		document.getElementById("username").value = uname;
@@ -38,7 +37,10 @@ function doLogin(){
 	});
 
 	request.done(function( data) {
-		location.href = "../dashboard-module/business-intelligence-dashboard.html"
+		var authtoken = data.access_token;
+             	setCookie("username", username, 365);
+             	setCookie("authtoken", authtoken, 365);
+		location.href = "../article-module/articles.html"
 	});
 	 
 	return false;
