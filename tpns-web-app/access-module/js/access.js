@@ -37,6 +37,9 @@ function doLogin(){
 	});
 
 	request.done(function( data) {
+		var authtoken = data.access_token;
+             	setCookie("username", username, 365);
+             	setCookie("authtoken", authtoken, 365);
 		location.href = "../article-module/articles.html"
 	});
 	 
