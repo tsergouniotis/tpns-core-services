@@ -64,6 +64,21 @@ $(document).ready( function() {
 		}
     });
 	
+	// Categories - Test to see if we have a child ul in a category parent li then do...
+	$(".new-article-categories-container ul li").has("ul").find("i").removeClass("hidden");
+	$(".new-article-categories-container ul li:not(:has(ul))").find(".hide-sub-categories").hide();
+	$(".new-article-categories-container ul li:not(:has(ul))").find("span").addClass("admin-global-checkbox-label").before('<input type="checkbox">');
+	$(".new-article-categories-container ul li ul li label input").attr("name", "" + $(".new-article-categories-container ul li ul li label input").parent().parent().parent().parent().parent().attr("class"));
+	$(".new-article-categories-container ul li h5 label input").attr("name", "" + $(".new-article-categories-container ul li h5 label input").parent().parent().parent().attr("class"));
+	// Categories - Toggle Sub-categories
+	$(".new-article-categories-container ul li h5 > span").click(function() {
+		$(this).toggleClass("hide-sub-categories");
+		$(this).toggleClass("show-sub-categories");
+		$(this).find(".tpns-ai-preview-hide").toggleClass("hidden");
+		$(this).find(".tpns-ai-preview-show").toggleClass("hidden");
+		$(this).parent().parent().find("ul").toggleClass("hidden");
+	});
+	
 	// Initialize jquery-uploader
 	// Dev Docs can be found here... http://hayageek.com/docs/jquery-upload-file.php
 	$("#kickerUploader").uploadFile(
