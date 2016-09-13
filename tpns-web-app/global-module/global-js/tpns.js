@@ -1,6 +1,10 @@
 // JavaScript Document
-
-
+var user_service_host = 'userservice';
+var user_service_port = '8081';
+var user_service_name = 'user-service';
+var user_service_base_url = 'http://' + user_service_host + ':' + user_service_port + '/' + user_service_name;
+var user_service_complete_url = user_service_base_url + '/v1/user';
+var user_service_login_url = user_service_base_url + '/v1/login';
 
 
 // jQuery
