@@ -37,7 +37,7 @@ function doLogin(){
 	});
 
 	request.done(function( data) {
-		location.href = "../dashboard-module/business-intelligence-dashboard.html"
+		location.href = "../article-module/articles.html"
 	});
 	 
 	return false;
