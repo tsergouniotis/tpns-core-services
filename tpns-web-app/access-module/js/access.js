@@ -12,7 +12,6 @@ function OpenWindow() {
 }
 
 function readName(){
-	console.log("hello");
 	var uname = getHttpRequestParameter("username");
 	if (uname){
 		document.getElementById("username").value = uname;
