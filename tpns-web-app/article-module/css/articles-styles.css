@@ -1,15 +1,18 @@
 /* CSS Document */
 /* ---------- Admin Global Content Area - Button ---------- */
-.articles-content-button a, .ajax-file-upload, .ajax-file-upload-green, .ajax-file-upload-red, .ajax-file-upload-orange {
-	display:inline-block; background:#2b3643; color:#9aa7b6; line-height:24px; vertical-align:bottom; padding:0px 10px 4px; -webkit-border-radius:6px; border-radius:6px; cursor:pointer;
+.articles-content-button a, .ajax-file-upload, .ajax-file-upload-green, .ajax-file-upload-red, .ajax-file-upload-orange, .admin-new-article-search-form button {
+	display:inline-block; background:#2b3643; color:#9aa7b6; line-height:24px; font-size:100%; vertical-align:bottom; padding:0px 10px 4px; border:none; -webkit-border-radius:6px; border-radius:6px; cursor:pointer;
 }
-.articles-content-button a:hover, .ajax-file-upload:hover { color:#FFFFFF; }
+.articles-content-button a:hover, .ajax-file-upload:hover, .admin-new-article-search-form button:hover { color:#FFFFFF; }
 .articles-content-button.warning-button a:hover, .ajax-file-upload-orange:hover { background:#f2784b; color:#FFFFFF; }
 .articles-content-button.stop-button a:hover, .ajax-file-upload-red:hover { background:#e7505a; color:#FFFFFF; }
 .articles-content-button.go-button a:hover, .ajax-file-upload-green:hover { background:#26c281; color:#FFFFFF; }
 .articles-content-button.schedule-button a:hover { background:#8e44ad; color:#FFFFFF; }
 .articles-content-button a [class^="tpns-ai-"]:before, .articles-content-button a [class*=" tpns-ai-"]:before {
 	padding-left:0px; padding-right:10px; font-size:110%;
+}
+.admin-new-article-search-form button [class^="tpns-ai-"]:before, .admin-new-article-search-form button [class*=" tpns-ai-"]:before {
+	padding-left:10px; padding-right:0px; font-size:110%;
 }
 .articles-content-button a [class^="tpns-ai-close"]:before, .articles-content-button a [class*=" tpns-ai-close"]:before {
 	font-size:80%;
@@ -212,7 +215,7 @@
 
 
 /* ----- Categories Container ----- */
-.new-article-categories-container {
+.new-article-categories-container, .new-article-also-show-in-container {
 	max-height:400px; overflow-y:auto;
 }
 .new-article-categories-container ul li h5 i:before, .new-article-categories-container ul li h5 .admin-global-checkbox-label:before {
@@ -287,6 +290,58 @@ border-radius: 0 10px 10px 0;
 }
 .new-article-content-text-options-container {
 	margin-top:20px;
+}
+
+/* ----- Also Show In Container ----- */
+.new-article-categories-container ul li p {
+	display:block; line-height:20px; padding:0; margin:0; white-space:nowrap;
+}
+.new-article-also-show-in-container ul li p i:before, .new-article-also-show-in-container ul li p .admin-global-checkbox-label:before {
+	padding-right:10px;
+}
+.new-article-categories-container ul li p label {
+	width:100%; display:inline-block;
+}
+.new-article-categories-container ul li p.admin-global-checkbox label:hover {
+	background:#f1f3fa;
+}
+.new-article-categories-container ul li p.admin-global-checkbox label span.admin-global-checkbox-label:before {
+	padding:0 10px 0 5px;
+}
+/* ----- Related Article Container ----- */
+.admin-new-article-search-form {
+	table-layout:auto;
+}
+.admin-new-article-search-form .global-table-cell {
+	width:100%;
+}
+.admin-new-article-search-form input {
+	position:relative; width:97%; height:30px; background:transparent; color:#2b3643; padding:0; margin:0; margin-right:3%; border:none; border-bottom:1px dotted #2b3643; -webkit-border-radius:0 0 0 0; border-radius: 0 0 0 0; outline-color:transparent; outline-style:none; -webkit-appearance:none;
+}
+.admin-new-article-search-form input::-webkit-input-placeholder { color:#2b3643; font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif; }
+.admin-new-article-search-form input:-moz-placeholder { color:#2b3643; font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif; }
+.admin-new-article-search-form input::-moz-placeholder { color:#2b3643; font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif; }
+.admin-new-article-search-form input:-ms-input-placeholder { color:#2b3643; font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif; }
+.new-article-form-content-related-info {
+	margin-top:10px;
+}
+.new-article-form-content-related-info .admin-click-menu-button a i, .new-article-form-content-related-info .admin-click-menu-button a u {
+	font-size:100%;
+}
+.new-article-form-content-related-info .admin-click-menu-button a, .new-article-form-content-related-info .admin-click-sub-menu-button a {
+	height:26px; line-height:120%; padding-top:2px;
+}
+.new-article-form-content-related-info .admin-click-menu-button a:hover {
+	color:#3598dc;
+}
+.new-article-form-content-related-info .admin-click-menu-container a [class^="tpns-ai-"]:before, .new-article-form-content-related-info .admin-click-menu-container a [class*=" tpns-ai-"]:before {
+	padding:0 0 0 5px;
+}
+.new-article-form-content-related-info .admin-click-menu-content.admin-click-menu-content-right:after {
+	right:12px;
+}
+.new-article-form-content-related-info .admin-click-menu-content {
+	min-width:250%;
 }
 
 
