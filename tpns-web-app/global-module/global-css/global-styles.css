@@ -226,6 +226,8 @@ url("../global-fonts/tpns-admin-icons.svg#tpns-admin-icons") format("svg");
 .tpns-ai-radio-button-off:before { content: "\3a"; }
 .tpns-ai-radio-button-on:before { content: "\3b"; }
 .tpns-ai-newspaper:before { content: "\3c"; }
+.tpns-ai-arrow-first:before { content: "\3d"; }
+.tpns-ai-arrow-last:before { content: "\3e"; }
 
 /* --------------------- Headers ---------------------- */
 h1 {
