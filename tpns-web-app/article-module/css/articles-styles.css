@@ -343,6 +343,25 @@ border-radius: 0 10px 10px 0;
 .new-article-form-content-related-info .admin-click-menu-content {
 	min-width:250%;
 }
+/* ----- Featured Article Container ----- */
+.new-article-form-content-featured-info .admin-click-menu-content {
+	min-width:150%;
+}
+.new-article-form-content-featured-info .admin-click-menu-content li a u {
+	display:none;
+}
+.new-article-form-content-featured-info .admin-click-menu-button a, .new-article-form-content-featured-info .admin-click-sub-menu-button a {
+	padding-top:0px;
+}
+.new-article-form-content-featured-info .admin-click-menu-button a .admin-click-menu-mobile {
+	font-size:120%;
+}
+.new-article-form-content-featured-info .admin-click-menu-container a u[class^="tpns-ai-"]:before, .new-article-form-content-featured-info .admin-click-menu-container a u[class*=" tpns-ai-"]:before, .new-article-form-content-featured-info .admin-click-menu-container a .selected-admin-bi-reporter-image i[class^="tpns-ai-"]:before, .new-article-form-content-featured-info .admin-click-menu-container a .selected-admin-bi-reporter-image i[class*=" tpns-ai-"]:before {
+	padding:0 10px 6px 5px;
+}
+
+
+
 
 
 /* --------------- CKEditor TPNS ------------------ */
