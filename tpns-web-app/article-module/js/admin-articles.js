@@ -33,40 +33,44 @@ function check() {
 $("input[type=checkbox]").each(check).change(check);
 // Select all checkboxes
 $(".select-all-rows-button-check, .select-all-rows-button-uncheck").on("click", function () {
+	'use strict';
 	var check = $(".admin-global-checkbox input:checkbox").is(":checked") ? false:true;
-	$(".admin-global-checkbox input:checkbox").prop('checked', check).attr('checked','checked').parent().parent().parent().parent().addClass("admin-global-checkbox-checked");
-	
+	$(".admin-global-checkbox input:checkbox").prop('checked', check).attr('checked','checked').parent().parent().parent().parent().removeClass("admin-global-checkbox-checked");
 	if ($(".admin-global-checkbox input:checkbox").is(':checked')) {
+		$(".admin-global-checkbox input:checkbox").parent().parent().parent().parent().addClass("admin-global-checkbox-checked");
 		$(".select-all-rows-button-check").addClass("hidden");
 		$(".select-all-rows-button-uncheck").removeClass("hidden");
 	}
 });
 $(".select-all-rows-button-uncheck").on("click", function () {
-	var check = $(".admin-global-checkbox input:checkbox").is(":checked") ? false:true;
-	$(".admin-global-checkbox input:checkbox").prop('checked', check).removeAttr('checked').parent().parent().parent().parent().removeClass("admin-global-checkbox-checked");
+	'use strict';
+	var uncheck = $(".admin-global-checkbox input:checkbox").is(":checked") ? false:true;
+	$(".admin-global-checkbox input:checkbox").prop('checked', uncheck).removeAttr('checked');
 	if ($(".admin-global-checkbox input:checkbox").is(':checked') !== true) {
+		$(".admin-global-checkbox input:checkbox").parent().parent().parent().parent().removeClass("admin-global-checkbox-checked");
 		$(".select-all-rows-button-check").removeClass("hidden");
 		$(".select-all-rows-button-uncheck").addClass("hidden");
 	}
 });
 
-	// Reset Articles Filter on click of the close button
-	$(".filter-active").find("a").click(function(e) {
-		$(this).parent().parent().find(".filter-active-sub-category-container, .filter-active-first-seperator").addClass("hidden");
-		$(this).parent().parent().find(".filter-active-reporter, .filter-active-category, .filter-active-sub-category").html('');
-		$(this).parent().parent().find(".filter-active-reporter").removeClass("hidden").removeClass("reporter-active");
-		$(this).parent().parent().find(".filter-active-category").removeClass("category-active");
-		$(this).parent().parent().addClass("hidden");
-		$(this).parent().parent().parent().find(".filter-inactive").removeClass("hidden");
-		$(".admin-bi-reporter-list").find(".current").removeAttr("class", "current");
-		$(".admin-bi-reporter-list li:first-child").addClass("current").parent().parent().parent().parent().find('.selected-admin-bi-reporter-image').html($(".admin-bi-reporter-list li:first-child").find("u").clone());
-		$(".admin-bi-reporter-list li:first-child").parent().parent().parent().parent().find('.selected-admin-bi-date-filter').html($(".admin-bi-reporter-list li:first-child").find("span").html());
-		$(".admin-bi-category-list li").removeClass("current");
-		$(".admin-bi-category-list li:first-child").addClass("current").parent().parent().parent().find('.selected-admin-bi-date-filter').html($(".admin-bi-category-list li:first-child").find("span").html());
-		$('[class^="admin-bi-date-filter-selected-"]').addClass("hidden");
-		e.preventDefault();
-	});
-	
+// Reset Articles Filter on click of the close button
+$(".filter-active").find("a").click(function(e) {
+	'use strict';
+	$(this).parent().parent().find(".filter-active-sub-category-container, .filter-active-first-seperator").addClass("hidden");
+	$(this).parent().parent().find(".filter-active-reporter, .filter-active-category, .filter-active-sub-category").html('');
+	$(this).parent().parent().find(".filter-active-reporter").removeClass("hidden").removeClass("reporter-active");
+	$(this).parent().parent().find(".filter-active-category").removeClass("category-active");
+	$(this).parent().parent().addClass("hidden");
+	$(this).parent().parent().parent().find(".filter-inactive").removeClass("hidden");
+	$(".admin-bi-reporter-list").find(".current").removeAttr("class", "current");
+	$(".admin-bi-reporter-list li:first-child").addClass("current").parent().parent().parent().parent().find('.selected-admin-bi-reporter-image').html($(".admin-bi-reporter-list li:first-child").find("u").clone());
+	$(".admin-bi-reporter-list li:first-child").parent().parent().parent().parent().find('.selected-admin-bi-date-filter').html($(".admin-bi-reporter-list li:first-child").find("span").html());
+	$(".admin-bi-category-list li").removeClass("current");
+	$(".admin-bi-category-list li:first-child").addClass("current").parent().parent().parent().find('.selected-admin-bi-date-filter').html($(".admin-bi-category-list li:first-child").find("span").html());
+	$('[class^="admin-bi-date-filter-selected-"]').addClass("hidden");
+	e.preventDefault();
+});
+
 $(document).ready( function() {
 	'use strict';
 	// Initialize CountChars in form
