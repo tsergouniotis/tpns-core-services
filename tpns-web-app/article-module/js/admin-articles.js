@@ -20,41 +20,36 @@ $(".articles-content-refresh-button a").click(function() {
 	location.reload(true);
 });
 
-	// Checkbox selected
-	$(".admin-global-checkbox input:checkbox").removeAttr('checked').removeAttr('checked');
-    function check() {
-        var $checkbox = $(this);
-        if ($checkbox.is(":checked")) {
-            $(this).attr('checked','checked').parent().parent().parent().parent().addClass("admin-global-checkbox-checked");
-        } else {
-        	$(this).removeAttr('checked').parent().parent().parent().parent().removeClass("admin-global-checkbox-checked");
-        }
-    }
-    $("input[type=checkbox]").each(check).change(check);
-	// Select all checkboxes
-	$(".select-all-rows-button-check, .select-all-rows-button-uncheck").on("click", function () {
-        var check = $(".admin-global-checkbox input:checkbox").is(":checked") ? false:true;
-        $(".admin-global-checkbox input:checkbox").prop('checked', check).attr('checked','checked').parent().parent().parent().parent().addClass("admin-global-checkbox-checked");
-		
-		if ($(".admin-global-checkbox input:checkbox").is(':checked')) {
-			$(".select-all-rows-button-check").addClass("hidden");
-			$(".select-all-rows-button-uncheck").removeClass("hidden");
-		}
-    });
-	$(".select-all-rows-button-uncheck").on("click", function () {
-        var check = $(".admin-global-checkbox input:checkbox").is(":checked") ? false:true;
-        $(".admin-global-checkbox input:checkbox").prop('checked', check).removeAttr('checked').parent().parent().parent().parent().removeClass("admin-global-checkbox-checked");
-		if ($(".admin-global-checkbox input:checkbox").is(':checked') !== true) {
-			$(".select-all-rows-button-check").removeClass("hidden");
-			$(".select-all-rows-button-uncheck").addClass("hidden");
-		}
-    });
+// Checkbox selected
+$(".admin-global-checkbox input:checkbox").removeAttr('checked').removeAttr('checked');
+function check() {
+	var $checkbox = $(this);
+	if ($checkbox.is(":checked")) {
+		$(this).attr('checked','checked').parent().parent().parent().parent().addClass("admin-global-checkbox-checked");
+	} else {
+		$(this).removeAttr('checked').parent().parent().parent().parent().removeClass("admin-global-checkbox-checked");
+	}
+}
+$("input[type=checkbox]").each(check).change(check);
+// Select all checkboxes
+$(".select-all-rows-button-check, .select-all-rows-button-uncheck").on("click", function () {
+	var check = $(".admin-global-checkbox input:checkbox").is(":checked") ? false:true;
+	$(".admin-global-checkbox input:checkbox").prop('checked', check).attr('checked','checked').parent().parent().parent().parent().addClass("admin-global-checkbox-checked");
 	
-$(document).ready( function() {
-	'use strict';
-	// Initialize CountChars in form
-	$(".new-article-textbox").countChar();
-	
+	if ($(".admin-global-checkbox input:checkbox").is(':checked')) {
+		$(".select-all-rows-button-check").addClass("hidden");
+		$(".select-all-rows-button-uncheck").removeClass("hidden");
+	}
+});
+$(".select-all-rows-button-uncheck").on("click", function () {
+	var check = $(".admin-global-checkbox input:checkbox").is(":checked") ? false:true;
+	$(".admin-global-checkbox input:checkbox").prop('checked', check).removeAttr('checked').parent().parent().parent().parent().removeClass("admin-global-checkbox-checked");
+	if ($(".admin-global-checkbox input:checkbox").is(':checked') !== true) {
+		$(".select-all-rows-button-check").removeClass("hidden");
+		$(".select-all-rows-button-uncheck").addClass("hidden");
+	}
+});
+
 	// Reset Articles Filter on click of the close button
 	$(".filter-active").find("a").click(function(e) {
 		$(this).parent().parent().find(".filter-active-sub-category-container, .filter-active-first-seperator").addClass("hidden");
@@ -71,6 +66,11 @@ $(document).ready( function() {
 		$('[class^="admin-bi-date-filter-selected-"]').addClass("hidden");
 		e.preventDefault();
 	});
+	
+$(document).ready( function() {
+	'use strict';
+	// Initialize CountChars in form
+	$(".new-article-textbox").countChar();
 	
 	// Categories - Test to see if we have a child ul in a category parent li then do...
 	$(".new-article-categories-container ul li").has("ul").find("i").removeClass("hidden");
