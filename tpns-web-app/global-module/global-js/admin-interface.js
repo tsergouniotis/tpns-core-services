@@ -47,23 +47,35 @@ $(document).ready( function() {
 	/* hides the current menu */
 	var hideMenu = function() {
 		if(showingDropdown) {
-			showingDropdown.parent().find("i:first-of-type").removeClass("hidden");
-			showingDropdown.parent().find("i:last-of-type").addClass("hidden");
+			showingDropdown.closest(".admin-global-controllers-tab-button").find("i:first-of-type").removeClass("hidden");
+			showingDropdown.closest(".admin-global-controllers-tab-button").find("i:last-of-type").addClass("hidden");
+			showingDropdown.closest(".admin-click-menu-button").find(".admin-click-menu-mobile span.icon:nth-child(2)").removeClass("hidden");
+			showingDropdown.closest(".admin-click-menu-button").find(".admin-click-menu-mobile span.icon:nth-child(3)").addClass("hidden");
+			showingDropdown.closest(".admin-click-menu-articles-table").find("span.icon:nth-child(3)").removeClass("hidden");
+			showingDropdown.closest(".admin-click-menu-articles-table").find("span.icon:nth-child(4)").addClass("hidden");
+			showingDropdown.closest(".admin-click-menu-button").find(".admin-click-menu-new-article-triple span.icon:nth-child(2)").addClass("hidden");
+			showingDropdown.closest(".admin-click-menu-button").find(".admin-click-menu-new-article-triple span.icon:nth-child(3)").removeClass("hidden");
 			showingDropdown.removeClass(activeClass);
 			showingMenu.hide();
 		}
 	};
 	/* recurse through dropdown menus */
 	$('.dropdown').each(function() {
-		/* track elements: menu, parent */
+		/* track elements: menu, parents with customisations and siblings */
 		var dropdown = $(this);
 		var menu = dropdown.parent().parent().next('.dropdown-menu'), parent = dropdown.parent();
 		/* function that shows THIS menu */
 		var showMenu = function() {
 			hideMenu();
 			showingDropdown = dropdown.parent().addClass('dropdown-active');
-			dropdown.parent().find("i:first-of-type").addClass("hidden");
-			dropdown.parent().find("i:last-of-type").removeClass("hidden");
+			dropdown.closest(".admin-global-controllers-tab-button").find("i:first-of-type").addClass("hidden");
+			dropdown.closest(".admin-global-controllers-tab-button").find("i:last-of-type").removeClass("hidden");
+			showingDropdown.closest(".admin-click-menu-button").find(".admin-click-menu-mobile span.icon:nth-child(2)").addClass("hidden");
+			showingDropdown.closest(".admin-click-menu-button").find(".admin-click-menu-mobile span.icon:nth-child(3)").removeClass("hidden");
+			showingDropdown.closest(".admin-click-menu-articles-table").find("span.icon:nth-child(3)").addClass("hidden");
+			showingDropdown.closest(".admin-click-menu-articles-table").find("span.icon:nth-child(4)").removeClass("hidden");
+			showingDropdown.closest(".admin-click-menu-button").find(".admin-click-menu-new-article-triple span.icon:nth-child(2)").addClass("hidden");
+			showingDropdown.closest(".admin-click-menu-button").find(".admin-click-menu-new-article-triple span.icon:nth-child(3)").removeClass("hidden");
 			showingMenu = menu.show();
 			showingParent = parent;
 		};
@@ -96,58 +108,6 @@ $(document).ready( function() {
 			}
 		}
 	});
-	
-	
-	/*
-	$(".admin-left-column, .admin-logo-nav-container, .admin-bi-from-calendar input, .input-reset-button").click(function() {
-	*/
-		/*, .admin-right-column, .admin-local-controllers     .main-nav-category-loop-accordian-list, */
-	/*
-		$(".admin-mobile-only-click-menu-content").removeAttr("style");
-		$(".admin-global-controllers-tab-hide, .admin-click-menu-button-pc-close, .admin-click-sub-menu-button-pc-close, .admin-mobile-only-click-menu-button-close").addClass("hidden").removeClass("open");
-		$(".admin-global-controllers-tab-content, .admin-click-menu-content, .admin-click-sub-menu-content").removeAttr("style").addClass("hidden");
-		$(".admin-global-controllers-tab-show, .admin-click-menu-button-pc-open, .admin-click-sub-menu-button-pc-open, .admin-mobile-only-click-menu-button-open").removeClass("hidden").removeAttr("style");
-	});
-	*/
-	
-	// Admin Global Click Menu Open
-		/*
-	$(".admin-click-menu-button-pc-open").click(function(e) {
-		// Test if another item is open and close it
-		$(".main-nav-accordian").unbind( "click" ).removeClass("tab-open");
-		$(".admin-hide-mobile-nav a").parent().addClass("hidden");
-		$(".admin-show-mobile-nav").removeClass("hidden");
-		$(".admin-main-navigation").addClass("admin-mobile-nav-hidden");
-		$(".main-nav-category-loop-accordian-list, .admin-mobile-only-click-menu-content").removeAttr("style");
-		$(".admin-global-controllers-tab-hide, .admin-click-menu-button-pc-close, .admin-click-sub-menu-button-pc-close, .admin-mobile-only-click-menu-button-close").addClass("hidden").removeClass("open");
-		$(".admin-global-controllers-tab-content, .admin-click-menu-content, .admin-click-sub-menu-content").removeAttr("style").addClass("hidden");
-		$(".admin-global-controllers-tab-show, .admin-click-menu-button-pc-open, .admin-click-sub-menu-button-pc-open, .admin-mobile-only-click-menu-button-open").removeClass("hidden").removeAttr("style");
-		// End Test
-		$(this).addClass("hidden").hide();
-		$(this).parent().parent().find(".admin-click-menu-button-pc-close").removeClass("hidden").addClass("open");
-		$(this).parent().parent().parent().find(".admin-click-menu-content").removeClass("hidden").show();
-		e.preventDefault();
-	});
-		*/
-	// Admin Global Click Sub Menu Open
-		/*
-	$(".admin-click-sub-menu-button-pc-open").click(function(e) {
-		// Test if another item is open and close it
-		$(".main-nav-accordian").unbind( "click" ).removeClass("tab-open");
-		$(".admin-hide-mobile-nav a").parent().addClass("hidden");
-		$(".admin-show-mobile-nav").removeClass("hidden");
-		$(".admin-main-navigation").addClass("admin-mobile-nav-hidden");
-		$(".main-nav-category-loop-accordian-list, .admin-mobile-only-click-menu-content").removeAttr("style");
-		$(".admin-global-controllers-tab-hide, .admin-click-menu-button-pc-close, .admin-click-sub-menu-button-pc-close, .admin-mobile-only-click-menu-button-close").addClass("hidden").removeClass("open");
-		$(".admin-global-controllers-tab-content, .admin-click-menu-content, .admin-click-sub-menu-content").removeAttr("style").addClass("hidden");
-		$(".admin-global-controllers-tab-show, .admin-click-menu-button-pc-open, .admin-click-sub-menu-button-pc-open, .admin-mobile-only-click-menu-button-open").removeClass("hidden").removeAttr("style");
-		// End Test
-		$(this).addClass("hidden").hide();
-		$(this).parent().parent().find(".admin-click-sub-menu-button-pc-close").removeClass("hidden").addClass("open");
-		$(this).parent().parent().parent().find(".admin-click-sub-menu-content").removeClass("hidden").show();
-		e.preventDefault();
-	});
-		*/
 	// Options for Open Click Menu
 	$(".admin-click-menu-content-list li a").on('click', function(e){
 		$(this).parent().siblings().removeClass('current');
@@ -190,20 +150,6 @@ $(document).ready( function() {
 		$(this).parent().parent().parent().parent().find(".admin-click-menu-button-pc-open, .admin-click-sub-menu-button-pc-open").removeClass("hidden").removeAttr("style");
 	});
 	/*
-	// Admin Global Click Menu Close
-	$(".admin-click-menu-button-pc-close").click(function(e) {
-		$(this).addClass("hidden").removeClass("open");
-		$(this).parent().parent().find(".admin-click-menu-button-pc-open").removeClass("hidden").removeAttr("style");
-		$(this).parent().parent().parent().find(".admin-click-menu-content").removeAttr("style").addClass("hidden");
-		e.preventDefault();
-	});
-	// Admin Global Click Sub Menu Close
-	$(".admin-click-sub-menu-button-pc-close").click(function(e) {
-		$(this).addClass("hidden").removeClass("open");
-		$(this).parent().parent().find(".admin-click-sub-menu-button-pc-open").removeClass("hidden").removeAttr("style");
-		$(this).parent().parent().parent().find(".admin-click-sub-menu-content").removeAttr("style").addClass("hidden");
-		e.preventDefault();
-	});
 	// Admin Global Mobile Only Click Menu Open
 	$(".admin-mobile-only-click-menu-button-open").click(function(e) {
 		// Test if another item is open and close it

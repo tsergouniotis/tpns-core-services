@@ -23,54 +23,6 @@ ins { background-color:#364150; color:#c6cfda; text-decoration: none; }
 mark { background-color:#364150; color:#c6cfda; font-style:italic; font-weight: bold; }
 
 /* ------------------------- Admin Date Picker ------------------------ */
-
-
-
-
-
-		/* dropdowns: general */
-		/*
-		a.dropdown { background: #88bbd4; padding: 4px 6px 6px; text-decoration: none; font-weight: bold; color: #fff; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
-		a.dropdown:hover { background: #59b; }
-		a.dropdown { position: relative; margin-left: 3px; }
-		a.dropdown span { background-image: url(toggle_down_light.png); background-repeat: no-repeat; background-position: 100% 50%; padding: 4px 16px 6px 0; }
-		a.dropdown.dropdown-active { color:#59b; background-color:#ddeef6; }
-		a.dropdown.dropdown-active span { background:url(toggle_up_dark.png) 100% 50% no-repeat; }
-		.dropdown-menu	{ background:#ddeef6; padding:7px 12px; position:absolute; top:16px; right:0; display:none; z-index:5000; -moz-border-radius-topleft: 5px; -moz-border-radius-bottomleft: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-top-left-radius: 5px; -webkit-border-bottom-left-radius: 5px; -webkit-border-bottom-right-radius: 5px; }
-			.dropdown-menu p { font-size:11px; }
-		.dropdown-menu a:link, .dropdown-menu a:visited	{ font-weight:bold; color:#59b; text-decoration:none; line-height:1.7em; }
-		.dropdown-menu a:active, .dropdown-menu a:hover { color:#555; }
-		
-		* html .dropdown-menu { top:28px; }
-		*+ html .dropdown-menu { top:28px; }
-		*/
-		/* dropdowns: specific */
-		/*
-		#menu1			{ float:left; margin-right:20px; }
-			#dropdown1	{ width:150px; }
-			#dropdown1 a	{ display:block; }
-		#menu2			{ float:left; }
-			#dropdown2	{ width:150px; font-size:11px; }
-		.relative		{ position:relative; }
-		*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ----- Admin Checkboxes ----- */
 .admin-global-checkbox label {
 	cursor:pointer;
@@ -411,11 +363,6 @@ background:#2b3643;
 .admin-click-menu-button a u img, .admin-click-sub-menu-button a u img {
 	width:30px; height:30px; vertical-align:text-bottom; -webkit-border-radius:17px; border-radius:17px; padding-top:9px; margin-right:5px;
 }
-
-
-
-
-
 .admin-global-controllers-tab-button a p.admin-global-controllers-tab-show {
 	padding:0px 5px 0px 10px;
 }
@@ -444,6 +391,9 @@ a.dropdown-active {
 /* ----- Admin Global Controllers Area - Click Menu ----- */
 .admin-click-menu-button a, .admin-click-menu-button a:hover, a.input-reset-button, .admin-click-sub-menu-button a, .admin-click-sub-menu-button a:hover, .admin-mobile-only-click-menu-button a {
 	color:#2b3643;
+}
+.admin-click-menu-button .dropdown-active a, .admin-click-menu-button .dropdown-active a:hover, .admin-click-sub-menu-button .dropdown-active a, .admin-click-sub-menu-button .dropdown-active a:hover, .admin-mobile-only-click-menu-button .dropdown-active a {
+	background:transparent; color:#2b3643; -webkit-border-radius:none; border-radius:none;
 }
 .admin-click-menu-button a:hover span.icon, .admin-click-sub-menu-button a:hover span.icon, .admin-mobile-only-click-menu-button a:hover {
 	color:#3598dc;
