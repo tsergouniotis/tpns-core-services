@@ -1,17 +1,17 @@
 // JavaScript Document
 // CountChars in form based on html maxlength attribute
 (function($) {
-  'use strict';
-  $.fn.countChar = function() {
-    return this.each(function(i, element) {
-      $(element).keyup(function updateCharCounter() {
-        var $countCharInput = $(this),
-          maxLength = parseInt($countCharInput.attr('maxlength'), 10),
-          charCount = $countCharInput.val().length,
-          $counter = $countCharInput.siblings('.limit');$counter.text(maxLength - charCount);
-      });
-    });
-  };
+'use strict';
+$.fn.countChar = function() {
+	return this.each(function(i, element) {
+		$(element).keyup(function updateCharCounter() {
+				var $countCharInput = $(this),
+				maxLength = parseInt($countCharInput.attr('maxlength'), 10),
+				charCount = $countCharInput.val().length,
+				$counter = $countCharInput.siblings('.limit');$counter.text(maxLength - charCount);
+			});
+		});
+	};
 }(jQuery));
 
 // Refresh Page and get fresh code from server
@@ -20,7 +20,8 @@ $(".articles-content-refresh-button a").click(function() {
 	location.reload(true);
 });
 
-// Checkbox selected
+// Global Checkboxes
+/* Checkbox selected */
 $(".admin-global-checkbox input:checkbox").removeAttr('checked').removeAttr('checked');
 function check() {
 	var $checkbox = $(this);
@@ -31,7 +32,7 @@ function check() {
 	}
 }
 $("input[type=checkbox]").each(check).change(check);
-// Select all checkboxes
+/* Select all checkboxes */
 $(".select-all-rows-button-check, .select-all-rows-button-uncheck").on("click", function () {
 	'use strict';
 	var check = $(".admin-global-checkbox input:checkbox").is(":checked") ? false:true;
@@ -92,7 +93,7 @@ $(document).ready( function() {
 	});
 	
 	// Initialize jquery-uploader
-	// Dev Docs can be found here... http://hayageek.com/docs/jquery-upload-file.php
+	/* Dev Docs can be found here... http://hayageek.com/docs/jquery-upload-file.php */
 	$("#kickerUploader").uploadFile(
 		{
 			url:"#",
@@ -117,7 +118,7 @@ $(document).ready( function() {
 					alert("File Deleted");
 				});
 			}
-			pd.statusbar.hide(); //Your choice.
+			pd.statusbar.hide(); //Your choice
 		},
 	});
 	$("#billboardUploader").uploadFile(
@@ -140,11 +141,10 @@ $(document).ready( function() {
 			for (var i = 0; i < data.length; i++) {
 				$.post("#", {op: "delete",name: data[i]},
 				function (resp,textStatus, jqXHR) {
-					//Show Message	
 					alert("File Deleted");
 				});
 			}
-			pd.statusbar.hide(); //Your choice.
+			pd.statusbar.hide();
 		},
 	});
 	$("#nutshellUploader").uploadFile(
@@ -167,11 +167,10 @@ $(document).ready( function() {
 			for (var i = 0; i < data.length; i++) {
 				$.post("#", {op: "delete",name: data[i]},
 				function (resp,textStatus, jqXHR) {
-					//Show Message	
 					alert("File Deleted");
 				});
 			}
-			pd.statusbar.hide(); //Your choice.
+			pd.statusbar.hide();
 		},
 	});
 	

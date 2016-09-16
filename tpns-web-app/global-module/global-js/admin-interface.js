@@ -41,39 +41,77 @@ $(document).ready( function() {
 	$(".admin-left-column, .admin-right-column, .admin-controllers-container, .admin-logo-nav-container").on('touchend', function(){
 		$(this).find(".main-nav-category-loop-list ul").removeAttr("style");
 	});
-	// Global Dashboard Navigation Open
-	$(".admin-global-controllers-tab-show").click(function(e) {
-		// Test if another item is open and close it
-		$(".main-nav-accordian").unbind( "click" ).removeClass("tab-open");
-		$(".admin-hide-mobile-nav a").parent().addClass("hidden");
-		$(".admin-show-mobile-nav").removeClass("hidden");
-		$(".admin-main-navigation").addClass("admin-mobile-nav-hidden");
-		$(".main-nav-category-loop-accordian-list, .admin-mobile-only-click-menu-content").removeAttr("style");
-		$(".admin-global-controllers-tab-hide, .admin-click-menu-button-pc-close, .admin-click-sub-menu-button-pc-close, .admin-mobile-only-click-menu-button-close").addClass("hidden").removeClass("open");
-		$(".admin-global-controllers-tab-content, .admin-click-menu-content, .admin-click-sub-menu-content").removeAttr("style").addClass("hidden");
-		$(".admin-global-controllers-tab-show, .admin-click-menu-button-pc-open, .admin-click-sub-menu-button-pc-open, .admin-mobile-only-click-menu-button-open").removeClass("hidden").removeAttr("style");
-		// End Test
-		$(this).addClass("hidden").hide();
-		$(this).parent().parent().find(".admin-global-controllers-tab-hide").removeClass("hidden").addClass("open");
-		$(this).parent().parent().parent().find(".admin-global-controllers-tab-content").removeClass("hidden").show();
-		e.preventDefault();
+	// Global Dashboard Navigation
+	/* for keeping track of what's "open" */
+	var activeClass = 'dropdown-active', showingDropdown, showingMenu, showingParent;
+	/* hides the current menu */
+	var hideMenu = function() {
+		if(showingDropdown) {
+			showingDropdown.parent().find("i:first-of-type").removeClass("hidden");
+			showingDropdown.parent().find("i:last-of-type").addClass("hidden");
+			showingDropdown.removeClass(activeClass);
+			showingMenu.hide();
+		}
+	};
+	/* recurse through dropdown menus */
+	$('.dropdown').each(function() {
+		/* track elements: menu, parent */
+		var dropdown = $(this);
+		var menu = dropdown.parent().parent().next('.dropdown-menu'), parent = dropdown.parent();
+		/* function that shows THIS menu */
+		var showMenu = function() {
+			hideMenu();
+			showingDropdown = dropdown.parent().addClass('dropdown-active');
+			dropdown.parent().find("i:first-of-type").addClass("hidden");
+			dropdown.parent().find("i:last-of-type").removeClass("hidden");
+			showingMenu = menu.show();
+			showingParent = parent;
+		};
+		/* function to show menu when clicked */
+		dropdown.bind('click',function(e) {
+			if(e) {
+				e.stopPropagation();
+			}
+			if(e) {
+				e.preventDefault();
+			}
+			//showMenu();
+			if ( dropdown.parent().hasClass('dropdown-active') ) {
+				hideMenu();
+			} else {
+				showMenu();
+			}
+		});
+		/* function to show menu when someone tabs to the box */
+		dropdown.bind('focus',function() {
+			showMenu();
+		});
 	});
-	// Global Dashboard Navigation Close
-	$(".admin-global-controllers-tab-hide").click(function(e) {
-		$(this).addClass("hidden").removeClass("open");
-		$(this).parent().parent().find(".admin-global-controllers-tab-show").removeClass("hidden").removeAttr("style");
-		$(this).parent().parent().parent().find(".admin-global-controllers-tab-content").removeAttr("style").addClass("hidden");
-		e.preventDefault();
+	/* hide when clicked outside */
+	$(document.body).bind('click',function(e) {
+		if(showingParent) {
+			var parentElement = showingParent[0];
+			if(!$.contains(parentElement,e.target) || parentElement === e.target) {
+				hideMenu();
+			}
+		}
 	});
-	// Global Dashboard Navigation Close outside of open nav container
+	
+	
+	/*
 	$(".admin-left-column, .admin-logo-nav-container, .admin-bi-from-calendar input, .input-reset-button").click(function() {
+	*/
 		/*, .admin-right-column, .admin-local-controllers     .main-nav-category-loop-accordian-list, */
+	/*
 		$(".admin-mobile-only-click-menu-content").removeAttr("style");
 		$(".admin-global-controllers-tab-hide, .admin-click-menu-button-pc-close, .admin-click-sub-menu-button-pc-close, .admin-mobile-only-click-menu-button-close").addClass("hidden").removeClass("open");
 		$(".admin-global-controllers-tab-content, .admin-click-menu-content, .admin-click-sub-menu-content").removeAttr("style").addClass("hidden");
 		$(".admin-global-controllers-tab-show, .admin-click-menu-button-pc-open, .admin-click-sub-menu-button-pc-open, .admin-mobile-only-click-menu-button-open").removeClass("hidden").removeAttr("style");
 	});
+	*/
+	
 	// Admin Global Click Menu Open
+		/*
 	$(".admin-click-menu-button-pc-open").click(function(e) {
 		// Test if another item is open and close it
 		$(".main-nav-accordian").unbind( "click" ).removeClass("tab-open");
@@ -90,7 +128,9 @@ $(document).ready( function() {
 		$(this).parent().parent().parent().find(".admin-click-menu-content").removeClass("hidden").show();
 		e.preventDefault();
 	});
+		*/
 	// Admin Global Click Sub Menu Open
+		/*
 	$(".admin-click-sub-menu-button-pc-open").click(function(e) {
 		// Test if another item is open and close it
 		$(".main-nav-accordian").unbind( "click" ).removeClass("tab-open");
@@ -107,6 +147,7 @@ $(document).ready( function() {
 		$(this).parent().parent().parent().find(".admin-click-sub-menu-content").removeClass("hidden").show();
 		e.preventDefault();
 	});
+		*/
 	// Options for Open Click Menu
 	$(".admin-click-menu-content-list li a").on('click', function(e){
 		$(this).parent().siblings().removeClass('current');
@@ -148,6 +189,7 @@ $(document).ready( function() {
 		$(this).parent().parent().parent().parent().find(".admin-click-menu-content, .admin-click-sub-menu-content").removeAttr("style").addClass("hidden");
 		$(this).parent().parent().parent().parent().find(".admin-click-menu-button-pc-open, .admin-click-sub-menu-button-pc-open").removeClass("hidden").removeAttr("style");
 	});
+	/*
 	// Admin Global Click Menu Close
 	$(".admin-click-menu-button-pc-close").click(function(e) {
 		$(this).addClass("hidden").removeClass("open");
@@ -186,6 +228,7 @@ $(document).ready( function() {
 		$(this).parent().parent().parent().find(".admin-mobile-only-click-menu-content").removeAttr("style");
 		e.preventDefault();
 	});
+	*/
 	// Date Picker Settings
 	$(".admin-global-bi-datepicker, .datepicker-here").datepicker({
 		maxDate: new Date(),

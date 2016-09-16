@@ -54,10 +54,9 @@
                             <div class="admin-global-controllers-left-items admin-area-dashboard-nav">
                             	<div class="admin-global-controllers-tab-container">
                                     <div class="admin-global-controllers-tab-button">
-                                        <p class="admin-global-controllers-tab-show"><a title="Open the navigation"><span>TPNS One</span><i class="icon tpns-ai-arrow-down"></i></a></p>
-                                        <p class="admin-global-controllers-tab-hide hidden"><a title="Close the navigation"><span>TPNS One</span><i class="icon tpns-ai-close"></i></a></p>
+                                        <p class="admin-global-controllers-tab-show"><a class="dropdown" title="Open the navigation"><span>TPNS One</span><i class="icon tpns-ai-arrow-down"></i><i class="icon tpns-ai-close hidden"></i></a></p>
                                     </div>
-                                    <div class="admin-global-controllers-tab-content admin-global-controllers-tab-content-left hidden">
+                                    <div class="dropdown-menu admin-global-controllers-tab-content admin-global-controllers-tab-content-left hidden">
                                         <ul class="admin-global-controllers-tab-list">
                                             <li><a href="../dashboard-module/global-bi-dashboard.html"><span>TPNS Group</span><i class="icon tpns-ai-selected"></i></a></li>
                                             <li><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span>TPNS Astrology</span><i class="icon tpns-ai-selected"></i></a></li>
@@ -104,23 +103,16 @@
                             	<div class="admin-global-controllers-tab-container">
                                     <div class="admin-global-controllers-tab-button">
                                         <a title="Preview your profile options">
-                                            <p class="admin-global-controllers-tab-show">
+                                            <p class="dropdown admin-global-controllers-tab-show">
                                             	<span class="admin-user-profile-preview-nav-img-container">
                                                 	<img src="../staff-module/staff-images-50x50/staff6-50x50.jpg" alt="Κατερίνα Παπαδόπουλος" />
                                                     <span class="admin-user-information-mobile-has-notifications"></span>
                                             	</span>
-                                                <span class="username"><span class="username-inner">Κατερίνα Παπαδόπουλος</span><i class="icon tpns-ai-arrow-down"></i></span>
-                                            </p>
-                                        	<p class="admin-global-controllers-tab-hide hidden">
-                                            	<span class="admin-user-profile-preview-nav-img-container">
-                                                	<img src="../staff-module/staff-images-50x50/staff6-50x50.jpg" alt="Κατερίνα Παπαδόπουλος" />
-                                                    <span class="admin-user-information-mobile-has-notifications"></span>
-                                            	</span>
-                                                <span class="username"><span class="username-inner">Κατερίνα Παπαδόπουλος</span><i class="icon tpns-ai-arrow-down"></i></span>
+                                                <span class="username"><span class="username-inner">Κατερίνα Παπαδόπουλος</span><i class="icon tpns-ai-arrow-down"></i><i class="icon tpns-ai-close hidden"></i></span>
                                             </p>
                                         </a>
                                     </div>
-                                    <div class="admin-global-controllers-tab-content admin-global-controllers-tab-content-right hidden textl">
+                                    <div class="dropdown-menu admin-global-controllers-tab-content admin-global-controllers-tab-content-right hidden textl">
                                     	<div class="admin-user-information-mobile">
                                             <div class="admin-global-controllers-right-items admin-user-notifications-nav">
                                                 <div class="admin-global-controllers-admin-info-container">
@@ -675,8 +667,52 @@
                             <p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label"></span></label></p>
                         </div>
                         <div class="global-table-cell">
-                        	<p><u class="icon tpns-ai-favourite"></u><a>--<i class="icon tpns-ai-arrow-down"></i></a></p>
-                            <p><u class="icon tpns-ai-editors-choice"></u><a>--<i class="icon tpns-ai-arrow-down"></i></a></p>
+                        	<div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-favourite"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><u class="icon tpns-ai-arrow-down"></u></a></p>
+                                        <p class="admin-click-menu-button-pc-close admin-click-menu-filter-pc textn hidden"><a><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-favourite"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><u class="icon tpns-ai-close"></u></a></p>
+                                    </div>
+                                    <div class="admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-favourite"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-editors-choice"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><u class="icon tpns-ai-arrow-down"></u></a></p>
+                                        <p class="admin-click-menu-button-pc-close admin-click-menu-filter-pc textn hidden"><a><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-editors-choice"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><u class="icon tpns-ai-close"></u></a></p>
+                                    </div>
+                                    <div class="admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-editors-choice"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="global-table-cell">
                         	<p class="admin-decimals">36789</p>
@@ -727,7 +763,7 @@
                             <p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox" checked ><span class="admin-global-checkbox-label"></span></label></p>
                         </div>
                         <div class="global-table-cell">
-                            <div class="new-article-form-content-related-info new-article-form-content-featured-info">
+                            <div class="new-article-form-content-related-info articles-form-content-featured-info">
                                 <div class="admin-click-menu-container">
                                     <div class="admin-click-menu-button">
                                         <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-favourite"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><u class="icon tpns-ai-arrow-down"></u></a></p>
@@ -750,7 +786,29 @@
                                     </div>
                                 </div>
                             </div>
-                            <p><u class="icon tpns-ai-editors-choice"></u><a>--<i class="icon tpns-ai-arrow-down"></i></a></p>
+                            <div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-editors-choice"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><u class="icon tpns-ai-arrow-down"></u></a></p>
+                                        <p class="admin-click-menu-button-pc-close admin-click-menu-filter-pc textn hidden"><a><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-editors-choice"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><u class="icon tpns-ai-close"></u></a></p>
+                                    </div>
+                                    <div class="admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-editors-choice"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="global-table-cell">
                         	<p class="admin-decimals">36789</p>
@@ -807,8 +865,52 @@
                             <p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox" checked ><span class="admin-global-checkbox-label"></span></label></p>
                         </div>
                         <div class="global-table-cell">
-                        	<p><u class="icon tpns-ai-favourite"></u><a>--<i class="icon tpns-ai-arrow-down"></i></a></p>
-                            <p><u class="icon tpns-ai-editors-choice"></u><a>--<i class="icon tpns-ai-arrow-down"></i></a></p>
+                        	<div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-favourite"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><u class="icon tpns-ai-arrow-down"></u></a></p>
+                                        <p class="admin-click-menu-button-pc-close admin-click-menu-filter-pc textn hidden"><a><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-favourite"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><u class="icon tpns-ai-close"></u></a></p>
+                                    </div>
+                                    <div class="admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-favourite"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-editors-choice"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><u class="icon tpns-ai-arrow-down"></u></a></p>
+                                        <p class="admin-click-menu-button-pc-close admin-click-menu-filter-pc textn hidden"><a><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-editors-choice"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><u class="icon tpns-ai-close"></u></a></p>
+                                    </div>
+                                    <div class="admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-editors-choice"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="global-table-cell">
                         	<p class="admin-decimals">36789</p>
@@ -865,8 +967,52 @@
                             <p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox" checked ><span class="admin-global-checkbox-label"></span></label></p>
                         </div>
                         <div class="global-table-cell">
-                        	<p><u class="icon tpns-ai-favourite"></u><a>--<i class="icon tpns-ai-arrow-down"></i></a></p>
-                            <p><u class="icon tpns-ai-editors-choice"></u><a>--<i class="icon tpns-ai-arrow-down"></i></a></p>
+                        	<div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-favourite"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><u class="icon tpns-ai-arrow-down"></u></a></p>
+                                        <p class="admin-click-menu-button-pc-close admin-click-menu-filter-pc textn hidden"><a><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-favourite"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><u class="icon tpns-ai-close"></u></a></p>
+                                    </div>
+                                    <div class="admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-favourite"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-editors-choice"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><u class="icon tpns-ai-arrow-down"></u></a></p>
+                                        <p class="admin-click-menu-button-pc-close admin-click-menu-filter-pc textn hidden"><a><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-editors-choice"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><u class="icon tpns-ai-close"></u></a></p>
+                                    </div>
+                                    <div class="admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-editors-choice"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="global-table-cell">
                         	<p class="admin-decimals">36789</p>

@@ -186,6 +186,38 @@
 .article-scheduled {
 	color:#26c281;
 }
+/* ----- Cell Content - Featured Article Container ----- */
+.new-article-form-content-related-info.articles-form-content-featured-info {
+    margin-top:0px;
+}
+.new-article-form-content-related-info.articles-form-content-featured-info .admin-click-menu-content {
+	min-width:150%;
+}
+.articles-form-content-featured-info .admin-click-menu-content li a u {
+	display:none;
+}
+.articles-form-content-featured-info .admin-click-menu-button a, .articles-form-content-featured-info .admin-click-sub-menu-button a {
+	padding-top:0px;
+}
+.articles-form-content-featured-info .admin-click-menu-button a .admin-click-menu-mobile {
+	font-size:100%;
+}
+.articles-form-content-featured-info .admin-click-menu-container a u[class^="tpns-ai-"]:before, .articles-form-content-featured-info .admin-click-menu-container a u[class*=" tpns-ai-"]:before, .articles-form-content-featured-info .admin-click-menu-container a .selected-admin-bi-reporter-image i[class^="tpns-ai-"]:before, .articles-form-content-featured-info .admin-click-menu-container a .selected-admin-bi-reporter-image i[class*=" tpns-ai-"]:before {
+	padding:0 5px 2px;
+}
+.all-articles-container .global-table-cell .articles-form-content-featured-info .admin-click-menu-content-left {
+	left:-9px;
+}
+.all-articles-table .articles-form-content-featured-info .admin-click-menu-content {
+    margin-top: 2px;
+}
+
+
+
+
+
+
+
 
 /* ---------- New Article Content Container ---------- */
 .new-article-content-container {
@@ -302,21 +334,6 @@ border-radius: 0 10px 10px 0;
 .new-article-categories-container ul ul li p.admin-global-checkbox label span.admin-global-checkbox-label:before {
 	padding:0 10px 0 5px;
 }
-
-
-/*
-.all-articles-container .global-table-row:hover {
-	background:#f1f3fa;
-}
-.all-articles-container .global-table-row.admin-global-checkbox-checked {
-	background:#fef7dc;
-}
-*/
-
-
-
-
-
 .new-article-form-content-body {
 	position:relative; width:100%; padding:10px; margin:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
 }
