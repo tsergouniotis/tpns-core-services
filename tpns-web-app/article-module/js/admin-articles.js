@@ -24,6 +24,7 @@ $(".articles-content-refresh-button a").click(function() {
 /* Checkbox selected */
 $("input.single-article-checkbox:checkbox").removeAttr('checked').removeAttr('checked');
 function check() {
+	'use strict';
 	var $checkbox = $(this);
 	if ($checkbox.is(":checked")) {
 		$(this).attr('checked','checked').parent().parent().parent().parent().addClass("admin-global-checkbox-checked");
