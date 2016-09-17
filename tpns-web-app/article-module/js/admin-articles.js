@@ -22,7 +22,7 @@ $(".articles-content-refresh-button a").click(function() {
 
 // Global Checkboxes
 /* Checkbox selected */
-$(".admin-global-checkbox input:checkbox").removeAttr('checked').removeAttr('checked');
+$("input.single-article-checkbox:checkbox").removeAttr('checked').removeAttr('checked');
 function check() {
 	var $checkbox = $(this);
 	if ($checkbox.is(":checked")) {
@@ -30,25 +30,35 @@ function check() {
 	} else {
 		$(this).removeAttr('checked').parent().parent().parent().parent().removeClass("admin-global-checkbox-checked");
 	}
+	if ($("input.single-article-checkbox:checkbox").is(":checked")) {
+		$(".admin-articles-bulk-actions-controller").removeClass("hidden");
+	} else {
+		$(".admin-articles-bulk-actions-controller").addClass("hidden");
+		$(".select-all-rows-button-check").removeClass("hidden");
+		$(".select-all-rows-button-uncheck").addClass("hidden");
+	}
 }
 $("input[type=checkbox]").each(check).change(check);
+/* Activate options dropdown menu for articles */
 /* Select all checkboxes */
 $(".select-all-rows-button-check, .select-all-rows-button-uncheck").on("click", function () {
 	'use strict';
-	var check = $(".admin-global-checkbox input:checkbox").is(":checked") ? false:true;
-	$(".admin-global-checkbox input:checkbox").prop('checked', check).attr('checked','checked').parent().parent().parent().parent().removeClass("admin-global-checkbox-checked");
-	if ($(".admin-global-checkbox input:checkbox").is(':checked')) {
-		$(".admin-global-checkbox input:checkbox").parent().parent().parent().parent().addClass("admin-global-checkbox-checked");
+	var check = $("input.single-article-checkbox:checkbox").is(":checked") ? false:true;
+	$("input.single-article-checkbox:checkbox").prop('checked', check).attr('checked','checked').parent().parent().parent().parent().removeClass("admin-global-checkbox-checked");
+	if ($("input.single-article-checkbox:checkbox").is(':checked')) {
+		$(".admin-articles-bulk-actions-controller").removeClass("hidden");
+		$("input.single-article-checkbox:checkbox").parent().parent().parent().parent().addClass("admin-global-checkbox-checked");
 		$(".select-all-rows-button-check").addClass("hidden");
 		$(".select-all-rows-button-uncheck").removeClass("hidden");
 	}
 });
 $(".select-all-rows-button-uncheck").on("click", function () {
 	'use strict';
-	var uncheck = $(".admin-global-checkbox input:checkbox").is(":checked") ? false:true;
-	$(".admin-global-checkbox input:checkbox").prop('checked', uncheck).removeAttr('checked');
-	if ($(".admin-global-checkbox input:checkbox").is(':checked') !== true) {
-		$(".admin-global-checkbox input:checkbox").parent().parent().parent().parent().removeClass("admin-global-checkbox-checked");
+	var uncheck = $("input.single-article-checkbox:checkbox").is(":checked") ? false:true;
+	$("input.single-article-checkbox:checkbox").prop('checked', uncheck).removeAttr('checked');
+	if ($("input.single-article-checkbox:checkbox").is(':checked') !== true) {
+		$(".admin-articles-bulk-actions-controller").addClass("hidden");
+		$("input.single-article-checkbox:checkbox").parent().parent().parent().parent().removeClass("admin-global-checkbox-checked");
 		$(".select-all-rows-button-check").removeClass("hidden");
 		$(".select-all-rows-button-uncheck").addClass("hidden");
 	}

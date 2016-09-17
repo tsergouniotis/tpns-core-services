@@ -146,17 +146,14 @@
 .all-articles-container .global-table-cell:nth-child(13n+12) {  }
 .all-articles-container .global-table-cell:nth-child(13n+13) {  }
 /* ----- Header Cell Content ----- */
-.all-articles-table .global-header-cell .admin-click-menu-button a [class^="tpns-ai-"]:before, .all-articles-table .global-header-cell .admin-click-menu-button a [class*=" tpns-ai-"]:before {
-	padding:0px 5px;
-}
 .select-all-rows-container, .admin-articles-bulk-actions-controller {
 	display:inline-block; vertical-align:text-top;
 }
-.select-all-rows-button-check a [class^="tpns-ai-"]:before, .select-all-rows-button-check a [class*=" tpns-ai-"]:before, .select-all-rows-button-uncheck a [class^="tpns-ai-"]:before, .select-all-rows-button-uncheck a [class*=" tpns-ai-"]:before {
-	padding:0px 0px 0px 5px;
+.admin-articles-bulk-actions-controller.hidden {
+	display:none;
 }
 .admin-articles-bulk-actions-controller a [class^="tpns-ai-"]:before, .admin-articles-bulk-actions-controller a [class*=" tpns-ai-"]:before {
-	padding:0px 5px 0px 0px;
+	padding:0 !important;
 }
 .all-articles-table .admin-click-menu-button a {
 	height:20px; line-height:20px;
