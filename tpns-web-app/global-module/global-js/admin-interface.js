@@ -42,6 +42,20 @@ $(document).ready( function() {
 		$(this).find(".main-nav-category-loop-list ul").removeAttr("style");
 	});
 	// Global Dashboard Navigation
+	// Admin Global Mobile Only Search Menu Open
+	$(".admin-mobile-only-click-menu-button-open").click(function(e) {
+		$(this).addClass("hidden").hide();
+		$(this).parent().parent().find(".admin-mobile-only-click-menu-button-close").removeClass("hidden").addClass("open");
+		$(this).parent().parent().parent().find(".admin-mobile-only-click-menu-content").show();
+		e.preventDefault();
+	});
+	// Admin Global Mobile Only Search Sub Menu Close
+	$(".admin-mobile-only-click-menu-button-close").click(function(e) {
+		$(this).addClass("hidden").removeClass("open");
+		$(this).parent().parent().find(".admin-mobile-only-click-menu-button-open").removeClass("hidden").removeAttr("style");
+		$(this).parent().parent().parent().find(".admin-mobile-only-click-menu-content").removeAttr("style");
+		e.preventDefault();
+	});
 	/* for keeping track of what's "open" */
 	var activeClass = 'dropdown-active', showingDropdown, showingMenu, showingParent;
 	/* hides the current menu */
@@ -149,32 +163,6 @@ $(document).ready( function() {
 		$(this).parent().parent().parent().parent().find(".admin-click-menu-content, .admin-click-sub-menu-content").removeAttr("style").addClass("hidden");
 		$(this).parent().parent().parent().parent().find(".admin-click-menu-button-pc-open, .admin-click-sub-menu-button-pc-open").removeClass("hidden").removeAttr("style");
 	});
-	/*
-	// Admin Global Mobile Only Click Menu Open
-	$(".admin-mobile-only-click-menu-button-open").click(function(e) {
-		// Test if another item is open and close it
-		$(".main-nav-accordian").unbind( "click" ).removeClass("tab-open");
-		$(".admin-hide-mobile-nav a").parent().addClass("hidden");
-		$(".admin-show-mobile-nav").removeClass("hidden");
-		$(".admin-main-navigation").addClass("admin-mobile-nav-hidden");
-		$(".main-nav-category-loop-accordian-list, .admin-mobile-only-click-menu-content").removeAttr("style");
-		$(".admin-global-controllers-tab-hide, .admin-click-menu-button-pc-close, .admin-click-sub-menu-button-pc-close, .admin-mobile-only-click-menu-button-close").addClass("hidden").removeClass("open");
-		$(".admin-global-controllers-tab-content, .admin-click-menu-content, .admin-click-sub-menu-content").removeAttr("style").addClass("hidden");
-		$(".admin-global-controllers-tab-show, .admin-click-menu-button-pc-open, .admin-click-sub-menu-button-pc-open, .admin-mobile-only-click-menu-button-open").removeClass("hidden").removeAttr("style");
-		// End Test
-		$(this).addClass("hidden").hide();
-		$(this).parent().parent().find(".admin-mobile-only-click-menu-button-close").removeClass("hidden").addClass("open");
-		$(this).parent().parent().parent().find(".admin-mobile-only-click-menu-content").show();
-		e.preventDefault();
-	});
-	// Admin Global Mobile Only Click Sub Menu Close
-	$(".admin-mobile-only-click-menu-button-close").click(function(e) {
-		$(this).addClass("hidden").removeClass("open");
-		$(this).parent().parent().find(".admin-mobile-only-click-menu-button-open").removeClass("hidden").removeAttr("style");
-		$(this).parent().parent().parent().find(".admin-mobile-only-click-menu-content").removeAttr("style");
-		e.preventDefault();
-	});
-	*/
 	// Date Picker Settings
 	$(".admin-global-bi-datepicker, .datepicker-here").datepicker({
 		maxDate: new Date(),
