@@ -7,7 +7,9 @@
 .articles-content-button.warning-button a:hover, .ajax-file-upload-orange:hover { background:#f2784b; color:#FFFFFF; }
 .articles-content-button.stop-button a:hover, .ajax-file-upload-red:hover { background:#e7505a; color:#FFFFFF; }
 .articles-content-button.go-button a:hover, .ajax-file-upload-green:hover { background:#26c281; color:#FFFFFF; }
+.articles-content-button.go-button a:hover, .ajax-file-upload-green:hover { background:#26c281; color:#FFFFFF; }
 .articles-content-button.schedule-button a:hover { background:#8e44ad; color:#FFFFFF; }
+.articles-content-button.yellow-button a:hover { background:#f7ca18; color:#FFFFFF; }
 .articles-content-button a [class^="tpns-ai-"]:before, .articles-content-button a [class*=" tpns-ai-"]:before {
 	padding-left:0px; padding-right:10px; font-size:110%;
 }
@@ -47,11 +49,17 @@
 .admin-content-total-pages-container {
 	display:table-cell; vertical-align:middle; padding:0px 5px 2px 0px;
 }
+_:-ms-fullscreen, :root .admin-content-total-pages-container {
+	line-height:5px;
+}
 .admin-content-header-input-controller {
 	display:table-cell; vertical-align:middle; padding:0px 0px 0px 5px;
 }
 .admin-content-header-input-controller input {
 	height:26px; max-width:50px; background:#f1f3fa; font-family:OpenSans-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif; text-align:right; padding:0px 5px; margin:0; margin-bottom:-3px; border:1px solid #2b3643; -webkit-border-radius:6px; border-radius:6px; outline:none;
+}
+_:-ms-fullscreen, :root .admin-content-header-input-controller input {
+	margin-bottom:-9px;
 }
 .admin-content-header-input-controller input[type=number]::-webkit-inner-spin-button, .admin-content-header-input-controller input[type=number]::-webkit-outer-spin-button {
 	-webkit-appearance:none; margin:0;
@@ -65,28 +73,34 @@
 
 /* ---------- Articles Filter Results Area ---------- */
 .filter-inactive h2, .filter-active h3, .filter-active p {
-	height:30px; line-height:30px; vertical-align:top;
+	display:inline-block; height:30px; line-height:30px; vertical-align:middle;
 }
 .filter-active-items {
 	display:inline-block;
 }
 .filter-active-items [class^="tpns-ai-filter"]:before, .filter-active-items [class*=" tpns-ai-filter"]:before {
-	padding-left:0px; padding-right:10px;
+	padding-left:0px; padding-right:10px; vertical-align:text-top;
 }
 .filter-active-reporter u {
-	vertical-align:top;
+	/*vertical-align:top;*/
 }
 .filter-active-reporter img {
-	width:30px; height:30px; padding-top:9px; border-radius:17px; margin-right:5px; margin-top:-8px;
+	width:30px; height:30px; -webkit-border-radius:6px; border-radius:6px; margin:0px 5px 0px 0px;
+}
+.filter-active-reporter span {
+	vertical-align:top;
+}
+.filter-active-first-seperator-active {
+	display:inline-block; vertical-align:top;
 }
 .filter-active-first-seperator [class^="tpns-ai-"]:before, .filter-active-first-seperator [class*=" tpns-ai-"]:before {
 	padding:0px; font-size:80%;
 }
 .filter-active-category {
-	font-size:80%;
+	display:inline-block; height:30px; line-height:18px; font-size:80%; vertical-align:text-bottom;
 }
 .filter-active-sub-category-container {
-	font-size:65%;
+	display:inline-block; height:30px; line-height:21px; font-size:65%; vertical-align:text-bottom;
 }
 .filter-active p {
 	padding:0;
@@ -107,13 +121,10 @@
 .all-articles-container .global-header-cell {
 	background:#dce0ec; text-align:center; vertical-align:middle; padding:5px 5px 7px;
 }
-.all-articles-container .global-header-cell p {
-	line-height:20px; padding:0; margin:0; white-space:nowrap;
-}
 .all-articles-container .global-table-cell {
 	vertical-align:top; text-align:center; padding:10px 5px;
 }
-.all-articles-container .global-table-cell p {
+.all-articles-container .global-header-cell p, .all-articles-container .global-table-cell p {
 	line-height:20px; padding:0; margin:0;
 }
 /* ----- Header Layout ----- */
@@ -174,7 +185,10 @@
     left:-14px;
 }
 .all-articles-container .global-table-cell:nth-child(5) p u {
-	float:left; margin-right:5px;
+	float:left; width:50px; height:50px; margin-right:5px;
+}
+.all-articles-container .global-table-cell:nth-child(5) p u img {
+	width:50px; height:50px; -webkit-border-radius:6px; border-radius:6px;
 }
 .article-draft {
 	color:#f2784b;
@@ -207,7 +221,12 @@
 .all-articles-table .articles-form-content-featured-info .admin-click-menu-content {
     margin-top: 2px;
 }
-
+.global-table-row .article-shortcut-controllers {
+	visibility:hidden; clear:both; position:relative; margin:10px 0px 0px;
+}
+.global-table-row:hover .article-shortcut-controllers {
+	visibility:visible;
+}
 
 
 

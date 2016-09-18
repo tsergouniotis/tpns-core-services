@@ -199,6 +199,15 @@
                         <div class="admin-local-controllers-left">
                         </div>
                         <div class="admin-local-controllers-right textr">
+                            <div class="article-shortcut-controllers-items">
+                                <p class="articles-content-button warning-button"><a><i class="icon tpns-ai-trash"></i>Trash</a></p>
+                            </div>
+                            <div class="admin-local-controllers-right-items admin-article-search-container">
+                            	<p class="filter-active-items articles-content-button"><a><i class="icon tpns-ai-preview-show"></i>Preview</a></p>
+                            </div>
+                            <div class="admin-local-controllers-right-items admin-article-search-container">
+                            	<p class="filter-active-items articles-content-button"><a><i class="icon tpns-ai-save"></i>Save Draft</a></p>
+                            </div>
                             <div class="admin-local-controllers-right-items admin-article-search-container">
                             	<p class="filter-active-items articles-content-button stop-button"><a><i class="icon tpns-ai-thumbs-down"></i>Decline</a></p>
                             </div>
@@ -208,14 +217,13 @@
                             <div class="admin-local-controllers-right-items admin-article-search-container">
                             	<p class="filter-active-items articles-content-button schedule-button"><a><i class="icon tpns-ai-clock"></i>Schedule</a></p>
                             </div>
-                            <div class="admin-local-controllers-right-items admin-article-search-container">
-                            	<p class="filter-active-items articles-content-button"><a><i class="icon tpns-ai-preview-show"></i>Preview</a></p>
+                            <!-- ONLY show this button to user with editor rights and if article is not published and only show if the article is scheduled for future release as an override to the schedule and to force immediate publishing -->
+                            <div class="article-shortcut-controllers-items">
+                                <p class="articles-content-button yellow-button"><a><i class="icon tpns-ai-cloud-upload"></i>Publish Now</a></p>
                             </div>
+                            <!-- ONLY show this button to user with editor rights and if article is published -->
                             <div class="admin-local-controllers-right-items admin-article-search-container">
-                            	<p class="filter-active-items articles-content-button"><a><i class="icon tpns-ai-save"></i>Save Draft</a></p>
-                            </div>
-                            <div class="admin-local-controllers-right-items admin-article-search-container">
-                            	<p class="filter-active-items articles-content-button warning-button"><a><i class="icon tpns-ai-cloud-upload"></i>Publish</a></p>
+                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-cloud-download"></i>Unpublish</a></p>
                             </div>
                         </div>
                     </div>
