@@ -296,7 +296,7 @@ background:#2b3643;
 .admin-global-controllers-left, .admin-global-controllers-right, .admin-local-controllers-left, .admin-local-controllers-right {
 	display:table-cell; vertical-align:middle;
 }
-.admin-global-controllers-left-items, .admin-global-controllers-right-items, .admin-local-controllers-left-items, .admin-local-controllers-right-items, .admin-user-information-desktop {
+.admin-global-controllers-left-items, .admin-global-controllers-right-items, .admin-local-controllers-left-items, .admin-local-controllers-right-items, .admin-user-information-desktop, .article-shortcut-controllers-items {
 	position:relative; display:inline-block; vertical-align:top;
 }
 .admin-global-controllers-left-items {
@@ -361,7 +361,7 @@ background:#2b3643;
 	padding-left:0px;
 }
 .admin-click-menu-button a u img, .admin-click-sub-menu-button a u img {
-	width:30px; height:30px; vertical-align:text-bottom; -webkit-border-radius:17px; border-radius:17px; padding-top:9px; margin-right:5px;
+	width:30px; height:30px; vertical-align:text-bottom; -webkit-border-radius:6px; border-radius:6px; margin-right:5px;
 }
 .admin-global-controllers-tab-button a p.admin-global-controllers-tab-show {
 	padding:0px 5px 0px 10px;
