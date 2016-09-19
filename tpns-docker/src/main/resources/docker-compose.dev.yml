@@ -24,6 +24,18 @@ services:
     - ${HOME}/projects/tpns/data/user/pgdata:/var/lib/postgresql/data
     networks:
     - core_net
+  admindb:
+    container_name: admindb
+    image: postgres:9.5
+    ports:
+    - 5434:5432
+    environment:
+    - POSTGRES_USER=tpns_admin_db
+    - POSTGRES_PASSWORD=tpns
+    volumes:
+    - ${HOME}/projects/tpns/data/admin/pgdata:/var/lib/postgresql/data
+    networks:
+    - core_net
   articleService:
     container_name: articleService
     image: pzografos/tpns-article-service
@@ -36,6 +48,7 @@ services:
     - ARTICLE_DB_PORT=5432
     - ARTICLE_DB_USER=tpns_article_db
     - ARTICLE_DB_PASS=tpns
+    - JAVA_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005 -Djava.security.egd=file:/dev/./urandom
     depends_on:
     - articledb
     env_file:
@@ -54,8 +67,48 @@ services:
     - USER_DB_PORT=5432
     - USER_DB_USER=tpns_user_db
     - USER_DB_PASS=tpns
+    - JAVA_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005 -Djava.security.egd=file:/dev/./urandom
     depends_on:
     - userdb
+    networks:
+    - core_net
+  adminService:
+    container_name: adminService
+    image: pzografos/tpns-admin-service
+    ports:
+    - 8082:8080
+    - 5007:5005
+    environment:
+    - ADMIN_SERVER_PORT=8080
+    - ADMIN_DB_HOST=admindb
+    - ADMIN_DB_PORT=5432
+    - ADMIN_DB_USER=tpns_admin_db
+    - ADMIN_DB_PASS=tpns
+    - JAVA_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005 -Djava.security.egd=file:/dev/./urandom
+    depends_on:
+    - admindb
+    networks:
+    - core_net
+  adminQueue:
+    container_name: adminQueue
+    image: webcenter/activemq
+    ports:
+    - 8161:8161
+    - 61616:61616
+    - 5672:5672
+    - 61613:61613
+    - 1883:1883
+    - 61614:61614
+    environment:
+    - ACTIVEMQ_REMOVE_DEFAULT_ACCOUNT=true
+    - ACTIVEMQ_MIN_MEMORY=512
+    - ACTIVEMQ_MAX_MEMORY=2048
+    - ACTIVEMQ_ADMIN_LOGIN=admin
+    - ACTIVEMQ_ADMIN_PASSWORD=password
+    - ACTIVEMQ_STATIC_QUEUES=queue1;queue2;queue3
+    volumes:
+    - ${HOME}/projects/tpns/data/admin/activemq/data:/data/activemq
+    - ${HOME}/projects/tpns/data/admin/activemq/logs:/var/log/activemq
     env_file:
     - dev.env
     networks:

@@ -8,7 +8,11 @@ spring:
     password: ${ARTICLE_DB_PASS}
     driver-class-name: org.postgresql.Driver
 logging:
+  file: /var/log/article-service/application.log
+  path: /var/log/article-service
   level:
-    root: WARN
-    org.springframework.data: DEBUG
-    org.springframework.validation: DEBUG
+    root: INFO
+    org.springframework: DEBUG
+    org.springframework.web.filter: INFO
+    org.hibernate: INFO
+    com.tpns.article: DEBUG

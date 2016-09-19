@@ -16,6 +16,8 @@ import com.tpns.domain.utils.StringUtils;
 
 public class TpnsDockerClientManager {
 
+	private static final String DOCKER_IMAGE = "postgres:9.4";
+
 	private static TpnsDockerClientManager instance;
 
 	private DockerClient docker;
@@ -28,6 +30,7 @@ public class TpnsDockerClientManager {
 	private String postgresContainerId;
 
 	public TpnsDockerClientManager() {
+
 	}
 
 	public void start() throws Exception {
@@ -41,11 +44,8 @@ public class TpnsDockerClientManager {
 
 		final HostConfig hostConfig = HostConfig.builder().portBindings(portBindings).build();
 
-		final ContainerConfig containerConfig = ContainerConfig.builder().hostConfig(hostConfig).image("postgres:9.4").exposedPorts("5432")
-				.env("POSTGRES_USER=tpns_article_db", "POSTGRES_PASS=tpns").build();
-
-		// .exposedPorts("0.0.0.0:5432:5432").cmd("sh", "-c", "while :; do sleep
-		// 1; done").build();
+		final ContainerConfig containerConfig = ContainerConfig.builder().hostConfig(hostConfig).image(DOCKER_IMAGE).exposedPorts("5432")
+				.volumes("${HOME}/projects/tpns/data/article/pgdata:/var/lib/postgresql/data").env("POSTGRES_USER=tpns_article_db", "POSTGRES_PASS=tpns").build();
 
 		this.articledb = docker.createContainer(containerConfig);
 		this.postgresContainerId = articledb.id();

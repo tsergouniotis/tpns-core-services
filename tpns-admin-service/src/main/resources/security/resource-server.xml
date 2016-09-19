@@ -45,7 +45,7 @@ http://www.springframework.org/schema/util/spring-util.xsd">
 	</bean>
 
 	<oauth2:resource-server id="oauthResourceFilter"
-		resource-id="article-resources" authentication-manager-ref="oauthAuthenticationManager" />
+		resource-id="admin-resources" authentication-manager-ref="oauthAuthenticationManager" />
 
 	<bean id="oauthAuthenticationManager"
 		class="org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationManager">
@@ -59,7 +59,7 @@ http://www.springframework.org/schema/util/spring-util.xsd">
 		<property name="restTemplate" ref="restTemplate" />
 		<property name="checkTokenEndpointUrl"
 			value="http://userService:8080/user-service/oauth/check_token" />
-		<property name="clientId" value="article-webapp" />
+		<property name="clientId" value="admin-webapp" />
 		<property name="clientSecret" value="secret" />
 	</bean>
 
@@ -74,7 +74,7 @@ http://www.springframework.org/schema/util/spring-util.xsd">
 			authorized-grant-types="authorization_code" scope="read,trust"
 			resource-ids="user-resources,article-resources" authorities="ROLE_AUTHOR"
 			redirect-uri="http://anywhere?key=value" />
-		<oauth2:client client-id="article-webapp" secret="secret"
+		<oauth2:client client-id="admin-webapp" secret="secret"
 			authorized-grant-types="password,client_credentials" scope="read,write"
 			resource-ids="user-resources,article-resources"
 			access-token-validity="3600" authorities="ROLE_AUTHOR" />

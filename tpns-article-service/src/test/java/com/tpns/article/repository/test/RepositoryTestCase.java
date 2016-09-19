@@ -38,7 +38,7 @@ public class RepositoryTestCase {
 
 	private static void startContainer() {
 		try {
-			TpnsDockerClientManager.getInstance().start();
+			// TpnsDockerClientManager.getInstance().start();
 
 			Thread.sleep(TimeUnit.SECONDS.toMillis(5));
 		} catch (Exception e) {

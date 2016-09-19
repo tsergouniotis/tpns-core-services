@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+
+	<changeSet author="thanasis.sergouniotis" id="create-users-table">
+
+		<createTable tableName="properties">
+			<column name="database_id" type="BIGINT">
+				<constraints nullable="false" />
+			</column>
+			<column name="property_id" type="TEXT">
+				<constraints unique="true" />
+			</column>
+			<column name="url" type="TEXT" />
+			<column name="property_desc" type="TEXT" />
+		</createTable>
+
+		<addPrimaryKey tableName="properties" columnNames="database_id" />
+
+		<createSequence sequenceName="propertyseq" incrementBy="1"
+			startValue="1" />
+
+		<createIndex tableName="properties" indexName="property_id_idx">
+			<column name="property_id" />
+		</createIndex>
+	</changeSet>
+
+
+</databaseChangeLog>
+

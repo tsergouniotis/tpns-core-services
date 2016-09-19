@@ -1,0 +1,17 @@
+server:
+  port: 8080
+  contextPath: /admin-service
+spring:
+  datasource:
+    url: jdbc:postgresql://${ADMIN_DB_HOST}:${ADMIN_DB_PORT}/${ADMIN_DB_USER}
+    username: ${ADMIN_DB_USER}
+    password: ${ADMIN_DB_PASS}
+    driver-class-name: org.postgresql.Driver
+  activemq:
+    broker-url: tcp://adminQueue:9876
+    user: admin
+    password: password
+logging:
+  level:
+    root: WARN
+    org.springframework.security: DEBUG

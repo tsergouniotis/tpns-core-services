@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/persistence/orm_2_1.xsd"
+	version="2.1">
+
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete />
+		<persistence-unit-defaults>
+			<cascade-persist />
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+
+	<entity class="com.tpns.admin.domain.Property">
+		<table name="properties" />
+		<attributes>
+			<id name="id" access="FIELD">
+				<column name="database_id" />
+				<generated-value strategy="SEQUENCE" generator="PROPERTYSEQ" />
+				<sequence-generator name="PROPERTYSEQ"
+					sequence-name="PROPERTYSEQ" allocation-size="1" />
+			</id>
+			<basic name="propertyId">
+				<column name="property_id" length="255" unique="true" />
+			</basic>
+			<basic name="url">
+				<column name="property_url" length="255" unique="true" />
+			</basic>
+			<basic name="description">
+				<column name="property_desc" length="255" />
+			</basic>
+		</attributes>
+	</entity>
+
+
+</entity-mappings>

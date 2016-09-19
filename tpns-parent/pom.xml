@@ -17,6 +17,7 @@
 		<module>../tpns-domain</module>
 		<module>../tpns-article-service</module>
 		<module>../tpns-user-service</module>
+		<module>../tpns-admin-service</module>
 		<module>../tpns-docker</module>
 		<module>../tpns-scripts</module>
 		<module>../tpns-web-app</module>
@@ -57,8 +58,6 @@
 
 	<build>
 
-		<!-- f you don’t use the starter parent, in your pom.xml you need (inside 
-			the <build /> element): -->
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
