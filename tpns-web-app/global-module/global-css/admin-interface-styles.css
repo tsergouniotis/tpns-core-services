@@ -24,6 +24,9 @@ mark { background-color:#364150; color:#c6cfda; font-style:italic; font-weight: 
 
 /* ------------------------- Admin Date Picker ------------------------ */
 /* ----- Admin Checkboxes ----- */
+.admin-global-checkbox label {
+	cursor:pointer;
+}
 .admin-global-checkbox label span.admin-global-checkbox-label:before {
 	content:"\4d"; line-height:20px; font-family:"tpns-admin-icons"; vertical-align:middle; cursor:pointer; padding:0px 5px; margin:0;
 }
@@ -32,6 +35,19 @@ mark { background-color:#364150; color:#c6cfda; font-style:italic; font-weight: 
 }
 .admin-global-checkbox input[type=checkbox]:checked + span.admin-global-checkbox-label:before {
     content:"\67"; font-family:"tpns-admin-icons";
+}
+/* ----- Admin Radio Buttons ----- */
+.admin-global-radio label {
+	cursor:pointer;
+}
+.admin-global-radio label span.admin-global-radio-label:before {
+	content:"\3a"; line-height:20px; font-family:"tpns-admin-icons"; vertical-align:middle; cursor:pointer; padding:0px 5px; margin:0;
+}
+.admin-global-radio input[type=radio] {
+	display:none;
+}
+.admin-global-radio input[type=radio]:checked + span.admin-global-radio-label:before {
+    content:"\3b"; font-family:"tpns-admin-icons";
 }
 /* ----- Datepicker cells ----- */
 .datepicker--cells {
@@ -229,7 +245,7 @@ background:#2b3643;
 }
 /* --------------------- Admin header controllers --------------------- */
 .admin-header-controllers {
-	position:relative; display:table; width:100%; height:92px; table-layout:fixed; padding:0; margin:0;
+	position:relative; display:table; width:100%; height:92px; table-layout:fixed; padding:0; margin:0; z-index:100000;
 }
 /* ----- Admin Controlers Area ----- */
 .admin-controllers {
@@ -280,7 +296,7 @@ background:#2b3643;
 .admin-global-controllers-left, .admin-global-controllers-right, .admin-local-controllers-left, .admin-local-controllers-right {
 	display:table-cell; vertical-align:middle;
 }
-.admin-global-controllers-left-items, .admin-global-controllers-right-items, .admin-local-controllers-left-items, .admin-local-controllers-right-items, .admin-user-information-desktop {
+.admin-global-controllers-left-items, .admin-global-controllers-right-items, .admin-local-controllers-left-items, .admin-local-controllers-right-items, .admin-user-information-desktop, .article-shortcut-controllers-items {
 	position:relative; display:inline-block; vertical-align:top;
 }
 .admin-global-controllers-left-items {
@@ -345,27 +361,23 @@ background:#2b3643;
 	padding-left:0px;
 }
 .admin-click-menu-button a u img, .admin-click-sub-menu-button a u img {
-	width:30px; height:30px; vertical-align:text-bottom; -webkit-border-radius:17px; border-radius:17px; padding-top:9px; margin-right:5px;
+	width:30px; height:30px; vertical-align:text-bottom; -webkit-border-radius:6px; border-radius:6px; margin-right:5px;
 }
-
-
-
-
-
 .admin-global-controllers-tab-button a p.admin-global-controllers-tab-show {
 	padding:0px 5px 0px 10px;
 }
 .admin-global-controllers-tab-button a i {
 	position:relative; padding-left:10px;
 }
-.admin-global-controllers-tab-hide.open a, a .admin-global-controllers-tab-hide.open {
+
+.dropdown-active a, a.dropdown-active {
 	background:#364150; color:#FFFFFF; -webkit-border-radius:10px 10px 0 0; border-radius:10px 10px 0 0;
 }
-.admin-global-controllers-tab-hide.open a {
+.dropdown-active a {
 	padding:0px 5px 0px 10px; margin-left:-10px; margin-right:-5px;
 }
-a .admin-global-controllers-tab-hide.open {
-	height:46px; line-height:46px; padding:0px 5px 0px 10px;
+a.dropdown-active {
+	height:46px; line-height:46px;
 }
 .admin-global-controllers-tab-content {
 	position:absolute; top:100%; min-width:120%; max-width:400px; background:#364150; color:#c6cfda; padding:10px; overflow:auto; cursor:default; z-index:100001;
@@ -380,6 +392,9 @@ a .admin-global-controllers-tab-hide.open {
 .admin-click-menu-button a, .admin-click-menu-button a:hover, a.input-reset-button, .admin-click-sub-menu-button a, .admin-click-sub-menu-button a:hover, .admin-mobile-only-click-menu-button a {
 	color:#2b3643;
 }
+.admin-click-menu-button .dropdown-active a, .admin-click-menu-button .dropdown-active a:hover, .admin-click-sub-menu-button .dropdown-active a, .admin-click-sub-menu-button .dropdown-active a:hover, .admin-mobile-only-click-menu-button .dropdown-active a {
+	background:transparent; color:#2b3643; -webkit-border-radius:none; border-radius:none;
+}
 .admin-click-menu-button a:hover span.icon, .admin-click-sub-menu-button a:hover span.icon, .admin-mobile-only-click-menu-button a:hover {
 	color:#3598dc;
 }
@@ -390,19 +405,22 @@ a.input-reset-button:hover {
 	color:#f2784b;
 }
 .admin-click-menu-content, .admin-click-sub-menu-content {
-	position:absolute; top:100%; min-width:185%; max-width:300px; background:#364150; font-size:0.875em; color:#c6cfda; padding:10px; cursor:default; margin-top:3px; -webkit-border-radius:6px; border-radius:6px;
+	position:absolute; top:100%; min-width:185%; max-width:300px; background:#364150; font-size:0.875em; color:#c6cfda; padding:10px; cursor:default; margin-top:3px; -webkit-border-radius:6px; border-radius:6px; z-index:1;
 }
-.admin-click-menu-content:after, .admin-click-sub-menu-content:after {
-	content:" "; position:absolute; bottom:100%; left:22px; height:0; width:0; border:solid transparent; border-color:rgba(136, 183, 213, 0); border-bottom-color:#364150; border-width:6px; margin-left:-6px; pointer-events:none;
-}
-.admin-click-menu-filter-pc a span.icon:before {
-	padding-left: 10px;
-}
-.admin-click-menu-content-left, .admin-click-sub-menu-content-left {
+.admin-click-menu-content.admin-click-menu-content-left, .admin-click-menu-content.admin-click-sub-menu-content-left {
 	left:-10px;
 }
-.admin-click-menu-content-right, .admin-click-sub-menu-content-right {
+.admin-click-menu-content.admin-click-menu-content-right, .admin-click-menu-content.admin-click-sub-menu-content-right {
 	right:-10px;
+}
+.admin-click-menu-content.admin-click-menu-content-left:after, .admin-click-sub-menu-content.admin-click-menu-content-left:after, .admin-click-menu-content.admin-click-menu-content-right:after, .admin-click-sub-menu-content.admin-click-menu-content-right:after {
+	content:" "; position:absolute; bottom:100%; left:22px; height:0; width:0; border:solid transparent; border-color:rgba(136, 183, 213, 0); border-bottom-color:#364150; border-width:6px; margin-left:-6px; pointer-events:none;
+}
+.admin-click-menu-content.admin-click-menu-content-right:after, .admin-click-sub-menu-content.admin-click-menu-content-right:after {
+	left:auto; right:22px;
+}
+.admin-click-menu-filter-pc a span.icon:before {
+	padding-left:10px;
 }
 /* ----- Admin Global Mobile Only Controller Area - Click Menu ----- */
 .admin-mobile-only-click-menu-button {
@@ -562,7 +580,7 @@ a.input-reset-button:hover {
 /* --------------------- Admin 2 column layout --------------------- */
 /* ----- Left Column Layout ----- */
 .admin-left-column {
-    float:left; position:fixed; width:235px; height:100%; background:#364150;
+    float:left; position:fixed; width:235px; height:100%; background:#364150; z-index:100000;
 }
 .admin-left-column .current a:hover {
 	cursor:text;

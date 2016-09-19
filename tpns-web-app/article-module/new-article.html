@@ -1,19 +1,897 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
+<!DOCTYPE html>
+<!-- The language below is critical for the browser to know what dictionary to use for the site DO NOT REMOVE! -->
+<!-- If the Login Module supports multi languages then the lang will need to change dynamically so as to align with the users chosen language -->
+<html lang="en-US">
+<!-- The ID and the Data Template Set are critical as they communicate to the browser to whom the content and site belong to. DO NOT REMOVE! -->
+<!-- The Data Template Set and the id will need to change dynamically so as to show the users Domain Name and Company Name -->
+<head id="tpns.com" data-template-set="TPNS">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- The character, http equivalent and content communicator sets below are critical for the browser to understand the content of the site. DO NOT REMOVE! -->
+	<meta charset="UTF-8">
+    <!-- Feel free to add dynamic loops which will provide specific text for the browser tab to help the user know where they are in the site at a glance. This is comprised normally of the company name and description for the index page and for all the rest of the pages the company Name dash and the page name i.e. TPNS - Contact Us, TPNS - Search Results, TPNS - News etc. Note: This should NOT exceed 50 characters! -->
+    <title>TPNS Business Inteligence Dashboard</title>
+    <!-- Site's meta data, as above feel free to add dynamic loops which will provide specific text for the browser title -->
+    <meta name="title" content="TPNS - Business Intelligence Dashboard">
+    <meta name="description" content="Your One Account, Accessing One Global Information Distibrution Network">
+    <meta name="author" content="TPNS">
+    <!-- Please remember to make the YEAR update dynamically so that you do not have to remember to update the copyright year annually -->
+	<meta name="Copyright" content="Copyright TPNS 2015. All Rights Reserved.">
+	
+    <!-- Do not change the Mobile Viewport data below! -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+    
+    <!-- browser and mobile icons -->
+	<link rel="shortcut icon" href="../global-module/global-images/favicon.ico?v=2">
+	<link rel="apple-touch-icon" href="../global-module/global-images/apple-touch-icon-precomposed.png">
+    
+    <!-- Ensure that the Global CSS always preceeds the Local CSS -->
+    <!-- Link to the site's Global CSS -->
+	<link rel="stylesheet" type="text/css" media="screen" href="../global-module/global-css/global-styles.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="../global-module/global-css/admin-interface-styles.css">
+    <!-- Link to the admin's Local CSS -->
+	<link rel="stylesheet" type="text/css" media="screen" href="css/articles-styles.css">
 </head>
-
 <body>
-	<div class="admin-main-content">
-        <article class="textc">
-            <br /><br /><br />
-            <h1>Hello World</h1>
-            <br />
-            <h2>This will be the New Article Page</h2>
-            <h3>When Nico descides to write some code :p</h3>
-        </article>
+	<div class="admin-header-controllers">
+    	<div class="admin-controllers">
+            <div class="admin-logo-nav-container">
+                <div class="admin-logo-image">
+                    <p class="textl"><img src="../global-module/global-images/tpns-logo.png" alt="TPNS Global Information Distibrution Network" /></p>
+                </div>
+                <div class="admin-nav-controller">
+                    <p class="admin-minimise-nav textr"><a title="Minimise the navigation so as to help you focus on your articles"><i class="icon tpns-ai-nav-minimise"></i></a></p>
+                    <p class="admin-maximise-nav hidden"><a title="Minimise the navigation so as to help you focus on your articles"><i class="icon tpns-ai-nav-maximise"></i></a></p>
+                </div>
+                <div class="admin-nav-mobile-controller">
+                    <p class="admin-show-mobile-nav"><a title="Open the navigation"><i class="icon tpns-ai-mobile-menu"></i></a></p>
+                    <p class="admin-hide-mobile-nav hidden"><a title="Close the navigation"><i class="icon tpns-ai-close"></i></a></p>
+                </div>
+            </div>
+            <div class="admin-controllers-container">
+                <div class="admin-global-controllers">
+                    <div class="admin-global-controllers-inner">
+                        <div class="admin-global-controllers-left">
+                            <div class="admin-global-controllers-left-items admin-area-dashboard-nav">
+                            	<div class="admin-global-controllers-tab-container">
+                                    <div class="admin-global-controllers-tab-button">
+                                        <p class="admin-global-controllers-tab-show"><a class="dropdown" title="Open the navigation"><span>TPNS One</span><i class="icon tpns-ai-arrow-down"></i><i class="icon tpns-ai-close hidden"></i></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-global-controllers-tab-content admin-global-controllers-tab-content-left hidden">
+                                        <ul class="admin-global-controllers-tab-list">
+                                            <li><a href="../dashboard-module/global-bi-dashboard.html"><span>TPNS Group</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span>TPNS Astrology</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span>TPNS Lifestyle</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li class="current"><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span>TPNS One</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span>TPNS Sports</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="admin-global-controllers-left-items articles-new-article-button">
+                            	<p><a href="../article-module/new-article.html" title="Write a new article"><span>New Article</span><i class="icon tpns-ai-add"></i></a></p>
+                            </div>
+                        </div>
+                        <div class="admin-global-controllers-right textr">
+                            <div class="admin-global-controllers-right-items admin-user-notifications-nav admin-user-information-desktop">
+                            	<div class="admin-global-controllers-admin-info-container">
+                                    <p><a href="../notifications-module/notifications.html" title="Preview your latest notifications"><i class="icon tpns-ai-notifications"></i>
+                                        <span class="admin-global-controllers-totals">
+                                            <small>4</small>
+                                        </span>
+                                    </a></p>
+                                </div>
+                            </div>
+                            <div class="admin-global-controllers-right-items admin-user-messages-preview-nav admin-user-information-desktop">
+                            	<div class="admin-global-controllers-admin-info-container">
+                                    <p><a href="../messages-module/inbox.html" title="Preview your latest messages"><i class="icon tpns-ai-email-open"></i>
+                                        <span class="admin-global-controllers-totals">
+                                            <small>81</small>
+                                        </span>
+                                    </a></p>
+                                </div>
+                            </div>
+                            <div class="admin-global-controllers-right-items admin-user-article-schedule-preview-nav admin-user-information-desktop">
+                            	<div class="admin-global-controllers-admin-info-container">
+                                    <p><a href="../calendar-module/calendar.html" title="Preview your scheduled articles"><i class="icon tpns-ai-calendar-month-number"></i>
+                                        <span class="admin-global-controllers-totals">
+                                            <small>95</small>
+                                        </span>
+                                    </a></p>
+                                </div>
+                            </div>
+                            <div class="admin-global-controllers-right-items admin-user-profile-preview-nav">
+                            	<div class="admin-global-controllers-tab-container">
+                                    <div class="admin-global-controllers-tab-button">
+                                        <a title="Preview your profile options">
+                                            <p class="dropdown admin-global-controllers-tab-show">
+                                            	<span class="admin-user-profile-preview-nav-img-container">
+                                                	<img src="../staff-module/staff-images-50x50/staff6-50x50.jpg" alt="Κατερίνα Παπαδόπουλος" />
+                                                    <span class="admin-user-information-mobile-has-notifications"></span>
+                                            	</span>
+                                                <span class="username"><span class="username-inner">Κατερίνα Παπαδόπουλος</span><i class="icon tpns-ai-arrow-down"></i><i class="icon tpns-ai-close hidden"></i></span>
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <div class="dropdown-menu admin-global-controllers-tab-content admin-global-controllers-tab-content-right hidden textl">
+                                    	<div class="admin-user-information-mobile">
+                                            <div class="admin-global-controllers-right-items admin-user-notifications-nav">
+                                                <div class="admin-global-controllers-admin-info-container">
+                                                    <p><a href="../notifications-module/notifications.html" title="Preview your latest notifications"><i class="icon tpns-ai-notifications"></i>
+                                                        <span class="admin-global-controllers-totals">
+                                                            <small>4</small>
+                                                        </span>
+                                                    </a></p>
+                                                </div>
+                                            </div>
+                                            <div class="admin-global-controllers-right-items admin-user-messages-preview-nav">
+                                                <div class="admin-global-controllers-admin-info-container">
+                                                    <p><a href="../messages-module/inbox.html" title="Preview your latest messages"><i class="icon tpns-ai-email-open"></i>
+                                                        <span class="admin-global-controllers-totals">
+                                                            <small>81</small>
+                                                        </span>
+                                                    </a></p>
+                                                </div>
+                                            </div>
+                                            <div class="admin-global-controllers-right-items admin-user-article-schedule-preview-nav">
+                                                <div class="admin-global-controllers-admin-info-container">
+                                                    <p><a href="../calendar-module/calendar.html" title="Preview your scheduled articles"><i class="icon tpns-ai-calendar-month-number"></i>
+                                                        <span class="admin-global-controllers-totals">
+                                                            <small>95</small>
+                                                        </span>
+                                                    </a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    	<div class="global-table admin-user-profile-preview-content-details">
+                                        	<div class="global-table-row">
+                                            	<div class="global-table-cell">
+                                                    <div class="admin-user-profile-preview-content-image">
+                                                        <img src="../staff-module/staff-images-100x100/staff6-100x100.jpg" alt="Κατερίνα Παπαδόπουλος" />
+                                                    </div>
+                                                </div>
+                                            	<div class="global-table-cell">
+                                                    <div class="admin-user-profile-preview-content-username">
+                                                        <h5>Κατερίνα Παπαδόπουλος</h5>
+                                                    </div>
+                                                    <div class="admin-user-profile-preview-content-email">
+                                                        <small>katerina.papadopoulos@tpns.com</small>
+                                                    </div>
+                                                    <div class="admin-global-controllers-button">
+                                                        <h6 class="textc"><a href="../user-module/user-profile.html">View Profile</a></h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    	<div class="global-table admin-user-profile-preview-content-access-level">
+                                        	<div class="global-table-row">
+                                            	<div class="global-table-cell">
+                                                	<p>Access Level</p>
+                                        		</div>
+                                            	<div class="global-table-cell">
+                                                	<p>Editor</p>
+                                        		</div>
+                                        	</div>
+                                        	<div class="global-table-row">
+                                            	<div class="global-table-cell">
+                                                	<p>Newspaper Access</p>
+                                        		</div>
+                                            	<div class="global-table-cell">
+                                                    <ul class="access-level-newspapers">
+                                                        <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span class="icon tpns-nti-news-website"></span></a></p></li>
+                                                        <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span class="icon tpns-nti-sports-website"></span></a></p></li>
+                                                        <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span class="icon tpns-nti-astrology-website"></span></a></p></li>
+                                                        <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span class="icon tpns-nti-lifestyle-website"></span></a></p></li>
+                                                    </ul>
+                                        		</div>
+                                        	</div>
+                                        </div>
+                                        <div class="admin-global-controllers-button admin-global-controllers-transparent-button">
+                                            <h6 class="textc"><a href="../access-module/access.html">Exit Account</a></h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="admin-local-controllers">
+                    <div class="admin-local-controllers-inner">
+                        <div class="admin-local-controllers-left">
+                        </div>
+                        <div class="admin-local-controllers-right textr">
+                            <div class="article-shortcut-controllers-items">
+                                <p class="articles-content-button warning-button"><a><i class="icon tpns-ai-trash"></i>Trash</a></p>
+                            </div>
+                            <div class="admin-local-controllers-right-items admin-article-search-container">
+                            	<p class="filter-active-items articles-content-button"><a><i class="icon tpns-ai-preview-show"></i>Preview</a></p>
+                            </div>
+                            <div class="admin-local-controllers-right-items admin-article-search-container">
+                            	<p class="filter-active-items articles-content-button"><a><i class="icon tpns-ai-save"></i>Save Draft</a></p>
+                            </div>
+                            <div class="admin-local-controllers-right-items admin-article-search-container">
+                            	<p class="filter-active-items articles-content-button stop-button"><a><i class="icon tpns-ai-thumbs-down"></i>Decline</a></p>
+                            </div>
+                            <div class="admin-local-controllers-right-items admin-article-search-container">
+                            	<p class="filter-active-items articles-content-button go-button"><a><i class="icon tpns-ai-thumbs-up"></i>Approve</a></p>
+                            </div>
+                            <div class="admin-local-controllers-right-items admin-article-search-container">
+                            	<p class="filter-active-items articles-content-button schedule-button"><a><i class="icon tpns-ai-clock"></i>Schedule</a></p>
+                            </div>
+                            <!-- ONLY show this button to user with editor rights and if article is not published and only show if the article is scheduled for future release as an override to the schedule and to force immediate publishing -->
+                            <div class="article-shortcut-controllers-items">
+                                <p class="articles-content-button yellow-button"><a><i class="icon tpns-ai-cloud-upload"></i>Publish Now</a></p>
+                            </div>
+                            <!-- ONLY show this button to user with editor rights and if article is published -->
+                            <div class="admin-local-controllers-right-items admin-article-search-container">
+                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-cloud-download"></i>Unpublish</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <div class="admin-left-column">
+        <div class="admin-main-navigation admin-mobile-nav-hidden">
+            <nav>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title">
+                    	<p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html" title=""><span class="icon tpns-ai-bi-chart"></span><span class="nav-max">BI Dashboard</span></a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html" title="">Overview</a></p></li>
+                            <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html" title="">AWS</a></p></li>
+                            <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html" title="">Google Adwords</a></p></li>
+                            <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html" title="">In-house Ad. Revenue</a></p></li>
+                            <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html" title="">Global Analytics</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title current">
+                    	<p><a href="../article-module/articles.html" title=""><span class="icon tpns-ai-articles"></span><span class="nav-max">Articles</span></a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="../article-module/articles.html" title="">All Articles</a></p></li>
+                            <li class="current"><p><a href="../article-module/new-article.html" title="">New Article</a></p></li>
+                            <li><p><a href="../media-library-module/media.html" title="">Media Library</a></p></li>
+                            <li><p><a href="../tag-cloud-module/tags.html" title="">Tag Cloud</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title">
+                    	<p><a href="#" title=""><span class="icon tpns-ai-newspaper"></span><span class="nav-max">Newspapers</span></a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="#" title="">Front Pages</a></p></li>
+                            <li><p><a href="#" title="">Political</a></p></li>
+                            <li><p><a href="#" title="">Sports</a></p></li>
+                            <li><p><a href="#" title="">Financial</a></p></li>
+                            <li><p><a href="#" title="">Local</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title">
+                    	<p><a href="../comments-module/comments.html" title=""><span class="icon tpns-ai-comments"></span><span class="nav-max">Comments</span>
+                            <span class="admin-global-controllers-totals nav-totals">
+                                <small>95</small>
+                            </span>
+                        </a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="../comments-module/comments.html" title="">All Comments</a></p></li>
+                            <li><p><a href="../comments-module/trash.html" title="">Comment Trash</a></p></li>
+                            <li><p><a href="../comments-module/spam.html" title="">Spam Comments</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title">
+                    	<p><a href="../in-house-adverts-module/in-house-ads.html" title=""><span class="icon tpns-ai-megaphone"></span><span class="nav-max">In-house Ad’s</span></a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="../in-house-adverts-module/in-house-ads.html" title="">All Adverts</a></p></li>
+                            <li><p><a href="#" title="">Something</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title">
+                    	<p><a href="../messages-module/inbox.html" title=""><span class="icon tpns-ai-email-closed"></span><span class="nav-max">Messages</span>
+                            <span class="admin-global-controllers-totals nav-totals">
+                                <small>195</small>
+                            </span>
+                        </a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="../messages-module/inbox.html" title="">Inbox</a></p></li>
+                            <li><p><a href="../messages-module/new-message.html" title="">New Message</a></p></li>
+                            <li><p><a href="../messages-module/trash.html" title="">Trash</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title">
+                    	<p><a title=""><span class="icon tpns-ai-user"></span><span class="nav-max">Subscriptions</span></a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="#" title="">Something</a></p></li>
+                            <li><p><a href="#" title="">Something</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title">
+                    	<p><a title=""><span class="icon tpns-ai-settings"></span><span class="nav-max">Settings</span></a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="#" title="">Something</a></p></li>
+                            <li><p><a href="#" title="">Something</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="admin-right-column">
+        <div class="admin-main-content">
+        	<div class="admin-content-header">
+            	<div class="admin-content-header-left">
+                	<div class="admin-page-identifier">
+                		<div class="filter-inactive">
+                        	<h2>New Article</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="new-article-content-container">
+            	<form>
+                    <div class="new-article-content-left-column">
+                        <div class="new-article-form-content-container-full-width">
+                        	<div class="new-article-form-content-header">
+                            	<div class="new-article-form-content-header-left">
+                                	<h3><label for="new-article-headline">Headline</label></h3>
+                                </div>
+                            	<div class="new-article-form-content-header-right">
+                                    <div class="admin-click-menu-container">
+                                        <div class="admin-click-menu-button">
+                                            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Article Filter">?</a></p>
+                                        </div>
+                                        <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">
+                                            <p>The headline (also heading, head or title, or hed in journalism jargon of a story is typically a complete sentence (e.g., "Pilot Flies Below Bridges to Save Divers"), often with auxiliary verbs and articles removed (e.g., "Remains at Colorado camp linked to missing Chicago man"). However, headlines sometimes omit the subject (e.g., "Jumps From Boat, Catches in Wheel") or verb (e.g., "Cat woman lucky").</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        	<div class="new-article-form-content-body">
+                                <!-- NOTE: Remember to add the maxlength number in the p below -->
+                                <textarea class="new-article-textbox" id="new-article-headline" maxlength="100" placeholder="Add Headline here..."></textarea>
+                                <h6 class="limit textr">100</h6>
+                            </div>
+                        </div>
+                        <div class="new-article-form-content-container-full-width">
+                        	<div class="new-article-form-content-header">
+                            	<div class="new-article-form-content-header-left">
+                                	<h3><label for="new-article-subhead">Subhead</label></h3>
+                                </div>
+                            	<div class="new-article-form-content-header-right">
+                                    <div class="admin-click-menu-container">
+                                        <div class="admin-click-menu-button">
+                                            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Article Filter">?</a></p>
+                                        </div>
+                                        <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">
+                                            <p>A subhead (also sub-headline, subheading, subtitle or deck; subhed or dek in journalism jargon) can be either a subordinate title under the main headline, or the heading of a subsection of the article.</p>
+                                            <p>It is a heading that precedes the main text, or a group of paragraphs of the main text. It helps encapsulate the entire piece, or informs the reader of the topic of part of it. Long or complex articles often have more than one subhead. Subheads are thus one type of entry point that help readers make choices, such as where to begin (or continue) reading.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        	<div class="new-article-form-content-body">
+                                <!-- NOTE: Remember to add the maxlength number in the p below -->
+                                <textarea class="new-article-textbox" id="new-article-subhead" maxlength="150" placeholder="Add Subhead here..."></textarea>
+                                <h6 class="limit textr">150</h6>
+                            </div>
+                        </div>
+                        <div class="new-article-form-content-container-half-width">
+                        	<div class="new-article-form-content-header">
+                            	<div class="new-article-form-content-header-left">
+                                	<h3>Soft-Lead</h3>
+                                </div>
+                            	<div class="new-article-form-content-header-right">
+                                    <div class="admin-click-menu-container">
+                                        <div class="admin-click-menu-button">
+                                            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Article Filter">?</a></p>
+                                        </div>
+                                        <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">
+                                            <p>The most important structural element of a story is the lead (also intro or lede in journalism jargon), including the story's first, or leading, sentence or two, which may or may not form its own paragraph. The Soft Lead is usually the first sentence, or in some cases the first two sentences, and is ideally 20–25 words in length.</p>
+                                            <p>e.g.: Humans will be going to the moon again. The NASA announcement came as the agency requested ten billion dollars of appropriations for the project.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        	<div class="new-article-form-content-body">
+                                <textarea name="softLeadEditor" id="softLeadEditor" rows="10" cols="80" placeholder="Add Soft-lead Sentence here..."></textarea>
+                            </div>
+                        </div>
+                        <div class="new-article-form-content-container-half-width">
+                        	<div class="new-article-form-content-header">
+                            	<div class="new-article-form-content-header-left">
+                                	<h3>Hard-Lead</h3>
+                                </div>
+                            	<div class="new-article-form-content-header-right">
+                                    <div class="admin-click-menu-container">
+                                        <div class="admin-click-menu-button">
+                                            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Article Filter">?</a></p>
+                                        </div>
+                                        <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">
+                                            <p>The most important structural element of a story is the lead (also intro or lede in journalism jargon), including the story's first, or leading, sentence or two, which may or may not form its own paragraph. The Hard Lead is usually the first paragragh and is ideally 50-75 words in length.</p>
+                                            <p>e.g.: NASA is proposing another space project. The agency's budget request, announced today, included a plan to send another mission to the moon. This time the agency hopes to establish a long-term facility as a jumping-off point for other space adventures. The budget requests approximately ten billion dollars for the project.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        	<div class="new-article-form-content-body">
+                                <textarea name="hardLeadEditor" id="hardLeadEditor" rows="10" cols="80" placeholder="Add Hard-lead Paragraph here..."></textarea>
+                            </div>
+                        </div>
+                        <div class="new-article-form-content-container-full-width">
+                        	<div class="new-article-form-content-header">
+                            	<div class="new-article-form-content-header-left">
+                                	<h3><label for="new-article-subhead">Article</label></h3>
+                                </div>
+                            	<div class="new-article-form-content-header-right">
+                                    <div class="admin-click-menu-container">
+                                        <div class="admin-click-menu-button">
+                                            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Article Filter">?</a></p>
+                                        </div>
+                                        <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">
+                                            <p>Journalists usually describe the organization or structure of a news story as an inverted pyramid. The essential and most interesting elements of a story are put at the beginning, with supporting information following in order of diminishing importance.</p>
+                                            <p>This structure enables readers to stop reading at any point and still come away with the essence of a story. It allows people to explore a topic to only the depth that their curiosity takes them, and without the imposition of details or nuances that they could consider irrelevant, but still making that information available to more interested readers.</p>
+                                            <p>The inverted pyramid structure also enables articles to be trimmed to any arbitrary length during layout, to fit in the space available.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        	<div class="new-article-form-content-body">
+                                <textarea name="articleEditor" id="articleEditor" rows="10" cols="80" placeholder="Add New Article here..."></textarea>
+                            </div>
+                        </div>
+                        <div class="new-article-form-content-container-full-width">
+                        	<div class="new-article-form-content-header">
+                            	<div class="new-article-form-content-header-left">
+                                	<h3><label for="new-article-headline">Kicker</label></h3>
+                                </div>
+                            	<div class="new-article-form-content-header-right">
+                                    <div class="admin-click-menu-container">
+                                        <div class="admin-click-menu-button">
+                                            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Article Filter">?</a></p>
+                                        </div>
+                                        <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">
+                                            <p>A short, catchy word or phrase which takes priority over a major headline.</p>
+                                            <p>In the mobile internet the Kicker has had a new lease of life and is used to show a custom version of the Headline usually on top of an image, where the Headline is too long to be used in these situations.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        	<div class="new-article-form-content-body">
+                                <!-- NOTE: Remember to add the maxlength number in the p below -->
+                                <textarea class="new-article-textbox" id="new-article-kicker" maxlength="50" placeholder="Add Kicker here..."></textarea>
+                                <h6 class="limit textr">50</h6>
+                                <div class="image-upload-container">
+                                	<h5>Kicker Image</h5>
+                                	<div id="kickerUploader"></div>
+                                </div>
+                                <div class="new-article-content-options">
+                                	<p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label">Use Soft-lead Text</span></label></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-article-form-content-container-half-width">
+                        	<div class="new-article-form-content-header">
+                            	<div class="new-article-form-content-header-left">
+                                	<h3>Billboard</h3>
+                                </div>
+                            	<div class="new-article-form-content-header-right">
+                                    <div class="admin-click-menu-container">
+                                        <div class="admin-click-menu-button">
+                                            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Article Filter">?</a></p>
+                                        </div>
+                                        <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">
+                                            <p>An article billboard is capsule summary text, often just one sentence or fragment, which is put into a sidebar or text box (reminiscent of an outdoor billboard) on the same page to grab the reader's attention as they are flipping through the pages to encourage them to stop and read that article.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        	<div class="new-article-form-content-body">
+                                <textarea name="billboardEditor" id="billboardEditor" rows="10" cols="80" placeholder="Add Billboard text here..."></textarea>
+                                <div class="image-upload-container">
+                                	<h5>Billboard Image</h5>
+                                	<div id="billboardUploader"></div>
+                                </div>
+                                <div class="new-article-content-options">
+                                	<p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label">Use Kicker Image</span></label></p>
+                                    <div class="new-article-content-text-options-container">
+                                        <p class="admin-global-radio"><label><input type="radio" name="billboard-img-options" value="img-above" checked><span class="admin-global-radio-label">Image above text</span></label></p>
+                                        <p class="admin-global-radio"><label><input type="radio" name="billboard-img-options" value="img-before"><span class="admin-global-radio-label">Image before text</span></label></p>
+                                        <p class="admin-global-radio"><label><input type="radio" name="billboard-img-options" value="img-after"><span class="admin-global-radio-label">Image after text</span></label></p>
+                                        <p class="admin-global-radio"><label><input type="radio" name="billboard-img-options" value="img-bkg"><span class="admin-global-radio-label">Image as background</span></label></p>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-article-form-content-container-half-width">
+                        	<div class="new-article-form-content-header">
+                            	<div class="new-article-form-content-header-left">
+                                	<h3>Nutshell</h3>
+                                </div>
+                            	<div class="new-article-form-content-header-right">
+                                    <div class="admin-click-menu-container">
+                                        <div class="admin-click-menu-button">
+                                            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Article Filter">?</a></p>
+                                        </div>
+                                        <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">
+                                            <p>A nutshell paragraph (also simply nutshell, or nut 'graph, nut graf, nutgraf, etc., in journalism jargon) is a brief paragraph (occasionally there can be more than one) that summarizes the news value of the story, sometimes bullet-pointed and/or set off in a box. Nut-shell paragraphs are used particularly in feature stories.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        	<div class="new-article-form-content-body">
+                                <textarea name="nutshellEditor" id="nutshellEditor" rows="10" cols="80" placeholder="Add Nutshell text here..."></textarea>
+                                <div class="image-upload-container">
+                                	<h5>Nutshell Image</h5>
+                                	<div id="nutshellUploader"></div>
+                                </div>
+                                <div class="new-article-content-options">
+                                	<p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label">Use Kicker Image</span></label></p>
+                                    <div class="new-article-content-text-options-container">
+                                        <p class="admin-global-radio"><label><input type="radio" name="nutshell-img-options" value="img-above" checked><span class="admin-global-radio-label">Image above text</span></label></p>
+                                        <p class="admin-global-radio"><label><input type="radio" name="nutshell-img-options" value="img-before"><span class="admin-global-radio-label">Image before text</span></label></p>
+                                        <p class="admin-global-radio"><label><input type="radio" name="nutshell-img-options" value="img-after"><span class="admin-global-radio-label">Image after text</span></label></p>
+                                        <p class="admin-global-radio"><label><input type="radio" name="nutshell-img-options" value="img-bkg"><span class="admin-global-radio-label">Image as background</span></label></p>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="new-article-content-right-column">
+                        <div class="new-article-form-content-container-full-width">
+                        	<div class="new-article-form-content-header">
+                            	<div class="new-article-form-content-header-left">
+                                	<h3>Multi-part Article</h3>
+                                </div>
+                            	<div class="new-article-form-content-header-right">
+                                    <div class="admin-click-menu-container">
+                                        <div class="admin-click-menu-button">
+                                            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Article Filter">?</a></p>
+                                        </div>
+                                        <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">
+                                            <p>In literature, a multi-part or serial is a printed format by which a single larger work, is published in sequential installments. The installments are also known as numbers, parts or fascicles, and are either issued as separate publications or within in sequential issues of the same periodical publication.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        	<div class="new-article-form-content-body">
+                            	<p>This module needs further discussion</p>
+                            </div>
+                        </div>
+                        <div class="new-article-form-content-container-full-width">
+                        	<div class="new-article-form-content-header">
+                            	<div class="new-article-form-content-header-left">
+                                	<h3>Categories</h3>
+                                </div>
+                            	<div class="new-article-form-content-header-right">
+                                </div>
+                            </div>
+                        	<div class="new-article-form-content-body">
+                            	<div class="new-article-categories-container">
+                                	<ul>
+                                    	<li class="ellada">
+                                        	<h5 class="textn"><label><span><i class="icon tpns-ai-category hidden"></i>Ελλάδα</span></label><span class="hide-sub-categories"><u class="icon tpns-ai-preview-hide" title="Hide the sub-categories below"></u><u class="icon tpns-ai-preview-show hidden" title="Show the sub-categories below"></u></span></h5>
+                                        	<ul>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Ειδήσεις</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Εθνικά</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Παιδεία</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Αστυνομικό</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Δικαιοσύνη</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Πολιτισμός</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Αποκαλύψεις</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Εκκλησία</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Σεισμοί</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Άμυνα</span></label></p></li>
+                                            </ul>
+                                        </li>
+                                    	<li class="oikonomia">
+                                        	<h5 class="textn"><label><span><i class="icon tpns-ai-category hidden"></i>Οικονομία</span></label><span class="hide-sub-categories"><u class="icon tpns-ai-preview-hide" title="Hide the sub-categories below"></u><u class="icon tpns-ai-preview-show hidden" title="Show the sub-categories below"></u></span></h5>
+                                        	<ul>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Ειδήσεις</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Παραπολιτικά</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Βουλή</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Βαρόμετρο</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Εκλογές</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Αυτοδιοίκηση</span></label></p></li>
+                                            </ul>
+                                        </li>
+                                    	<li class="politikh">
+                                        	<h5 class="textn"><label><span><i class="icon tpns-ai-category hidden"></i>Πολιτική</span></label><span class="hide-sub-categories"><u class="icon tpns-ai-preview-hide" title="Hide the sub-categories below"></u><u class="icon tpns-ai-preview-show hidden" title="Show the sub-categories below"></u></span></h5>
+                                        	<ul>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Ειδήσεις</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Επιχειρήσεις</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Χρηματιστήριο</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Ναυτιλία</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Αγορές</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Τράπεζες</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Εργασία</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Ενέργεια</span></label></p></li>
+                                            </ul>
+                                        </li>
+                                    	<li class="ygeia">
+                                        	<h5 class="textn"><label><span><i class="icon tpns-ai-category hidden"></i>Υγεία</span></label><span class="hide-sub-categories"><u class="icon tpns-ai-preview-hide" title="Hide the sub-categories below"></u><u class="icon tpns-ai-preview-show hidden" title="Show the sub-categories below"></u></span></h5>
+                                        	<ul>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Ειδήσεις</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Π.Ε.Δ.Υ.</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Φάρμακο</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Νοσοκομεία</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Γιατροί</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Συνεντέυξεις</span></label></p></li>
+                                            </ul>
+                                        </li>
+                                    	<li class="kosmos">
+                                        	<h5 class="textn"><label><span><i class="icon tpns-ai-category hidden"></i>Κόσμος</span></label><span class="hide-sub-categories"><u class="icon tpns-ai-preview-hide" title="Hide the sub-categories below"></u><u class="icon tpns-ai-preview-show hidden" title="Show the sub-categories below"></u></span></h5>
+                                        	<ul>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Ειδήσεις</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Ευρώπη</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Ρωσία</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Λατινική Αμερική</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Αυστραλία</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Αφρική</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Ασία</span></label></p></li>
+                                            </ul>
+                                        </li>
+                                    	<li class="athlitika">
+                                        	<h5 class="textn"><label><span><i class="icon tpns-ai-category hidden"></i>Αθλητικά</span></label><span class="hide-sub-categories"><u class="icon tpns-ai-preview-hide" title="Hide the sub-categories below"></u><u class="icon tpns-ai-preview-show hidden" title="Show the sub-categories below"></u></span></h5>
+                                        	<ul>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Ειδήσεις</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Ποδόσφαιρο</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Μπάσκετ</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Σπορ</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Στοίχημα</span></label></p></li>
+                                            </ul>
+                                        </li>
+                                    	<li class="media">
+                                        	<h5 class="textn"><label><span><i class="icon tpns-ai-category hidden"></i>Media</span></label><span class="hide-sub-categories"><u class="icon tpns-ai-preview-hide" title="Hide the sub-categories below"></u><u class="icon tpns-ai-preview-show hidden" title="Show the sub-categories below"></u></span></h5>
+                                        	<ul>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Ειδήσεις</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Τηλεόραση</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Τύπος</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Ραδιόφωνο</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Internet</span></label></p></li>
+                                            </ul>
+                                        </li>
+                                    	<li class="kairos">
+                                        	<h5 class="textn"><label><span><i class="icon tpns-ai-category hidden"></i>Καιρός</span></label><span class="hide-sub-categories"><u class="icon tpns-ai-preview-hide" title="Hide the sub-categories below"></u><u class="icon tpns-ai-preview-show hidden" title="Show the sub-categories below"></u></span></h5>
+                                        	<ul>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Πρόγνωση ΕΜΥ</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Έκτακτα Δελτία</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Πολιτική Προστασία</span></label></p></li>
+                                            	<li><p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label">Χιονοδρομικά Κέντρα</span></label></p></li>
+                                            </ul>
+                                        </li>
+                                    	<li class="kypros">
+                                        	<h5 class="admin-global-checkbox textn"><label><span class="admin-global-checkbox-label"><i class="icon tpns-ai-category hidden"></i>Κύπρος</span></label><span class="hide-sub-categories"><u class="icon tpns-ai-preview-hide" title="Hide the sub-categories below"></u><u class="icon tpns-ai-preview-show hidden" title="Show the sub-categories below"></u></span></h5>
+                                        </li>
+                                        
+                                        
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-article-form-content-container-full-width">
+                        	<div class="new-article-form-content-header">
+                            	<div class="new-article-form-content-header-left">
+                                	<h3>Also show in...</h3>
+                                </div>
+                            	<div class="new-article-form-content-header-right">
+                                </div>
+                            </div>
+                        	<div class="new-article-form-content-body">
+                            	<div class="new-article-categories-container">
+                                	<ul>
+                                    	<li>
+                                        	<p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label"><i class="icon tpns-nti-sports-website"></i>TPNS Sports</span></label></p>
+                                        </li>
+                                    	<li>
+                                        	<p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label"><i class="icon tpns-nti-lifestyle-website"></i>TPNS Lifestyle</span></label></p>
+                                        </li>
+                                    	<li>
+                                        	<p class="admin-global-checkbox"><label><span class="admin-global-checkbox-label"><i class="icon tpns-nti-astrology-website"></i>TPNS Astrology</span></label></p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-article-form-content-container-full-width">
+                        	<div class="new-article-form-content-header">
+                            	<div class="new-article-form-content-header-left">
+                                	<h3>Promoted Article</h3>
+                                </div>
+                            	<div class="new-article-form-content-header-right">
+                                    <div class="admin-click-menu-container">
+                                        <div class="admin-click-menu-button">
+                                            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Article Filter">?</a></p>
+                                        </div>
+                                        <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">
+                                            <p>A promoted article is usually an article which is featured in the body of an existing article.</p>
+                                            <p>It is not found in all articles, and is usually assigned to a particular paragraph that mentions the subject matter which is elaborated further in the promoted article.</p>
+                                            <p>In a web newspaper the promoted article, could be an article relating to a sponsor or sponsered content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        	<div class="new-article-form-content-body">
+                            	<div class="admin-new-article-search-form global-table">
+                                	<section class="global-table-row">
+                                    	<div class="global-table-cell">
+                                        	<input type="text" placeholder="Headline Search..." />
+                                        </div>
+                                    	<div class="global-table-cell">
+                                        	<button type="submit"><span class="">Search</span><i class="icon tpns-ai-article-search"></i></button>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="new-article-form-content-related-info textr">
+                                	Show in paragraph 
+                                    <div class="admin-click-menu-container">
+                                        <div class="admin-click-menu-button admin-click-menu-new-article-triple">
+                                            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
+                                        </div>
+                                        <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">
+                                            <ul class="admin-click-menu-content-list">
+                                                <li><a><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            </ul> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Only show this if the Featured Article is not set to auto in the settings page -->
+                        <div class="new-article-form-content-container-full-width">
+                        	<div class="new-article-form-content-header">
+                            	<div class="new-article-form-content-header-left">
+                                	<h3>Featured Articles</h3>
+                                </div>
+                            	<div class="new-article-form-content-header-right">
+                                    <div class="admin-click-menu-container">
+                                        <div class="admin-click-menu-button">
+                                            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Article Filter">?</a></p>
+                                        </div>
+                                        <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">
+                                            <p>A featured selection of articles are usually displayed in a top 10 style in the front page of the newspaper, symbolising the Newspapers&acute;s choice of the hottest articles as they are happening now.</p>
+                                            <p>The reader expects that this list will be contantly updated in the passing of the day to reflect the lastest hot articles as they become hot.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        	<div class="new-article-form-content-body">
+                                <div class="new-article-form-content-related-info new-article-form-content-featured-info">
+                                    <div class="admin-click-menu-container">
+                                        <div class="admin-click-menu-button admin-click-menu-new-article-triple">
+                                            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-favourite"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
+                                        </div>
+                                        <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                            <ul class="admin-click-menu-content-list">
+                                                <li class="current"><a><u class="icon tpns-ai-favourite"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><u class="icon tpns-ai-favourite-active"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><u class="icon tpns-ai-favourite-active"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><u class="icon tpns-ai-favourite-active"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><u class="icon tpns-ai-favourite-active"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><u class="icon tpns-ai-favourite-active"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><u class="icon tpns-ai-favourite-active"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><u class="icon tpns-ai-favourite-active"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><u class="icon tpns-ai-favourite-active"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><u class="icon tpns-ai-favourite-active"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><u class="icon tpns-ai-favourite-active"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Only show the Editors Choice if the user has logged in with Editor rights -->
+                        <div class="new-article-form-content-container-full-width">
+                        	<div class="new-article-form-content-header">
+                            	<div class="new-article-form-content-header-left">
+                                	<h3>Editors&acute; Choice</h3>
+                                </div>
+                            	<div class="new-article-form-content-header-right">
+                                    <div class="admin-click-menu-container">
+                                        <div class="admin-click-menu-button">
+                                            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Article Filter">?</a></p>
+                                        </div>
+                                        <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">
+                                            <p>The editors&acute; choice of articles are usually displayed in a top 10 style in the front page of the newspaper, symbolising the Editors&acute;s choice of the most intresting articles to read today.</p>
+                                            <p>The reader expects that this list will be updated on a daily basis.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        	<div class="new-article-form-content-body">
+                                <div class="new-article-form-content-related-info new-article-form-content-featured-info">
+                                    <div class="admin-click-menu-container">
+                                        <div class="admin-click-menu-button admin-click-menu-new-article-triple">
+                                            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-editors-choice"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
+                                        </div>
+                                        <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                            <ul class="admin-click-menu-content-list">
+                                                <li class="current"><a><u class="icon tpns-ai-editors-choice"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../global-module/global-js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="../global-module/global-js/datepicker.js"></script>
+    <script type="text/javascript" src="../global-module/global-js/datepicker.en.js"></script>
+    <script type="text/javascript" src="../global-module/global-js/admin-interface.js"></script>
+    <!-- Local JS files -->
+    <script type="text/javascript" src="js/admin-articles.js"></script>
+    <script type="text/javascript" src="js/jquery.uploadfile.js"></script>
+    <!-- Inline JS files -->
+    <script src="ckeditor/ckeditor.js"></script>
+	<script>
+		CKEDITOR.replace( 'softLeadEditor', { customConfig : 'tpns-custom-editors/softleadconfig.js' });
+		CKEDITOR.replace( 'hardLeadEditor', { customConfig : 'tpns-custom-editors/hardleadconfig.js' });
+		CKEDITOR.replace( 'articleEditor', { customConfig : 'tpns-custom-editors/articleconfig.js' });
+		CKEDITOR.replace( 'billboardEditor', { customConfig : 'tpns-custom-editors/billboardconfig.js' });
+		CKEDITOR.replace( 'nutshellEditor', { customConfig : 'tpns-custom-editors/nutshellconfig.js' });
+    </script>
 </body>
 </html>

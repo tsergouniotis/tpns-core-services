@@ -31,7 +31,7 @@
     <!-- Link to the admin's Local CSS -->
 	<link rel="stylesheet" type="text/css" media="screen" href="css/articles-styles.css">
 </head>
-<body>
+<body onload="readArticles();">
 	<div class="admin-header-controllers">
     	<div class="admin-controllers">
             <div class="admin-logo-nav-container">
@@ -54,10 +54,9 @@
                             <div class="admin-global-controllers-left-items admin-area-dashboard-nav">
                             	<div class="admin-global-controllers-tab-container">
                                     <div class="admin-global-controllers-tab-button">
-                                        <p class="admin-global-controllers-tab-show"><a title="Open the navigation"><span>TPNS One</span><i class="icon tpns-ai-arrow-down"></i></a></p>
-                                        <p class="admin-global-controllers-tab-hide hidden"><a title="Close the navigation"><span>TPNS One</span><i class="icon tpns-ai-close"></i></a></p>
+                                        <p class="admin-global-controllers-tab-show"><a class="dropdown" title="Open the navigation"><span>TPNS One</span><i class="icon tpns-ai-arrow-down"></i><i class="icon tpns-ai-close hidden"></i></a></p>
                                     </div>
-                                    <div class="admin-global-controllers-tab-content admin-global-controllers-tab-content-left hidden">
+                                    <div class="dropdown-menu admin-global-controllers-tab-content admin-global-controllers-tab-content-left hidden">
                                         <ul class="admin-global-controllers-tab-list">
                                             <li><a href="../dashboard-module/global-bi-dashboard.html"><span>TPNS Group</span><i class="icon tpns-ai-selected"></i></a></li>
                                             <li><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span>TPNS Astrology</span><i class="icon tpns-ai-selected"></i></a></li>
@@ -104,23 +103,16 @@
                             	<div class="admin-global-controllers-tab-container">
                                     <div class="admin-global-controllers-tab-button">
                                         <a title="Preview your profile options">
-                                            <p class="admin-global-controllers-tab-show">
+                                            <p class="dropdown admin-global-controllers-tab-show">
                                             	<span class="admin-user-profile-preview-nav-img-container">
                                                 	<img src="../staff-module/staff-images-50x50/staff6-50x50.jpg" alt="Κατερίνα Παπαδόπουλος" />
                                                     <span class="admin-user-information-mobile-has-notifications"></span>
                                             	</span>
-                                                <span class="username"><span class="username-inner">Κατερίνα Παπαδόπουλος</span><i class="icon tpns-ai-arrow-down"></i></span>
-                                            </p>
-                                        	<p class="admin-global-controllers-tab-hide hidden">
-                                            	<span class="admin-user-profile-preview-nav-img-container">
-                                                	<img src="../staff-module/staff-images-50x50/staff6-50x50.jpg" alt="Κατερίνα Παπαδόπουλος" />
-                                                    <span class="admin-user-information-mobile-has-notifications"></span>
-                                            	</span>
-                                                <span class="username"><span class="username-inner">Κατερίνα Παπαδόπουλος</span><i class="icon tpns-ai-arrow-down"></i></span>
+                                                <span class="username"><span class="username-inner">Κατερίνα Παπαδόπουλος</span><i class="icon tpns-ai-arrow-down"></i><i class="icon tpns-ai-close hidden"></i></span>
                                             </p>
                                         </a>
                                     </div>
-                                    <div class="admin-global-controllers-tab-content admin-global-controllers-tab-content-right hidden textl">
+                                    <div class="dropdown-menu admin-global-controllers-tab-content admin-global-controllers-tab-content-right hidden textl">
                                     	<div class="admin-user-information-mobile">
                                             <div class="admin-global-controllers-right-items admin-user-notifications-nav">
                                                 <div class="admin-global-controllers-admin-info-container">
@@ -208,10 +200,9 @@
                             <div class="admin-local-controllers-left-items admin-bi-article-filter">
                             	<div class="admin-click-menu-container">
                                     <div class="admin-click-menu-button">
-                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a title="Open the Article Filter"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-articles"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Articles</span><span class="icon tpns-ai-arrow-down"></span></span></a></p>
-                                        <p class="admin-click-menu-button-pc-close admin-click-menu-filter-pc hidden"><a title="Close the Article Filter"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-articles"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Articles</span><span class="icon tpns-ai-close"></span></span></a></p>
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Article Filter"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-articles"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Articles</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
                                     </div>
-                                    <div class="admin-click-menu-content admin-click-menu-content-left hidden">
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
                                         <ul class="admin-click-menu-content-list">
                                             <li class="current"><a href="../article-module/articles.html"><span>All Articles</span><i class="icon tpns-ai-selected"></i></a></li>
                                             <li><a href="../article-module/trash.html"><span>Trash</span><i class="icon tpns-ai-selected"></i></a></li>
@@ -222,10 +213,9 @@
                             <div class="admin-local-controllers-left-items admin-bi-reporter-filter">
                             	<div class="admin-click-menu-container">
                                     <div class="admin-click-menu-button">
-                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a title="Open the Reporters Filter"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-staff"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Reporters</span><span class="icon tpns-ai-arrow-down"></span></span></a></p>
-                                        <p class="admin-click-menu-button-pc-close admin-click-menu-filter-pc hidden"><a title="Close the Reporters Filter"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-staff"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Reporters</span><span class="icon tpns-ai-close"></span></span></a></p>
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Reporters Filter"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-staff"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Reporters</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
                                     </div>
-                                    <div class="admin-click-menu-content admin-click-menu-content-left hidden">
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
                                         <ul class="admin-click-menu-content-list admin-bi-reporter-list">
                                             <li class="current"><a><u class="icon tpns-ai-staff"></u><span>All Reporters</span><i class="icon tpns-ai-selected"></i></a></li>
                                             <li><a><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Nico Haitas</span><i class="icon tpns-ai-selected"></i></a></li>
@@ -246,10 +236,9 @@
                             <div class="admin-local-controllers-left-items admin-bi-category-filter">
                             	<div class="admin-click-menu-container">
                                     <div class="admin-click-menu-button">
-                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a title="Open the Category Filter"><i class="icon tpns-ai-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Categories</span><span class="icon tpns-ai-arrow-down"></span></span></a></p>
-                                        <p class="admin-click-menu-button-pc-close admin-click-menu-filter-pc hidden"><a title="Close the Category Filter"><i class="icon tpns-ai-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Categories</span><span class="icon tpns-ai-close"></span></span></a></p>
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Category Filter"><i class="icon tpns-ai-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
                                     </div>
-                                    <div class="admin-click-menu-content admin-click-menu-content-left hidden">
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
                                         <ul class="admin-click-menu-content-list admin-bi-category-list">
                                             <li class="all-categories current"><a><span>All Categories</span><i class="icon tpns-ai-selected"></i></a></li>
                                             <li class="ellada"><a><span>Ελλάδα</span><i class="icon tpns-ai-selected"></i></a></li>
@@ -261,7 +250,6 @@
                                             <li class="media"><a><span>Media</span><i class="icon tpns-ai-selected"></i></a></li>
                                             <li class="kairos"><a><span>Καιρός</span><i class="icon tpns-ai-selected"></i></a></li>
                                             <li class="kypros"><a><span>Κύπρος</span><i class="icon tpns-ai-selected"></i></a></li>
-                                            <li class="efhmerides"><a><span>Εφημερίδες</span><i class="icon tpns-ai-selected"></i></a></li>
                                         </ul> 
                                     </div>
                                 </div>
@@ -272,10 +260,9 @@
                                         <div class="admin-bi-date-filter-items">
                                             <div class="admin-click-sub-menu-container">
                                                 <div class="admin-click-sub-menu-button">
-                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span></span></a></p>
-                                                    <p class="admin-click-sub-menu-button-pc-close admin-click-menu-filter-pc hidden"><a title="Close the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-close"></span></span></a></p>
+                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
                                                 </div>
-                                                <div class="admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
+                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
                                                     <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
                                                         <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
                                                         <li><a><span>Ειδήσεις</span><i class="icon tpns-ai-selected"></i></a></li>
@@ -297,10 +284,9 @@
                                         <div class="admin-bi-date-filter-items">
                                             <div class="admin-click-sub-menu-container">
                                                 <div class="admin-click-sub-menu-button">
-                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span></span></a></p>
-                                                    <p class="admin-click-sub-menu-button-pc-close admin-click-menu-filter-pc hidden"><a title="Close the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-close"></span></span></a></p>
+                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
                                                 </div>
-                                                <div class="admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
+                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
                                                     <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
                                                         <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
                                                         <li><a><span>Ειδήσεις</span><i class="icon tpns-ai-selected"></i></a></li>
@@ -318,10 +304,9 @@
                                         <div class="admin-bi-date-filter-items">
                                             <div class="admin-click-sub-menu-container">
                                                 <div class="admin-click-sub-menu-button">
-                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span></span></a></p>
-                                                    <p class="admin-click-sub-menu-button-pc-close admin-click-menu-filter-pc hidden"><a title="Close the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-close"></span></span></a></p>
+                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
                                                 </div>
-                                                <div class="admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
+                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
                                                     <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
                                                         <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
                                                         <li><a><span>Ειδήσεις</span><i class="icon tpns-ai-selected"></i></a></li>
@@ -341,10 +326,9 @@
                                         <div class="admin-bi-date-filter-items">
                                             <div class="admin-click-sub-menu-container">
                                                 <div class="admin-click-sub-menu-button">
-                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span></span></a></p>
-                                                    <p class="admin-click-sub-menu-button-pc-close admin-click-menu-filter-pc hidden"><a title="Close the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-close"></span></span></a></p>
+                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
                                                 </div>
-                                                <div class="admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
+                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
                                                     <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
                                                         <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
                                                         <li><a><span>Ειδήσεις</span><i class="icon tpns-ai-selected"></i></a></li>
@@ -362,10 +346,9 @@
                                         <div class="admin-bi-date-filter-items">
                                             <div class="admin-click-sub-menu-container">
                                                 <div class="admin-click-sub-menu-button">
-                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span></span></a></p>
-                                                    <p class="admin-click-sub-menu-button-pc-close admin-click-menu-filter-pc hidden"><a title="Close the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-close"></span></span></a></p>
+                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
                                                 </div>
-                                                <div class="admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
+                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
                                                     <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
                                                         <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
                                                         <li><a><span>Ειδήσεις</span><i class="icon tpns-ai-selected"></i></a></li>
@@ -384,10 +367,9 @@
                                         <div class="admin-bi-date-filter-items">
                                             <div class="admin-click-sub-menu-container">
                                                 <div class="admin-click-sub-menu-button">
-                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span></span></a></p>
-                                                    <p class="admin-click-sub-menu-button-pc-close admin-click-menu-filter-pc hidden"><a title="Close the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-close"></span></span></a></p>
+                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
                                                 </div>
-                                                <div class="admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
+                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
                                                     <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
                                                         <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
                                                         <li><a><span>Ειδήσεις</span><i class="icon tpns-ai-selected"></i></a></li>
@@ -404,10 +386,9 @@
                                         <div class="admin-bi-date-filter-items">
                                             <div class="admin-click-sub-menu-container">
                                                 <div class="admin-click-sub-menu-button">
-                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span></span></a></p>
-                                                    <p class="admin-click-sub-menu-button-pc-close admin-click-menu-filter-pc hidden"><a title="Close the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-close"></span></span></a></p>
+                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
                                                 </div>
-                                                <div class="admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
+                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
                                                     <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
                                                         <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
                                                         <li><a><span>Τηλεόραση</span><i class="icon tpns-ai-selected"></i></a></li>
@@ -423,10 +404,9 @@
                                         <div class="admin-bi-date-filter-items">
                                             <div class="admin-click-sub-menu-container">
                                                 <div class="admin-click-sub-menu-button">
-                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span></span></a></p>
-                                                    <p class="admin-click-sub-menu-button-pc-close admin-click-menu-filter-pc hidden"><a title="Close the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-close"></span></span></a></p>
+                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
                                                 </div>
-                                                <div class="admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
+                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
                                                     <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
                                                         <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
                                                         <li><a><span>Πρόγνωση ΕΜΥ</span><i class="icon tpns-ai-selected"></i></a></li>
@@ -439,26 +419,6 @@
                                         </div>
                                     </div>
                                     <div class="admin-bi-date-filter-selected-kypros hidden"></div>
-                                    <div class="admin-bi-date-filter-selected-efhmerides hidden">
-                                        <div class="admin-bi-date-filter-items">
-                                            <div class="admin-click-sub-menu-container">
-                                                <div class="admin-click-sub-menu-button">
-                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span></span></a></p>
-                                                    <p class="admin-click-sub-menu-button-pc-close admin-click-menu-filter-pc hidden"><a title="Close the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-close"></span></span></a></p>
-                                                </div>
-                                                <div class="admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
-                                                    <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
-                                                        <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Τα Πρωτοσέλιδα των Εφημερίδων</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Πολιτικές</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Αθλητικές</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Οικονομικές</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Τοπικές</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                    </ul> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -510,6 +470,20 @@
                             <li><p><a href="../article-module/new-article.html" title="">New Article</a></p></li>
                             <li><p><a href="../media-library-module/media.html" title="">Media Library</a></p></li>
                             <li><p><a href="../tag-cloud-module/tags.html" title="">Tag Cloud</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title">
+                    	<p><a href="#" title=""><span class="icon tpns-ai-newspaper"></span><span class="nav-max">Newspapers</span></a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="#" title="">Front Pages</a></p></li>
+                            <li><p><a href="#" title="">Political</a></p></li>
+                            <li><p><a href="#" title="">Sports</a></p></li>
+                            <li><p><a href="#" title="">Financial</a></p></li>
+                            <li><p><a href="#" title="">Local</a></p></li>
                         </ul>
                     </div>
                 </div>
@@ -591,12 +565,32 @@
                         </div>
                         <div class="filter-active hidden">
                         	<h3 class="filter-active-items"><span class="icon tpns-ai-filter"></span><span class="filter-active-reporter"></span><span class="filter-active-first-seperator hidden"><i class="icon tpns-ai-arrow-right"></i></span><span class="filter-active-category"></span><span class="filter-active-sub-category-container hidden"><i class="icon tpns-ai-arrow-right"></i><span class="filter-active-sub-category"></span></span></h3>
-                            <p class="filter-active-items admin-content-controllers-warning-button"><a><i class="icon tpns-ai-close"></i>Clear Filters</a></p>
+                            <p class="filter-active-items articles-content-button warning-button"><a><i class="icon tpns-ai-close"></i>Clear Filters</a></p>
                         </div>
                     </div>
                 </div>
             	<div class="admin-content-header-right textr">
-                	
+                    <div class="admin-content-header-right-items">
+                        <p class="articles-content-button admin-content-header-button-controller"><a><i class="icon tpns-ai-arrow-first"></i></a></p>
+                    </div>
+                    <div class="admin-content-header-right-items">
+                        <p class="articles-content-button admin-content-header-button-controller"><a><i class="icon tpns-ai-arrow-left"></i></a></p>
+                    </div>
+                    <div class="admin-content-header-right-items">
+                    	<p class="admin-content-header-input-controller"><input type="number" placeholder="1" /></p>
+                    </div>
+                    <div class="admin-content-header-right-items">
+                    	<p class="admin-content-total-pages-container textn">of <span class="admin-content-total-pages admin-decimals">6586</span></p>
+                    </div>
+                    <div class="admin-content-header-right-items">
+                        <p class="articles-content-button admin-content-header-button-controller"><a><i class="icon tpns-ai-arrow-right"></i></a></p>
+                    </div>
+                    <div class="admin-content-header-right-items">
+                        <p class="articles-content-button admin-content-header-button-controller"><a><i class="icon tpns-ai-arrow-last"></i></a></p>
+                    </div>
+                    <div class="admin-content-header-right-items">
+                        <p class="articles-content-button articles-content-refresh-button"><a><i class="icon tpns-ai-refresh"></i>Refresh</a></p>
+                    </div>
                 </div>
             </div>
             <div class="all-articles-container">
@@ -604,19 +598,18 @@
                     <div class="global-table-row">
                         <div class="global-header-cell" title="Bulk article selection">
                             <div class="select-all-rows-container">
-                                <p class="select-all-rows-button-check"><a><u class="icon tpns-ai-unchecked"></u><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter hidden">Bulk Selection</span></span></a></p>
-                                <p class="select-all-rows-button-uncheck hidden"><a><u class="icon tpns-ai-checked"></u><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter hidden">Bulk Selection</span></span></a></p>
+                                <p class="select-all-rows-button-check"><a><u class="icon tpns-ai-unchecked"></u></a></p>
+                                <p class="select-all-rows-button-uncheck hidden"><a><u class="icon tpns-ai-checked"></u></a></p>
                             </div>
-                            <div class="admin-click-menu-container admin-articles-bulk-actions-controller">
-                                <div class="admin-click-menu-button">
-                                    <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a><u class="icon tpns-ai-arrow-down"></u><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter hidden">Bulk Actions</span></span></a></p>
-                                    <p class="admin-click-menu-button-pc-close admin-click-menu-filter-pc hidden"><a><u class="icon tpns-ai-close"></u><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter hidden">Bulk Actions</span></span></a></p>
+                            <div class="admin-click-menu-container admin-articles-bulk-actions-controller hidden">
+                                <div class="admin-click-menu-button admin-click-menu-new-article-triple">
+                                    <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown">&nbsp;<span class="admin-click-menu-mobile"><span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
                                 </div>
-                                <div class="admin-click-menu-content admin-click-menu-content-left hidden">
+                                <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
                                     <ul class="admin-click-menu-content-list">
-                                        <li><a><span>Set all articles as draft</span><i class="icon tpns-ai-selected"></i></a></li>
-                                        <li><a><span>Publish all articles now</span><i class="icon tpns-ai-selected"></i></a></li>
-                                        <li><a><span>Move all articles to Trash</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        <li><a><span>Set selected as Draft</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        <li><a><span>Publish selected now</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        <li><a><span>Move selected to Trash</span><i class="icon tpns-ai-selected"></i></a></li>
                                     </ul> 
                                 </div>
                             </div>
@@ -659,17 +652,87 @@
                     </div>
                     <div class="global-table-row">
                         <div class="global-table-cell">
-                            <p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label"></span></label></p>
+                            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
                         </div>
                         <div class="global-table-cell">
-                        	<p><u class="icon tpns-ai-favourite"></u><a>--<i class="icon tpns-ai-arrow-down"></i></a></p>
-                            <p><u class="icon tpns-ai-editors-choice"></u><a>--<i class="icon tpns-ai-arrow-down"></i></a></p>
+                        	<div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button admin-click-menu-articles-table">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-favourite"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-favourite"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button admin-click-menu-articles-table">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-editors-choice"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-editors-choice"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="global-table-cell">
                         	<p class="admin-decimals">36789</p>
                         </div>
                         <div class="global-table-cell">
                         	<p>Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...</p>
+                            <div class="article-shortcut-controllers">
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                </div>
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button"><a><i class="icon tpns-ai-preview-show"></i>View</a></p>
+                                </div>
+                                <!-- ONLY show this button to user with editor rights and if article is not published and only show if the article is not scheduled for future release but is saved as a draft -->
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button yellow-button"><a><i class="icon tpns-ai-cloud-upload"></i>Publish</a></p>
+                                </div>
+                                <!-- ONLY show this button to user with editor rights and if article is not published and only show if the article is scheduled for future release as an override to the schedule and to force immediate publishing -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button yellow-button"><a><i class="icon tpns-ai-cloud-upload"></i>Publish Now</a></p>
+                                </div>
+                                -->
+                                <!-- ONLY show this button to user with editor rights and if article is published -->
+                                <!--
+                                <div class="admin-local-controllers-right-items admin-article-search-container">
+                                    <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-cloud-download"></i>Unpublish</a></p>
+                                </div>
+                                -->
+                                <!-- ONLY show this button to user if the article is unpublished -->
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button warning-button"><a><i class="icon tpns-ai-trash"></i>Trash</a></p>
+                                </div>
+                            </div>
                         </div>
                         <div class="global-table-cell">
                         	<p><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Αθανάσιος Σεργουνιώτης</span></p>
@@ -711,17 +774,87 @@
                     </div>
                     <div class="global-table-row">
                         <div class="global-table-cell">
-                            <p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox" checked ><span class="admin-global-checkbox-label"></span></label></p>
+                            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
                         </div>
                         <div class="global-table-cell">
-                        	<p><u class="icon tpns-ai-favourite"></u><a>--<i class="icon tpns-ai-arrow-down"></i></a></p>
-                            <p><u class="icon tpns-ai-editors-choice"></u><a>--<i class="icon tpns-ai-arrow-down"></i></a></p>
+                        	<div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button admin-click-menu-articles-table">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-favourite"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-favourite"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button admin-click-menu-articles-table">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-editors-choice"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-editors-choice"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="global-table-cell">
                         	<p class="admin-decimals">36789</p>
                         </div>
                         <div class="global-table-cell">
                         	<p>Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...</p>
+                            <div class="article-shortcut-controllers">
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                </div>
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button"><a><i class="icon tpns-ai-preview-show"></i>View</a></p>
+                                </div>
+                                <!-- ONLY show this button to user with editor rights and if article is not published and only show if the article is not scheduled for future release but is saved as a draft -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button yellow-button"><a><i class="icon tpns-ai-cloud-upload"></i>Publish</a></p>
+                                </div>
+                                -->
+                                <!-- ONLY show this button to user with editor rights and if article is not published and only show if the article is scheduled for future release as an override to the schedule and to force immediate publishing -->
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button yellow-button"><a><i class="icon tpns-ai-cloud-upload"></i>Publish Now</a></p>
+                                </div>
+                                <!-- ONLY show this button to user with editor rights and if article is published -->
+                                <!--
+                                <div class="admin-local-controllers-right-items admin-article-search-container">
+                                    <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-cloud-download"></i>Unpublish</a></p>
+                                </div>
+                                -->
+                                <!-- ONLY show this button to user if the article is unpublished -->
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button warning-button"><a><i class="icon tpns-ai-trash"></i>Trash</a></p>
+                                </div>
+                            </div>
                         </div>
                         <div class="global-table-cell">
                         	<p><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Αθανάσιος Σεργουνιώτης</span></p>
@@ -769,17 +902,89 @@
                     </div>
                     <div class="global-table-row">
                         <div class="global-table-cell">
-                            <p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox" checked ><span class="admin-global-checkbox-label"></span></label></p>
+                            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
                         </div>
                         <div class="global-table-cell">
-                        	<p><u class="icon tpns-ai-favourite"></u><a>--<i class="icon tpns-ai-arrow-down"></i></a></p>
-                            <p><u class="icon tpns-ai-editors-choice"></u><a>--<i class="icon tpns-ai-arrow-down"></i></a></p>
+                        	<div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button admin-click-menu-articles-table">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-favourite"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-favourite"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button admin-click-menu-articles-table">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-editors-choice"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-editors-choice"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="global-table-cell">
                         	<p class="admin-decimals">36789</p>
                         </div>
                         <div class="global-table-cell">
                         	<p>Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...</p>
+                            <div class="article-shortcut-controllers">
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                </div>
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button"><a><i class="icon tpns-ai-preview-show"></i>View</a></p>
+                                </div>
+                                <!-- ONLY show this button to user with editor rights and if article is not published and only show if the article is not scheduled for future release but is saved as a draft -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button yellow-button"><a><i class="icon tpns-ai-cloud-upload"></i>Publish</a></p>
+                                </div>
+                                -->
+                                <!-- ONLY show this button to user with editor rights and if article is not published and only show if the article is scheduled for future release as an override to the schedule and to force immediate publishing -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button yellow-button"><a><i class="icon tpns-ai-cloud-upload"></i>Publish Now</a></p>
+                                </div>
+                                -->
+                                <!-- ONLY show this button to user with editor rights and if article is published -->
+                                <div class="admin-local-controllers-right-items admin-article-search-container">
+                                    <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-cloud-download"></i>Unpublish</a></p>
+                                </div>
+                                <!-- ONLY show this button to user if the article is unpublished -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button warning-button"><a><i class="icon tpns-ai-trash"></i>Trash</a></p>
+                                </div>
+                                -->
+                            </div>
                         </div>
                         <div class="global-table-cell">
                         	<p><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Αθανάσιος Σεργουνιώτης</span></p>
@@ -827,17 +1032,869 @@
                     </div>
                     <div class="global-table-row">
                         <div class="global-table-cell">
-                            <p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox" checked ><span class="admin-global-checkbox-label"></span></label></p>
+                            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
                         </div>
                         <div class="global-table-cell">
-                        	<p><u class="icon tpns-ai-favourite"></u><a>--<i class="icon tpns-ai-arrow-down"></i></a></p>
-                            <p><u class="icon tpns-ai-editors-choice"></u><a>--<i class="icon tpns-ai-arrow-down"></i></a></p>
+                        	<div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button admin-click-menu-articles-table">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-favourite"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-favourite"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button admin-click-menu-articles-table">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-editors-choice"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-editors-choice"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="global-table-cell">
                         	<p class="admin-decimals">36789</p>
                         </div>
                         <div class="global-table-cell">
                         	<p>Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...</p>
+                            <div class="article-shortcut-controllers">
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                </div>
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button"><a><i class="icon tpns-ai-preview-show"></i>View</a></p>
+                                </div>
+                                <!-- ONLY show this button to user with editor rights and if article is not published and only show if the article is not scheduled for future release but is saved as a draft -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button yellow-button"><a><i class="icon tpns-ai-cloud-upload"></i>Publish</a></p>
+                                </div>
+                                -->
+                                <!-- ONLY show this button to user with editor rights and if article is not published and only show if the article is scheduled for future release as an override to the schedule and to force immediate publishing -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button yellow-button"><a><i class="icon tpns-ai-cloud-upload"></i>Publish Now</a></p>
+                                </div>
+                                -->
+                                <!-- ONLY show this button to user with editor rights and if article is published -->
+                                <div class="admin-local-controllers-right-items admin-article-search-container">
+                                    <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-cloud-download"></i>Unpublish</a></p>
+                                </div>
+                                <!-- ONLY show this button to user if the article is unpublished -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button warning-button"><a><i class="icon tpns-ai-trash"></i>Trash</a></p>
+                                </div>
+                                -->
+                            </div>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Αθανάσιος Σεργουνιώτης</span></p>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p><span class="icon tpns-nti-news-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-sports-website"></span></p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p><span class="icon tpns-nti-astrology-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-lifestyle-website"></span></p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p>Πολιτική</p></li>
+                                <li><p>Ελλάδα</p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p>Αποκαλύψεις</p></li>
+                                <li><p>Αποκαλύψεις</p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>7</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>4</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>--</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>1</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>534</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>Published 27/08/2016 13:46</p>
+                        </div>
+                    </div>
+                    <div class="global-table-row">
+                        <div class="global-table-cell">
+                            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button admin-click-menu-articles-table">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-favourite"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-favourite"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button admin-click-menu-articles-table">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-editors-choice"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-editors-choice"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p class="admin-decimals">36789</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...</p>
+                            <div class="article-shortcut-controllers">
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                </div>
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button"><a><i class="icon tpns-ai-preview-show"></i>View</a></p>
+                                </div>
+                                <!-- ONLY show this button to user with editor rights and if article is not published and only show if the article is not scheduled for future release but is saved as a draft -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button yellow-button"><a><i class="icon tpns-ai-cloud-upload"></i>Publish</a></p>
+                                </div>
+                                -->
+                                <!-- ONLY show this button to user with editor rights and if article is not published and only show if the article is scheduled for future release as an override to the schedule and to force immediate publishing -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button yellow-button"><a><i class="icon tpns-ai-cloud-upload"></i>Publish Now</a></p>
+                                </div>
+                                -->
+                                <!-- ONLY show this button to user with editor rights and if article is published -->
+                                <div class="admin-local-controllers-right-items admin-article-search-container">
+                                    <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-cloud-download"></i>Unpublish</a></p>
+                                </div>
+                                <!-- ONLY show this button to user if the article is unpublished -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button warning-button"><a><i class="icon tpns-ai-trash"></i>Trash</a></p>
+                                </div>
+                                -->
+                            </div>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Αθανάσιος Σεργουνιώτης</span></p>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p><span class="icon tpns-nti-news-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-sports-website"></span></p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p><span class="icon tpns-nti-astrology-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-lifestyle-website"></span></p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p>Πολιτική</p></li>
+                                <li><p>Ελλάδα</p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p>Αποκαλύψεις</p></li>
+                                <li><p>Αποκαλύψεις</p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>7</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>4</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>--</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>1</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>534</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>Published 27/08/2016 13:46</p>
+                        </div>
+                    </div>
+                    <div class="global-table-row">
+                        <div class="global-table-cell">
+                            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button admin-click-menu-articles-table">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-favourite"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-favourite"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button admin-click-menu-articles-table">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-editors-choice"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-editors-choice"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p class="admin-decimals">36789</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...</p>
+                            <div class="article-shortcut-controllers">
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                </div>
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button"><a><i class="icon tpns-ai-preview-show"></i>View</a></p>
+                                </div>
+                                <!-- ONLY show this button to user with editor rights and if article is not published and only show if the article is not scheduled for future release but is saved as a draft -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button yellow-button"><a><i class="icon tpns-ai-cloud-upload"></i>Publish</a></p>
+                                </div>
+                                -->
+                                <!-- ONLY show this button to user with editor rights and if article is not published and only show if the article is scheduled for future release as an override to the schedule and to force immediate publishing -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button yellow-button"><a><i class="icon tpns-ai-cloud-upload"></i>Publish Now</a></p>
+                                </div>
+                                -->
+                                <!-- ONLY show this button to user with editor rights and if article is published -->
+                                <div class="admin-local-controllers-right-items admin-article-search-container">
+                                    <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-cloud-download"></i>Unpublish</a></p>
+                                </div>
+                                <!-- ONLY show this button to user if the article is unpublished -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button warning-button"><a><i class="icon tpns-ai-trash"></i>Trash</a></p>
+                                </div>
+                                -->
+                            </div>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Αθανάσιος Σεργουνιώτης</span></p>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p><span class="icon tpns-nti-news-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-sports-website"></span></p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p><span class="icon tpns-nti-astrology-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-lifestyle-website"></span></p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p>Πολιτική</p></li>
+                                <li><p>Ελλάδα</p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p>Αποκαλύψεις</p></li>
+                                <li><p>Αποκαλύψεις</p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>7</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>4</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>--</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>1</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>534</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>Published 27/08/2016 13:46</p>
+                        </div>
+                    </div>
+                    <div class="global-table-row">
+                        <div class="global-table-cell">
+                            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button admin-click-menu-articles-table">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-favourite"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-favourite"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button admin-click-menu-articles-table">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-editors-choice"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-editors-choice"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p class="admin-decimals">36789</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...</p>
+                            <div class="article-shortcut-controllers">
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                </div>
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button"><a><i class="icon tpns-ai-preview-show"></i>View</a></p>
+                                </div>
+                                <!-- ONLY show this button to user with editor rights and if article is not published and only show if the article is not scheduled for future release but is saved as a draft -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button yellow-button"><a><i class="icon tpns-ai-cloud-upload"></i>Publish</a></p>
+                                </div>
+                                -->
+                                <!-- ONLY show this button to user with editor rights and if article is not published and only show if the article is scheduled for future release as an override to the schedule and to force immediate publishing -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button yellow-button"><a><i class="icon tpns-ai-cloud-upload"></i>Publish Now</a></p>
+                                </div>
+                                -->
+                                <!-- ONLY show this button to user with editor rights and if article is published -->
+                                <div class="admin-local-controllers-right-items admin-article-search-container">
+                                    <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-cloud-download"></i>Unpublish</a></p>
+                                </div>
+                                <!-- ONLY show this button to user if the article is unpublished -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button warning-button"><a><i class="icon tpns-ai-trash"></i>Trash</a></p>
+                                </div>
+                                -->
+                            </div>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Αθανάσιος Σεργουνιώτης</span></p>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p><span class="icon tpns-nti-news-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-sports-website"></span></p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p><span class="icon tpns-nti-astrology-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-lifestyle-website"></span></p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p>Πολιτική</p></li>
+                                <li><p>Ελλάδα</p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p>Αποκαλύψεις</p></li>
+                                <li><p>Αποκαλύψεις</p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>7</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>4</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>--</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>1</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>534</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>Published 27/08/2016 13:46</p>
+                        </div>
+                    </div>
+                    <div class="global-table-row">
+                        <div class="global-table-cell">
+                            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button admin-click-menu-articles-table">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-favourite"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-favourite"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button admin-click-menu-articles-table">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-editors-choice"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-editors-choice"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p class="admin-decimals">36789</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...</p>
+                            <div class="article-shortcut-controllers">
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                </div>
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button"><a><i class="icon tpns-ai-preview-show"></i>View</a></p>
+                                </div>
+                                <!-- ONLY show this button to user with editor rights and if article is not published and only show if the article is not scheduled for future release but is saved as a draft -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button yellow-button"><a><i class="icon tpns-ai-cloud-upload"></i>Publish</a></p>
+                                </div>
+                                -->
+                                <!-- ONLY show this button to user with editor rights and if article is not published and only show if the article is scheduled for future release as an override to the schedule and to force immediate publishing -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button yellow-button"><a><i class="icon tpns-ai-cloud-upload"></i>Publish Now</a></p>
+                                </div>
+                                -->
+                                <!-- ONLY show this button to user with editor rights and if article is published -->
+                                <div class="admin-local-controllers-right-items admin-article-search-container">
+                                    <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-cloud-download"></i>Unpublish</a></p>
+                                </div>
+                                <!-- ONLY show this button to user if the article is unpublished -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button warning-button"><a><i class="icon tpns-ai-trash"></i>Trash</a></p>
+                                </div>
+                                -->
+                            </div>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Αθανάσιος Σεργουνιώτης</span></p>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p><span class="icon tpns-nti-news-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-sports-website"></span></p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p><span class="icon tpns-nti-astrology-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-lifestyle-website"></span></p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p>Πολιτική</p></li>
+                                <li><p>Ελλάδα</p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p>Αποκαλύψεις</p></li>
+                                <li><p>Αποκαλύψεις</p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>7</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>4</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>--</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>1</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>534</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>Published 27/08/2016 13:46</p>
+                        </div>
+                    </div>
+                    <div class="global-table-row">
+                        <div class="global-table-cell">
+                            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button admin-click-menu-articles-table">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-favourite"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-favourite"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button admin-click-menu-articles-table">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-editors-choice"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-editors-choice"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p class="admin-decimals">36789</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...</p>
+                            <div class="article-shortcut-controllers">
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                </div>
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button"><a><i class="icon tpns-ai-preview-show"></i>View</a></p>
+                                </div>
+                                <!-- ONLY show this button to user with editor rights and if article is not published and only show if the article is not scheduled for future release but is saved as a draft -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button yellow-button"><a><i class="icon tpns-ai-cloud-upload"></i>Publish</a></p>
+                                </div>
+                                -->
+                                <!-- ONLY show this button to user with editor rights and if article is not published and only show if the article is scheduled for future release as an override to the schedule and to force immediate publishing -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button yellow-button"><a><i class="icon tpns-ai-cloud-upload"></i>Publish Now</a></p>
+                                </div>
+                                -->
+                                <!-- ONLY show this button to user with editor rights and if article is published -->
+                                <div class="admin-local-controllers-right-items admin-article-search-container">
+                                    <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-cloud-download"></i>Unpublish</a></p>
+                                </div>
+                                <!-- ONLY show this button to user if the article is unpublished -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button warning-button"><a><i class="icon tpns-ai-trash"></i>Trash</a></p>
+                                </div>
+                                -->
+                            </div>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Αθανάσιος Σεργουνιώτης</span></p>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p><span class="icon tpns-nti-news-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-sports-website"></span></p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p><span class="icon tpns-nti-astrology-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-lifestyle-website"></span></p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p>Πολιτική</p></li>
+                                <li><p>Ελλάδα</p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p>Αποκαλύψεις</p></li>
+                                <li><p>Αποκαλύψεις</p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>7</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>4</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>--</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>1</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>534</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>Published 27/08/2016 13:46</p>
+                        </div>
+                    </div>
+                    <div class="global-table-row">
+                        <div class="global-table-cell">
+                            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button admin-click-menu-articles-table">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-favourite"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-favourite"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-favourite-active"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="new-article-form-content-related-info articles-form-content-featured-info">
+                                <div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button admin-click-menu-articles-table">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-editors-choice"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list">
+                                            <li class="current"><a><u class="icon tpns-ai-editors-choice"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p class="admin-decimals">36789</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...</p>
+                            <div class="article-shortcut-controllers">
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                </div>
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button"><a><i class="icon tpns-ai-preview-show"></i>View</a></p>
+                                </div>
+                                <!-- ONLY show this button to user with editor rights and if article is not published and only show if the article is not scheduled for future release but is saved as a draft -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button yellow-button"><a><i class="icon tpns-ai-cloud-upload"></i>Publish</a></p>
+                                </div>
+                                -->
+                                <!-- ONLY show this button to user with editor rights and if article is not published and only show if the article is scheduled for future release as an override to the schedule and to force immediate publishing -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button yellow-button"><a><i class="icon tpns-ai-cloud-upload"></i>Publish Now</a></p>
+                                </div>
+                                -->
+                                <!-- ONLY show this button to user with editor rights and if article is published -->
+                                <div class="admin-local-controllers-right-items admin-article-search-container">
+                                    <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-cloud-download"></i>Unpublish</a></p>
+                                </div>
+                                <!-- ONLY show this button to user if the article is unpublished -->
+                                <!--
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button warning-button"><a><i class="icon tpns-ai-trash"></i>Trash</a></p>
+                                </div>
+                                -->
+                            </div>
                         </div>
                         <div class="global-table-cell">
                         	<p><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Αθανάσιος Σεργουνιώτης</span></p>
@@ -889,8 +1946,33 @@
                     
                     
                     
-                    
-                    
+                </div>
+            </div>
+        	<div class="admin-content-footer">
+            	<div class="admin-content-footer-left">
+                </div>
+            	<div class="admin-content-footer-right textr">
+                    <div class="admin-content-footer-right-items">
+                    	<p class="admin-content-total-pages-container textn"><span class="admin-content-total-articles admin-decimals">2456765</span> articles</p>
+                    </div>
+                    <div class="admin-content-footer-right-items">
+                        <p class="articles-content-button admin-content-header-button-controller"><a><i class="icon tpns-ai-arrow-first"></i></a></p>
+                    </div>
+                    <div class="admin-content-footer-right-items">
+                        <p class="articles-content-button admin-content-header-button-controller"><a><i class="icon tpns-ai-arrow-left"></i></a></p>
+                    </div>
+                    <div class="admin-content-footer-right-items">
+                    	<p class="admin-content-header-input-controller"><input type="number" placeholder="1" /></p>
+                    </div>
+                    <div class="admin-content-footer-right-items">
+                    	<p class="admin-content-total-pages-container textn">of <span class="admin-content-total-pages admin-decimals">6586</span></p>
+                    </div>
+                    <div class="admin-content-footer-right-items">
+                        <p class="articles-content-button admin-content-header-button-controller"><a><i class="icon tpns-ai-arrow-right"></i></a></p>
+                    </div>
+                    <div class="admin-content-footer-right-items">
+                        <p class="articles-content-button admin-content-header-button-controller"><a><i class="icon tpns-ai-arrow-last"></i></a></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -899,7 +1981,8 @@
     <script type="text/javascript" src="../global-module/global-js/datepicker.js"></script>
     <script type="text/javascript" src="../global-module/global-js/datepicker.en.js"></script>
     <script type="text/javascript" src="../global-module/global-js/admin-interface.js"></script>
+    <script type="text/javascript" src="../global-module/global-js/tpns.js"></script>
     <!-- Local JS files -->
-    <script type="text/javascript" src="js/admin-articles.js"></script>
+    <script type="text/javascript" src="js/articles.js"></script>
 </body>
 </html>

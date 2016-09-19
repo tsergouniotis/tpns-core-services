@@ -219,6 +219,17 @@ url("../global-fonts/tpns-admin-icons.svg#tpns-admin-icons") format("svg");
 .tpns-ai-tag-add:before { content: "\28"; }
 .tpns-ai-editors-choice:before { content: "\2a"; }
 .tpns-ai-editors-choice-selected:before { content: "\2b"; }
+.tpns-ai-preview-hide:before { content: "\2c"; }
+.tpns-ai-preview-show:before { content: "\2d"; }
+.tpns-ai-save:before { content: "\2e"; }
+.tpns-ai-cloud-upload:before { content: "\2f"; }
+.tpns-ai-radio-button-off:before { content: "\3a"; }
+.tpns-ai-radio-button-on:before { content: "\3b"; }
+.tpns-ai-newspaper:before { content: "\3c"; }
+.tpns-ai-arrow-first:before { content: "\3d"; }
+.tpns-ai-arrow-last:before { content: "\3e"; }
+.tpns-ai-trash:before { content: "\3f"; }
+.tpns-ai-cloud-download:before { content: "\40"; }
 
 /* --------------------- Headers ---------------------- */
 h1 {
@@ -284,7 +295,7 @@ i, u { text-decoration:none; }
 
 /* --------------------- Single/Special use global-fonts --------------------- */
 /* Special Use global-fonts normally do not have a font-size and start with a class of .text100 as it is inherited by the header font size, if they do have a font-size then the class starts from .text200 upwards */
-.text100, button.global-form-submit-button {
+.textn, .text100, button.global-form-submit-button {
 	font-family: OpenSans-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 /*

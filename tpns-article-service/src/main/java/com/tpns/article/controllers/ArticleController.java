@@ -29,6 +29,11 @@ public class ArticleController {
 	@Autowired
 	private ArticleRepository articleRepository;
 
+	@RequestMapping(produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }, method = RequestMethod.GET)
+	public List<Article> findAll() throws Exception {
+		return articleRepository.findAll();
+	}
+
 	@RequestMapping(produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }, method = RequestMethod.GET, path = "/published")
 	public List<Article> findPublished() throws Exception {
 		return articleRepository.findByStatus(ArticleStatus.PUBLISHED);

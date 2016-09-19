@@ -41,80 +41,89 @@ $(document).ready( function() {
 	$(".admin-left-column, .admin-right-column, .admin-controllers-container, .admin-logo-nav-container").on('touchend', function(){
 		$(this).find(".main-nav-category-loop-list ul").removeAttr("style");
 	});
-	// Global Dashboard Navigation Open
-	$(".admin-global-controllers-tab-show").click(function(e) {
-		// Test if another item is open and close it
-		$(".main-nav-accordian").unbind( "click" ).removeClass("tab-open");
-		$(".admin-hide-mobile-nav a").parent().addClass("hidden");
-		$(".admin-show-mobile-nav").removeClass("hidden");
-		$(".admin-main-navigation").addClass("admin-mobile-nav-hidden");
-		$(".main-nav-category-loop-accordian-list, .admin-mobile-only-click-menu-content").removeAttr("style");
-		$(".admin-global-controllers-tab-hide, .admin-click-menu-button-pc-close, .admin-click-sub-menu-button-pc-close, .admin-mobile-only-click-menu-button-close").addClass("hidden").removeClass("open");
-		$(".admin-global-controllers-tab-content, .admin-click-menu-content, .admin-click-sub-menu-content").removeAttr("style").addClass("hidden");
-		$(".admin-global-controllers-tab-show, .admin-click-menu-button-pc-open, .admin-click-sub-menu-button-pc-open, .admin-mobile-only-click-menu-button-open").removeClass("hidden").removeAttr("style");
-		// End Test
+	// Global Dashboard Navigation
+	// Admin Global Mobile Only Search Menu Open
+	$(".admin-mobile-only-click-menu-button-open").click(function(e) {
 		$(this).addClass("hidden").hide();
-		$(this).parent().parent().find(".admin-global-controllers-tab-hide").removeClass("hidden").addClass("open");
-		$(this).parent().parent().parent().find(".admin-global-controllers-tab-content").removeClass("hidden").show();
+		$(this).parent().parent().find(".admin-mobile-only-click-menu-button-close").removeClass("hidden").addClass("open");
+		$(this).parent().parent().parent().find(".admin-mobile-only-click-menu-content").show();
 		e.preventDefault();
 	});
-	// Global Dashboard Navigation Close
-	$(".admin-global-controllers-tab-hide").click(function(e) {
+	// Admin Global Mobile Only Search Sub Menu Close
+	$(".admin-mobile-only-click-menu-button-close").click(function(e) {
 		$(this).addClass("hidden").removeClass("open");
-		$(this).parent().parent().find(".admin-global-controllers-tab-show").removeClass("hidden").removeAttr("style");
-		$(this).parent().parent().parent().find(".admin-global-controllers-tab-content").removeAttr("style").addClass("hidden");
+		$(this).parent().parent().find(".admin-mobile-only-click-menu-button-open").removeClass("hidden").removeAttr("style");
+		$(this).parent().parent().parent().find(".admin-mobile-only-click-menu-content").removeAttr("style");
 		e.preventDefault();
 	});
-	// Global Dashboard Navigation Close outside of open nav container
-	$(".admin-left-column, .admin-logo-nav-container, .admin-bi-from-calendar input, .input-reset-button").click(function() {
-		/*, .admin-right-column, .admin-local-controllers     .main-nav-category-loop-accordian-list, */
-		$(".admin-mobile-only-click-menu-content").removeAttr("style");
-		$(".admin-global-controllers-tab-hide, .admin-click-menu-button-pc-close, .admin-click-sub-menu-button-pc-close, .admin-mobile-only-click-menu-button-close").addClass("hidden").removeClass("open");
-		$(".admin-global-controllers-tab-content, .admin-click-menu-content, .admin-click-sub-menu-content").removeAttr("style").addClass("hidden");
-		$(".admin-global-controllers-tab-show, .admin-click-menu-button-pc-open, .admin-click-sub-menu-button-pc-open, .admin-mobile-only-click-menu-button-open").removeClass("hidden").removeAttr("style");
+	/* for keeping track of what's "open" */
+	var activeClass = 'dropdown-active', showingDropdown, showingMenu, showingParent;
+	/* hides the current menu */
+	var hideMenu = function() {
+		if(showingDropdown) {
+			showingDropdown.closest(".admin-global-controllers-tab-button").find("i:first-of-type").removeClass("hidden");
+			showingDropdown.closest(".admin-global-controllers-tab-button").find("i:last-of-type").addClass("hidden");
+			showingDropdown.closest(".admin-click-menu-button").find(".admin-click-menu-mobile span.icon:nth-child(2)").removeClass("hidden");
+			showingDropdown.closest(".admin-click-menu-button").find(".admin-click-menu-mobile span.icon:nth-child(3)").addClass("hidden");
+			showingDropdown.closest(".admin-click-menu-articles-table").find("span.icon:nth-child(3)").removeClass("hidden");
+			showingDropdown.closest(".admin-click-menu-articles-table").find("span.icon:nth-child(4)").addClass("hidden");
+			showingDropdown.closest(".admin-click-menu-button").find(".admin-click-menu-new-article-triple span.icon:nth-child(2)").addClass("hidden");
+			showingDropdown.closest(".admin-click-menu-button").find(".admin-click-menu-new-article-triple span.icon:nth-child(3)").removeClass("hidden");
+			showingDropdown.removeClass(activeClass);
+			showingMenu.hide();
+		}
+	};
+	/* recurse through dropdown menus */
+	$('.dropdown').each(function() {
+		/* track elements: menu, parents with customisations and siblings */
+		var dropdown = $(this);
+		var menu = dropdown.parent().parent().next('.dropdown-menu'), parent = dropdown.parent();
+		/* function that shows THIS menu */
+		var showMenu = function() {
+			hideMenu();
+			showingDropdown = dropdown.parent().addClass('dropdown-active');
+			dropdown.closest(".admin-global-controllers-tab-button").find("i:first-of-type").addClass("hidden");
+			dropdown.closest(".admin-global-controllers-tab-button").find("i:last-of-type").removeClass("hidden");
+			showingDropdown.closest(".admin-click-menu-button").find(".admin-click-menu-mobile span.icon:nth-child(2)").addClass("hidden");
+			showingDropdown.closest(".admin-click-menu-button").find(".admin-click-menu-mobile span.icon:nth-child(3)").removeClass("hidden");
+			showingDropdown.closest(".admin-click-menu-articles-table").find("span.icon:nth-child(3)").addClass("hidden");
+			showingDropdown.closest(".admin-click-menu-articles-table").find("span.icon:nth-child(4)").removeClass("hidden");
+			showingDropdown.closest(".admin-click-menu-button").find(".admin-click-menu-new-article-triple span.icon:nth-child(2)").addClass("hidden");
+			showingDropdown.closest(".admin-click-menu-button").find(".admin-click-menu-new-article-triple span.icon:nth-child(3)").removeClass("hidden");
+			showingMenu = menu.show();
+			showingParent = parent;
+		};
+		/* function to show menu when clicked */
+		dropdown.bind('click',function(e) {
+			if(e) {
+				e.stopPropagation();
+			}
+			if(e) {
+				e.preventDefault();
+			}
+			//showMenu();
+			if ( dropdown.parent().hasClass('dropdown-active') ) {
+				hideMenu();
+			} else {
+				showMenu();
+			}
+		});
+		/* function to show menu when someone tabs to the box */
+		dropdown.bind('focus',function() {
+			showMenu();
+		});
 	});
-	// Admin Global Click Menu Open
-	$(".admin-click-menu-button-pc-open").click(function(e) {
-		// Test if another item is open and close it
-		$(".main-nav-accordian").unbind( "click" ).removeClass("tab-open");
-		$(".admin-hide-mobile-nav a").parent().addClass("hidden");
-		$(".admin-show-mobile-nav").removeClass("hidden");
-		$(".admin-main-navigation").addClass("admin-mobile-nav-hidden");
-		$(".main-nav-category-loop-accordian-list, .admin-mobile-only-click-menu-content").removeAttr("style");
-		$(".admin-global-controllers-tab-hide, .admin-click-menu-button-pc-close, .admin-click-sub-menu-button-pc-close, .admin-mobile-only-click-menu-button-close").addClass("hidden").removeClass("open");
-		$(".admin-global-controllers-tab-content, .admin-click-menu-content, .admin-click-sub-menu-content").removeAttr("style").addClass("hidden");
-		$(".admin-global-controllers-tab-show, .admin-click-menu-button-pc-open, .admin-click-sub-menu-button-pc-open, .admin-mobile-only-click-menu-button-open").removeClass("hidden").removeAttr("style");
-		// End Test
-		$(this).addClass("hidden").hide();
-		$(this).parent().parent().find(".admin-click-menu-button-pc-close").removeClass("hidden").addClass("open");
-		$(this).parent().parent().parent().find(".admin-click-menu-content").removeClass("hidden").show();
-		e.preventDefault();
+	/* hide when clicked outside */
+	$(document.body).bind('click',function(e) {
+		if(showingParent) {
+			var parentElement = showingParent[0];
+			if(!$.contains(parentElement,e.target) || parentElement === e.target) {
+				hideMenu();
+			}
+		}
 	});
-	// Admin Global Click Sub Menu Open
-	$(".admin-click-sub-menu-button-pc-open").click(function(e) {
-		// Test if another item is open and close it
-		$(".main-nav-accordian").unbind( "click" ).removeClass("tab-open");
-		$(".admin-hide-mobile-nav a").parent().addClass("hidden");
-		$(".admin-show-mobile-nav").removeClass("hidden");
-		$(".admin-main-navigation").addClass("admin-mobile-nav-hidden");
-		$(".main-nav-category-loop-accordian-list, .admin-mobile-only-click-menu-content").removeAttr("style");
-		$(".admin-global-controllers-tab-hide, .admin-click-menu-button-pc-close, .admin-click-sub-menu-button-pc-close, .admin-mobile-only-click-menu-button-close").addClass("hidden").removeClass("open");
-		$(".admin-global-controllers-tab-content, .admin-click-menu-content, .admin-click-sub-menu-content").removeAttr("style").addClass("hidden");
-		$(".admin-global-controllers-tab-show, .admin-click-menu-button-pc-open, .admin-click-sub-menu-button-pc-open, .admin-mobile-only-click-menu-button-open").removeClass("hidden").removeAttr("style");
-		// End Test
-		$(this).addClass("hidden").hide();
-		$(this).parent().parent().find(".admin-click-sub-menu-button-pc-close").removeClass("hidden").addClass("open");
-		$(this).parent().parent().parent().find(".admin-click-sub-menu-content").removeClass("hidden").show();
-		e.preventDefault();
-	});
-	
-	
-	
-
-
-	
 	// Options for Open Click Menu
-	$('.admin-click-menu-content-list li a').on('click', function(){
+	$(".admin-click-menu-content-list li a").on('click', function(e){
 		$(this).parent().siblings().removeClass('current');
 		$(this).parent().parent().parent().parent().parent().find(".admin-bi-date-filter-selected-" + $(this).parent().attr("class")).removeClass("hidden").siblings().addClass("hidden");
 		$(this).parent().addClass('current');
@@ -124,9 +133,11 @@ $(document).ready( function() {
 			$(this).closest("body").find(".filter-inactive").addClass("hidden");
 			$(this).closest("body").find(".filter-active").removeClass("hidden").find(".filter-active-reporter").addClass("reporter-active").html($(this).find("u, span").clone());
 			if($(".filter-active-category").hasClass("category-active")) {
-				$(".filter-active-first-seperator").removeClass("hidden");
+				$(".filter-active-first-seperator").removeClass("hidden").addClass("filter-active-first-seperator-active");
+				$(".admin-click-menu-button-pc-close").trigger("click");
+				e.stopPropogation();
 			} else {
-				$(".filter-active-first-seperator").addClass("hidden");
+				$(".filter-active-first-seperator").addClass("hidden").removeClass("filter-active-first-seperator-active");
 			}
 		}
 		// If this is the Category Filter List being clicked then add results in the relevant div
@@ -134,77 +145,23 @@ $(document).ready( function() {
 			$(this).closest("body").find(".filter-inactive").addClass("hidden");
 			$(this).closest("body").find(".filter-active").removeClass("hidden").find(".filter-active-category").addClass("category-active").html($(this).find("u, span").clone());
 			if($(".filter-active-reporter").hasClass("reporter-active")) {
-				$(".filter-active-first-seperator").removeClass("hidden");
+				$(".filter-active-first-seperator").removeClass("hidden").addClass("filter-active-first-seperator-active");
 			} else {
-				$(".filter-active-first-seperator").addClass("hidden");
+				$(".filter-active-first-seperator").addClass("hidden").removeClass("filter-active-first-seperator-active");
 			}
 		}
 		// If this is the Sub Category Filter List being clicked then add results in the relevant div
-		/*
-		var subCategoryConditionOne = $(this).parent().parent().parent().find(".admin-bi-sub-category-list").length;
-		var subCategoryConditionTwo = $(this).parent().parent().parent().parent().parent().parent(".admin-bi-date-filter-selected-").children().length;
-		if ( subCategoryConditionOne === 1 && subCategoryConditionTwo === 0 ) {
-			$(this).closest("body").find(".filter-active-sub-category-container").removeClass("hidden").find(".filter-active-sub-category").html($(this).find("u, span").clone());
-		} 
-		if ( subCategoryConditionOne === 0 && subCategoryConditionTwo === 0 ) {
-			$(this).closest("body").find(".filter-active-sub-category-container").addClass("hidden");
-		}
-		
-		*/
 		if ( $(this).parent().parent().parent().find(".admin-bi-sub-category-list").length ) {
 			$(this).closest("body").find(".filter-active-sub-category-container").removeClass("hidden").find(".filter-active-sub-category").html($(this).find("u, span").clone());
 		} else {
 			$(this).closest("body").find(".filter-active-sub-category-container").addClass("hidden");
 		}
-		
-		
-		
-		
-		
 		if ( $(this).find("u").length ) {
 			$(this).parent().parent().parent().parent().find('.selected-admin-bi-reporter-image').html($(this).find("u").clone());
 		}
 		$(this).parent().parent().parent().parent().find(".admin-click-menu-button-pc-close, .admin-click-sub-menu-button-pc-close").addClass("hidden").removeClass("open");
 		$(this).parent().parent().parent().parent().find(".admin-click-menu-content, .admin-click-sub-menu-content").removeAttr("style").addClass("hidden");
 		$(this).parent().parent().parent().parent().find(".admin-click-menu-button-pc-open, .admin-click-sub-menu-button-pc-open").removeClass("hidden").removeAttr("style");
-	});
-	// Admin Global Click Menu Close
-	$(".admin-click-menu-button-pc-close").click(function(e) {
-		$(this).addClass("hidden").removeClass("open");
-		$(this).parent().parent().find(".admin-click-menu-button-pc-open").removeClass("hidden").removeAttr("style");
-		$(this).parent().parent().parent().find(".admin-click-menu-content").removeAttr("style").addClass("hidden");
-		e.preventDefault();
-	});
-	// Admin Global Click Sub Menu Close
-	$(".admin-click-sub-menu-button-pc-close").click(function(e) {
-		$(this).addClass("hidden").removeClass("open");
-		$(this).parent().parent().find(".admin-click-sub-menu-button-pc-open").removeClass("hidden").removeAttr("style");
-		$(this).parent().parent().parent().find(".admin-click-sub-menu-content").removeAttr("style").addClass("hidden");
-		e.preventDefault();
-	});
-	// Admin Global Mobile Only Click Menu Open
-	$(".admin-mobile-only-click-menu-button-open").click(function(e) {
-		// Test if another item is open and close it
-		$(".main-nav-accordian").unbind( "click" ).removeClass("tab-open");
-		$(".admin-hide-mobile-nav a").parent().addClass("hidden");
-		$(".admin-show-mobile-nav").removeClass("hidden");
-		$(".admin-main-navigation").addClass("admin-mobile-nav-hidden");
-		$(".main-nav-category-loop-accordian-list, .admin-mobile-only-click-menu-content").removeAttr("style");
-		$(".admin-global-controllers-tab-hide, .admin-click-menu-button-pc-close, .admin-click-sub-menu-button-pc-close, .admin-mobile-only-click-menu-button-close").addClass("hidden").removeClass("open");
-		$(".admin-global-controllers-tab-content, .admin-click-menu-content, .admin-click-sub-menu-content").removeAttr("style").addClass("hidden");
-		$(".admin-global-controllers-tab-show, .admin-click-menu-button-pc-open, .admin-click-sub-menu-button-pc-open, .admin-mobile-only-click-menu-button-open").removeClass("hidden").removeAttr("style");
-		// End Test
-		$(this).addClass("hidden").hide();
-		$(this).parent().parent().find(".admin-mobile-only-click-menu-button-close").removeClass("hidden").addClass("open");
-		$(this).parent().parent().parent().find(".admin-mobile-only-click-menu-content").show();
-		e.preventDefault();
-	});
-	// Admin Global Mobile Only Click Sub Menu Close
-	$(".admin-mobile-only-click-menu-button-close").click(function(e) {
-		$(this).addClass("hidden").removeClass("open");
-		$(this).parent().parent().find(".admin-mobile-only-click-menu-button-open").removeClass("hidden").removeAttr("style");
-		$(this).parent().parent().parent().find(".admin-mobile-only-click-menu-content").removeAttr("style");
-		e.preventDefault();
 	});
 	// Date Picker Settings
 	$(".admin-global-bi-datepicker, .datepicker-here").datepicker({
