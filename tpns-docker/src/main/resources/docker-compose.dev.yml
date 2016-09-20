@@ -104,8 +104,11 @@ services:
     - ACTIVEMQ_MIN_MEMORY=512
     - ACTIVEMQ_MAX_MEMORY=2048
     - ACTIVEMQ_ADMIN_LOGIN=admin
-    - ACTIVEMQ_ADMIN_PASSWORD=password
-    - ACTIVEMQ_STATIC_QUEUES=queue1;queue2;queue3
+    - ACTIVEMQ_ADMIN_PASSWORD=admin
+    - ACTIVEMQ_USER_LOGIN=user
+    - ACTIVEMQ_USER_PASSWORD=user
+    - ACTIVEMQ_STATIC_QUEUES=article_queue
+    - ACTIVEMQ_OPTS=-Dorg.apache.activemq.SERIALIZABLE_PACKAGES="*"
     volumes:
     - ${HOME}/projects/tpns/data/admin/activemq/data:/data/activemq
     - ${HOME}/projects/tpns/data/admin/activemq/logs:/var/log/activemq

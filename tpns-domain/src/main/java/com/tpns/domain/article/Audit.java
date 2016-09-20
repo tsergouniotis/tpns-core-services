@@ -1,8 +1,14 @@
 package com.tpns.domain.article;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
-public class Audit {
+public class Audit implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1786557907000395737L;
 
 	private Long id;
 

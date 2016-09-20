@@ -197,5 +197,9 @@
 
 	</changeSet>
 
+	<changeSet author="thanasis.sergouniotis" id="drop-applications-table">
+		<dropTable tableName="applications" />
+	</changeSet>
+
 </databaseChangeLog>
 

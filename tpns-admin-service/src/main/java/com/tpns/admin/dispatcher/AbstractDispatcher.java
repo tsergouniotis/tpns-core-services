@@ -1,11 +1,10 @@
-package com.tpns.article.dispatcher;
+package com.tpns.admin.dispatcher;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.Future;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,51 +15,43 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.scheduling.annotation.Async;
-import org.springframework.scheduling.annotation.AsyncResult;
+import org.springframework.security.oauth2.client.OAuth2RestTemplate;
 import org.springframework.util.CollectionUtils;
-import org.springframework.web.client.RestTemplate;
 
-import com.tpns.article.repository.ApplicationRepository;
-import com.tpns.common.domain.Application;
+import com.tpns.admin.domain.Property;
+import com.tpns.admin.model.AdminArticle;
+import com.tpns.admin.repository.PropertyRepository;
 import com.tpns.domain.article.Article;
 
-@Async
-public class ArticleDispatcher {
+public abstract class AbstractDispatcher {
 
-	private static Logger LOGGER = LoggerFactory.getLogger(ArticleDispatcher.class.getPackage().getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(AbstractDispatcher.class);
 
 	@Autowired
-	private ApplicationRepository applicationDAO;
+	private PropertyRepository propertyRepository;
 
-	public Future<Boolean> dispatch(final Article article) {
+	@Autowired
+	private OAuth2RestTemplate articleRestTemplate;
 
-		final boolean result = false;
-
+	public void send(final AdminArticle article) {
 		final List<String> destinations = new ArrayList<String>(article.getDestinations());
 
 		if (!CollectionUtils.isEmpty(destinations)) {
 
-			final List<Application> applications = applicationDAO.findByIds(destinations);
-			Optional.ofNullable(applications).orElse(Collections.emptyList())
-					.forEach(app -> send(article, app.getEndpoint()));
+			final List<Property> applications = propertyRepository.findByPropertyIds(destinations);
+			Optional.ofNullable(applications).orElse(Collections.emptyList()).forEach(app -> send(article, app.getUrl()));
 
 		}
-
-		return new AsyncResult<Boolean>(result);
-
 	}
 
 	private void send(final Article article, final String destination) {
-
-		RestTemplate restTemplate = new RestTemplate();
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 
 		HttpEntity<Article> entity = new HttpEntity<Article>(article, headers);
 
-		ResponseEntity<String> result = restTemplate.exchange(destination, HttpMethod.PUT, entity, String.class);
+		ResponseEntity<String> result = articleRestTemplate.exchange(destination, HttpMethod.PUT, entity, String.class);
 
 		if (!HttpStatus.ACCEPTED.equals(result.getStatusCode())) {
 			final StringBuilder builder = new StringBuilder("Article did not submitted successfully to : ").append(destination).append(". Status : ")
