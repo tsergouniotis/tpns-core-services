@@ -90,7 +90,7 @@ _:-ms-fullscreen, :root .admin-content-header-input-controller input {
 .filter-active-reporter span {
 	vertical-align:top;
 }
-.filter-active-first-seperator-active {
+.filter-active-first-seperator-active, .filter-active-second-seperator-active {
 	display:inline-block; vertical-align:top;
 }
 .filter-active-first-seperator [class^="tpns-ai-"]:before, .filter-active-first-seperator [class*=" tpns-ai-"]:before {
@@ -100,7 +100,7 @@ _:-ms-fullscreen, :root .admin-content-header-input-controller input {
 	display:inline-block; height:30px; line-height:18px; font-size:80%; vertical-align:text-bottom;
 }
 .filter-active-sub-category-container {
-	display:inline-block; height:30px; line-height:21px; font-size:65%; vertical-align:text-bottom;
+	height:30px; line-height:21px; font-size:65%; vertical-align:text-bottom;
 }
 .filter-active p {
 	padding:0;
