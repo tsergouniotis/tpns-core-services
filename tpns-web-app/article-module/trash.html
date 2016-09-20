@@ -1,10 +1,1228 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
+<!DOCTYPE html>
+<!-- The language below is critical for the browser to know what dictionary to use for the site DO NOT REMOVE! -->
+<!-- If the Login Module supports multi languages then the lang will need to change dynamically so as to align with the users chosen language -->
+<html lang="en-US">
+<!-- The ID and the Data Template Set are critical as they communicate to the browser to whom the content and site belong to. DO NOT REMOVE! -->
+<!-- The Data Template Set and the id will need to change dynamically so as to show the users Domain Name and Company Name -->
+<head id="tpns.com" data-template-set="TPNS">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- The character, http equivalent and content communicator sets below are critical for the browser to understand the content of the site. DO NOT REMOVE! -->
+	<meta charset="UTF-8">
+    <!-- Feel free to add dynamic loops which will provide specific text for the browser tab to help the user know where they are in the site at a glance. This is comprised normally of the company name and description for the index page and for all the rest of the pages the company Name dash and the page name i.e. TPNS - Contact Us, TPNS - Search Results, TPNS - News etc. Note: This should NOT exceed 50 characters! -->
+    <title>TPNS Business Inteligence Dashboard</title>
+    <!-- Site's meta data, as above feel free to add dynamic loops which will provide specific text for the browser title -->
+    <meta name="title" content="TPNS - Business Intelligence Dashboard">
+    <meta name="description" content="Your One Account, Accessing One Global Information Distibrution Network">
+    <meta name="author" content="TPNS">
+    <!-- Please remember to make the YEAR update dynamically so that you do not have to remember to update the copyright year annually -->
+	<meta name="Copyright" content="Copyright TPNS 2015. All Rights Reserved.">
+	
+    <!-- Do not change the Mobile Viewport data below! -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+    
+    <!-- browser and mobile icons -->
+	<link rel="shortcut icon" href="../global-module/global-images/favicon.ico?v=2">
+	<link rel="apple-touch-icon" href="../global-module/global-images/apple-touch-icon-precomposed.png">
+    
+    <!-- Ensure that the Global CSS always preceeds the Local CSS -->
+    <!-- Link to the site's Global CSS -->
+	<link rel="stylesheet" type="text/css" media="screen" href="../global-module/global-css/global-styles.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="../global-module/global-css/admin-interface-styles.css">
+    <!-- Link to the admin's Local CSS -->
+	<link rel="stylesheet" type="text/css" media="screen" href="css/articles-styles.css">
 </head>
-
-<body>
+<body onload="readArticles();">
+	<div class="admin-header-controllers">
+    	<div class="admin-controllers">
+            <div class="admin-logo-nav-container">
+                <div class="admin-logo-image">
+                    <p class="textl"><img src="../global-module/global-images/tpns-logo.png" alt="TPNS Global Information Distibrution Network" /></p>
+                </div>
+                <div class="admin-nav-controller">
+                    <p class="admin-minimise-nav textr"><a title="Minimise the navigation so as to help you focus on your articles"><i class="icon tpns-ai-nav-minimise"></i></a></p>
+                    <p class="admin-maximise-nav hidden"><a title="Minimise the navigation so as to help you focus on your articles"><i class="icon tpns-ai-nav-maximise"></i></a></p>
+                </div>
+                <div class="admin-nav-mobile-controller">
+                    <p class="admin-show-mobile-nav"><a title="Open the navigation"><i class="icon tpns-ai-mobile-menu"></i></a></p>
+                    <p class="admin-hide-mobile-nav hidden"><a title="Close the navigation"><i class="icon tpns-ai-close"></i></a></p>
+                </div>
+            </div>
+            <div class="admin-controllers-container">
+                <div class="admin-global-controllers">
+                    <div class="admin-global-controllers-inner">
+                        <div class="admin-global-controllers-left">
+                            <div class="admin-global-controllers-left-items admin-area-dashboard-nav">
+                            	<div class="admin-global-controllers-tab-container">
+                                    <div class="admin-global-controllers-tab-button">
+                                        <p class="admin-global-controllers-tab-show"><a class="dropdown" title="Open the navigation"><span>TPNS One</span><i class="icon tpns-ai-arrow-down"></i><i class="icon tpns-ai-close hidden"></i></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-global-controllers-tab-content admin-global-controllers-tab-content-left hidden">
+                                        <ul class="admin-global-controllers-tab-list">
+                                            <li><a href="../dashboard-module/global-bi-dashboard.html"><span>TPNS Group</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span>TPNS Astrology</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span>TPNS Lifestyle</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li class="current"><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span>TPNS One</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span>TPNS Sports</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="admin-global-controllers-left-items articles-new-article-button">
+                            	<p><a href="../article-module/new-article.html" title="Write a new article"><span>New Article</span><i class="icon tpns-ai-add"></i></a></p>
+                            </div>
+                        </div>
+                        <div class="admin-global-controllers-right textr">
+                            <div class="admin-global-controllers-right-items admin-user-notifications-nav admin-user-information-desktop">
+                            	<div class="admin-global-controllers-admin-info-container">
+                                    <p><a href="../notifications-module/notifications.html" title="Preview your latest notifications"><i class="icon tpns-ai-notifications"></i>
+                                        <span class="admin-global-controllers-totals">
+                                            <small>4</small>
+                                        </span>
+                                    </a></p>
+                                </div>
+                            </div>
+                            <div class="admin-global-controllers-right-items admin-user-messages-preview-nav admin-user-information-desktop">
+                            	<div class="admin-global-controllers-admin-info-container">
+                                    <p><a href="../messages-module/inbox.html" title="Preview your latest messages"><i class="icon tpns-ai-email-open"></i>
+                                        <span class="admin-global-controllers-totals">
+                                            <small>81</small>
+                                        </span>
+                                    </a></p>
+                                </div>
+                            </div>
+                            <div class="admin-global-controllers-right-items admin-user-article-schedule-preview-nav admin-user-information-desktop">
+                            	<div class="admin-global-controllers-admin-info-container">
+                                    <p><a href="../calendar-module/calendar.html" title="Preview your scheduled articles"><i class="icon tpns-ai-calendar-month-number"></i>
+                                        <span class="admin-global-controllers-totals">
+                                            <small>95</small>
+                                        </span>
+                                    </a></p>
+                                </div>
+                            </div>
+                            <div class="admin-global-controllers-right-items admin-user-profile-preview-nav">
+                            	<div class="admin-global-controllers-tab-container">
+                                    <div class="admin-global-controllers-tab-button">
+                                        <a title="Preview your profile options">
+                                            <p class="dropdown admin-global-controllers-tab-show">
+                                            	<span class="admin-user-profile-preview-nav-img-container">
+                                                	<img src="../staff-module/staff-images-50x50/staff6-50x50.jpg" alt="Κατερίνα Παπαδόπουλος" />
+                                                    <span class="admin-user-information-mobile-has-notifications"></span>
+                                            	</span>
+                                                <span class="username"><span class="username-inner">Κατερίνα Παπαδόπουλος</span><i class="icon tpns-ai-arrow-down"></i><i class="icon tpns-ai-close hidden"></i></span>
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <div class="dropdown-menu admin-global-controllers-tab-content admin-global-controllers-tab-content-right hidden textl">
+                                    	<div class="admin-user-information-mobile">
+                                            <div class="admin-global-controllers-right-items admin-user-notifications-nav">
+                                                <div class="admin-global-controllers-admin-info-container">
+                                                    <p><a href="../notifications-module/notifications.html" title="Preview your latest notifications"><i class="icon tpns-ai-notifications"></i>
+                                                        <span class="admin-global-controllers-totals">
+                                                            <small>4</small>
+                                                        </span>
+                                                    </a></p>
+                                                </div>
+                                            </div>
+                                            <div class="admin-global-controllers-right-items admin-user-messages-preview-nav">
+                                                <div class="admin-global-controllers-admin-info-container">
+                                                    <p><a href="../messages-module/inbox.html" title="Preview your latest messages"><i class="icon tpns-ai-email-open"></i>
+                                                        <span class="admin-global-controllers-totals">
+                                                            <small>81</small>
+                                                        </span>
+                                                    </a></p>
+                                                </div>
+                                            </div>
+                                            <div class="admin-global-controllers-right-items admin-user-article-schedule-preview-nav">
+                                                <div class="admin-global-controllers-admin-info-container">
+                                                    <p><a href="../calendar-module/calendar.html" title="Preview your scheduled articles"><i class="icon tpns-ai-calendar-month-number"></i>
+                                                        <span class="admin-global-controllers-totals">
+                                                            <small>95</small>
+                                                        </span>
+                                                    </a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    	<div class="global-table admin-user-profile-preview-content-details">
+                                        	<div class="global-table-row">
+                                            	<div class="global-table-cell">
+                                                    <div class="admin-user-profile-preview-content-image">
+                                                        <img src="../staff-module/staff-images-100x100/staff6-100x100.jpg" alt="Κατερίνα Παπαδόπουλος" />
+                                                    </div>
+                                                </div>
+                                            	<div class="global-table-cell">
+                                                    <div class="admin-user-profile-preview-content-username">
+                                                        <h5>Κατερίνα Παπαδόπουλος</h5>
+                                                    </div>
+                                                    <div class="admin-user-profile-preview-content-email">
+                                                        <small>katerina.papadopoulos@tpns.com</small>
+                                                    </div>
+                                                    <div class="admin-global-controllers-button">
+                                                        <h6 class="textc"><a href="../user-module/user-profile.html">View Profile</a></h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    	<div class="global-table admin-user-profile-preview-content-access-level">
+                                        	<div class="global-table-row">
+                                            	<div class="global-table-cell">
+                                                	<p>Access Level</p>
+                                        		</div>
+                                            	<div class="global-table-cell">
+                                                	<p>Editor</p>
+                                        		</div>
+                                        	</div>
+                                        	<div class="global-table-row">
+                                            	<div class="global-table-cell">
+                                                	<p>Newspaper Access</p>
+                                        		</div>
+                                            	<div class="global-table-cell">
+                                                    <ul class="access-level-newspapers">
+                                                        <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span class="icon tpns-nti-news-website"></span></a></p></li>
+                                                        <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span class="icon tpns-nti-sports-website"></span></a></p></li>
+                                                        <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span class="icon tpns-nti-astrology-website"></span></a></p></li>
+                                                        <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span class="icon tpns-nti-lifestyle-website"></span></a></p></li>
+                                                    </ul>
+                                        		</div>
+                                        	</div>
+                                        </div>
+                                        <div class="admin-global-controllers-button admin-global-controllers-transparent-button">
+                                            <h6 class="textc"><a href="../access-module/access.html">Exit Account</a></h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="admin-local-controllers">
+                    <div class="admin-local-controllers-inner">
+                        <div class="admin-local-controllers-left">
+                            <div class="admin-local-controllers-left-items admin-bi-reporter-filter">
+                            	<div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Reporters Filter"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-staff"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Reporters</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list admin-bi-reporter-list">
+                                            <li class="current"><a><u class="icon tpns-ai-staff"></u><span>All Reporters</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Nico Haitas</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u><img src="../staff-module/staff-images-50x50/staff2-50x50.jpg" alt="" /></u><span>Νίκος Χάϊτας</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u><img src="../staff-module/staff-images-50x50/staff3-50x50.jpg" alt="" /></u><span>Νικόλαος Χάϊτας</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u><img src="../staff-module/staff-images-50x50/staff5-50x50.png" alt="" /></u><span>Panos Zografos</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>...</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u><img src="../staff-module/staff-images-50x50/staff2-50x50.jpg" alt="" /></u><span>...</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u><img src="../staff-module/staff-images-50x50/staff3-50x50.jpg" alt="" /></u><span>Thanassis Sergouniotis</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u><img src="../staff-module/staff-images-50x50/staff5-50x50.png" alt="" /></u><span>Θανάσης Σεργουνιώτης</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Αθανάσιος Σεργουνιώτης</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u><img src="../staff-module/staff-images-50x50/staff4-50x50.jpg" alt="" /></u><span>Katerina Papadopoulos</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a><u><img src="../staff-module/staff-images-50x50/staff6-50x50.jpg" alt="" /></u><span>Κατερίνα Παπαδόπουλος</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="admin-local-controllers-left-items admin-bi-category-filter">
+                            	<div class="admin-click-menu-container">
+                                    <div class="admin-click-menu-button">
+                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Category Filter"><i class="icon tpns-ai-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <ul class="admin-click-menu-content-list admin-bi-category-list">
+                                            <li class="all-categories current"><a><span>All Categories</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li class="ellada"><a><span>Ελλάδα</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li class="politikh"><a><span>Πολιτική</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li class="oikonomia"><a><span>Οικονομία</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li class="ygeia"><a><span>Υγεία</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li class="kosmos"><a><span>Κόσμος</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li class="athlitika"><a><span>Αθλητικά</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li class="media"><a><span>Media</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li class="kairos"><a><span>Καιρός</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li class="kypros"><a><span>Κύπρος</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul> 
+                                    </div>
+                                </div>
+                                <div class="admin-bi-date-filter-results admin-bi-date-filter-items">
+                                	<!-- NOTE: Even though an option result may be empty remember to add an empty div for it or if the user selects the empty option above in the click menu the previously selected item will continue to remain in view. -->
+                                    <div class="admin-bi-date-filter-selected-all-categories"></div>
+                                    <div class="admin-bi-date-filter-selected-ellada hidden">
+                                        <div class="admin-bi-date-filter-items">
+                                            <div class="admin-click-sub-menu-container">
+                                                <div class="admin-click-sub-menu-button">
+                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
+                                                </div>
+                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
+                                                    <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
+                                                        <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Ειδήσεις</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Εθνικά</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Παιδεία</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Αστυνομικό</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Δικαιοσύνη</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Πολιτισμός</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Αποκαλύψεις</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Εκκλησία</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Σεισμοί</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Άμυνα</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                    </ul> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="admin-bi-date-filter-selected-politikh hidden">
+                                        <div class="admin-bi-date-filter-items">
+                                            <div class="admin-click-sub-menu-container">
+                                                <div class="admin-click-sub-menu-button">
+                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
+                                                </div>
+                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
+                                                    <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
+                                                        <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Ειδήσεις</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Παραπολιτικά</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Βουλή</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Βαρόμετρο</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Εκλογές</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Αυτοδιοίκηση</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                    </ul> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="admin-bi-date-filter-selected-oikonomia hidden">
+                                        <div class="admin-bi-date-filter-items">
+                                            <div class="admin-click-sub-menu-container">
+                                                <div class="admin-click-sub-menu-button">
+                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
+                                                </div>
+                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
+                                                    <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
+                                                        <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Ειδήσεις</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Επιχειρήσεις</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Χρηματιστήριο</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Ναυτιλία</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Αγορές</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Τράπεζες</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Εργασία</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Ενέργεια</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                    </ul> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="admin-bi-date-filter-selected-ygeia hidden">
+                                        <div class="admin-bi-date-filter-items">
+                                            <div class="admin-click-sub-menu-container">
+                                                <div class="admin-click-sub-menu-button">
+                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
+                                                </div>
+                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
+                                                    <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
+                                                        <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Ειδήσεις</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Π.Ε.Δ.Υ.</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Φάρμακο</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Νοσοκομεία</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Γιατροί</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Συνεντέυξεις</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                    </ul> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="admin-bi-date-filter-selected-kosmos hidden">
+                                        <div class="admin-bi-date-filter-items">
+                                            <div class="admin-click-sub-menu-container">
+                                                <div class="admin-click-sub-menu-button">
+                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
+                                                </div>
+                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
+                                                    <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
+                                                        <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Ειδήσεις</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Ευρώπη</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Ρωσία</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Λατινική Αμερική</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Αυστραλία</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Αφρική</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Ασία</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                    </ul> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="admin-bi-date-filter-selected-athlitika hidden">
+                                        <div class="admin-bi-date-filter-items">
+                                            <div class="admin-click-sub-menu-container">
+                                                <div class="admin-click-sub-menu-button">
+                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
+                                                </div>
+                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
+                                                    <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
+                                                        <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Ειδήσεις</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Ποδόσφαιρο</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Μπάσκετ</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Σπορ</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Στοίχημα</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                    </ul> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="admin-bi-date-filter-selected-media hidden">
+                                        <div class="admin-bi-date-filter-items">
+                                            <div class="admin-click-sub-menu-container">
+                                                <div class="admin-click-sub-menu-button">
+                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
+                                                </div>
+                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
+                                                    <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
+                                                        <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Τηλεόραση</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Τύπος</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Ραδιόφωνο</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Internet</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                    </ul> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="admin-bi-date-filter-selected-kairos hidden">
+                                        <div class="admin-bi-date-filter-items">
+                                            <div class="admin-click-sub-menu-container">
+                                                <div class="admin-click-sub-menu-button">
+                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
+                                                </div>
+                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
+                                                    <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
+                                                        <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Πρόγνωση ΕΜΥ</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Έκτακτα Δελτία</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Πολιτική Προστασία</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                        <li><a><span>Χιονοδρομικά Κέντρα</span><i class="icon tpns-ai-selected"></i></a></li>
+                                                    </ul> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="admin-bi-date-filter-selected-kypros hidden"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="admin-local-controllers-right textr">
+                            <div class="admin-local-controllers-right-items admin-article-search-container">
+                            	<div class="admin-mobile-only-click-menu-container">
+                                    <div class="admin-mobile-only-click-menu-button">
+                                        <p class="admin-mobile-only-click-menu-button-open"><a title="Open the Article Search"><i class="icon tpns-ai-article-search"></i></a></p>
+                                        <p class="admin-mobile-only-click-menu-button-close hidden"><a title="Close the Article Search"><i class="icon tpns-ai-article-search"></i></a></p>
+                                    </div>
+                                    <div class="admin-mobile-only-click-menu-content admin-mobile-only-click-menu-content-right">
+                                        <form class="admin-article-search-form" action="#" method="get">
+                                            <input type="text" class="admin-article-search-form-textbox textr" placeholder="Headline Search..." />
+                                            <button type="submit" class="admin-article-search-form-button"><i class="icon tpns-ai-article-search"></i><span class="hidden">Search</span></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="admin-left-column">
+        <div class="admin-main-navigation admin-mobile-nav-hidden">
+            <nav>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title">
+                    	<p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html" title=""><span class="icon tpns-ai-bi-chart"></span><span class="nav-max">BI Dashboard</span></a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html" title="">Overview</a></p></li>
+                            <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html" title="">AWS</a></p></li>
+                            <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html" title="">Google Adwords</a></p></li>
+                            <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html" title="">In-house Ad. Revenue</a></p></li>
+                            <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html" title="">Global Analytics</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title current">
+                    	<p><a href="../article-module/articles.html" title=""><span class="icon tpns-ai-articles"></span><span class="nav-max">Articles</span></a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="../article-module/articles.html" title="">All Articles</a></p></li>
+                            <li><p><a href="../article-module/new-article.html" title="">New Article</a></p></li>
+                            <li><p><a href="../media-library-module/media.html" title="">Media Library</a></p></li>
+                            <li><p><a href="../tag-cloud-module/tags.html" title="">Tag Cloud</a></p></li>
+                            <li class="current"><p><a href="../article-module/trash.html" title="">Trash</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title">
+                    	<p><a href="#" title=""><span class="icon tpns-ai-newspaper"></span><span class="nav-max">Printed News</span></a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="#" title="">Front Pages</a></p></li>
+                            <li><p><a href="#" title="">Political</a></p></li>
+                            <li><p><a href="#" title="">Sports</a></p></li>
+                            <li><p><a href="#" title="">Financial</a></p></li>
+                            <li><p><a href="#" title="">Local</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title">
+                    	<p><a href="../comments-module/comments.html" title=""><span class="icon tpns-ai-comments"></span><span class="nav-max">Comments</span>
+                            <span class="admin-global-controllers-totals nav-totals">
+                                <small>95</small>
+                            </span>
+                        </a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="../comments-module/comments.html" title="">All Comments</a></p></li>
+                            <li><p><a href="../comments-module/trash.html" title="">Comment Trash</a></p></li>
+                            <li><p><a href="../comments-module/spam.html" title="">Spam Comments</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title">
+                    	<p><a href="../in-house-adverts-module/in-house-ads.html" title=""><span class="icon tpns-ai-megaphone"></span><span class="nav-max">In-house Ad’s</span></a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="../in-house-adverts-module/in-house-ads.html" title="">All Adverts</a></p></li>
+                            <li><p><a href="#" title="">Something</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title">
+                    	<p><a href="../messages-module/inbox.html" title=""><span class="icon tpns-ai-email-closed"></span><span class="nav-max">Messages</span>
+                            <span class="admin-global-controllers-totals nav-totals">
+                                <small>195</small>
+                            </span>
+                        </a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="../messages-module/inbox.html" title="">Inbox</a></p></li>
+                            <li><p><a href="../messages-module/new-message.html" title="">New Message</a></p></li>
+                            <li><p><a href="../messages-module/trash.html" title="">Trash</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title">
+                    	<p><a title=""><span class="icon tpns-ai-user"></span><span class="nav-max">Subscriptions</span></a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="#" title="">Something</a></p></li>
+                            <li><p><a href="#" title="">Something</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title">
+                    	<p><a title=""><span class="icon tpns-ai-settings"></span><span class="nav-max">Settings</span></a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="#" title="">Something</a></p></li>
+                            <li><p><a href="#" title="">Something</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="admin-right-column">
+        <div class="admin-main-content">
+        	<div class="admin-content-header">
+            	<div class="admin-content-header-left">
+                	<div class="admin-page-identifier">
+                		<div class="filter-inactive">
+                        	<h2><i class="icon tpns-ai-trash"></i>Trash</h2>
+                        </div>
+                        <div class="filter-active hidden">
+                        	<h3 class="filter-active-items"><span class="icon tpns-ai-filter"></span><span class="filter-active-reporter"></span><span class="filter-active-first-seperator hidden"><i class="icon tpns-ai-arrow-right"></i></span><span class="filter-active-category"></span><span class="filter-active-sub-category-container hidden"><i class="icon tpns-ai-arrow-right"></i><span class="filter-active-sub-category"></span></span></h3>
+                            <p class="filter-active-items articles-content-button warning-button"><a><i class="icon tpns-ai-close"></i>Clear Filters</a></p>
+                        </div>
+                    </div>
+                </div>
+            	<div class="admin-content-header-right textr">
+                    <div class="admin-content-header-right-items">
+                        <p class="articles-content-button admin-content-header-button-controller"><a><i class="icon tpns-ai-arrow-first"></i></a></p>
+                    </div>
+                    <div class="admin-content-header-right-items">
+                        <p class="articles-content-button admin-content-header-button-controller"><a><i class="icon tpns-ai-arrow-left"></i></a></p>
+                    </div>
+                    <div class="admin-content-header-right-items">
+                    	<p class="admin-content-header-input-controller"><input type="number" placeholder="1" /></p>
+                    </div>
+                    <div class="admin-content-header-right-items">
+                    	<p class="admin-content-total-pages-container textn">of <span class="admin-content-total-pages admin-decimals">10</span></p>
+                    </div>
+                    <div class="admin-content-header-right-items">
+                        <p class="articles-content-button admin-content-header-button-controller"><a><i class="icon tpns-ai-arrow-right"></i></a></p>
+                    </div>
+                    <div class="admin-content-header-right-items">
+                        <p class="articles-content-button admin-content-header-button-controller"><a><i class="icon tpns-ai-arrow-last"></i></a></p>
+                    </div>
+                    <div class="admin-content-header-right-items">
+                        <p class="articles-content-button articles-content-refresh-button"><a><i class="icon tpns-ai-refresh"></i>Refresh</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="all-articles-container">
+                <div class="global-table all-articles-trash-table">
+                    <div class="global-table-row">
+                        <div class="global-header-cell" title="Bulk article selection">
+                            <div class="select-all-rows-container">
+                                <p class="select-all-rows-button-check"><a><u class="icon tpns-ai-unchecked"></u></a></p>
+                                <p class="select-all-rows-button-uncheck hidden"><a><u class="icon tpns-ai-checked"></u></a></p>
+                            </div>
+                            <div class="admin-click-menu-container admin-articles-bulk-actions-controller hidden">
+                                <div class="admin-click-menu-button admin-click-menu-new-article-triple">
+                                    <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown">&nbsp;<span class="admin-click-menu-mobile"><span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
+                                </div>
+                                <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                    <ul class="admin-click-menu-content-list">
+                                        <li><a><span>Delete selected</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        <li><a><span>Restore selected</span><i class="icon tpns-ai-selected"></i></a></li>
+                                    </ul> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="global-header-cell" title="Article headline">
+                        	<p><i class="icon tpns-ai-articles"></i></p>
+                        </div>
+                        <div class="global-header-cell" title="Reporter who wrote the article">
+                        	<p><i class="icon tpns-ai-staff"></i></p>
+                        </div>
+                        <div class="global-header-cell" title="In which newspapers is the article featured">
+                        	<p><i class="icon tpns-ai-network"></i></p>
+                        </div>
+                        <div class="global-header-cell" title="In which category has the article been featured">
+                        	<p><i class="icon tpns-ai-category"></i></p>
+                        </div>
+                        <div class="global-header-cell" title="Tags associated to this article">
+                        	<p><i class="icon tpns-ai-tag-checked"></i></p>
+                        </div>
+                        <div class="global-header-cell" title="Images linked to this article">
+                        	<p><i class="icon tpns-ai-camera"></i></p>
+                        </div>
+                        <div class="global-header-cell" title="Audio linked to this article">
+                        	<p><i class="icon tpns-ai-audio"></i></p>
+                        </div>
+                        <div class="global-header-cell" title="Video linked to this article">
+                        	<p><i class="icon tpns-ai-video"></i></p>
+                        </div>
+                        <div class="global-header-cell" title="Number of approved visitor comments for this article">
+                        	<p><i class="icon tpns-ai-comments"></i></p>
+                        </div>
+                    </div>
+                    <div class="global-table-row">
+                        <div class="global-table-cell">
+                            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...</p>
+                            <div class="article-shortcut-controllers">
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button go-button"><a><i class="icon tpns-ai-undo"></i>Restore</a></p>
+                                </div>
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Αθανάσιος Σεργουνιώτης</span></p>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p><span class="icon tpns-nti-news-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-sports-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-astrology-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-lifestyle-website"></span></p></li>
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p>Πολιτική</p></li>
+                                <li><p>Ελλάδα</p></li>
+                                <li><p>Αποκαλύψεις</p></li>
+                                <li><p>Αποκαλύψεις</p></li>
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>7</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>4</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>--</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>1</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>534</p>
+                        </div>
+                    </div>
+                    <div class="global-table-row">
+                        <div class="global-table-cell">
+                            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...</p>
+                            <div class="article-shortcut-controllers">
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button go-button"><a><i class="icon tpns-ai-undo"></i>Restore</a></p>
+                                </div>
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Αθανάσιος Σεργουνιώτης</span></p>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p><span class="icon tpns-nti-news-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-sports-website"></span></p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p><span class="icon tpns-nti-astrology-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-lifestyle-website"></span></p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p>Πολιτική</p></li>
+                                <li><p>Ελλάδα</p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p>Αποκαλύψεις</p></li>
+                                <li><p>Αποκαλύψεις</p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>7</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>4</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>--</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>1</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>534</p>
+                        </div>
+                    </div>
+                    <div class="global-table-row">
+                        <div class="global-table-cell">
+                            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...</p>
+                            <div class="article-shortcut-controllers">
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button go-button"><a><i class="icon tpns-ai-undo"></i>Restore</a></p>
+                                </div>
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Αθανάσιος Σεργουνιώτης</span></p>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p><span class="icon tpns-nti-news-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-sports-website"></span></p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p><span class="icon tpns-nti-astrology-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-lifestyle-website"></span></p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p>Πολιτική</p></li>
+                                <li><p>Ελλάδα</p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p>Αποκαλύψεις</p></li>
+                                <li><p>Αποκαλύψεις</p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>7</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>4</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>--</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>1</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>534</p>
+                        </div>
+                    </div>
+                    <div class="global-table-row">
+                        <div class="global-table-cell">
+                            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...</p>
+                            <div class="article-shortcut-controllers">
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button go-button"><a><i class="icon tpns-ai-undo"></i>Restore</a></p>
+                                </div>
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Αθανάσιος Σεργουνιώτης</span></p>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p><span class="icon tpns-nti-news-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-sports-website"></span></p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p><span class="icon tpns-nti-astrology-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-lifestyle-website"></span></p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p>Πολιτική</p></li>
+                                <li><p>Ελλάδα</p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p>Αποκαλύψεις</p></li>
+                                <li><p>Αποκαλύψεις</p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>7</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>4</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>--</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>1</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>534</p>
+                        </div>
+                    </div>
+                    <div class="global-table-row">
+                        <div class="global-table-cell">
+                            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...</p>
+                            <div class="article-shortcut-controllers">
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button go-button"><a><i class="icon tpns-ai-undo"></i>Restore</a></p>
+                                </div>
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Αθανάσιος Σεργουνιώτης</span></p>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p><span class="icon tpns-nti-news-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-sports-website"></span></p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p><span class="icon tpns-nti-astrology-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-lifestyle-website"></span></p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p>Πολιτική</p></li>
+                                <li><p>Ελλάδα</p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p>Αποκαλύψεις</p></li>
+                                <li><p>Αποκαλύψεις</p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>7</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>4</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>--</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>1</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>534</p>
+                        </div>
+                    </div>
+                    <div class="global-table-row">
+                        <div class="global-table-cell">
+                            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...</p>
+                            <div class="article-shortcut-controllers">
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button go-button"><a><i class="icon tpns-ai-undo"></i>Restore</a></p>
+                                </div>
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Αθανάσιος Σεργουνιώτης</span></p>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p><span class="icon tpns-nti-news-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-sports-website"></span></p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p><span class="icon tpns-nti-astrology-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-lifestyle-website"></span></p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p>Πολιτική</p></li>
+                                <li><p>Ελλάδα</p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p>Αποκαλύψεις</p></li>
+                                <li><p>Αποκαλύψεις</p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>7</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>4</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>--</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>1</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>534</p>
+                        </div>
+                    </div>
+                    <div class="global-table-row">
+                        <div class="global-table-cell">
+                            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...</p>
+                            <div class="article-shortcut-controllers">
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button go-button"><a><i class="icon tpns-ai-undo"></i>Restore</a></p>
+                                </div>
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Αθανάσιος Σεργουνιώτης</span></p>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p><span class="icon tpns-nti-news-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-sports-website"></span></p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p><span class="icon tpns-nti-astrology-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-lifestyle-website"></span></p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p>Πολιτική</p></li>
+                                <li><p>Ελλάδα</p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p>Αποκαλύψεις</p></li>
+                                <li><p>Αποκαλύψεις</p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>7</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>4</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>--</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>1</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>534</p>
+                        </div>
+                    </div>
+                    <div class="global-table-row">
+                        <div class="global-table-cell">
+                            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...</p>
+                            <div class="article-shortcut-controllers">
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button go-button"><a><i class="icon tpns-ai-undo"></i>Restore</a></p>
+                                </div>
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Αθανάσιος Σεργουνιώτης</span></p>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p><span class="icon tpns-nti-news-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-sports-website"></span></p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p><span class="icon tpns-nti-astrology-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-lifestyle-website"></span></p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p>Πολιτική</p></li>
+                                <li><p>Ελλάδα</p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p>Αποκαλύψεις</p></li>
+                                <li><p>Αποκαλύψεις</p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>7</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>4</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>--</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>1</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>534</p>
+                        </div>
+                    </div>
+                    <div class="global-table-row">
+                        <div class="global-table-cell">
+                            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...</p>
+                            <div class="article-shortcut-controllers">
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button go-button"><a><i class="icon tpns-ai-undo"></i>Restore</a></p>
+                                </div>
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Αθανάσιος Σεργουνιώτης</span></p>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p><span class="icon tpns-nti-news-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-sports-website"></span></p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p><span class="icon tpns-nti-astrology-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-lifestyle-website"></span></p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p>Πολιτική</p></li>
+                                <li><p>Ελλάδα</p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p>Αποκαλύψεις</p></li>
+                                <li><p>Αποκαλύψεις</p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>7</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>4</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>--</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>1</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>534</p>
+                        </div>
+                    </div>
+                    <div class="global-table-row">
+                        <div class="global-table-cell">
+                            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...</p>
+                            <div class="article-shortcut-controllers">
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button go-button"><a><i class="icon tpns-ai-undo"></i>Restore</a></p>
+                                </div>
+                                <div class="article-shortcut-controllers-items">
+                                    <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Αθανάσιος Σεργουνιώτης</span></p>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p><span class="icon tpns-nti-news-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-sports-website"></span></p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p><span class="icon tpns-nti-astrology-website"></span></p></li>
+                                <li><p><span class="icon tpns-nti-lifestyle-website"></span></p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                            <ul>
+                                <li><p>Πολιτική</p></li>
+                                <li><p>Ελλάδα</p></li>
+                                <!-- Only retreive the data for the newspapers and top level category that the article has been published in -->
+                                <!--
+                                <li><p>Αποκαλύψεις</p></li>
+                                <li><p>Αποκαλύψεις</p></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>7</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>4</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>--</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>1</p>
+                        </div>
+                        <div class="global-table-cell">
+                        	<p>534</p>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+        	<div class="admin-content-footer">
+            	<div class="admin-content-footer-left">
+                </div>
+            	<div class="admin-content-footer-right textr">
+                    <div class="admin-content-footer-right-items">
+                        <p class="articles-content-button admin-content-header-button-controller"><a><i class="icon tpns-ai-arrow-first"></i></a></p>
+                    </div>
+                    <div class="admin-content-footer-right-items">
+                        <p class="articles-content-button admin-content-header-button-controller"><a><i class="icon tpns-ai-arrow-left"></i></a></p>
+                    </div>
+                    <div class="admin-content-footer-right-items">
+                    	<p class="admin-content-header-input-controller"><input type="number" placeholder="1" /></p>
+                    </div>
+                    <div class="admin-content-footer-right-items">
+                    	<p class="admin-content-total-pages-container textn">of <span class="admin-content-total-pages admin-decimals">10</span></p>
+                    </div>
+                    <div class="admin-content-footer-right-items">
+                        <p class="articles-content-button admin-content-header-button-controller"><a><i class="icon tpns-ai-arrow-right"></i></a></p>
+                    </div>
+                    <div class="admin-content-footer-right-items">
+                        <p class="articles-content-button admin-content-header-button-controller"><a><i class="icon tpns-ai-arrow-last"></i></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../global-module/global-js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="../global-module/global-js/datepicker.js"></script>
+    <script type="text/javascript" src="../global-module/global-js/datepicker.en.js"></script>
+    <script type="text/javascript" src="../global-module/global-js/admin-interface.js"></script>
+    <script type="text/javascript" src="../global-module/global-js/tpns.js"></script>
+    <!-- Local JS files -->
+    <script type="text/javascript" src="js/articles.js"></script>
 </body>
 </html>
