@@ -152,9 +152,9 @@ $(document).ready( function() {
 		}
 		// If this is the Sub Category Filter List being clicked then add results in the relevant div
 		if ( $(this).parent().parent().parent().find(".admin-bi-sub-category-list").length ) {
-			$(this).closest("body").find(".filter-active-sub-category-container").removeClass("hidden").find(".filter-active-sub-category").html($(this).find("u, span").clone());
+			$(this).closest("body").find(".filter-active-sub-category-container").removeClass("hidden").addClass("filter-active-second-seperator-active").find(".filter-active-sub-category").html($(this).find("u, span").clone());
 		} else {
-			$(this).closest("body").find(".filter-active-sub-category-container").addClass("hidden");
+			$(this).closest("body").find(".filter-active-sub-category-container").addClass("hidden").removeClass("filter-active-second-seperator-active");
 		}
 		if ( $(this).find("u").length ) {
 			$(this).parent().parent().parent().parent().find('.selected-admin-bi-reporter-image').html($(this).find("u").clone());
