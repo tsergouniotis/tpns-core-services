@@ -41,8 +41,6 @@ public class Article implements Serializable {
 
 	private Set<Audit> audits;
 
-	private transient Set<String> destinations;
-
 	/**
 	 * JPA constructor
 	 */
@@ -153,17 +151,6 @@ public class Article implements Serializable {
 		return version;
 	}
 
-	public Set<String> getDestinations() {
-		if (null == this.destinations) {
-			this.destinations = new HashSet<>();
-		}
-		return destinations;
-	}
-
-	public void setDestinations(Set<String> destinations) {
-		this.destinations = destinations;
-	}
-
 	public Set<Audit> getAudits() {
 		if (null == audits) {
 			this.audits = new HashSet<>();
@@ -207,7 +194,6 @@ public class Article implements Serializable {
 		article.setCreatedAt(createdAt);
 		article.setUpdatedAt(updatedAt);
 		article.setPostedAt(postedAt);
-		article.setDestinations(destinations);
 		article.setResources(mediaResources);
 		return article;
 	}

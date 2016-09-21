@@ -80,4 +80,18 @@ http://www.springframework.org/schema/util/spring-util.xsd">
 			access-token-validity="3600" authorities="ROLE_AUTHOR" />
 	</oauth2:client-details-service>
 
+
+	<!-- creates a bean of type OAuth2ProtectedResourceDetails -->
+	<oauth2:resource id="articleResource" client-id="article-webapp"
+		client-authentication-scheme="query" type="client_credentials"
+		username="admin@tpns.com" password="tpnsP@ss1" client-secret="secret"
+		scope="read write" authentication-scheme="query"
+		access-token-uri="http://articleService:8080/user-service/oauth/token" />
+
+	<bean id="articleRestTemplate"
+		class="org.springframework.security.oauth2.client.OAuth2RestTemplate">
+		<constructor-arg name="resource" ref="articleResource" />
+	</bean>
+
+
 </beans>

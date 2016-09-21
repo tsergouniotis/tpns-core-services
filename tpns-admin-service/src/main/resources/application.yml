@@ -7,11 +7,11 @@ spring:
     username: ${ADMIN_DB_USER}
     password: ${ADMIN_DB_PASS}
     driver-class-name: org.postgresql.Driver
-  activemq:
-    broker-url: tcp://adminQueue:9876
-    user: admin
-    password: password
+#  activemq:
+#    broker-url: tcp://adminQueue:9876
+#    user: admin
+#    password: password
 logging:
   level:
     root: WARN
-    org.springframework.security: DEBUG
+    org.springframework: INFO

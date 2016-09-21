@@ -71,7 +71,7 @@
 		<dependency>
 			<groupId>com.tpns</groupId>
 			<artifactId>tpns-domain</artifactId>
-		</dependency>
+		</dependency>	
 
 		<!-- Tomcat dependencies.This dependency is required from HIbernate. org.hibernate.cfg.beanvalidation.TypeSafeActivator 
 			requries EL Expression -->
@@ -118,6 +118,12 @@
 			<groupId>com.fasterxml.jackson.datatype</groupId>
 			<artifactId>jackson-datatype-hibernate4</artifactId>
 		</dependency>
+		
+		<!-- This is added in order to convert LocalDateTime attributes -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+		</dependency>		
 
 		<dependency>
 			<groupId>com.zaxxer</groupId>

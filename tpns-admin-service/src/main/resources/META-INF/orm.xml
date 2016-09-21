@@ -13,6 +13,9 @@
 
 	<entity class="com.tpns.admin.domain.Property">
 		<table name="properties" />
+		<named-query name="Property.findByPropertyIds">
+			<query>SELECT p from Property p where p.propertyId in (:propertyIds)</query>
+		</named-query>		
 		<attributes>
 			<id name="id" access="FIELD">
 				<column name="database_id" />
@@ -24,13 +27,12 @@
 				<column name="property_id" length="255" unique="true" />
 			</basic>
 			<basic name="url">
-				<column name="property_url" length="255" unique="true" />
+				<column name="url" length="255" unique="true" />
 			</basic>
 			<basic name="description">
 				<column name="property_desc" length="255" />
 			</basic>
 		</attributes>
 	</entity>
-
 
 </entity-mappings>

@@ -12,7 +12,6 @@ logging:
   path: /var/log/article-service
   level:
     root: INFO
-    org.springframework: DEBUG
-    org.springframework.web.filter: INFO
+    org.springframework: INFO
     org.hibernate: INFO
     com.tpns.article: DEBUG

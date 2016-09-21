@@ -57,10 +57,10 @@
 			<many-to-one name="category" fetch="EAGER">
 				<join-column name="category_id" />
 			</many-to-one>
-			<one-to-many name="audits" access="FIELD">
+			<one-to-many name="audits" access="FIELD" fetch="EAGER">
 				<join-column name="article_id" />
 			</one-to-many>
-			<many-to-many name="keywords" fetch="LAZY">
+			<many-to-many name="keywords" fetch="EAGER">
 				<join-table name="article_keywords">
 					<join-column name="article_id" />
 					<inverse-join-column name="keyword" />
@@ -72,7 +72,6 @@
 					<inverse-join-column name="resource_id" />
 				</join-table>
 			</many-to-many>
-			<transient name="destinations" />
 		</attributes>
 	</entity>
 
@@ -121,25 +120,6 @@
 			<basic name="name">
 				<column name="category_name" length="255" />
 			</basic>
-		</attributes>
-	</entity>
-
-	<entity class="com.tpns.common.domain.Application">
-		<table name="applications" />
-		<named-query name="Application.findByIds">
-			<query>SELECT app from Application app where app.clientId in (:clientIds)</query>
-		</named-query>
-		<attributes>
-			<id name="id" access="FIELD">
-				<column name="application_id" updatable="false" />
-			</id>
-			<basic name="endpoint">
-				<column name="endpoint" length="255" />
-			</basic>
-			<basic name="clientId">
-				<column name="client_id" length="255" />
-			</basic>
-			<version name="version" access="FIELD" />
 		</attributes>
 	</entity>
 
