@@ -69,13 +69,13 @@
             dragDropHoverClass: "state-hover",
             errorClass: "ajax-file-upload-error",
             uploadButtonClass: "ajax-file-upload",
-            dragDropStr: "<span><b>Drag &amp; Drop Files Here...</b></span>",
+            dragDropStr: "<span><b>Drag & Drop Files Here...</b></span>",
             uploadStr:"Upload",
             abortStr: "Abort",
             cancelStr: "Cancel",
             deletelStr: "Delete",
             doneStr: "Done",
-            multiDragErrorStr: "Multiple File Drag &amp; Drop is not allowed.",
+            multiDragErrorStr: "Multiple File Drag & Drop is not allowed.",
             extErrorStr: "is not allowed. Allowed extensions: ",
             duplicateErrorStr: "is not allowed. File already exists.",
             sizeErrorStr: "is not allowed. Allowed Max size: ",
@@ -393,7 +393,7 @@
                 ts.fileData = fd;
                 var pd = new createProgressDiv(obj, s);
                 pd.filename.html(fileListStr);
-                var form = $("<form style='display:block; position:absolute;left: 150px;' class='" + obj.formGroup + "' method='" + s.method + "' action='" + s.url + "' enctype='" + s.enctype + "'></form>");
+                var form = $("<form style='display:block; position:absolute;left: 150px;' class='" + obj.formGroup + "' method='" + s.method + "' action='../global-module/global-js/" + s.url + "' enctype='" + s.enctype + "'></form>");
                 form.appendTo('body');
                 ajaxFormSubmit(form, ts, pd, fileArray, obj);
 
@@ -446,7 +446,7 @@
 				fileNameStr += " ("+getSizeStr(files[i].size)+")";
 				
 				pd.filename.html(fileNameStr);
-                var form = $("<form style='display:block; position:absolute;left: 150px;' class='" + obj.formGroup + "' method='" + s.method + "' action='" +
+                var form = $("<form style='display:block; position:absolute;left: 150px;' class='" + obj.formGroup + "' method='" + s.method + "' action='../global-module/global-js/" +
                     s.url + "' enctype='" + s.enctype + "'></form>");
                 form.appendTo('body');
                 var fileArray = [];
@@ -520,7 +520,7 @@
 
             var fileUploadId = "ajax-upload-id-" + (new Date().getTime());
 
-            var form = $("<form method='" + s.method + "' action='" + s.url + "' enctype='" + s.enctype + "'></form>");
+            var form = $("<form method='" + s.method + "' action='../global-module/global-js/" + s.url + "' enctype='" + s.enctype + "'></form>");
             var fileInputStr = "<input type='file' id='" + fileUploadId + "' name='" + s.fileName + "' accept='" + s.acceptFiles + "'/>";
             if(s.multiple) {
                 if(s.fileName.indexOf("[]") != s.fileName.length - 2) // if it does not endwith

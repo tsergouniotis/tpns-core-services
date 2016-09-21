@@ -1,10 +1,337 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
+<!DOCTYPE html>
+<!-- The language below is critical for the browser to know what dictionary to use for the site DO NOT REMOVE! -->
+<!-- If the Login Module supports multi languages then the lang will need to change dynamically so as to align with the users chosen language -->
+<html lang="en-US">
+<!-- The ID and the Data Template Set are critical as they communicate to the browser to whom the content and site belong to. DO NOT REMOVE! -->
+<!-- The Data Template Set and the id will need to change dynamically so as to show the users Domain Name and Company Name -->
+<head id="tpns.com" data-template-set="TPNS">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- The character, http equivalent and content communicator sets below are critical for the browser to understand the content of the site. DO NOT REMOVE! -->
+	<meta charset="UTF-8">
+    <!-- Feel free to add dynamic loops which will provide specific text for the browser tab to help the user know where they are in the site at a glance. This is comprised normally of the company name and description for the index page and for all the rest of the pages the company Name dash and the page name i.e. TPNS - Contact Us, TPNS - Search Results, TPNS - News etc. Note: This should NOT exceed 50 characters! -->
+    <title>TPNS - Media Library</title>
+    <!-- Site's meta data, as above feel free to add dynamic loops which will provide specific text for the browser title -->
+    <meta name="title" content="TPNS - Media Library">
+    <meta name="description" content="Your One Account, Accessing One Global Information Distibrution Network">
+    <meta name="author" content="TPNS">
+    <!-- Please remember to make the YEAR update dynamically so that you do not have to remember to update the copyright year annually -->
+	<meta name="Copyright" content="Copyright TPNS 2015. All Rights Reserved.">
+	
+    <!-- Do not change the Mobile Viewport data below! -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+    
+    <!-- browser and mobile icons -->
+	<link rel="shortcut icon" href="../global-module/global-images/favicon.ico?v=2">
+	<link rel="apple-touch-icon" href="../global-module/global-images/apple-touch-icon-precomposed.png">
+    
+    <!-- Ensure that the Global CSS always preceeds the Local CSS -->
+    <!-- Link to the site's Global CSS -->
+	<link rel="stylesheet" type="text/css" media="screen" href="../global-module/global-css/global-styles.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="../global-module/global-css/admin-interface-styles.css">
+    <!-- Link to the admin's Local CSS -->
+	<link rel="stylesheet" type="text/css" media="screen" href="css/media-styles.css">
 </head>
-
 <body>
+	<div class="admin-header-controllers">
+    	<div class="admin-controllers">
+            <div class="admin-logo-nav-container">
+                <div class="admin-logo-image">
+                    <p class="textl"><img src="../global-module/global-images/tpns-logo.png" alt="TPNS Global Information Distibrution Network" /></p>
+                </div>
+                <div class="admin-nav-controller">
+                    <p class="admin-minimise-nav textr"><a title="Minimise the navigation so as to help you focus on your articles"><i class="icon tpns-ai-nav-minimise"></i></a></p>
+                    <p class="admin-maximise-nav hidden"><a title="Minimise the navigation so as to help you focus on your articles"><i class="icon tpns-ai-nav-maximise"></i></a></p>
+                </div>
+                <div class="admin-nav-mobile-controller">
+                    <p class="admin-show-mobile-nav"><a title="Open the navigation"><i class="icon tpns-ai-mobile-menu"></i></a></p>
+                    <p class="admin-hide-mobile-nav hidden"><a title="Close the navigation"><i class="icon tpns-ai-close"></i></a></p>
+                </div>
+            </div>
+            <div class="admin-controllers-container">
+                <div class="admin-global-controllers">
+
+                    <div class="admin-global-controllers-inner">
+                        <div class="admin-global-controllers-left">
+                            <div class="admin-global-controllers-left-items admin-area-dashboard-nav">
+                            	<div class="admin-global-controllers-tab-container">
+                                    <div class="admin-global-controllers-tab-button">
+                                        <p class="admin-global-controllers-tab-show"><a class="dropdown" title="Open the navigation"><span>TPNS One</span><i class="icon tpns-ai-arrow-down"></i><i class="icon tpns-ai-close hidden"></i></a></p>
+                                    </div>
+                                    <div class="dropdown-menu admin-global-controllers-tab-content admin-global-controllers-tab-content-left hidden">
+                                        <ul class="admin-global-controllers-tab-list">
+                                            <li><a href="../dashboard-module/global-bi-dashboard.html"><span>TPNS Group</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span>TPNS Astrology</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span>TPNS Lifestyle</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li class="current"><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span>TPNS One</span><i class="icon tpns-ai-selected"></i></a></li>
+                                            <li><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span>TPNS Sports</span><i class="icon tpns-ai-selected"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="admin-global-controllers-left-items articles-new-article-button">
+                            	<p><a href="../article-module/new-article.html" title="Write a new article"><span>New Article</span><i class="icon tpns-ai-add"></i></a></p>
+                            </div>
+                        </div>
+                        <div class="admin-global-controllers-right textr">
+                            <div class="admin-global-controllers-right-items admin-user-notifications-nav admin-user-information-desktop">
+                            	<div class="admin-global-controllers-admin-info-container">
+                                    <p><a href="../notifications-module/notifications.html" title="Preview your latest notifications"><i class="icon tpns-ai-notifications"></i>
+                                        <span class="admin-global-controllers-totals">
+                                            <small>4</small>
+                                        </span>
+                                    </a></p>
+                                </div>
+                            </div>
+                            <div class="admin-global-controllers-right-items admin-user-messages-preview-nav admin-user-information-desktop">
+                            	<div class="admin-global-controllers-admin-info-container">
+                                    <p><a href="../messages-module/inbox.html" title="Preview your latest messages"><i class="icon tpns-ai-email-open"></i>
+                                        <span class="admin-global-controllers-totals">
+                                            <small>81</small>
+                                        </span>
+                                    </a></p>
+                                </div>
+                            </div>
+                            <div class="admin-global-controllers-right-items admin-user-article-schedule-preview-nav admin-user-information-desktop">
+                            	<div class="admin-global-controllers-admin-info-container">
+                                    <p><a href="../calendar-module/calendar.html" title="Preview your scheduled articles"><i class="icon tpns-ai-calendar-month-number"></i>
+                                        <span class="admin-global-controllers-totals">
+                                            <small>95</small>
+                                        </span>
+                                    </a></p>
+                                </div>
+                            </div>
+                            <div class="admin-global-controllers-right-items admin-user-profile-preview-nav">
+                            	<div class="admin-global-controllers-tab-container">
+                                    <div class="admin-global-controllers-tab-button">
+                                        <a title="Preview your profile options">
+                                            <p class="dropdown admin-global-controllers-tab-show">
+                                            	<span class="admin-user-profile-preview-nav-img-container">
+                                                	<img src="../staff-module/staff-images-50x50/staff6-50x50.jpg" alt="Κατερίνα Παπαδόπουλος" />
+                                                    <span class="admin-user-information-mobile-has-notifications"></span>
+                                            	</span>
+                                                <span class="username"><span class="username-inner">Κατερίνα Παπαδόπουλος</span><i class="icon tpns-ai-arrow-down"></i><i class="icon tpns-ai-close hidden"></i></span>
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <div class="dropdown-menu admin-global-controllers-tab-content admin-global-controllers-tab-content-right hidden textl">
+                                    	<div class="admin-user-information-mobile">
+                                            <div class="admin-global-controllers-right-items admin-user-notifications-nav">
+                                                <div class="admin-global-controllers-admin-info-container">
+                                                    <p><a href="../notifications-module/notifications.html" title="Preview your latest notifications"><i class="icon tpns-ai-notifications"></i>
+                                                        <span class="admin-global-controllers-totals">
+                                                            <small>4</small>
+                                                        </span>
+                                                    </a></p>
+                                                </div>
+                                            </div>
+                                            <div class="admin-global-controllers-right-items admin-user-messages-preview-nav">
+                                                <div class="admin-global-controllers-admin-info-container">
+                                                    <p><a href="../messages-module/inbox.html" title="Preview your latest messages"><i class="icon tpns-ai-email-open"></i>
+                                                        <span class="admin-global-controllers-totals">
+                                                            <small>81</small>
+                                                        </span>
+                                                    </a></p>
+                                                </div>
+                                            </div>
+                                            <div class="admin-global-controllers-right-items admin-user-article-schedule-preview-nav">
+                                                <div class="admin-global-controllers-admin-info-container">
+                                                    <p><a href="../calendar-module/calendar.html" title="Preview your scheduled articles"><i class="icon tpns-ai-calendar-month-number"></i>
+                                                        <span class="admin-global-controllers-totals">
+                                                            <small>95</small>
+                                                        </span>
+                                                    </a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    	<div class="global-table admin-user-profile-preview-content-details">
+                                        	<div class="global-table-row">
+                                            	<div class="global-table-cell">
+                                                    <div class="admin-user-profile-preview-content-image">
+                                                        <img src="../staff-module/staff-images-100x100/staff6-100x100.jpg" alt="Κατερίνα Παπαδόπουλος" />
+                                                    </div>
+                                                </div>
+                                            	<div class="global-table-cell">
+                                                    <div class="admin-user-profile-preview-content-username">
+                                                        <h5>Κατερίνα Παπαδόπουλος</h5>
+                                                    </div>
+                                                    <div class="admin-user-profile-preview-content-email">
+                                                        <small>katerina.papadopoulos@tpns.com</small>
+                                                    </div>
+                                                    <div class="admin-global-controllers-button">
+                                                        <h6 class="textc"><a href="../staff-module/staff-profile.html">View Profile</a></h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    	<div class="global-table admin-user-profile-preview-content-access-level">
+                                        	<div class="global-table-row">
+                                            	<div class="global-table-cell">
+                                                	<p>Access Level</p>
+                                        		</div>
+                                            	<div class="global-table-cell">
+                                                	<p>Editor</p>
+                                        		</div>
+                                        	</div>
+                                        	<div class="global-table-row">
+                                            	<div class="global-table-cell">
+                                                	<p>Newspaper Access</p>
+                                        		</div>
+                                            	<div class="global-table-cell">
+                                                    <ul class="access-level-newspapers">
+                                                        <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span class="icon tpns-nti-news-website"></span></a></p></li>
+                                                        <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span class="icon tpns-nti-sports-website"></span></a></p></li>
+                                                        <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span class="icon tpns-nti-astrology-website"></span></a></p></li>
+                                                        <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html"><span class="icon tpns-nti-lifestyle-website"></span></a></p></li>
+                                                    </ul>
+                                        		</div>
+                                        	</div>
+                                        </div>
+                                        <div class="admin-global-controllers-button admin-global-controllers-transparent-button">
+                                            <h6 class="textc"><a href="../access-module/access.html">Exit Account</a></h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="admin-local-controllers">
+                    <div class="admin-local-controllers-inner">
+                        <div class="admin-local-controllers-left">
+                        	
+                        </div>
+                        <div class="admin-local-controllers-right">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="admin-left-column">
+        <div class="admin-main-navigation admin-mobile-nav-hidden">
+            <nav>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title">
+                    	<p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html" title=""><span class="icon tpns-ai-bi-chart"></span><span class="nav-max">BI Dashboard</span></a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html" title="">Overview</a></p></li>
+                            <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html" title="">AWS</a></p></li>
+                            <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html" title="">Google Adwords</a></p></li>
+                            <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html" title="">In-house Ad. Revenue</a></p></li>
+                            <li><p><a href="../newspaper-dashboard-module/newspaper-bi-dashboard.html" title="">Global Analytics</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title current">
+                    	<p><a href="../article-module/articles.html" title=""><span class="icon tpns-ai-articles"></span><span class="nav-max">Articles</span></a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="../article-module/articles.html" title="">All Articles</a></p></li>
+                            <li><p><a href="../article-module/new-article.html" title="">New Article</a></p></li>
+                            <li class="current"><p><a href="../media-library-module/media.html" title="">Media Library</a></p></li>
+                            <li><p><a href="../tag-cloud-module/tags.html" title="">Tag Cloud</a></p></li>
+                            <li><p><a href="../article-module/trash.html" title="">Trash</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title">
+                    	<p><a href="#" title=""><span class="icon tpns-ai-newspaper"></span><span class="nav-max">Printed News</span></a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="#" title="">Front Pages</a></p></li>
+                            <li><p><a href="#" title="">Political</a></p></li>
+                            <li><p><a href="#" title="">Sports</a></p></li>
+                            <li><p><a href="#" title="">Financial</a></p></li>
+                            <li><p><a href="#" title="">Local</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title">
+                    	<p><a href="../comments-module/comments.html" title=""><span class="icon tpns-ai-comments"></span><span class="nav-max">Comments</span>
+                            <span class="admin-global-controllers-totals nav-totals">
+                                <small>95</small>
+                            </span>
+                        </a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="../comments-module/comments.html" title="">All Comments</a></p></li>
+                            <li><p><a href="../comments-module/trash.html" title="">Comment Trash</a></p></li>
+                            <li><p><a href="../comments-module/spam.html" title="">Spam Comments</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title">
+                    	<p><a href="../in-house-adverts-module/in-house-ads.html" title=""><span class="icon tpns-ai-megaphone"></span><span class="nav-max">In-house Ad&#39;s</span></a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="../in-house-adverts-module/in-house-ads.html" title="">All Adverts</a></p></li>
+                            <li><p><a href="#" title="">Something</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title">
+                    	<p><a href="../messages-module/inbox.html" title=""><span class="icon tpns-ai-email-closed"></span><span class="nav-max">Messages</span>
+                            <span class="admin-global-controllers-totals nav-totals">
+                                <small>195</small>
+                            </span>
+                        </a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="../messages-module/inbox.html" title="">Inbox</a></p></li>
+                            <li><p><a href="../messages-module/new-message.html" title="">New Message</a></p></li>
+                            <li><p><a href="../messages-module/trash.html" title="">Trash</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title">
+                    	<p><a title=""><span class="icon tpns-ai-user"></span><span class="nav-max">Subscriptions</span></a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="#" title="">Something</a></p></li>
+                            <li><p><a href="#" title="">Something</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-nav-category-loop">
+                	<div class="main-nav-category-loop-title">
+                    	<p><a title=""><span class="icon tpns-ai-settings"></span><span class="nav-max">Settings</span></a></p>
+                    </div>
+                	<div class="main-nav-category-loop-list hidden">
+                        <ul>
+                            <li><p><a href="#" title="">Something</a></p></li>
+                            <li><p><a href="#" title="">Something</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="admin-right-column">
+        <div class="admin-main-content">
+            <div class="image-upload-container">
+            	<div id="mediaUploader"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../global-module/global-js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="../global-module/global-js/admin-interface.js"></script>
+    <script type="text/javascript" src="../global-module/global-js/jquery.uploadfile.js"></script>
+    <!-- Local JS files -->
+    <script type="text/javascript" src="js/media.js"></script>
 </body>
 </html>
