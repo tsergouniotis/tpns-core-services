@@ -37,13 +37,15 @@
 .categories-data-header-inner {
 	background:orange;
 }
+.categories-data-inner p, .sub-categories-data-inner p {
+	height:30px; line-height:30px; padding:0; margin:0;
+}
 .categories-data-header-items, .categories-data-items, .sub-categories-data-items {
 	display:inline-block;
 }
 .sub-categories-data {
 	clear:both; display:block; width:90%; margin-left:10%;
 }
-
 .categories-data-inner:first-child .reorder-up, .categories-data-inner:last-child .reorder-down, .sub-categories-data-inner:first-child .sub-reorder-up, .sub-categories-data-inner:last-child .sub-reorder-down {
 	display:none;
 }
