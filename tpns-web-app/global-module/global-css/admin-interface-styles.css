@@ -23,6 +23,216 @@ ins { background-color:#364150; color:#c6cfda; text-decoration: none; }
 mark { background-color:#364150; color:#c6cfda; font-style:italic; font-weight: bold; }
 
 /* ------------------------- Admin Date Picker ------------------------ */
+/* ---------- Admin Global Content Area - Button ---------- */
+.articles-content-button a, .ajax-file-upload, .ajax-file-upload-green, .ajax-file-upload-red, .ajax-file-upload-orange, .admin-new-article-search-form button, .articles-content-button button {
+	display:inline-block; background:#2b3643; color:#9aa7b6; line-height:24px; font-family: OpenSans-Light, "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:100%; vertical-align:bottom; padding:0px 10px 4px; border:none; -webkit-border-radius:6px; border-radius:6px; cursor:pointer;
+}
+.articles-content-button a:hover, .articles-content-button button:hover, .ajax-file-upload:hover, .admin-new-article-search-form button:hover { color:#FFFFFF; }
+.articles-content-button.warning-button a:hover, .ajax-file-upload-orange:hover { background:#f2784b; color:#FFFFFF; }
+.articles-content-button.stop-button a:hover, .ajax-file-upload-red:hover { background:#e7505a; color:#FFFFFF; }
+.articles-content-button.go-button a:hover, .ajax-file-upload-green:hover { background:#26c281; color:#FFFFFF; }
+.articles-content-button.schedule-button a:hover { background:#8e44ad; color:#FFFFFF; }
+.articles-content-button.yellow-button a:hover { background:#f7ca18; color:#FFFFFF; }
+.articles-content-button a [class^="tpns-ai-"]:before, .articles-content-button a [class*=" tpns-ai-"]:before {
+	padding-left:0px; padding-right:10px; font-size:110%;
+}
+/* ----- Form Containers ----- */
+.new-article-form-content-container-full-width {
+	clear:both; position:relative; width:100%; padding:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; border:1px solid #dce0ec; margin:20px 0px;
+}
+.new-article-form-content-container-half-width {
+	float:left; position:relative; width:49%; padding:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; border:1px solid #dce0ec; margin:0px 0px 20px;
+}
+.new-article-form-content-container-half-width:nth-child(2n+1) {
+	margin-right:2%;
+}
+.new-article-form-content-header {
+	position:relative; width:100%; background:#f1f3fa; padding:10px; margin:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; border-bottom:1px solid #dce0ec;
+}
+.new-article-form-content-header-left, .new-article-form-content-header-right {
+	display:inline-block;
+}
+.new-article-form-content-header h3, .new-article-form-content-header-right p a {
+	font-family:OpenSans-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif; 
+}
+.new-article-form-content-header-right {
+	float:right;
+}
+.new-article-form-content-header-right p a {
+	display:block; width:24px; height:24px; background:#FFFFFF; line-height:24px; text-align:center; font-size:1.063em; padding:0; border:1px solid #2b3643; -webkit-border-radius:6px; border-radius:6px; margin:0;
+}
+.new-article-form-content-header-right p a:hover, .new-article-form-content-header-right .admin-click-menu-button-pc-close a {
+	background:#2b3643; color:#FFFFFF;
+}
+.new-article-form-content-header-right .admin-click-menu-button-pc-close a:hover {
+	background:#FFFFFF; color:#2b3643;
+}
+.new-article-form-content-header-right .admin-click-menu-content.admin-click-menu-content-right, .new-article-form-content-header-right .admin-click-menu-content.admin-click-sub-menu-content-right {
+    right:-15px; margin-top:14px;
+}
+.new-article-form-content-header-right .admin-click-menu-content {
+	min-width:300px; color:#FFFFFF;
+}
+.new-article-form-content-header-right .admin-click-menu-content p {
+	line-height:120%;
+}
+.new-article-form-content-body {
+	position:relative; width:100%; padding:10px; margin:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+/* ---------- Admin Global Content Area Form - Input ---------- */
+.new-article-form-content-body input {
+	width:100%; height:30px; color:#2b3643; font-family:OpenSans-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:1.125em; line-height:30px; padding:0; margin:0%; border:0px solid #2b3643; border-bottom:1px dotted #2b3643; resize:vertical; overflow:hidden; outline:none;
+}
+.new-article-form-content-body input::-webkit-input-placeholder { color:#2b3643; font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif; }
+.new-article-form-content-body input:-moz-placeholder { color:#2b3643; font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif; }
+.new-article-form-content-body input::-moz-placeholder { color:#2b3643; font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif; }
+.new-article-form-content-body input:-ms-input-placeholder { color:#2b3643; font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif; }
+/* ---------- Articles Content Header Area ---------- */
+.admin-content-header, .admin-content-footer {
+	display:table; width:100%; height:auto; padding:0; margin:0;
+}
+.admin-content-header-left, .admin-content-header-right, .admin-content-footer-left, .admin-content-footer-right {
+	display:table-cell; vertical-align:middle;
+}
+.admin-content-header-right-items, .admin-content-footer-right-items {
+	display:inline-block;
+}
+.admin-content-header-button-controller a {
+	padding:0px 6px 4px;
+}
+.admin-content-header-button-controller a [class^="tpns-ai-"]:before, .admin-content-header-button-controller a [class*=" tpns-ai-"]:before {
+	font-size:100%; padding-right:0;
+}
+.admin-content-total-pages-container {
+	display:table-cell; vertical-align:middle; padding:0px 5px 2px 0px;
+}
+_:-ms-fullscreen, :root .admin-content-total-pages-container {
+	line-height:5px;
+}
+.admin-content-header-input-controller {
+	display:table-cell; vertical-align:middle; padding:0px 0px 0px 5px;
+}
+.admin-content-header-input-controller input {
+	height:26px; max-width:50px; background:#f1f3fa; font-family:OpenSans-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif; text-align:right; padding:0px 5px; margin:0; margin-bottom:-3px; border:1px solid #2b3643; -webkit-border-radius:6px; border-radius:6px; outline:none;
+}
+_:-ms-fullscreen, :root .admin-content-header-input-controller input {
+	margin-bottom:-9px;
+}
+.admin-content-header-input-controller input[type=number]::-webkit-inner-spin-button, .admin-content-header-input-controller input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance:none; margin:0;
+}
+.admin-content-header-input-controller input[type='number'] {
+    -moz-appearance:textfield;
+}
+/* ----- Articles Data Table ----- */
+.global-table.all-articles-table, .global-table.all-articles-trash-table, .global-table.categories-table, .sub-categories-table {
+	table-layout:auto; margin:20px 0px;
+}
+.global-table-container .global-table-row:hover {
+	background:#f1f3fa;
+}
+.global-table-container .global-table-row.admin-global-checkbox-checked {
+	background:#fef7dc;
+}
+.global-table.categories-table .categories-special-row {
+	clear:both; width:100%;
+}
+.global-table-container .global-header-cell {
+	background:#dce0ec; text-align:center; vertical-align:middle; padding:5px 5px 7px;
+}
+.global-table-container .global-table-cell {
+	vertical-align:top; text-align:center; padding:10px 5px;
+}
+.global-table-container .global-header-cell p, .global-table-container .global-table-cell p {
+	line-height:20px; padding:0; margin:0;
+}
+/* ----- Header Layout ----- */
+.all-articles-table .global-header-cell:nth-child(1) { width:52px; }
+.all-articles-table .global-header-cell:nth-child(2) { width:65px; }
+.all-articles-table .global-header-cell:nth-child(3) { width:60px; }
+.all-articles-table .global-header-cell:nth-child(4) {  }
+.all-articles-table .global-header-cell:nth-child(5) { width:200px; }
+.all-articles-table .global-header-cell:nth-child(6) { width:20px; }
+.all-articles-table .global-header-cell:nth-child(7) { width:110px; }
+.all-articles-table .global-header-cell:nth-child(8) { width:30px; }
+.all-articles-table .global-header-cell:nth-child(9) { width:30px; }
+.all-articles-table .global-header-cell:nth-child(10) { width:30px; }
+.all-articles-table .global-header-cell:nth-child(11) { width:30px; }
+.all-articles-table .global-header-cell:nth-child(12) { width:30px; }
+.all-articles-table .global-header-cell:nth-child(13) { width:90px; }
+/* ----- Body Layout ----- */
+.all-articles-table .global-table-cell:nth-child(13n+1) {  }
+.all-articles-table .global-table-cell:nth-child(13n+2) { text-align:left; }
+.all-articles-table .global-table-cell:nth-child(13n+3) {  }
+.all-articles-table .global-table-cell:nth-child(13n+4) { text-align:left; }
+.all-articles-table .global-table-cell:nth-child(13n+5) { text-align:left; }
+.all-articles-table .global-table-cell:nth-child(13n+6) {  }
+.all-articles-table .global-table-cell:nth-child(13n+7) { text-align:left; }
+.all-articles-table .global-table-cell:nth-child(13n+8) {  }
+.all-articles-table .global-table-cell:nth-child(13n+9) {  }
+.all-articles-table .global-table-cell:nth-child(13n+10) {  }
+.all-articles-table .global-table-cell:nth-child(13n+11) {  }
+.all-articles-table .global-table-cell:nth-child(13n+12) {  }
+.all-articles-table .global-table-cell:nth-child(13n+13) {  }
+/* ----- Trash Data Table ----- */
+/* ----- Header Layout ----- */
+.all-articles-trash-table .global-header-cell:nth-child(1) { width:52px; }
+.all-articles-trash-table .global-header-cell:nth-child(2) { width:auto; }
+.all-articles-trash-table .global-header-cell:nth-child(3) { width:200px; }
+.all-articles-trash-table .global-header-cell:nth-child(4) { width:20px; }
+.all-articles-trash-table .global-header-cell:nth-child(5) { width:110px; }
+.all-articles-trash-table .global-header-cell:nth-child(6) { width:30px; }
+.all-articles-trash-table .global-header-cell:nth-child(7) { width:30px; }
+.all-articles-trash-table .global-header-cell:nth-child(8) { width:30px; }
+.all-articles-trash-table .global-header-cell:nth-child(9) { width:30px; }
+.all-articles-trash-table .global-header-cell:nth-child(10) { width:30px; }
+/* ----- Body Layout ----- */
+.all-articles-trash-table .global-table-cell:nth-child(13n+1) {  }
+.all-articles-trash-table .global-table-cell:nth-child(13n+2) { text-align:left; }
+.all-articles-trash-table .global-table-cell:nth-child(13n+3) { text-align:left; }
+.all-articles-trash-table .global-table-cell:nth-child(13n+4) {  }
+.all-articles-trash-table .global-table-cell:nth-child(13n+5) { text-align:left; }
+.all-articles-trash-table .global-table-cell:nth-child(13n+6) {  }
+.all-articles-trash-table .global-table-cell:nth-child(13n+7) {  }
+.all-articles-trash-table .global-table-cell:nth-child(13n+8) {  }
+.all-articles-trash-table .global-table-cell:nth-child(13n+9) {  }
+.all-articles-trash-table .global-table-cell:nth-child(13n+10) {  }
+/* ----- Categories Data Table ----- */
+/* ----- Header Layout ----- */
+.categories-table .global-header-cell:nth-child(1) { width:52px; }
+.categories-table .global-header-cell:nth-child(2) { width:auto; }
+.categories-table .global-header-cell:nth-child(3) { width:auto; }
+.categories-table .global-header-cell:nth-child(4) { width:100px; }
+/* ----- Body Layout ----- */
+.categories-table .global-table-cell:nth-child(13n+1) {  }
+.categories-table .global-table-cell:nth-child(13n+2) { text-align:left; }
+.categories-table .global-table-cell:nth-child(13n+3) { text-align:left; }
+.categories-table .global-table-cell:nth-child(13n+4) {  }
+/* ----- Header Cell Content ----- */
+.select-all-rows-container, .admin-articles-bulk-actions-controller {
+	display:inline-block; vertical-align:text-top;
+}
+.admin-articles-bulk-actions-controller.hidden {
+	display:none;
+}
+.admin-articles-bulk-actions-controller a [class^="tpns-ai-"]:before, .admin-articles-bulk-actions-controller a [class*=" tpns-ai-"]:before {
+	padding:0 !important;
+}
+.all-articles-table .admin-click-menu-button a, .all-articles-trash-table .admin-click-menu-button a {
+	height:20px; line-height:20px;
+}
+.all-articles-table .admin-click-menu-content, .all-articles-trash-table .admin-click-menu-content {
+	margin-top:13px;
+}
+.all-articles-table .admin-click-menu-button a u, .all-articles-trash-table .admin-click-menu-button a u {
+    font-size:100%;
+}
+.all-articles-table .admin-click-menu-button-pc-close a, .all-articles-trash-table .admin-click-menu-button-pc-close a {
+	color:#3598dc;
+}
+.all-articles-table .admin-click-menu-button-pc-close a:hover, .all-articles-trash-table .admin-click-menu-button-pc-close a:hover {
+	color:#2b3643;
+}
 /* ----- Admin Checkboxes ----- */
 .admin-global-checkbox label {
 	cursor:pointer;

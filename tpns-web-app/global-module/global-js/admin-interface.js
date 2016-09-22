@@ -6,6 +6,51 @@ $.fn.digits = function(){
 		$(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") ); 
 	});
 };
+// Global Checkboxes
+/* Checkbox selected */
+$("input.single-article-checkbox:checkbox").removeAttr('checked').removeAttr('checked');
+function check() {
+	'use strict';
+	var $checkbox = $(this);
+	if ($checkbox.is(":checked")) {
+		$(this).attr('checked','checked').parent().parent().parent().parent().addClass("admin-global-checkbox-checked");
+	} else {
+		$(this).removeAttr('checked').parent().parent().parent().parent().removeClass("admin-global-checkbox-checked");
+	}
+	if ($("input.single-article-checkbox:checkbox").is(":checked")) {
+		$(".admin-articles-bulk-actions-controller").removeClass("hidden");
+	} else {
+		$(".admin-articles-bulk-actions-controller").addClass("hidden");
+		$(".select-all-rows-button-check").removeClass("hidden");
+		$(".select-all-rows-button-uncheck").addClass("hidden");
+	}
+}
+$("input[type=checkbox]").each(check).change(check);
+/* Activate options dropdown menu for articles */
+/* Select all checkboxes */
+$(".select-all-rows-button-check, .select-all-rows-button-uncheck").on("click", function () {
+	'use strict';
+	var check = $("input.single-article-checkbox:checkbox").is(":checked") ? false:true;
+	$("input.single-article-checkbox:checkbox").prop('checked', check).attr('checked','checked').parent().parent().parent().parent().removeClass("admin-global-checkbox-checked");
+	if ($("input.single-article-checkbox:checkbox").is(':checked')) {
+		$(".admin-articles-bulk-actions-controller").removeClass("hidden");
+		$("input.single-article-checkbox:checkbox").parent().parent().parent().parent().addClass("admin-global-checkbox-checked");
+		$(".select-all-rows-button-check").addClass("hidden");
+		$(".select-all-rows-button-uncheck").removeClass("hidden");
+	}
+});
+$(".select-all-rows-button-uncheck").on("click", function () {
+	'use strict';
+	var uncheck = $("input.single-article-checkbox:checkbox").is(":checked") ? false:true;
+	$("input.single-article-checkbox:checkbox").prop('checked', uncheck).removeAttr('checked');
+	if ($("input.single-article-checkbox:checkbox").is(':checked') !== true) {
+		$(".admin-articles-bulk-actions-controller").addClass("hidden");
+		$("input.single-article-checkbox:checkbox").parent().parent().parent().parent().removeClass("admin-global-checkbox-checked");
+		$(".select-all-rows-button-check").removeClass("hidden");
+		$(".select-all-rows-button-uncheck").addClass("hidden");
+	}
+});
+
 $(document).ready( function() {
 	'use strict';
 	// Where to add the decimal points in the document

@@ -230,6 +230,10 @@ url("../global-fonts/tpns-admin-icons.svg#tpns-admin-icons") format("svg");
 .tpns-ai-arrow-last:before { content: "\3e"; }
 .tpns-ai-trash:before { content: "\3f"; }
 .tpns-ai-cloud-download:before { content: "\40"; }
+.tpns-ai-sort:before { content: "\5b"; }
+.tpns-ai-category-slug:before { content: "\5d"; }
+.tpns-ai-sort-down:before { content: "\5e"; }
+.tpns-ai-sort-up:before { content: "\5f"; }
 
 /* --------------------- Headers ---------------------- */
 h1 {
