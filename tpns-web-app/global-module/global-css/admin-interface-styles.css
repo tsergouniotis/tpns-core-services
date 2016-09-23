@@ -125,7 +125,7 @@ _:-ms-fullscreen, :root .admin-content-header-input-controller input {
     -moz-appearance:textfield;
 }
 /* ----- Articles Data Table ----- */
-.global-table.all-articles-table, .global-table.all-articles-trash-table, .global-table.categories-table, .sub-categories-table {
+.global-table.all-articles-table, .global-table.all-articles-trash-table {
 	table-layout:auto; margin:20px 0px;
 }
 .global-table-container .global-table-row:hover {
@@ -133,9 +133,6 @@ _:-ms-fullscreen, :root .admin-content-header-input-controller input {
 }
 .global-table-container .global-table-row.admin-global-checkbox-checked {
 	background:#fef7dc;
-}
-.global-table.categories-table .categories-special-row {
-	clear:both; width:100%;
 }
 .global-table-container .global-header-cell {
 	background:#dce0ec; text-align:center; vertical-align:middle; padding:5px 5px 7px;
@@ -187,27 +184,16 @@ _:-ms-fullscreen, :root .admin-content-header-input-controller input {
 .all-articles-trash-table .global-header-cell:nth-child(9) { width:30px; }
 .all-articles-trash-table .global-header-cell:nth-child(10) { width:30px; }
 /* ----- Body Layout ----- */
-.all-articles-trash-table .global-table-cell:nth-child(13n+1) {  }
-.all-articles-trash-table .global-table-cell:nth-child(13n+2) { text-align:left; }
-.all-articles-trash-table .global-table-cell:nth-child(13n+3) { text-align:left; }
-.all-articles-trash-table .global-table-cell:nth-child(13n+4) {  }
-.all-articles-trash-table .global-table-cell:nth-child(13n+5) { text-align:left; }
-.all-articles-trash-table .global-table-cell:nth-child(13n+6) {  }
-.all-articles-trash-table .global-table-cell:nth-child(13n+7) {  }
-.all-articles-trash-table .global-table-cell:nth-child(13n+8) {  }
-.all-articles-trash-table .global-table-cell:nth-child(13n+9) {  }
-.all-articles-trash-table .global-table-cell:nth-child(13n+10) {  }
-/* ----- Categories Data Table ----- */
-/* ----- Header Layout ----- */
-.categories-table .global-header-cell:nth-child(1) { width:52px; }
-.categories-table .global-header-cell:nth-child(2) { width:auto; }
-.categories-table .global-header-cell:nth-child(3) { width:auto; }
-.categories-table .global-header-cell:nth-child(4) { width:100px; }
-/* ----- Body Layout ----- */
-.categories-table .global-table-cell:nth-child(13n+1) {  }
-.categories-table .global-table-cell:nth-child(13n+2) { text-align:left; }
-.categories-table .global-table-cell:nth-child(13n+3) { text-align:left; }
-.categories-table .global-table-cell:nth-child(13n+4) {  }
+.all-articles-trash-table .global-table-cell:nth-child(10n+1) {  }
+.all-articles-trash-table .global-table-cell:nth-child(10n+2) { text-align:left; }
+.all-articles-trash-table .global-table-cell:nth-child(10n+3) { text-align:left; }
+.all-articles-trash-table .global-table-cell:nth-child(10n+4) {  }
+.all-articles-trash-table .global-table-cell:nth-child(10n+5) { text-align:left; }
+.all-articles-trash-table .global-table-cell:nth-child(10n+6) {  }
+.all-articles-trash-table .global-table-cell:nth-child(10n+7) {  }
+.all-articles-trash-table .global-table-cell:nth-child(10n+8) {  }
+.all-articles-trash-table .global-table-cell:nth-child(10n+9) {  }
+.all-articles-trash-table .global-table-cell:nth-child(10n+10) {  }
 /* ----- Header Cell Content ----- */
 .select-all-rows-container, .admin-articles-bulk-actions-controller {
 	display:inline-block; vertical-align:text-top;

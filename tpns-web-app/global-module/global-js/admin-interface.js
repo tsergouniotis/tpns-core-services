@@ -8,22 +8,41 @@ $.fn.digits = function(){
 };
 // Global Checkboxes
 /* Checkbox selected */
-$("input.single-article-checkbox:checkbox").removeAttr('checked').removeAttr('checked');
+$("input.single-article-checkbox:checkbox").removeAttr('checked');
 function check() {
 	'use strict';
 	var $checkbox = $(this);
 	if ($checkbox.is(":checked")) {
-		$(this).attr('checked','checked').parent().parent().parent().parent().addClass("admin-global-checkbox-checked");
+		$checkbox.attr('checked','checked').parent().parent().parent().parent().addClass("admin-global-checkbox-checked");
 	} else {
-		$(this).removeAttr('checked').parent().parent().parent().parent().removeClass("admin-global-checkbox-checked");
+		$checkbox.removeAttr('checked').parent().parent().parent().parent().removeClass("admin-global-checkbox-checked");
 	}
 	if ($("input.single-article-checkbox:checkbox").is(":checked")) {
 		$(".admin-articles-bulk-actions-controller").removeClass("hidden");
+		$(".select-all-rows-button-check").addClass("hidden");
+		$(".select-all-rows-button-uncheck").removeClass("hidden");
+		$checkbox.parent().parent().parent().parent().parent().parent(".categories-data-inner").find(".categories-data-inner-table input").prop('checked','checked');
+		$checkbox.parent().parent().parent().parent().parent().parent(".categories-data-inner").find(".categories-data-inner-table .admin-global-checkbox-label").attr('checked','checked');
+		$checkbox.parent().parent().parent().parent().parent().parent(".categories-data-inner").find(".categories-data-inner-table").addClass("admin-global-checkbox-checked");
+		//$(".categories-data-items input.single-article-checkbox:checkbox").is(":checked").parent().parent().parent().parent().parent().parent(".categories-data-inner").find("input.sub-cat").prop('checked','checked');
 	} else {
 		$(".admin-articles-bulk-actions-controller").addClass("hidden");
 		$(".select-all-rows-button-check").removeClass("hidden");
 		$(".select-all-rows-button-uncheck").addClass("hidden");
+		$checkbox.parent().parent().parent().parent().parent().parent(".categories-data-inner").find(".categories-data-inner-table input").removeAttr('checked');
+		$checkbox.parent().parent().parent().parent().parent().parent(".categories-data-inner").find(".categories-data-inner-table .admin-global-checkbox-label").removeAttr('checked');
+		$checkbox.parent().parent().parent().parent().parent().parent(".categories-data-inner").find(".categories-data-inner-table").removeClass("admin-global-checkbox-checked");
+		//$checkbox.parent().parent().parent().parent().parent().parent(".categories-data-inner").find("input.sub-cat").removeAttr('checked');
 	}
+	/*
+	if ($(".categories-data-items input.single-article-checkbox:checkbox").is(":checked")) {
+		$(this).parentsUntil(".categories-data-inner").find("input.sub-cat:checkbox").removeAttr('checked').prop('checked','checked');
+		//$(this).parentsUntil(".categories-data-inner").find(".sub-categories-data-items p label span").removeAttr('checked');
+	} else {
+		$(this).parentsUntil(".categories-data-inner").find("input.sub-cat:checkbox").removeAttr('checked');
+	}
+	*/
+		
 }
 $("input[type=checkbox]").each(check).change(check);
 /* Activate options dropdown menu for articles */
@@ -42,7 +61,7 @@ $(".select-all-rows-button-check, .select-all-rows-button-uncheck").on("click", 
 $(".select-all-rows-button-uncheck").on("click", function () {
 	'use strict';
 	var uncheck = $("input.single-article-checkbox:checkbox").is(":checked") ? false:true;
-	$("input.single-article-checkbox:checkbox").prop('checked', uncheck).removeAttr('checked');
+	$("input.single-article-checkbox:checkbox").attr('checked', uncheck).removeAttr('checked');
 	if ($("input.single-article-checkbox:checkbox").is(':checked') !== true) {
 		$(".admin-articles-bulk-actions-controller").addClass("hidden");
 		$("input.single-article-checkbox:checkbox").parent().parent().parent().parent().removeClass("admin-global-checkbox-checked");
