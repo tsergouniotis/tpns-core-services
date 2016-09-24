@@ -9,9 +9,9 @@
 	<!-- The character, http equivalent and content communicator sets below are critical for the browser to understand the content of the site. DO NOT REMOVE! -->
 	<meta charset="UTF-8">
     <!-- Feel free to add dynamic loops which will provide specific text for the browser tab to help the user know where they are in the site at a glance. This is comprised normally of the company name and description for the index page and for all the rest of the pages the company Name dash and the page name i.e. TPNS - Contact Us, TPNS - Search Results, TPNS - News etc. Note: This should NOT exceed 50 characters! -->
-    <title>TPNS One Business Inteligence Dashboard</title>
+    <title>TPNS One Settings - Categories</title>
     <!-- Site's meta data, as above feel free to add dynamic loops which will provide specific text for the browser title -->
-    <meta name="title" content="TPNS - TPNS One Business Intelligence Dashboard">
+    <meta name="title" content="TPNS - TPNS One Settings - Categories">
     <meta name="description" content="Your One Account, Accessing One Global Information Distibrution Network">
     <meta name="author" content="TPNS">
     <!-- Please remember to make the YEAR update dynamically so that you do not have to remember to update the copyright year annually -->
@@ -440,6 +440,8 @@
                             <div class="categories-data-header-items" title="Change the order that the categories appear in the newspaper">
                                 <p><i class="icon tpns-ai-sort"></i></p>
                             </div>
+                            <div class="categories-data-header-items" title="Show/Hide Sub-categories">
+                            </div>
                         </li>
                     </ul>
                     <ul class="categories-data">
@@ -449,7 +451,7 @@
                                     <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
                                 </div>
                                 <div class="categories-data-items">
-                                    <p>Ελλάδα</p>
+                                    <p class="textn">Ελλάδα<small class="sub-categories-total-container"> - has <span class="sub-categories-total-number"></span> sub-categories</small></p>
                                     <div class="categories-table-controllers">
                                         <div class="article-shortcut-controllers-items">
                                             <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
@@ -460,13 +462,16 @@
                                     </div>
                                 </div>
                                 <div class="categories-data-items">
-                                    <p>ellada</p>
+                                    <small>ellada</small>
                                 </div>
                                 <div class="categories-data-items">
-                                    <p><a href="#" class="reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    <p class="reorder-categories"><a class="reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                </div>
+                                <div class="categories-data-items show-hide-sub-categories" title="Show/Hide Sub-categories">
+                                	<p class="show-sub-categories"><u class="icon tpns-ai-preview-hide hidden" title="Hide the sub-categories below"></u><u class="icon tpns-ai-preview-show" title="Show the sub-categories below"></u></p>
                                 </div>
                             </div>
-                            <ul class="sub-categories-data-inner-table">
+                            <ul class="sub-categories-data-inner-table hidden">
                                 <li class="sub-categories-data-inner">
                                     <div class="sub-categories-data-items">
                                         <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
@@ -483,10 +488,10 @@
                                         </div>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p>eidhseis</p>
+                                        <small>eidhseis</small>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p><a href="#" class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
                                     </div>
                                 </li>
                                 <li class="sub-categories-data-inner">
@@ -505,10 +510,10 @@
                                         </div>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p>ethnika</p>
+                                        <small>ethnika</small>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p><a href="#" class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
                                     </div>
                                 </li>
                                 <li class="sub-categories-data-inner">
@@ -527,10 +532,10 @@
                                         </div>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p>astynomiko</p>
+                                        <small>astynomiko</small>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p><a href="#" class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
                                     </div>
                                 </li>
                                 <li class="sub-categories-data-inner">
@@ -549,10 +554,10 @@
                                         </div>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p>dikaiosynh</p>
+                                        <small>dikaiosynh</small>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p><a href="#" class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
                                     </div>
                                 </li>
                                 <li class="sub-categories-data-inner">
@@ -571,10 +576,10 @@
                                         </div>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p>politismos</p>
+                                        <small>politismos</small>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p><a href="#" class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
                                     </div>
                                 </li>
                                 <li class="sub-categories-data-inner">
@@ -593,10 +598,10 @@
                                         </div>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p>apokalypseis</p>
+                                        <small>apokalypseis</small>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p><a href="#" class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
                                     </div>
                                 </li>
                                 <li class="sub-categories-data-inner">
@@ -615,10 +620,10 @@
                                         </div>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p>ekklhsia</p>
+                                        <small>ekklhsia</small>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p><a href="#" class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
                                     </div>
                                 </li>
                                 <li class="sub-categories-data-inner">
@@ -637,10 +642,10 @@
                                         </div>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p>seismoi</p>
+                                        <small>seismoi</small>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p><a href="#" class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
                                     </div>
                                 </li>
                                 <li class="sub-categories-data-inner">
@@ -659,10 +664,10 @@
                                         </div>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p>Amyna</p>
+                                        <small>Amyna</small>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p><a href="#" class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
                                     </div>
                                 </li>
                             </ul>
@@ -673,7 +678,7 @@
                                     <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
                                 </div>
                                 <div class="categories-data-items">
-                                    <p>Οικονομία</p>
+                                    <p class="textn">Οικονομία<small class="sub-categories-total-container"> - has <span class="sub-categories-total-number"></span> sub-categories</small></p>
                                     <div class="categories-table-controllers">
                                         <div class="article-shortcut-controllers-items">
                                             <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
@@ -684,13 +689,16 @@
                                     </div>
                                 </div>
                                 <div class="categories-data-items">
-                                    <p>oikonomia</p>
+                                    <small>oikonomia</small>
                                 </div>
                                 <div class="categories-data-items">
-                                    <p><a href="#" class="reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    <p class="reorder-categories"><a class="reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                </div>
+                                <div class="categories-data-items show-hide-sub-categories" title="Show/Hide Sub-categories">
+                                	<p class="show-sub-categories"><u class="icon tpns-ai-preview-hide hidden" title="Hide the sub-categories below"></u><u class="icon tpns-ai-preview-show" title="Show the sub-categories below"></u></p>
                                 </div>
                             </div>
-                            <ul class="sub-categories-data-inner-table">
+                            <ul class="sub-categories-data-inner-table hidden">
                                 <li class="sub-categories-data-inner">
                                     <div class="sub-categories-data-items">
                                         <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
@@ -707,10 +715,10 @@
                                         </div>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p>eidhseis</p>
+                                        <small>eidhseis</small>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p><a href="#" class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
                                     </div>
                                 </li>
                                 <li class="sub-categories-data-inner">
@@ -729,10 +737,10 @@
                                         </div>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p>parapolitika</p>
+                                        <small>parapolitika</small>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p><a href="#" class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
                                     </div>
                                 </li>
                                 <li class="sub-categories-data-inner">
@@ -751,10 +759,10 @@
                                         </div>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p>boulh</p>
+                                        <small>boulh</small>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p><a href="#" class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
                                     </div>
                                 </li>
                                 <li class="sub-categories-data-inner">
@@ -773,10 +781,10 @@
                                         </div>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p>barometro</p>
+                                        <small>barometro</small>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p><a href="#" class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
                                     </div>
                                 </li>
                                 <li class="sub-categories-data-inner">
@@ -795,10 +803,10 @@
                                         </div>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p>ekloges</p>
+                                        <small>ekloges</small>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p><a href="#" class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
                                     </div>
                                 </li>
                                 <li class="sub-categories-data-inner">
@@ -817,10 +825,10 @@
                                         </div>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p>autodioikhsh</p>
+                                        <small>autodioikhsh</small>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p><a href="#" class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
                                     </div>
                                 </li>
                             </ul>
@@ -831,7 +839,7 @@
                                     <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
                                 </div>
                                 <div class="categories-data-items">
-                                    <p>Πολιτική</p>
+                                    <p class="textn">Πολιτική<small class="sub-categories-total-container"> - has <span class="sub-categories-total-number"></span> sub-categories</small></p>
                                     <div class="categories-table-controllers">
                                         <div class="article-shortcut-controllers-items">
                                             <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
@@ -842,13 +850,16 @@
                                     </div>
                                 </div>
                                 <div class="categories-data-items">
-                                    <p>politikh</p>
+                                    <small>politikh</small>
                                 </div>
                                 <div class="categories-data-items">
-                                    <p><a href="#" class="reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    <p class="reorder-categories"><a class="reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                </div>
+                                <div class="categories-data-items show-hide-sub-categories" title="Show/Hide Sub-categories">
+                                	<p class="show-sub-categories"><u class="icon tpns-ai-preview-hide hidden" title="Hide the sub-categories below"></u><u class="icon tpns-ai-preview-show" title="Show the sub-categories below"></u></p>
                                 </div>
                             </div>
-                            <ul class="sub-categories-data-inner-table">
+                            <ul class="sub-categories-data-inner-table hidden">
                                 <li class="sub-categories-data-inner">
                                     <div class="sub-categories-data-items">
                                         <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
@@ -865,10 +876,10 @@
                                         </div>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p>eidhseis</p>
+                                        <small>eidhseis</small>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p><a href="#" class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
                                     </div>
                                 </li>
                                 <li class="sub-categories-data-inner">
@@ -887,10 +898,10 @@
                                         </div>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p>epixeirhseis</p>
+                                        <small>epixeirhseis</small>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p><a href="#" class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
                                     </div>
                                 </li>
                                 <li class="sub-categories-data-inner">
@@ -909,10 +920,10 @@
                                         </div>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p>xrhmatisthrio</p>
+                                        <small>xrhmatisthrio</small>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p><a href="#" class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
                                     </div>
                                 </li>
                                 <li class="sub-categories-data-inner">
@@ -931,10 +942,10 @@
                                         </div>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p>nautilia</p>
+                                        <small>nautilia</small>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p><a href="#" class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
                                     </div>
                                 </li>
                                 <li class="sub-categories-data-inner">
@@ -953,10 +964,10 @@
                                         </div>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p>agores</p>
+                                        <small>agores</small>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p><a href="#" class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
                                     </div>
                                 </li>
                                 <li class="sub-categories-data-inner">
@@ -975,10 +986,10 @@
                                         </div>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p>trapezes</p>
+                                        <small>trapezes</small>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p><a href="#" class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
                                     </div>
                                 </li>
                                 <li class="sub-categories-data-inner">
@@ -997,10 +1008,10 @@
                                         </div>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p>ergasia</p>
+                                        <small>ergasia</small>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p><a href="#" class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
                                     </div>
                                 </li>
                                 <li class="sub-categories-data-inner">
@@ -1019,13 +1030,779 @@
                                         </div>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p>energeia</p>
+                                        <small>energeia</small>
                                     </div>
                                     <div class="sub-categories-data-items">
-                                        <p><a href="#" class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a href="#" class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
                                     </div>
                                 </li>
                             </ul>
+                        </li>
+                        <li class="categories-data-inner">
+                            <div class="categories-data-inner-table">
+                                <div class="categories-data-items">
+                                    <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                </div>
+                                <div class="categories-data-items">
+                                    <p class="textn">Υγεία<small class="sub-categories-total-container"> - has <span class="sub-categories-total-number"></span> sub-categories</small></p>
+                                    <div class="categories-table-controllers">
+                                        <div class="article-shortcut-controllers-items">
+                                            <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                        </div>
+                                        <div class="article-shortcut-controllers-items">
+                                            <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="categories-data-items">
+                                    <small>ygeia</small>
+                                </div>
+                                <div class="categories-data-items">
+                                    <p class="reorder-categories"><a class="reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                </div>
+                                <div class="categories-data-items show-hide-sub-categories" title="Show/Hide Sub-categories">
+                                	<p class="show-sub-categories"><u class="icon tpns-ai-preview-hide hidden" title="Hide the sub-categories below"></u><u class="icon tpns-ai-preview-show" title="Show the sub-categories below"></u></p>
+                                </div>
+                            </div>
+                            <ul class="sub-categories-data-inner-table hidden">
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Ειδήσεις</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>eidhseis</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Π.Ε.Δ.Υ.</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>p-e-d-y</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Φάρμακο</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>farmako</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Νοσοκομεία</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>nosokomeia</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Γιατροί</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>giatroi</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Συνεντέυξεις</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>synenteukseis</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="categories-data-inner">
+                            <div class="categories-data-inner-table">
+                                <div class="categories-data-items">
+                                    <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                </div>
+                                <div class="categories-data-items">
+                                    <p class="textn">Κόσμος<small class="sub-categories-total-container"> - has <span class="sub-categories-total-number"></span> sub-categories</small></p>
+                                    <div class="categories-table-controllers">
+                                        <div class="article-shortcut-controllers-items">
+                                            <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                        </div>
+                                        <div class="article-shortcut-controllers-items">
+                                            <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="categories-data-items">
+                                    <small>kosmos</small>
+                                </div>
+                                <div class="categories-data-items">
+                                    <p class="reorder-categories"><a class="reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                </div>
+                                <div class="categories-data-items show-hide-sub-categories" title="Show/Hide Sub-categories">
+                                	<p class="show-sub-categories"><u class="icon tpns-ai-preview-hide hidden" title="Hide the sub-categories below"></u><u class="icon tpns-ai-preview-show" title="Show the sub-categories below"></u></p>
+                                </div>
+                            </div>
+                            <ul class="sub-categories-data-inner-table hidden">
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Ειδήσεις</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>eidhseis</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Ευρώπη</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>europh</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Ρωσία</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>rosia</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Λατινική Αμερική</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>latinikh-amerikh</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Αυστραλία</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>australia</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Αφρική</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>afrikh</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Ασία</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>asia</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="categories-data-inner">
+                            <div class="categories-data-inner-table">
+                                <div class="categories-data-items">
+                                    <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                </div>
+                                <div class="categories-data-items">
+                                    <p class="textn">Αθλητικά<small class="sub-categories-total-container"> - has <span class="sub-categories-total-number"></span> sub-categories</small></p>
+                                    <div class="categories-table-controllers">
+                                        <div class="article-shortcut-controllers-items">
+                                            <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                        </div>
+                                        <div class="article-shortcut-controllers-items">
+                                            <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="categories-data-items">
+                                    <small>athlhtika</small>
+                                </div>
+                                <div class="categories-data-items">
+                                    <p class="reorder-categories"><a class="reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                </div>
+                                <div class="categories-data-items show-hide-sub-categories" title="Show/Hide Sub-categories">
+                                	<p class="show-sub-categories"><u class="icon tpns-ai-preview-hide hidden" title="Hide the sub-categories below"></u><u class="icon tpns-ai-preview-show" title="Show the sub-categories below"></u></p>
+                                </div>
+                            </div>
+                            <ul class="sub-categories-data-inner-table hidden">
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Ειδήσεις</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>eidhseis</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Ποδόσφαιρο</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>podosfairo</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Μπάσκετ</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>mpasket</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Σπορ</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>spor</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Στοίχημα</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>stoixhma</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="categories-data-inner">
+                            <div class="categories-data-inner-table">
+                                <div class="categories-data-items">
+                                    <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                </div>
+                                <div class="categories-data-items">
+                                    <p class="textn">Media<small class="sub-categories-total-container"> - has <span class="sub-categories-total-number"></span> sub-categories</small></p>
+                                    <div class="categories-table-controllers">
+                                        <div class="article-shortcut-controllers-items">
+                                            <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                        </div>
+                                        <div class="article-shortcut-controllers-items">
+                                            <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="categories-data-items">
+                                    <small>media</small>
+                                </div>
+                                <div class="categories-data-items">
+                                    <p class="reorder-categories"><a class="reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                </div>
+                                <div class="categories-data-items show-hide-sub-categories" title="Show/Hide Sub-categories">
+                                	<p class="show-sub-categories"><u class="icon tpns-ai-preview-hide hidden" title="Hide the sub-categories below"></u><u class="icon tpns-ai-preview-show" title="Show the sub-categories below"></u></p>
+                                </div>
+                            </div>
+                            <ul class="sub-categories-data-inner-table hidden">
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Ειδήσεις</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>eidhseis</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Τηλεόραση</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>thleorash</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Τύπος</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>tupos</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Ραδιόφωνο</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>radiofono</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Internet</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>internet</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="categories-data-inner">
+                            <div class="categories-data-inner-table">
+                                <div class="categories-data-items">
+                                    <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                </div>
+                                <div class="categories-data-items">
+                                    <p class="textn">Καιρός<small class="sub-categories-total-container"> - has <span class="sub-categories-total-number"></span> sub-categories</small></p>
+                                    <div class="categories-table-controllers">
+                                        <div class="article-shortcut-controllers-items">
+                                            <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                        </div>
+                                        <div class="article-shortcut-controllers-items">
+                                            <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="categories-data-items">
+                                    <small>kairos</small>
+                                </div>
+                                <div class="categories-data-items">
+                                    <p class="reorder-categories"><a class="reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                </div>
+                                <div class="categories-data-items show-hide-sub-categories" title="Show/Hide Sub-categories">
+                                	<p class="show-sub-categories"><u class="icon tpns-ai-preview-hide hidden" title="Hide the sub-categories below"></u><u class="icon tpns-ai-preview-show" title="Show the sub-categories below"></u></p>
+                                </div>
+                            </div>
+                            <ul class="sub-categories-data-inner-table hidden">
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Πρόγνωση ΕΜΥ</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>prognosh-emy</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Έκτακτα Δελτία</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>ektakta-deltia</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Πολιτική Προστασία</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>politikh-prostasia</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                                <li class="sub-categories-data-inner">
+                                    <div class="sub-categories-data-items">
+                                        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p>Χιονοδρομικά Κέντρα</p>
+                                        <div class="categories-table-controllers">
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                            </div>
+                                            <div class="article-shortcut-controllers-items">
+                                                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <small>xionodromika-kentra</small>
+                                    </div>
+                                    <div class="sub-categories-data-items">
+                                        <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="categories-data-inner">
+                            <div class="categories-data-inner-table">
+                                <div class="categories-data-items">
+                                    <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>
+                                </div>
+                                <div class="categories-data-items">
+                                    <p class="textn">Κύπρος<small class="sub-categories-total-container"> - has <span class="sub-categories-total-number"></span> sub-categories</small></p>
+                                    <div class="categories-table-controllers">
+                                        <div class="article-shortcut-controllers-items">
+                                            <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>
+                                        </div>
+                                        <div class="article-shortcut-controllers-items">
+                                            <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="categories-data-items">
+                                    <small>kypros</small>
+                                </div>
+                                <div class="categories-data-items">
+                                    <p class="reorder-categories"><a class="reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>
+                                </div>
+                                <div class="categories-data-items show-hide-sub-categories" title="Show/Hide Sub-categories">
+                                	<p class="show-sub-categories"><u class="icon tpns-ai-preview-hide hidden" title="Hide the sub-categories below"></u><u class="icon tpns-ai-preview-show" title="Show the sub-categories below"></u></p>
+                                </div>
+                            </div>
                         </li>
                  
                     </ul>

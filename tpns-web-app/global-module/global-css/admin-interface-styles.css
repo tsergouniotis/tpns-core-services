@@ -219,6 +219,23 @@ _:-ms-fullscreen, :root .admin-content-header-input-controller input {
 .all-articles-table .admin-click-menu-button-pc-close a:hover, .all-articles-trash-table .admin-click-menu-button-pc-close a:hover {
 	color:#2b3643;
 }
+/* ----- Mini Inline Buttons ----- */
+.hide-sub-categories, .show-sub-categories, .reorder-categories {
+	position:relative; line-height:40px; cursor:pointer;
+}
+.hide-sub-categories u, .reorder-up i, .reorder-down i, .sub-reorder-up i, .sub-reorder-down i {
+	font-size:0.875em; padding:1px 0 2px; border:1px solid #2b3643; -webkit-border-radius:6px; border-radius:6px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.hide-sub-categories u:hover, .reorder-up i:hover, .reorder-down i:hover, .sub-reorder-up i:hover, .sub-reorder-down i:hover {
+	background:#2b3643; color:#FFFFFF;
+}
+.show-sub-categories u {
+	font-size:0.875em; background:#2b3643; color:#FFFFFF; padding:1px 0 2px; border:1px solid #2b3643; -webkit-border-radius:6px; border-radius:6px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.show-sub-categories u:hover {
+	background:transparent; color:#2b3643;
+}
+
 /* ----- Admin Checkboxes ----- */
 .admin-global-checkbox label {
 	cursor:pointer;

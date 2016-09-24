@@ -21,28 +21,21 @@ function check() {
 		$(".admin-articles-bulk-actions-controller").removeClass("hidden");
 		$(".select-all-rows-button-check").addClass("hidden");
 		$(".select-all-rows-button-uncheck").removeClass("hidden");
+		/*
 		$checkbox.parent().parent().parent().parent().parent().parent(".categories-data-inner").find(".categories-data-inner-table input").prop('checked','checked');
 		$checkbox.parent().parent().parent().parent().parent().parent(".categories-data-inner").find(".categories-data-inner-table .admin-global-checkbox-label").attr('checked','checked');
 		$checkbox.parent().parent().parent().parent().parent().parent(".categories-data-inner").find(".categories-data-inner-table").addClass("admin-global-checkbox-checked");
-		//$(".categories-data-items input.single-article-checkbox:checkbox").is(":checked").parent().parent().parent().parent().parent().parent(".categories-data-inner").find("input.sub-cat").prop('checked','checked');
+		*/
 	} else {
 		$(".admin-articles-bulk-actions-controller").addClass("hidden");
 		$(".select-all-rows-button-check").removeClass("hidden");
 		$(".select-all-rows-button-uncheck").addClass("hidden");
+		/*
 		$checkbox.parent().parent().parent().parent().parent().parent(".categories-data-inner").find(".categories-data-inner-table input").removeAttr('checked');
 		$checkbox.parent().parent().parent().parent().parent().parent(".categories-data-inner").find(".categories-data-inner-table .admin-global-checkbox-label").removeAttr('checked');
 		$checkbox.parent().parent().parent().parent().parent().parent(".categories-data-inner").find(".categories-data-inner-table").removeClass("admin-global-checkbox-checked");
-		//$checkbox.parent().parent().parent().parent().parent().parent(".categories-data-inner").find("input.sub-cat").removeAttr('checked');
+		*/
 	}
-	/*
-	if ($(".categories-data-items input.single-article-checkbox:checkbox").is(":checked")) {
-		$(this).parentsUntil(".categories-data-inner").find("input.sub-cat:checkbox").removeAttr('checked').prop('checked','checked');
-		//$(this).parentsUntil(".categories-data-inner").find(".sub-categories-data-items p label span").removeAttr('checked');
-	} else {
-		$(this).parentsUntil(".categories-data-inner").find("input.sub-cat:checkbox").removeAttr('checked');
-	}
-	*/
-		
 }
 $("input[type=checkbox]").each(check).change(check);
 /* Activate options dropdown menu for articles */
