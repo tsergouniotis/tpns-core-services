@@ -64,11 +64,8 @@
 .global-table-container .global-table-cell .admin-click-menu-content-left, .global-table-container .global-table-cell .admin-click-sub-menu-content-left {
     left:-14px;
 }
-.global-table-container .global-table-cell p u {
-	float:left; width:50px; height:50px; margin-right:5px;
-}
 .global-table-container .global-table-cell p u img {
-	width:50px; height:50px; -webkit-border-radius:6px; border-radius:6px;
+	float:left; width:50px; height:50px; -webkit-border-radius:6px; border-radius:6px; margin-right:5px;
 }
 .article-draft {
 	color:#f2784b;
