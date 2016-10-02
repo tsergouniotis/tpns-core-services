@@ -14,39 +14,25 @@ public class User implements Serializable {
 
 	private Long id;
 
-	private String firstname;
-
-	private String surname;
-
 	private String username;
 
 	private String password;
 
-	private ContactInfo contact;
+	private Boolean enabled;
+
+	private Boolean accountNonExpired;
+
+	private Boolean accountNonLocked;
+
+	private Boolean credentialsNonExpired;
+
+	private Profile profile;
 
 	private Collection<Role> roles;
 
 	@XmlTransient
 	public Long getId() {
 		return id;
-	}
-
-	@XmlElement(name = "name")
-	public String getFirstname() {
-		return firstname;
-	}
-
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
-
-	@XmlElement(name = "surname")
-	public String getSurname() {
-		return surname;
-	}
-
-	public void setSurname(String surname) {
-		this.surname = surname;
 	}
 
 	@XmlElement(name = "username")
@@ -67,6 +53,15 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
+	@XmlElement(name = "profile")
+	public Profile getProfile() {
+		return profile;
+	}
+
+	public void setProfile(Profile profile) {
+		this.profile = profile;
+	}
+
 	@XmlElement
 	public Collection<Role> getRoles() {
 		return roles;
@@ -76,19 +71,49 @@ public class User implements Serializable {
 		this.roles = roles;
 	}
 
-	public ContactInfo getContact() {
-		return contact;
+	@XmlElement
+	public Boolean getEnabled() {
+		return enabled;
 	}
 
-	public void setContact(ContactInfo contact) {
-		this.contact = contact;
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	@XmlElement
+	public Boolean getAccountNonExpired() {
+		return accountNonExpired;
+	}
+
+	public void setAccountNonExpired(Boolean accountNonExpired) {
+		this.accountNonExpired = accountNonExpired;
+	}
+
+	@XmlElement
+	public Boolean getAccountNonLocked() {
+		return accountNonLocked;
+	}
+
+	public void setAccountNonLocked(Boolean accountNonLocked) {
+		this.accountNonLocked = accountNonLocked;
+	}
+
+	@XmlElement
+	public Boolean getCredentialsNonExpired() {
+		return credentialsNonExpired;
+	}
+
+	public void setCredentialsNonExpired(Boolean credentialsNonExpired) {
+		this.credentialsNonExpired = credentialsNonExpired;
 	}
 
 	public void update(User user) {
-		this.firstname = user.getFirstname();
-		this.surname = user.getSurname();
 		this.username = user.getUsername();
 		this.password = user.getPassword();
+		this.enabled = user.getEnabled();
+		this.accountNonExpired = user.getAccountNonExpired();
+		this.accountNonLocked = user.getAccountNonLocked();
+		this.credentialsNonExpired = user.getCredentialsNonExpired();
 	}
 
 	public boolean hasRole(Role theRole) {

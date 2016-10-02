@@ -4,62 +4,86 @@
 	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
 
-
+	
 	<changeSet author="thanasis.sergouniotis" id="insert-users">
 
 		<insert tableName="users">
 			<column name="user_id" valueSequenceNext="userseq" />
 			<column name="username" value="admin@tpns.com" />
 			<column name="password" value="tpnsP@ss1" />
+		</insert>
+
+		<insert tableName="users">
+			<column name="user_id" valueSequenceNext="userseq" />
+			<column name="username" value="author@tpns.com" />					
+			<column name="password" value="tpnsP@ss1" />
+		</insert>
+
+		<insert tableName="users">
+			<column name="user_id" valueSequenceNext="userseq" />			
+			<column name="username" value="chief@tpns.com" />
+			<column name="password" value="tpnsP@ss1" />
+		</insert>
+
+		<insert tableName="users">
+			<column name="user_id" valueSequenceNext="userseq" />			
+			<column name="username" value="onsports@tpns.com" />
+			<column name="password" value="tpnsP@ss1" />
+		</insert>
+
+	</changeSet>
+	
+	<changeSet author="panagiotis.zografos" id="insert-user-profiles">
+
+		<insert tableName="user_profiles">
+			<column name="user_id"
+				valueComputed="(select user_id from users where username='admin@tpns.com')" />		
 			<column name="email" value="admin@tpns.com" />
 		</insert>
 
-		<insert tableName="users">
-			<column name="user_id" valueSequenceNext="userseq" />
-			<column name="username" value="author@tpns.com" />
-			<column name="password" value="tpnsP@ss1" />
-			<column name="email" value="author@tpns.com" />
+		<insert tableName="user_profiles">
+			<column name="user_id"
+				valueComputed="(select user_id from users where username='author@tpns.com')" />			
 			<column name="firstname" value="Carl" />
 			<column name="surname" value="Bernstein" />
+			<column name="email" value="author@tpns.com" />			
 		</insert>
 
-		<insert tableName="users">
-			<column name="user_id" valueSequenceNext="userseq" />
-			<column name="username" value="chief@tpns.com" />
-			<column name="password" value="tpnsP@ss1" />
+		<insert tableName="user_profiles">
+			<column name="user_id"
+				valueComputed="(select user_id from users where username='chief@tpns.com')" />			
 			<column name="email" value="chief@tpns.com" />
 		</insert>
 
-		<insert tableName="users">
-			<column name="user_id" valueSequenceNext="userseq" />
-			<column name="username" value="onsports@tpns.com" />
-			<column name="password" value="tpnsP@ss1" />
+		<insert tableName="user_profiles">
+			<column name="user_id"
+				valueComputed="(select user_id from users where username='onsports@tpns.com')" />		
 			<column name="email" value="onsports@tpns.com" />
 		</insert>
 
 	</changeSet>
-
+	
 	<changeSet author="thanasis.sergouniotis" id="insert-users-roles">
 
-		<insert tableName="users_roles">
+		<insert tableName="user_roles">
 			<column name="user_id"
 				valueComputed="(select user_id from users where username='admin@tpns.com')" />
 			<column name="role" value="ADMIN" />
 		</insert>
 
-		<insert tableName="users_roles">
+		<insert tableName="user_roles">
 			<column name="user_id"
 				valueComputed="(select user_id from users where username='author@tpns.com')" />
 			<column name="role" value="AUTHOR" />
 		</insert>
 
-		<insert tableName="users_roles">
+		<insert tableName="user_roles">
 			<column name="user_id"
 				valueComputed="(select user_id from users where username='chief@tpns.com')" />
 			<column name="role" value="CHIEF_EDITOR" />
 		</insert>
 
-		<insert tableName="users_roles">
+		<insert tableName="user_roles">
 			<column name="user_id"
 				valueComputed="(select user_id from users where username='onsports@tpns.com')" />
 			<column name="role" value="APPLICATION" />

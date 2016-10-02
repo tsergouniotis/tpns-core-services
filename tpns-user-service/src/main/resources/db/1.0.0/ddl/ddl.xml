@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
-
+	
 	<changeSet author="thanasis.sergouniotis" id="create-users-table">
 
 		<createTable tableName="users">
@@ -13,9 +13,40 @@
 			<column name="username" type="VARCHAR(255)">
 				<constraints unique="true" />
 			</column>
+			<column name="password" type="VARCHAR(255)" />			
+			<column name="enabled" type="BOOLEAN" defaultValueBoolean="true">
+				<constraints nullable="false" />
+			</column>
+			<column name="accountnonexpired" type="BOOLEAN" defaultValueBoolean="true">
+				<constraints nullable="false" />
+			</column>
+			<column name="accountnonlocked" type="BOOLEAN" defaultValueBoolean="true">
+				<constraints nullable="false" />
+			</column>								
+			<column name="credentialsnonexpired" type="BOOLEAN" defaultValueBoolean="true">
+				<constraints nullable="false" />
+			</column>	
+		</createTable>
+
+		<addPrimaryKey tableName="users" columnNames="user_id" />
+
+		<createSequence sequenceName="userseq" incrementBy="1"
+			startValue="1" />
+
+		<createIndex tableName="users" indexName="username_idx">
+			<column name="username" />			
+		</createIndex>
+	
+	</changeSet>
+	
+	<changeSet author="panos.zografos" id="create-user-profile-table">
+
+		<createTable tableName="user_profiles">
+			<column name="user_id" type="BIGINT">
+				<constraints nullable="false" />
+			</column>
 			<column name="firstname" type="VARCHAR(255)" />
 			<column name="surname" type="VARCHAR(255)" />
-			<column name="password" type="VARCHAR(255)" />
 			<column name="phone" type="VARCHAR(255)" />
 			<column name="fax" type="VARCHAR(255)" />
 			<column name="email" type="VARCHAR(255)" />
@@ -27,19 +58,17 @@
 			<column name="updated_at" type="DATETIME" />
 		</createTable>
 
-		<addPrimaryKey tableName="users" columnNames="user_id" />
+		<addPrimaryKey tableName="user_profiles" columnNames="user_id" />
+				
+		<addForeignKeyConstraint baseTableName="user_profiles"
+			baseColumnNames="user_id" constraintName="user_profile_fk"
+			referencedTableName="users" referencedColumnNames="user_id" />			
 
-		<createSequence sequenceName="userseq" incrementBy="1"
-			startValue="1" />
+	</changeSet>	
 
-		<createIndex tableName="users" indexName="username_idx">
-			<column name="username" />
-		</createIndex>
-	</changeSet>
+	<changeSet author="thanasis.sergouniotis" id="create-user-roles-table">
 
-	<changeSet author="thanasis.sergouniotis" id="create-users-roles-table">
-
-		<createTable tableName="users_roles">
+		<createTable tableName="user_roles">
 			<column name="user_id" type="SMALLINT">
 				<constraints nullable="false" />
 			</column>
@@ -48,10 +77,10 @@
 			</column>
 		</createTable>
 
-		<addPrimaryKey tableName="users_roles" columnNames="user_id, role"
+		<addPrimaryKey tableName="user_roles" columnNames="user_id, role"
 			constraintName="users_pk" />
 
-		<addForeignKeyConstraint baseTableName="users_roles"
+		<addForeignKeyConstraint baseTableName="user_roles"
 			baseColumnNames="user_id" constraintName="user_role_fk"
 			referencedTableName="users" referencedColumnNames="user_id" />
 
@@ -106,6 +135,28 @@
 		<addPrimaryKey columnNames="authentication_id"
 			tableName="oauth_access_token" constraintName="oauth_access_token_pk" />
 
+	</changeSet>
+	
+	<changeSet author="panagiotis.zografos" id="create-user-attempts-table">
+
+		<createTable tableName="user_attempts">
+			<column name="username" type="VARCHAR(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="attempts" type="INT">
+				<constraints nullable="false" />
+			</column>			
+			<column name="lastmodified" type="DATETIME" >
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+
+		<addPrimaryKey tableName="user_attempts" columnNames="username" />
+
+		<addForeignKeyConstraint baseTableName="users"
+			baseColumnNames="username" constraintName="user_name_fk"
+			referencedTableName="users" referencedColumnNames="username" />
+	
 	</changeSet>
 
 </databaseChangeLog>
