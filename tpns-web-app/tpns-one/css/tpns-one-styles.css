@@ -1,0 +1,229 @@
+/* CSS Document */
+/*   
+Theme Name: TPNS One
+Description: Global Information Distibrution Network
+Author: Handmade Solutions for TPNS
+Author URI: http://www.handmadesolutions.net/ for tpns.com
+Version: 1.0
+*/
+
+/* Reset Default Browser Styles */
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+	margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; background: transparent; font-weight: normal;
+}									
+
+article, aside, figure, footer, header, hgroup, nav, section { display: block; }
+
+img, object, embed { max-width:100%; height:auto; }
+
+html { height:100%; min-height:100%; padding:0; margin:0; overflow-x: hidden; overflow-y: auto; }
+
+body { background:#FFFFFF; min-height:100%; height:100%; font-size:14px; font-family:Roboto-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif; font-weight:normal; text-rendering:optimizelegibility; color:#323031; -webkit-touch-callout:none; -webkit-text-size-adjust:none; overflow-x:hidden; }
+.header-wrap { position:relative; max-width:1300px; padding:0; margin:0px auto; }
+.page-wrap { position:relative; max-width:1260px; padding:0px 20px; margin:0px auto; }
+
+ol, ul, li { font-size: 100%; margin: 0; padding: 0; border: 0; list-style: none; }
+
+a { background: transparent; font-size: 100%; text-decoration: none; margin: 0; padding: 0;}
+
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] { border-bottom: 1px dotted #323031; cursor: help; }
+
+input, select { vertical-align: middle; }
+
+pre { white-space: pre-line; }
+
+input[type="radio"] { vertical-align: middle; }
+input[type="checkbox"] { vertical-align: middle; }
+
+select, input, textarea { font-size: inherit; font: 100%; }
+
+table { font-size: inherit; font: 100%; }
+
+a:hover, a:active { outline: none; }
+
+/* SUP - Superscript, SUB - Subscript */
+sub, sup { font-size: 60%; line-height: 0; position: relative; }
+sup { top: 0em; vertical-align: super; }
+sub { bottom: -0.25em; vertical-align: sub; }
+
+.clickable, input[type=button], input[type=submit], button { -webkit-appearance: none; cursor: pointer; }
+
+button, input, select, textarea { margin: 0; }
+
+button { width: auto; overflow: visible; }
+
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+
+a { color:#3598dc; cursor:pointer; }
+a:hover { text-decoration:underline; }
+
+p { line-height:120%; padding-top:0.7%; padding-bottom:0.7%; margin:0px; }
+
+::-moz-selection{ background:#435060; color:#c6cfda; text-shadow:none; }
+::selection { background:#435060; color:#c6cfda; text-shadow:none; } 
+
+a:link { -webkit-tap-highlight-color:#435060; } 
+
+ins { background-color:#364150; color:#c6cfda; text-decoration: none; }
+mark { background-color:#364150; color:#c6cfda; font-style:italic; font-weight: bold; }
+
+
+/* --------------------- Ok, this is where the fun starts. --------------------- */
+.hidden { display: none; }
+
+/* --------------------- global-fonts ---------------------- */
+@font-face {
+    font-family:'Roboto-Regular';
+    src:url('../fonts/Roboto-Regular.eot');
+    src:url('../fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Roboto-Regular.svg#Roboto-Regular') format('svg'),
+		url('../fonts/Roboto-Regular.woff') format('woff'),
+		url('../fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight:normal; font-style:normal; -webkit-font-smoothing:antialiased; text-rendering:optimizelegibility;
+}
+
+
+
+
+
+
+
+
+
+/* --------------------- Font Controls ---------------------- */
+/* ----- Use to make your text BOLD ----- */
+strong, .textb {
+	font-family: OpenSans-Bold, "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+/* ----- Use to make your text ITALICS ----- */
+em, .texti, .global-textfield input, .global-textfield textarea {
+	font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+/* ----- Use to CENTER your text ----- */
+.textc {
+	text-align: center;
+}
+/* ----- Use to RIGHT ALIGN your text ----- */
+.textr {
+	text-align: right;
+}
+/* ----- Use to LEFT ALIGN your text ----- */
+.textl {
+	text-align: left;
+}
+/* ----- Use to transform ALL your text to CAPITAL LETTERS ----- */
+.textup {
+	text-transform: uppercase;
+}
+/* ----- Use to UNDERLINE your text ----- */
+.textu {
+	text-decoration: underline;
+}
+/* ----- Use to STRIKE THROUGH your text so it appears as deleted/changed ----- */
+.texts {
+	text-decoration: line-through;
+}
+/* ----- Remove browser styles ----- */
+i, u { text-decoration:none; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------- CSS Tabular Look --------------------------- */
+.global-table {
+	display:table; width:100%; padding:0; margin:0;
+}
+.global-table-row {
+	display:table-row; width:100%; padding:0; margin:0;
+}
+.global-header-cell, .global-table-cell {
+	display:table-cell; vertical-align:middle; padding:0; margin:0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header-outer-container {
+	margin-top:200px; background:#323031; color:#FFFFFF;
+}
+.header-outer-container a {
+	color:#FFFFFF;
+}
+.header-outer-container a:hover {
+	text-decoration:none;
+}
+.header-container {
+	table-layout:fixed;
+}
+.header-mainnav nav, .header-mainnav ul {
+	float:right; white-space:nowrap; -moz-box-sizing:content-box; -webkit-box-sizing:content-box; box-sizing:content-box;
+}
+.header-mainnav ul li {
+	display:inline-block; padding:0; margin:0px -2px; white-space:nowrap;
+}
+.header-mainnav ul li:last-child {
+	margin-right:0px;
+}
+.header-mainnav ul li:nth-child(odd) {
+	background:orange;
+}
+.header-mainnav ul li:nth-child(even) {
+	background:yellow;
+}
+.header-mainnav ul li a {
+	display:block; padding:0px 30px; margin:0; white-space:nowrap;
+}
+.header-mainnav-overflow-menu li {
+	position:relative;
+}
+.header-mainnav-overflow-items {
+	position:absolute; top:100%; background:black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
