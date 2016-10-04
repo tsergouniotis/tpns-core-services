@@ -10,6 +10,9 @@ $.fn.headerMainNav = function(){
 	var headerNav = $(".header-mainnav-menu").innerWidth();
 	if (headerWrap - headerNav <= 0){
 		$(".header-mainnav-menu li:last-child").queue(function(){
+			$(".header-mainnav-overflow-menu").removeClass("hidden").addClass("global-table-cell");
+			var headerOverflowNavCell = $(".header-mainnav-overflow-menu-button");
+			$(".header-mainnav-overflow-menu").css('width', (headerOverflowNavCell.width()));
 			$(this).prependTo(".header-mainnav-overflow-items").dequeue();
 		});
 		return false;
@@ -20,6 +23,7 @@ $.fn.headerMainNav = function(){
 		});
 		return false;
 	}
+	$(".header-mainnav-overflow-items:not(:has(li))").parent().parent().parent().addClass("hidden").removeClass("global-table-cell").removeAttr("style");
 	return true;
 };
 
