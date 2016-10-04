@@ -67,7 +67,7 @@ $(document).ready(function() {
 function PCViewUpdate() {
 	'use strict';
 	// Initialise Header Main Menu Controls on a per list item basis
-	$(".header-mainnav li").each(function() {
+	$(".header-mainnav li, .header-mainnav-overflow-menu li").each(function() {
 		$(this).headerMainNav();
 	});
 	
