@@ -1,36 +1,66 @@
 // JavaScript Document
-
+// Hide Header on onscroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+$(window).scroll(function(event){
+	'use strict';
+    didScroll = true;
+});
+setInterval(function() {
+	'use strict';
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    if (st > lastScrollTop && st > navbarHeight){
+        $('header').removeClass('nav-down').addClass('nav-up').find(".header-mainnav-overflow-items").addClass("hidden");
+    } else {
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    lastScrollTop = st;
+}
 // Header Main Menu Controls
 $.fn.headerMainNav = function(){ 
 	'use strict';
 	var headerWrapWidth = $(".header-wrap").width();
 	var titleWidth = $(".title").width();
-	var headerOverflowNav = $(".header-mainnav-overflow-menu").width();
-	var headerWrap = headerWrapWidth - (headerOverflowNav + titleWidth);
+	var headerOverflowNav = $(".header-mainnav-overflow-menu").innerWidth();
+	var headerSearchNav = $(".header-mainnav-search-menu").innerWidth();
+	var headerAccountNav = $(".header-mainnav-account-menu").innerWidth();
+	var headerWrap = headerWrapWidth - (headerOverflowNav + titleWidth + headerSearchNav + headerAccountNav);
 	var headerNav = $(".header-mainnav-menu").innerWidth();
-	if (headerWrap - headerNav <= 0){
+	//var headerNavFirstChild = $(".header-mainnav-menu li:first-child").innerWidth();
+	var headerNavLastChild = $(".header-mainnav-menu li:last-child").innerWidth();
+	if ((headerWrap - headerNav) < 0){
 		$(".header-mainnav-menu li:last-child").queue(function(){
 			$(".header-mainnav-overflow-menu").removeClass("hidden").addClass("global-table-cell");
 			var headerOverflowNavCell = $(".header-mainnav-overflow-menu-button");
-			$(".header-mainnav-overflow-menu").css('width', (headerOverflowNavCell.width()));
+			$(".header-mainnav-overflow-menu").css('width', (headerOverflowNavCell.innerWidth()));
 			$(this).prependTo(".header-mainnav-overflow-items").dequeue();
 		});
 		return false;
 	}
-	if (headerWrap - headerNav > titleWidth){
+	if ((headerWrap - headerNav) > headerNavLastChild){
 		$(".header-mainnav-overflow-items li:first-child").queue(function(){
 			$(this).appendTo(".header-mainnav-menu").dequeue();
 		});
 		return false;
 	}
-	$(".header-mainnav-overflow-items:not(:has(li))").parent().parent().parent().addClass("hidden").removeClass("global-table-cell").removeAttr("style");
 	return true;
 };
-
 // jQuery
 $(document).ready(function() {
 	'use strict';
-	// ***************** Add to Home Screen for mobile STARTS HERE *****************
+	// Add to Home Screen for mobile
 	var _ath = addToHomescreen;
 	// This is the special custom message for stock android, it has to be customized to your needs
 	var athMessages = {
@@ -56,13 +86,11 @@ $(document).ready(function() {
 		// skipFirstVisit: true,
 		// maxDisplayCount: 1
 	});
-	// *********************** ENDS HERE **********************
+	// Categories - Toggle Sub-categories
+	$(".header-mainnav-overflow-menu-button").click(function() {
+		$(this).parent().parent().find(".header-mainnav-overflow-items").toggleClass("hidden");
+	});
 	
-	// Header Main Column width controllers
-	var headerOverflowNavCell = $(".header-mainnav-overflow-menu").find(".header-mainnav-overflow-menu-button");
-	$(".header-mainnav-overflow-menu").css('width', (headerOverflowNavCell.width()));
-	var titleWidthCell = $(".title").find("img");
-	$(".title").css('width', (titleWidthCell.width()));
 		
 		
 });
@@ -74,7 +102,15 @@ function PCViewUpdate() {
 	$(".header-mainnav li, .header-mainnav-overflow-menu li").each(function() {
 		$(this).headerMainNav();
 	});
-	
+	$(".header-mainnav-overflow-items:not(:has(li))").parent().parent().parent().addClass("hidden").removeClass("global-table-cell").removeAttr("style");
+	if ($(window).width() <= 500) {
+		$(".header-mainnav-menu li").queue(function(){
+			$(this).each(function() {
+				$(this).prependTo(".header-mainnav-overflow-items").dequeue();
+			});
+		});
+		return false;
+	}
 	
 }
 $(window).load(PCViewUpdate);

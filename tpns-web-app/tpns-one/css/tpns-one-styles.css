@@ -16,11 +16,12 @@ article, aside, figure, footer, header, hgroup, nav, section { display: block; }
 
 img, object, embed { max-width:100%; height:auto; }
 
-html { height:100%; min-height:100%; padding:0; margin:0; overflow-x: hidden; overflow-y: auto; }
+html { padding:0; margin:0; overflow-x: hidden; overflow-y: auto; }
 
-body { background:#FFFFFF; min-height:100%; height:100%; font-size:14px; font-family:Roboto-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif; font-weight:normal; text-rendering:optimizelegibility; color:#323031; -webkit-touch-callout:none; -webkit-text-size-adjust:none; overflow-x:hidden; }
+body { background:#FFFFFF; font-size:14px; font-family:Roboto-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif; font-weight:normal; text-rendering:optimizelegibility; color:#323031; -webkit-touch-callout:none; -webkit-text-size-adjust:none; overflow-x:hidden; }
 .header-wrap { position:relative; max-width:1300px; padding:0; margin:0px auto; }
-.page-wrap { position:relative; max-width:1260px; padding:0px 20px; margin:0px auto; }
+.page-wrap { position:relative; max-width:1260px; height:2000px; padding:0px 20px; margin:0px auto; }
+.nav-content-placeholder { position:relative; width:100%; height:50px; padding:0; margin:0; }
 
 ol, ul, li { font-size: 100%; margin: 0; padding: 0; border: 0; list-style: none; }
 
@@ -84,23 +85,103 @@ mark { background-color:#364150; color:#c6cfda; font-style:italic; font-weight: 
 		url('../fonts/Roboto-Regular.ttf') format('truetype');
     font-weight:normal; font-style:normal; -webkit-font-smoothing:antialiased; text-rendering:optimizelegibility;
 }
+@font-face {
+    font-family:'Roboto-Bold';
+    src:url('../fonts/Roboto-Bold.eot');
+    src:url('../fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Roboto-Bold.svg#Roboto-Bold') format('svg'),
+		url('../fonts/Roboto-Bold.woff') format('woff'),
+		url('../fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight:normal; font-style:normal; -webkit-font-smoothing:antialiased; text-rendering:optimizelegibility;
+}
+@font-face {
+    font-family:'RobotoSlab-Regular';
+    src:url('../fonts/RobotoSlab-Regular.eot');
+    src:url('../fonts/RobotoSlab-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/RobotoSlab-Regular.svg#RobotoSlab-Regular') format('svg'),
+		url('../fonts/RobotoSlab-Regular.woff') format('woff'),
+		url('../fonts/RobotoSlab-Regular.ttf') format('truetype');
+    font-weight:normal; font-style:normal; -webkit-font-smoothing:antialiased; text-rendering:optimizelegibility;
+}
+@font-face {
+    font-family:'Roboto-Italic';
+    src:url('../fonts/RobotoSlab-Italic.eot');
+    src:url('../fonts/RobotoSlab-Italic.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/RobotoSlab-Italic.svg#RobotoSlab-Italic') format('svg'),
+		url('../fonts/RobotoSlab-Italic.woff') format('woff'),
+		url('../fonts/RobotoSlab-Italic.ttf') format('truetype');
+    font-weight:normal; font-style:normal; -webkit-font-smoothing:antialiased; text-rendering:optimizelegibility;
+}
+
+/* --------------------- Custom TPNS One UI fonts ---------------------- */
+@font-face {
+	font-family: "tpns-one-icons";
+	src: url("../fonts/tpns-one-icons.eot");
+	src: url("../fonts/tpns-one-icons.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/tpns-one-icons.woff") format("woff"),
+		 url("../fonts/tpns-one-icons.ttf") format("truetype"),
+		 url("../fonts/tpns-one-icons.svg#tpns-one-icons") format("svg");
+	font-weight: normal; font-style: normal; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility;
+}
+[class^="tpns-one-"]:before, [class*=" tpns-one-"]:before {
+  font-family: "tpns-one-icons" !important; font-style: normal !important; font-weight: normal !important; font-variant: normal !important; text-transform: none !important; speak: none; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; padding: 0px 5px; vertical-align: middle;
+}
+.tpns-one-add-user:before { content: "\61"; }
+.tpns-one-remove-user:before { content: "\62"; }
+.tpns-one-rss:before { content: "\63"; }
+.tpns-one-arrow-down:before { content: "\64"; }
+.tpns-one-arrow-left:before { content: "\65"; }
+.tpns-one-search:before { content: "\66"; }
+.tpns-one-twitter:before { content: "\67"; }
+.tpns-one-arrow-right:before { content: "\68"; }
+.tpns-one-arrow-up:before { content: "\69"; }
+.tpns-one-audio:before { content: "\6a"; }
+.tpns-one-camera:before { content: "\6b"; }
+.tpns-one-category-identifier:before { content: "\6c"; }
+.tpns-one-facebook:before { content: "\6e"; }
+.tpns-one-mobile-menu:before { content: "\6f"; }
+.tpns-one-preview-hide:before { content: "\70"; }
+.tpns-one-preview-show:before { content: "\71"; }
+.tpns-one-email:before { content: "\6d"; }
+.tpns-one-category-identifier-slider:before { content: "\72"; }
 
 
 
 
 
-
-
-
-
+/* --------------------- Headers ---------------------- */
+h1 {
+	font-family:Roboto-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:2.143em; /* Equivalent to 30px */
+}
+h2 {
+	font-family:Roboto-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:1.714em; /* Equivalent to 24px */
+}
+h3 {
+	font-family:Roboto-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:1.286em; /* Equivalent to 22px */
+}
+h4 {
+	font-family:Roboto-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:1.286em; /* Equivalent to 18px */
+}
+h5 {
+	font-family:Roboto-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:1.143em; /* Equivalent to 16px */
+}
+p {
+	font-family:Roboto-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:1em; /* Equivalent to 14px */
+}
+h6 {
+	font-family:Roboto-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:0.857em; /* Equivalent to 12px */
+}
+small {
+	font-family:Roboto-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:0.786em; /* Equivalent to 11px */
+}
 /* --------------------- Font Controls ---------------------- */
 /* ----- Use to make your text BOLD ----- */
 strong, .textb {
-	font-family: OpenSans-Bold, "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-family:Roboto-Bold, "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 /* ----- Use to make your text ITALICS ----- */
-em, .texti, .global-textfield input, .global-textfield textarea {
-	font-family: OpenSansLight-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif;
+em, .texti {
+	font-family: Roboto-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 /* ----- Use to CENTER your text ----- */
 .textc {
@@ -129,10 +210,19 @@ em, .texti, .global-textfield input, .global-textfield textarea {
 /* ----- Remove browser styles ----- */
 i, u { text-decoration:none; }
 
+/* --------------------- Single/Special use global-fonts --------------------- */
+/* Special Use global-fonts normally do not have a font-size and start with a class of .text100 as it is inherited by the header font size, if they do have a font-size then the class starts from .text200 upwards */
+.text100 {
+	font-family:RobotoSlab-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
 
-
-
-
+/* ********** Special Font Sizes ********** */
+.text200 {
+	font-size:0.667em; /* h2 down to h5 */
+}
+.text201 {
+	font-size:1.500em; /* h5 down to h2 */
+}
 
 
 
@@ -163,9 +253,15 @@ i, u { text-decoration:none; }
 
 
 
-
+/* ------------------------------------ Header Container ------------------------------------ */
+header {
+    position:fixed; width:100%; height:auto; top:0; transition:top 0.2s ease-in-out; z-index:2;
+}
 .header-outer-container {
-	margin-top:200px; background:#323031; color:#FFFFFF;
+	position:relative; width:100%; height:50px; color:#FFFFFF; padding:0px 10px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.nav-up {
+    top:-150px;
 }
 .header-outer-container a {
 	color:#FFFFFF;
@@ -174,31 +270,58 @@ i, u { text-decoration:none; }
 	text-decoration:none;
 }
 .header-container {
-	table-layout:fixed;
+	table-layout:fixed; height:50px;
+}
+.header-container .title {
+	height:50px; width:186px;
+}
+.header-container .title h1 {
+	line-height:100%; padding:0; margin:0;
+}
+.header-container .title h1 a {
+	display:block; line-height:100%; padding:0; margin:0;
+}
+.header-container .title h1 a img {
+	max-height:46px; width:auto; padding:3px 0 0; margin:0;
 }
 .header-mainnav nav, .header-mainnav ul {
-	float:right; white-space:nowrap; -moz-box-sizing:content-box; -webkit-box-sizing:content-box; box-sizing:content-box;
+	float:right; white-space:nowrap;
 }
 .header-mainnav ul li {
-	display:inline-block; padding:0; margin:0px -2px; white-space:nowrap;
-}
-.header-mainnav ul li:last-child {
-	margin-right:0px;
-}
-.header-mainnav ul li:nth-child(odd) {
-	background:orange;
-}
-.header-mainnav ul li:nth-child(even) {
-	background:yellow;
+	display:inline-block; padding:0; margin:0; white-space:nowrap;
 }
 .header-mainnav ul li a {
-	display:block; padding:0px 30px; margin:0; white-space:nowrap;
+	display:block; line-height:33px; padding:2px 10px 9px; margin:0 -3px 0 0; white-space:nowrap; border-top-width:6px; border-top-style:solid; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.header-mainnav ul li:last-child a {
+	margin:0;
 }
 .header-mainnav-overflow-menu li {
 	position:relative;
 }
+.header-mainnav-overflow-menu li > h2 a {
+	display:inline-block; line-height:50px; padding:0px 5px 0px 10px;
+}
+.header-mainnav-overflow-menu li > h2 a:hover {
+	color:#FCD116;
+}
+.header-mainnav-overflow-menu li h2 a [class^="tpns-one-"]:before, .header-mainnav-overflow-menu li h2 a [class*=" tpns-one-"]:before {
+	font-size:140%; padding:0 5px 4px; vertical-align:text-bottom;
+}
 .header-mainnav-overflow-items {
-	position:absolute; top:100%; background:black;
+	position:absolute; top:100%; right:10px; background:black;
+}
+.header-container .header-mainnav-search-menu, .header-container .header-mainnav-account-menu {
+	height:50px; width:42px;
+}
+.header-container .header-mainnav-search-menu a, .header-container .header-mainnav-account-menu a {
+	display:block; width:42px; text-align:center; padding:5px 0 12px; margin:0;
+}
+.header-container .header-mainnav-search-menu a:hover {
+	color:#FD8A10;
+}
+.header-container .header-mainnav-account-menu a:hover {
+	color:#00C86D;
 }
 
 
@@ -211,6 +334,43 @@ i, u { text-decoration:none; }
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media queries!
+-------------------------------------------------------------------------------*/
+
+/* ----- Mobile and Tablet Views ----- */
+@media handheld, only screen and (max-width: 500px) {
+	.header-container .title { width:150px; transition:all 0.5s linear; -o-transition:all 0.5s linear; -moz-transition:all 0.5s linear;  }
+	.header-mainnav-overflow-menu li > h2 a { padding:0px 0px 0px 10px; }
+	.header-container .header-mainnav-search-menu, .header-container .header-mainnav-account-menu { width:32px; }
+	.header-container .header-mainnav-search-menu a, .header-container .header-mainnav-account-menu a { width:32px; text-align:right; }
+
+}
+@media handheld, only screen and (max-width: 450px) {
+	.header-container .title { width:120px; transition:all 0.5s linear; -o-transition:all 0.5s linear; -moz-transition:all 0.5s linear;  }
+	.header-container .title h1 a img { padding:0 0 2px; transition:all 0.5s linear; -o-transition:all 0.5s linear; -moz-transition:all 0.5s linear; }
+}
+@media handheld, only screen and (max-width: 400px) {
+	.header-container .title { width:70px; transition:all 0.5s linear; -o-transition:all 0.5s linear; -moz-transition:all 0.5s linear;  }
+	.header-container .title h1 a img { padding:0 0 6px; transition:all 0.5s linear; -o-transition:all 0.5s linear; -moz-transition:all 0.5s linear; }
+}
+@media handheld, only screen and (max-width: 310px) {
+	.header-container .title { width:60px; transition:all 0.5s linear; -o-transition:all 0.5s linear; -moz-transition:all 0.5s linear;  }
+	.header-container .title h1 a img { padding:0 0 7px; transition:all 0.5s linear; -o-transition:all 0.5s linear; -moz-transition:all 0.5s linear; }
+}
 
 
 

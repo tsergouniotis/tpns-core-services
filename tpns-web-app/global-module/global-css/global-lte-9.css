@@ -7,7 +7,7 @@ Author URI: http://www.handmadesolutions.net/ for tpns.com
 Version: 1.0
 */
 
-.page-wrap, .header-outer-container {display:none;}
+.page-wrap, .header-outer-container, .nav-content-placeholder {display:none;}
 body {display:block;}
 * {margin:0 0 0 0; padding:0 0 0 0;}
 body { height:100%; background:#2b3643; margin:0; padding:60px 15px; text-align:center; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; }
