@@ -353,18 +353,22 @@ header {
 
 /* ----- Mobile and Tablet Views ----- */
 @media handheld, only screen and (max-width: 500px) {
-	.header-container .title { width:150px; transition:all 0.5s linear; -o-transition:all 0.5s linear; -moz-transition:all 0.5s linear;  }
+	.header-container .title { width:180px; transition:all 0.5s linear; -o-transition:all 0.5s linear; -moz-transition:all 0.5s linear;  }
 	.header-mainnav-overflow-menu li > h2 a { padding:0px 0px 0px 10px; }
 	.header-container .header-mainnav-search-menu, .header-container .header-mainnav-account-menu { width:32px; }
 	.header-container .header-mainnav-search-menu a, .header-container .header-mainnav-account-menu a { width:32px; text-align:right; }
 
 }
-@media handheld, only screen and (max-width: 450px) {
-	.header-container .title { width:120px; transition:all 0.5s linear; -o-transition:all 0.5s linear; -moz-transition:all 0.5s linear;  }
+@media handheld, only screen and (max-width: 420px) {
+	.header-container .title { width:140px; transition:all 0.5s linear; -o-transition:all 0.5s linear; -moz-transition:all 0.5s linear;  }
 	.header-container .title h1 a img { padding:0 0 2px; transition:all 0.5s linear; -o-transition:all 0.5s linear; -moz-transition:all 0.5s linear; }
 }
-@media handheld, only screen and (max-width: 400px) {
-	.header-container .title { width:70px; transition:all 0.5s linear; -o-transition:all 0.5s linear; -moz-transition:all 0.5s linear;  }
+@media handheld, only screen and (max-width: 380px) {
+	.header-container .title { width:100px; transition:all 0.5s linear; -o-transition:all 0.5s linear; -moz-transition:all 0.5s linear;  }
+	.header-container .title h1 a img { padding:0 0 4px; transition:all 0.5s linear; -o-transition:all 0.5s linear; -moz-transition:all 0.5s linear; }
+}
+@media handheld, only screen and (max-width: 340px) {
+	.header-container .title { width:80px; transition:all 0.5s linear; -o-transition:all 0.5s linear; -moz-transition:all 0.5s linear;  }
 	.header-container .title h1 a img { padding:0 0 6px; transition:all 0.5s linear; -o-transition:all 0.5s linear; -moz-transition:all 0.5s linear; }
 }
 @media handheld, only screen and (max-width: 310px) {
