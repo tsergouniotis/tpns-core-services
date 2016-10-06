@@ -89,7 +89,14 @@ $(document).ready(function() {
 	// Categories - Toggle Sub-categories
 	$(".header-mainnav-overflow-menu-button").click(function() {
 		$(this).parent().parent().find(".header-mainnav-overflow-items").toggleClass("hidden");
+		$(this).toggleClass("active");
+		$(this).find(".tpns-one-mobile-menu").toggleClass("hidden");
+		$(this).find(".tpns-one-close").toggleClass("hidden");
 	});
+	// Subheader - Breadcrumbs container
+	var mainnavBreadcrumbs = $(".breadcrumbs-container p");
+	$(".breadcrumbs-container").css('width', (mainnavBreadcrumbs.width()));
+	
 	
 		
 		
