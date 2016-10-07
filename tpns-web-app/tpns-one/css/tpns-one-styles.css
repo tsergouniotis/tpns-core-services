@@ -21,8 +21,8 @@ html { padding:0; margin:0; overflow-x:hidden; overflow-y:auto; }
 
 body { background:#FFFFFF; font-size:14px; font-family:Roboto-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif; font-weight:normal; text-rendering:optimizelegibility; color:#323031; -webkit-touch-callout:none; -webkit-text-size-adjust:none; overflow-x:hidden; }
 .header-wrap { position:relative; max-width:1300px; height:auto; padding:0; margin:0px auto; }
-.page-wrap { position:relative; max-width:1300px; height:auto; padding:0; margin:0px auto; z-index:1; }
-.nav-content-placeholder { position:relative; height:80px; padding:0; margin:0; z-index:1; }
+.page-wrap { position:relative; max-width:1300px; height:auto; padding:0; margin:0px auto; z-index:99999; }
+.nav-content-placeholder { position:relative; height:80px; padding:0; margin:0; z-index:99999; }
 
 ol, ul, li { font-size: 100%; margin: 0; padding: 0; border: 0; list-style: none; }
 
@@ -268,7 +268,7 @@ i, u { text-decoration:none; }
 /* Header Container 
 ------------------------------------------------------------------------------- */
 header {
-    position:fixed; width:100%; height:auto; top:0; transition:top 0.2s ease-in-out; z-index:2;
+    position:fixed; width:100%; height:auto; top:0; transition:top 0.2s ease-in-out; z-index:100000;
 }
 .header-outer-container {
 	position:relative; width:100%; height:50px; color:#FFFFFF; padding:0px 10px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
@@ -404,7 +404,7 @@ header {
 ------------------------------------------------------------------------------- */
 /* ----- Left & Right Images ----- */
 .p-ad-outer-container {
-	position:fixed; top:80px; transition:top 0.2s ease-in-out; width:100%; padding:0; margin:0;
+	position:fixed; top:80px; transition:top 0.2s ease-in-out; width:100%; padding:0; margin:0; z-index:99999;
 }
 .nav-up  ~ .p-ad-outer-container {
 	top:0px;
@@ -427,7 +427,7 @@ header {
 	display:block; padding:0; margin:0;
 }
 .p-ad-middle-image img {
-	float:left; max-width:100%; height:auto; padding:0; margin:0;
+	max-width:100%; height:auto; padding:0; margin:0;
 }
 
 
@@ -436,7 +436,10 @@ header {
 /* Content Area
 ------------------------------------------------------------------------------- */
 .content-outer-container {
-	position:relative; width:100%; height:auto; padding:0; margin:0;
+	position:relative; width:100%; height:auto; padding:0; margin:0; z-index:99998;
+}
+.content-inner-placeholder {
+	position:relative; z-index:99999;
 }
 .heightful { position:relative; height:2000px; }
 
