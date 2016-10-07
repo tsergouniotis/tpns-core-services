@@ -81,6 +81,8 @@
 		/* Category Nine Custom Styles */
 		.header-mainnav-menu li.kypros a, .header-mainnav-overflow-items li.kypros a { border-color:#77b01e; }
 		.header-mainnav-menu li.kypros a:hover, .header-mainnav-overflow-items li.kypros a:hover { background:#77b01e; color:#FFFFFF; }
+		/* Content Placeholder Colour */
+		.content-placeholder { background:yellow; }
 	</style>
     <!-- Link to the site's user generated CSS -->
     <!--
@@ -99,6 +101,7 @@
     	<h1 style="width:95%; background:#f7ca18; color:#FFFFFF; text-align:center; font-family:'Trebuchet MS', Arial, Helvetica, sans-serif; padding:1% 2.5% 0% 2.5%; margin:0%;">Please enable Javascript in you browser.</h1>
     	<p style="width:95%; background:#f7ca18; color:#FFFFFF; text-align:center; font-family:'Trebuchet MS', Arial, Helvetica, sans-serif; font-weight:bold; padding:1% 2.5% 2% 2.5%; margin:0%;">You have disabled JavaScript in your browser!<br />To make use of this websites interactive elements you will need to enable Javascript</p>
     </noscript>
+    
     <header>
         <div class="header-outer-container">
             <div class="header-wrap">
@@ -158,29 +161,52 @@
                         <div class="global-table-cell breadcrumbs-container">
                         	<p>
                             	<span><a href="index.html" title="Αρχική σελίδα του TPNS One"><i class="icon tpns-one-home"></i><span class="hidden">Αρχική σελίδα του TPNS One</span></a></span>
-                                <!-- Sample link with the Category slug -->
-                                <span><i class="icon tpns-one-arrow-right"></i><!--href="index.html/ellada/"--><a title="Ενότητα - Ελλάδα">Ελλάδα</a></span>
-                                <!-- Sample link with the Sub-category slug -->
-                                <span><i class="icon tpns-one-arrow-right"></i><!--href="index.html/ellada/eidhseis/"--><a title="Υποενότητα - Ειδήσεις">Ειδήσεις</a></span>
+                                <!-- Note: When in a category, show the current category below -->
+                                <!-- Links below must be as follows showing the slugs for the current Category slug i.e.: href="index.html/ellada/" -->
+                                <!--
+                                <span><i class="icon tpns-one-arrow-right"></i><a title="Ενότητα - Ελλάδα">Ελλάδα</a></span>
+                                -->
+                                <!-- Note: When in a Sub-category, show the current Sub-category below -->
+                                <!-- Links below must be as follows showing the slugs for the current Sub-category slug i.e.: href="index.html/ellada/eidhseis/" -->
+                                <!--
+                                <span><i class="icon tpns-one-arrow-right"></i><a title="Υποενότητα - Ειδήσεις">Ειδήσεις</a></span>
+                                -->
                             </p>
                         </div>
-                        <!-- Note: Show all sub-categories below accept for the current category. -->
                         <div class="global-table-cell current-sub-sections-container">
-                        	<p>
-                            	<!-- Sample links showing the slugs for each sub-category -->
-                            	<span><!--href="http://tpnsone.com/ellada/ethnika/"--><a title="Υποενότητα - Εθνικά">Εθνικά</a></span>
-                            	<span><!--href="http://tpnsone.com/ellada/paideia/"--><a title="Υποενότητα - Παιδεία">Παιδεία</a></span>
-                            	<span><!--href="http://tpnsone.com/ellada/astynomiko/"--><a title="Υποενότητα - Αστυνομικό">Αστυνομικό</a></span>
-                            	<span><!--href="http://tpnsone.com/ellada/dikaiosynh/"--><a title="Υποενότητα - Δικαιοσύνη">Δικαιοσύνη</a></span>
-                            	<span><!--href="http://tpnsone.com/ellada/politismos/"--><a title="Υποενότητα - Πολιτισμός">Πολιτισμός</a></span>
-                            	<span><!--href="http://tpnsone.com/ellada/apokalypseis/"--><a title="Υποενότητα - Αποκαλύψεις">Αποκαλύψεις</a></span>
-                            	<span><!--href="http://tpnsone.com/ellada/ekklhsia/"--><a title="Υποενότητα - Εκκλησία">Εκκλησία</a></span>
-                            	<span><!--href="http://tpnsone.com/ellada/seismoi/"--><a title="Υποενότητα - Σεισμοί">Σεισμοί</a></span>
-                            	<span><!--href="http://tpnsone.com/ellada/amyna/"--><a title="Υποενότητα - Άμυνα">Άμυνα</a></span>
+                            <!-- Note: When in the index page, show the Top 10 tags below -->
+                            <p title="Η σημερινές κορυφαίες ετικέτες">
+                            	<span><i class="icon tpns-one-tag"></i><span class="hidden">Η σημερινές κορυφαίες ετικέτες</span></span>
+                                <span><a href="" title="Δείτε όλα τα άρθρα που σχετίζονται με την ετικέτα - ΟΑΕΔ">ΟΑΕΔ</a></span>
+                                <span><a href="" title="Δείτε όλα τα άρθρα που σχετίζονται με την ετικέτα - TAXISnet">TAXISnet</a></span>
+                                <span><a href="" title="Δείτε όλα τα άρθρα που σχετίζονται με την ετικέτα - Καιρός">Καιρός</a></span>
+                                <span><a href="" title="Δείτε όλα τα άρθρα που σχετίζονται με την ετικέτα - Συντάξεις">Συντάξεις</a></span>
+                                <span><a href="" title="Δείτε όλα τα άρθρα που σχετίζονται με την ετικέτα - Τζόκερ">Τζόκερ</a></span>
+                                <span><a href="" title="Δείτε όλα τα άρθρα που σχετίζονται με την ετικέτα - ΕΝΦΙΑ">ΕΝΦΙΑ</a></span>
+                                <span><a href="" title="Δείτε όλα τα άρθρα που σχετίζονται με την ετικέτα - Σεισμός">Σεισμός</a></span>
+                                <span><a href="" title="Δείτε όλα τα άρθρα που σχετίζονται με την ετικέτα - Τηλεοπτικές Άδειες">Τηλεοπτικές Άδειες</a></span>
+                                <span><a href="" title="Δείτε όλα τα άρθρα που σχετίζονται με την ετικέτα - Κακοκαιρία">Κακοκαιρία</a></span>
+                                <span><a href="" title="Δείτε όλα τα άρθρα που σχετίζονται με την ετικέτα - Πόθεν Έσχες">Πόθεν Έσχες</a></span>
                             </p>
+                            <!-- Note: When in a category, show all sub-categories from the current category below -->
+                            <!-- Note: When in a sub-category or article, show all sub-categories from the current category below accept for the current sub-category. -->
+                            <!-- Links below must be as follows showing the slugs for each sub-category i.e.: href="http://tpnsone.com/ellada/ethnika/" -->
+                        	<!--
+                        	<p title="Όλες η υποενότητες της ενότητας Ελλάδα">
+                            	<span><a href="" title="Υποενότητα - Εθνικά">Εθνικά</a></span>
+                            	<span><a href="" title="Υποενότητα - Παιδεία">Παιδεία</a></span>
+                            	<span><a href="" title="Υποενότητα - Αστυνομικό">Αστυνομικό</a></span>
+                            	<span><a href="" title="Υποενότητα - Δικαιοσύνη">Δικαιοσύνη</a></span>
+                            	<span><a href="" title="Υποενότητα - Πολιτισμός">Πολιτισμός</a></span>
+                            	<span><a href="" title="Υποενότητα - Αποκαλύψεις">Αποκαλύψεις</a></span>
+                            	<span><a href="" title="Υποενότητα - Εκκλησία">Εκκλησία</a></span>
+                            	<span><a href="" title="Υποενότητα - Σεισμοί">Σεισμοί</a></span>
+                            	<span><a href="" title="Υποενότητα - Άμυνα">Άμυνα</a></span>
+                            </p>
+                            -->
                         </div>
                         <div class="global-table-cell all-sub-sections-container">
-                        	<p><a title="Όλες η υποενότητες του TPNS One"><i class="icon tpns-one-add-property"></i><span class="hidden">Όλες η υποενότητες του TPNS One</span></a></p>
+                        	<p class="textc"><a title="Όλες η ενότητες του TPNS One με της υποενότητες τους"><i class="icon tpns-one-add-property"></i><span class="all-sub-sections-name">Όλες</span></a></p>
                         </div>
                     </div>
                 </div>
@@ -188,11 +214,29 @@
         </div>
     </header>
     <div class="nav-content-placeholder"></div>
+    <div class="p-ad-outer-container">
+    	<div class="page-wrap">
+            <div class="p-ad-left-image">
+                <a href="https://www.cosmote.gr/one/"><img src="../in-house-adverts-module/in-house-adverts/1900x1600/cosmote-business-one/cosmote-1900x1600-left.jpg" alt="Cosmote One advert" /></a>
+            </div>
+            <div class="p-ad-right-image">
+                <a href="https://www.cosmote.gr/one/"><img src="../in-house-adverts-module/in-house-adverts/1900x1600/cosmote-business-one/cosmote-1900x1600-right.jpg" alt="Cosmote One advert" /></a>
+            </div>
+        </div>
+    </div>
     <!-- the page wrap turns the Responsive Engineering of the site on or off. -->
-	<div class="page-wrap">
-    	
-        
-        
+    <div class="content-outer-container">
+        <div class="page-wrap content-placeholder">
+            <div class="p-ad-middle-image">
+                <p class="textc"><a href="https://www.cosmote.gr/one/"><img src="../in-house-adverts-module/in-house-adverts/1900x1600/cosmote-business-one/cosmote-1900x1600-middle.jpg" alt="Cosmote One advert" /></a></p>
+            </div>
+            
+            <div class="heightful">
+            
+            </div>
+            
+            
+        </div>
     </div>
     <script type="text/javascript" src="../global-module/global-js/jquery-2.1.3.min.js"></script>
     <script type="text/javascript" src="../global-module/global-js/addtohomescreen.min.js"></script>

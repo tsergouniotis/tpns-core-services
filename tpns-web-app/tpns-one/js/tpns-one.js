@@ -20,7 +20,12 @@ function hasScrolled() {
     if(Math.abs(lastScrollTop - st) <= delta)
         return;
     if (st > lastScrollTop && st > navbarHeight){
-        $('header').removeClass('nav-down').addClass('nav-up').find(".header-mainnav-overflow-items").addClass("hidden");
+        $('header').removeClass('nav-down').addClass('nav-up')/*.find(".header-mainnav-overflow-items").addClass("hidden")*/;
+		/*
+		$(".header-mainnav-overflow-menu-button").removeClass("active");
+		$(".tpns-one-mobile-menu").removeClass("hidden");
+		$(".tpns-one-close").addClass("hidden");
+		*/
     } else {
         if(st + $(window).height() < $(document).height()) {
             $('header').removeClass('nav-up').addClass('nav-down');
@@ -93,9 +98,6 @@ $(document).ready(function() {
 		$(this).find(".tpns-one-mobile-menu").toggleClass("hidden");
 		$(this).find(".tpns-one-close").toggleClass("hidden");
 	});
-	// Subheader - Breadcrumbs container
-	var mainnavBreadcrumbs = $(".breadcrumbs-container p");
-	$(".breadcrumbs-container").css('width', (mainnavBreadcrumbs.width()));
 	
 	
 		
@@ -118,7 +120,6 @@ function PCViewUpdate() {
 		});
 		return false;
 	}
-	
 }
 $(window).load(PCViewUpdate);
 $(window).resize(PCViewUpdate);
