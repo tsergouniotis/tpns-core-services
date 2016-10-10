@@ -98,7 +98,12 @@ $(document).ready(function() {
 		$(this).find(".tpns-one-mobile-menu").toggleClass("hidden");
 		$(this).find(".tpns-one-close").toggleClass("hidden");
 	});
-	
+	// Remove Breaking News
+	$(".breaking-news-header-outer-container").delay(8000).fadeOut().parent().find(".tag-header-breaking-news").addClass("global-table-cell").removeClass("hidden");
+	// Show Breaking News again after being hidden
+	$(".breaking-news-header-symbol").click(function() {
+		$(".breaking-news-header-outer-container").fadeIn().delay(8000).fadeOut();
+	});
 	
 		
 		
