@@ -23,17 +23,6 @@ http://www.springframework.org/schema/security/oauth2
 http://www.springframework.org/schema/security/spring-security-oauth2.xsd">
 
 	<!-- Token Store -->
-	<bean id="tokenStore"
-		class="org.springframework.security.oauth2.provider.token.store.JdbcTokenStore">
-		<constructor-arg name="dataSource" ref="dataSource" />
-	</bean>
-
-	<bean id="tokenServices"
-		class="org.springframework.security.oauth2.provider.token.DefaultTokenServices">
-		<property name="tokenStore" ref="tokenStore" />
-		<property name="supportRefreshToken" value="true" />
-		<property name="clientDetailsService" ref="client-details-service" />
-	</bean>
 	
 	<bean id="client-details-service"
 		class="org.springframework.security.oauth2.provider.client.JdbcClientDetailsService">
@@ -58,13 +47,32 @@ http://www.springframework.org/schema/security/spring-security-oauth2.xsd">
 	<oauth2:authorization-server
 		token-endpoint-url="/oauth/token" authorization-endpoint-url="/oauth/authorize"
 		user-approval-page="forward:/oauth/confirm_access"
-		client-details-service-ref="client-details-service"
+		client-details-service-ref="client-details-service" 
 		token-services-ref="tokenServices">
 		<oauth2:authorization-code />
 		<oauth2:refresh-token />
 		<oauth2:client-credentials />
 		<oauth2:password />
 	</oauth2:authorization-server>
+	
+	<!-- Managing Tokens Start-->
+	<bean id="tokenServices"
+	    class="org.springframework.security.oauth2.provider.token.DefaultTokenServices">
+	    <property name="tokenStore" ref="tokenStore" />	                    
+	    <property name="tokenEnhancer" ref="accessTokenConverter" />
+	    <property name="supportRefreshToken" value="true" />
+	    <property name="clientDetailsService" ref="client-details-service" />
+	    <property name="accessTokenValiditySeconds" value="${security.token.validitySeconds:3600}" />
+	</bean>
+	<bean id="tokenStore"
+		class="org.springframework.security.oauth2.provider.token.store.JwtTokenStore">
+		<constructor-arg name="jwtTokenEnhancer" ref="accessTokenConverter" />
+	</bean>		
+	<bean id="accessTokenConverter" 
+		class="org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter">
+		<property name="signingKey"><value>123</value></property>
+	</bean>
+	<!-- Managing Tokens End-->
 
 	<bean id="checkTokenEndpoint"
 		class="org.springframework.security.oauth2.provider.endpoint.CheckTokenEndpoint">
@@ -106,6 +114,7 @@ http://www.springframework.org/schema/security/spring-security-oauth2.xsd">
 	<sec:authentication-manager>
 		<sec:authentication-provider ref="limitLoginAuthenticationProvider" />
 	</sec:authentication-manager>
+	
 
 	<bean id="clientDetailsUserService"
 		class="org.springframework.security.oauth2.provider.client.ClientDetailsUserDetailsService">
@@ -121,6 +130,5 @@ http://www.springframework.org/schema/security/spring-security-oauth2.xsd">
 
 	<oauth2:expression-handler id="oauthExpressionHandler" />
 	<oauth2:web-expression-handler id="oauthWebExpressionHandler" />
-
-
+	
 </beans>
