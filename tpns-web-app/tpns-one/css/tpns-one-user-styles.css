@@ -1,0 +1,30 @@
+/* Header Styles */
+.header-outer-container, .nav-content-placeholder, .header-mainnav-overflow-items { background:#323031; }
+/* Category One Custom Styles */
+.header-mainnav-menu li.ellada a, .header-mainnav-overflow-items li.ellada a { border-color:#7e739d; }
+.header-mainnav-menu li.ellada a:hover, .header-mainnav-overflow-items li.ellada a:hover { background:#7e739d; color:#FFFFFF; }
+/* Category Two Custom Styles */
+.header-mainnav-menu li.politikh a, .header-mainnav-overflow-items li.politikh a { border-color:#4c9174; }
+.header-mainnav-menu li.politikh a:hover, .header-mainnav-overflow-items li.politikh a:hover { background:#4c9174; color:#FFFFFF; }
+/* Category Three Custom Styles */
+.header-mainnav-menu li.oikonomia a, .header-mainnav-overflow-items li.oikonomia a { border-color:#ca6860; }
+.header-mainnav-menu li.oikonomia a:hover, .header-mainnav-overflow-items li.oikonomia a:hover { background:#ca6860; color:#FFFFFF; }
+/* Category Four Custom Styles */
+.header-mainnav-menu li.ygeia a, .header-mainnav-overflow-items li.ygeia a { border-color:#78a9b7; }
+.header-mainnav-menu li.ygeia a:hover, .header-mainnav-overflow-items li.ygeia a:hover { background:#78a9b7; color:#FFFFFF; }
+/* Category Five Custom Styles */
+.header-mainnav-menu li.kosmos a, .header-mainnav-overflow-items li.kosmos a { border-color:#cea17f; }
+.header-mainnav-menu li.kosmos a:hover, .header-mainnav-overflow-items li.kosmos a:hover { background:#cea17f; color:#FFFFFF; }
+/* Category Six Custom Styles */
+.header-mainnav-menu li.athlitika a, .header-mainnav-overflow-items li.athlitika a { border-color:#936281; }
+.header-mainnav-menu li.athlitika a:hover, .header-mainnav-overflow-items li.athlitika a:hover { background:#936281; color:#FFFFFF; }
+/* Category Seven Custom Styles */
+.header-mainnav-menu li.media a, .header-mainnav-overflow-items li.media a { border-color:#c14d44; }
+.header-mainnav-menu li.media a:hover, .header-mainnav-overflow-items li.media a:hover { background:#c14d44; color:#FFFFFF; }
+/* Category Eight Custom Styles */
+.header-mainnav-menu li.kairos a, .header-mainnav-overflow-items li.kairos a { border-color:#5a9acf; }
+.header-mainnav-menu li.kairos a:hover, .header-mainnav-overflow-items li.kairos a:hover { background:#5a9acf; color:#FFFFFF; }
+/* Category Nine Custom Styles */
+.header-mainnav-menu li.kypros a, .header-mainnav-overflow-items li.kypros a { border-color:#77b01e; }
+.header-mainnav-menu li.kypros a:hover, .header-mainnav-overflow-items li.kypros a:hover { background:#77b01e; color:#FFFFFF; }
+
