@@ -88,6 +88,11 @@ $(document).ready(function() {
 	});
 	// Categories - Toggle Sub-categories
 	$(".header-mainnav-overflow-menu-button").click(function() {
+		$(".all-sub-sections-container").find(".tpns-one-add-property").removeClass("hidden");
+		$(".all-sub-sections-container").find(".tpns-one-close").addClass("hidden");
+		$(".all-sub-sections-container").removeClass("active");
+		$(".p-ad-middle-image").removeClass("hidden");
+		$(".all-categories-container").addClass("hidden");
 		$(this).parent().parent().find(".header-mainnav-overflow-items").toggleClass("hidden");
 		$(this).toggleClass("active");
 		$(this).find(".tpns-one-mobile-menu").toggleClass("hidden");
@@ -97,10 +102,23 @@ $(document).ready(function() {
 	$(".breaking-news-header-outer-container").delay(8000).fadeOut().parent().find(".tag-header-breaking-news").addClass("global-table-cell").removeClass("hidden");
 	// Show Breaking News again after being hidden
 	$(".breaking-news-header-symbol").click(function() {
+		$(".header-mainnav-overflow-menu-button").parent().parent().find(".header-mainnav-overflow-items").addClass("hidden");
+		$(".header-mainnav-overflow-menu-button").removeClass("active");
+		$(".header-mainnav-overflow-menu-button").find(".tpns-one-mobile-menu").removeClass("hidden");
+		$(".header-mainnav-overflow-menu-button").find(".tpns-one-close").addClass("hidden");
+		$(".all-sub-sections-container").find(".tpns-one-add-property").removeClass("hidden");
+		$(".all-sub-sections-container").find(".tpns-one-close").addClass("hidden");
+		$(".all-sub-sections-container").removeClass("active");
+		$(".p-ad-middle-image").removeClass("hidden");
+		$(".all-categories-container").addClass("hidden");
 		$(".breaking-news-header-outer-container").fadeIn().delay(8000).fadeOut();
 	});
 	// All Categories Menu
 	$(".all-sub-sections-container").click(function() {
+		$(".header-mainnav-overflow-menu-button").parent().parent().find(".header-mainnav-overflow-items").addClass("hidden");
+		$(".header-mainnav-overflow-menu-button").removeClass("active");
+		$(".header-mainnav-overflow-menu-button").find(".tpns-one-mobile-menu").removeClass("hidden");
+		$(".header-mainnav-overflow-menu-button").find(".tpns-one-close").addClass("hidden");
 		$(this).find(".tpns-one-add-property").toggleClass("hidden");
 		$(this).find(".tpns-one-close").toggleClass("hidden");
 		$(this).toggleClass("active");
