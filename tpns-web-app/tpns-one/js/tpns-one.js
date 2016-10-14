@@ -100,6 +100,10 @@ $(document).ready(function() {
 	});
 	// Remove Breaking News
 	$(".breaking-news-header-outer-container").delay(8000).fadeOut().parent().find(".tag-header-breaking-news").addClass("global-table-cell").removeClass("hidden");
+	// Whilst visible close Breaking News
+	$(".breaking-news-close").click(function() {
+		$(".breaking-news-header-outer-container").stop().fadeOut();
+	});
 	// Show Breaking News again after being hidden
 	$(".breaking-news-header-symbol").click(function() {
 		$(".header-mainnav-overflow-menu-button").parent().parent().find(".header-mainnav-overflow-items").addClass("hidden");
@@ -122,6 +126,7 @@ $(document).ready(function() {
 		$(this).find(".tpns-one-add-property").toggleClass("hidden");
 		$(this).find(".tpns-one-close").toggleClass("hidden");
 		$(this).toggleClass("active");
+		$(".current-sub-sections-container").find("p").toggleClass("hidden");
 		$(".p-ad-middle-image").toggleClass("hidden");
 		$(".all-categories-container").toggleClass("hidden");
 		$("html, body").animate({ scrollTop: 0 },{duration:'slow', easing:'linear', queue: false });
