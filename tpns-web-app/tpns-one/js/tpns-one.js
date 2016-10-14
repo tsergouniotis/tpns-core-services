@@ -90,13 +90,30 @@ $(document).ready(function() {
 	$(".header-mainnav-overflow-menu-button").click(function() {
 		$(".all-sub-sections-container").find(".tpns-one-add-property").removeClass("hidden");
 		$(".all-sub-sections-container").find(".tpns-one-close").addClass("hidden");
-		$(".all-sub-sections-container").removeClass("active");
+		$(".all-sub-sections-container, .header-mainnav-search-button").removeClass("active");
 		$(".p-ad-middle-image").removeClass("hidden");
 		$(".all-categories-container").addClass("hidden");
+		$(".header-mainnav-search-button").parent().parent().find(".header-mainnav-search-container").addClass("hidden");
+		$(".header-mainnav-search-button").find(".tpns-one-search").removeClass("hidden");
+		$(".header-mainnav-search-button").find(".tpns-one-close").addClass("hidden");
 		$(this).parent().parent().find(".header-mainnav-overflow-items").toggleClass("hidden");
 		$(this).toggleClass("active");
-		$(this).find(".tpns-one-mobile-menu").toggleClass("hidden");
-		$(this).find(".tpns-one-close").toggleClass("hidden");
+		$(this).find(".tpns-one-mobile-menu, .tpns-one-close").toggleClass("hidden");
+	});
+	// Main Nav Search - Toggle
+	$(".header-mainnav-search-button").click(function() {
+		$(".all-sub-sections-container").find(".tpns-one-add-property").removeClass("hidden");
+		$(".all-sub-sections-container").find(".tpns-one-close").addClass("hidden");
+		$(".all-sub-sections-container, .header-mainnav-overflow-menu-button").removeClass("active");
+		$(".p-ad-middle-image").removeClass("hidden");
+		$(".all-categories-container").addClass("hidden");
+		$(".header-mainnav-overflow-menu-button").parent().parent().find(".header-mainnav-overflow-items").addClass("hidden");
+		$(".header-mainnav-overflow-menu-button").find(".tpns-one-mobile-menu").removeClass("hidden");
+		$(".header-mainnav-overflow-menu-button").find(".tpns-one-close").addClass("hidden");
+		$(".breaking-news-header-outer-container").stop().fadeOut();
+		$(this).parent().parent().find(".header-mainnav-search-container").toggleClass("hidden");
+		$(this).toggleClass("active");
+		$(this).find(".tpns-one-search, .tpns-one-close").toggleClass("hidden");
 	});
 	// Remove Breaking News
 	$(".breaking-news-header-outer-container").delay(8000).fadeOut().parent().find(".tag-header-breaking-news").addClass("global-table-cell").removeClass("hidden");
@@ -107,12 +124,11 @@ $(document).ready(function() {
 	// Show Breaking News again after being hidden
 	$(".breaking-news-header-symbol").click(function() {
 		$(".header-mainnav-overflow-menu-button").parent().parent().find(".header-mainnav-overflow-items").addClass("hidden");
-		$(".header-mainnav-overflow-menu-button").removeClass("active");
+		$(".header-mainnav-overflow-menu-button, .all-sub-sections-container").removeClass("active");
 		$(".header-mainnav-overflow-menu-button").find(".tpns-one-mobile-menu").removeClass("hidden");
 		$(".header-mainnav-overflow-menu-button").find(".tpns-one-close").addClass("hidden");
 		$(".all-sub-sections-container").find(".tpns-one-add-property").removeClass("hidden");
 		$(".all-sub-sections-container").find(".tpns-one-close").addClass("hidden");
-		$(".all-sub-sections-container").removeClass("active");
 		$(".p-ad-middle-image").removeClass("hidden");
 		$(".all-categories-container").addClass("hidden");
 		$(".breaking-news-header-outer-container").fadeIn().delay(8000).fadeOut();
@@ -123,12 +139,10 @@ $(document).ready(function() {
 		$(".header-mainnav-overflow-menu-button").removeClass("active");
 		$(".header-mainnav-overflow-menu-button").find(".tpns-one-mobile-menu").removeClass("hidden");
 		$(".header-mainnav-overflow-menu-button").find(".tpns-one-close").addClass("hidden");
-		$(this).find(".tpns-one-add-property").toggleClass("hidden");
-		$(this).find(".tpns-one-close").toggleClass("hidden");
+		$(this).find(".tpns-one-add-property, .tpns-one-close").toggleClass("hidden");
 		$(this).toggleClass("active");
 		$(".current-sub-sections-container").find("p").toggleClass("hidden");
-		$(".p-ad-middle-image").toggleClass("hidden");
-		$(".all-categories-container").toggleClass("hidden");
+		$(".p-ad-middle-image, .all-categories-container").toggleClass("hidden");
 		$("html, body").animate({ scrollTop: 0 },{duration:'slow', easing:'linear', queue: false });
 	});
 	// All Categories Inner Switch
@@ -136,8 +150,7 @@ $(document).ready(function() {
 		$(".all-sub-sections-container").find(".tpns-one-add-property").toggleClass("hidden");
 		$(".all-sub-sections-container").find(".tpns-one-close").toggleClass("hidden");
 		$(".all-sub-sections-container").toggleClass("active");
-		$(".p-ad-middle-image").toggleClass("hidden");
-		$(".all-categories-container").toggleClass("hidden");
+		$(".p-ad-middle-image, .all-categories-container").toggleClass("hidden");
 	});
 		
 		

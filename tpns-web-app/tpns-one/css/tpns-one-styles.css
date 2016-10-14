@@ -98,6 +98,15 @@ mark { background-color:#364150; color:#c6cfda; font-style:italic; font-weight: 
     font-weight:normal; font-style:normal; -webkit-font-smoothing:antialiased; text-rendering:optimizelegibility;
 }
 @font-face {
+    font-family:'Roboto-Italic';
+    src:url('../fonts/Roboto-Italic.eot');
+    src:url('../fonts/Roboto-Italic.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Roboto-Italic.svg#Roboto-Italic') format('svg'),
+		url('../fonts/Roboto-Italic.woff') format('woff'),
+		url('../fonts/Roboto-Italic.ttf') format('truetype');
+    font-weight:normal; font-style:normal; -webkit-font-smoothing:antialiased; text-rendering:optimizelegibility;
+}
+@font-face {
     font-family:'RobotoSlab-Regular';
     src:url('../fonts/RobotoSlab-Regular.eot');
     src:url('../fonts/RobotoSlab-Regular.eot?#iefix') format('embedded-opentype'),
@@ -246,9 +255,9 @@ i, u { text-decoration:none; }
 .text201 {
 	font-size:1.500em; /* h5 down to h2 */
 }
-
-
-
+.text202 {
+	font-size:1.143em;
+}
 
 
 
@@ -325,7 +334,7 @@ header {
 	position:relative;
 }
 .header-mainnav-overflow-menu li h2 a {
-	display:inline-block; line-height:36px; padding:0px 5px 0px 10px;
+	display:inline-block; line-height:33px; padding:8px 10px 9px; margin:0 -3px 0 0; white-space:nowrap; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
 }
 .header-mainnav-overflow-menu li h2 a:hover, .header-mainnav-overflow-menu li h2 a.active {
 	color:#FCD116;
@@ -345,12 +354,66 @@ header {
 .header-container .header-mainnav-search-menu a, .header-container .header-mainnav-account-menu a {
 	display:block; width:42px; text-align:center; padding:5px 0 12px; margin:0;
 }
-.header-container .header-mainnav-search-menu a:hover {
+.header-container .header-mainnav-search-menu a:hover, .header-mainnav-search-button.active {
 	color:#FD8A10;
 }
 .header-container .header-mainnav-account-menu a:hover {
 	color:#00C86D;
 }
+/* Search Form 
+------------------------------------------------------------------------------- */
+.header-mainnav-search-container {
+	position:absolute; top:100%; left:0; width:100%; z-index:1;
+}
+.header-mainnav-search-container .global-table-cell {
+	vertical-align:top; height:55px; padding-top:5px;
+}
+.header-mainnav-search-container .global-table-cell:nth-child(1) {
+	width:40px; 
+}
+.header-mainnav-search-container .global-table-cell:nth-child(3) {
+	width:130px;
+}
+.header-mainnav-search-container .global-table-cell:nth-child(1) p {
+	display:block; width:100%; height:34px; line-height:33px; padding:0px 0px 2px; margin:0; border-bottom:2px solid #FFFFFF;
+}
+.header-mainnav-search-container [class^="tpns-one-"]:before, .header-mainnav-search-container [class*=" tpns-one-"]:before {
+	font-size:120%;
+}
+.header-mainnav-search-container input {
+	width:100%; background:transparent; height:36px; color:#FFFFFF; line-height:36px; padding:0; margin:0; outline:none; border:none; border-bottom:2px solid #FFFFFF; -webkit-border-radius:0; border-radius:0;
+}
+.header-mainnav-search-container ::-webkit-input-placeholder {
+   color:#A09FA0; font-family:Roboto-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+.header-mainnav-search-container :-moz-placeholder {
+   color:#A09FA0; font-family:Roboto-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+.header-mainnav-search-container ::-moz-placeholder {
+   color:#A09FA0; font-family:Roboto-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+.header-mainnav-search-container :-ms-input-placeholder {
+   color:#A09FA0; font-family:Roboto-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+.header-mainnav-search-container button {
+	width:100%; height:34px; line-height:34px; background:#323031; color:#FFFFFF; padding:0px 0px 36px; outline:none; border:none; border-bottom:2px solid #FFFFFF; -webkit-border-radius:0; border-radius:0;
+}
+.header-mainnav-search-container button:hover {
+	color:#FD8A10; outline:none; border:none; border-bottom:2px solid #FFFFFF; -webkit-border-radius:0; border-radius:0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Sub-header Container 
 ------------------------------------------------------------------------------- */
 .sub-header-outer-container {
@@ -417,7 +480,7 @@ header {
 	display:inline-block;
 }
 .tag-header-breaking-news .breaking-news-header-symbol [class^="tpns-one-"]:before, .tag-header-breaking-news .breaking-news-header-symbol [class*=" tpns-one-"]:before {
-	padding:0 5px 4px 0;
+	font-size:120%; padding:0 5px 4px 0;
 }
 /* Breaking News Container 
 ------------------------------------------------------------------------------- */

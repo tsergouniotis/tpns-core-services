@@ -1,5 +1,9 @@
 /* Header Styles */
-.header-outer-container, .nav-content-placeholder, .header-mainnav-overflow-items { background:#323031; }
+.header-outer-container, .nav-content-placeholder, .header-mainnav-overflow-items, .header-mainnav-search-container { background:#323031; }
+.header-mainnav-search-container:before, .header-mainnav-search-container:after { content:""; background-color:#323031; position:absolute; top:0; bottom:0; width:9999px; }
+.header-mainnav-search-container:before { right:100%; }
+.header-mainnav-search-container:after { left:100%; }
+.header-mainnav-search-container:nth-of-type(1), .header-mainnav-search-container:nth-of-type(1):before, .header-mainnav-search-container:nth-of-type(1):after { background-color:#323031; }
 /* Category One Custom Styles */
 .header-mainnav-menu li.ellada a, .header-mainnav-overflow-items li.ellada a { border-color:#7e739d; }
 .header-mainnav-menu li.ellada a:hover, .header-mainnav-overflow-items li.ellada a:hover { background:#7e739d; color:#FFFFFF; }
