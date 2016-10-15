@@ -57,6 +57,30 @@ $.fn.headerMainNav = function(){
 	}
 	return true;
 };
+// Initialize Swiper
+/*
+var swiper = new Swiper('.swiper-container', {
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+	pagination: '.swiper-pagination',
+	paginationClickable: true,
+	keyboardControl: true,
+	autoHeight: true
+});
+*/
+var swiper = new Swiper('.swiper-container', {
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+	keyboardControl: true,
+	pagination: '.swiper-pagination',
+	paginationClickable: true,
+	// Disable preloading of all images
+	preloadImages: false,
+	// Enable lazy loading
+	//lazyLoadingInPrevNext: true,
+	//lazyLoadingInPrevNextAmount: 1,
+	lazyLoading: true
+});
 // jQuery
 $(document).ready(function() {
 	'use strict';
