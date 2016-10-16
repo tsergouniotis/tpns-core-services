@@ -36,25 +36,8 @@ services:
     - ${HOME}/projects/tpns/data/admin/pgdata:/var/lib/postgresql/data
     networks:
     - core_net
-  articleService:
-    container_name: articleService
-    image: pzografos/tpns-article-service
-    ports:
-    - 8080:8080
-    environment:
-    - ARTICLE_SERVER_PORT=8080
-    - ARTICLE_DB_HOST=articledb
-    - ARTICLE_DB_PORT=5432
-    - ARTICLE_DB_USER=tpns_article_db
-    - ARTICLE_DB_PASS=tpns
-    depends_on:
-    - articledb
-    env_file:
-    - dev.env
-    networks:
-    - core_net
-  userService:
-    container_name: userService
+  userservice:
+    container_name: userservice
     image: pzografos/tpns-user-service
     ports:
     - 8081:8080
@@ -68,8 +51,26 @@ services:
     - userdb
     networks:
     - core_net
-  adminService:
-    container_name: adminService
+  articleservice:
+    container_name: articleService
+    image: pzografos/tpns-article-service
+    ports:
+    - 8080:8080
+    environment:
+    - ARTICLE_SERVER_PORT=8080
+    - ARTICLE_DB_HOST=articledb
+    - ARTICLE_DB_PORT=5432
+    - ARTICLE_DB_USER=tpns_article_db
+    - ARTICLE_DB_PASS=tpns
+    depends_on:
+    - articledb
+    - userservice
+    env_file:
+    - dev.env
+    networks:
+    - core_net
+  adminservice:
+    container_name: adminservice
     image: pzografos/tpns-admin-service
     ports:
     - 8082:8080
@@ -84,7 +85,7 @@ services:
     networks:
     - core_net
   adminQueue:
-    container_name: adminQueue
+    container_name: adminqueue
     image: webcenter/activemq
     ports:
     - 8161:8161
@@ -116,8 +117,8 @@ services:
     ports:
     - 80:80
     depends_on:
-    - articleService
-    - userService
+    - articleservice
+    - userservice
     env_file:
     - prod.env
     volumes:
