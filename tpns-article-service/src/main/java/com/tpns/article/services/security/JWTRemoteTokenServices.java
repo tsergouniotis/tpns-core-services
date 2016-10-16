@@ -17,8 +17,12 @@ import org.springframework.http.MediaType;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.codec.Base64;
+import org.springframework.security.jwt.Jwt;
+import org.springframework.security.jwt.JwtHelper;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.common.exceptions.InvalidTokenException;
+import org.springframework.security.oauth2.common.util.JsonParser;
+import org.springframework.security.oauth2.common.util.JsonParserFactory;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.token.ResourceServerTokenServices;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
@@ -32,6 +36,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class JWTRemoteTokenServices implements ResourceServerTokenServices {
 
 	private final static String tokenParameterName = "token";
+	private final static String clientIdKeyName = "client_id";
 
 	private final static Logger log = LoggerFactory.getLogger(JWTRemoteTokenServices.class);
 
@@ -75,7 +80,7 @@ public class JWTRemoteTokenServices implements ResourceServerTokenServices {
 	@Override
 	public OAuth2Authentication loadAuthentication(String accessToken) throws AuthenticationException, InvalidTokenException {
 
-		String clientId = "front-end-app";
+		String clientId = getClientIdFromToken(accessToken);
 
 		Map<String, Object> map = postForMap(checkTokenEndpointUrl, clientId, accessToken);
 
@@ -114,6 +119,14 @@ public class JWTRemoteTokenServices implements ResourceServerTokenServices {
 		Map<String, Object> map = restTemplate.exchange(url, HttpMethod.POST, new HttpEntity<MultiValueMap<String, String>>(null, headers), Map.class).getBody();
 
 		return map;
+	}
+
+	private String getClientIdFromToken(String token) {
+		Jwt jwt = JwtHelper.decode(token);
+		JsonParser objectMapper = JsonParserFactory.create();
+		String content = jwt.getClaims();
+		Map<String, Object> map = objectMapper.parseMap(content);
+		return map.get(clientIdKeyName).toString();
 	}
 
 }
