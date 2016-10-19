@@ -58,16 +58,6 @@ $.fn.headerMainNav = function(){
 	return true;
 };
 // Initialize Swiper
-/*
-var swiper = new Swiper('.swiper-container', {
-	nextButton: '.swiper-button-next',
-	prevButton: '.swiper-button-prev',
-	pagination: '.swiper-pagination',
-	paginationClickable: true,
-	keyboardControl: true,
-	autoHeight: true
-});
-*/
 var swiper = new Swiper('.swiper-container', {
 	keyboardControl: true,
 	grabCursor: true,
@@ -75,12 +65,27 @@ var swiper = new Swiper('.swiper-container', {
 	prevButton: '.swiper-button-prev',
 	pagination: '.swiper-pagination',
 	paginationClickable: true,
+	autoHeight: true,
 	// Disable preloading of all images
 	preloadImages: false,
 	// Enable lazy loading
 	lazyLoadingInPrevNext: true,
 	lazyLoadingInPrevNextAmount: 1,
-	lazyLoading: true
+	lazyLoading: true,
+	onSlideChangeStart: function(){
+		'use strict';
+    	function playVideoVimeo(frame) {
+			frame.each( function() {
+				var url = jQuery(this).attr('src').split('?')[0];
+				this.contentWindow.postMessage(JSON.stringify({ method: 'pause' }), url);
+			});
+		}
+		$(".swiper-slide").each(function() {
+			var element = jQuery(this).find("iframe");
+			playVideoVimeo(element);
+		});
+		
+	}
 });
 // jQuery
 $(document).ready(function() {
