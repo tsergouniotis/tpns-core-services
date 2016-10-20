@@ -72,19 +72,31 @@ var swiper = new Swiper('.swiper-container', {
 	lazyLoadingInPrevNext: true,
 	lazyLoadingInPrevNextAmount: 1,
 	lazyLoading: true,
-	onSlideChangeStart: function(){
+	onSlideChangeStart: function() {
 		'use strict';
-    	function playVideoVimeo(frame) {
+    	function pauseVideoVimeo(frame) {
 			frame.each( function() {
-				var url = jQuery(this).attr('src').split('?')[0];
+				var url = $(this).attr('src').split('?')[0];
 				this.contentWindow.postMessage(JSON.stringify({ method: 'pause' }), url);
 			});
 		}
 		$(".swiper-slide").each(function() {
-			var element = jQuery(this).find("iframe");
-			playVideoVimeo(element);
+			var elementPause = $(this).find("iframe");
+			pauseVideoVimeo(elementPause);
 		});
-		
+	},
+	onSlideChangeEnd: function() {
+		'use strict';
+    	function playVideoVimeo(frame) {
+			frame.each( function() {
+				var url = $(this).attr('src').split('?')[0];
+				this.contentWindow.postMessage(JSON.stringify({ method: 'play' }), url);
+			});
+		}
+		$(".swiper-slide.swiper-slide-active").each(function() {
+			var elementPlay = $(this).find("iframe");
+			playVideoVimeo(elementPlay);
+		});
 	}
 });
 // jQuery
