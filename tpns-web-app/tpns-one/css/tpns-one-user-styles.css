@@ -5,30 +5,39 @@
 .header-mainnav-search-container:after { left:100%; }
 .header-mainnav-search-container:nth-of-type(1), .header-mainnav-search-container:nth-of-type(1):before, .header-mainnav-search-container:nth-of-type(1):after { background-color:#323031; }
 /* Category One Custom Styles */
-.header-mainnav-menu li.ellada a, .header-mainnav-overflow-items li.ellada a, .swiper-slide.ellada .article-category h5:before, .swiper-slide.ellada .article-headline h1 { border-color:#7e739d; }
+.header-mainnav-menu li.ellada a, .header-mainnav-overflow-items li.ellada a, .swiper-slide.ellada .article-category h5:before, .swiper-slide.ellada .article-kicker-title h1, .swiper-slide.ellada .article-softlead-title h1 { border-color:#7e739d; }
 .header-mainnav-menu li.ellada a:hover, .header-mainnav-overflow-items li.ellada a:hover, .swiper-slide.ellada .article-category h5 { background:#7e739d; color:#FFFFFF; }
+.happening-now-article-published-category-container .ellada { color:#7e739d; }
 /* Category Two Custom Styles */
-.header-mainnav-menu li.politikh a, .header-mainnav-overflow-items li.politikh a, .swiper-slide.politikh .article-category h5:before, .swiper-slide.politikh .article-headline h1 { border-color:#4c9174; }
+.header-mainnav-menu li.politikh a, .header-mainnav-overflow-items li.politikh a, .swiper-slide.politikh .article-category h5:before, .swiper-slide.politikh .article-kicker-title h1, .swiper-slide.politikh .article-softlead-title h1 { border-color:#4c9174; }
 .header-mainnav-menu li.politikh a:hover, .header-mainnav-overflow-items li.politikh a:hover, .swiper-slide.politikh .article-category h5 { background:#4c9174; color:#FFFFFF; }
+.happening-now-article-published-category-container .politikh { color:#4c9174; }
 /* Category Three Custom Styles */
-.header-mainnav-menu li.oikonomia a, .header-mainnav-overflow-items li.oikonomia a, .swiper-slide.oikonomia .article-category h5:before, .swiper-slide.oikonomia .article-headline h1 { border-color:#ca6860; }
+.header-mainnav-menu li.oikonomia a, .header-mainnav-overflow-items li.oikonomia a, .swiper-slide.oikonomia .article-category h5:before, .swiper-slide.oikonomia .article-kicker-title h1, .swiper-slide.oikonomia .article-softlead-title h1 { border-color:#ca6860; }
 .header-mainnav-menu li.oikonomia a:hover, .header-mainnav-overflow-items li.oikonomia a:hover, .swiper-slide.oikonomia .article-category h5 { background:#ca6860; color:#FFFFFF; }
+.happening-now-article-published-category-container .oikonomia { color:#ca6860; }
 /* Category Four Custom Styles */
-.header-mainnav-menu li.ygeia a, .header-mainnav-overflow-items li.ygeia a, .swiper-slide.ygeia .article-category h5:before, .swiper-slide.ygeia .article-headline h1 { border-color:#78a9b7; }
+.header-mainnav-menu li.ygeia a, .header-mainnav-overflow-items li.ygeia a, .swiper-slide.ygeia .article-category h5:before, .swiper-slide.ygeia .article-kicker-title h1, .swiper-slide.ygeia .article-softlead-title h1 { border-color:#78a9b7; }
 .header-mainnav-menu li.ygeia a:hover, .header-mainnav-overflow-items li.ygeia a:hover, .swiper-slide.ygeia .article-category h5 { background:#78a9b7; color:#FFFFFF; }
+.happening-now-article-published-category-container .ygeia { color:#78a9b7; }
 /* Category Five Custom Styles */
-.header-mainnav-menu li.kosmos a, .header-mainnav-overflow-items li.kosmos a, .swiper-slide.kosmos .article-category h5:before, .swiper-slide.kosmos .article-headline h1 { border-color:#cea17f; }
+.header-mainnav-menu li.kosmos a, .header-mainnav-overflow-items li.kosmos a, .swiper-slide.kosmos .article-category h5:before, .swiper-slide.kosmos .article-kicker-title h1, .swiper-slide.kosmos .article-softlead-title h1 { border-color:#cea17f; }
 .header-mainnav-menu li.kosmos a:hover, .header-mainnav-overflow-items li.kosmos a:hover, .swiper-slide.kosmos .article-category h5 { background:#cea17f; color:#FFFFFF; }
+.happening-now-article-published-category-container .kosmos { color:#cea17f; }
 /* Category Six Custom Styles */
-.header-mainnav-menu li.athlitika a, .header-mainnav-overflow-items li.athlitika a, .swiper-slide.athlitika .article-category h5:before, .swiper-slide.athlitika .article-headline h1 { border-color:#936281; }
+.header-mainnav-menu li.athlitika a, .header-mainnav-overflow-items li.athlitika a, .swiper-slide.athlitika .article-category h5:before, .swiper-slide.athlitika .article-kicker-title h1, .swiper-slide.athlitika .article-softlead-title h1 { border-color:#936281; }
 .header-mainnav-menu li.athlitika a:hover, .header-mainnav-overflow-items li.athlitika a:hover, .swiper-slide.athlitika .article-category h5 { background:#936281; color:#FFFFFF; }
+.happening-now-article-published-category-container .athlitika { color:#936281; }
 /* Category Seven Custom Styles */
-.header-mainnav-menu li.media a, .header-mainnav-overflow-items li.media a, .swiper-slide.media .article-category h5:before, .swiper-slide.media .article-headline h1 { border-color:#c14d44; }
+.header-mainnav-menu li.media a, .header-mainnav-overflow-items li.media a, .swiper-slide.media .article-category h5:before, .swiper-slide.media .article-kicker-title h1, .swiper-slide.media .article-softlead-title h1 { border-color:#c14d44; }
 .header-mainnav-menu li.media a:hover, .header-mainnav-overflow-items li.media a:hover, .swiper-slide.media .article-category h5 { background:#c14d44; color:#FFFFFF; }
+.happening-now-article-published-category-container .media { color:#c14d44; }
 /* Category Eight Custom Styles */
-.header-mainnav-menu li.kairos a, .header-mainnav-overflow-items li.kairos a, .swiper-slide.kairos .article-category h5:before, .swiper-slide.kairos .article-headline h1 { border-color:#5a9acf; }
+.header-mainnav-menu li.kairos a, .header-mainnav-overflow-items li.kairos a, .swiper-slide.kairos .article-category h5:before, .swiper-slide.kairos .article-kicker-title h1, .swiper-slide.kairos .article-softlead-title h1 { border-color:#5a9acf; }
 .header-mainnav-menu li.kairos a:hover, .header-mainnav-overflow-items li.kairos a:hover, .swiper-slide.kairos .article-category h5 { background:#5a9acf; color:#FFFFFF; }
+.happening-now-article-published-category-container .kairos { color:#5a9acf; }
 /* Category Nine Custom Styles */
-.header-mainnav-menu li.kypros a, .header-mainnav-overflow-items li.kypros a, .swiper-slide.kypros .article-category h5:before, .swiper-slide.kypros .article-headline h1 { border-color:#77b01e; }
-.header-mainnav-menu li.kypros a:hover, .header-mainnav-overflow-items li.kypros a:hover, .swiper-slide.kypros .article-category h5 { background:#77b01e; color:#FFFFFF; }
+.header-mainnav-menu li.kypros a, .header-mainnav-overflow-items li.kypros a, .swiper-slide.kypros .article-category h5:before, .swiper-slide.kypros .article-kicker-title h1, .swiper-slide.kypros .article-softlead-title h1 { border-color:#ed8000; }
+.header-mainnav-menu li.kypros a:hover, .header-mainnav-overflow-items li.kypros a:hover, .swiper-slide.kypros .article-category h5 { background:#ed8000; color:#FFFFFF; }
+.happening-now-article-published-category-container .kypros { color:#ed8000; }
 
