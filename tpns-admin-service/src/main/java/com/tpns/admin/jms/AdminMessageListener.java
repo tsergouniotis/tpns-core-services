@@ -25,7 +25,7 @@ public class AdminMessageListener implements MessageListener {
 			try {
 				ObjectMessage objectMessage = ObjectMessage.class.cast(message);
 				AdminArticle article = AdminArticle.class.cast(objectMessage.getObject());
-				LOGGER.info(article.getSubject());
+				LOGGER.info(article.getHeadline());
 
 				articleDispatcher.send(article);
 			} catch (JMSException ex) {
