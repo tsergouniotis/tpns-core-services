@@ -34,16 +34,16 @@
 				<column name="headline" length="255" />
 			</basic>	
 			<basic name="subHead">
-				<column name="headline" length="255" />
+				<column name="subHead" length="255" />
 			</basic>
 			<basic name="softLead">
-				<column name="headline" length="255" />
+				<column name="softLead" length="255" />
 			</basic>		
 			<basic name="hardLead">
-				<column name="headline" length="255" />
+				<column name="hardLead" length="255" />
 			</basic>	
 			<basic name="kicker">
-				<column name="headline" length="255" />
+				<column name="kicker" length="255" />
 			</basic>	
 			<basic name="content">
 				<column name="content" length="8096" />
