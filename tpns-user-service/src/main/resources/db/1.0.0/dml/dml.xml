@@ -94,6 +94,16 @@
 	<changeSet id="insert_oauth_clients" author="t.sergouniotis">
 
 		<insert tableName="oauth_client_details">
+			<column name="client_id" value="front-end-app" />
+			<column name="resource_ids" value="user-resources,article-resources" />
+			<column name="client_secret" value="secret" />
+			<column name="authorized_grant_types" value="password,client_credentials" />
+			<column name="authorities" value="ROLE_AUTHOR" />
+			<column name="access_token_validity" value="3600" />
+			<column name="scope" value="read,write" />
+		</insert>
+		
+		<insert tableName="oauth_client_details">
 			<column name="client_id" value="article-webapp" />
 			<column name="resource_ids" value="user-resources,article-resources" />
 			<column name="client_secret" value="secret" />
@@ -113,14 +123,9 @@
 			<column name="scope" value="read,write" />
 		</insert>
 
-	</changeSet>
-
-	<changeSet id="insert_admin_oauth_client" author="t.sergouniotis">
-
 		<insert tableName="oauth_client_details">
 			<column name="client_id" value="admin-webapp" />
-			<column name="resource_ids"
-				value="admin-resources,user-resources,article-resources" />
+			<column name="resource_ids" value="user-resources,article-resources" />
 			<column name="client_secret" value="secret" />
 			<column name="authorized_grant_types" value="password,client_credentials" />
 			<column name="authorities" value="ROLE_ADMIN" />

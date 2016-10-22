@@ -108,34 +108,6 @@
 			constraintName="oauth_client_details_pk" />
 
 	</changeSet>
-
-	<changeSet id="oauth_access_token_table" author="t.sergouniotis">
-
-		<createTable tableName="oauth_access_token">
-			<column name="authentication_id" type="VARCHAR(256)" />
-			<column name="token_id" type="VARCHAR(256)" />
-			<column name="token" type="BINARY" />
-			<column name="user_name" type="VARCHAR(256)" />
-			<column name="client_id" type="VARCHAR(256)" />
-			<column name="authentication" type="BINARY" />
-			<column name="refresh_token" type="VARCHAR(256)" />
-		</createTable>
-
-		<createTable tableName="oauth_refresh_token">
-			<column name="token_id" type="VARCHAR(256)" />
-			<column name="token" type="BINARY" />
-			<column name="authentication" type="BINARY" />
-		</createTable>
-
-		<createTable tableName="oauth_code">
-			<column name="code" type="VARCHAR(256)" />
-			<column name="authentication" type="BINARY" />
-		</createTable>
-
-		<addPrimaryKey columnNames="authentication_id"
-			tableName="oauth_access_token" constraintName="oauth_access_token_pk" />
-
-	</changeSet>
 	
 	<changeSet author="panagiotis.zografos" id="create-user-attempts-table">
 
