@@ -57,15 +57,9 @@ http://www.springframework.org/schema/util/spring-util.xsd">
 	<bean id="jwtRemoteTokenServices"
 		class="com.tpns.article.services.security.JWTRemoteTokenServices">
 		<property name="restTemplate" ref="restTemplate" />
-		<property name="accessTokenConverter" ref="accessTokenConverter" />					
 		<property name="checkTokenEndpointUrl"
 			value="http://userservice:8080/user-service/oauth/check_token" />
 		<property name="clientSecret" value="secret" />
-	</bean>
-	
-	<bean id="accessTokenConverter" 
-		class="org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter">
-		<property name="signingKey"><value>123</value></property>
 	</bean>
 
 	<bean class="org.springframework.web.client.RestTemplate" id="restTemplate" />

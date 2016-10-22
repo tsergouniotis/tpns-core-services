@@ -2,11 +2,7 @@ package com.tpns.article.services.security;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.net.URI;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,6 +20,8 @@ import org.springframework.security.oauth2.common.exceptions.InvalidTokenExcepti
 import org.springframework.security.oauth2.common.util.JsonParser;
 import org.springframework.security.oauth2.common.util.JsonParserFactory;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
+import org.springframework.security.oauth2.provider.token.AccessTokenConverter;
+import org.springframework.security.oauth2.provider.token.DefaultAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.ResourceServerTokenServices;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.util.Assert;
@@ -45,8 +43,6 @@ public class JWTRemoteTokenServices implements ResourceServerTokenServices {
 	private String checkTokenEndpointUrl;
 
 	private String clientSecret;
-
-	private JwtAccessTokenConverter tokenConverter;
 
 	public JWTRemoteTokenServices() {
 		restTemplate = new RestTemplate();
@@ -73,10 +69,6 @@ public class JWTRemoteTokenServices implements ResourceServerTokenServices {
 		this.clientSecret = clientSecret;
 	}
 
-	public void setAccessTokenConverter(JwtAccessTokenConverter accessTokenConverter) {
-		this.tokenConverter = accessTokenConverter;
-	}
-
 	@Override
 	public OAuth2Authentication loadAuthentication(String accessToken) throws AuthenticationException, InvalidTokenException {
 
@@ -89,6 +81,7 @@ public class JWTRemoteTokenServices implements ResourceServerTokenServices {
 		}
 		Assert.state(map.containsKey("client_id"), "Client id must be present in response from auth server");
 
+		AccessTokenConverter tokenConverter = new DefaultAccessTokenConverter();
 		return tokenConverter.extractAuthentication(map);
 	}
 
