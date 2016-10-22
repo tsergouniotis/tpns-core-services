@@ -15,13 +15,19 @@ public class Article implements Serializable {
 
 	private Long id;
 
-	private String subject;
-
 	private String author;
 
-	private String shortDescription;
+	private String headline;
+
+	private String subHead;
+
+	private String softLead;
+
+	private String hardLead;
 
 	private String content;
+
+	private String kicker;
 
 	private Category category;
 
@@ -48,23 +54,13 @@ public class Article implements Serializable {
 		this.status = ArticleStatus.CREATED;
 	}
 
-	private Article(Long id, String subject, String content) {
-		this();
+	private Article(Long id, String content) {
 		this.id = id;
-		this.subject = subject;
 		this.content = content;
 	}
 
 	public Long getId() {
 		return id;
-	}
-
-	public String getSubject() {
-		return subject;
-	}
-
-	public void setSubject(String subject) {
-		this.subject = subject;
 	}
 
 	public String getAuthor() {
@@ -75,20 +71,56 @@ public class Article implements Serializable {
 		this.author = author;
 	}
 
+	public String getHeadline() {
+		return headline;
+	}
+
+	public void setHeadline(String headline) {
+		this.headline = headline;
+	}
+
+	public String getSubHead() {
+		return subHead;
+	}
+
+	public void setSubHead(String subHead) {
+		this.subHead = subHead;
+	}
+
+	public String getSoftLead() {
+		return softLead;
+	}
+
+	public void setSoftLead(String softLead) {
+		this.softLead = softLead;
+	}
+
+	public String getHardLead() {
+		return hardLead;
+	}
+
+	public void setHardLead(String hardLead) {
+		this.hardLead = hardLead;
+	}
+
+	public String getKicker() {
+		return kicker;
+	}
+
+	public void setKicker(String kicker) {
+		this.kicker = kicker;
+	}
+
+	public void setVersion(Long version) {
+		this.version = version;
+	}
+
 	public String getContent() {
 		return content;
 	}
 
 	public void setContent(String content) {
 		this.content = content;
-	}
-
-	public String getShortDescription() {
-		return shortDescription;
-	}
-
-	public void setShortDescription(String shortDescription) {
-		this.shortDescription = shortDescription;
 	}
 
 	public List<MediaResource> getResources() {
@@ -170,23 +202,18 @@ public class Article implements Serializable {
 	public void update(Article article) {
 		this.status = article.getStatus();
 		this.content = article.getContent();
-		this.subject = article.getSubject();
-		this.shortDescription = article.getShortDescription();
 		this.category = article.getCategory();
 		this.resources = article.getResources();
 		this.updatedAt = LocalDateTime.now(Clock.systemUTC());
 	}
 
 	public static Article create(Long id, String title, String content) {
-		return new Article(id, title, content);
-
+		return new Article(id, content);
 	}
 
-	public static Article create(String subject, String shortDescription, String content, Category category, String author, ArticleStatus status, LocalDateTime createdAt,
-			LocalDateTime updatedAt, LocalDateTime postedAt, Set<String> destinations, List<MediaResource> mediaResources) {
+	public static Article create(String subject, String content, Category category, String author, ArticleStatus status, LocalDateTime createdAt, LocalDateTime updatedAt,
+			LocalDateTime postedAt, Set<String> destinations, List<MediaResource> mediaResources) {
 		Article article = new Article();
-		article.setSubject(subject);
-		article.setShortDescription(shortDescription);
 		article.setContent(content);
 		article.setCategory(category);
 		article.setAuthor(author);

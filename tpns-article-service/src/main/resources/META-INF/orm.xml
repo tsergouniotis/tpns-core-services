@@ -27,12 +27,24 @@
 				<sequence-generator name="ARTICLESEQ"
 					sequence-name="ARTICLESEQ" allocation-size="1" />
 			</id>
-			<basic name="subject">
-				<column name="subject" length="255" />
+			<basic name="author">
+				<column name="author" />
 			</basic>
-			<basic name="shortDescription">
-				<column name="short_description" length="512" />
+			<basic name="headline">
+				<column name="headline" length="255" />
+			</basic>	
+			<basic name="subHead">
+				<column name="headline" length="255" />
 			</basic>
+			<basic name="softLead">
+				<column name="headline" length="255" />
+			</basic>		
+			<basic name="hardLead">
+				<column name="headline" length="255" />
+			</basic>	
+			<basic name="kicker">
+				<column name="headline" length="255" />
+			</basic>	
 			<basic name="content">
 				<column name="content" length="8096" />
 			</basic>
@@ -40,9 +52,7 @@
 				<column name="status" length="50" />
 				<enumerated>STRING</enumerated>
 			</basic>
-			<basic name="author">
-				<column name="author" />
-			</basic>
+
 			<basic name="createdAt">
 				<column name="created_at" nullable="false" insertable="false"
 					updatable="false" />
