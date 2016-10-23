@@ -83,8 +83,11 @@ var swiper = new Swiper('.swiper-container', {
 		$(".video-ad-vimeo").each(function() {
 			var elementPause = $(this).find("iframe");
 			pauseVideoVimeo(elementPause);
-			var happeningNowContainer = $(".swiper-container");
-			$(".news-stream-container-middle").css('height', (happeningNowContainer.height() - 220));
+			var newsStreamContainerTop = $(".news-stream-container-top").outerHeight();
+			var newsStreamContainerBottom = $(".news-stream-container-bottom").innerHeight();
+			var newsStreamContainerMiddle = $(".swiper-container").height();
+			var newsStreamContainerMiddleSum = newsStreamContainerMiddle - (newsStreamContainerTop + newsStreamContainerBottom);
+			$(".news-stream-container-middle").css('height', (newsStreamContainerMiddleSum));
 		});
 	},
 	onSlideChangeEnd: function() {
@@ -93,13 +96,17 @@ var swiper = new Swiper('.swiper-container', {
 			frame.each( function() {
 				var url = $(this).attr('src').split('?')[0];
 				this.contentWindow.postMessage(JSON.stringify({ method: 'play' }), url);
+				this.contentWindow.postMessage(JSON.stringify({ method: 'setVolume', 'value': '0' }), url);
 			});
 		}
 		$(".video-ad-vimeo.swiper-slide-active").each(function() {
 			var elementPlay = $(this).find("iframe");
 			playVideoVimeo(elementPlay);
-			var happeningNowContainer = $(".swiper-container");
-			$(".news-stream-container-middle").css('height', (happeningNowContainer.height() - 220));
+			var newsStreamContainerTop = $(".news-stream-container-top").outerHeight();
+			var newsStreamContainerBottom = $(".news-stream-container-bottom").innerHeight();
+			var newsStreamContainerMiddle = $(".swiper-container").height();
+			var newsStreamContainerMiddleSum = newsStreamContainerMiddle - (newsStreamContainerTop + newsStreamContainerBottom);
+			$(".news-stream-container-middle").css('height', (newsStreamContainerMiddleSum));
 		});
 	}
 });
@@ -217,8 +224,11 @@ function PCViewUpdate() {
 		});
 		return false;
 	}
-	var happeningNowContainer = $(".swiper-container");
-	$(".news-stream-container-middle").css('height', (happeningNowContainer.height() - 220));
+	var newsStreamContainerTop = $(".news-stream-container-top").outerHeight();
+	var newsStreamContainerBottom = $(".news-stream-container-bottom").innerHeight();
+	var newsStreamContainerMiddle = $(".swiper-container").height();
+	var newsStreamContainerMiddleSum = newsStreamContainerMiddle - (newsStreamContainerTop + newsStreamContainerBottom);
+	$(".news-stream-container-middle").css('height', (newsStreamContainerMiddleSum));
 }
 $(window).load(PCViewUpdate);
 $(window).resize(PCViewUpdate);
