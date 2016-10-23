@@ -46,6 +46,17 @@ http://www.springframework.org/schema/security/spring-security-oauth2.xsd">
 			position="PRE_AUTH_FILTER" />
 	</sec:http>
 
+	<!-- Managing Tokens Start-->
+	<bean id="tokenStore"
+		class="org.springframework.security.oauth2.provider.token.store.JwtTokenStore">
+		<constructor-arg name="jwtTokenEnhancer" ref="accessTokenConverter" />
+	</bean>		
+	<bean id="accessTokenConverter" 
+		class="org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter">
+		<property name="signingKey"><value>123</value></property>
+	</bean>
+	<!-- Managing Tokens End-->
+	
 	<bean id="oauthAuthenticationEntryPoint"
 		class="org.springframework.security.oauth2.provider.error.OAuth2AuthenticationEntryPoint" />
 

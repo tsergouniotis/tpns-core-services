@@ -6,9 +6,6 @@
 		<getter name="destinations">
 			<constraint annotation="com.tpns.admin.validation.constraints.NotEmpty" />
 		</getter>
-		<getter name="subject">
-			<constraint annotation="javax.validation.constraints.NotNull" />
-		</getter>
 		<getter name="status">
 			<constraint annotation="javax.validation.constraints.NotNull" />
 		</getter>
