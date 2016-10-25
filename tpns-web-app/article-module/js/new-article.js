@@ -82,8 +82,12 @@ $(document).ready( function() {
 		},
 	});
 	
-	
-	
-	
+	var article = new Article();
+
+	var headLineView = new HeadLineView({
+	      model: article
+	});		
+
+	$('#headlineContainer').append(headLineView.render().el);
 	
 });
