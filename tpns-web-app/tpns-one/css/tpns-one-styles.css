@@ -655,9 +655,6 @@ header {
 .content-area-container {
 	position:relative; width:100%; height:auto; padding:0px 20px; margin:20px 0px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
 }
-/*
-.heightful { position:relative; background:#f6f6f6; height:800px; width:100%; padding:0; margin:0; }
-*/
 /* Breadcrumbs Area
 ------------------------------------------------------------------------------- */
 .breadcrumbs-container {
@@ -669,7 +666,7 @@ header {
 .headline-container {
 	display:table; width:100%; table-layout:fixed;
 }
-/* Swipper Area
+/* Kicker - Swipper Area
 ------------------------------------------------------------------------------- */
 .headline-slider-container {
 	display:table-cell; width:74%; height:auto; vertical-align:top; padding-right:2%;
@@ -755,11 +752,7 @@ header {
 	color:#3598dc; text-decoration:none;
 }
 
-
-	
-
-
-/* Happening Now Area
+/* News Stream Area
 ------------------------------------------------------------------------------- */
 .news-stream {
 	display:table-cell; width:24%; height:100%; vertical-align:top;
@@ -869,6 +862,77 @@ header {
 .news-stream-container-bottom h4 a:hover {
 	color:#323031; text-decoration:none;
 }
+
+/* Index Catgory Area
+-------------------------------------------------------------------------------*/
+
+
+
+
+
+.per-category-seperator-ad-container {
+	position:relative; top:0; left:0; padding-top:8.088888888888889%; margin:0; overflow:hidden;
+}
+.per-category-seperator-ad-container iframe {
+	position:absolute; left:50%; top:50%; -moz-transform:translateX(-50%) translateY(-50%); -webkit-transform:translateX(-50%) translateY(-50%); -o-transform:translateX(-50%) translateY(-50%); -ms-transform:translateX(-50%) translateY(-50%); transform:translateX(-50%) translateY(-50%); max-width:100%; min-height:100%; max-height:100%;
+}
+.per-category-seperator-ad-container a {
+	display:inline-block; position:absolute; top:0; right:0; bottom:0; left:0;
+}
+
+
+
+
+/*
+
+
+
+.article-kicker-image {
+	position:relative; background:#323031; padding:0; padding-top:56.25%; margin:0; overflow:hidden;
+}
+.article-kicker-image img, .article-kicker-image iframe {
+	position:absolute; width:100%; left:0; top:50%; -moz-transform:translateY(-50%); -webkit-transform:translateY(-50%); -o-transform:translateY(-50%); -ms-transform:translateY(-50%); transform:translateY(-50%);
+}
+.article-kicker-image iframe {
+	min-height:100%; max-height:100%;
+}
+.per-category-seperator-ad-container iframe {
+	width:100%; height:auto; 0.1236263736263736
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Media queries
