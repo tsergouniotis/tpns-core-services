@@ -12,6 +12,7 @@ var HeadLineView = Backbone.View.extend({
 		html+='<h6 class="limit textr">100</h6>';
 		html+='<div class="new-article-content-options">';
 		html+='<p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label">Show as Breaking News</span></label></p>';
+		html+='</div>';
 		this.$el.html(html);
 		return this;
 	}

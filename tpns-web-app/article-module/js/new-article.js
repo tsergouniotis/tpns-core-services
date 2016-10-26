@@ -88,6 +88,6 @@ $(document).ready( function() {
 	      model: article
 	});		
 
-	$('#headlineContainer').append(headLineView.render().el);
+	$('.headlineContainer').append(headLineView.render().el);
 	
 });
