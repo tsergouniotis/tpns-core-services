@@ -12,7 +12,7 @@
 	</persistence-unit-metadata>
 
 	<entity class="com.tpns.domain.article.Article" name="Article"
-		cacheable="true">
+		cacheable="true" access="FIELD">
 		<table name="articles" />
 		<entity-listeners>
 			<entity-listener class="com.tpns.article.repository.ArticleListener">
@@ -21,8 +21,8 @@
 			</entity-listener>
 		</entity-listeners>
 		<attributes>
-			<id name="id" access="FIELD">
-				<column name="article_id" />
+			<id name="id">
+				<column name="database_id" />
 				<generated-value strategy="SEQUENCE" generator="ARTICLESEQ" />
 				<sequence-generator name="ARTICLESEQ"
 					sequence-name="ARTICLESEQ" allocation-size="1" />
@@ -32,19 +32,10 @@
 			</basic>
 			<basic name="headline">
 				<column name="headline" length="255" />
-			</basic>	
-			<basic name="subHead">
-				<column name="subHead" length="255" />
 			</basic>
-			<basic name="softLead">
-				<column name="softLead" length="255" />
-			</basic>		
-			<basic name="hardLead">
-				<column name="hardLead" length="255" />
-			</basic>	
-			<basic name="kicker">
-				<column name="kicker" length="255" />
-			</basic>	
+			<basic name="subHead">
+				<column name="sub_head" length="255" />
+			</basic>
 			<basic name="content">
 				<column name="content" length="8096" />
 			</basic>
@@ -63,25 +54,99 @@
 			<basic name="postedAt">
 				<column name="posted_at" />
 			</basic>
-			<version name="version" access="FIELD" />
-			<many-to-one name="category" fetch="EAGER">
-				<join-column name="category_id" />
-			</many-to-one>
-			<one-to-many name="audits" access="FIELD" fetch="EAGER">
+
+			<version name="version" />
+
+			<one-to-many name="audits" fetch="EAGER">
 				<join-column name="article_id" />
 			</one-to-many>
+
+			<one-to-one name="billboard">
+				<primary-key-join-column name="article_sid" />
+			</one-to-one>
+
+			<one-to-one name="lead">
+				<primary-key-join-column name="article_sid" />
+			</one-to-one>
+
 			<many-to-many name="keywords" fetch="EAGER">
 				<join-table name="article_keywords">
-					<join-column name="article_id" />
+					<join-column name="article_sid" />
 					<inverse-join-column name="keyword" />
 				</join-table>
 			</many-to-many>
 			<many-to-many name="resources" fetch="EAGER">
 				<join-table name="article_resources">
-					<join-column name="article_id" />
+					<join-column name="article_sid" />
 					<inverse-join-column name="resource_id" />
 				</join-table>
 			</many-to-many>
+			<many-to-many name="categories" fetch="EAGER">
+				<join-table name="article_categories">
+					<join-column name="article_sid" />
+					<inverse-join-column name="category_sid" />
+				</join-table>
+			</many-to-many>
+
+			<embedded name="kicker">
+				<attribute-override name="text">
+					<column name="kicker_text" />
+				</attribute-override>
+				<attribute-override name="image">
+					<column name="kicker_image_url" />
+				</attribute-override>
+				<attribute-override name="settings">
+					<column name="kicker_image_settings" />
+				</attribute-override>
+			</embedded>
+			<embedded name="nutshell">
+				<attribute-override name="text">
+					<column name="nutshell_text" />
+				</attribute-override>
+				<attribute-override name="image">
+					<column name="nutshell_image_url" />
+				</attribute-override>
+				<attribute-override name="settings">
+					<column name="nutshell_image_settings" />
+				</attribute-override>
+			</embedded>
+		</attributes>
+	</entity>
+
+	<entity class="com.tpns.domain.article.Billboard">
+		<attributes>
+			<id name="articleId">
+				<column name="article_sid" />
+				<generated-value strategy="IDENTITY" />
+			</id>
+			<one-to-one name="article" mapped-by="billboard" />
+			<embedded name="info">
+				<attribute-override name="text">
+					<column name="billboard_text" />
+				</attribute-override>
+				<attribute-override name="image">
+					<column name="billboard_image" />
+				</attribute-override>
+				<attribute-override name="settings">
+					<column name="billboard_settings" />
+				</attribute-override>
+			</embedded>
+		</attributes>
+	</entity>
+
+	<entity class="com.tpns.domain.article.Lead">
+		<attributes>
+			<id name="articleId">
+				<column name="article_sid" />
+				<generated-value strategy="IDENTITY" />
+			</id>
+			<basic name="soft">
+				<column name="soft_lead" />
+			</basic>
+			<basic name="hard">
+				<column name="hard_lead" />
+			</basic>
+			<one-to-one name="article" mapped-by="lead" />
 		</attributes>
 	</entity>
 
@@ -89,7 +154,7 @@
 		<table name="resources" />
 		<attributes>
 			<id name="id" access="FIELD">
-				<column name="resource_id" />
+				<column name="database_id" />
 				<generated-value strategy="SEQUENCE" generator="MEDIARESOURCESEQ" />
 				<sequence-generator name="MEDIARESOURCESEQ"
 					sequence-name="MEDIARESOURCESEQ" allocation-size="1" />
@@ -122,7 +187,7 @@
 		<table name="categories" />
 		<attributes>
 			<id name="id" access="FIELD">
-				<column name="category_id" updatable="false" />
+				<column name="database_id" updatable="false" />
 				<generated-value strategy="SEQUENCE" generator="CATEGORYSEQ" />
 				<sequence-generator name="CATEGORYSEQ"
 					sequence-name="CATEGORYSEQ" allocation-size="1" />
@@ -153,7 +218,7 @@
 		<table name="audit" />
 		<attributes>
 			<id name="id" access="FIELD">
-				<column name="audit_id" updatable="false" />
+				<column name="database_id" updatable="false" />
 				<generated-value strategy="SEQUENCE" generator="AUDITSEQ" />
 				<sequence-generator name="AUDITSEQ"
 					sequence-name="AUDITSEQ" allocation-size="1" />
@@ -172,6 +237,21 @@
 			</basic>
 		</attributes>
 	</entity>
+
+	<embeddable class="com.tpns.domain.article.ArticleInfo">
+		<attributes>
+			<basic name="text">
+				<column name="content_text" />
+			</basic>
+			<basic name="image">
+				<column name="image_url" />
+			</basic>
+			<basic name="settings">
+				<column name="image_settings" />
+				<enumerated>STRING</enumerated>
+			</basic>
+		</attributes>
+	</embeddable>
 
 	<converter
 		class="com.tpns.article.repository.persistence.converters.LocalDateAttributeConverter"

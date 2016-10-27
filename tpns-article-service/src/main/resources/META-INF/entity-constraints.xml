@@ -17,7 +17,7 @@
 				<element name="max">40960</element>
 			</constraint>
 		</field>
-		<field name="category">
+		<field name="categories">
 			<valid />
 		</field>
 	</bean>

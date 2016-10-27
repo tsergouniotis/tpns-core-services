@@ -20,7 +20,7 @@ http://www.springframework.org/schema/tx
 http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<!-- this is the Message Driven POJO (MDP) -->
-	<bean id="messageListener" class="com.tpns.admin.jms.AdminMessageListener" />
+	<bean id="messageListener" class="com.tpns.article.jms.ArticleMessageListener" />
 
 	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
 		<property name="connectionFactory" ref="connectionFactory" />
@@ -33,7 +33,7 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
 		<property name="connectionFactory" ref="connectionFactory" />
 		<property name="destination" ref="destination" />
 		<property name="messageListener" ref="messageListener" />
-		<property name="messageSelector" value="destination='skata'" />
+		<property name="messageSelector" value="destination='tpnsone'"/>		
 	</bean>
 
 	<bean id="connectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory"
@@ -44,8 +44,8 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
 				<property name="userName" value="admin" />
 				<property name="password" value="admin" />
 				<!-- http://activemq.apache.org/objectmessage.html -->
-				<!-- <property name="trustedPackages" ref="trustedPackages" /> -->
-				<property name="trustAllPackages" value="true" />
+<!-- 				<property name="trustedPackages" ref="trustedPackages" /> -->
+				<property name="trustAllPackages" value="true"/>
 			</bean>
 		</property>
 	</bean>
@@ -58,6 +58,5 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
 	<bean id="destination" class="org.apache.activemq.command.ActiveMQQueue">
 		<constructor-arg name="name" value="article_queue" />
 	</bean>
-
-
+	
 </beans>

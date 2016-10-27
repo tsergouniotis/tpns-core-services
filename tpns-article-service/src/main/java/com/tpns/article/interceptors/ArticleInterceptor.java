@@ -20,13 +20,13 @@ import com.tpns.domain.errors.BusinessError;
 import com.tpns.domain.errors.BusinessErrorCode;
 import com.tpns.domain.errors.BusinessException;
 
-//@Aspect
-//@Component
+@Aspect
+@Component
 public class ArticleInterceptor {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(ArticleInterceptor.class);
 
-	@Around("execution(* com.tpns.article.controllers.*.*(..))")
+	@Around("execution(* com.tpns.article.services.*.*(..))")
 	public Object proceed(ProceedingJoinPoint jp) throws Exception {
 
 		try {

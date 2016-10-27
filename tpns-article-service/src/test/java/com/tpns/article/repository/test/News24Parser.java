@@ -64,7 +64,7 @@ public class News24Parser implements Parser {
 
 			article.getResources().add(new MediaResource(MediaResourceType.IMAGE, img));
 
-			article.setSubject(title);
+			article.setSubHead(title);
 
 			return article;
 
@@ -97,11 +97,7 @@ public class News24Parser implements Parser {
 
 			final String content = body.text();// builder.toString();
 
-			final Article result = Article.create(null, null, content);
-
-			result.setShortDescription(description);
-
-			return result;
+			return Article.create(null, null, content);
 
 		} catch (final IOException e) {
 			return null;

@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tpns.admin.dispatcher.SynchronousArticleDispatcher;
-import com.tpns.admin.model.AdminArticle;
+import com.tpns.domain.article.Article;
 
 public class AdminMessageListener implements MessageListener {
 
@@ -24,10 +24,10 @@ public class AdminMessageListener implements MessageListener {
 		if (message instanceof ObjectMessage) {
 			try {
 				ObjectMessage objectMessage = ObjectMessage.class.cast(message);
-				AdminArticle article = AdminArticle.class.cast(objectMessage.getObject());
+				Article article = Article.class.cast(objectMessage.getObject());
 				LOGGER.info(article.getHeadline());
 
-				articleDispatcher.send(article);
+				// articleDispatcher.send(article);
 			} catch (JMSException ex) {
 				throw new RuntimeException(ex);
 			}

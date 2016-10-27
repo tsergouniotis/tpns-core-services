@@ -8,15 +8,15 @@
 	<changeSet author="thanasis.sergouniotis" id="create-categories-table">
 
 		<createTable tableName="categories">
-			<column name="category_id" type="SMALLINT">
+			<column name="database_id" type="SMALLINT">
 				<constraints nullable="false" />
 			</column>
-			<column name="category_name" type="VARCHAR(255)">
+			<column name="category_name" type="TEXT">
 				<constraints nullable="false" unique="true" />
 			</column>
 		</createTable>
 
-		<addPrimaryKey tableName="categories" columnNames="category_id"
+		<addPrimaryKey tableName="categories" columnNames="database_id"
 			constraintName="categories_pk" />
 
 		<createSequence sequenceName="categoryseq" startValue="1"
@@ -26,18 +26,20 @@
 
 	<changeSet author="thanasis.sergouniotis" id="create-articles-table">
 		<createTable tableName="articles">
-			<column name="article_id" type="BIGINT">
+			<column name="database_id" type="BIGINT">
 				<constraints nullable="false" />
 			</column>
-			<column name="author" type="VARCHAR(255)" />
-			<column name="headline" type="VARCHAR(255)" />
-			<column name="subHead" type="VARCHAR(255)" />
-			<column name="softLead" type="VARCHAR(255)" />
-			<column name="hardLead" type="VARCHAR(255)" />
-			<column name="kicker" type="VARCHAR(255)" />
-			<column name="content" type="VARCHAR(40960)" />
-			<column name="category_id" type="SMALLINT" />
-			<column name="status" type="VARCHAR(50)">
+			<column name="author" type="TEXT" />
+			<column name="kicker_text" type="TEXT" />
+			<column name="kicker_image_url" type="TEXT" />
+			<column name="kicker_image_settings" type="TEXT" />
+			<column name="headline" type="TEXT" />
+			<column name="sub_head" type="TEXT" />
+			<column name="content" type="TEXT" />
+			<column name="nutshell_text" type="TEXT" />
+			<column name="nutshell_image_url" type="TEXT" />
+			<column name="nutshell_image_settings" type="TEXT" />
+			<column name="status" type="TEXT">
 				<constraints nullable="false" />
 			</column>
 			<column name="created_at" type="DATETIME"
@@ -47,15 +49,11 @@
 			<column name="version" type="INTEGER" />
 		</createTable>
 
-		<addPrimaryKey tableName="articles" columnNames="article_id"
+		<addPrimaryKey tableName="articles" columnNames="database_id"
 			constraintName="articles_pk" />
 
 		<createSequence sequenceName="articleseq" incrementBy="1"
 			startValue="1" />
-
-		<addForeignKeyConstraint constraintName="article_category_fk"
-			referencedTableName="categories" baseColumnNames="category_id"
-			baseTableName="articles" referencedColumnNames="category_id" />
 
 		<createIndex indexName="article_author_idx" tableName="articles">
 			<column name="author" />
@@ -63,34 +61,91 @@
 
 	</changeSet>
 
+
+	<changeSet id="create-categories-articles-join-table" author="thanassis.sergouniotis">
+		<createTable tableName="articles_categories">
+			<column name="article_sid" type="BIGINT" />
+			<column name="category_sid" type="BIGINT" />
+		</createTable>
+
+		<addPrimaryKey tableName="articles_categories"
+			columnNames="article_sid,category_sid" constraintName="categories_articles_pk" />
+
+		<addForeignKeyConstraint constraintName="articles_categories_article_fk"
+			referencedTableName="articles" baseColumnNames="article_sid"
+			baseTableName="articles_categories" referencedColumnNames="database_id" />
+
+		<addForeignKeyConstraint constraintName="articles_categories_category_fk"
+			referencedTableName="categories" baseColumnNames="category_sid"
+			baseTableName="articles_categories" referencedColumnNames="database_id" />
+
+	</changeSet>
+
+
+	<changeSet id="create-billboard-table" author="thanassis.sergouniotis">
+		<createTable tableName="billboards">
+			<column name="article_sid" type="BIGINT" />
+			<column name="billboard_text" type="TEXT" />
+			<column name="billboard_image_url" type="TEXT" />
+			<column name="billboard_image_settings" type="TEXT" />
+		</createTable>
+
+		<addPrimaryKey tableName="billboards" columnNames="article_sid"
+			constraintName="billboard_pk" />
+
+		<addForeignKeyConstraint constraintName="article_billboards_fk"
+			referencedTableName="articles" baseColumnNames="article_sid"
+			baseTableName="billboards" referencedColumnNames="database_id" />
+
+	</changeSet>
+
+
+	<changeSet id="create-lead-table" author="thanassis.sergouniotis">
+		<createTable tableName="leads">
+			<column name="article_sid" type="BIGINT" />
+			<column name="soft_lead" type="TEXT" />
+			<column name="hard_lead" type="TEXT" />
+		</createTable>
+
+		<addPrimaryKey tableName="leads" columnNames="article_sid"
+			constraintName="leads_pk" />
+
+		<addForeignKeyConstraint constraintName="article_leads_fk"
+			referencedTableName="articles" baseColumnNames="article_sid"
+			baseTableName="leads" referencedColumnNames="database_id" />
+
+	</changeSet>
+
+
+
 	<changeSet author="thanasis.sergouniotis" id="create-audit-table">
 		<createTable tableName="audit">
-			<column name="audit_id" type="BIGINT">
+			<column name="database_id" type="BIGINT">
 				<constraints nullable="false" />
 			</column>
-			<column name="article_id" type="BIGINT">
+			<column name="article_sid" type="BIGINT">
 				<constraints nullable="true" /><!-- unfortunatelly this has 
 					to be done because JPA handles Cascade.persist on one2many relationships 
 					as described bellow : 1st inserts the owning entity 2nd inserts the not owning 
 					entity 3rd updates the not owning entity ( updates the fk- in our case the 
 					article_id ) -->
 			</column>
-			<column name="who" type="VARCHAR(255)" />
-			<column name="what" type="VARCHAR(50)">
+			<column name="who" type="TEXT" />
+			<column name="what" type="TEXT">
 				<constraints nullable="false" />
 			</column>
 			<column name="when" type="DATETIME" defaultValueComputed="CURRENT_TIMESTAMP" />
 		</createTable>
 
-		<addPrimaryKey tableName="audit" columnNames="audit_id"
+		<addPrimaryKey tableName="audit" columnNames="database_id"
 			constraintName="audit_pk" />
 
 		<createSequence sequenceName="auditseq" incrementBy="1"
 			startValue="1" />
 
 		<addForeignKeyConstraint constraintName="article_audit_fk"
-			referencedTableName="articles" baseColumnNames="article_id"
-			baseTableName="audit" referencedColumnNames="article_id" />
+			referencedTableName="articles" baseColumnNames="article_sid"
+			baseTableName="audit" referencedColumnNames="database_id" />
 
 		<createIndex indexName="audit_who_idx" tableName="audit">
 			<column name="who" />
@@ -101,41 +156,41 @@
 	<changeSet author="panos.zografos" id="create-media-resources-table">
 
 		<createTable tableName="article_resources">
-			<column name="article_id" type="BIGINT">
+			<column name="article_sid" type="BIGINT">
 				<constraints nullable="false" />
 			</column>
-			<column name="resource_id" type="BIGINT">
+			<column name="resource_sid" type="BIGINT">
 				<constraints nullable="false" />
 			</column>
 		</createTable>
 
 		<createTable tableName="resources">
-			<column name="resource_id" type="BIGINT">
+			<column name="database_id" type="BIGINT">
 				<constraints nullable="false" />
 			</column>
-			<column name="resource_type" type="VARCHAR(50)" />
-			<column name="url" type="VARCHAR(2048)" />
+			<column name="resource_type" type="TEXT" />
+			<column name="url" type="TEXT" />
 		</createTable>
 
 		<createSequence sequenceName="MEDIARESOURCESEQ"
 			startValue="1" incrementBy="1" />
 
-		<addPrimaryKey tableName="resources" columnNames="resource_id"
+		<addPrimaryKey tableName="resources" columnNames="database_id"
 			constraintName="media_resources_pk" />
 
 		<addForeignKeyConstraint constraintName="article_resource_fk"
-			referencedTableName="articles" baseColumnNames="article_id"
-			baseTableName="article_resources" referencedColumnNames="article_id" />
+			referencedTableName="articles" baseColumnNames="article_sid"
+			baseTableName="article_resources" referencedColumnNames="database_id" />
 
 		<addForeignKeyConstraint constraintName="media_resource_fk"
-			referencedTableName="resources" baseColumnNames="resource_id"
-			baseTableName="article_resources" referencedColumnNames="resource_id" />
+			referencedTableName="resources" baseColumnNames="resource_sid"
+			baseTableName="article_resources" referencedColumnNames="database_id" />
 
 	</changeSet>
 
 	<changeSet author="thanasis.sergouniotis" id="create-keyword-tables">
 		<createTable tableName="keywords">
-			<column name="keyword" type="VARCHAR(1024)">
+			<column name="keyword" type="TEXT">
 				<constraints nullable="false" />
 			</column>
 			<column name="version" type="INTEGER" />
@@ -146,10 +201,10 @@
 
 
 		<createTable tableName="article_keywords">
-			<column name="keyword" type="VARCHAR(1024)">
+			<column name="keyword" type="TEXT">
 				<constraints nullable="false" />
 			</column>
-			<column name="article_id" type="BIGINT">
+			<column name="article_sid" type="BIGINT">
 				<constraints nullable="false" />
 			</column>
 		</createTable>
@@ -159,21 +214,21 @@
 			baseTableName="article_keywords" referencedColumnNames="keyword" />
 
 		<addForeignKeyConstraint constraintName="article_keyword_article_fk"
-			referencedTableName="articles" baseColumnNames="article_id"
-			baseTableName="article_keywords" referencedColumnNames="article_id" />
+			referencedTableName="articles" baseColumnNames="article_sid"
+			baseTableName="article_keywords" referencedColumnNames="database_id" />
 
 
 	</changeSet>
 
 	<changeSet author="thanasis.sergouniotis" id="create-applications-table">
 		<createTable tableName="applications">
-			<column name="application_id" type="VARCHAR(255)">
+			<column name="application_id" type="TEXT">
 				<constraints nullable="false" />
 			</column>
-			<column name="endpoint" type="VARCHAR(255)">
+			<column name="endpoint" type="TEXT">
 				<constraints nullable="false" />
 			</column>
-			<column name="client_id" type="VARCHAR(255)">
+			<column name="client_id" type="TEXT">
 				<constraints nullable="false" />
 			</column>
 			<column name="version" type="INTEGER" />
@@ -187,10 +242,10 @@
 	<changeSet author="thanasis.sergouniotis" id="create-application-params-table">
 
 		<createTable tableName="application_parameters">
-			<column name="key" type="VARCHAR(255)">
+			<column name="key" type="TEXT">
 				<constraints nullable="false" />
 			</column>
-			<column name="value" type="VARCHAR(255)">
+			<column name="value" type="TEXT">
 				<constraints nullable="false" />
 			</column>
 		</createTable>
@@ -203,23 +258,23 @@
 	<changeSet author="thanasis.sergouniotis" id="drop-applications-table">
 		<dropTable tableName="applications" />
 	</changeSet>
-		
+
 	<changeSet id="create_oauth_tables" author="t.sergouniotis">
 
 		<createTable tableName="oauth_client_details">
-			<column name="client_id" type="VARCHAR(256)">
+			<column name="client_id" type="TEXT">
 				<constraints nullable="false" />
 			</column>
-			<column name="resource_ids" type="VARCHAR(256)" />
-			<column name="client_secret" type="VARCHAR(256)" />
-			<column name="scope" type="VARCHAR(256)" />
-			<column name="authorized_grant_types" type="VARCHAR(256)" />
-			<column name="web_server_redirect_uri" type="VARCHAR(256)" />
-			<column name="authorities" type="VARCHAR(256)" />
+			<column name="resource_ids" type="TEXT" />
+			<column name="client_secret" type="TEXT" />
+			<column name="scope" type="TEXT" />
+			<column name="authorized_grant_types" type="TEXT" />
+			<column name="web_server_redirect_uri" type="TEXT" />
+			<column name="authorities" type="TEXT" />
 			<column name="access_token_validity" type="INTEGER" />
 			<column name="refresh_token_validity" type="INTEGER" />
-			<column name="additional_information" type="VARCHAR(4096)" />
-			<column name="autoapprove" type="VARCHAR(256)" />
+			<column name="additional_information" type="TEXT" />
+			<column name="autoapprove" type="TEXT" />
 		</createTable>
 
 		<addPrimaryKey columnNames="client_id" tableName="oauth_client_details"

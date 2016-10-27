@@ -24,4 +24,5 @@ public class Application extends RepositoryRestMvcConfiguration {
 		validatingListener.addValidator("beforeCreate", validator);
 		validatingListener.addValidator("beforeSave", validator);
 	}
+
 }

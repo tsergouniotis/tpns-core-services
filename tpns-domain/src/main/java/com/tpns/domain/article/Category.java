@@ -1,8 +1,10 @@
 package com.tpns.domain.article;
 
+import java.io.Serializable;
+
 import com.tpns.domain.utils.StringUtils;
 
-public class Category {
+public class Category implements Serializable {
 
 	private Long id;
 

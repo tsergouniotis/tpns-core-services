@@ -4,9 +4,11 @@ import java.io.Serializable;
 import java.time.Clock;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 public class Article implements Serializable {
@@ -17,19 +19,21 @@ public class Article implements Serializable {
 
 	private String author;
 
+	private ArticleInfo kicker;
+
 	private String headline;
 
 	private String subHead;
 
-	private String softLead;
-
-	private String hardLead;
+	private Lead lead;
 
 	private String content;
 
-	private String kicker;
+	private Billboard billboard;
 
-	private Category category;
+	private ArticleInfo nutshell;
+
+	private Set<Category> categories;
 
 	private ArticleStatus status;
 
@@ -71,6 +75,14 @@ public class Article implements Serializable {
 		this.author = author;
 	}
 
+	public ArticleInfo getKicker() {
+		return kicker;
+	}
+
+	public void setKicker(ArticleInfo kicker) {
+		this.kicker = kicker;
+	}
+
 	public String getHeadline() {
 		return headline;
 	}
@@ -87,28 +99,12 @@ public class Article implements Serializable {
 		this.subHead = subHead;
 	}
 
-	public String getSoftLead() {
-		return softLead;
+	public Lead getLead() {
+		return lead;
 	}
 
-	public void setSoftLead(String softLead) {
-		this.softLead = softLead;
-	}
-
-	public String getHardLead() {
-		return hardLead;
-	}
-
-	public void setHardLead(String hardLead) {
-		this.hardLead = hardLead;
-	}
-
-	public String getKicker() {
-		return kicker;
-	}
-
-	public void setKicker(String kicker) {
-		this.kicker = kicker;
+	public void setLead(Lead lead) {
+		this.lead = lead;
 	}
 
 	public void setVersion(Long version) {
@@ -121,6 +117,22 @@ public class Article implements Serializable {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public Billboard getBillboard() {
+		return billboard;
+	}
+
+	public void setBillboard(Billboard billboard) {
+		this.billboard = billboard;
+	}
+
+	public ArticleInfo getNutshell() {
+		return nutshell;
+	}
+
+	public void setNutshell(ArticleInfo nutshell) {
+		this.nutshell = nutshell;
 	}
 
 	public List<MediaResource> getResources() {
@@ -139,12 +151,32 @@ public class Article implements Serializable {
 		this.keywords = keywords;
 	}
 
-	public void setCategory(Category category) {
-		this.category = category;
+	public Set<Category> getCategories() {
+		if (null == this.categories) {
+			this.categories = new HashSet<>();
+		}
+		return Collections.unmodifiableSet(categories);
 	}
 
-	public Category getCategory() {
-		return category;
+	public void cleanCategories() {
+		if (Objects.nonNull(this.categories)) {
+			this.categories.clear();
+		}
+	}
+
+	public void setCategories(Set<Category> categories) {
+		this.categories = categories;
+	}
+
+	public boolean add(Category c) {
+		if (null == this.categories) {
+			this.categories = new HashSet<>();
+		}
+		return categories.add(c);
+	}
+
+	public void addAll(Collection<Category> categories) {
+		this.categories.addAll(categories);
 	}
 
 	public ArticleStatus getStatus() {
@@ -202,7 +234,7 @@ public class Article implements Serializable {
 	public void update(Article article) {
 		this.status = article.getStatus();
 		this.content = article.getContent();
-		this.category = article.getCategory();
+		this.categories = article.getCategories();
 		this.resources = article.getResources();
 		this.updatedAt = LocalDateTime.now(Clock.systemUTC());
 	}
@@ -211,11 +243,11 @@ public class Article implements Serializable {
 		return new Article(id, content);
 	}
 
-	public static Article create(String subject, String content, Category category, String author, ArticleStatus status, LocalDateTime createdAt, LocalDateTime updatedAt,
-			LocalDateTime postedAt, Set<String> destinations, List<MediaResource> mediaResources) {
+	public static Article create(String content, Set<Category> categories, String author, ArticleStatus status, LocalDateTime createdAt, LocalDateTime updatedAt,
+			LocalDateTime postedAt, List<MediaResource> mediaResources) {
 		Article article = new Article();
 		article.setContent(content);
-		article.setCategory(category);
+		article.setCategories(categories);
 		article.setAuthor(author);
 		article.setStatus(status);
 		article.setCreatedAt(createdAt);

@@ -7,27 +7,27 @@
 	<changeSet author="thanasis.sergouniotis" id="insert-categories">
 
 		<insert tableName="categories">
-			<column name="category_id" valueSequenceNext="CATEGORYSEQ" />
+			<column name="database_id" valueSequenceNext="CATEGORYSEQ" />
 			<column name="category_name" value="politics" />
 		</insert>
 
 		<insert tableName="categories">
-			<column name="category_id" valueSequenceNext="CATEGORYSEQ" />
+			<column name="database_id" valueSequenceNext="CATEGORYSEQ" />
 			<column name="category_name" value="economy" />
 		</insert>
 
 		<insert tableName="categories">
-			<column name="category_id" valueSequenceNext="CATEGORYSEQ" />
+			<column name="database_id" valueSequenceNext="CATEGORYSEQ" />
 			<column name="category_name" value="sports" />
 		</insert>
 
 		<insert tableName="categories">
-			<column name="category_id" valueSequenceNext="CATEGORYSEQ" />
+			<column name="database_id" valueSequenceNext="CATEGORYSEQ" />
 			<column name="category_name" value="technology" />
 		</insert>
 
 		<insert tableName="categories">
-			<column name="category_id" valueSequenceNext="CATEGORYSEQ" />
+			<column name="database_id" valueSequenceNext="CATEGORYSEQ" />
 			<column name="category_name" value="social" />
 		</insert>
 
@@ -59,8 +59,17 @@
 			<column name="key" value="user.service.uri" />
 			<column name="value" value="http://localhost:8080/user-service/v1/user" />
 		</insert>
-
+		
 	</changeSet>
+	
+	<changeSet author="thanasis.sergouniotis" id="insert-application-parameters-jms-selector">
+
+		<insert tableName="application_parameters">
+			<column name="key" value="article.jms.selector" />
+			<column name="value" value="destination='foo'" />
+		</insert>
+		
+	</changeSet>	
 
 	<changeSet id="insert_oauth_clients" author="t.sergouniotis">
 

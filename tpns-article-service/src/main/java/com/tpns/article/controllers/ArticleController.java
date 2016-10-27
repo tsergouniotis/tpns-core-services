@@ -18,7 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tpns.article.repository.ArticleRepository;
+import com.tpns.article.errors.ArticleNotFoundException;
+import com.tpns.article.services.ArticleService;
 import com.tpns.domain.article.Article;
 import com.tpns.domain.article.ArticleStatus;
 
@@ -27,31 +28,31 @@ import com.tpns.domain.article.ArticleStatus;
 public class ArticleController {
 
 	@Autowired
-	private ArticleRepository articleRepository;
+	private ArticleService articleService;
 
 	@RequestMapping(produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }, method = RequestMethod.GET)
 	public List<Article> findAll() throws Exception {
-		return articleRepository.findAll();
+		return articleService.findAll();
 	}
 
 	@RequestMapping(produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }, method = RequestMethod.GET, path = "/published")
 	public List<Article> findPublished() throws Exception {
-		return articleRepository.findByStatus(ArticleStatus.PUBLISHED);
+		return articleService.findByStatus(ArticleStatus.PUBLISHED);
 	}
 
 	@RequestMapping(produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }, method = RequestMethod.GET, path = "/findPublishedByCategory")
 	public List<Article> findPublished(@RequestParam("catName") @NotNull String catName) throws Exception {
-		return articleRepository.findByCategoryName(catName);
+		return articleService.findByCategoriesName(catName);
 	}
 
 	@RequestMapping(produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }, method = RequestMethod.GET, path = "/{id}")
-	public ResponseEntity<Article> find(@PathVariable("id") @NotNull Long id) throws Exception {
-		Article article = articleRepository.findOne(id);
-		HttpStatus status = HttpStatus.OK;
-		if (null == article) {
-			status = HttpStatus.NOT_FOUND;
+	public ResponseEntity<Article> find(@PathVariable("id") @NotNull Long id) {
+		try {
+			Article article = articleService.findOne(id);
+			return new ResponseEntity<Article>(article, HttpStatus.OK);
+		} catch (ArticleNotFoundException e) {
+			return new ResponseEntity<Article>(HttpStatus.NOT_FOUND);
 		}
-		return new ResponseEntity<Article>(article, status);
 	}
 
 	@RequestMapping(produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }, method = RequestMethod.GET, path = "/search/{key}")
@@ -68,7 +69,7 @@ public class ArticleController {
 	@RequestMapping(consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }, produces = { MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE }, method = RequestMethod.POST)
 	public ResponseEntity<Article> save(@Valid @RequestBody Article article) throws Exception {
-		articleRepository.save(article);
+		articleService.save(article);
 		return new ResponseEntity<Article>(article, HttpStatus.OK);
 	}
 
@@ -83,7 +84,7 @@ public class ArticleController {
 	@RequestMapping(consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }, produces = { MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE }, method = RequestMethod.DELETE, path = "/{id}")
 	public ResponseEntity<String> delete(@PathVariable("id") Long id) throws Exception {
-		articleRepository.delete(id);
+		articleService.delete(id);
 		return new ResponseEntity<String>(HttpStatus.OK);
 	}
 

@@ -58,7 +58,7 @@ http://www.springframework.org/schema/util/spring-util.xsd">
 		class="org.springframework.security.oauth2.provider.token.RemoteTokenServices">
 		<property name="restTemplate" ref="restTemplate" />
 		<property name="checkTokenEndpointUrl"
-			value="http://userService:8080/user-service/oauth/check_token" />
+			value="http://userservice:8080/user-service/oauth/check_token" />
 		<property name="clientId" value="admin-webapp" />
 		<property name="clientSecret" value="secret" />
 	</bean>

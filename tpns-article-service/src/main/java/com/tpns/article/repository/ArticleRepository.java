@@ -11,6 +11,6 @@ public interface ArticleRepository extends JpaRepository<Article, Long> {
 
 	List<Article> findByStatus(ArticleStatus status);
 
-	List<Article> findByCategoryName(String categoryName);
+	List<Article> findByCategoriesName(String categoryName);
 
 }
