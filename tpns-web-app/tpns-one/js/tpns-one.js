@@ -229,6 +229,9 @@ function PCViewUpdate() {
 	var newsStreamContainerMiddle = $(".swiper-container").height();
 	var newsStreamContainerMiddleSum = newsStreamContainerMiddle - (newsStreamContainerTop + newsStreamContainerBottom);
 	$(".news-stream-container-middle").css('height', (newsStreamContainerMiddleSum));
+	// Contain the index category seperator advertisement
+	var indexCategoryAdSeperator = $(".per-category-seperator-ad-container iframe").width();
+	$(".per-category-seperator-ad-container a").css('width', (indexCategoryAdSeperator));
 }
 $(window).load(PCViewUpdate);
 $(window).resize(PCViewUpdate);
