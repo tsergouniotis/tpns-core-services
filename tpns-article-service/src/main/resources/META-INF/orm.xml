@@ -78,11 +78,11 @@
 			<many-to-many name="resources" fetch="EAGER">
 				<join-table name="article_resources">
 					<join-column name="article_sid" />
-					<inverse-join-column name="resource_id" />
+					<inverse-join-column name="resource_sid" />
 				</join-table>
 			</many-to-many>
 			<many-to-many name="categories" fetch="EAGER">
-				<join-table name="article_categories">
+				<join-table name="articles_categories">
 					<join-column name="article_sid" />
 					<inverse-join-column name="category_sid" />
 				</join-table>
