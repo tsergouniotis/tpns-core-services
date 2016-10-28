@@ -648,8 +648,11 @@ header {
 ------------------------------------------------------------------------------- */
 /* Global Content Area Controllers
 ------------------------------------------------------------------------------- */
-/* Global Article Category Controllers
+/* Global Article Category
 ------------------------------------------------------------------------------- */
+.global-article-category {
+	display:inline-block;
+}
 .global-article-category h5 {
 	position:relative; display:inline-block; line-height:34px; color:#FFFFFF; padding:0px 20px; margin-bottom:10px;
 }
@@ -674,8 +677,11 @@ header {
 .content-area-container {
 	position:relative; width:100%; height:auto; padding:0px 20px; margin:20px 0px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
 }
-
-
+/* Global Article Category Controllers
+------------------------------------------------------------------------------- */
+.global-article-category-controller-container {
+	float:right;
+}
 
 
 
@@ -888,8 +894,15 @@ header {
 
 /* Index Catgory Area
 -------------------------------------------------------------------------------*/
-
-
+.per-category-open-container {
+	margin-top:40px;
+}
+.per-category-content-container {
+	float:left; width:74%; height:auto; padding-right:2%;
+}
+.per-category-sidebar-container {
+	float:left; width:24%; height:auto;
+}
 
 
 
@@ -907,7 +920,20 @@ header {
 /* Index Catgory Area - Banner Seperator
 -------------------------------------------------------------------------------*/
 .per-category-seperator-ad-container {
-	position:relative; line-height:100%; padding-top:8.088888888888889%; margin:0 auto;
+	margin:40px 0px;
+}
+.per-category-seperator-ad-container p {
+	display:inline-block; position:relative; line-height:100%; padding:0; margin:0; overflow:hidden;
+}
+.per-category-seperator-ad-container iframe {
+	position:relative; max-width:100%; height:auto; padding:0; margin:0; border:none;
+}
+.per-category-seperator-ad-container a {
+	position:absolute; top:0; right:0; bottom:0; left:0;
+}
+/*
+.per-category-seperator-ad-container {
+	position:relative; line-height:100%; padding-top:10.1304347826087%; margin:0 auto;
 }
 .per-category-seperator-ad-container iframe {
 	position:absolute; max-width:100%; max-height:100%; padding:0; margin:0; left:50%; top:50%; -moz-transform:translateX(-50%) translateY(-50%); -webkit-transform:translateX(-50%) translateY(-50%); -o-transform:translateX(-50%) translateY(-50%); -ms-transform:translateX(-50%) translateY(-50%); transform:translateX(-50%) translateY(-50%); border:none;
@@ -915,7 +941,7 @@ header {
 .per-category-seperator-ad-container a {
 	position:absolute; top:0; right:0; bottom:0; left:50%; -moz-transform:translateX(-50%); -webkit-transform:translateX(-50%); -o-transform:translateX(-50%); -ms-transform:translateX(-50%); transform:translateX(-50%); 
 }
-
+*/
 
 
 
@@ -957,20 +983,24 @@ header {
 	.header-wrap { margin:0; }
 	.page-wrap, .sub-header-wrap { margin:0; margin-right:150px; }
 	.sub-header-container { padding:0 0 0 10px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; }
+	/*
 	.per-category-seperator-ad-container { padding-top: 9.0889%; }
+	*/
 }
-
+/*
 @media only screen and (max-width: 1400px) {
 	.per-category-seperator-ad-container { padding-top: 12.0889%; }
 }
-
+*/
 
 @media only screen and (max-width: 1100px) {
 	.p-ad-middle-large-image, .p-ad-middle-small-image { display:none; }
 	.p-ad-middle-medium-image { display:block; }
 	.p-ad-middle-image img { width:100%; }
 	.tag-header-taglist p span { margin-right:10px; transition:all 0.5s linear; -o-transition:all 0.5s linear; -moz-transition:all 0.5s linear; }
+	/*
 	.per-category-seperator-ad-container { padding-top: 13.0889%; }
+	*/
 }
 
 

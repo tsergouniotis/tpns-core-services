@@ -205,6 +205,10 @@ $(document).ready(function() {
 		$(".all-sub-sections-container").toggleClass("active");
 		$(".p-ad-middle-image, .all-categories-container").toggleClass("hidden");
 	});
+	// Contain the index category seperator advertisement
+	var indexCategoryAdSeperatorWidth = $(".per-category-seperator-ad-container iframe").width();
+	var indexCategoryAdSeperatorSum = indexCategoryAdSeperatorWidth / 8.088888888888889;
+	$(".per-category-seperator-ad-container p").css('height', (indexCategoryAdSeperatorSum));
 	
 });
 
@@ -230,8 +234,12 @@ function PCViewUpdate() {
 	var newsStreamContainerMiddleSum = newsStreamContainerMiddle - (newsStreamContainerTop + newsStreamContainerBottom);
 	$(".news-stream-container-middle").css('height', (newsStreamContainerMiddleSum));
 	// Contain the index category seperator advertisement
-	var indexCategoryAdSeperator = $(".per-category-seperator-ad-container iframe").width();
-	$(".per-category-seperator-ad-container a").css('width', (indexCategoryAdSeperator));
+	var indexCategoryAdSeperatorWidth = $(".per-category-seperator-ad-container iframe").innerWidth();
+	var indexCategoryAdSeperatorSum = indexCategoryAdSeperatorWidth / 8.088888888888889;
+	$(".per-category-seperator-ad-container p").css('height', (indexCategoryAdSeperatorSum));
+	console.log (indexCategoryAdSeperatorWidth);
+	console.log (indexCategoryAdSeperatorSum);
+	
 }
 $(window).load(PCViewUpdate);
 $(window).resize(PCViewUpdate);
