@@ -209,6 +209,27 @@ $(document).ready(function() {
 	var indexCategoryAdSeperatorWidth = $(".per-category-seperator-ad-container iframe").width();
 	var indexCategoryAdSeperatorSum = indexCategoryAdSeperatorWidth / 8.088888888888889;
 	$(".per-category-seperator-ad-container p").css('height', (indexCategoryAdSeperatorSum));
+	// Show/hide index content per category subcategories
+	$(".index-subcategories-button").click(function() {
+		$(this).find(".tpns-one-mobile-menu").toggleClass("hidden");
+		$(this).find(".tpns-one-close").toggleClass("hidden");
+		$(this).toggleClass("active");
+		$(this).parent().find(".index-subcategories").toggleClass("hidden");
+	});
+	// Index per category hide button
+	$(".index-category-hide-button").click(function() {
+		$(".index-subcategories-button").find(".tpns-one-mobile-menu").removeClass("hidden");
+		$(".index-subcategories-button").find(".tpns-one-close").addClass("hidden");
+		$(".index-subcategories-button").removeClass("active");
+		$(".index-subcategories-button").parent().find(".index-subcategories").addClass("hidden");
+		$(this).parent().parent().parent().parent().parent().parent().parent().find(".per-category-open-container").addClass("hidden");
+		$(this).parent().parent().parent().parent().parent().parent().parent().find(".per-category-closed-container").removeClass("hidden");
+	});
+	// Index per category show button
+	$(".index-category-show-button").click(function() {
+		$(this).parent().parent().parent().find(".per-category-open-container").removeClass("hidden");
+		$(this).parent().addClass("hidden");
+	});
 	
 });
 
@@ -237,8 +258,6 @@ function PCViewUpdate() {
 	var indexCategoryAdSeperatorWidth = $(".per-category-seperator-ad-container iframe").innerWidth();
 	var indexCategoryAdSeperatorSum = indexCategoryAdSeperatorWidth / 8.088888888888889;
 	$(".per-category-seperator-ad-container p").css('height', (indexCategoryAdSeperatorSum));
-	console.log (indexCategoryAdSeperatorWidth);
-	console.log (indexCategoryAdSeperatorSum);
 	
 }
 $(window).load(PCViewUpdate);

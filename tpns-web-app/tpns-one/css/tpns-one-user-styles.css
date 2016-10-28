@@ -5,9 +5,9 @@
 .header-mainnav-search-container:after { left:100%; }
 .header-mainnav-search-container:nth-of-type(1), .header-mainnav-search-container:nth-of-type(1):before, .header-mainnav-search-container:nth-of-type(1):after { background-color:#323031; }
 /* Category One Custom Styles */
-.header-mainnav-menu li.ellada a, .header-mainnav-overflow-items li.ellada a, .ellada .global-article-category h5:before, .ellada .global-article-category-container, .ellada .article-softlead-title h1 { border-color:#7e739d; }
-.header-mainnav-menu li.ellada a:hover, .header-mainnav-overflow-items li.ellada a:hover, .ellada .global-article-category h5 { background:#7e739d; color:#FFFFFF; }
-.news-stream-category-container .ellada { color:#7e739d; }
+.header-mainnav-menu li.ellada a, .header-mainnav-overflow-items li.ellada a, .ellada .global-article-category h5:before, .ellada .global-article-category-container, .ellada .article-softlead-title h1, .ellada .global-article-category-controller-container .global-table, .ellada .global-article-category-controller-container .global-table-cell, .ellada .global-article-category-controller-container .global-table-cell:nth-child(2) ul li ul.index-subcategories li { border-color:#7e739d; }
+.header-mainnav-menu li.ellada a:hover, .header-mainnav-overflow-items li.ellada a:hover, .ellada .global-article-category h5, .ellada .global-article-category-controller-container .global-table-cell h6 a:hover, .ellada .global-article-category-controller-container .global-table-cell:nth-child(2) ul li ul.index-subcategories li h6 a:hover, .ellada .global-article-category-controller-container .global-table-cell:nth-child(2) ul li .index-subcategories-button.active a { background:#7e739d; color:#FFFFFF; }
+.news-stream-category-container .ellada, .ellada .global-article-category-controller-container .global-table-cell h6 a { color:#7e739d; }
 /* Category Two Custom Styles */
 .header-mainnav-menu li.politikh a, .header-mainnav-overflow-items li.politikh a, .politikh .global-article-category h5:before, .politikh .global-article-category-container, .politikh .article-softlead-title h1 { border-color:#4c9174; }
 .header-mainnav-menu li.politikh a:hover, .header-mainnav-overflow-items li.politikh a:hover, .politikh .global-article-category h5 { background:#4c9174; color:#FFFFFF; }

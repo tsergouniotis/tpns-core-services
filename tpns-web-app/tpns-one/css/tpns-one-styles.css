@@ -682,11 +682,44 @@ header {
 .global-article-category-controller-container {
 	float:right;
 }
+.global-article-category-controller-container .global-table {
+	height:34px; border-width:1px; border-style:solid; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.global-article-category-controller-container .global-table-cell ul li {
+	position:relative;
+}
+.global-article-category-controller-container .global-table-cell h6 a {
+	display:block; line-height:30px;
+}
+.global-article-category-controller-container .global-table-cell h6 a:hover {
+	text-decoration:none;
+}
+.global-article-category-controller-container .global-table-cell:nth-child(1) h6 a {
+	padding:2px 12px 0px;
+}
+.global-article-category-controller-container .global-table-cell:nth-child(2) h6.index-subcategories-button a, .global-article-category-controller-container .global-table-cell:nth-child(3) h6 a {
+	width:38px; padding-bottom:2px;
+}
+.global-article-category-controller-container .global-table-cell:nth-child(2), .global-article-category-controller-container .global-table-cell:nth-child(3) {
+	border-left-width:1px; border-style:solid;
+}
+.global-article-category-controller-container .global-table-cell h6 a [class^="tpns-one-"]:before, .global-article-category-controller-container .global-table-cell h6 a [class*=" tpns-one-"]:before {
+	font-size:130%;
+}
+.global-article-category-controller-container .global-table-cell:nth-child(2) ul li ul.index-subcategories {
+	position:absolute; top:100%; right:-1px; width:auto; min-width:100%; z-index:1;
+}
+.global-article-category-controller-container .global-table-cell:nth-child(2) ul li ul.index-subcategories li {
+	width:auto; min-width:139px; border-width:1px; border-bottom-width:0px; border-style:solid;
+}
+.global-article-category-controller-container .global-table-cell:nth-child(2) ul li ul.index-subcategories li:last-child {
+	border-bottom-width:1px;
+}
+.global-article-category-controller-container .global-table-cell:nth-child(2) ul li ul.index-subcategories li h6 a {
+	display:block; background:#FFFFFF; width:auto; padding:0px 12px;
+}
 
-
-
-
-
+	
 
 
 
