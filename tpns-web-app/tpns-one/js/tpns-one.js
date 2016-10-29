@@ -227,8 +227,8 @@ $(document).ready(function() {
 	});
 	// Index per category show button
 	$(".index-category-show-button").click(function() {
-		$(this).parent().parent().parent().find(".per-category-open-container").removeClass("hidden");
-		$(this).parent().addClass("hidden");
+		$(this).parent().parent().parent().parent().parent().find(".per-category-open-container").removeClass("hidden");
+		$(this).parent().parent().parent().parent().addClass("hidden");
 	});
 	
 });
