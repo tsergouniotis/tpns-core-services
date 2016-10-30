@@ -7,6 +7,8 @@ import javax.jms.ObjectMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.jms.core.JmsTemplate;
 
 import com.tpns.article.errors.ArticleProcessingException;
 import com.tpns.article.services.ArticleService;
@@ -20,6 +22,14 @@ public class ArticleMessageListener implements MessageListener {
 
 	@Autowired
 	private ArticleService articleService;
+
+	@Autowired
+	@Qualifier("successJmsTemplate")
+	private JmsTemplate successJmsTemplate;
+
+	@Autowired
+	@Qualifier("failureJmsTemplate")
+	private JmsTemplate failureJmsTemplate;
 
 	@Override
 	public void onMessage(Message message) {
@@ -47,10 +57,10 @@ public class ArticleMessageListener implements MessageListener {
 
 		try {
 			doExecute(article, action);
-			sendToSuccessQ();
+			sendToSuccessQ(article);
 		} catch (Exception e) {
 			LOGGER.error(e.getMessage(), e);
-			sendToErrorQ();
+			sendToErrorQ(article);
 		}
 
 	}
@@ -75,13 +85,14 @@ public class ArticleMessageListener implements MessageListener {
 
 	}
 
-	private void sendToSuccessQ() {
-		throw new UnsupportedOperationException("Send to success queue has not been implemented yet");
+	private void sendToSuccessQ(Article article) {
+		Article a = Article.create(article.getGuid(), article.getContent(), null, article.getAuthor(), article.getStatus(), null, null, null, null);
+		successJmsTemplate.send(new ArticleJmsMessageCreator(a));
 	}
 
-	private void sendToErrorQ() {
-		throw new UnsupportedOperationException("Send to error queue has not been implemented yet");
-
+	private void sendToErrorQ(Article article) {
+		Article a = Article.create(article.getGuid(), article.getContent(), null, article.getAuthor(), article.getStatus(), null, null, null, null);
+		failureJmsTemplate.send(new ArticleJmsMessageCreator(a));
 	}
 
 }

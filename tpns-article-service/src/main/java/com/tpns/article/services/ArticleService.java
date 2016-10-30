@@ -34,7 +34,7 @@ public class ArticleService {
 	@Autowired
 	private Validator validator;
 
-	public Article save(@Valid Article article) throws ArticleProcessingException {
+	public Article save(Article article) throws ArticleProcessingException {
 
 		try {
 

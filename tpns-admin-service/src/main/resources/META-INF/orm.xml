@@ -15,7 +15,7 @@
 		<table name="properties" />
 		<named-query name="Property.findByPropertyIds">
 			<query>SELECT p from Property p where p.propertyId in (:propertyIds)</query>
-		</named-query>		
+		</named-query>
 		<attributes>
 			<id name="id" access="FIELD">
 				<column name="database_id" />
@@ -34,5 +34,54 @@
 			</basic>
 		</attributes>
 	</entity>
+
+	<entity class="com.tpns.admin.domain.ArticleId" access="PROPERTY">
+		<table name="articles" />
+		<attributes>
+			<id name="id">
+				<column name="database_id" />
+				<generated-value strategy="SEQUENCE" generator="ARTICLESEQ" />
+				<sequence-generator name="ARTICLESEQ"
+					sequence-name="ARTICLESEQ" allocation-size="1" />
+			</id>
+			<basic name="guid">
+				<column name="guid" insertable="false" updatable="false" />
+			</basic>
+			<transient name="guidStr"/>
+		</attributes>
+	</entity>
+
+	<entity class="com.tpns.admin.domain.ArticleDistributionReport"
+		access="FIELD">
+		<table name="article_distribution_report" />
+		<attributes>
+			<id name="id">
+				<column name="database_id" />
+				<generated-value strategy="SEQUENCE"
+					generator="ARTICLEDISTRIBUTIONREPORTSEQ" />
+				<sequence-generator name="ARTICLEDISTRIBUTIONREPORTSEQ"
+					sequence-name="ARTICLEDISTRIBUTIONREPORTSEQ" allocation-size="1" />
+			</id>
+			<basic name="property">
+				<column name="property" />
+			</basic>
+			<basic name="status">
+				<column name="processing_result" />
+			</basic>
+			<basic name="createdAt">
+				<column name="created_at" insertable="false" updatable="false" />
+			</basic>
+			<many-to-one name="articleId">
+				<join-column name="article_sid" />
+			</many-to-one>
+		</attributes>
+	</entity>
+
+	<converter
+		class="com.tpns.jpa.common.converters.LocalDateTimeAttributeConverter"
+		auto-apply="true" />
+
+<!-- 	<converter class="com.tpns.jpa.postgres.converters.UUIDConverter"
+		auto-apply="true" /> -->
 
 </entity-mappings>

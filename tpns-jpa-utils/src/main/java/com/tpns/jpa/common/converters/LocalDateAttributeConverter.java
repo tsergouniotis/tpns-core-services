@@ -1,4 +1,4 @@
-package com.tpns.article.repository.persistence.converters;
+package com.tpns.jpa.common.converters;
 
 import static java.time.ZoneId.systemDefault;
 

@@ -34,6 +34,7 @@ services:
     - POSTGRES_PASSWORD=tpns
     volumes:
     - ${HOME}/projects/tpns/data/admin/pgdata:/var/lib/postgresql/data
+    - ./initdb.d/admin:/docker-entrypoint-initdb.d
     networks:
     - core_net
   userservice:
@@ -109,11 +110,11 @@ services:
     - ACTIVEMQ_ADMIN_PASSWORD=admin
     - ACTIVEMQ_USER_LOGIN=user
     - ACTIVEMQ_USER_PASSWORD=user
-    - ACTIVEMQ_STATIC_QUEUES=article_queue
+    - ACTIVEMQ_STATIC_QUEUES=article_queue;success_queue;failure_queue
     - ACTIVEMQ_OPTS=-Dorg.apache.activemq.SERIALIZABLE_PACKAGES="*"
     volumes:
-    - ${HOME}/projects/tpns/data/admin/activemq/data:/data/activemq
-    - ${HOME}/projects/tpns/data/admin/activemq/logs:/var/log/activemq
+    - ${HOME}/projects/tpns/data/activemq/data:/data/activemq
+    - ${HOME}/projects/tpns/data/activemq/logs:/var/log/activemq
     networks:
     - core_net
   webapp:

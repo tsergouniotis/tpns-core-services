@@ -17,6 +17,8 @@ public class Article implements Serializable {
 
 	private Long id;
 
+	private String guid;
+
 	private String author;
 
 	private ArticleInfo kicker;
@@ -65,6 +67,14 @@ public class Article implements Serializable {
 
 	public Long getId() {
 		return id;
+	}
+
+	public String getGuid() {
+		return guid;
+	}
+
+	public void setGuid(String guid) {
+		this.guid = guid;
 	}
 
 	public String getAuthor() {
@@ -243,9 +253,10 @@ public class Article implements Serializable {
 		return new Article(id, content);
 	}
 
-	public static Article create(String content, Set<Category> categories, String author, ArticleStatus status, LocalDateTime createdAt, LocalDateTime updatedAt,
+	public static Article create(String guid, String content, Set<Category> categories, String author, ArticleStatus status, LocalDateTime createdAt, LocalDateTime updatedAt,
 			LocalDateTime postedAt, List<MediaResource> mediaResources) {
 		Article article = new Article();
+		article.setGuid(guid);
 		article.setContent(content);
 		article.setCategories(categories);
 		article.setAuthor(author);

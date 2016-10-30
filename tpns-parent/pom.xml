@@ -13,7 +13,9 @@
 
 	<modules>
 		<module>../tpns-build-tools</module>
-		<module>../tpns-common</module>
+		<module>../tpns-validation-utils</module>
+		<module>../tpns-jms-utils</module>
+		<module>../tpns-jpa-utils</module>
 		<module>../tpns-domain</module>
 		<module>../tpns-article-service</module>
 		<module>../tpns-user-service</module>
@@ -251,9 +253,19 @@
 			</dependency>
 			<dependency>
 				<groupId>com.tpns</groupId>
-				<artifactId>tpns-common</artifactId>
+				<artifactId>tpns-validation-utils</artifactId>
 				<version>${project.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>com.tpns</groupId>
+				<artifactId>tpns-jms-utils</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.tpns</groupId>
+				<artifactId>tpns-jpa-utils</artifactId>
+				<version>${project.version}</version>
+			</dependency>						
 			<!-- end of application dependencies -->
 
 			<!-- See page 25 in Spring Boot Reference Guide -->

@@ -1,5 +1,7 @@
 package com.tpns.article.controllers;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -8,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
+
+import com.tpns.article.errors.InvalidArticleException;
 
 @ControllerAdvice
 public class ExceptionHandlerController {
@@ -21,4 +25,15 @@ public class ExceptionHandlerController {
 		LOGGER.error(e.getMessage(), e);
 
 	}
+
+	@ExceptionHandler(value = { InvalidArticleException.class })
+	@ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = "Invalid Article")
+	public Map<String, String> invalidArticleExceptionHandler(HttpServletRequest request, Exception e) {
+
+		LOGGER.error(e.getMessage(), e);
+
+		return InvalidArticleException.class.cast(e).getErrors();
+
+	}
+
 }

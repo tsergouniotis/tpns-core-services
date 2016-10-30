@@ -27,6 +27,41 @@
 		</createIndex>
 	</changeSet>
 
+	<changeSet author="thanasis.sergouniotis" id="create-articles-table">
+		<createTable tableName="articles">
+			<column name="database_id" type="BIGINT" />
+			<column name="guid" type="UUID" defaultValue="gen_random_uuid()" />
+		</createTable>
+
+		<addPrimaryKey tableName="articles" columnNames="database_id" />
+
+		<createSequence sequenceName="articleseq" incrementBy="1"
+			startValue="1" />
+
+	</changeSet>
+
+	<changeSet author="thanasis.sergouniotis" id="create-article-report-table">
+
+		<createTable tableName="article_distribution_report">
+			<column name="database_id" type="BIGINT" />
+			<column name="article_sid" type="BIGINT" />
+			<column name="property" type="TEXT" />
+			<column name="processing_result" type="TEXT" />
+			<column name="created_at" type="DATETIME" defaultValueDate="CURRENT_TIMESTAMP" />
+		</createTable>
+
+		<addPrimaryKey tableName="article_distribution_report"
+			columnNames="database_id" />
+
+		<createSequence sequenceName="articledistributionreportseq"
+			incrementBy="1" startValue="1" />
+
+		<addForeignKeyConstraint constraintName="article_reports_fk"
+			referencedTableName="articles" baseColumnNames="article_sid"
+			baseTableName="article_distribution_report" referencedColumnNames="database_id" />
+
+	</changeSet>
+
 
 </databaseChangeLog>
 

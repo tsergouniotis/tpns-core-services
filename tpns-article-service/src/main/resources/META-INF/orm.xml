@@ -27,6 +27,9 @@
 				<sequence-generator name="ARTICLESEQ"
 					sequence-name="ARTICLESEQ" allocation-size="1" />
 			</id>
+			<basic name="guid">
+				<column name="guid" updatable="false" />
+			</basic>
 			<basic name="author">
 				<column name="author" />
 			</basic>
@@ -253,12 +256,11 @@
 		</attributes>
 	</embeddable>
 
-	<converter
-		class="com.tpns.article.repository.persistence.converters.LocalDateAttributeConverter"
+	<converter class="com.tpns.jpa.common.converters.LocalDateAttributeConverter"
 		auto-apply="true" />
 
 	<converter
-		class="com.tpns.article.repository.persistence.converters.LocalDateTimeAttributeConverter"
+		class="com.tpns.jpa.common.converters.LocalDateTimeAttributeConverter"
 		auto-apply="true" />
 
 </entity-mappings>

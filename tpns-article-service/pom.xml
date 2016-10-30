@@ -72,26 +72,21 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-jwt</artifactId>
 		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-jms</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>activemq-broker</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>activemq-pool</artifactId>
-		</dependency>				
 
 		<dependency>
 			<groupId>com.tpns</groupId>
 			<artifactId>tpns-domain</artifactId>
-		</dependency>	
+		</dependency>
+		
+		<dependency>
+			<groupId>com.tpns</groupId>
+			<artifactId>tpns-jms-utils</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.tpns</groupId>
+			<artifactId>tpns-jpa-utils</artifactId>
+		</dependency>					
 
 		<!-- Tomcat dependencies.This dependency is required from HIbernate. org.hibernate.cfg.beanvalidation.TypeSafeActivator 
 			requries EL Expression -->
@@ -111,16 +106,6 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
 		</dependency>
 
 		<dependency>

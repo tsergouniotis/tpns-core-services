@@ -68,5 +68,7 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
 		<prop key="databaseName">${ADMIN_DB_USER}</prop>
 	</util:properties>
 
+	<bean id="validator"
+		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
 
 </beans>

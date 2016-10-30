@@ -21,7 +21,7 @@
 
 		<dependency>
 			<groupId>com.tpns</groupId>
-			<artifactId>tpns-common</artifactId>
+			<artifactId>tpns-validation-utils</artifactId>
 		</dependency>
 
 	</dependencies>
