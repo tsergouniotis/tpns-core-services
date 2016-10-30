@@ -858,7 +858,7 @@ header {
 	margin-top:40px;
 }
 .per-category-content-container {
-	float:left; width:74%; height:auto; padding-right:2%;
+	float:left; width:73.5%; height:auto; padding-right:2%;
 }
 /* Index Article Category
 ------------------------------------------------------------------------------- */
@@ -932,14 +932,14 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 }
 /* Index Closed Article Category Controllers
 ------------------------------------------------------------------------------- */
-.per-category-closed-container-category, .per-category-closed-container-button {
+.per-category-closed-container-category {
 	padding:0px 30px;
 }
 .per-category-closed-container-article-table .global-table-cell:nth-child(1) {
-	width:150px;
+	width:144px;
 }
 .per-category-closed-container-article-image-container {
-	max-width:150px; max-height:90px;
+	max-width:150px; max-height:87px;
 }
 /* height of iframe divided by the width = aspect ratio */
 .per-category-closed-container-article-image {
@@ -951,16 +951,35 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .per-category-closed-container-image, .per-category-closed-container-title {
 	padding:0px 10px;
 }
-
-
-
-
-
+.per-category-closed-container a {
+	display:block; color:#FFFFFF;
+}
+.per-category-closed-container a:hover, .per-category-closed-container-article:hover h5 {
+	color:#323031; text-decoration:none;
+}
+.per-category-closed-container-article:hover .per-category-closed-container-article-image {
+	border:1px solid #323031;
+}
+.per-category-closed-container-button a {
+	display:block; line-height:97px; padding:0px 30px;
+}
+.per-category-closed-container-button a [class^="tpns-one-"]:before, .per-category-closed-container-button a [class*=" tpns-one-"]:before {
+	font-size:130%;
+}
+.per-category-closed-container .per-category-sidebar-container p, .per-category-closed-container .per-category-sidebar-container p a {
+	line-height:1; padding:0; margin:0;
+}
+.per-category-closed-container .per-category-sidebar-container p a {
+	display:block;
+}
+.per-category-closed-container .per-category-sidebar-container img {
+	width:100%; height:auto;
+}
 
 /* Index Catgory Sidebar Area
 -------------------------------------------------------------------------------*/
 .per-category-sidebar-container {
-	float:left; width:24%; height:auto;
+	float:left; width:24.5%; height:auto;
 }
 
 
