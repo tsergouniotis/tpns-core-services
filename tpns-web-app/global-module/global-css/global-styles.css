@@ -235,6 +235,7 @@ url("../global-fonts/tpns-admin-icons.svg#tpns-admin-icons") format("svg");
 .tpns-ai-sort-down:before { content: "\5e"; }
 .tpns-ai-sort-up:before { content: "\5f"; }
 .tpns-ai-seo:before { content: "\60"; }
+.tpns-ai-cloud-warning:before { content: "\7b"; }
 
 /* --------------------- Headers ---------------------- */
 h1 {

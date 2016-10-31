@@ -389,7 +389,7 @@
                                 <h6 class="limit textr">150</h6>
                             </div>
                         </div>
-                        <div class="new-article-form-content-container-half-width">
+                        <div class="new-article-form-content-container-half-width new-article-form-content-container-half-left">
                         	<div class="new-article-form-content-header">
                             	<div class="new-article-form-content-header-left">
                                 	<h3>Soft-Lead</h3>
@@ -483,6 +483,42 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="new-article-form-content-container-half-width new-article-form-content-container-half-left">
+                        	<div class="new-article-form-content-header">
+                            	<div class="new-article-form-content-header-left">
+                                	<h3>Nutshell</h3>
+                                </div>
+                            	<div class="new-article-form-content-header-right">
+                                    <div class="admin-click-menu-container">
+                                        <div class="admin-click-menu-button">
+                                            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="More information can be found here">?</a></p>
+                                        </div>
+                                        <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">
+                                            <p>A nutshell paragraph (also simply nutshell, or nut 'graph, nut graf, nutgraf, etc., in journalism jargon) is a brief paragraph (occasionally there can be more than one) that summarizes the news value of the story, sometimes bullet-pointed and/or set off in a box. Nut-shell paragraphs are used particularly in feature stories.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        	<div class="new-article-form-content-body">
+                                <textarea name="nutshellEditor" id="nutshellEditor" rows="10" cols="80" placeholder="Add Nutshell text here..."></textarea>
+                                <div class="image-upload-container">
+                                	<h5>Nutshell Image</h5>
+                                	<div id="nutshellUploader"></div>
+                                </div>
+                                <div class="new-article-content-options">
+                                	<p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label">Use Kicker Image</span></label></p>
+                                    <!-- This should be controlled by the client and not the Admin, do not delete for the time being -->
+                                	<!--
+                                    <div class="new-article-content-text-options-container">
+                                        <p class="admin-global-radio"><label><input type="radio" name="nutshell-img-options" value="img-above" checked><span class="admin-global-radio-label">Image above text</span></label></p>
+                                        <p class="admin-global-radio"><label><input type="radio" name="nutshell-img-options" value="img-before"><span class="admin-global-radio-label">Image before text</span></label></p>
+                                        <p class="admin-global-radio"><label><input type="radio" name="nutshell-img-options" value="img-after"><span class="admin-global-radio-label">Image after text</span></label></p>
+                                        <p class="admin-global-radio"><label><input type="radio" name="nutshell-img-options" value="img-bkg"><span class="admin-global-radio-label">Image as background</span></label></p>
+                                    </div> 
+                                	-->
+                                </div>
+                            </div>
+                        </div>
                         <div class="new-article-form-content-container-half-width">
                         	<div class="new-article-form-content-header">
                             	<div class="new-article-form-content-header-left">
@@ -507,19 +543,13 @@
                                 </div>
                                 <div class="new-article-content-options">
                                 	<p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label">Use Kicker Image</span></label></p>
-                                    <div class="new-article-content-text-options-container">
-                                        <p class="admin-global-radio"><label><input type="radio" name="billboard-img-options" value="img-above" checked><span class="admin-global-radio-label">Image above text</span></label></p>
-                                        <p class="admin-global-radio"><label><input type="radio" name="billboard-img-options" value="img-before"><span class="admin-global-radio-label">Image before text</span></label></p>
-                                        <p class="admin-global-radio"><label><input type="radio" name="billboard-img-options" value="img-after"><span class="admin-global-radio-label">Image after text</span></label></p>
-                                        <p class="admin-global-radio"><label><input type="radio" name="billboard-img-options" value="img-bkg"><span class="admin-global-radio-label">Image as background</span></label></p>
-                                    </div> 
                                 </div>
                             </div>
                         </div>
-                        <div class="new-article-form-content-container-half-width">
+                        <div class="new-article-form-content-container-full-width">
                         	<div class="new-article-form-content-header">
                             	<div class="new-article-form-content-header-left">
-                                	<h3>Nutshell</h3>
+                                	<h3>Guest Article</h3>
                                 </div>
                             	<div class="new-article-form-content-header-right">
                                     <div class="admin-click-menu-container">
@@ -527,25 +557,20 @@
                                             <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="More information can be found here">?</a></p>
                                         </div>
                                         <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">
-                                            <p>A nutshell paragraph (also simply nutshell, or nut 'graph, nut graf, nutgraf, etc., in journalism jargon) is a brief paragraph (occasionally there can be more than one) that summarizes the news value of the story, sometimes bullet-pointed and/or set off in a box. Nut-shell paragraphs are used particularly in feature stories.</p>
+                                            <p>An introduction to the article which is to be used in a secondary newspaper. It is written in such a way as to entice the reader to switch from the guest article page and to read the complete article which is to be found in the primary newspaper.</p>
+                                            <p>The text text found within this introduction does not normally exceed 500 characters</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         	<div class="new-article-form-content-body">
-                                <textarea name="nutshellEditor" id="nutshellEditor" rows="10" cols="80" placeholder="Add Nutshell text here..."></textarea>
+                                <textarea name="guestArticleEditor" id="guestArticleEditor" rows="10" cols="80" placeholder="Add Guest Article content here..."></textarea>
                                 <div class="image-upload-container">
-                                	<h5>Nutshell Image</h5>
-                                	<div id="nutshellUploader"></div>
+                                	<h5>Guest Article Image</h5>
+                                	<div id="guestArticleUploader"></div>
                                 </div>
                                 <div class="new-article-content-options">
-                                	<p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label">Use Kicker Image</span></label></p>
-                                    <div class="new-article-content-text-options-container">
-                                        <p class="admin-global-radio"><label><input type="radio" name="nutshell-img-options" value="img-above" checked><span class="admin-global-radio-label">Image above text</span></label></p>
-                                        <p class="admin-global-radio"><label><input type="radio" name="nutshell-img-options" value="img-before"><span class="admin-global-radio-label">Image before text</span></label></p>
-                                        <p class="admin-global-radio"><label><input type="radio" name="nutshell-img-options" value="img-after"><span class="admin-global-radio-label">Image after text</span></label></p>
-                                        <p class="admin-global-radio"><label><input type="radio" name="nutshell-img-options" value="img-bkg"><span class="admin-global-radio-label">Image as background</span></label></p>
-                                    </div> 
+                                	<p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label">Use Billboard Image</span></label></p>
                                 </div>
                             </div>
                         </div>
@@ -879,6 +904,7 @@
 		CKEDITOR.replace( 'softLeadEditor', { customConfig : 'tpns-custom-editors/softleadconfig.js' });
 		CKEDITOR.replace( 'hardLeadEditor', { customConfig : 'tpns-custom-editors/hardleadconfig.js' });
 		CKEDITOR.replace( 'articleEditor', { customConfig : 'tpns-custom-editors/articleconfig.js' });
+		CKEDITOR.replace( 'guestArticleEditor', { customConfig : 'tpns-custom-editors/guestarticleconfig.js' });
 		CKEDITOR.replace( 'billboardEditor', { customConfig : 'tpns-custom-editors/billboardconfig.js' });
 		CKEDITOR.replace( 'nutshellEditor', { customConfig : 'tpns-custom-editors/nutshellconfig.js' });
     </script>

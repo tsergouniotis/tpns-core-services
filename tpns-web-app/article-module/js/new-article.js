@@ -81,6 +81,32 @@ $(document).ready( function() {
 			pd.statusbar.hide();
 		},
 	});
+	$("#guestArticleUploader").uploadFile(
+		{
+			url:"#",
+			fileName:"#",
+			uploadStr:"Add Image",
+			dragDrop:true,
+			maxFileCount:1,
+			multiple:false,
+			sequential:true,
+			acceptFiles:"image/*",
+			showPreview:true,
+			previewHeight: "100px",
+			previewWidth: "auto",
+			multiDragErrorStr: "You can only add one image to the Nutshell",
+			dragDropStr: "<br /><span>Drag &amp; Drop Image Here...</span>",
+			showDelete: true,
+			deleteCallback: function (data, pd) {
+			for (var i = 0; i < data.length; i++) {
+				$.post("#", {op: "delete",name: data[i]},
+				function (resp,textStatus, jqXHR) {
+					alert("File Deleted");
+				});
+			}
+			pd.statusbar.hide();
+		},
+	});
 	
 	var article = new Article();
 
