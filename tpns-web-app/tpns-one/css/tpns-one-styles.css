@@ -278,6 +278,13 @@ i, u { text-decoration:none; }
 .text203 {
 	font-size:0.467em; /* h1 down to p */
 }
+.text204 {
+	font-size:0.600em; /* h1 down to h4 */
+}
+.text205 {
+	font-size:0.800em; /* h1 down to h2 */
+}
+
 
 
 
@@ -648,6 +655,13 @@ header {
 ------------------------------------------------------------------------------- */
 /* Global Content Area Controllers
 ------------------------------------------------------------------------------- */
+/* height of iframe divided by the width = aspect ratio in this case it is 16:9 */
+.gobal-article-image-controller {
+	position:relative; background:#323031; padding:0; padding-top:56.25%; margin:0; overflow:hidden;
+}
+.gobal-article-image-controller img, .gobal-article-image-controller iframe {
+	position:absolute; width:100%; left:0; top:50%; -moz-transform:translateY(-50%); -webkit-transform:translateY(-50%); -o-transform:translateY(-50%); -ms-transform:translateY(-50%); transform:translateY(-50%);
+}
 
 	
 
@@ -709,14 +723,7 @@ header {
 	left:0;
 }
 /* Slider Slides */
-/* height of iframe divided by the width = aspect ratio */
-.article-kicker-image {
-	position:relative; background:#323031; padding:0; padding-top:56.25%; /* 16:9 */ margin:0; overflow:hidden;
-}
-.article-kicker-image img, .article-kicker-image iframe {
-	position:absolute; width:100%; left:0; top:50%; -moz-transform:translateY(-50%); -webkit-transform:translateY(-50%); -o-transform:translateY(-50%); -ms-transform:translateY(-50%); transform:translateY(-50%);
-}
-.article-kicker-image iframe {
+.gobal-article-image-controller iframe {
 	min-height:100%; max-height:100%;
 }
 .article-slider-headline-container {
@@ -735,7 +742,7 @@ header {
 	border:none; padding:0; margin-bottom:20px;
 }
 .global-article-category-container h1 {
-	line-height:110%; padding:10px;
+	line-height:110%;
 }
 .video-ad-youtube-title h1, .video-ad-vimeo-title h1 {
 	line-height:110%; padding:0px;
@@ -872,7 +879,7 @@ header {
 	content:""; position:absolute; top:34px; left:0px; height:10px; border-left-width:3px; border-style:solid;
 }
 .global-article-category-container {
-	border-left-width:6px; border-bottom-width:6px; border-style:solid;
+	border-left-width:6px; border-bottom-width:6px; border-style:solid; padding:10px 10px 16px 16px;
 }
 .global-article-category-container a {
 	display:block; color:#323031;
@@ -889,6 +896,7 @@ header {
 .content-area-container {
 	position:relative; width:100%; height:auto; padding:0px 20px; margin:20px 0px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
 }
+
 /* Index Open Article Category Controllers
 ------------------------------------------------------------------------------- */
 .global-article-category-controller-container {
@@ -930,6 +938,48 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .index-subcategories li h6 a {
 	display:block; width:auto; padding:0px 12px;
 }
+.per-category-articles-small-container {
+	float:left; width:36%; height:auto; padding:0 20px 0 0; margin:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.per-category-articles-small-article {
+	margin-bottom:40px;
+}
+.per-category-articles-small-article-title, .per-category-articles-large-main-article-title, .per-category-articles-large-related-article-title, .per-category-articles-large-related-container-title {
+	padding:10px 0px;
+}
+.per-category-articles-large-container {
+	float:left; width:64%; height:auto; padding:0; margin:0;
+}
+.per-category-articles-small-article-title h1, .per-category-articles-small-article p, .per-category-articles-large-container p, .per-category-articles-large-related-article-title h1 {
+	line-height:140%;
+}
+.per-category-articles-large-main-article-title h1 {
+	line-height:130%;
+}
+.per-category-articles-large-related-inner-container .global-table-cell {
+	width:33%; vertical-align:top; padding:15px 10px 10px; border-right-width:1px; border-top-width:1px; border-style:solid; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.per-category-articles-large-related-inner-container .global-table-cell:last-child {
+	border-right-width:0px; padding-right:0px;
+}
+.per-category-articles-large-related-inner-container .global-table-cell:first-child {
+	padding-left:0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Index Closed Article Category Controllers
 ------------------------------------------------------------------------------- */
 .per-category-closed-container-category {
