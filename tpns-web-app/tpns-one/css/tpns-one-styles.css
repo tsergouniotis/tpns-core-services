@@ -867,6 +867,9 @@ header {
 .per-category-content-container {
 	float:left; width:73.5%; height:auto; padding-right:2%;
 }
+.per-category-content-container.per-category-closed-container-no-advetisement {
+	width:100%; padding:0;
+}
 /* Index Article Category
 ------------------------------------------------------------------------------- */
 .global-article-category {
@@ -1040,7 +1043,9 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .per-category-sidebar-container {
 	float:left; width:24.5%; height:auto;
 }
-
+.per-category-closed-container-no-advetisement + .per-category-sidebar-container {
+	display:none;
+}
 
 
 
@@ -1048,13 +1053,16 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 
 /* Index Catgory Area - Banner Seperator
 -------------------------------------------------------------------------------*/
+.article-category-content-container.per-category-open-container-no-advetisement + .per-category-seperator-ad-container {
+	display:none;
+}
 .per-category-seperator-ad-container {
 	margin:40px 0px 0px;
 }
 .per-category-seperator-ad-container p {
 	display:inline-block; position:relative; line-height:100%; padding:0; margin:0; overflow:hidden;
 }
-.per-category-seperator-ad-container iframe {
+.per-category-seperator-ad-container iframe, .per-category-seperator-ad-container img {
 	position:relative; max-width:100%; height:auto; padding:0; margin:0; border:none;
 }
 .per-category-seperator-ad-container a {
