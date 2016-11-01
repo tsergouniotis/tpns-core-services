@@ -938,17 +938,26 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .index-subcategories li h6 a {
 	display:block; width:auto; padding:0px 12px;
 }
-.per-category-articles-small-container {
+.per-category-container:nth-child(2n+1) .per-category-articles-small-container {
 	float:left; width:36%; height:auto; padding:0 20px 0 0; margin:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.per-category-container:nth-child(2n+2) .per-category-articles-small-container {
+	float:right; width:36%; height:auto; padding:0 0 0 20px; margin:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
 }
 .per-category-articles-small-article {
 	margin-bottom:40px;
 }
+.per-category-articles-small-article:last-child {
+	margin-bottom:0px;
+}
 .per-category-articles-small-article-title, .per-category-articles-large-main-article-title, .per-category-articles-large-related-article-title, .per-category-articles-large-related-container-title {
 	padding:10px 0px;
 }
-.per-category-articles-large-container {
+.per-category-container:nth-child(2n+1) .per-category-articles-large-container {
 	float:left; width:64%; height:auto; padding:0; margin:0;
+}
+.per-category-container:nth-child(2n+2) .per-category-articles-large-container {
+	float:right; width:64%; height:auto; padding:0; margin:0;
 }
 .per-category-articles-small-article-title h1, .per-category-articles-small-article p, .per-category-articles-large-container p, .per-category-articles-large-related-article-title h1 {
 	line-height:140%;
@@ -1040,7 +1049,7 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 /* Index Catgory Area - Banner Seperator
 -------------------------------------------------------------------------------*/
 .per-category-seperator-ad-container {
-	margin:40px 0px;
+	margin:40px 0px 0px;
 }
 .per-category-seperator-ad-container p {
 	display:inline-block; position:relative; line-height:100%; padding:0; margin:0; overflow:hidden;
