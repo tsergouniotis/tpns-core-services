@@ -29,36 +29,91 @@
 
 	<changeSet author="thanasis.sergouniotis" id="create-articles-table">
 		<createTable tableName="articles">
-			<column name="database_id" type="BIGINT" />
-			<column name="guid" type="UUID" defaultValue="gen_random_uuid()" />
+			<column name="database_id" type="BIGINT">
+				<constraints nullable="false" />
+			</column>
+			<column name="guid" type="UUID" defaultValue="gen_random_uuid()">
+				<constraints unique="true" />
+			</column>
+			<column name="author" type="TEXT" />
+			<column name="kicker_text" type="TEXT" />
+			<column name="kicker_image_url" type="TEXT" />
+			<column name="kicker_image_settings" type="TEXT" />
+			<column name="soft_lead" type="TEXT" />
+			<column name="hard_lead" type="TEXT" />
+			<column name="headline" type="TEXT" />
+			<column name="sub_head" type="TEXT" />
+			<column name="content" type="TEXT" />
+			<column name="nutshell_text" type="TEXT" />
+			<column name="nutshell_image_url" type="TEXT" />
+			<column name="nutshell_image_settings" type="TEXT" />
+			<column name="billboard_text" type="TEXT" />
+			<column name="billboard_image_url" type="TEXT" />
+			<column name="billboard_image_settings" type="TEXT" />
+			<column name="status" type="TEXT">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_at" type="DATETIME"
+				defaultValueComputed="CURRENT_TIMESTAMP" />
+			<column name="updated_at" type="DATETIME" />
+			<column name="posted_at" type="DATETIME" />
+			<column name="version" type="INTEGER" />
 		</createTable>
 
-		<addPrimaryKey tableName="articles" columnNames="database_id" />
+		<addPrimaryKey tableName="articles" columnNames="database_id"
+			constraintName="articles_pk" />
 
 		<createSequence sequenceName="articleseq" incrementBy="1"
 			startValue="1" />
 
+		<createIndex tableName="articles" indexName="article_guid_idx">
+			<column name="guid">
+				<constraints unique="true" />
+			</column>
+		</createIndex>
+
+		<createIndex indexName="article_author_idx" tableName="articles">
+			<column name="author" />
+		</createIndex>
+
+
 	</changeSet>
+
+	<changeSet author="panos.zografos" id="create-media-resources-table">
+
+		<createTable tableName="resources">
+			<column name="article_sid" type="BIGINT">
+				<constraints nullable="false" />
+			</column>
+			<column name="resource_type" type="TEXT" />
+			<column name="url" type="TEXT" />
+		</createTable>
+
+		<addPrimaryKey tableName="resources" columnNames="article_sid,resource_type,url"
+			constraintName="media_resources_pk" />
+
+		<addForeignKeyConstraint constraintName="article_resource_fk"
+			referencedTableName="articles" baseColumnNames="article_sid"
+			baseTableName="resources" referencedColumnNames="database_id" />
+
+	</changeSet>
+
 
 	<changeSet author="thanasis.sergouniotis" id="create-article-report-table">
 
 		<createTable tableName="article_distribution_report">
-			<column name="database_id" type="BIGINT" />
-			<column name="article_sid" type="BIGINT" />
-			<column name="property" type="TEXT" />
+			<column name="article_guid" type="UUID" />
+			<column name="destination" type="TEXT" />
 			<column name="processing_result" type="TEXT" />
 			<column name="created_at" type="DATETIME" defaultValueDate="CURRENT_TIMESTAMP" />
 		</createTable>
 
 		<addPrimaryKey tableName="article_distribution_report"
-			columnNames="database_id" />
-
-		<createSequence sequenceName="articledistributionreportseq"
-			incrementBy="1" startValue="1" />
+			columnNames="article_guid,destination" />
 
 		<addForeignKeyConstraint constraintName="article_reports_fk"
-			referencedTableName="articles" baseColumnNames="article_sid"
-			baseTableName="article_distribution_report" referencedColumnNames="database_id" />
+			referencedTableName="articles" baseColumnNames="article_guid"
+			baseTableName="article_distribution_report" referencedColumnNames="guid" />
 
 	</changeSet>
 

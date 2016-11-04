@@ -10,13 +10,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jms.core.JmsTemplate;
 
-import com.tpns.article.errors.ArticleProcessingException;
+import com.tpns.article.errors.InvalidArticleException;
+import com.tpns.article.services.ArticleProcessingException;
 import com.tpns.article.services.ArticleService;
 import com.tpns.domain.article.Article;
 
 public class ArticleMessageListener implements MessageListener {
 
 	private static final String ACTION = "action";
+	private static final String OWNER = "owner";
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(ArticleMessageListener.class);
 
@@ -41,6 +43,8 @@ public class ArticleMessageListener implements MessageListener {
 				Article article = Article.class.cast(objectMessage.getObject());
 
 				String action = objectMessage.getStringProperty(ACTION);
+				String owner = objectMessage.getStringProperty(OWNER);
+				article.setOwner(!"tpnsone".equals(owner));
 
 				process(article, action);
 
@@ -65,7 +69,7 @@ public class ArticleMessageListener implements MessageListener {
 
 	}
 
-	private void doExecute(Article article, String action) throws ArticleProcessingException {
+	private void doExecute(Article article, String action) throws InvalidArticleException, ArticleProcessingException {
 		switch (action) {
 		case "SAVE":
 			Article saved = articleService.save(article);
@@ -86,12 +90,12 @@ public class ArticleMessageListener implements MessageListener {
 	}
 
 	private void sendToSuccessQ(Article article) {
-		Article a = Article.create(article.getGuid(), article.getContent(), null, article.getAuthor(), article.getStatus(), null, null, null, null);
+		Article a = Article.create(article.getGuid(), article.isOwner(), article.getContent(), null, article.getAuthor(), article.getStatus(), null, null, null, null);
 		successJmsTemplate.send(new ArticleJmsMessageCreator(a));
 	}
 
 	private void sendToErrorQ(Article article) {
-		Article a = Article.create(article.getGuid(), article.getContent(), null, article.getAuthor(), article.getStatus(), null, null, null, null);
+		Article a = Article.create(article.getGuid(), article.isOwner(), article.getContent(), null, article.getAuthor(), article.getStatus(), null, null, null, null);
 		failureJmsTemplate.send(new ArticleJmsMessageCreator(a));
 	}
 

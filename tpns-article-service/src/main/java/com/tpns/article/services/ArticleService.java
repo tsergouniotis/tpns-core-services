@@ -1,10 +1,8 @@
 package com.tpns.article.services;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 
-import javax.validation.Valid;
 import javax.validation.Validator;
 
 import org.slf4j.Logger;
@@ -12,13 +10,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.CollectionUtils;
 
 import com.tpns.article.errors.ArticleNotFoundException;
-import com.tpns.article.errors.ArticleProcessingException;
 import com.tpns.article.errors.InvalidArticleException;
 import com.tpns.article.repository.ArticleRepository;
 import com.tpns.common.validation.ValidationUtils;
+import com.tpns.common.validation.errors.TpnsValidationException;
 import com.tpns.domain.article.Article;
 import com.tpns.domain.article.ArticleStatus;
 
@@ -34,21 +31,19 @@ public class ArticleService {
 	@Autowired
 	private Validator validator;
 
-	public Article save(Article article) throws ArticleProcessingException {
+	public Article save(Article article) throws InvalidArticleException, ArticleProcessingException {
 
 		try {
 
-			Map<String, String> errors = ValidationUtils.invokeValidator(article, validator);
-
-			if (!CollectionUtils.isEmpty(errors)) {
-				throw new InvalidArticleException(errors);
-			}
+			ValidationUtils.invokeValidator(article, validator);
 
 			return articleRepository.save(article);
 
+		} catch (TpnsValidationException e) {
+			throw new InvalidArticleException(e);
 		} catch (Exception e) {
 			LOGGER.error(e.getMessage(), e);
-			throw new ArticleProcessingException();
+			throw new ArticleProcessingException(e);
 		}
 	}
 

@@ -2,14 +2,11 @@ package com.tpns.admin.domain;
 
 import java.io.Serializable;
 import java.time.ZonedDateTime;
+import java.util.UUID;
 
 public class ArticleDistributionReport implements Serializable {
 
-	private Long id;
-
-	private ArticleId articleId;
-
-	private String property;
+	private ArticleDistributionId id;
 
 	private String status;
 
@@ -22,35 +19,18 @@ public class ArticleDistributionReport implements Serializable {
 		super();
 	}
 
-	public ArticleDistributionReport(ArticleId articleId, String property, String status) {
+	public ArticleDistributionReport(UUID uuid, String property, String status) {
 		super();
-		this.articleId = articleId;
-		this.property = property;
+		this.id = new ArticleDistributionId(uuid, property);
 		this.status = status;
 	}
 
-	public Long getId() {
+	private ArticleDistributionId getId() {
 		return id;
 	}
 
-	private void setId(Long id) {
+	public void setId(ArticleDistributionId id) {
 		this.id = id;
-	}
-
-	public ArticleId getArticleId() {
-		return articleId;
-	}
-
-	public void setArticleId(ArticleId articleId) {
-		this.articleId = articleId;
-	}
-
-	public String getProperty() {
-		return property;
-	}
-
-	public void setProperty(String property) {
-		this.property = property;
 	}
 
 	public String getStatus() {

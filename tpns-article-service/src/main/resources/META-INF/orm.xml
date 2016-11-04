@@ -30,6 +30,9 @@
 			<basic name="guid">
 				<column name="guid" updatable="false" />
 			</basic>
+			<basic name="owner">
+				<column name="is_owner" />
+			</basic>
 			<basic name="author">
 				<column name="author" />
 			</basic>
@@ -113,10 +116,11 @@
 					<column name="nutshell_image_settings" />
 				</attribute-override>
 			</embedded>
+			<transient name="destinations"/>
 		</attributes>
 	</entity>
 
-	<entity class="com.tpns.domain.article.Billboard">
+	<entity class="com.tpns.domain.article.Billboard" access="FIELD">
 		<attributes>
 			<id name="articleId">
 				<column name="article_sid" />

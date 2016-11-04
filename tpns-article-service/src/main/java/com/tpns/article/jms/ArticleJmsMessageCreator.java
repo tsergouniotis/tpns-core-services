@@ -21,7 +21,6 @@ public class ArticleJmsMessageCreator implements MessageCreator {
 	public Message createMessage(Session session) throws JMSException {
 		ObjectMessage message = session.createObjectMessage();
 		message.setObject(article);
-		message.setStringProperty("guid", article.getGuid());
 		message.setStringProperty("destination", "tpnsone");
 		return message;
 	}

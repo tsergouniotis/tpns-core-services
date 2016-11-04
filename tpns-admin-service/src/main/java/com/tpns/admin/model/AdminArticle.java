@@ -2,7 +2,6 @@ package com.tpns.admin.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import com.tpns.domain.article.Article;
 
@@ -13,21 +12,31 @@ public class AdminArticle extends Article {
 	 */
 	private static final long serialVersionUID = 3213305958851609353L;
 
-	private List<String> destinations;
+	private String owner;
+
+	private List<String> guests;
 
 	private String action;
 
-	private Map<String, String> errors;
+	private List<String> errors;
 
-	public List<String> getDestinations() {
-		if (null == this.destinations) {
-			this.destinations = new ArrayList<>();
-		}
-		return destinations;
+	public String getOwner() {
+		return owner;
 	}
 
-	public void setDestinations(List<String> destinations) {
-		this.destinations = destinations;
+	public void setOwner(String owner) {
+		this.owner = owner;
+	}
+
+	public List<String> getGuests() {
+		if (null == this.guests) {
+			this.guests = new ArrayList<>();
+		}
+		return guests;
+	}
+
+	public void setGuests(List<String> destinations) {
+		this.guests = destinations;
 	}
 
 	public String getAction() {
@@ -38,16 +47,18 @@ public class AdminArticle extends Article {
 		this.action = action;
 	}
 
-	public Map<String, String> getErrors() {
+	public List<String> getErrors() {
 		return errors;
 	}
 
-	public void setErrors(Map<String, String> errors) {
+	public void setErrors(List<String> errors) {
 		this.errors = errors;
 	}
 
-	public Article copy() {
-		return Article.create(getGuid(), getContent(), getCategories(), getAuthor(), getStatus(), getCreatedAt(), getUpdatedAt(), getPostedAt(), getResources());
+	public Article vanilla() {
+		// @formatter:off
+		return Article.create(getGuid(), isOwner(), getContent(), getCategories(), getAuthor(), getStatus(), getCreatedAt(), getUpdatedAt(), getPostedAt(), getResources());
+		// @formatter:on
 	}
 
 }

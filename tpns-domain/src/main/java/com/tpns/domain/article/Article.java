@@ -10,6 +10,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
+import java.util.UUID;
 
 public class Article implements Serializable {
 
@@ -17,7 +18,7 @@ public class Article implements Serializable {
 
 	private Long id;
 
-	private String guid;
+	private UUID guid;
 
 	private String author;
 
@@ -43,15 +44,22 @@ public class Article implements Serializable {
 
 	private Set<Keyword> keywords;
 
+	private boolean owner;
+
 	private LocalDateTime createdAt;
 
 	private LocalDateTime updatedAt;
 
 	private LocalDateTime postedAt;
 
+	private Set<Audit> audits;
+
+	/**
+	 * JPA attribute. No business meaning.
+	 */
 	private Long version;
 
-	private Set<Audit> audits;
+	private Set<String> destinations;
 
 	/**
 	 * JPA constructor
@@ -69,11 +77,11 @@ public class Article implements Serializable {
 		return id;
 	}
 
-	public String getGuid() {
+	public UUID getGuid() {
 		return guid;
 	}
 
-	public void setGuid(String guid) {
+	public void setGuid(UUID guid) {
 		this.guid = guid;
 	}
 
@@ -117,10 +125,6 @@ public class Article implements Serializable {
 		this.lead = lead;
 	}
 
-	public void setVersion(Long version) {
-		this.version = version;
-	}
-
 	public String getContent() {
 		return content;
 	}
@@ -159,6 +163,14 @@ public class Article implements Serializable {
 
 	public void setKeywords(Set<Keyword> keywords) {
 		this.keywords = keywords;
+	}
+
+	public boolean isOwner() {
+		return owner;
+	}
+
+	public void setOwner(boolean owner) {
+		this.owner = owner;
 	}
 
 	public Set<Category> getCategories() {
@@ -225,11 +237,26 @@ public class Article implements Serializable {
 		return version;
 	}
 
+	public void setVersion(Long version) {
+		this.version = version;
+	}
+
 	public Set<Audit> getAudits() {
 		if (null == audits) {
 			this.audits = new HashSet<>();
 		}
 		return Collections.unmodifiableSet(audits);
+	}
+
+	public Set<String> getDestinations() {
+		if (null == destinations) {
+			this.destinations = new HashSet<>();
+		}
+		return Collections.unmodifiableSet(destinations);
+	}
+
+	public void setDestinations(Set<String> destinations) {
+		this.destinations = destinations;
 	}
 
 	public void audit() {
@@ -253,10 +280,11 @@ public class Article implements Serializable {
 		return new Article(id, content);
 	}
 
-	public static Article create(String guid, String content, Set<Category> categories, String author, ArticleStatus status, LocalDateTime createdAt, LocalDateTime updatedAt,
-			LocalDateTime postedAt, List<MediaResource> mediaResources) {
+	public static Article create(UUID guid, boolean owner, String content, Set<Category> categories, String author, ArticleStatus status, LocalDateTime createdAt,
+			LocalDateTime updatedAt, LocalDateTime postedAt, List<MediaResource> mediaResources) {
 		Article article = new Article();
 		article.setGuid(guid);
+		article.setOwner(owner);
 		article.setContent(content);
 		article.setCategories(categories);
 		article.setAuthor(author);

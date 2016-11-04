@@ -8,26 +8,26 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.tpns.admin.domain.ArticleDistributionReport;
-import com.tpns.admin.domain.ArticleId;
+import com.tpns.domain.article.Article;
 
 @Transactional
 @Service
 public class ArticleDistributionReportManager {
 
 	@Autowired
-	private ArticleIdRepository articleIdRepository;
+	private ArticleRepository articleRepository;
 
 	@Autowired
 	private ArticleDistributionReportRepository articleDistributionReportRepository;
 
-	public void manage(String destination, String guid, String status) {
+	public void manage(String destination, UUID guid, String status) {
 
-		ArticleId id = articleIdRepository.findByGuid(UUID.fromString(guid));
+		Article id = articleRepository.findByGuid(guid);
 		if (Objects.isNull(id)) {
 			throw new RuntimeException("There is no message with guid " + guid);
 		}
 
-		ArticleDistributionReport report = new ArticleDistributionReport(id, destination, status);
+		ArticleDistributionReport report = new ArticleDistributionReport(guid, destination, status);
 		articleDistributionReportRepository.save(report);
 
 	}

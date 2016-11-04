@@ -29,7 +29,8 @@
 			<column name="database_id" type="BIGINT">
 				<constraints nullable="false" />
 			</column>
-			<column name="guid" type="TEXT" />
+			<column name="guid" type="UUID" />
+			<column name="is_owner" type="BOOLEAN"/>
 			<column name="author" type="TEXT" />
 			<column name="kicker_text" type="TEXT" />
 			<column name="kicker_image_url" type="TEXT" />

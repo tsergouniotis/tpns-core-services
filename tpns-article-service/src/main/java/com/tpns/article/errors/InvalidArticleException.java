@@ -1,18 +1,17 @@
 package com.tpns.article.errors;
 
-import java.util.Map;
+import java.util.List;
 
-public class InvalidArticleException extends ArticleProcessingException {
+import com.tpns.common.validation.errors.TpnsValidationException;
 
-	private Map<String, String> errors;
+public class InvalidArticleException extends Exception {
 
-	public InvalidArticleException(Map<String, String> errors) {
-		super("Invalid Article");
-		this.errors = errors;
+	public InvalidArticleException(TpnsValidationException cause) {
+		super("Ivalid article.", cause);
 	}
 
-	public Map<String, String> getErrors() {
-		return errors;
+	public List<String> getErrors() {
+		return TpnsValidationException.class.cast(getCause()).getBusinessErrors();
 	}
 
 }

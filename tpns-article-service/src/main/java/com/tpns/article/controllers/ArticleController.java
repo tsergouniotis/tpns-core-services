@@ -3,7 +3,6 @@ package com.tpns.article.controllers;
 import java.util.Collections;
 import java.util.List;
 
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.beans.factory.annotation.Autowired;

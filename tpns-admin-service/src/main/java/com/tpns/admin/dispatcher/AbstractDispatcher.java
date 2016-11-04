@@ -34,7 +34,7 @@ public abstract class AbstractDispatcher {
 	private OAuth2RestTemplate articleRestTemplate;
 
 	public void send(final AdminArticle article) {
-		final List<String> destinations = new ArrayList<String>(article.getDestinations());
+		final List<String> destinations = new ArrayList<String>(article.getGuests());
 
 		if (!CollectionUtils.isEmpty(destinations)) {
 

@@ -2,12 +2,6 @@ package com.tpns.article.interceptors;
 
 import java.time.Duration;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -16,9 +10,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import com.tpns.domain.errors.BusinessError;
-import com.tpns.domain.errors.BusinessErrorCode;
-import com.tpns.domain.errors.BusinessException;
+import com.tpns.common.validation.errors.TpnsValidationException;
+import com.tpns.domain.errors.GenericException;
 
 @Aspect
 @Component
@@ -40,24 +33,12 @@ public class ArticleInterceptor {
 
 			return result;
 
-		} catch (final BusinessException e) {
-
+		} catch (final TpnsValidationException e) {
 			throw e;
-
-		} catch (final ConstraintViolationException e) {
-			throw newBusinessException(e.getConstraintViolations());
 		} catch (final Throwable e) {
-			throw BusinessException.create(e.getMessage());
+			throw new GenericException(e);
 		}
 
-	}
-
-	private static BusinessException newBusinessException(final Set<ConstraintViolation<?>> constraintViolations) {
-		final List<BusinessError> errors = new ArrayList<>();
-		for (final ConstraintViolation<?> constraintViolation : constraintViolations) {
-			errors.add(BusinessError.create(constraintViolation.getMessage(), BusinessErrorCode.VALIDATION));
-		}
-		return BusinessException.create(errors);
 	}
 
 }

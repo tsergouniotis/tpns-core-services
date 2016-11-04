@@ -1,6 +1,6 @@
 package com.tpns.article.controllers;
 
-import java.util.Map;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -28,11 +28,11 @@ public class ExceptionHandlerController {
 
 	@ExceptionHandler(value = { InvalidArticleException.class })
 	@ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = "Invalid Article")
-	public Map<String, String> invalidArticleExceptionHandler(HttpServletRequest request, Exception e) {
+	public List<String> invalidArticleExceptionHandler(HttpServletRequest request, InvalidArticleException e) {
 
 		LOGGER.error(e.getMessage(), e);
 
-		return InvalidArticleException.class.cast(e).getErrors();
+		return e.getErrors();
 
 	}
 

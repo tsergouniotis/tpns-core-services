@@ -14,13 +14,16 @@ public class AdminJmsMessageCreator implements MessageCreator {
 
 	private Article adminArticle;
 
+	private String owner;
+
 	private String destination;
 
 	private AdminArticleAction action;
 
-	public AdminJmsMessageCreator(Article adminArticle, String destination, AdminArticleAction action) {
+	public AdminJmsMessageCreator(Article adminArticle, String owner, String destination, AdminArticleAction action) {
 		super();
 		this.adminArticle = adminArticle;
+		this.owner = owner;
 		this.destination = destination;
 		this.action = action;
 	}
@@ -30,6 +33,7 @@ public class AdminJmsMessageCreator implements MessageCreator {
 		ObjectMessage message = session.createObjectMessage();
 		message.setObject(adminArticle);
 		message.setStringProperty("destination", destination);
+		message.setStringProperty("owner", owner);
 		message.setStringProperty("action", action.name());
 		return message;
 	}
