@@ -236,6 +236,17 @@ url("../global-fonts/tpns-admin-icons.svg#tpns-admin-icons") format("svg");
 .tpns-ai-sort-up:before { content: "\5f"; }
 .tpns-ai-seo:before { content: "\60"; }
 .tpns-ai-cloud-warning:before { content: "\7b"; }
+.tpns-ai-follow:before { content: "\7c"; }
+.tpns-ai-facebook:before { content: "\7d"; }
+.tpns-ai-linkedin:before { content: "\7e"; }
+.tpns-ai-instagram:before { content: "\5c"; }
+.tpns-ai-google-plus:before { content: "\e000"; }
+.tpns-ai-pinterest:before { content: "\e001"; }
+.tpns-ai-rss:before { content: "\e002"; }
+.tpns-ai-snapchat:before { content: "\e003"; }
+.tpns-ai-twitter:before { content: "\e004"; }
+.tpns-ai-vimeo:before { content: "\e005"; }
+.tpns-ai-youtube:before { content: "\e006"; }
 
 /* --------------------- Headers ---------------------- */
 h1 {

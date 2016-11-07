@@ -159,17 +159,14 @@ mark { background-color:#364150; color:#c6cfda; font-style:italic; font-weight: 
 }
 .tpns-one-add-user:before { content: "\61"; }
 .tpns-one-remove-user:before { content: "\62"; }
-.tpns-one-rss:before { content: "\63"; }
 .tpns-one-arrow-down:before { content: "\64"; }
 .tpns-one-arrow-left:before { content: "\65"; }
 .tpns-one-search:before { content: "\66"; }
-.tpns-one-twitter:before { content: "\67"; }
 .tpns-one-arrow-right:before { content: "\68"; }
 .tpns-one-arrow-up:before { content: "\69"; }
 .tpns-one-audio:before { content: "\6a"; }
-.tpns-one-camera:before { content: "\6b"; }
+.tpns-one-camera:before { content: "\6b";}
 .tpns-one-category-identifier:before { content: "\6c"; }
-.tpns-one-facebook:before { content: "\6e"; }
 .tpns-one-mobile-menu:before { content: "\6f"; }
 .tpns-one-preview-hide:before { content: "\70"; }
 .tpns-one-preview-show:before { content: "\71"; }
@@ -179,7 +176,18 @@ mark { background-color:#364150; color:#c6cfda; font-style:italic; font-weight: 
 .tpns-one-home:before { content: "\74"; }
 .tpns-one-tag:before { content: "\75"; }
 .tpns-one-add-property:before { content: "\76"; }
-.tpns-one-video:before {   content: "\77"; }
+.tpns-one-video:before { content: "\77"; }
+.tpns-one-facebook:before { content: "\63"; }
+.tpns-one-snapchat:before { content: "\67"; }
+.tpns-one-rss:before { content: "\6e"; }
+.tpns-one-pinterest:before { content: "\78"; }
+.tpns-one-youtube:before { content: "\79"; }
+.tpns-one-linkedin:before { content: "\7a"; }
+.tpns-one-instagram:before { content: "\41"; }
+.tpns-one-vimeo:before { content: "\42"; }
+.tpns-one-twitter:before { content: "\43"; }
+.tpns-one-google-plus:before { content: "\44"; }
+
 
 
  
@@ -283,6 +291,9 @@ i, u { text-decoration:none; }
 }
 .text205 {
 	font-size:0.800em; /* h1 down to h2 */
+}
+.text206 {
+	font-size:2.857em; /* p up to 40px */
 }
 
 
