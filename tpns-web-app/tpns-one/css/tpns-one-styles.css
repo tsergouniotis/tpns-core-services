@@ -392,6 +392,11 @@ header {
 .header-mainnav-search-container {
 	position:absolute; top:100%; left:0; width:100%; z-index:1;
 }
+.header-mainnav-search-container:before, .header-mainnav-search-container:after {
+	content:""; position:absolute; top:0; bottom:0; width:9999px;
+}
+.header-mainnav-search-container:before { right:100%; }
+.header-mainnav-search-container:after { left:100%; }
 .header-mainnav-search-container .global-table-cell {
 	vertical-align:top; height:55px; padding-top:5px;
 }

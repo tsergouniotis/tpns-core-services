@@ -100,7 +100,7 @@
                         </div>
                         <div class="global-table-cell header-mainnav-search-menu">
                             <ul class="text100 textup">
-                                <li><h2><a class="header-mainnav-search-button" href="#"><i class="icon tpns-one-search"></i><i class="icon tpns-one-close hidden"></i><span class="hidden">Αναζήτηση</span></a></h2>
+                                <li><h2><a class="header-mainnav-search-button"><i class="icon tpns-one-search"></i><i class="icon tpns-one-close hidden"></i><span class="hidden">Αναζήτηση</span></a></h2>
                                     <div class="header-mainnav-search-container hidden">
                                         <form class="header-mainnav-search-form" action="" method="get">
                                             <div class="global-table">
@@ -349,7 +349,9 @@
                     </div>
                 </div>
                 <div class="content-area-container">
-                    <div class="breadcrumbs-container">
+                    <!-- Note: Only show the breadcrumbs in Categories, Sub-categories and Articles -->
+                    <!-- To show the breadcrumbs remove the class hidden -->
+                    <div class="breadcrumbs-container hidden">
                         <p>
                             <span><a href="index.html" title="Αρχική σελίδα του TPNS One"><i class="icon tpns-one-home"></i><span class="hidden">Αρχική σελίδα του TPNS One</span></a></span>
                             <!-- Note: When in a category, show the current category below -->

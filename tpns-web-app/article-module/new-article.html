@@ -878,7 +878,28 @@
                                 </div>
                             </div>
                         </div>
-                        
+                        <!-- Only show the Editors Notes if the user has logged in with Editor rights -->
+                        <div class="new-article-form-content-container-full-width">
+                        	<div class="new-article-form-content-header">
+                            	<div class="new-article-form-content-header-left">
+                                	<h3>Editors&acute; Notes</h3>
+                                </div>
+                            	<div class="new-article-form-content-header-right">
+                                    <div class="admin-click-menu-container">
+                                        <div class="admin-click-menu-button">
+                                            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="More information can be found here">?</a></p>
+                                        </div>
+                                        <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">
+                                            <p>The editors&acute; notes are normally no more than a paragraph, shown in articles of a i.e.: legal, scientific, educational etc. nature where the Editor wants to draw the attention of the reader to the credentials of the person writing the article so as to increase article&#39;s credibility. This is also normally accompanied by a link to take you to the experts C.V. (usually LinkedIn), organisation, company etc. website for more information and credentials.</p>
+											<p>e.g.: John Doe is a licensed psychotherapist, certified counselor and New York Times best-selling author. Read more from him on his website, johndoe.com.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        	<div class="new-article-form-content-body">
+								<textarea name="editorsNotesEditor" id="editorsNotesEditor" rows="10" cols="80" placeholder="Add your note here..."></textarea>
+                            </div>
+                        </div>
                         
                         
                         
@@ -906,6 +927,7 @@
 		CKEDITOR.replace( 'articleEditor', { customConfig : 'tpns-custom-editors/articleconfig.js' });
 		CKEDITOR.replace( 'guestArticleEditor', { customConfig : 'tpns-custom-editors/guestarticleconfig.js' });
 		CKEDITOR.replace( 'billboardEditor', { customConfig : 'tpns-custom-editors/billboardconfig.js' });
+		CKEDITOR.replace( 'editorsNotesEditor', { customConfig : 'tpns-custom-editors/editorsnotesconfig.js' });
 		CKEDITOR.replace( 'nutshellEditor', { customConfig : 'tpns-custom-editors/nutshellconfig.js' });
     </script>
 </body>
