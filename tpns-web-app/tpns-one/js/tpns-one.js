@@ -110,6 +110,30 @@ var swiper = new Swiper('.swiper-container', {
 		});
 	}
 });
+// Format a number from i.e.: 1500 to 1.5k
+$.fn.format = function(){
+	'use strict';
+    this.text(function(_, number) {
+		// Format the number by truncating and addiing a decimel seperator showing i.e.: two numbers after the decimel, decPlaces to Math.pow(10, 2)
+        var decPlaces = Math.pow(10, 1);
+        var abbrev = ["k", "m", "b", "t", "qd", "qi", "sx", "sp", "oc", "n", "d"];
+        for (var i = abbrev.length-1; i>=0; i--){
+            var size = Math.pow(10, (i+1) * 3);
+            if(size <= number){
+                number = Math.round(number*decPlaces/size)/decPlaces;
+                if((number === 1000) && (i < abbrev.length - 1)){
+                    number = 1;
+                    i++;
+                }
+                number += abbrev[i];
+                break;
+            }           
+        }
+        return number;
+    });
+};
+$('.formatted-number').format();
+
 // jQuery
 $(document).ready(function() {
 	'use strict';
