@@ -4,7 +4,7 @@ var didScroll;
 var lastScrollTop = 0;
 var delta = 5;
 var navbarHeight = $('header').outerHeight();
-$(window).scroll(function(event){
+$(window).scroll(function(event) {
 	'use strict';
     didScroll = true;
 });
@@ -29,7 +29,7 @@ function hasScrolled() {
     lastScrollTop = st;
 }
 // Header Main Menu Controls
-$.fn.headerMainNav = function(){ 
+$.fn.headerMainNav = function() { 
 	'use strict';
 	var headerWrapWidth = $(".header-wrap").width();
 	var titleWidth = $(".title").width();
@@ -38,7 +38,6 @@ $.fn.headerMainNav = function(){
 	var headerAccountNav = $(".header-mainnav-account-menu").innerWidth();
 	var headerWrap = headerWrapWidth - (headerOverflowNav + titleWidth + headerSearchNav + headerAccountNav);
 	var headerNav = $(".header-mainnav-menu").innerWidth();
-	//var headerNavFirstChild = $(".header-mainnav-menu li:first-child").innerWidth();
 	var headerNavLastChild = $(".header-mainnav-menu li:last-child").innerWidth();
 	if ((headerWrap - headerNav) < 0){
 		$(".header-mainnav-menu li:last-child").queue(function(){
@@ -57,6 +56,31 @@ $.fn.headerMainNav = function(){
 	}
 	return true;
 };
+// Format a number from i.e.: 1500 to 1.5k
+$.fn.format = function(){
+	'use strict';
+    this.text(function(_, number) {
+		// Format the number by truncating and addiing a decimel seperator showing i.e.: two numbers after the decimel, decPlaces to Math.pow(10, 2)
+        var decPlaces = Math.pow(10, 1);
+		// for numbers larger than a billion add the following after b in abbrev "t", "qd", "qi", "sx", "sp", "oc", "n", "d"
+		// remember to comma seperate them
+        var abbrev = ["k", "m", "b"];
+        for (var i = abbrev.length-1; i>=0; i--){
+            var size = Math.pow(10, (i+1) * 3);
+            if(size <= number){
+                number = Math.round(number*decPlaces/size)/decPlaces;
+                if((number === 1000) && (i < abbrev.length - 1)){
+                    number = 1;
+                    i++;
+                }
+                number += abbrev[i];
+                break;
+            }           
+        }
+        return number;
+    });
+};
+$('.formatted-number').format();
 // Initialize Swiper
 var swiper = new Swiper('.swiper-container', {
 	keyboardControl: true,
@@ -110,30 +134,6 @@ var swiper = new Swiper('.swiper-container', {
 		});
 	}
 });
-// Format a number from i.e.: 1500 to 1.5k
-$.fn.format = function(){
-	'use strict';
-    this.text(function(_, number) {
-		// Format the number by truncating and addiing a decimel seperator showing i.e.: two numbers after the decimel, decPlaces to Math.pow(10, 2)
-        var decPlaces = Math.pow(10, 1);
-        var abbrev = ["k", "m", "b", "t", "qd", "qi", "sx", "sp", "oc", "n", "d"];
-        for (var i = abbrev.length-1; i>=0; i--){
-            var size = Math.pow(10, (i+1) * 3);
-            if(size <= number){
-                number = Math.round(number*decPlaces/size)/decPlaces;
-                if((number === 1000) && (i < abbrev.length - 1)){
-                    number = 1;
-                    i++;
-                }
-                number += abbrev[i];
-                break;
-            }           
-        }
-        return number;
-    });
-};
-$('.formatted-number').format();
-
 // jQuery
 $(document).ready(function() {
 	'use strict';
