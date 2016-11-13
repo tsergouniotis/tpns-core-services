@@ -1,5 +1,22 @@
 $(document).ready( function() {
 	'use strict';
+		
+	var article = new Article();
+
+	var headlineView = new HeadlineView({model: article});
+	var subheadView = new SubheadView({model: article});	
+	var softleadView = new SubheadView({model: article});
+	var hardleadView = new SubheadView({model: article});
+	var contentView = new ContentView({model: article});
+	var kickerView = new KickerView({model: article});	
+
+	$('.headlineContainer').append(headlineView.render().el);
+	$('.subheadContainer').append(subheadView.render().el);
+	$('.softleadContainer').append(softleadView.render().el);
+	$('.hardleadContainer').append(hardleadView.render().el);
+	$('.contentContainer').append(contentView.render().el);
+	$('.kickerContainer').append(kickerView.render().el);
+
 	// Initialize jquery-uploader
 	/* Dev Docs can be found here... http://hayageek.com/docs/jquery-upload-file.php */
 	$("#kickerUploader").uploadFile(
@@ -107,16 +124,4 @@ $(document).ready( function() {
 			pd.statusbar.hide();
 		},
 	});
-		
-	var article = new Article();
-
-	var headlineView = new HeadlineView({
-	      model: article
-	});
-	var subheadView = new SubheadView({
-	      model: article
-	});		
-
-	$('.headlineContainer').append(headlineView.render().el);
-	$('.subheadContainer').append(subheadView.render().el);
 });

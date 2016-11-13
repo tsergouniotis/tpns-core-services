@@ -390,11 +390,11 @@
                             </div>
                         </div>
                         <div class="new-article-form-content-container-half-width new-article-form-content-container-half-left">
-                        	<div class="new-article-form-content-header">
-                            	<div class="new-article-form-content-header-left">
-                                	<h3>Soft-Lead</h3>
+                            <div class="new-article-form-content-header">
+                                <div class="new-article-form-content-header-left">
+                                    <h3>Soft-Lead</h3>
                                 </div>
-                            	<div class="new-article-form-content-header-right">
+                                <div class="new-article-form-content-header-right">
                                     <div class="admin-click-menu-container">
                                         <div class="admin-click-menu-button">
                                             <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="More information can be found here">?</a></p>
@@ -406,16 +406,17 @@
                                     </div>
                                 </div>
                             </div>
-                        	<div class="new-article-form-content-body">
-                                <textarea name="softLeadEditor" id="softLeadEditor" rows="10" cols="80" placeholder="Add Soft-lead Sentence here..."></textarea>
+                            <div class="softleadContainer new-article-form-content-body">
+                            <!-- BACKBONE CODE INJECTION: content in SoftleadView (see article-views.js) -->
+			    <!-- UNIQUE: subheadContainer needs to remain unique-->                                
                             </div>
                         </div>
                         <div class="new-article-form-content-container-half-width">
-                        	<div class="new-article-form-content-header">
-                            	<div class="new-article-form-content-header-left">
-                                	<h3>Hard-Lead</h3>
+                            <div class="new-article-form-content-header">
+                                <div class="new-article-form-content-header-left">
+                                    <h3>Hard-Lead</h3>
                                 </div>
-                            	<div class="new-article-form-content-header-right">
+                                <div class="new-article-form-content-header-right">
                                     <div class="admin-click-menu-container">
                                         <div class="admin-click-menu-button">
                                             <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="More information can be found here">?</a></p>
@@ -427,12 +428,13 @@
                                     </div>
                                 </div>
                             </div>
-                        	<div class="new-article-form-content-body">
-                                <textarea name="hardLeadEditor" id="hardLeadEditor" rows="10" cols="80" placeholder="Add Hard-lead Paragraph here..."></textarea>
+                            <div class="hardleadContainer new-article-form-content-body">
+                            <!-- BACKBONE CODE INJECTION: content in HardleadView (see article-views.js) -->
+			    <!-- UNIQUE: subheadContainer needs to remain unique--> 
                             </div>
                         </div>
                         <div class="new-article-form-content-container-full-width">
-                        	<div class="new-article-form-content-header">
+                            <div class="new-article-form-content-header">
                             	<div class="new-article-form-content-header-left">
                                 	<h3><label for="new-article-subhead">Article</label></h3>
                                 </div>
@@ -449,12 +451,13 @@
                                     </div>
                                 </div>
                             </div>
-                        	<div class="new-article-form-content-body">
-                                <textarea name="articleEditor" id="articleEditor" rows="10" cols="80" placeholder="Add New Article here..."></textarea>
+                            <div class="contentContainer new-article-form-content-body">
+                            <!-- BACKBONE CODE INJECTION: content in ContentView (see article-views.js) -->
+			    <!-- UNIQUE: subheadContainer needs to remain unique-->                                 
                             </div>
                         </div>
                         <div class="new-article-form-content-container-full-width">
-                        	<div class="new-article-form-content-header">
+                            <div class="new-article-form-content-header">
                             	<div class="new-article-form-content-header-left">
                                 	<h3><label for="new-article-kicker">Kicker</label></h3>
                                 </div>
@@ -470,17 +473,9 @@
                                     </div>
                                 </div>
                             </div>
-                        	<div class="new-article-form-content-body">
-                                <!-- NOTE: Remember to add the maxlength number in the p below -->
-                                <textarea class="new-article-textbox" id="new-article-kicker" maxlength="50" placeholder="Add Kicker here..."></textarea>
-                                <h6 class="limit textr">50</h6>
-                                <div class="image-upload-container">
-                                	<h5>Kicker Image</h5>
-                                	<div id="kickerUploader"></div>
-                                </div>
-                                <div class="new-article-content-options">
-                                	<p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label">Use Soft-lead Text</span></label></p>
-                                </div>
+                            <div class="kickerContainer new-article-form-content-body">
+                            <!-- BACKBONE CODE INJECTION: content in ContentView (see article-views.js) -->
+			    <!-- UNIQUE: subheadContainer needs to remain unique--> 
                             </div>
                         </div>
                         <div class="new-article-form-content-container-half-width new-article-form-content-container-half-left">
