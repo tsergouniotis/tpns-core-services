@@ -107,13 +107,16 @@ $(document).ready( function() {
 			pd.statusbar.hide();
 		},
 	});
-	
+		
 	var article = new Article();
 
-	var headLineView = new HeadLineView({
+	var headlineView = new HeadlineView({
+	      model: article
+	});
+	var subheadView = new SubheadView({
 	      model: article
 	});		
 
-	$('.headlineContainer').append(headLineView.render().el);
-	
+	$('.headlineContainer').append(headlineView.render().el);
+	$('.subheadContainer').append(subheadView.render().el);
 });
