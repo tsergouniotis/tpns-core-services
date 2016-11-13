@@ -760,7 +760,6 @@ header {
 .video-ad-youtube-title h1, .video-ad-vimeo-title h1 {
 	line-height:110%; padding:0px;
 }
-
 /* News Stream Area
 ------------------------------------------------------------------------------- */
 .news-stream {
@@ -871,17 +870,13 @@ header {
 .news-stream-container-bottom h4 a:hover {
 	color:#323031; text-decoration:none;
 }
-
 /* Index Catgory Area
 -------------------------------------------------------------------------------*/
-.per-category-open-container, .per-category-closed-container {
+.per-category-open-container {
 	margin-top:40px;
 }
 .per-category-content-container {
 	float:left; width:73.5%; height:auto; padding-right:2%;
-}
-.per-category-content-container.per-category-closed-container-no-advetisement {
-	width:100%; padding:0;
 }
 /* Index Article Category
 ------------------------------------------------------------------------------- */
@@ -1007,6 +1002,12 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 
 /* Index Closed Article Category Controllers
 ------------------------------------------------------------------------------- */
+.per-category-closed-container {
+	margin-top:20px;
+}
+.per-category-content-container.per-category-closed-container-no-advetisement {
+	width:100%; padding:0;
+}
 .per-category-closed-container-category {
 	padding:0px 30px;
 }
@@ -1056,6 +1057,9 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .per-category-sidebar-container {
 	float:left; width:24.5%; height:auto;
 }
+.per-category-closed-container-content-sidebar {
+	float:right; width:100%; height:auto; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
+}
 .per-category-closed-container-no-advetisement + .per-category-sidebar-container {
 	display:none;
 }
@@ -1070,7 +1074,13 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .social-follow-buttons-large li:nth-child(3n+3) {
 	float:left; width:100%; margin:0 0 6% 0;
 }
-.social-follow-buttons-large li a {
+.per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+1), .per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+2), .per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) {
+	float:left; width:11.5%; margin:0 1.14% 0 0;
+}
+.per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(8n+8) {
+	margin:0;
+}
+.social-follow-buttons-large li a, .per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) a {
 	display:block; width:100%; height:130px; border:1px solid #CCCCCC; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; overflow:hidden;
 }
 .social-follow-buttons-large li:nth-child(3n+3) a {
@@ -1079,10 +1089,10 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .social-follow-buttons-large li a:hover, .social-follow-buttons-large li a:hover .social-follow-social-network-container {
 	text-decoration:none;
 }
-.social-follow-buttons-large li a .social-follow-social-network {
-	line-height:62px; font-size:2.5em; padding:8px 0 0; margin:0; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
+.social-follow-buttons-large li a .social-follow-social-network, .per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) a .social-follow-social-network {
+	float:none; width:100%; line-height:62px; font-size:2.5em; padding:8px 0 0; margin:0; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
 }
-.social-follow-buttons-large li a:hover .social-follow-social-network {
+.social-follow-buttons-large li a:hover .social-follow-social-network, .per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) a:hover .social-follow-social-network {
 	line-height:112px; font-size:5em; padding:16px 0 0; margin:0; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
 }
 .social-follow-buttons-large li:nth-child(3n+3) a .social-follow-social-network {
@@ -1093,6 +1103,31 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 }
 .social-follow-buttons-large a .social-follow-social-network [class^="tpns-one-"]:before, .social-follow-buttons-large a .social-follow-social-network [class*=" tpns-one-"]:before {
 	vertical-align:inherit;
+}
+/* ----- Follower quantity and type ----- */
+.social-follow-buttons-large .snapchat-official-colour a:hover .social-follow-social-network [class^="tpns-one-"]:before, .social-follow-buttons-large .snapchat-official-colour a:hover .social-follow-social-network [class*=" tpns-one-"]:before {
+	text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000; 
+}
+.social-follow-buttons-large li a .social-follow-social-network-container, .per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) a .social-follow-social-network-container {
+	float:none; visibility:visible; width:100%; height:60px; border-left:none; border-top:1px solid #CCCCCC; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
+}
+.social-follow-buttons-large li a:hover .social-follow-social-network-container, .per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) a:hover .social-follow-social-network-container {
+	float:none; visibility:hidden; width:100%; height:0px; border-left:none; border-top:1px solid #FFFFFF; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
+}
+.social-follow-buttons-large li:nth-child(3n+3) a .social-follow-social-network-container {
+	float:left; visibility:visible; width:50%; height:60px; border-left:1px solid #CCCCCC; border-top:none; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
+}
+.social-follow-buttons-large li:nth-child(3n+3) a:hover .social-follow-social-network-container {
+	float:left; visibility:hidden; width:0px; height:58px; border-left:1px solid #FFFFFF; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
+}
+.social-follow-buttons-large a .social-follow-social-network-container li {
+	float:none; position:relative; width:100% !important; height:auto; margin:0;
+}
+.social-follow-buttons-large a .social-follow-social-network-size {
+	width:100%; height:auto; line-height:24px; color:#323031; font-size:1.7em; padding-top:6px;
+}
+.social-follow-buttons-large a .social-follow-social-network-type {
+	width:100%; height:auto; line-height:14px; color:#CCCCCC; padding-top:4px;
 }
 /* ----- Colours Sourced from http://designpieces.com/2012/12/social-media-colours-hex-and-rgb/ ----- */
 .social-follow-buttons-large .facebook-official-colour a .social-follow-social-network {
@@ -1184,30 +1219,6 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 }
 .social-follow-buttons-large .snapchat-official-colour a:hover {
 	border:1px solid #fffc00;
-}
-.social-follow-buttons-large .snapchat-official-colour a:hover .social-follow-social-network [class^="tpns-one-"]:before, .social-follow-buttons-large .snapchat-official-colour a:hover .social-follow-social-network [class*=" tpns-one-"]:before {
-	text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000; 
-}
-.social-follow-buttons-large li a .social-follow-social-network-container {
-	visibility:visible; height:60px; border-top:1px solid #CCCCCC; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
-}
-.social-follow-buttons-large li a:hover .social-follow-social-network-container {
-	visibility:hidden; height:0px; border-top:1px solid #FFFFFF; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
-}
-.social-follow-buttons-large li:nth-child(3n+3) a .social-follow-social-network-container {
-	float:left; visibility:visible; width:50%; height:60px; border-left:1px solid #CCCCCC; border-top:none; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
-}
-.social-follow-buttons-large li:nth-child(3n+3) a:hover .social-follow-social-network-container {
-	float:left; visibility:hidden; width:0px; height:58px; border-left:1px solid #FFFFFF; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
-}
-.social-follow-buttons-large a .social-follow-social-network-container li {
-	float:none; position:relative; width:100%; height:auto; margin:0;
-}
-.social-follow-buttons-large a .social-follow-social-network-size {
-	width:100%; height:auto; line-height:24px; color:#323031; font-size:1.7em; padding-top:6px;
-}
-.social-follow-buttons-large a .social-follow-social-network-type {
-	width:100%; height:auto; line-height:14px; color:#CCCCCC; padding-top:4px;
 }
 
 

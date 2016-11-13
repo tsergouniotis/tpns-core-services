@@ -246,12 +246,14 @@ $(document).ready(function() {
 		$(".index-subcategories-button").find(".tpns-one-close").addClass("hidden");
 		$(".index-subcategories-button").removeClass("active");
 		$(".index-subcategories-button").parent().find(".index-subcategories").addClass("hidden");
-		$(this).parent().parent().parent().parent().parent().parent().parent().find(".per-category-open-container").addClass("hidden");
+		$(this).parent().parent().parent().parent().parent().parent().parent().find(".per-category-open-container").find(".per-category-content-container").addClass("hidden");
+		$(this).parent().parent().parent().parent().parent().parent().parent().find(".per-category-open-container").find(".per-category-sidebar-container").addClass("per-category-closed-container-content-sidebar");
 		$(this).parent().parent().parent().parent().parent().parent().parent().find(".per-category-closed-container").removeClass("hidden");
 	});
 	// Index per category show button
 	$(".index-category-show-button").click(function() {
-		$(this).parent().parent().parent().parent().parent().find(".per-category-open-container").removeClass("hidden");
+		$(this).parent().parent().parent().parent().parent().find(".per-category-open-container").find(".per-category-content-container").removeClass("hidden");
+		$(this).parent().parent().parent().parent().parent().find(".per-category-open-container").find(".per-category-sidebar-container").removeClass("per-category-closed-container-content-sidebar");
 		$(this).parent().parent().parent().parent().addClass("hidden");
 	});
 	
