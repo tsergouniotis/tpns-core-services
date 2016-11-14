@@ -9,6 +9,9 @@ $(document).ready( function() {
 	var hardleadView = new SubheadView({model: article});
 	var contentView = new ContentView({model: article});
 	var kickerView = new KickerView({model: article});	
+	var nutshellView = new NutshellView({model: article});	
+	var billboardView = new BillboardView({model: article});
+	var guestArticleView = new GuestArticleView({model: article});		
 
 	$('.headlineContainer').append(headlineView.render().el);
 	$('.subheadContainer').append(subheadView.render().el);
@@ -16,6 +19,9 @@ $(document).ready( function() {
 	$('.hardleadContainer').append(hardleadView.render().el);
 	$('.contentContainer').append(contentView.render().el);
 	$('.kickerContainer').append(kickerView.render().el);
+	$('.nutshellContainer').append(nutshellView.render().el);
+	$('.billboardContainer').append(billboardView.render().el);
+	$('.guestArticleContainer').append(guestArticleView.render().el);
 
 	// Initialize jquery-uploader
 	/* Dev Docs can be found here... http://hayageek.com/docs/jquery-upload-file.php */

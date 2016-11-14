@@ -408,7 +408,7 @@
                             </div>
                             <div class="softleadContainer new-article-form-content-body">
                             <!-- BACKBONE CODE INJECTION: content in SoftleadView (see article-views.js) -->
-			    <!-- UNIQUE: subheadContainer needs to remain unique-->                                
+			    <!-- UNIQUE: softleadContainer needs to remain unique-->                                
                             </div>
                         </div>
                         <div class="new-article-form-content-container-half-width">
@@ -430,7 +430,7 @@
                             </div>
                             <div class="hardleadContainer new-article-form-content-body">
                             <!-- BACKBONE CODE INJECTION: content in HardleadView (see article-views.js) -->
-			    <!-- UNIQUE: subheadContainer needs to remain unique--> 
+			    <!-- UNIQUE: hardleadContainer needs to remain unique--> 
                             </div>
                         </div>
                         <div class="new-article-form-content-container-full-width">
@@ -453,7 +453,7 @@
                             </div>
                             <div class="contentContainer new-article-form-content-body">
                             <!-- BACKBONE CODE INJECTION: content in ContentView (see article-views.js) -->
-			    <!-- UNIQUE: subheadContainer needs to remain unique-->                                 
+			    <!-- UNIQUE: contentContainer needs to remain unique-->                                 
                             </div>
                         </div>
                         <div class="new-article-form-content-container-full-width">
@@ -475,11 +475,11 @@
                             </div>
                             <div class="kickerContainer new-article-form-content-body">
                             <!-- BACKBONE CODE INJECTION: content in ContentView (see article-views.js) -->
-			    <!-- UNIQUE: subheadContainer needs to remain unique--> 
+			    <!-- UNIQUE: kickerContainer needs to remain unique--> 
                             </div>
                         </div>
                         <div class="new-article-form-content-container-half-width new-article-form-content-container-half-left">
-                        	<div class="new-article-form-content-header">
+                            <div class="new-article-form-content-header">
                             	<div class="new-article-form-content-header-left">
                                 	<h3>Nutshell</h3>
                                 </div>
@@ -494,28 +494,13 @@
                                     </div>
                                 </div>
                             </div>
-                        	<div class="new-article-form-content-body">
-                                <textarea name="nutshellEditor" id="nutshellEditor" rows="10" cols="80" placeholder="Add Nutshell text here..."></textarea>
-                                <div class="image-upload-container">
-                                	<h5>Nutshell Image</h5>
-                                	<div id="nutshellUploader"></div>
-                                </div>
-                                <div class="new-article-content-options">
-                                	<p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label">Use Kicker Image</span></label></p>
-                                    <!-- This should be controlled by the client and not the Admin, do not delete for the time being -->
-                                	<!--
-                                    <div class="new-article-content-text-options-container">
-                                        <p class="admin-global-radio"><label><input type="radio" name="nutshell-img-options" value="img-above" checked><span class="admin-global-radio-label">Image above text</span></label></p>
-                                        <p class="admin-global-radio"><label><input type="radio" name="nutshell-img-options" value="img-before"><span class="admin-global-radio-label">Image before text</span></label></p>
-                                        <p class="admin-global-radio"><label><input type="radio" name="nutshell-img-options" value="img-after"><span class="admin-global-radio-label">Image after text</span></label></p>
-                                        <p class="admin-global-radio"><label><input type="radio" name="nutshell-img-options" value="img-bkg"><span class="admin-global-radio-label">Image as background</span></label></p>
-                                    </div> 
-                                	-->
-                                </div>
+                            <div class="nutshellContainer new-article-form-content-body">
+                            <!-- BACKBONE CODE INJECTION: content in NutshellView (see article-views.js) -->
+			    <!-- UNIQUE: nutshellContainer needs to remain unique--> 
                             </div>
                         </div>
                         <div class="new-article-form-content-container-half-width">
-                        	<div class="new-article-form-content-header">
+                            <div class="new-article-form-content-header">
                             	<div class="new-article-form-content-header-left">
                                 	<h3>Billboard</h3>
                                 </div>
@@ -530,19 +515,13 @@
                                     </div>
                                 </div>
                             </div>
-                        	<div class="new-article-form-content-body">
-                                <textarea name="billboardEditor" id="billboardEditor" rows="10" cols="80" placeholder="Add Billboard text here..."></textarea>
-                                <div class="image-upload-container">
-                                	<h5>Billboard Image</h5>
-                                	<div id="billboardUploader"></div>
-                                </div>
-                                <div class="new-article-content-options">
-                                	<p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label">Use Kicker Image</span></label></p>
-                                </div>
+                            <div class="billboardContainer new-article-form-content-body">
+                            <!-- BACKBONE CODE INJECTION: content in BillboardView (see article-views.js) -->
+			    <!-- UNIQUE: billboardContainer needs to remain unique--> 
                             </div>
                         </div>
                         <div class="new-article-form-content-container-full-width">
-                        	<div class="new-article-form-content-header">
+                            <div class="new-article-form-content-header">
                             	<div class="new-article-form-content-header-left">
                                 	<h3>Guest Article</h3>
                                 </div>
@@ -558,26 +537,16 @@
                                     </div>
                                 </div>
                             </div>
-                        	<div class="new-article-form-content-body">
-                                <textarea name="guestArticleEditor" id="guestArticleEditor" rows="10" cols="80" placeholder="Add Guest Article content here..."></textarea>
-                                <div class="image-upload-container">
-                                	<h5>Guest Article Image</h5>
-                                	<div id="guestArticleUploader"></div>
-                                </div>
-                                <div class="new-article-content-options">
-                                	<p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label">Use Billboard Image</span></label></p>
-                                </div>
+                            <div class="guestArticleContainer new-article-form-content-body">
+                            <!-- BACKBONE CODE INJECTION: content in GuestArticleView (see article-views.js) -->
+			    <!-- UNIQUE: guestArticleContainer needs to remain unique--> 
                             </div>
-                        </div>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
+                        </div>    
+			                                            
                         <div class="clearfix"></div>
+
                     </div>
+
                     <div class="new-article-content-right-column">
                         <div class="new-article-form-content-container-full-width">
                         	<div class="new-article-form-content-header">

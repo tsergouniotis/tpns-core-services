@@ -106,4 +106,74 @@ var KickerView = Backbone.View.extend({
 		return this;
 	}
 });
-                                                                                     
+
+var NutshellView = Backbone.View.extend({
+
+        nutshellTextTemplate: _.template('<textarea name="nutshellEditor" id="nutshellEditor" rows="10" cols="80" placeholder="Add Nutshell text here..."><%= nutshell %></textarea>'),
+
+    	render: function () {
+
+		if (!this.model) {
+			throw "Model is not set for this view";
+		}
+		
+		var html = this.nutshellTextTemplate(this.model.toJSON());
+		html+='<div class="image-upload-container">';
+		html+='<h5>Nutshell Image</h5>';
+		html+='<div id="nutshellUploader"></div>';
+		html+='</div>';
+		html+='<div class="new-article-content-options">';
+		html+='<p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label">Use Kicker Image</span></label></p>';
+		html+='</div>';
+		this.$el.html(html);
+		return this;
+	}
+});
+
+var BillboardView = Backbone.View.extend({
+
+        billboardTextTemplate: _.template('<textarea name="billboardEditor" id="billboardEditor" rows="10" cols="80" placeholder="Add Billboard text here..."><%= billboard %></textarea>'),
+
+    	render: function () {
+
+		if (!this.model) {
+			throw "Model is not set for this view";
+		}
+		
+		var html = this.billboardTextTemplate(this.model.toJSON());
+		html+='<div class="image-upload-container">';
+		html+='<h5>Billboard Image</h5>';
+		html+='<div id="billboardUploader"></div>';
+		html+='</div>';
+		html+='<div class="new-article-content-options">';
+		html+='<p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label">Use Kicker Image</span></label></p>';
+		html+='</div>';
+		this.$el.html(html);
+		return this;
+	}
+});
+
+
+var GuestArticleView = Backbone.View.extend({
+
+        guestArticleTextTemplate: _.template('<textarea name="guestArticleEditor" id="guestArticleEditor" rows="10" cols="80" placeholder="Add Guest Article content here..."><%= guest_article %></textarea>'),
+
+    	render: function () {
+
+		if (!this.model) {
+			throw "Model is not set for this view";
+		}
+		
+		var html = this.guestArticleTextTemplate(this.model.toJSON());
+		html+='<div class="image-upload-container">';
+		html+='<h5>Guest Article Image</h5>';
+		html+='<div id="guestArticleUploader"></div>';
+		html+='</div>';
+		html+='<div class="new-article-content-options">';
+		html+='<p class="admin-global-checkbox"><label><input type="checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label">Use Billboard Image</span></label></p>';
+		html+='</div>';
+		this.$el.html(html);
+		return this;
+	}
+});
+                                                          

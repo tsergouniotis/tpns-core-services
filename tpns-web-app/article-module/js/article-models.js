@@ -16,6 +16,7 @@ var Article = Backbone.Model.extend({
 	  nutshell: '',	
 	  nutshell_img: '',	
           nutshell_usekickerimage: 0, 	
-          nutshell_imagepos: 0, 														
+          nutshell_imagepos: 0,
+	  guest_article: '',														
       }
 });
