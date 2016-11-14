@@ -38,6 +38,7 @@ $(".filter-active").find("a").click(function(e) {
 	e.preventDefault();
 });
 
+// Document Ready
 $(document).ready( function() {
 	'use strict';
 	// Initialize CountChars in form
@@ -56,21 +57,38 @@ $(document).ready( function() {
 		$(this).find(".tpns-ai-preview-hide").toggleClass("hidden");
 		$(this).find(".tpns-ai-preview-show").toggleClass("hidden");
 		$(this).parent().parent().find("ul").toggleClass("hidden");
-	});
-	
-	
-	
-	
-	
-	
-});
+	});	
 
+	var articles = new Articles();
+
+	initArticlesStatic(articles);
+
+        var articlesView = new ArticleListView({ collection: articles });
+
+	$('.allArticlesTableContainer').append(articlesView.render().el);
+});
 
 function readArticles(){
 	var username = getCookie("username");
 	var authtoken = getCookie("authtoken");
 	console.log("username = "+username);
 	console.log("authtoken = "+authtoken);
+}
+
+function initArticlesStatic(articles){
+        articles.add([{
+	    content: 'Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...'
+	}, {
+	    content: 'Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...'
+	}, {
+	    content: 'Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...'
+	}, {
+	    content: 'Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...'
+	}, {
+	    content: 'Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...'
+	}, {
+	    content: 'Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...'
+	}]);
 }
 
 
