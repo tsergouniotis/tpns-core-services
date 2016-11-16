@@ -129,7 +129,7 @@ html+='                    </div>';
 
 
 
-var ArticleListView = Backbone.View.extend({
+var ArticlesListView = Backbone.View.extend({
 
 	render: function(){
             this.collection.each(function(article){

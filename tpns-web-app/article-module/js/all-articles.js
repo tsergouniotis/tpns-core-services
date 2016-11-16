@@ -63,7 +63,7 @@ $(document).ready( function() {
 
 	initArticlesStatic(articles);
 
-        var articlesView = new ArticleListView({ collection: articles });
+        var articlesView = new ArticlesListView({ collection: articles });
 
 	$('.allArticlesTableContainer').append(articlesView.render().el);
 });

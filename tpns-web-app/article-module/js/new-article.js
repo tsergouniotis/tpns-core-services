@@ -23,6 +23,14 @@ $(document).ready( function() {
 	$('.billboardContainer').append(billboardView.render().el);
 	$('.guestArticleContainer').append(guestArticleView.render().el);
 
+	CKEDITOR.replace( 'softLeadEditor', { customConfig : 'tpns-custom-editors/softleadconfig.js' });
+	CKEDITOR.replace( 'hardLeadEditor', { customConfig : 'tpns-custom-editors/hardleadconfig.js' });
+	CKEDITOR.replace( 'articleEditor', { customConfig : 'tpns-custom-editors/articleconfig.js' });
+	CKEDITOR.replace( 'guestArticleEditor', { customConfig : 'tpns-custom-editors/guestarticleconfig.js' });
+	CKEDITOR.replace( 'billboardEditor', { customConfig : 'tpns-custom-editors/billboardconfig.js' });
+	CKEDITOR.replace( 'editorsNotesEditor', { customConfig : 'tpns-custom-editors/editorsnotesconfig.js' });
+	CKEDITOR.replace( 'nutshellEditor', { customConfig : 'tpns-custom-editors/nutshellconfig.js' });
+
 	// Initialize jquery-uploader
 	/* Dev Docs can be found here... http://hayageek.com/docs/jquery-upload-file.php */
 	$("#kickerUploader").uploadFile(
@@ -130,4 +138,6 @@ $(document).ready( function() {
 			pd.statusbar.hide();
 		},
 	});
+
 });
+
