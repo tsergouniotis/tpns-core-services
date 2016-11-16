@@ -878,6 +878,9 @@ header {
 .per-category-content-container {
 	float:left; width:73.5%; height:auto; padding-right:2%;
 }
+.per-category-content-container.per-category-open-container-no-sidebar {
+	float:none; width:100%; padding:0; margin:0;
+}
 /* Index Article Category
 ------------------------------------------------------------------------------- */
 .global-article-category {
@@ -955,6 +958,12 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .per-category-container:nth-child(2n+2) .per-category-articles-small-container {
 	float:right; width:36%; height:auto; padding:0 0 0 20px; margin:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
 }
+.per-category-container:nth-child(2n+1) .per-category-open-container-no-sidebar .per-category-articles-small-container {
+	float:left; width:26%; height:auto; padding:0; padding-right:20px; margin:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.per-category-container:nth-child(2n+2) .per-category-open-container-no-sidebar .per-category-articles-small-container {
+	float:right; width:26%; height:auto; padding:0; padding-left:20px; margin:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
 .per-category-articles-small-article {
 	margin-bottom:40px;
 }
@@ -969,6 +978,12 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 }
 .per-category-container:nth-child(2n+2) .per-category-articles-large-container {
 	float:right; width:64%; height:auto; padding:0; margin:0;
+}
+.per-category-container:nth-child(2n+1) .per-category-open-container-no-sidebar .per-category-articles-large-container {
+	float:left; width:48%; height:auto; padding:0; margin:0;
+}
+.per-category-container:nth-child(2n+2) .per-category-open-container-no-sidebar .per-category-articles-large-container {
+	float:right; width:48%; height:auto; padding:0; margin:0;
 }
 .per-category-articles-small-article-title h1, .per-category-articles-small-article p, .per-category-articles-large-container p, .per-category-articles-large-related-article-title h1 {
 	line-height:140%;
