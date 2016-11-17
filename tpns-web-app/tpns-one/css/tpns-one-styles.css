@@ -1000,8 +1000,12 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .per-category-articles-large-related-inner-container .global-table-cell:first-child {
 	padding-left:0px;
 }
-
-
+.article-sponsor-title {
+	padding:6px 0px; border-bottom-width:1px; border-style:solid; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.article-sponsor-logo img {
+	margin:6px 0px 0px;
+}
 
 
 
