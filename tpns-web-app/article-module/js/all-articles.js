@@ -58,15 +58,13 @@ $(document).ready( function() {
 		$(this).find(".tpns-ai-preview-show").toggleClass("hidden");
 		$(this).parent().parent().find("ul").toggleClass("hidden");
 	});	
-
-	var articles = new Articles();
-
-	initArticlesStatic(articles);
-
-        var articlesView = new ArticlesListView({ collection: articles });
-
-	$('.allArticlesTableContainer').append(articlesView.render().el);
+	
 });
+
+var articles = new Articles();
+initArticlesStatic(articles);
+var articlesView = new ArticlesListView({ collection: articles });
+$('.allArticlesTableContainer').append(articlesView.render().el);
 
 function readArticles(){
 	var username = getCookie("username");
