@@ -1147,9 +1147,8 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 }
 /* Sidebar SMALL Social Media Follow Area
 -------------------------------------------------------------------------------*/
-/* p up to 20px */
 .social-follow-buttons-small {
-	font-size:1.429em; 
+	font-size:1.429em; /* h5 up to 20px */
 }
 .social-follow-buttons-small li, .per-category-closed-container-content-sidebar .social-follow-buttons-small li:nth-child(6n+1), .per-category-closed-container-content-sidebar .social-follow-buttons-small li:nth-child(6n+6) {
 	float:left; padding:0; margin:0 6px 10px 7px;
@@ -1185,14 +1184,11 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 	display:block; position:absolute; width:80px; height:42px; background:#323031; padding:6px; margin-left:-26px; -webkit-border-radius:6px; border-radius:6px; z-index:100000;
 }
 .social-follow-buttons-small li a .social-follow-social-network-container li:after, .per-category-closed-container-content-sidebar .social-follow-buttons-small li a .social-follow-social-network-container li:after {
-	content:" "; position:absolute; top:100%; left:50%; height:0; width:0; pointer-events:none; border:solid transparent; border-color:rgba(0, 0, 0, 0); border-top-color:#323031; border-width:10px; margin-left:-10px;
+	content:" "; position:absolute; top:100%; left:50%; height:0; width:0; pointer-events:none; border:solid transparent; border-color:#000000; border-top-color:#323031; border-width:10px; margin-left:-10px;
 }
 .social-follow-buttons-small .social-follow-social-network-type, .per-category-closed-container-content-sidebar .social-follow-buttons-small .social-follow-social-network-type {
 	font-size:0.700em;
 }
-
-
-
 /* ----- Colours Sourced from http://designpieces.com/2012/12/social-media-colours-hex-and-rgb/ ----- */
 .facebook-official-colour a .social-follow-social-network {
 	color:#3B5998;
@@ -1287,11 +1283,26 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .snapchat-official-colour a:hover .social-follow-social-network [class^="tpns-one-"]:before, .snapchat-official-colour a:hover .social-follow-social-network [class*=" tpns-one-"]:before {
 	text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000; 
 }
-
-
-
-
-
+/* Sidebar Mailchimp Newsletter Container
+-------------------------------------------------------------------------------*/
+.mailchimp-newsletter-container {
+	position:relative; width:100%; height:auto; border:1px solid #CCCCCC; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.mailchimp-newsletter-title {
+	line-height:35px; padding:0px 10px; border-bottom:1px solid #CCCCCC; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.mc_form_inside {
+	padding:10px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.mc_form_inside #mc_message strong {
+	font-family:Roboto-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+.mc_form_inside #mc_message strong.mc_success_msg {
+	color:green;
+}
+.mc_form_inside #mc_message strong.mc_error_msg {
+	color:red;
+}
 
 
 
