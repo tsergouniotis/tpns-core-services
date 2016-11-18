@@ -1124,9 +1124,6 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 	vertical-align:inherit;
 }
 /* ----- Follower quantity and type ----- */
-.social-follow-buttons-large .snapchat-official-colour a:hover .social-follow-social-network [class^="tpns-one-"]:before, .social-follow-buttons-large .snapchat-official-colour a:hover .social-follow-social-network [class*=" tpns-one-"]:before {
-	text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000; 
-}
 .social-follow-buttons-large li a .social-follow-social-network-container, .per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) a .social-follow-social-network-container {
 	float:none; visibility:visible; width:100%; height:60px; border-left:none; border-top:1px solid #CCCCCC; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
 }
@@ -1148,117 +1145,13 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .social-follow-buttons-large a .social-follow-social-network-type {
 	width:100%; height:auto; line-height:14px; color:#CCCCCC; padding-top:4px;
 }
-/* ----- Colours Sourced from http://designpieces.com/2012/12/social-media-colours-hex-and-rgb/ ----- */
-.social-follow-buttons-large .facebook-official-colour a .social-follow-social-network {
-	color:#3B5998;
-}
-.social-follow-buttons-large .facebook-official-colour a:hover .social-follow-social-network {
-	color:#FFFFFF !important; background:#3B5998 !important;
-}
-.social-follow-buttons-large .facebook-official-colour a:hover {
-	border:1px solid #3B5998;
-}
-.social-follow-buttons-large .twitter-official-colour a .social-follow-social-network {
-	color:#55acee;
-}
-.social-follow-buttons-large .twitter-official-colour a:hover .social-follow-social-network {
-	color:#FFFFFF !important; background:#55acee !important;
-}
-.social-follow-buttons-large .twitter-official-colour a:hover {
-	border:1px solid #55acee;
-}
-.social-follow-buttons-large .linkedin-official-colour a .social-follow-social-network {
-	color:#007bb5;
-}
-.social-follow-buttons-large .linkedin-official-colour a:hover .social-follow-social-network {
-	color:#FFFFFF !important; background:#007bb5 !important;
-}
-.social-follow-buttons-large .linkedin-official-colour a:hover {
-	border:1px solid #007bb5;
-}
-.social-follow-buttons-large .rss-official-colour a .social-follow-social-network {
-	color:#ff6600;
-}
-.social-follow-buttons-large .rss-official-colour a:hover .social-follow-social-network {
-	color:#FFFFFF !important; background:#ff6600 !important;
-}
-.social-follow-buttons-large .rss-official-colour a:hover {
-	border:1px solid #ff6600;
-}
-.social-follow-buttons-large .youtube-official-colour a .social-follow-social-network {
-	color:#bb0000;
-}
-.social-follow-buttons-large .youtube-official-colour a:hover .social-follow-social-network {
-	color:#FFFFFF !important; background:#bb0000 !important;
-}
-.social-follow-buttons-large .youtube-official-colour a:hover {
-	border:1px solid #bb0000;
-}
-.social-follow-buttons-large .vimeo-official-colour a .social-follow-social-network {
-	color:#aad450;
-}
-.social-follow-buttons-large .vimeo-official-colour a:hover .social-follow-social-network {
-	color:#FFFFFF !important; background:#aad450 !important;
-}
-.social-follow-buttons-large .vimeo-official-colour a:hover {
-	border:1px solid #aad450;
-}
-.social-follow-buttons-large .instagram-official-colour a .social-follow-social-network {
-	color:#125688;
-}
-.social-follow-buttons-large .instagram-official-colour a:hover .social-follow-social-network {
-	color:#FFFFFF !important; background:#125688 !important;
-}
-.social-follow-buttons-large .instagram-official-colour a:hover {
-	border:1px solid #125688;
-}
-.social-follow-buttons-large .pinterest-official-colour a .social-follow-social-network {
-	color:#cb2027;
-}
-.social-follow-buttons-large .pinterest-official-colour a:hover .social-follow-social-network {
-	color:#FFFFFF !important; background:#cb2027 !important;
-}
-.social-follow-buttons-large .pinterest-official-colour a:hover {
-	border:1px solid #cb2027;
-}
-.social-follow-buttons-large .google-plus-official-colour a .social-follow-social-network {
-	color:#dd4b39;
-}
-.social-follow-buttons-large .google-plus-official-colour a:hover .social-follow-social-network {
-	color:#FFFFFF !important; background:#dd4b39 !important;
-}
-.social-follow-buttons-large .google-plus-official-colour a:hover {
-	border:1px solid #dd4b39;
-}
-.social-follow-buttons-large .snapchat-official-colour a .social-follow-social-network {
-	color:#000000;
-}
-.social-follow-buttons-large .snapchat-official-colour a:hover .social-follow-social-network {
-	color:#FFFFFF !important; background:#fffc00 !important;
-}
-.social-follow-buttons-large .snapchat-official-colour a:hover {
-	border:1px solid #fffc00;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Sidebar SMALL Social Media Follow Area
 -------------------------------------------------------------------------------*/
-/* p up to 25px
+/* p up to 20px */
 .social-follow-buttons-small {
-	font-size:1.786em; 
-} */
-.social-follow-buttons-small li {
+	font-size:1.429em; 
+}
+.social-follow-buttons-small li, .per-category-closed-container-content-sidebar .social-follow-buttons-small li:nth-child(6n+1), .per-category-closed-container-content-sidebar .social-follow-buttons-small li:nth-child(6n+6) {
 	float:left; padding:0; margin:0 6px 10px 7px;
 }
 .social-follow-buttons-small li:nth-child(6n+1) {
@@ -1267,15 +1160,146 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .social-follow-buttons-small li:nth-child(6n+6) {
 	margin-right:0px;
 }
-.social-follow-buttons-small li p, .social-follow-buttons-small a [class^="tpns-one-"]:before, .social-follow-buttons-small a [class*=" tpns-one-"]:before {
-	line-height:40px; vertical-align:top; padding:0; margin:0;
-}
 .social-follow-buttons-small li a {
-	display:block; width:40px; height:40px; background:#CCCCCC; color:#FFFFFF; padding:0; margin:0; -webkit-border-radius:100%; border-radius:100%; overflow:hidden;
+	display:block; width:40px; height:40px;
 }
 .social-follow-buttons-small li a:hover {
-	color:#FFFFFF !important; text-decoration:none; background:#323031 !important;
+	text-decoration:none;
 }
+.social-follow-buttons-small li a h5 {
+	width:40px; height:40px; background:#FFFFFF; padding:0; margin:0; border:1px solid #CCCCCC; -webkit-border-radius:100%; border-radius:100%; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear; overflow:hidden;
+}
+.social-follow-buttons-small li a:hover h5 {
+	border:none; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
+}
+.social-follow-buttons-small li h5, .social-follow-buttons-small a [class^="tpns-one-"]:before, .social-follow-buttons-small a [class*=" tpns-one-"]:before, .per-category-closed-container-content-sidebar .social-follow-buttons-small li h5, .per-category-closed-container-content-sidebar .social-follow-buttons-small a [class^="tpns-one-"]:before, .per-category-closed-container-content-sidebar .social-follow-buttons-small a [class*=" tpns-one-"]:before {
+	line-height:38px; vertical-align:top; padding:0; margin:0;
+}
+.social-follow-buttons-small li a .social-follow-social-network-container, .per-category-closed-container-content-sidebar .social-follow-buttons-small li a .social-follow-social-network-container {
+	visibility:hidden; position:relative; width:40px; height:40px; color:#FFFFFF;
+}
+.social-follow-buttons-small li a:hover .social-follow-social-network-container, .per-category-closed-container-content-sidebar .social-follow-buttons-small li a:hover .social-follow-social-network-container {
+	visibility:visible; top:-98px; width:40px; height:40px;
+}
+.social-follow-buttons-small li a .social-follow-social-network-container li, .per-category-closed-container-content-sidebar .social-follow-buttons-small li a .social-follow-social-network-container li {
+	display:block; position:absolute; width:80px; height:42px; background:#323031; padding:6px; margin-left:-26px; -webkit-border-radius:6px; border-radius:6px; z-index:100000;
+}
+.social-follow-buttons-small li a .social-follow-social-network-container li:after, .per-category-closed-container-content-sidebar .social-follow-buttons-small li a .social-follow-social-network-container li:after {
+	content:" "; position:absolute; top:100%; left:50%; height:0; width:0; pointer-events:none; border:solid transparent; border-color:rgba(0, 0, 0, 0); border-top-color:#323031; border-width:10px; margin-left:-10px;
+}
+.social-follow-buttons-small .social-follow-social-network-type, .per-category-closed-container-content-sidebar .social-follow-buttons-small .social-follow-social-network-type {
+	font-size:0.700em;
+}
+
+
+
+/* ----- Colours Sourced from http://designpieces.com/2012/12/social-media-colours-hex-and-rgb/ ----- */
+.facebook-official-colour a .social-follow-social-network {
+	color:#3B5998;
+}
+.facebook-official-colour a:hover .social-follow-social-network {
+	color:#FFFFFF !important; background:#3B5998 !important;
+}
+.social-follow-buttons-large .facebook-official-colour a:hover {
+	border:1px solid #3B5998;
+}
+.twitter-official-colour a .social-follow-social-network {
+	color:#55acee;
+}
+.twitter-official-colour a:hover .social-follow-social-network {
+	color:#FFFFFF !important; background:#55acee !important;
+}
+.social-follow-buttons-large .twitter-official-colour a:hover {
+	border:1px solid #55acee;
+}
+.linkedin-official-colour a .social-follow-social-network {
+	color:#007bb5;
+}
+.linkedin-official-colour a:hover .social-follow-social-network {
+	color:#FFFFFF !important; background:#007bb5 !important;
+}
+.social-follow-buttons-large .linkedin-official-colour a:hover {
+	border:1px solid #007bb5;
+}
+.rss-official-colour a .social-follow-social-network {
+	color:#ff6600;
+}
+.rss-official-colour a:hover .social-follow-social-network {
+	color:#FFFFFF !important; background:#ff6600 !important;
+}
+.social-follow-buttons-large .rss-official-colour a:hover {
+	border:1px solid #ff6600;
+}
+.youtube-official-colour a .social-follow-social-network {
+	color:#bb0000;
+}
+.youtube-official-colour a:hover .social-follow-social-network {
+	color:#FFFFFF !important; background:#bb0000 !important;
+}
+.social-follow-buttons-large .youtube-official-colour a:hover {
+	border:1px solid #bb0000;
+}
+.vimeo-official-colour a .social-follow-social-network {
+	color:#aad450;
+}
+.vimeo-official-colour a:hover .social-follow-social-network {
+	color:#FFFFFF !important; background:#aad450 !important;
+}
+.social-follow-buttons-large .vimeo-official-colour a:hover {
+	border:1px solid #aad450;
+}
+.instagram-official-colour a .social-follow-social-network {
+	color:#125688;
+}
+.instagram-official-colour a:hover .social-follow-social-network {
+	color:#FFFFFF !important; background:#125688 !important;
+}
+.social-follow-buttons-large .instagram-official-colour a:hover {
+	border:1px solid #125688;
+}
+.pinterest-official-colour a .social-follow-social-network {
+	color:#cb2027;
+}
+.pinterest-official-colour a:hover .social-follow-social-network {
+	color:#FFFFFF !important; background:#cb2027 !important;
+}
+.social-follow-buttons-large .pinterest-official-colour a:hover {
+	border:1px solid #cb2027;
+}
+.google-plus-official-colour a .social-follow-social-network {
+	color:#dd4b39;
+}
+.google-plus-official-colour a:hover .social-follow-social-network {
+	color:#FFFFFF !important; background:#dd4b39 !important;
+}
+.social-follow-buttons-large .google-plus-official-colour a:hover {
+	border:1px solid #dd4b39;
+}
+.snapchat-official-colour a .social-follow-social-network {
+	color:#000000;
+}
+.snapchat-official-colour a:hover .social-follow-social-network {
+	color:#FFFFFF !important; background:#fffc00 !important;
+}
+.social-follow-buttons-large .snapchat-official-colour a:hover {
+	border:1px solid #fffc00;
+}
+.snapchat-official-colour a:hover .social-follow-social-network [class^="tpns-one-"]:before, .snapchat-official-colour a:hover .social-follow-social-network [class*=" tpns-one-"]:before {
+	text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
