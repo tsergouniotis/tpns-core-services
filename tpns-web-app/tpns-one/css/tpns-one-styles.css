@@ -187,6 +187,7 @@ mark { background-color:#364150; color:#c6cfda; font-style:italic; font-weight: 
 .tpns-one-google-plus:before { content: "\42"; }
 .tpns-one-twitter:before { content: "\43"; }
 .tpns-one-instagram:before { content: "\44"; }
+.tpns-one-mailchimp:before { content: "\45"; }
 
 
 
@@ -1184,7 +1185,7 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 	display:block; position:absolute; width:80px; height:42px; background:#323031; padding:6px; margin-left:-26px; -webkit-border-radius:6px; border-radius:6px; z-index:100000;
 }
 .social-follow-buttons-small li a .social-follow-social-network-container li:after, .per-category-closed-container-content-sidebar .social-follow-buttons-small li a .social-follow-social-network-container li:after {
-	content:" "; position:absolute; top:100%; left:50%; height:0; width:0; pointer-events:none; border:solid transparent; border-color:#000000; border-top-color:#323031; border-width:10px; margin-left:-10px;
+	content:" "; position:absolute; top:100%; left:50%; height:0; width:0; pointer-events:none; border:solid transparent; border-color:rgba(50,48,49,0); border-top-color:#323031; border-width:10px; margin-left:-10px;
 }
 .social-follow-buttons-small .social-follow-social-network-type, .per-category-closed-container-content-sidebar .social-follow-buttons-small .social-follow-social-network-type {
 	font-size:0.700em;
@@ -1286,13 +1287,19 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 /* Sidebar Mailchimp Newsletter Container
 -------------------------------------------------------------------------------*/
 .mailchimp-newsletter-container {
-	position:relative; width:100%; height:auto; border:1px solid #CCCCCC; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+	position:relative; width:100%; height:130px; border:1px solid #CCCCCC; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
 }
 .mailchimp-newsletter-title {
 	line-height:35px; padding:0px 10px; border-bottom:1px solid #CCCCCC; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
 }
+.mailchimp-newsletter-title [class^="tpns-one-"]:before, .mailchimp-newsletter-title [class*=" tpns-one-"]:before {
+	font-size:160%; padding-left:0px;
+}
 .mc_form_inside {
 	padding:10px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.mc_form_inside #mc_message {
+	margin:0px 0px 10px;
 }
 .mc_form_inside #mc_message strong {
 	font-family:Roboto-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -1303,9 +1310,27 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .mc_form_inside #mc_message strong.mc_error_msg {
 	color:red;
 }
-
-
-
+.mc_merge_var input {
+	width:100%; background:#f6f6f6; font-family:Roboto-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:1.143em; line-height:18px; padding:5px; margin:0px 0px 10px; border:1px solid #CCCCCC; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.mc_merge_var ::-webkit-input-placeholder {
+   color:#999999; font-family:Roboto-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+.mc_merge_var :-moz-placeholder {
+   color:#999999; font-family:Roboto-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+.mc_merge_var ::-moz-placeholder {
+   color:#999999; font-family:Roboto-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+.mc_merge_var :-ms-input-placeholder {
+   color:#999999; font-family:Roboto-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+.mc_signup_submit button {
+	background:#FFFFFF; font-size:1.143em; color:#4c9174; line-height:18px; padding:5px 10px; margin:0; border:1px solid #4c9174; -webkit-border-radius:none; border-radius:none;
+}
+.mc_signup_submit button:hover {
+	background:#4c9174; color:#FFFFFF;
+}
 
 
 
