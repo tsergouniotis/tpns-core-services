@@ -1,6 +1,6 @@
 var ArticleRowView = Backbone.View.extend({
 
-        contentTemplate: _.template('<p>Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...</p>'),
+        contentTemplate: _.template('<p><%= content %></p>'),
 
     	render: function () {
 
@@ -8,7 +8,6 @@ var ArticleRowView = Backbone.View.extend({
 			throw "Model is not set for this view";
 		}
 		
-		var html = this.contentTemplate(this.model.toJSON());
 		var html= '';
 html+='                    <div class="global-table-row">';
 html+='                        <div class="global-table-cell">';
@@ -126,15 +125,12 @@ html+='                    </div>';
 	}
 });
 
-
-
-
 var ArticlesListView = Backbone.View.extend({
-
 	render: function(){
+
             this.collection.each(function(article){
                 var articleView = new ArticleRowView({ model: article });
-                this.$el.append(articleView.render().el);
+                this.$el.append(articleView.render().el.childNodes);
 	     }, this);
 	     return this;
 	}

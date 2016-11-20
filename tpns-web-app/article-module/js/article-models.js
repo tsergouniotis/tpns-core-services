@@ -17,7 +17,8 @@ var Article = Backbone.Model.extend({
 	nutshell_img: '',	
         nutshell_usekickerimage: 0, 	
         nutshell_imagepos: 0,
-	guest_article: '',														
+	guest_article: '',	
+	tags: [],													
     },
     initialize: function () {
 	this.on('change', function () {
@@ -31,6 +32,19 @@ var Articles = Backbone.Collection.extend({
     initialize: function () {
 	this.on('change', function () {
 	   console.log('Articles collection changed!');
+        });
+    }
+});
+
+var Author = Backbone.Model.extend({
+    defaults: {
+	firstName: '',
+	lastName: '',
+	personalImage: '',													
+    },
+    initialize: function () {
+	this.on('change', function () {
+	   console.log('Author collection changed!');
         });
     }
 });
