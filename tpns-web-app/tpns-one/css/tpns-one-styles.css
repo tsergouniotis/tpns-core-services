@@ -1085,6 +1085,9 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 }
 /* Sidebar LARGE Social Media Follow Area
 -------------------------------------------------------------------------------*/
+.per-category-closed-container-content-sidebar .social-follow-container {
+	float:left; height:auto; padding-right:2%; width:73.5%;
+}
 .social-follow-buttons-large li:nth-child(3n+1) {
 	float:left; width:47%; margin:0 3% 6% 0;
 }
@@ -1288,6 +1291,9 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 -------------------------------------------------------------------------------*/
 .mailchimp-newsletter-container {
 	position:relative; width:100%; height:130px; border:1px solid #CCCCCC; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.per-category-closed-container-content-sidebar .mailchimp-newsletter-container {
+	float:left; height:auto; width:24.5%;
 }
 .mailchimp-newsletter-title {
 	line-height:35px; padding:0px 10px; border-bottom:1px solid #CCCCCC; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
