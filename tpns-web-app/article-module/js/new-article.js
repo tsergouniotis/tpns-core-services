@@ -13,15 +13,15 @@ $(document).ready( function() {
 	var billboardView = new BillboardView({model: article});
 	var guestArticleView = new GuestArticleView({model: article});		
 
-	$('.headlineContainer').append(headlineView.render().el);
-	$('.subheadContainer').append(subheadView.render().el);
-	$('.softleadContainer').append(softleadView.render().el);
-	$('.hardleadContainer').append(hardleadView.render().el);
-	$('.contentContainer').append(contentView.render().el);
-	$('.kickerContainer').append(kickerView.render().el);
-	$('.nutshellContainer').append(nutshellView.render().el);
-	$('.billboardContainer').append(billboardView.render().el);
-	$('.guestArticleContainer').append(guestArticleView.render().el);
+	$('.headlineContainer').append(headlineView.render().el.childNodes);
+	$('.subheadContainer').append(subheadView.render().el.childNodes);
+	$('.softleadContainer').append(softleadView.render().el.childNodes);
+	$('.hardleadContainer').append(hardleadView.render().el.childNodes);
+	$('.contentContainer').append(contentView.render().el.childNodes);
+	$('.kickerContainer').append(kickerView.render().el.childNodes);
+	$('.nutshellContainer').append(nutshellView.render().el.childNodes);
+	$('.billboardContainer').append(billboardView.render().el.childNodes);
+	$('.guestArticleContainer').append(guestArticleView.render().el.childNodes);
 
 	CKEDITOR.replace( 'softLeadEditor', { customConfig : 'tpns-custom-editors/softleadconfig.js' });
 	CKEDITOR.replace( 'hardLeadEditor', { customConfig : 'tpns-custom-editors/hardleadconfig.js' });

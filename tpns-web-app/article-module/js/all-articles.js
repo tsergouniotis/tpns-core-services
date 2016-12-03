@@ -75,28 +75,30 @@ function readArticles(){
 }
 
 function initArticlesStatic(articles){
-	var author = new Author();
-	author.set("firstName", "Αθανάσιος");
-	author.set("lastName", "Σεργουνιώτης");
-	author.set("user", "../staff-module/staff-images-50x50/staff1-50x50.jpg");
 
 	var article1 = new Article();
 	article1.set("content", 'Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...');
+	article1.set("author",{ firstName: "Αθανάσιος", lastName:"Σεργουνιώτης", image:"../staff-module/staff-images-50x50/staff1-50x50.jpg"});
 
 	var article2 = new Article();
 	article2.set("content", 'Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...');
+	article2.set("author",{ firstName: "Αθανάσιος", lastName:"Σεργουνιώτης", image:"../staff-module/staff-images-50x50/staff1-50x50.jpg"});
 
 	var article3 = new Article();
 	article3.set("content", 'Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...');
+	article3.set("author",{ firstName: "Αθανάσιος", lastName:"Σεργουνιώτης", image:"../staff-module/staff-images-50x50/staff1-50x50.jpg"});
 
 	var article4 = new Article();
 	article4.set("content", 'Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...');
+	article4.set("author",{ firstName: "Αθανάσιος", lastName:"Σεργουνιώτης", image:"../staff-module/staff-images-50x50/staff1-50x50.jpg"});
 
 	var article5 = new Article();
 	article5.set("content", 'Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...');
+	article5.set("author",{ firstName: "Αθανάσιος", lastName:"Σεργουνιώτης", image:"../staff-module/staff-images-50x50/staff1-50x50.jpg"});
 
 	var article6 = new Article();
 	article6.set("content", 'Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...');
+	article6.set("author",{ firstName: "Αθανάσιος", lastName:"Σεργουνιώτης", image:"../staff-module/staff-images-50x50/staff1-50x50.jpg"});
 
         articles.add([article1, article2, article3, article4, article5, article6]);
 }

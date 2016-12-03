@@ -17,7 +17,15 @@ var Article = Backbone.Model.extend({
 	nutshell_img: '',	
         nutshell_usekickerimage: 0, 	
         nutshell_imagepos: 0,
-	guest_article: '',	
+	featured_option: '--',	
+	editors_choice_option: '--',	
+	guest_article: '',
+	unique_visitors: 36789,	
+	author: {
+	    firstName: '',
+	    lastName: '',
+	    personalImage: '',													
+        },
 	tags: [],													
     },
     initialize: function () {
@@ -48,3 +56,5 @@ var Author = Backbone.Model.extend({
         });
     }
 });
+
+var defaultAuthor = new Author();

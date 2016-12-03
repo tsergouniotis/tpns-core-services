@@ -1,6 +1,10 @@
 var ArticleRowView = Backbone.View.extend({
 
-        contentTemplate: _.template('<p><%= content %></p>'),
+        featuredTemplate: _.template('<p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-favourite"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter"><%= featured_option %></span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>'),
+        editorsChoiceTemplate: _.template('<p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-editors-choice"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter"><%= editors_choice_option %></span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>'),
+	uniqueVisitorsTemplate: _.template('<p class="admin-decimals"><%= unique_visitors %></p>'),        
+	contentTemplate: _.template('<p><%= content %></p>'),
+	authorTemplate: _.template('<p><u><img src="<%=author.image%>" alt="" /></u><span><%=author.firstName%> <%=author.lastName%></span></p>'),
 
     	render: function () {
 
@@ -17,7 +21,7 @@ html+='                        <div class="global-table-cell">';
 html+='                        	<div class="new-article-form-content-related-info articles-form-content-featured-info">';
 html+='                                <div class="admin-click-menu-container">';
 html+='                                    <div class="admin-click-menu-button admin-click-menu-articles-table">';
-html+='                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-favourite"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>';
+html+='                                        '+this.featuredTemplate(this.model.toJSON());
 html+='                                    </div>';
 html+='                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">';
 html+='                                        <ul class="admin-click-menu-content-list">';
@@ -39,7 +43,7 @@ html+='                            </div>';
 html+='                            <div class="new-article-form-content-related-info articles-form-content-featured-info">';
 html+='                                <div class="admin-click-menu-container">';
 html+='                                    <div class="admin-click-menu-button admin-click-menu-articles-table">';
-html+='                                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-editors-choice"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">--</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>';
+html+='                                        '+this.editorsChoiceTemplate(this.model.toJSON());;
 html+='                                    </div>';
 html+='                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">';
 html+='                                        <ul class="admin-click-menu-content-list">';
@@ -60,10 +64,10 @@ html+='                                </div>';
 html+='                            </div>';
 html+='                        </div>';
 html+='                        <div class="global-table-cell">';
-html+='                        	<p class="admin-decimals">36789</p>';
+html+='                        	'+this.uniqueVisitorsTemplate(this.model.toJSON());;
 html+='                        </div>';
 html+='                        <div class="global-table-cell">';
-html+=this.contentTemplate(this.model.toJSON());
+html+='				   '+this.contentTemplate(this.model.toJSON());
 html+='                            <div class="article-shortcut-controllers">';
 html+='                                <div class="article-shortcut-controllers-items">';
 html+='                                    <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>';
@@ -83,7 +87,7 @@ html+='                                </div>';
 html+='                            </div>';
 html+='                        </div>';
 html+='                        <div class="global-table-cell">';
-html+='                        	<p><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Αθανάσιος Σεργουνιώτης</span></p>';
+html+='                        	'+this.authorTemplate(this.model.toJSON());
 html+='                        </div>';
 html+='                        <div class="global-table-cell">';
 html+='                            <ul>';
