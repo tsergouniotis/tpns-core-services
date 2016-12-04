@@ -38,7 +38,6 @@ var Article = Backbone.Model.extend({
     },
     initialize: function () {
 	this.on('change', function () {
-	   console.log('Article collection changed!');
         });
     }
 });
@@ -47,7 +46,6 @@ var Articles = Backbone.Collection.extend({
     model: Article,
     initialize: function () {
 	this.on('change', function () {
-	   console.log('Articles collection changed!');
         });
     }
 });
@@ -60,7 +58,6 @@ var Author = Backbone.Model.extend({
     },
     initialize: function () {
 	this.on('change', function () {
-	   console.log('Author collection changed!');
         });
     }
 });
