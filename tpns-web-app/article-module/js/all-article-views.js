@@ -58,7 +58,7 @@ var ArticleRowView = Backbone.View.extend({
 	   +'</div>'),
 	authorTemplate: _.template(
 	    '<div class="global-table-cell">'
-           +'     <p><u><img src="<%=author.image%>" alt="" /></u><span><%=author.firstName%> <%=author.lastName%></span></p>'
+           +'     <p><u><img src="<%=author.image%>" alt="" /></u><span><%=author.first_name%> <%=author.last_name%></span></p>'
            +'</div>'),
 	categoriesTemplate: _.template('<ul><%$.each(categories, function(i) { %><li><p><%=categories[i]%></p></li><% }); %></ul>'),
 	tagsTemplate: _.template('<% if(tags && tags.length) { %><p><%=tags.length%></p><% } else { %><p>--</p><% } %>'),

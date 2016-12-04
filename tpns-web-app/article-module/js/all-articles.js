@@ -64,8 +64,15 @@ $(document).ready( function() {
 var articles = new Articles();
 initArticlesStatic(articles);
 var articlesView = new ArticlesListView({ collection: articles });
+var profile = new UserProfile();
+profile.set("first_name","Κατερίνα");
+profile.set("last_name","Παπαδοπούλου");
+profile.set("image","../staff-module/staff-images-50x50/staff6-50x50.jpg");
+profile.set("email","katerina.papadopoulos@tpns.com");
+var profileSummaryView = new ProfileSummaryView({model: profile});
 
 $('.allArticlesTableContainer').append(articlesView.render().el.childNodes);
+$('.allArticlesProfileSummaryContainer').append(profileSummaryView.render().el.childNodes);
 
 function readArticles(){
 	var username = getCookie("username");
@@ -79,7 +86,7 @@ function initArticlesStatic(articles){
 	var article1 = new Article();
 	article1.set("content", 'Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...');
 	article1.set("unique_visitors",36789);
-	article1.set("author",{ firstName: "Νίκος", lastName:"Χάιτας", image:"../staff-module/staff-images-50x50/staff1-50x50.jpg"});
+	article1.set("author",{ first_name: "Νίκος", last_name:"Χάιτας", image:"../staff-module/staff-images-50x50/staff1-50x50.jpg"});
 	article1.set("categories",['Πολιτική','Ελλάδα','Αποκαλύψεις']);
 	article1.set("tags",['tag1','tag2','tag3','tag4','tag5']);
 	article1.set("images",['image1','image2','image3','image4']);
@@ -89,7 +96,7 @@ function initArticlesStatic(articles){
 	var article2 = new Article();
 	article2.set("content", 'Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...');
 	article2.set("unique_visitors",12136);
-	article2.set("author",{ firstName: "Παναγιώτης", lastName:"Ζωγράφος", image:"../staff-module/staff-images-50x50/staff1-50x50.jpg"});
+	article2.set("author",{ first_name: "Παναγιώτης", last_name:"Ζωγράφος", image:"../staff-module/staff-images-50x50/staff1-50x50.jpg"});
 	article2.set("categories",['Πολιτική','Ελλάδα','Αποκαλύψεις']);
 	article2.set("tags",['tag1','tag2','tag3','tag4','tag5','tag6','tag7']);
 	article2.set("images",['image1','image2']);
@@ -99,7 +106,7 @@ function initArticlesStatic(articles){
 	var article3 = new Article();
 	article3.set("content", 'Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...');
 	article3.set("unique_visitors",23697);
-	article3.set("author",{ firstName: "Αθανάσιος", lastName:"Σεργουνιώτης", image:"../staff-module/staff-images-50x50/staff1-50x50.jpg"});
+	article3.set("author",{ first_name: "Αθανάσιος", last_name:"Σεργουνιώτης", image:"../staff-module/staff-images-50x50/staff1-50x50.jpg"});
 	article3.set("categories",['Πολιτική','Ελλάδα','Αποκαλύψεις']);
 	article3.set("tags",['tag1','tag2','tag3']);
 	article3.set("images",['image1','image2']);
@@ -110,7 +117,7 @@ function initArticlesStatic(articles){
 	var article4 = new Article();
 	article4.set("content", 'Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...');
 	article4.set("unique_visitors",48123);
-	article4.set("author",{ firstName: "Αθανάσιος", lastName:"Σεργουνιώτης", image:"../staff-module/staff-images-50x50/staff1-50x50.jpg"});
+	article4.set("author",{ first_name: "Αθανάσιος", last_name:"Σεργουνιώτης", image:"../staff-module/staff-images-50x50/staff1-50x50.jpg"});
 	article4.set("categories",['Πολιτική','Ελλάδα','Αποκαλύψεις']);
 	article4.set("tags",['tag1','tag2','tag3','tag4','tag5','tag6','tag7']);
 	article4.set("images",['image1','image2','image3']);
@@ -120,7 +127,7 @@ function initArticlesStatic(articles){
 	var article5 = new Article();
 	article5.set("content", 'Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...');
 	article5.set("unique_visitors",11236);
-	article5.set("author",{ firstName: "Αθανάσιος", lastName:"Σεργουνιώτης", image:"../staff-module/staff-images-50x50/staff1-50x50.jpg"});
+	article5.set("author",{ first_name: "Αθανάσιος", last_name:"Σεργουνιώτης", image:"../staff-module/staff-images-50x50/staff1-50x50.jpg"});
 	article5.set("categories",['Πολιτική','Ελλάδα','Αποκαλύψεις']);
 	article5.set("tags",['tag1','tag2','tag3','tag4','tag5']);
 	article5.set("images",['image1','image2','image3']);
@@ -130,7 +137,7 @@ function initArticlesStatic(articles){
 	var article6 = new Article();
 	article6.set("content", 'Ο ενεργός Πλούτωνας σε καλεί να δώσεις ένα τέλος σε μια οικονομική υπόθεση που σου έχει γίνει «στενός κορσές» και σε αυτήν την φάση δεν υπάρχει ευκολότερη οδός για σένα...');
 	article6.set("unique_visitors",17963);
-	article6.set("author",{ firstName: "Νίκος", lastName:"Χάιτας", image:"../staff-module/staff-images-50x50/staff1-50x50.jpg"});
+	article6.set("author",{ first_name: "Νίκος", last_name:"Χάιτας", image:"../staff-module/staff-images-50x50/staff1-50x50.jpg"});
 	article6.set("categories",['Πολιτική','Ελλάδα','Αποκαλύψεις']);
 	article6.set("tags",['tag1','tag2','tag3','tag4','tag5','tag6']);
 	article6.set("images",['image1','image2','image3']);
@@ -139,10 +146,6 @@ function initArticlesStatic(articles){
 
         articles.add([article1, article2, article3, article4, article5, article6]);
 }
-
-
-
-
 
 
 

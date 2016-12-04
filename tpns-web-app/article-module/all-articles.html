@@ -142,25 +142,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    	<div class="global-table admin-user-profile-preview-content-details">
-                                        	<div class="global-table-row">
-                                            	<div class="global-table-cell">
-                                                    <div class="admin-user-profile-preview-content-image">
-                                                        <img src="../staff-module/staff-images-100x100/staff6-100x100.jpg" alt="Κατερίνα Παπαδόπουλος" />
-                                                    </div>
-                                                </div>
-                                            	<div class="global-table-cell">
-                                                    <div class="admin-user-profile-preview-content-username">
-                                                        <h5>Κατερίνα Παπαδόπουλος</h5>
-                                                    </div>
-                                                    <div class="admin-user-profile-preview-content-email">
-                                                        <small>katerina.papadopoulos@tpns.com</small>
-                                                    </div>
-                                                    <div class="admin-global-controllers-button">
-                                                        <h6 class="textc"><a href="../user-module/user-profile.html">View Profile</a></h6>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    	<div class="allArticlesProfileSummaryContainer global-table admin-user-profile-preview-content-details">
+					   <!-- BACKBONE CODE INJECTION: content in ArticleListView (see all-articles.js) -->
+					   <!-- UNIQUE: allArticlesProfileSummaryContainer needs to remain unique-->  
                                         </div>
                                     	<div class="global-table admin-user-profile-preview-content-access-level">
                                         	<div class="global-table-row">
@@ -666,6 +650,9 @@
     <script type="text/javascript" src="../global-module/global-js/underscore.js"></script>
     <script type="text/javascript" src="../global-module/global-js/backbone.js"></script>
     <script type="text/javascript" src="../global-module/global-js/tpns.js"></script>
+    <!-- Common backbone files -->
+    <script type="text/javascript" src="../global-module/global-js/models/profile.js"></script>
+    <script type="text/javascript" src="../global-module/global-js/views/profileviews.js"></script>
     <!-- Local JS files -->
     <script type="text/javascript" src="js/article-models.js"></script>
     <script type="text/javascript" src="js/all-article-views.js"></script>

@@ -24,9 +24,9 @@ var Article = Backbone.Model.extend({
 	    unique_visitors: 0,	
 	},
 	author: {
-	    firstName: '',
-	    lastName: '',
-	    personalImage: '',													
+	    first_name: '',
+	    last_name: '',
+	    image: '',													
         },
 	categories:[],
 	tags: [],	
