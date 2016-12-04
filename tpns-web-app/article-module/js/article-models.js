@@ -20,13 +20,21 @@ var Article = Backbone.Model.extend({
 	featured_option: '--',	
 	editors_choice_option: '--',	
 	guest_article: '',
-	unique_visitors: 36789,	
+	statistics: {
+	    unique_visitors: 0,	
+	},
 	author: {
 	    firstName: '',
 	    lastName: '',
 	    personalImage: '',													
         },
-	tags: [],													
+	categories:[],
+	tags: [],	
+	images: [],	
+	audio: [],										
+	video: [],										
+	comments: 0,	
+	status: 'Published'																		
     },
     initialize: function () {
 	this.on('change', function () {
