@@ -1086,7 +1086,7 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 /* Sidebar LARGE Social Media Follow Area
 -------------------------------------------------------------------------------*/
 .per-category-closed-container-content-sidebar .social-follow-container {
-	float:left; height:auto; padding-right:2%; width:73.5%;
+	float:left; height:auto; padding-right:2%; width:51%;
 }
 .social-follow-buttons-large li:nth-child(3n+1) {
 	float:left; width:47%; margin:0 3% 6% 0;
@@ -1155,46 +1155,58 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 /* Sidebar SMALL Social Media Follow Area
 -------------------------------------------------------------------------------*/
 .social-follow-buttons-small {
-	font-size:1.429em; /* h5 up to 20px */
+	display:table; font-size:1.875em; /* h5 up to h1 */ vertical-align:top; margin-bottom:20px;
 }
-.social-follow-buttons-small li, .per-category-closed-container-content-sidebar .social-follow-buttons-small li:nth-child(6n+1), .per-category-closed-container-content-sidebar .social-follow-buttons-small li:nth-child(6n+6) {
+.per-category-closed-container-content-sidebar .social-follow-buttons-small {
+	margin:0;
+}
+.social-follow-buttons-small li, .per-category-closed-container-content-sidebar .social-follow-buttons-small li:nth-child(4n+1), .per-category-closed-container-content-sidebar .social-follow-buttons-small li:nth-child(4n+4) {
 	float:left; padding:0; margin:0 6px 10px 7px;
 }
-.social-follow-buttons-small li:nth-child(6n+1) {
+.per-category-closed-container-content-sidebar .social-follow-buttons-small li, .per-category-closed-container-content-sidebar .social-follow-buttons-small li:nth-child(4n+1), .per-category-closed-container-content-sidebar .social-follow-buttons-small li:nth-child(4n+4) {
+	margin:10px 6px 10px 7px;
+}
+.social-follow-buttons-small li:nth-child(4n+1) {
 	margin-left:0px;
 }
-.social-follow-buttons-small li:nth-child(6n+6) {
+.social-follow-buttons-small li:nth-child(4n+4) {
 	margin-right:0px;
 }
 .social-follow-buttons-small li a {
-	display:block; width:40px; height:40px;
+	display:block; width:67px; height:67px;
 }
 .social-follow-buttons-small li a:hover {
 	text-decoration:none;
 }
 .social-follow-buttons-small li a h5 {
-	width:40px; height:40px; background:#FFFFFF; padding:0; margin:0; border:1px solid #CCCCCC; -webkit-border-radius:100%; border-radius:100%; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear; overflow:hidden;
+	width:67px; height:67px; background:#FFFFFF; padding:0; margin:0; border:1px solid #CCCCCC; -webkit-border-radius:100%; border-radius:100%; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear; overflow:hidden;
 }
 .social-follow-buttons-small li a:hover h5 {
 	border:none; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
 }
 .social-follow-buttons-small li h5, .social-follow-buttons-small a [class^="tpns-one-"]:before, .social-follow-buttons-small a [class*=" tpns-one-"]:before, .per-category-closed-container-content-sidebar .social-follow-buttons-small li h5, .per-category-closed-container-content-sidebar .social-follow-buttons-small a [class^="tpns-one-"]:before, .per-category-closed-container-content-sidebar .social-follow-buttons-small a [class*=" tpns-one-"]:before {
-	line-height:38px; vertical-align:top; padding:0; margin:0;
+	line-height:65px; vertical-align:top; padding:0; margin:0;
 }
 .social-follow-buttons-small li a .social-follow-social-network-container, .per-category-closed-container-content-sidebar .social-follow-buttons-small li a .social-follow-social-network-container {
-	visibility:hidden; position:relative; width:40px; height:40px; color:#FFFFFF;
+	visibility:hidden; position:relative; width:67px; height:67px; color:#FFFFFF;
 }
-.social-follow-buttons-small li a:hover .social-follow-social-network-container, .per-category-closed-container-content-sidebar .social-follow-buttons-small li a:hover .social-follow-social-network-container {
-	visibility:visible; top:-98px; width:40px; height:40px;
+.social-follow-buttons-small li a:hover .social-follow-social-network-container {
+	visibility:visible; top:-120px; width:67px; height:67px;
+}
+.per-category-closed-container-content-sidebar .social-follow-buttons-small li a:hover .social-follow-social-network-container {
+	visibility:visible; top:-130px; width:67px; height:67px;
 }
 .social-follow-buttons-small li a .social-follow-social-network-container li, .per-category-closed-container-content-sidebar .social-follow-buttons-small li a .social-follow-social-network-container li {
-	display:block; position:absolute; width:80px; height:42px; background:#323031; padding:6px; margin-left:-26px; -webkit-border-radius:6px; border-radius:6px; z-index:100000;
+	display:block; position:absolute; width:80px; height:42px; background:#323031; padding:6px; margin-left:-13px; -webkit-border-radius:6px; border-radius:6px; z-index:100000;
 }
 .social-follow-buttons-small li a .social-follow-social-network-container li:after, .per-category-closed-container-content-sidebar .social-follow-buttons-small li a .social-follow-social-network-container li:after {
 	content:" "; position:absolute; top:100%; left:50%; height:0; width:0; pointer-events:none; border:solid transparent; border-color:rgba(50,48,49,0); border-top-color:#323031; border-width:10px; margin-left:-10px;
 }
 .social-follow-buttons-small .social-follow-social-network-type, .per-category-closed-container-content-sidebar .social-follow-buttons-small .social-follow-social-network-type {
-	font-size:0.700em;
+	font-size:0.467em; /* h1 down to p */
+}
+.social-follow-buttons-small a .social-follow-social-network-size {
+	font-size:0.786em; /* h6 down to 9px */
 }
 /* ----- Colours Sourced from http://designpieces.com/2012/12/social-media-colours-hex-and-rgb/ ----- */
 .facebook-official-colour a .social-follow-social-network {
@@ -1296,7 +1308,7 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 	position:relative; width:100%; height:130px; border:1px solid #CCCCCC; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
 }
 .per-category-closed-container-content-sidebar .mailchimp-newsletter-container {
-	float:left; height:auto; width:24.5%;
+	float:left; height:auto; width:47%;
 }
 .mailchimp-newsletter-title {
 	line-height:35px; padding:0px 10px; border-bottom:1px solid #CCCCCC; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
@@ -1340,8 +1352,18 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .mc_signup_submit button:hover {
 	background:#4c9174; color:#FFFFFF;
 }
-
-
+.per-category-closed-container-content-sidebar .mc_merge_var {
+	float:left; width:calc(100% - 120px);
+}
+.per-category-closed-container-content-sidebar .mc_merge_var input {
+	line-height:20px; margin:0;
+}
+.closed-small-mailchimp-newsletter ~ .mailchimp-newsletter-container.per-category-sidebar-container-more-than-eight .mc_merge_var {
+	float:none; width:100%;
+}
+.closed-small-mailchimp-newsletter ~ .mailchimp-newsletter-container.per-category-sidebar-container-more-than-eight .mc_merge_var input {
+	line-height:18px; margin:0px 0px 10px;
+}
 
 
 
