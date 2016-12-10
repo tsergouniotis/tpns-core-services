@@ -1370,12 +1370,36 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .global-closed-small-mailchimp-newsletter .per-category-sidebar-container-more-than-eight .mc_merge_var {
 	line-height:18px; margin:0px 0px 10px;
 }
-
-
-
-
-
-
+/* Sidebar Billboard Container
+-------------------------------------------------------------------------------*/
+/* Patterns Sourced from http://lea.verou.me/css3patterns/ */
+.billboard-container {
+	background:radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px; background-color:#282828; background-size:16px 16px; line-height:100%; margin-top:17px;
+}
+.billboard-container .global-article-category {
+	display:inherit; text-align:center; line-height:100%;
+}
+.billboard-container .global-article-category h5 {
+	margin-top:-17px; margin-bottom:0; vertical-align:bottom;
+}
+.billboard-container .global-article-category h5:before {
+	content:""; position:relative; top:0px; left:0px; width:0px; height:0px; border:none;
+}
+.billboard-container-sidebar-article {
+	padding:20px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.billboard-container-sidebar-article a {
+	color:#FFFFFF;
+}
+.billboard-container-sidebar-article a:hover {
+	text-decoration:none;
+}
+.billboard-container-sidebar-article a .gobal-article-image-controller {
+	border:1px solid #FFFFFF;
+}
+.billboard-container-sidebar-article .article-sponsor-title {
+	padding:10px 0;
+}
 
 
 
