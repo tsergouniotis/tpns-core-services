@@ -1415,10 +1415,10 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .per-category-closed-container-content-sidebar .per-category-articles-small-article-title {
 	padding-top:0px;
 }
-.per-category-closed-container-content-sidebar .text204 {
+.per-category-closed-container-content-sidebar .closed-container-billboard-inner-right-container .text204 {
     font-size:0.8em;
 }
-.per-category-closed-container-content-sidebar p {
+.per-category-closed-container-content-sidebar .closed-container-billboard-inner-right-container p {
     font-size:1.286em;
 }
 
