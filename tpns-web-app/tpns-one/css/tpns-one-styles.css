@@ -1400,9 +1400,27 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .billboard-container-sidebar-article .article-sponsor-title {
 	padding:10px 0;
 }
-
-
-
+.per-category-closed-container-content-sidebar .billboard-container {
+	width:73.5%;
+}
+.per-category-closed-container-content-sidebar .closed-container-billboard-container {
+	display:table; table-layout:fixed; width:100%;
+}
+.per-category-closed-container-content-sidebar .closed-container-billboard-inner-left-container {
+	display:table-cell; width:30%; vertical-align:middle;
+}
+.per-category-closed-container-content-sidebar .closed-container-billboard-inner-right-container {
+	display:table-cell; width:70%; vertical-align:top; padding:0px 0px 0px 20px;
+}
+.per-category-closed-container-content-sidebar .per-category-articles-small-article-title {
+	padding-top:0px;
+}
+.per-category-closed-container-content-sidebar .text204 {
+    font-size:0.8em;
+}
+.per-category-closed-container-content-sidebar p {
+    font-size:1.286em;
+}
 
 
 
