@@ -1421,8 +1421,107 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .per-category-closed-container-content-sidebar .closed-container-billboard-inner-right-container p {
     font-size:1.286em;
 }
-
-
+/* Editors Choice Area
+------------------------------------------------------------------------------- */
+.editors-choice-container {
+	position:relative; width:100%; height:auto; margin-bottom:40px;
+}
+.editors-choice-container:before {
+	content:""; display:block; position:absolute; left:26px; height:100%; border-left:2px solid #F9B000;
+}
+.editors-choice-container-top {
+	position:relative; width:100%; height:auto; padding-bottom:1px; margin-bottom:5px;
+}
+.editors-choice-container-top:after {
+    content:""; display:block; position:absolute; left:10px; bottom:1px; width:0; pointer-events:none; border-color:#F9B000 transparent; border-style:solid; border-width:14px 17px 0;
+}
+.editors-choice-container-top a {
+	display:block; background:#F9B000; color:#FFFFFF; line-height:0; padding:0; margin:0 0 14px;
+}
+.editors-choice-container-top a img {
+	width:100%; height:auto; padding:0; margin:0;
+}
+.editors-choice-top-no-ad a, .editors-choice-container-top .editors-choice-top-no-ad-text {
+	display:none;
+}
+.editors-choice-top-no-ad .editors-choice-top-no-ad-text {
+	display:block; background:#F9B000; color:#FFFFFF; line-height:34px; padding:0; margin:0 0 14px;
+}
+.editors-choice-container-middle {
+	position:relative; width:100%; height:440px; overflow-y:auto;
+}
+.editors-choice-container-middle-item {
+	position:relative; background:#f6f6f6; padding:10px; margin-bottom:10px; z-index:10000;
+}
+.editors-choice-container-middle-item:hover {
+	background:#dcdcdc;
+}
+.editors-choice-container-middle-item:before {
+	content:""; display:block; position:absolute; left:26px; height:100%; border-left:2px solid #F9B000;
+}
+.editors-choice-time-container {
+	float:left; width:44px; padding:0px 5px; margin:-10px 0 0 -10px;
+}
+.editors-choice-time-container h6 {
+	position:relative; background:#f6f6f6; padding:10px 0 2px 0; border-bottom:2px solid #F9B000; z-index:10001;
+}
+.editors-choice-container-middle-item:hover .editors-choice-time-container h6 {
+	background:#dcdcdc;
+}
+.editors-choice-title-container {
+	float:left; width:-webkit-calc(100% - 44px); width:expression(100% - 44px); width:-moz-calc(100% - 44px); width:-o-calc(100% - 44px); width:calc(100% - 44px);
+}
+.editors-choice-title-container h1 {
+	margin-bottom:5px;
+}
+.editors-choice-title-container h1 a {
+	display:block; color:#323031;
+}
+.editors-choice-title-container h1 a:hover {
+	color:#3598dc !important; text-decoration:none;
+}
+.editors-choice-category-container {
+	float:left;
+}
+.editors-choice-category-container [class^="tpns-one-"]:before, .editors-choice-category-container [class*=" tpns-one-"]:before {
+	padding-left:0px;
+}
+.editors-choice-contains-container {
+	float:right;
+}
+.editors-choice-contains-container li {
+	display:inline-block;
+}
+.editors-choice-contains-container li.hidden {
+	display:none;
+}
+.editors-choice-contains-container li [class^="tpns-one-"]:before, .editors-choice-contains-container li [class*=" tpns-one-"]:before {
+	padding-right:0px;
+}
+.editors-choice-contains-container .breaking-news-header-symbol [class^="tpns-one-"]:before, .editors-choice-contains-container .breaking-news-header-symbol [class*=" tpns-one-"]:before {
+	color:#af1e23; padding:0 0 0 5px;
+}
+.editors-choice-container-bottom {
+	position:relative; width:100%; height:auto; padding-top:5px;
+}
+.editors-choice-container-bottom p {
+	line-height:0; padding:0 0 0 54px; margin:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.editors-choice-container-bottom p a img {
+	max-width:100%; height:auto;
+}
+.editors-choice-bottom-no-ad {
+	padding-top:20px;
+}
+.editors-choice-bottom-no-ad p {
+	display:none;
+}
+.editors-choice-container-bottom-base {
+	position:relative; height:10px; background:#F9B000;
+}
+.editors-choice-container-bottom-base:after {
+	content:" "; position:absolute; bottom:100%; left:10px; height:0; width:0; pointer-events:none; border:solid transparent; border-color:transparent; border-bottom-color:#F9B000; border-width:0 17px 14px;
+}
 
 
 
