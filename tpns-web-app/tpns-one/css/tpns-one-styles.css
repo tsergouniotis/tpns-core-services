@@ -1434,8 +1434,11 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 	padding:10px 0;
 }
 /* per Category Closed Billboard */
-.per-category-closed-container-content-sidebar .sidebar-slot-full-width .closed-container-billboard-container, .per-category-closed-container-content-sidebar .sidebar-slot-one .closed-container-billboard-container {
-	display:table; table-layout:fixed; width:100%;
+.per-category-closed-container-content-sidebar .sidebar-slot-full-width .closed-container-billboard-container {
+	display:table; table-layout:fixed; width:70%; margin:0 auto;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-one .closed-container-billboard-container {
+	display:table; table-layout:fixed; width:100%; margin:0;
 }
 .per-category-closed-container-content-sidebar .sidebar-slot-full-width .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .sidebar-slot-one .closed-container-billboard-inner-left-container {
 	display:table-cell; width:30%; vertical-align:middle;
