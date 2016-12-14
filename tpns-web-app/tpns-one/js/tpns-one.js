@@ -318,6 +318,7 @@ function PCViewUpdate() {
 	var editorsChoiceContainerMiddle = $(".per-category-content-container").height();
 	var editorsChoiceContainerMiddleSum = editorsChoiceContainerMiddle - (editorsChoiceContainerTop + editorsChoiceContainerBottom);
 	$(".per-category-sidebar-container").find(".editors-choice-container-middle").css('height', (editorsChoiceContainerMiddleSum));
+	$(".per-category-closed-container-content-sidebar").find(".editors-choice-container-middle").removeAttr("style");
 }
 $(window).load(PCViewUpdate);
 $(window).resize(PCViewUpdate);

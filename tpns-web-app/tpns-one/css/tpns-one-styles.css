@@ -1456,7 +1456,7 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 /* Editors Choice Area
 ------------------------------------------------------------------------------- */
 .editors-choice-container {
-	position:relative; width:100%; height:auto; margin-bottom:40px;
+	position:relative; width:100%; height:auto; /*margin-bottom:40px;*/
 }
 .editors-choice-container:before {
 	content:""; display:block; position:absolute; left:26px; height:100%; border-left:2px solid #F9B000;
