@@ -266,6 +266,7 @@ $(document).ready(function() {
 				$(".per-category-sidebar-container-more-than-eight").css('height', (mailChimpContainerGTEight.height()+(260*0.0342)));
 			}
 		});
+		$(".per-category-closed-container-content-sidebar").find(".editors-choice-container-middle").removeAttr("style");
 	});
 	// Index per category show button
 	$(".index-category-show-button").click(function() {
@@ -276,7 +277,12 @@ $(document).ready(function() {
 		$(this).parent().parent().parent().parent().parent().find(".mailchimp-newsletter-container").removeClass("per-category-sidebar-container-more-than-eight");
 		$(this).parent().parent().parent().parent().parent().find(".social-follow-buttons-small").parent().parent().removeClass("global-closed-small-mailchimp-newsletter");
 		$(this).parent().parent().parent().parent().parent().find(".social-follow-buttons-small").parent().removeClass("closed-small-mailchimp-newsletter");
-		
+		// Index per Category make sidebar the same height as the articles on the left
+		var editorsChoiceContainerTop = $(".per-category-sidebar-container").find(".editors-choice-container-top").outerHeight();
+		var editorsChoiceContainerBottom = $(".per-category-sidebar-container").find(".editors-choice-container-bottom").innerHeight();
+		var editorsChoiceContainerMiddle = $(".per-category-content-container").height();
+		var editorsChoiceContainerMiddleSum = editorsChoiceContainerMiddle - (editorsChoiceContainerTop + editorsChoiceContainerBottom);
+		$(".per-category-sidebar-container").find(".editors-choice-container-middle").css('height', (editorsChoiceContainerMiddleSum));
 	});
 	
 });
@@ -306,7 +312,12 @@ function PCViewUpdate() {
 	var indexCategoryAdSeperatorWidth = $(".per-category-seperator-ad-container iframe").innerWidth();
 	var indexCategoryAdSeperatorSum = indexCategoryAdSeperatorWidth / 8.088888888888889;
 	$(".per-category-seperator-ad-container p").css('height', (indexCategoryAdSeperatorSum));
-	
+	// Index per Category make sidebar the same height as the articles on the left
+	var editorsChoiceContainerTop = $(".per-category-sidebar-container").find(".editors-choice-container-top").outerHeight();
+	var editorsChoiceContainerBottom = $(".per-category-sidebar-container").find(".editors-choice-container-bottom").innerHeight();
+	var editorsChoiceContainerMiddle = $(".per-category-content-container").height();
+	var editorsChoiceContainerMiddleSum = editorsChoiceContainerMiddle - (editorsChoiceContainerTop + editorsChoiceContainerBottom);
+	$(".per-category-sidebar-container").find(".editors-choice-container-middle").css('height', (editorsChoiceContainerMiddleSum));
 }
 $(window).load(PCViewUpdate);
 $(window).resize(PCViewUpdate);

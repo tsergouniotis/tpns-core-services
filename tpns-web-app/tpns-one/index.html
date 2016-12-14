@@ -1064,7 +1064,7 @@
 							<!-- Remove the entire per-category-sidebar-container div below -->
 							<div class="per-category-sidebar-container">
 								<!-- If the user chooses to add social buttons then add the entire div social-follow-container below regardless of whether they are large or small buttons -->
-								<div class="social-follow-container">
+								<div class="social-follow-container sidebar-slot-one">
 									<!-- to show the small social buttons replace social-follow-buttons-large with social-follow-buttons-small below -->
 									<ul class="social-follow-buttons-large textc">
 										<!-- Social button loop STARTS HERE -->
@@ -1186,7 +1186,7 @@
 									</ul>
 									<div class="clearfix"></div>
 								</div>
-								<div class="mailchimp-newsletter-container">
+								<div class="mailchimp-newsletter-container sidebar-slot-two">
 									<p class="mailchimp-newsletter-title textb"><i class="icon tpns-one-mailchimp"></i>Αυτόματη ενημέρωση με Email</p>
 									<form method="post" action="#mc_signup" id="mc_signup_form">
 										<input id="mc_submit_type" name="mc_submit_type" value="js" type="hidden">
@@ -1213,6 +1213,46 @@
 											<div class="clearfix"></div>
 										</div>
 									</form>
+								</div>
+                                <!-- If the user chooses not to add a billboard then remove the entire div below -->
+                                <!-- Remember to add the category here -->
+                                <div class="billboard-container oikonomia sidebar-slot-full-width">
+                                	<div class="billboard-inner-container">
+										<div class="global-article-category">
+											<h5 class="text100 textup">Οικονομία</h5>
+										</div>
+										<div class="billboard-container-sidebar-article">
+											<article>
+												<a href="" title="Διαβάστε εδώ - Επίδομα ενοικίου: Εγκρίθηκε η 16η δόση">
+													<div class="closed-container-billboard-container">
+														<div class="closed-container-billboard-inner-left-container">
+															<div class="gobal-article-image-controller">
+																<img src="../media-library-module/uploads/2016/12/350x350/for-rent.jpg" alt="Εικόνα για το άρθρο - Επίδομα ενοικίου: Εγκρίθηκε η 16η δόση" />
+															</div>
+														</div>
+														<div class="closed-container-billboard-inner-right-container">
+															<div class="per-category-articles-small-article-title text204">
+																<h1 class="article-headline text102">Επίδομα ενοικίου: Εγκρίθηκε η 16η δόση</h1>
+															</div>
+															<!-- For the class of the paragraph below use the article-hard-lead, if nat available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
+															<p class="article-billboard">Δημοσιεύθηκε στη διαύγεια η απόφαση για την πίστωση των χρημάτων στους δικαιούχους της ΙΣΤ δόσης (16ης) για το επίδομα ενοικίου.</p>
+														</div>
+													</div>
+												</a>
+												<!-- Only add this div if the article is sponsored -->
+												<!--
+												<div class="article-sponsor-container">
+													<h5 class="text100 article-sponsor-title">Άρθρο χορηγείται από την:</h5>
+													<a class="textr" href="http://www.mercedes-benz.gr/" target="_blank" title="Σας μεταφέρει στην ιστοσελίδα του χορηγού - Mercedes Benz">
+														<div class="article-sponsor-logo">
+															<img src="../media-library-module/uploads/2016/11/150x150/mercedes-benz-logo-150x150.jpg" alt="Λογοτύπου του χορηγού - Mercedes Benz" />
+														</div>
+													</a>
+												</div>
+												-->
+											</article>
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="clearfix"></div>
@@ -1971,10 +2011,16 @@
                             <!-- Example of the user selecting to not have a sidebar and have articles only -->
                             <!-- Remove the entire per-category-sidebar-container div below -->
                             <div class="per-category-sidebar-container">
-								<div class="editors-choice-container">
+								<div class="editors-choice-container sidebar-slot-full-width">
 									<!-- If the user selects to not show an advart in the News Stream top section, add to the div below the class editors-choice-top-no-ad -->
 									<div class="editors-choice-container-top">
-										<a href="https://www.anytime.gr/" title="TPNS One - Επιλογές του Συντάκτη σε συνεργασία με την Anytime Insurance Online by Interamerican" target="_blank"><img src="../in-house-adverts-module/in-house-adverts/custom/anytime-editors-choice-top/anytime-general-300x128.png" alt="Επιλογές του Συντάκτη σε συνεργασία με την Anytime Insurance Online by Interamerican" /><span class="editors-choice-sponsor-title hidden">Επιλογές του Συντάκτη σε συνεργασία με την Anytime Insurance Online by Interamerican</span></a>
+										<a href="https://www.anytime.gr/" title="TPNS One - Επιλογές του Συντάκτη σε συνεργασία με την Anytime Insurance Online by Interamerican" target="_blank">
+											<span class="editors-choice-container-small-image"><img src="../in-house-adverts-module/in-house-adverts/custom/anytime-editors-choice-top/anytime-general-transparent-300x128.png" alt="Επιλογές του Συντάκτη σε συνεργασία με την Anytime Insurance Online by Interamerican" />
+											</span>
+											<span class="editors-choice-container-large-image"><img src="../in-house-adverts-module/in-house-adverts/custom/anytime-editors-choice-top/anytime-general-transparent-600x82.png" alt="Επιλογές του Συντάκτη σε συνεργασία με την Anytime Insurance Online by Interamerican" />
+											</span>
+											<span class="editors-choice-sponsor-title hidden">Επιλογές του Συντάκτη σε συνεργασία με την Anytime Insurance Online by Interamerican</span>
+										</a>
 										<h4 class="editors-choice-top-no-ad-text text102 textc textup">Επιλογές του Συντάκτη</h4>
 									</div>
 									<!-- Show the latest 10 articles only -->
@@ -2262,46 +2308,11 @@
 									</div>
 									<!-- If the user selects to not show an advert in the News Stream bottom section, add to the div class below editors-choice-bottom-no-ad -->
 									<div class="editors-choice-container-bottom">
-										<p class="textr"><a href="https://www.anytime.gr/car" title="TPNS One - Επιλογές του Συντάκτη σε συνεργασία με την" target="_blank"><img src="../in-house-adverts-module/in-house-adverts/custom/anytime-editors-choice-bottom/anytime-car-250x134.png" alt="Επιλογές του Συντάκτη σε συνεργασία με την" /><span class="editors-choice-sponsor-title hidden">Επιλογές του Συντάκτη σε συνεργασία με την</span></a></p>
+										<p><a href="https://www.anytime.gr/car" title="TPNS One - Επιλογές του Συντάκτη σε συνεργασία με την" target="_blank">
+											<span class="editors-choice-container-small-image"><img src="../in-house-adverts-module/in-house-adverts/custom/anytime-editors-choice-bottom/anytime-car-250x134.png" alt="Επιλογές του Συντάκτη σε συνεργασία με την" /></span>
+											<span class="editors-choice-container-large-image"><img src="../in-house-adverts-module/in-house-adverts/custom/anytime-editors-choice-bottom/anytime-car-500x70.png" alt="Επιλογές του Συντάκτη σε συνεργασία με την" /></span>
+											<span class="editors-choice-sponsor-title hidden">Επιλογές του Συντάκτη σε συνεργασία με την</span></a></p>
 										<div class="editors-choice-container-bottom-base"></div>
-									</div>
-								</div>
-                                <!-- If the user chooses not to add a billboard then remove the entire div below -->
-                                <!-- Remember to add the category here -->
-                                <div class="billboard-container oikonomia">
-                                    <div class="global-article-category">
-                                        <h5 class="text100 textup">Οικονομία</h5>
-                                    </div>
-									<div class="billboard-container-sidebar-article">
-										<article>
-											<a href="" title="Διαβάστε εδώ - Επίδομα ενοικίου: Εγκρίθηκε η 16η δόση">
-												<div class="closed-container-billboard-container">
-													<div class="closed-container-billboard-inner-left-container">
-														<div class="gobal-article-image-controller">
-															<img src="../media-library-module/uploads/2016/12/350x350/for-rent.jpg" alt="Εικόνα για το άρθρο - Επίδομα ενοικίου: Εγκρίθηκε η 16η δόση" />
-														</div>
-													</div>
-													<div class="closed-container-billboard-inner-right-container">
-														<div class="per-category-articles-small-article-title text204">
-															<h1 class="article-headline text102">Επίδομα ενοικίου: Εγκρίθηκε η 16η δόση</h1>
-														</div>
-														<!-- For the class of the paragraph below use the article-hard-lead, if nat available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
-														<p class="article-billboard">Δημοσιεύθηκε στη διαύγεια η απόφαση για την πίστωση των χρημάτων στους δικαιούχους της ΙΣΤ δόσης (16ης) για το επίδομα ενοικίου.</p>
-													</div>
-												</div>
-											</a>
-											<!-- Only add this div if the article is sponsored -->
-											<!--
-											<div class="article-sponsor-container">
-												<h5 class="text100 article-sponsor-title">Άρθρο χορηγείται από την:</h5>
-												<a class="textr" href="http://www.mercedes-benz.gr/" target="_blank" title="Σας μεταφέρει στην ιστοσελίδα του χορηγού - Mercedes Benz">
-													<div class="article-sponsor-logo">
-														<img src="../media-library-module/uploads/2016/11/150x150/mercedes-benz-logo-150x150.jpg" alt="Λογοτύπου του χορηγού - Mercedes Benz" />
-													</div>
-												</a>
-											</div>
-											-->
-										</article>
 									</div>
 								</div>
                             </div>
