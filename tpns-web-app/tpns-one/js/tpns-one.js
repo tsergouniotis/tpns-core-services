@@ -249,6 +249,25 @@ $(document).ready(function() {
 		$(this).parent().parent().parent().parent().parent().parent().parent().find(".per-category-open-container").find(".per-category-content-container").addClass("hidden");
 		$(this).parent().parent().parent().parent().parent().parent().parent().find(".per-category-open-container").find(".per-category-sidebar-container").addClass("per-category-closed-container-content-sidebar");
 		$(this).parent().parent().parent().parent().parent().parent().parent().find(".per-category-closed-container").removeClass("hidden");
+		// Add class dependant on slot frequency
+		// Type1 = 3 x sidebar-slot-two
+		$(this).parent().parent().parent().parent().parent().parent().parent().find(".per-category-closed-container-content-sidebar").each(function() {
+			if ($(this).children(".sidebar-slot-two").size() === 3 ) {
+				$(this).addClass("sidebar-triple-slot-two");
+				if ($(".social-follow-buttons-large").children("li").size() <= 6 ) {
+					$(".closed-container-billboard-inner-right-container").addClass("closed-container-billboard-inner-text-over-image");
+					var BillboardMinHeight = $(".social-follow-container");
+					$(this).find(".billboard-inner-container").css('min-height', ((BillboardMinHeight.height()*1.08-17)+'px'));
+					$(this).find(".mailchimp-newsletter-container").css('min-height', ((BillboardMinHeight.height()*1.08)+'px'));
+				}
+				if ($(".social-follow-buttons-large").children("li").size() <= 3 ) {
+					//$(".closed-container-billboard-inner-left-container").addClass("hidden");
+					$(".closed-container-billboard-inner-right-container").removeClass("closed-container-billboard-inner-text-over-image");
+					$(this).find(".billboard-inner-container").removeAttr("style").addClass("sidebar-triple-slot-two-lt-three-billboard-control");
+					$(this).find(".mailchimp-newsletter-container").removeAttr("style");
+				}
+			}
+		});
 		// Add class to minimized category sidebar if category has more than 8 items
 		$(this).parent().parent().parent().parent().parent().parent().parent().find(".social-follow-buttons-small").each(function() {
 			$(this).parent().parent().addClass("global-closed-small-mailchimp-newsletter");
@@ -271,7 +290,11 @@ $(document).ready(function() {
 	// Index per category show button
 	$(".index-category-show-button").click(function() {
 		$(this).parent().parent().parent().parent().parent().find(".per-category-open-container").find(".per-category-content-container").removeClass("hidden");
-		$(this).parent().parent().parent().parent().parent().find(".per-category-open-container").find(".per-category-sidebar-container").removeClass("per-category-closed-container-content-sidebar");
+		$(this).parent().parent().parent().parent().parent().find(".per-category-open-container").find(".per-category-sidebar-container").removeClass("per-category-closed-container-content-sidebar").removeClass("sidebar-triple-slot-two");
+		$(this).parent().parent().parent().parent().parent().find(".billboard-inner-container").removeAttr("style").removeClass("sidebar-triple-slot-two-lt-three-billboard-control");
+		$(this).parent().parent().parent().parent().parent().find(".closed-container-billboard-inner-right-container").removeClass("closed-container-billboard-inner-text-over-image");
+		$(this).parent().parent().parent().parent().parent().find(".closed-container-billboard-inner-left-container").removeClass("hidden");
+		$(this).parent().parent().parent().parent().parent().find(".mailchimp-newsletter-container").removeAttr("style");
 		$(this).parent().parent().parent().parent().addClass("hidden");
 		$(this).parent().parent().parent().parent().parent().find(".per-category-sidebar-container-more-than-eight").removeAttr("style");
 		$(this).parent().parent().parent().parent().parent().find(".mailchimp-newsletter-container").removeClass("per-category-sidebar-container-more-than-eight");
@@ -283,6 +306,7 @@ $(document).ready(function() {
 		var editorsChoiceContainerMiddle = $(".per-category-content-container").height();
 		var editorsChoiceContainerMiddleSum = editorsChoiceContainerMiddle - (editorsChoiceContainerTop + editorsChoiceContainerBottom);
 		$(".per-category-sidebar-container").find(".editors-choice-container-middle").css('height', (editorsChoiceContainerMiddleSum));
+		//$(".per-category-sidebar-container").removeClass("sidebar-triple-slot-two");
 	});
 	
 });
