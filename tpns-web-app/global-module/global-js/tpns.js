@@ -5,6 +5,18 @@ var user_service_name = 'user-service';
 var user_service_base_url = 'http://' + user_service_host + ':' + user_service_port + '/' + user_service_name;
 var user_service_complete_url = user_service_base_url + '/v1/user';
 var user_service_login_url = user_service_base_url + '/v1/login';
+
+// global models and views
+var profile = new UserProfile();
+profile.set("first_name","Κατερίνα");
+profile.set("last_name","Παπαδοπούλου");
+profile.set("image","../staff-module/staff-images-50x50/staff6-50x50.jpg");
+profile.set("email","katerina.papadopoulos@tpns.com");
+var profileSummaryView = new ProfileSummaryView({model: profile});
+
+var settings = new Settings();
+
+// util functions
 var getHttpRequestParameter = function(parameterName) {
 	if (window.requestParameters === undefined) {
 		window.requestParameters = {};

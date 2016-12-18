@@ -58,21 +58,16 @@ $(document).ready( function() {
 		$(this).find(".tpns-ai-preview-show").toggleClass("hidden");
 		$(this).parent().parent().find("ul").toggleClass("hidden");
 	});	
+
+	var articles = new Articles();
+	initArticlesStatic(articles);
+	var articlesView = new ArticlesListView({ collection: articles });
+	var profileSummaryView = new ProfileSummaryView({model: profile});
+
+	$('.allArticlesTableContainer').append(articlesView.render().el.childNodes);
+	$('.allArticlesProfileSummaryContainer').append(profileSummaryView.render().el.childNodes);
 	
 });
-
-var articles = new Articles();
-initArticlesStatic(articles);
-var articlesView = new ArticlesListView({ collection: articles });
-var profile = new UserProfile();
-profile.set("first_name","Κατερίνα");
-profile.set("last_name","Παπαδοπούλου");
-profile.set("image","../staff-module/staff-images-50x50/staff6-50x50.jpg");
-profile.set("email","katerina.papadopoulos@tpns.com");
-var profileSummaryView = new ProfileSummaryView({model: profile});
-
-$('.allArticlesTableContainer').append(articlesView.render().el.childNodes);
-$('.allArticlesProfileSummaryContainer').append(profileSummaryView.render().el.childNodes);
 
 function readArticles(){
 	var username = getCookie("username");
