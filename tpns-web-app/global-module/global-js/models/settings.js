@@ -1,7 +1,8 @@
 var Settings = Backbone.Model.extend({
     defaults: {
-        groupName: 'TPNS',
-        sites: ['Astrology','Lifestyle', 'News', 'Sports']
+        group_name: '',
+        dashboard: '',
+        properties: new Properties()
     },
     initialize: function () {
 	this.on('change', function () {

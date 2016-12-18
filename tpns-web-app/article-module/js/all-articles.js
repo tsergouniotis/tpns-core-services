@@ -63,7 +63,9 @@ $(document).ready( function() {
 	initArticlesStatic(articles);
 	var articlesView = new ArticlesListView({ collection: articles });
 	var profileSummaryView = new ProfileSummaryView({model: profile});
+	var allPropertiesDropDownView = new AllPropertiesDropDownView({model: settings});
 
+	$('.allPropertiesDropDownContainer').append(allPropertiesDropDownView.render().el.childNodes);
 	$('.allArticlesTableContainer').append(articlesView.render().el.childNodes);
 	$('.allArticlesProfileSummaryContainer').append(profileSummaryView.render().el.childNodes);
 	
