@@ -1064,7 +1064,8 @@
 							<!-- Remove the entire per-category-sidebar-container div below -->
 							<div class="per-category-sidebar-container">
 								<!-- If the user chooses to add social buttons then add the entire div social-follow-container below regardless of whether they are large or small buttons -->
-								<div class="social-follow-container sidebar-slot-one">
+								<!-- Note: the sidebars have three slots to accomodate different positions when the category is minimised, they are generally as follows, unless we add local customisations: sidebar-slot-one - same width as the content, sidebar-slot-two - same width as the sidebar, sidebar-slot-full-width - full width of the site -->
+								<div class="social-follow-container sidebar-slot-two">
 									<!-- to show the small social buttons replace social-follow-buttons-large with social-follow-buttons-small below -->
 									<ul class="social-follow-buttons-large textc">
 										<!-- Social button loop STARTS HERE -->
@@ -1091,6 +1092,7 @@
 												</ul>
 											</a>
 										</li>
+										<!--
 										<li class="linkedin-official-colour">
 											<a href="#" title="">
 												<h5 class="social-follow-social-network"><i class="icon tpns-one-linkedin"></i><span class="hidden">LinkedIn</span></h5>
@@ -1124,7 +1126,6 @@
 												</ul>
 											</a>
 										</li>
-										<!--
 										<li class="vimeo-official-colour">
 											<a href="#" title="">
 												<h5 class="social-follow-social-network"><i class="icon tpns-one-vimeo"></i><span class="hidden">Vimeo</span></h5>
@@ -1136,7 +1137,7 @@
 												</ul>
 											</a>
 										</li>
-										-->
+										
 										<li class="instagram-official-colour">
 											<a href="#" title="">
 												<h5 class="social-follow-social-network"><i class="icon tpns-one-instagram"></i><span class="hidden">Instagram</span></h5>
@@ -1159,7 +1160,7 @@
 												</ul>
 											</a>
 										</li>
-										<!--
+										
 										<li class="google-plus-official-colour">
 											<a href="#" title="">
 												<h5 class="social-follow-social-network"><i class="icon tpns-one-google-plus"></i><span class="hidden">Google&#43;</span></h5>
@@ -1216,7 +1217,7 @@
 								</div>
                                 <!-- If the user chooses not to add a billboard then remove the entire div below -->
                                 <!-- Remember to add the category here -->
-                                <div class="billboard-container oikonomia sidebar-slot-full-width">
+                                <div class="billboard-container oikonomia sidebar-slot-two">
                                 	<div class="billboard-inner-container">
 										<div class="global-article-category">
 											<h5 class="text100 textup">Οικονομία</h5>
