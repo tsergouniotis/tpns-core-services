@@ -4,7 +4,7 @@ var didScroll;
 var lastScrollTop = 0;
 var delta = 5;
 var navbarHeight = $('header').outerHeight();
-$(window).scroll(function(event) {
+$(window).scroll(function() {
 	'use strict';
     didScroll = true;
 });
@@ -17,8 +17,9 @@ setInterval(function() {
 }, 250);
 function hasScrolled() {
     var st = $(this).scrollTop();
-    if(Math.abs(lastScrollTop - st) <= delta)
+    if(Math.abs(lastScrollTop - st) <= delta) {
         return;
+	}
     if (st > lastScrollTop && st > navbarHeight){
         $('header').removeClass('nav-down').addClass('nav-up');
     } else {
@@ -148,7 +149,7 @@ $(document).ready(function() {
 	var _ua = window.navigator.userAgent;
 	_ath.isAndroidBrowser = _ua.indexOf('Android') > -1 && !(/Chrome\/[.0-9]*/).test(_ua);
 	_ath.isCompatible = _ath.isCompatible || _ath.isAndroidBrowser;
-	if ( _ath.OS == 'unsupported' && _ath.isAndroidBrowser ) {
+	if ( _ath.OS === 'unsupported' && _ath.isAndroidBrowser ) {
 		// additionally we check for some Samsung devices (not strictly needed)
 		_ath.OS = (/ (GT-I9|GT-P7|SM-T2|GT-P5|GT-P3|SCH-I8)/).test(_ua) ? 'samsungAndroid' : 'stockAndroid';
 	}
@@ -240,6 +241,21 @@ $(document).ready(function() {
 		$(this).toggleClass("active");
 		$(this).parent().find(".index-subcategories").toggleClass("hidden");
 	});
+	$(".social-follow-buttons-large").each(function() {
+		// Do something dependant on Large Social Button li frequency
+		if ($(this).children('li').size() === 1 )	{
+			$(this).addClass("social-follow-buttons-large-equal-to-one");
+		}
+		if ($(this).children('li').size() === 4 )	{
+			$(this).addClass("social-follow-buttons-large-equal-to-four");
+		}
+		if ($(this).children('li').size() === 7 )	{
+			$(this).addClass("social-follow-buttons-large-equal-to-seven");
+		}
+		if ($(this).children('li').size() === 10 )	{
+			$(this).addClass("social-follow-buttons-large-equal-to-ten");
+		}
+	});
 	// Index per category hide button
 	$(".index-category-hide-button").click(function() {
 		$(".index-subcategories-button").find(".tpns-one-mobile-menu").removeClass("hidden");
@@ -249,28 +265,130 @@ $(document).ready(function() {
 		$(this).parent().parent().parent().parent().parent().parent().parent().find(".per-category-open-container").find(".per-category-content-container").addClass("hidden");
 		$(this).parent().parent().parent().parent().parent().parent().parent().find(".per-category-open-container").find(".per-category-sidebar-container").addClass("per-category-closed-container-content-sidebar");
 		$(this).parent().parent().parent().parent().parent().parent().parent().find(".per-category-closed-container").removeClass("hidden");
-		// Add class dependant on slot frequency
-		// Type1 = 3 x sidebar-slot-two
-		$(this).parent().parent().parent().parent().parent().parent().parent().find(".per-category-closed-container-content-sidebar").each(function() {
-			if ($(this).children(".sidebar-slot-two").size() === 3 ) {
-				$(this).addClass("sidebar-triple-slot-two");
-				if ($(".social-follow-buttons-large").children("li").size() <= 6 ) {
-					$(".closed-container-billboard-inner-right-container").addClass("closed-container-billboard-inner-text-over-image");
-					var BillboardMinHeight = $(".social-follow-container");
-					$(this).find(".billboard-inner-container").css('min-height', ((BillboardMinHeight.height()*1.08-17)+'px'));
-					$(this).find(".mailchimp-newsletter-container").css('min-height', ((BillboardMinHeight.height()*1.08)+'px'));
+		// Do something if the user opts to have Large Social Buttons
+		$(this).parent().parent().parent().parent().parent().parent().parent().find(".social-follow-buttons-large").each(function() {
+			// Do something dependant on Large Social Button li frequency
+			if ($(this).children('li').size() === 2 )	{
+				$(this).addClass("social-follow-buttons-large-equal-to-two");
+			}
+			if ($(this).children('li').size() === 3 )	{
+				$(this).addClass("social-follow-buttons-large-equal-to-three");
+			}
+			if ($(this).parent().parent().children(".sidebar-slot-one").size() === 3 ) {
+				// Do something dependant on sidebar slot frequency
+				$(this).parent().parent().addClass("sidebar-triple-slot-one");
+				if ($(this).children("li").size() <= 12 ) {
+					var socialLargeBillboardLTETwelve = $(".social-follow-container");
+					$(this).parent().parent().find(".billboard-inner-container").css('min-height', ((socialLargeBillboardLTETwelve.height()*1.086-17)+'px'));
+					$(this).parent().parent().find(".mailchimp-newsletter-container").css('min-height', ((socialLargeBillboardLTETwelve.height()*1.086)+'px'));
 				}
-				if ($(".social-follow-buttons-large").children("li").size() <= 3 ) {
-					//$(".closed-container-billboard-inner-left-container").addClass("hidden");
+				if ($(this).children("li").size() <= 9 ) {
+					var socialLargeBillboardLTENine = $(".social-follow-container");
+					$(this).parent().parent().find(".billboard-inner-container").css('min-height', ((socialLargeBillboardLTENine.height()*1.078-17)+'px'));
+					$(this).parent().parent().find(".mailchimp-newsletter-container").css('min-height', ((socialLargeBillboardLTENine.height()*1.078)+'px'));
+				}
+				if ($(this).children("li").size() <= 6 ) {
+					$(".closed-container-billboard-inner-right-container").addClass("closed-container-billboard-inner-text-over-image");
+					var socialLargeBillboardLTESix = $(".social-follow-container");
+					$(this).parent().parent().find(".billboard-inner-container").addClass("billboard-inner-container-lte-six").css('min-height', ((socialLargeBillboardLTESix.height()*1.054-17)+'px'));
+					$(this).parent().parent().find(".mailchimp-newsletter-container").css('min-height', ((socialLargeBillboardLTESix.height()*1.056)+'px'));
+				}
+				if ($(this).children("li").size() <= 3 ) {
 					$(".closed-container-billboard-inner-right-container").removeClass("closed-container-billboard-inner-text-over-image");
-					$(this).find(".billboard-inner-container").removeAttr("style").addClass("sidebar-triple-slot-two-lt-three-billboard-control");
-					$(this).find(".mailchimp-newsletter-container").removeAttr("style");
+					$(this).parent().parent().find(".billboard-inner-container").removeAttr("style").addClass("sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control");
+					$(this).parent().parent().find(".mailchimp-newsletter-container").removeAttr("style");
+				}
+				/*
+				if ($(this).children("li").size() === 2 ) {
+					$(this).addClass("social-follow-buttons-large-equal-to-two");
+				}
+				if ($(this).children("li").size() === 1 ) {
+					$(this).addClass("social-follow-buttons-large-equal-to-one");
+				}
+				*/
+			}
+			if ($(this).children('li').size() > 3 )	{
+				if ($(this).parent().hasClass("sidebar-slot-three")) {
+					var mailChimpContainerSlotThreeGTThree = $(".social-follow-container");
+					$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerSlotThreeGTThree.height()*1.056)+'px'));
+				}
+			}
+			if ($(this).children('li').size() > 4 )	{
+				if ($(this).parent().hasClass("sidebar-slot-five")) {
+					var mailChimpContainerSlotFiveGTFour = $(".social-follow-container");
+					$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerSlotFiveGTFour.height()*1.018)+'px'));
+				}
+			}
+			if ($(this).children('li').size() === 5 )	{
+				if ($(this).parent().hasClass("sidebar-slot-default")) {
+					$(this).addClass("social-follow-buttons-large-equal-to-five");
+				}
+				if ($(this).parent().hasClass("sidebar-slot-two")) {
+					$(this).addClass("social-follow-buttons-large-equal-to-five");
+				}
+				if ($(this).parent().hasClass("sidebar-slot-four")) {
+					$(this).addClass("social-follow-buttons-large-equal-to-five");
+				}
+				if ($(this).parent().hasClass("sidebar-slot-full")) {
+					$(this).addClass("social-follow-buttons-large-equal-to-five");
+				}
+			}
+			if ($(this).children('li').size() === 6 )	{
+				if ($(this).parent().hasClass("sidebar-slot-full")) {
+					$(this).addClass("social-follow-buttons-large-equal-to-six");
+				}
+			}
+			if ($(this).children('li').size() > 6 )	{
+				if ($(this).parent().hasClass("sidebar-slot-default")) {
+					var mailChimpContainerSlotDefaultGTSix = $(".social-follow-container");
+					$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerSlotDefaultGTSix.height()*1.028)+'px'));
+				}
+				if ($(this).parent().hasClass("sidebar-slot-three")) {
+					var mailChimpContainerSlotThreeGTSix = $(".social-follow-container");
+					$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerSlotThreeGTSix.height()*1.078)+'px'));
+				}
+				if ($(this).parent().hasClass("sidebar-slot-two")) {
+					var mailChimpContainerSlotTwoGTSix = $(".social-follow-container");
+					$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerSlotTwoGTSix.height()*1.028)+'px'));
+				}
+			}
+			/*
+			if ($(this).children('li').size() === 7 )	{
+				if ($(this).parent().hasClass("sidebar-slot-full")) {
+					$(this).addClass("social-follow-buttons-large-equal-to-seven");
+				}
+			}
+			*/
+			if ($(this).children('li').size() > 8 )	{
+				if ($(this).parent().hasClass("sidebar-slot-five")) {
+					var mailChimpContainerSlotFiveGTEight = $(".social-follow-container");
+					$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerSlotFiveGTEight.height()*1.028)+'px'));
+				}
+			}
+			if ($(this).children('li').size() > 9 )	{
+				if ($(this).parent().hasClass("sidebar-slot-three")) {
+					var mailChimpContainerSlotThreeGTNine = $(".social-follow-container");
+					$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerSlotThreeGTNine.height()*1.086)+'px'));
 				}
 			}
 		});
-		// Add class to minimized category sidebar if category has more than 8 items
+		// Do something if the user opts to have Small Social Buttons
 		$(this).parent().parent().parent().parent().parent().parent().parent().find(".social-follow-buttons-small").each(function() {
 			$(this).parent().parent().addClass("global-closed-small-mailchimp-newsletter");
+			// Do something dependant on Large Social Button li frequency
+			if ($(this).parent().parent().children(".sidebar-slot-one").size() === 3 ) {
+				$(this).addClass("sidebar-triple-slot-one");
+				if ($(".social-follow-buttons-small").children("li").size() <= 10 ) {
+					$(this).removeClass("global-closed-small-mailchimp-newsletter");
+					$(".per-category-open-container").removeClass("closed-small-mailchimp-newsletter");
+					$(".mailchimp-newsletter-container").removeClass("per-category-sidebar-container-more-than-eight");
+					$(this).addClass("banana");
+					$(this).parent().addClass("closed-small-mailchimp-newsletter");
+					var socialSmallBillboardLTETen = $(".social-follow-container");
+					$(this).find(".billboard-inner-container").css('min-height', ((socialSmallBillboardLTETen.height()*1.08-17)+'px'));
+					$(this).find(".mailchimp-newsletter-container").css('min-height', ((socialSmallBillboardLTETen.height()*1.08)+'px'));
+				}
+			}
 			if ($(this).children('li').size() > 8 )	{
 				$(this).parent().addClass("closed-small-mailchimp-newsletter");
 				$(".mailchimp-newsletter-container").addClass("per-category-sidebar-container-more-than-eight");
@@ -278,35 +396,70 @@ $(document).ready(function() {
 				$(".per-category-sidebar-container-more-than-eight").css('height', (mailChimpContainerGTEight.height()));
 			}
 		});
-		$(this).parent().parent().parent().parent().parent().parent().parent().find(".social-follow-buttons-large").each(function() {
-			if ($(this).children('li').size() > 8 )	{
-				$(".mailchimp-newsletter-container").addClass("per-category-sidebar-container-more-than-eight");
-				var mailChimpContainerGTEight = $(".per-category-sidebar-container-more-than-eight").height(260);
-				$(".per-category-sidebar-container-more-than-eight").css('height', (mailChimpContainerGTEight.height()+(260*0.0342)));
+				
+		
+		
+		/*
+		// Type1 = 3 x sidebar-slot-two
+		$(this).parent().parent().parent().parent().parent().parent().parent().find(".per-category-closed-container-content-sidebar").each(function() {
+			if ($(this).children(".sidebar-slot-one").size() === 3 ) {
+				$(this).addClass("sidebar-triple-slot-one");
+				if ($(".social-follow-buttons-small").children("li").size() <= 10 ) {
+					$(this).removeClass("global-closed-small-mailchimp-newsletter");
+					$(".per-category-open-container").removeClass("closed-small-mailchimp-newsletter");
+					$(".mailchimp-newsletter-container").removeClass("per-category-sidebar-container-more-than-eight");
+					$(this).addClass("banana");
+					$(this).parent().addClass("closed-small-mailchimp-newsletter");
+					var socialSmallBillboardLTETen = $(".social-follow-container");
+					$(this).find(".billboard-inner-container").css('min-height', ((socialSmallBillboardLTETen.height()*1.08-17)+'px'));
+					$(this).find(".mailchimp-newsletter-container").css('min-height', ((socialSmallBillboardLTETen.height()*1.08)+'px'));
+				}
+				if ($(".social-follow-buttons-large").children("li").size() <= 9 ) {
+					var socialLargeBillboardLTENine = $(".social-follow-container");
+					$(this).find(".billboard-inner-container").css('min-height', ((socialLargeBillboardLTENine.height()*1.08-17)+'px'));
+					$(this).find(".mailchimp-newsletter-container").css('min-height', ((socialLargeBillboardLTENine.height()*1.08)+'px'));
+				}
+				if ($(".social-follow-buttons-large").children("li").size() <= 6 ) {
+					$(".closed-container-billboard-inner-right-container").addClass("closed-container-billboard-inner-text-over-image");
+					var socialLargeBillboardLTESix = $(".social-follow-container");
+					$(this).find(".billboard-inner-container").css('min-height', ((socialLargeBillboardLTESix.height()*1.08-17)+'px'));
+					$(this).find(".mailchimp-newsletter-container").css('min-height', ((socialLargeBillboardLTESix.height()*1.08)+'px'));
+				}
+				if ($(".social-follow-buttons-large").children("li").size() <= 3 ) {
+					//$(".closed-container-billboard-inner-left-container").addClass("hidden");
+					$(".closed-container-billboard-inner-right-container").removeClass("closed-container-billboard-inner-text-over-image");
+					$(this).find(".billboard-inner-container").removeAttr("style").addClass("sidebar-triple-slot-one-lt-three-billboard-control");
+					$(this).find(".mailchimp-newsletter-container").removeAttr("style");
+				}
 			}
 		});
+		*/
 		$(".per-category-closed-container-content-sidebar").find(".editors-choice-container-middle").removeAttr("style");
 	});
 	// Index per category show button
 	$(".index-category-show-button").click(function() {
 		$(this).parent().parent().parent().parent().parent().find(".per-category-open-container").find(".per-category-content-container").removeClass("hidden");
-		$(this).parent().parent().parent().parent().parent().find(".per-category-open-container").find(".per-category-sidebar-container").removeClass("per-category-closed-container-content-sidebar").removeClass("sidebar-triple-slot-two");
-		$(this).parent().parent().parent().parent().parent().find(".billboard-inner-container").removeAttr("style").removeClass("sidebar-triple-slot-two-lt-three-billboard-control");
+		$(this).parent().parent().parent().parent().parent().find(".per-category-open-container").find(".per-category-sidebar-container").removeClass("per-category-closed-container-content-sidebar");
+		//.removeClass("sidebar-triple-slot-one");
+		
 		$(this).parent().parent().parent().parent().parent().find(".closed-container-billboard-inner-right-container").removeClass("closed-container-billboard-inner-text-over-image");
 		$(this).parent().parent().parent().parent().parent().find(".closed-container-billboard-inner-left-container").removeClass("hidden");
 		$(this).parent().parent().parent().parent().parent().find(".mailchimp-newsletter-container").removeAttr("style");
 		$(this).parent().parent().parent().parent().addClass("hidden");
-		$(this).parent().parent().parent().parent().parent().find(".per-category-sidebar-container-more-than-eight").removeAttr("style");
-		$(this).parent().parent().parent().parent().parent().find(".mailchimp-newsletter-container").removeClass("per-category-sidebar-container-more-than-eight");
-		$(this).parent().parent().parent().parent().parent().find(".social-follow-buttons-small").parent().parent().removeClass("global-closed-small-mailchimp-newsletter");
-		$(this).parent().parent().parent().parent().parent().find(".social-follow-buttons-small").parent().removeClass("closed-small-mailchimp-newsletter");
+		
 		// Index per Category make sidebar the same height as the articles on the left
 		var editorsChoiceContainerTop = $(".per-category-sidebar-container").find(".editors-choice-container-top").outerHeight();
 		var editorsChoiceContainerBottom = $(".per-category-sidebar-container").find(".editors-choice-container-bottom").innerHeight();
 		var editorsChoiceContainerMiddle = $(".per-category-content-container").height();
 		var editorsChoiceContainerMiddleSum = editorsChoiceContainerMiddle - (editorsChoiceContainerTop + editorsChoiceContainerBottom);
 		$(".per-category-sidebar-container").find(".editors-choice-container-middle").css('height', (editorsChoiceContainerMiddleSum));
-		//$(".per-category-sidebar-container").removeClass("sidebar-triple-slot-two");
+		/*
+		$(this).parent().parent().parent().parent().parent().find(".billboard-inner-container").removeAttr("style").removeClass("sidebar-triple-slot-one-lt-three-billboard-control");
+		$(this).parent().parent().parent().parent().parent().find(".per-category-sidebar-container-more-than-eight").removeAttr("style");
+		$(this).parent().parent().parent().parent().parent().find(".mailchimp-newsletter-container").removeClass("per-category-sidebar-container-more-than-eight");
+		$(this).parent().parent().parent().parent().parent().find(".social-follow-buttons-small").parent().parent().removeClass("global-closed-small-mailchimp-newsletter");
+		$(this).parent().parent().parent().parent().parent().find(".social-follow-buttons-small").parent().removeClass("closed-small-mailchimp-newsletter");
+		*/
 	});
 	
 });

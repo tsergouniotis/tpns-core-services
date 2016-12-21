@@ -1064,8 +1064,8 @@
 							<!-- Remove the entire per-category-sidebar-container div below -->
 							<div class="per-category-sidebar-container">
 								<!-- If the user chooses to add social buttons then add the entire div social-follow-container below regardless of whether they are large or small buttons -->
-								<!-- Note: the sidebars have three slots to accomodate different positions when the category is minimised, they are generally as follows, unless we add local customisations: sidebar-slot-one - same width as the content, sidebar-slot-two - same width as the sidebar, sidebar-slot-full-width - full width of the site -->
-								<div class="social-follow-container sidebar-slot-two">
+								<!-- Note: the sidebars have 5 slots to accomodate different positions, please read the documentation for more info. -->
+								<div class="social-follow-container sidebar-slot-default">
 									<!-- to show the small social buttons replace social-follow-buttons-large with social-follow-buttons-small below -->
 									<ul class="social-follow-buttons-large textc">
 										<!-- Social button loop STARTS HERE -->
@@ -1081,6 +1081,7 @@
 												</ul>
 											</a>
 										</li>
+										
 										<li class="twitter-official-colour">
 											<a href="#" title="">
 												<h5 class="social-follow-social-network"><i class="icon tpns-one-twitter"></i><span class="hidden">Twitter</span></h5>
@@ -1104,6 +1105,7 @@
 												</ul>
 											</a>
 										</li>
+										-->
 										<li class="rss-official-colour">
 											<a href="#" title="">
 												<h5 class="social-follow-social-network"><i class="icon tpns-one-rss"></i><span class="hidden">RSS</span></h5>
@@ -1115,6 +1117,7 @@
 												</ul>
 											</a>
 										</li>
+										
 										<li class="youtube-official-colour">
 											<a href="#" title="">
 												<h5 class="social-follow-social-network"><i class="icon tpns-one-youtube"></i><span class="hidden">YouTube</span></h5>
@@ -1126,6 +1129,7 @@
 												</ul>
 											</a>
 										</li>
+										<!--
 										<li class="vimeo-official-colour">
 											<a href="#" title="">
 												<h5 class="social-follow-social-network"><i class="icon tpns-one-vimeo"></i><span class="hidden">Vimeo</span></h5>
@@ -1137,7 +1141,7 @@
 												</ul>
 											</a>
 										</li>
-										
+										-->
 										<li class="instagram-official-colour">
 											<a href="#" title="">
 												<h5 class="social-follow-social-network"><i class="icon tpns-one-instagram"></i><span class="hidden">Instagram</span></h5>
@@ -1149,6 +1153,7 @@
 												</ul>
 											</a>
 										</li>
+										<!--
 										<li class="pinterest-official-colour">
 											<a href="#" title="">
 												<h5 class="social-follow-social-network"><i class="icon tpns-one-pinterest"></i><span class="hidden">Pinterest</span></h5>
@@ -1184,10 +1189,11 @@
 												</ul>
 											</a>
 										</li>
+										
 									</ul>
 									<div class="clearfix"></div>
 								</div>
-								<div class="mailchimp-newsletter-container sidebar-slot-two">
+								<div class="mailchimp-newsletter-container sidebar-slot-default">
 									<p class="mailchimp-newsletter-title textb"><i class="icon tpns-one-mailchimp"></i>Αυτόματη ενημέρωση με Email</p>
 									<form method="post" action="#mc_signup" id="mc_signup_form">
 										<input id="mc_submit_type" name="mc_submit_type" value="js" type="hidden">
@@ -1217,7 +1223,7 @@
 								</div>
                                 <!-- If the user chooses not to add a billboard then remove the entire div below -->
                                 <!-- Remember to add the category here -->
-                                <div class="billboard-container oikonomia sidebar-slot-two">
+                                <div class="billboard-container oikonomia sidebar-slot-full">
                                 	<div class="billboard-inner-container">
 										<div class="global-article-category">
 											<h5 class="text100 textup">Οικονομία</h5>
@@ -2012,7 +2018,7 @@
                             <!-- Example of the user selecting to not have a sidebar and have articles only -->
                             <!-- Remove the entire per-category-sidebar-container div below -->
                             <div class="per-category-sidebar-container">
-								<div class="editors-choice-container sidebar-slot-full-width">
+								<div class="editors-choice-container sidebar-slot-full">
 									<!-- If the user selects to not show an advart in the News Stream top section, add to the div below the class editors-choice-top-no-ad -->
 									<div class="editors-choice-container-top">
 										<a href="https://www.anytime.gr/" title="TPNS One - Επιλογές του Συντάκτη σε συνεργασία με την Anytime Insurance Online by Interamerican" target="_blank">
