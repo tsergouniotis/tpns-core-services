@@ -67,8 +67,7 @@ $(document).ready( function() {
 
 	$('.allPropertiesDropDownContainer').append(allPropertiesDropDownView.render().el.childNodes);
 	$('.allArticlesTableContainer').append(articlesView.render().el.childNodes);
-	$('.allArticlesProfileSummaryContainer').append(profileSummaryView.render().el.childNodes);
-	
+	$('.allArticlesProfileSummaryContainer').append(profileSummaryView.render().el.childNodes);	
 });
 
 function readArticles(){

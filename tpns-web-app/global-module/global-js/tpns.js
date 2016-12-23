@@ -6,6 +6,8 @@ var user_service_base_url = 'http://' + user_service_host + ':' + user_service_p
 var user_service_complete_url = user_service_base_url + '/v1/user';
 var user_service_login_url = user_service_base_url + '/v1/login';
 
+var selected_site="TPNS News";
+
 // global models and views
 var profile = new UserProfile();
 profile.set("first_name","Κατερίνα");
@@ -87,5 +89,10 @@ function getCookie(cname) {
             return c.substring(name.length,c.length);
         }
     }
+    return "";
+} 
+//Global selection 
+function updateSelectedSite(newSite) {
+    selected_site = newSite;
     return "";
 } 
