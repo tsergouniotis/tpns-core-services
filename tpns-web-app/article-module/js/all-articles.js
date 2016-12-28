@@ -41,6 +41,9 @@ $(".filter-active").find("a").click(function(e) {
 // Document Ready
 $(document).ready( function() {
 	'use strict';
+
+	readCookie();
+	
 	// Initialize CountChars in form
 	$(".new-article-textbox").countChar();
 	
@@ -65,16 +68,15 @@ $(document).ready( function() {
 	var profileSummaryView = new ProfileSummaryView({model: profile});
 	var allPropertiesDropDownView = new AllPropertiesDropDownView({model: settings});
 
+
 	$('.allPropertiesDropDownContainer').append(allPropertiesDropDownView.render().el.childNodes);
 	$('.allArticlesTableContainer').append(articlesView.render().el.childNodes);
 	$('.allArticlesProfileSummaryContainer').append(profileSummaryView.render().el.childNodes);	
 });
 
 function readArticles(){
-	var username = getCookie("username");
-	var authtoken = getCookie("authtoken");
-	console.log("username = "+username);
-	console.log("authtoken = "+authtoken);
+	
+
 }
 
 function initArticlesStatic(articles){

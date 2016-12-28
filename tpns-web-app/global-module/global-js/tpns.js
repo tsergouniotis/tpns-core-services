@@ -6,8 +6,6 @@ var user_service_base_url = 'http://' + user_service_host + ':' + user_service_p
 var user_service_complete_url = user_service_base_url + '/v1/user';
 var user_service_login_url = user_service_base_url + '/v1/login';
 
-var selected_site="TPNS News";
-
 // global models and views
 var profile = new UserProfile();
 profile.set("first_name","Κατερίνα");
@@ -43,6 +41,9 @@ settings.set("group_name","TPNS Group");
 settings.set("properties", properties);
 settings.set("dashboard","dashboard-module/global-bi-dashboard.html");
 
+var username;
+var authtoken;
+var selected_site;
 
 // util functions
 var getHttpRequestParameter = function(parameterName) {
@@ -70,6 +71,12 @@ var getHttpRequestParameter = function(parameterName) {
 	}
 	return window.requestParameters[parameterName.toLowerCase()];
 };
+function isNotEmpty(value){
+     return typeof(value) !== "undefined" && value
+}
+function isEmpty(value){
+     return !isNotEmpty(value);
+}
 // Cookie functions Document
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
@@ -91,8 +98,19 @@ function getCookie(cname) {
     }
     return "";
 } 
-//Global selection 
-function updateSelectedSite(newSite) {
-    selected_site = newSite;
-    return "";
+function readCookie(){
+    username = getCookie("username");
+    authtoken = getCookie("authtoken");
+    selected_site = getCookie("selectedsite");
+    if (isEmpty(selected_site)){
+        selected_site = "TPNS Astrology";
+	updateSelectedSite(selected_site);
+    }
+    console.log("Reading cookie ...");
+    console.log("username = "+username);
+    console.log("authtoken = "+authtoken);
+    console.log("selectedsite = "+selected_site);
+}
+function updateSelectedSite(new_site) {
+    setCookie("selectedsite",new_site,365)
 } 
