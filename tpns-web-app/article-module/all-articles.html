@@ -53,12 +53,20 @@
                         <div class="admin-global-controllers-left">
                             <div class="admin-global-controllers-left-items admin-area-dashboard-nav">
                             	<div class="admin-global-controllers-tab-container">
-                                    <div class="admin-global-controllers-tab-button">
-                                        <p class="admin-global-controllers-tab-show"><a class="dropdown" title="Open the navigation"><span>TPNS One</span><i class="icon tpns-ai-arrow-down"></i><i class="icon tpns-ai-close hidden"></i></a></p>
+                                    <div class="allPropertiesSelectionContainer admin-global-controllers-tab-button">                                          
+					<!--<p class="admin-global-controllers-tab-show">
+						<a class="dropdown" title="Open the navigation">
+							<span>TPNS One</span>
+							<i class="icon tpns-ai-arrow-down"></i>
+							<i class="icon tpns-ai-close hidden"></i>
+						</a>
+					</p>   -->                                  
+					<!-- BACKBONE CODE INJECTION: content in ArticleListView (see all-article-views.js) -->
+					<!-- UNIQUE: allPropertiesSelectionContainer needs to remain unique--> 
                                     </div>
                                     <div class="allPropertiesDropDownContainer dropdown-menu admin-global-controllers-tab-content admin-global-controllers-tab-content-left hidden">
 					<!-- BACKBONE CODE INJECTION: content in ArticleListView (see all-article-views.js) -->
-					<!-- UNIQUE: allArticlesTableContainer needs to remain unique--> 
+					<!-- UNIQUE: allPropertiesDropDownContainer needs to remain unique--> 
                                     </div>
                                 </div>
                             </div>
@@ -645,12 +653,13 @@
     <script type="text/javascript" src="../global-module/global-js/underscore.js"></script>
     <script type="text/javascript" src="../global-module/global-js/backbone.js"></script>
     <!-- Common backbone files -->
+    <script type="text/javascript" src="../global-module/global-js/models/navigation.js"></script>
     <script type="text/javascript" src="../global-module/global-js/models/property.js"></script>
     <script type="text/javascript" src="../global-module/global-js/models/settings.js"></script>
     <script type="text/javascript" src="../global-module/global-js/models/profile.js"></script>
     <script type="text/javascript" src="../global-module/global-js/tpns.js"></script>
     <script type="text/javascript" src="../global-module/global-js/views/profileviews.js"></script>
-    <script type="text/javascript" src="../global-module/global-js/views/settingsviews.js"></script>
+    <script type="text/javascript" src="../global-module/global-js/views/navigationviews.js"></script>
     <!-- Local JS files -->
     <script type="text/javascript" src="js/article-models.js"></script>
     <script type="text/javascript" src="js/all-article-views.js"></script>

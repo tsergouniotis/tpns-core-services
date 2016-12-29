@@ -43,6 +43,18 @@ $(document).ready( function() {
 	'use strict';
 
 	readCookie();
+
+	var articles = new Articles();
+	initArticlesStatic(articles);
+	var articlesView = new ArticlesListView({collection: articles});
+	var profileSummaryView = new ProfileSummaryView({model: profile});
+	var allNavigationLinksDropDownView = new AllNavigationLinksDropDownView({collection: availableNavigationLinks});
+	var selectedNavigationLinkView = new SelectedNavigationLinkView({model: selected_site});
+
+	$('.allPropertiesSelectionContainer').append(selectedNavigationLinkView.render().el.childNodes);
+	$('.allPropertiesDropDownContainer').append(allNavigationLinksDropDownView.render().el.childNodes);
+	$('.allArticlesTableContainer').append(articlesView.render().el.childNodes);
+	$('.allArticlesProfileSummaryContainer').append(profileSummaryView.render().el.childNodes);	
 	
 	// Initialize CountChars in form
 	$(".new-article-textbox").countChar();
@@ -62,16 +74,6 @@ $(document).ready( function() {
 		$(this).parent().parent().find("ul").toggleClass("hidden");
 	});	
 
-	var articles = new Articles();
-	initArticlesStatic(articles);
-	var articlesView = new ArticlesListView({ collection: articles });
-	var profileSummaryView = new ProfileSummaryView({model: profile});
-	var allPropertiesDropDownView = new AllPropertiesDropDownView({model: settings});
-
-
-	$('.allPropertiesDropDownContainer').append(allPropertiesDropDownView.render().el.childNodes);
-	$('.allArticlesTableContainer').append(articlesView.render().el.childNodes);
-	$('.allArticlesProfileSummaryContainer').append(profileSummaryView.render().el.childNodes);	
 });
 
 function readArticles(){

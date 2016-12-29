@@ -1,10 +1,17 @@
 // JavaScript Document
+
+// Backend loacation values
 var user_service_host = 'userservice';
 var user_service_port = '8081';
 var user_service_name = 'user-service';
 var user_service_base_url = 'http://' + user_service_host + ':' + user_service_port + '/' + user_service_name;
 var user_service_complete_url = user_service_base_url + '/v1/user';
 var user_service_login_url = user_service_base_url + '/v1/login';
+
+// Cookie values
+var username;
+var authtoken;
+var selected_site;
 
 // global models and views
 var profile = new UserProfile();
@@ -15,6 +22,8 @@ profile.set("email","katerina.papadopoulos@tpns.com");
 
 var properties = new Properties();
 
+// TODO replace with code that checks which properties are available for user
+// Replace START
 var p1 = new Property();
 p1.set("name","TPNS Astrology");
 p1.set("location","/newspaper-dashboard-module/newspaper-bi-dashboard.html");
@@ -40,10 +49,22 @@ var settings = new Settings();
 settings.set("group_name","TPNS Group");
 settings.set("properties", properties);
 settings.set("dashboard","dashboard-module/global-bi-dashboard.html");
+// Replace END
 
-var username;
-var authtoken;
-var selected_site;
+// Dynamically create navigation links
+var availableNavigationLinks = new NavigationDestinations();
+
+var nd1 = new NavigationDestination();
+nd1.set("label", settings.get("group_name"));
+nd1.set("location", settings.get("dashboard"));
+availableNavigationLinks.add(nd1);
+
+properties.each(function(property) {
+    var ndi = new NavigationDestination();
+    ndi.set("label", property.get("name"));
+    ndi.set("location", property.get("location"));
+    availableNavigationLinks.add(ndi);
+});
 
 // util functions
 var getHttpRequestParameter = function(parameterName) {
@@ -101,16 +122,21 @@ function getCookie(cname) {
 function readCookie(){
     username = getCookie("username");
     authtoken = getCookie("authtoken");
-    selected_site = getCookie("selectedsite");
-    if (isEmpty(selected_site)){
-        selected_site = "TPNS Astrology";
-	updateSelectedSite(selected_site);
-    }
+    selected_site_name = getCookie("selectedsite");
+    if (isEmpty(selected_site_name)){
+	selected_site_name = "TPNS News";
+    } 
+    updateSelectedSite(selected_site_name);
     console.log("Reading cookie ...");
     console.log("username = "+username);
     console.log("authtoken = "+authtoken);
-    console.log("selectedsite = "+selected_site);
+    console.log("selectedsite = "+selected_site.toJSON().label);
 }
 function updateSelectedSite(new_site) {
-    setCookie("selectedsite",new_site,365)
+    availableNavigationLinks.each(function(nl) {
+	if (nl.toJSON().label.valueOf() == new_site){
+	    selected_site = nl;
+	    setCookie("selectedsite", new_site,365);
+        }
+    });
 } 
