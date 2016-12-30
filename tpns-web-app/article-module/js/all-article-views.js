@@ -4,7 +4,7 @@ var ArticleRowView = Backbone.View.extend({
 	    '<div class="new-article-form-content-related-info articles-form-content-featured-info">'
            +'    <div class="admin-click-menu-container">'
 	   +'        <div class="admin-click-menu-button admin-click-menu-articles-table">'
-	   +'            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-favourite"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter"><%= featured_option %></span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>'
+	   +'            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-favourite"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter"><%=featured_option %></span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>'
            +'        </div>'
            +'        <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">'
            +'            <ul class="admin-click-menu-content-list">'
@@ -27,7 +27,7 @@ var ArticleRowView = Backbone.View.extend({
 	    '<div class="new-article-form-content-related-info articles-form-content-featured-info">'
            +'    <div class="admin-click-menu-container">'
 	   +'        <div class="admin-click-menu-button admin-click-menu-articles-table">'
-	   +'            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-favourite"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter"><%= featured_option %></span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>'
+	   +'            <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-editors-choice"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter"><%=editors_choice_option %></span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>'
            +'        </div>'
            +'        <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">'
            +'            <ul class="admin-click-menu-content-list">'
@@ -79,7 +79,12 @@ var ArticleRowView = Backbone.View.extend({
 		var html= '';
 html+='                    <div class="global-table-row">';
 html+='                        <div class="global-table-cell">';
-html+='                            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>';
+html+='                            <p class="admin-global-checkbox">';
+html+='                                <label>';
+html+='                                    <input type="checkbox" class="single-article-checkbox" name="single-article-checkbox">';
+html+='                                    <span class="admin-global-checkbox-label" checked></span>';
+html+='                                </label>';
+html+='                            </p>';
 html+='                        </div>';
 html+='                        <div class="global-table-cell">';
 html+='                        '+this.featuredTemplate(this.model.toJSON());
