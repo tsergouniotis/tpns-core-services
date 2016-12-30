@@ -56,10 +56,7 @@ var ArticleRowView = Backbone.View.extend({
            +'    <div class="admin-local-controllers-right-items admin-article-search-container"><p class="articles-content-button stop-button"><a><i class="icon tpns-ai-cloud-download"></i>Unpublish</a></p></div>'
 	   +'    <div class="article-shortcut-controllers-items"><p class="articles-content-button warning-button"><a><i class="icon tpns-ai-trash"></i>Trash</a></p></div>'
 	   +'</div>'),
-	authorTemplate: _.template(
-	    '<div class="global-table-cell">'
-           +'     <p><u><img src="<%=author.image%>" alt="" /></u><span><%=author.first_name%> <%=author.last_name%></span></p>'
-           +'</div>'),
+	authorTemplate: _.template('     <p><u><img src="<%=author.image%>" alt="" /></u><span><%=author.first_name%> <%=author.last_name%></span></p>'),
 	categoriesTemplate: _.template('<ul><%$.each(categories, function(i) { %><li><p><%=categories[i]%></p></li><% }); %></ul>'),
 	tagsTemplate: _.template('<% if(tags && tags.length) { %><p><%=tags.length%></p><% } else { %><p>--</p><% } %>'),
 	imagesTemplate: _.template('<% if(images && images.length) { %><p><%=images.length%></p><% } else { %><p>--</p><% } %>'),
