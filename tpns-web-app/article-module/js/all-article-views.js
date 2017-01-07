@@ -141,3 +141,14 @@ var ArticlesListView = Backbone.View.extend({
 	}
 });
 
+var CatgoriesListView = Backbone.View.extend({
+	render: function(){
+            this.collection.each(function(article){
+                this.$el.append(articleView.render().el.childNodes);
+	     }, this);
+	     return this;
+	}
+});
+
+
+

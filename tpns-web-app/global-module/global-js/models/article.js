@@ -49,17 +49,3 @@ var Articles = Backbone.Collection.extend({
         });
     }
 });
-
-var Author = Backbone.Model.extend({
-    defaults: {
-	firstName: '',
-	lastName: '',
-	personalImage: '',													
-    },
-    initialize: function () {
-	this.on('change', function () {
-        });
-    }
-});
-
-var defaultAuthor = new Author();
