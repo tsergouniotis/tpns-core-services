@@ -73,7 +73,6 @@ $(document).ready( function() {
 		$(this).find(".tpns-ai-preview-show").toggleClass("hidden");
 		$(this).parent().parent().find("ul").toggleClass("hidden");
 	});	
-
 });
 
 function readArticles(){
