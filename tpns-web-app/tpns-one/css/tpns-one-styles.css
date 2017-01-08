@@ -1009,19 +1009,6 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .article-sponsor-logo img {
 	margin:6px 0px 0px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Index Closed Article Category Controllers
 ------------------------------------------------------------------------------- */
 .per-category-closed-container {
@@ -1073,7 +1060,6 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .per-category-closed-container .per-category-sidebar-container img {
 	width:100%; height:auto;
 }
-
 /* Index Catgory Sidebar Area
 -------------------------------------------------------------------------------*/
 .per-category-sidebar-container {
@@ -1121,26 +1107,32 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .per-category-closed-container-content-sidebar .sidebar-slot-full {
 	display:inline-block; clear:both; position:relative; width:100%;
 }
-
-
-
-
-
-
 /* Sidebar LARGE Social Media Follow Area
 -------------------------------------------------------------------------------*/
 .social-follow-container:nth-child(2), 
-.billboard-container.sidebar-slot-full.position-one ~ .social-follow-container.sidebar-slot-full.position-two {
+.billboard-container.position-one.sidebar-slot-full ~ .social-follow-container.position-two.sidebar-slot-full {
 	margin-top:20px;
+}
+.per-category-closed-container-content-sidebar .social-follow-container.position-one.sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-large-equal-to-one,
+.per-category-closed-container-content-sidebar .social-follow-container.position-one.sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-large-equal-to-two,
+.per-category-closed-container-content-sidebar .social-follow-container.position-one.sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-large-equal-to-three,
+.per-category-closed-container-content-sidebar .social-follow-container.position-one.sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-large-equal-to-one,
+.per-category-closed-container-content-sidebar .social-follow-container.position-one.sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-large-equal-to-two,
+.per-category-closed-container-content-sidebar .social-follow-container.position-one.sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-large-equal-to-three,
+.per-category-closed-container-content-sidebar .billboard-container.position-one ~ .social-follow-container.position-two.sidebar-slot-default .social-follow-buttons-large.social-follow-buttons-large-equal-to-one,
+.per-category-closed-container-content-sidebar .billboard-container.position-one ~ .social-follow-container.position-two.sidebar-slot-default .social-follow-buttons-large.social-follow-buttons-large-equal-to-two,
+.per-category-closed-container-content-sidebar .billboard-container.position-one ~ .social-follow-container.position-two.sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-large-equal-to-one,
+.per-category-closed-container-content-sidebar .billboard-container.position-one ~ .social-follow-container.position-two.sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-large-equal-to-two,
+.per-category-closed-container-content-sidebar .billboard-container.position-one ~ .social-follow-container.position-two.sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-large-equal-to-three,
+.per-category-closed-container-content-sidebar .billboard-container.position-one ~ .social-follow-container.position-two.sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-large-equal-to-one,
+.per-category-closed-container-content-sidebar .billboard-container.position-one ~ .social-follow-container.position-two.sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-large-equal-to-two,
+.per-category-closed-container-content-sidebar .billboard-container.position-one ~ .social-follow-container.position-two.sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-large-equal-to-three,
+.per-category-closed-container-content-sidebar .billboard-container.position-one ~ .social-follow-container.position-two.sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-large-equal-to-four {
+	margin-top:17px;
 }
 .per-category-closed-container-content-sidebar .social-follow-container:nth-child(2) {
 	margin-top:0px;
 }
-/*
-.per-category-closed-container-content-sidebar .social-follow-container.sidebar-slot-one.position-two {
-	margin-bottom:20px;
-}
-*/
 .social-follow-buttons-large:after {
 	clear:both; content:"\0020"; display:block; height:0; overflow:hidden;
 }
@@ -1720,21 +1712,21 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 }
 /* Sidebar Mailchimp Newsletter Container
 -------------------------------------------------------------------------------*/
-/*
-.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.sidebar-slot-full.position-three {
-	margin-top:20px;
-}
-.per-category-closed-container-content-sidebar .mailchimp-newsletter-container:nth-child(2) {
-	margin-top:0; margin-bottom:0;
-}
-*/
 .mailchimp-newsletter-container {
 	position:relative; width:100%; height:130px; border:1px solid #CCCCCC; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
 }
-.mailchimp-newsletter-container.sidebar-slot-full:nth-child(2), .mailchimp-newsletter-container.sidebar-slot-full:nth-child(3), .mailchimp-newsletter-container.sidebar-slot-one.position-three {
+.mailchimp-newsletter-container.sidebar-slot-full.position-two, 
+.mailchimp-newsletter-container.sidebar-slot-one.position-three, 
+.mailchimp-newsletter-container.sidebar-slot-full.position-three,
+.billboard-container.position-one ~ .mailchimp-newsletter-container.position-two,
+.per-category-closed-container-content-sidebar .billboard-container.position-one.sidebar-slot-full ~ .mailchimp-newsletter-container.position-two.sidebar-slot-full {
 	margin-top:20px;
 }
-.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.sidebar-slot-one.position-three {
+.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.sidebar-slot-full.position-one {
+	margin-bottom:20px;
+}
+.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.sidebar-slot-one.position-three, 
+.per-category-closed-container-content-sidebar .billboard-container.position-one ~ .mailchimp-newsletter-container.position-two {
 	margin-top:0;
 }
 .mailchimp-newsletter-title {
@@ -1791,7 +1783,9 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .billboard-container:nth-child(2), .billboard-container.position-two:nth-child(2) {
 	padding:20px 0;
 }
-.billboard-container:nth-child(3), .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-full:nth-child(2) {
+.billboard-container:nth-child(3), 
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-full:nth-child(2),
+.per-category-closed-container-content-sidebar .social-follow-container.position-one.sidebar-slot-full ~ .billboard-container.position-two.sidebar-slot-full {
 	padding-top:20px;
 }
 .per-category-closed-container-content-sidebar .billboard-container:nth-child(2)/*, .billboard-container.sidebar-slot-default:nth-child(2)*/, .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .billboard-container.position-three:nth-child(3), .per-category-closed-container-content-sidebar .billboard-container.position-two:nth-child(2) {
@@ -1951,6 +1945,7 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .closed-container-billboard-inner-left-container.billboard-inner-container-slot-five-gt-eight {
     width:100%;
 }
+.billboard-inner-container-lte-twelve .closed-container-billboard-inner-right-container,
 .closed-container-billboard-inner-right-container.billboard-inner-container-slot-six-gte-eight-text-over-image,
 .closed-container-billboard-inner-right-container.billboard-inner-container-slot-five-gt-eight-text-over-image,
 .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-eight .closed-container-billboard-inner-right-container {
@@ -1964,7 +1959,7 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .closed-container-billboard-inner-right-container.billboard-inner-container-slot-three-gt-six-text-over-image,
 .closed-container-billboard-inner-right-container.billboard-inner-container-slot-six-gte-eight-text-over-image,
 .closed-container-billboard-inner-right-container.billboard-inner-container-slot-five-gt-eight-text-over-image {
-	position:absolute; top:1px; right:1px; bottom:1px; left:1px; background-color:rgba(0, 0, 0, 0.5); padding:10px 20px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+	position:absolute; top:1px; right:3px; bottom:1px; left:3px; background-color:rgba(0, 0, 0, 0.5); padding:10px 20px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
 }
 .closed-container-billboard-inner-right-container.billboard-inner-container-slot-six-gte-eight-text-over-image,
 .closed-container-billboard-inner-right-container.billboard-inner-container-slot-five-gt-eight-text-over-image,
