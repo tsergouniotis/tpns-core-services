@@ -141,14 +141,25 @@ var ArticlesListView = Backbone.View.extend({
 	}
 });
 
-var CatgoriesListView = Backbone.View.extend({
-	render: function(){
-            this.collection.each(function(article){
-                this.$el.append(articleView.render().el.childNodes);
-	     }, this);
-	     return this;
+
+var CategoriesListView = Backbone.View.extend({
+
+        categoryTemplate: _.template('    <li class="<%=slug %>"><a><span><%=name %></span><i class="icon tpns-ai-selected"></i></a></li>'),
+
+    	render: function () {
+
+		if (!this.collection) {
+			throw "Collection is not set for this view";
+		}
+
+                var html = '<ul class="admin-click-menu-content-list admin-bi-category-list">';
+                html += '    <li class="all-categories current"><a><span>All Categories</span><i class="icon tpns-ai-selected"></i></a></li>';
+                this.collection.each(function(category){
+                    html += this.categoryTemplate(category.toJSON());
+	        }, this);
+                html+='</ul>';
+		this.$el.html(html);
+		return this;
 	}
-});
-
-
+});                               
 

@@ -31,7 +31,7 @@
     <!-- Link to the admin's Local CSS -->
 	<link rel="stylesheet" type="text/css" media="screen" href="css/articles-styles.css">
 </head>
-<body onload="readArticles();">
+<body>
 	<div class="admin-header-controllers">
     	<div class="admin-controllers">
             <div class="admin-logo-nav-container">
@@ -205,19 +205,9 @@
                                     <div class="admin-click-menu-button">
                                         <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Category Filter"><i class="icon tpns-ai-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
                                     </div>
-                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
-                                        <ul class="admin-click-menu-content-list admin-bi-category-list">
-                                            <li class="all-categories current"><a><span>All Categories</span><i class="icon tpns-ai-selected"></i></a></li>
-                                            <li class="ellada"><a><span>Ελλάδα</span><i class="icon tpns-ai-selected"></i></a></li>
-                                            <li class="politikh"><a><span>Πολιτική</span><i class="icon tpns-ai-selected"></i></a></li>
-                                            <li class="oikonomia"><a><span>Οικονομία</span><i class="icon tpns-ai-selected"></i></a></li>
-                                            <li class="ygeia"><a><span>Υγεία</span><i class="icon tpns-ai-selected"></i></a></li>
-                                            <li class="kosmos"><a><span>Κόσμος</span><i class="icon tpns-ai-selected"></i></a></li>
-                                            <li class="athlitika"><a><span>Αθλητικά</span><i class="icon tpns-ai-selected"></i></a></li>
-                                            <li class="media"><a><span>Media</span><i class="icon tpns-ai-selected"></i></a></li>
-                                            <li class="kairos"><a><span>Καιρός</span><i class="icon tpns-ai-selected"></i></a></li>
-                                            <li class="kypros"><a><span>Κύπρος</span><i class="icon tpns-ai-selected"></i></a></li>
-                                        </ul> 
+                                    <div class="allCategoriesDropDownContainer dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <!-- BACKBONE CODE INJECTION: content in ArticleListView (see all-article-views.js) -->
+                                        <!-- UNIQUE: allCategoriesDropDownContainer needs to remain unique-->
                                     </div>
                                 </div>
                                 <div class="admin-bi-date-filter-results admin-bi-date-filter-items">
@@ -647,6 +637,7 @@
     <script type="text/javascript" src="../global-module/global-js/backbone.js"></script>
     <script type="text/javascript" src="../global-module/global-js/util.js"></script>
     <script type="text/javascript" src="../global-module/global-js/cookies.js"></script>
+    <!-- Models -->
     <script type="text/javascript" src="../global-module/global-js/models/article.js"></script>
     <script type="text/javascript" src="../global-module/global-js/models/author.js"></script>
     <script type="text/javascript" src="../global-module/global-js/models/category.js"></script>
@@ -654,13 +645,14 @@
     <script type="text/javascript" src="../global-module/global-js/models/property.js"></script>
     <script type="text/javascript" src="../global-module/global-js/models/settings.js"></script>
     <script type="text/javascript" src="../global-module/global-js/models/profile.js"></script>
+    <!-- Views -->
     <script type="text/javascript" src="../global-module/global-js/views/profileviews.js"></script>
     <script type="text/javascript" src="../global-module/global-js/views/navigationviews.js"></script>
-    <script type="text/javascript" src="../global-module/global-js/tpns.js"></script>
-    <!-- Local JS files -->
+    <!-- Article specific files -->
+    <script type="text/javascript" src="../global-module/global-js/test-data.js"></script>
     <script type="text/javascript" src="js/all-article-views.js"></script>
     <script type="text/javascript" src="js/all-articles.js"></script>
-    <!-- Global JS files -->
+    <!-- Global JS files (after backbone injection) -->
     <script type="text/javascript" src="../global-module/global-js/admin-interface.js"></script>
 
 </body>

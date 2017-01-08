@@ -8,13 +8,33 @@ var SubCategory = Backbone.Model.extend({
     }
 });
 
+var SubCategories = Backbone.Collection.extend({
+    model: SubCategory,
+    initialize: function () {
+	this.on('change', function () {
+        });
+    }
+});
+
 var Category = Backbone.Model.extend({
     defaults: {
         name: '',
-	subcategories: []
+        slug: '',
+	subcategories: new SubCategories(),
     },
     initialize: function () {
 	this.on('change', function () {
         });
     }
 });
+
+var Categories = Backbone.Collection.extend({
+    model: Category,
+    initialize: function () {
+	this.on('change', function () {
+        });
+    }
+});
+
+
+
