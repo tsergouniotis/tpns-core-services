@@ -49,8 +49,12 @@ $(document).ready( function() {
 	var allNavigationLinksDropDownView = new AllNavigationLinksDropDownView({collection: availableNavigationLinks});
 	var selectedNavigationLinkView = new SelectedNavigationLinkView({model: selected_site});
 	var categoriesListView = new CategoriesListView({collection: categories});
+	var subCategoriesListView = new SubCategoriesListView({collection: categories});
+	var authorsListView = new AuthorsListView({collection: authors});
 
+	$('.allAuthorsContainer').append(authorsListView.render().el.childNodes);
 	$('.allCategoriesDropDownContainer').append(categoriesListView.render().el.childNodes);
+	$('.allSubCategoriesDropDownContainer').append(subCategoriesListView.render().el.childNodes);
 	$('.allPropertiesSelectionContainer').append(selectedNavigationLinkView.render().el.childNodes);
 	$('.allPropertiesDropDownContainer').append(allNavigationLinksDropDownView.render().el.childNodes);
 	$('.allArticlesTableContainer').append(articlesView.render().el.childNodes);

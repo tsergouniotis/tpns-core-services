@@ -161,5 +161,63 @@ var CategoriesListView = Backbone.View.extend({
 		this.$el.html(html);
 		return this;
 	}
-});                               
+});         
+
+
+var SubCategoriesListView = Backbone.View.extend({
+
+        categoryTemplate: _.template('<div class="admin-bi-date-filter-selected-<%=slug %> hidden">'),
+
+    	render: function () {
+
+		if (!this.collection) {
+			throw "Collection is not set for this view";
+		}
+
+                var html = '<div class="admin-bi-date-filter-selected-all-categories"></div>';
+                this.collection.each(function(category){
+
+                    html += this.categoryTemplate(category.toJSON());
+                    html += '    <div class="admin-bi-date-filter-items">';
+                    html += '        <div class="admin-click-sub-menu-container">';
+                    html += '            <div class="admin-click-sub-menu-button">';
+                    html += '                <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>';
+                    html += '            </div>';
+                    html += '            <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">';
+                    html += '                <ul class="admin-click-menu-content-list admin-bi-sub-category-list">';
+                    html += '                    <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>';
+                    for (var i in category.toJSON().subcategories) {
+                    	html += '                    <li><a><span>'+category.toJSON().subcategories[i]+'</span><i class="icon tpns-ai-selected"></i></a></li>';
+                    }
+                    html += '                </ul>';
+                    html += '            </div>';
+                    html += '        </div>';
+                    html += '    </div>';
+                    html += '</div>';
+	        }, this);
+		this.$el.html(html);
+		return this;
+	}
+});      
+
+var AuthorsListView = Backbone.View.extend({
+
+        authorsTemplate: _.template('    <li><a><u><img src="<%=image %>" alt="" /></u><span><%=first_name%> <%=last_name%></span><i class="icon tpns-ai-selected"></i></a></li>'),
+
+    	render: function () {
+
+		if (!this.collection) {
+			throw "Collection is not set for this view";
+		}
+
+                var html = '<ul class="admin-click-menu-content-list admin-bi-reporter-list">';
+                html += '    <li class="current"><a><u class="icon tpns-ai-staff"></u><span>All Reporters</span><i class="icon tpns-ai-selected"></i></a></li>';
+                this.collection.each(function(author){
+                    html += this.authorsTemplate(author.toJSON());
+	        }, this);
+                html+='</ul>';
+		this.$el.html(html);
+		return this;
+	}
+});         
 

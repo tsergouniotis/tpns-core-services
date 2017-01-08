@@ -182,21 +182,9 @@
                                     <div class="admin-click-menu-button">
                                         <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Reporters Filter"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-staff"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Reporters</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
                                     </div>
-                                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
-                                        <ul class="admin-click-menu-content-list admin-bi-reporter-list">
-                                            <li class="current"><a><u class="icon tpns-ai-staff"></u><span>All Reporters</span><i class="icon tpns-ai-selected"></i></a></li>
-                                            <li><a><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Nico Haitas</span><i class="icon tpns-ai-selected"></i></a></li>
-                                            <li><a><u><img src="../staff-module/staff-images-50x50/staff2-50x50.jpg" alt="" /></u><span>Νίκος Χάϊτας</span><i class="icon tpns-ai-selected"></i></a></li>
-                                            <li><a><u><img src="../staff-module/staff-images-50x50/staff3-50x50.jpg" alt="" /></u><span>Νικόλαος Χάϊτας</span><i class="icon tpns-ai-selected"></i></a></li>
-                                            <li><a><u><img src="../staff-module/staff-images-50x50/staff5-50x50.png" alt="" /></u><span>Panos Zografos</span><i class="icon tpns-ai-selected"></i></a></li>
-                                            <li><a><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>...</span><i class="icon tpns-ai-selected"></i></a></li>
-                                            <li><a><u><img src="../staff-module/staff-images-50x50/staff2-50x50.jpg" alt="" /></u><span>...</span><i class="icon tpns-ai-selected"></i></a></li>
-                                            <li><a><u><img src="../staff-module/staff-images-50x50/staff3-50x50.jpg" alt="" /></u><span>Thanassis Sergouniotis</span><i class="icon tpns-ai-selected"></i></a></li>
-                                            <li><a><u><img src="../staff-module/staff-images-50x50/staff5-50x50.png" alt="" /></u><span>Θανάσης Σεργουνιώτης</span><i class="icon tpns-ai-selected"></i></a></li>
-                                            <li><a><u><img src="../staff-module/staff-images-50x50/staff1-50x50.jpg" alt="" /></u><span>Αθανάσιος Σεργουνιώτης</span><i class="icon tpns-ai-selected"></i></a></li>
-                                            <li><a><u><img src="../staff-module/staff-images-50x50/staff4-50x50.jpg" alt="" /></u><span>Katerina Papadopoulos</span><i class="icon tpns-ai-selected"></i></a></li>
-                                            <li><a><u><img src="../staff-module/staff-images-50x50/staff6-50x50.jpg" alt="" /></u><span>Κατερίνα Παπαδόπουλος</span><i class="icon tpns-ai-selected"></i></a></li>
-                                        </ul> 
+                                    <div class="allAuthorsContainer dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">
+                                        <!-- BACKBONE CODE INJECTION: content in ArticleListView (see all-article-views.js) -->
+                                        <!-- UNIQUE: allAuthorsContainer needs to remain unique-->
                                     </div>
                                 </div>
                             </div>
@@ -210,172 +198,10 @@
                                         <!-- UNIQUE: allCategoriesDropDownContainer needs to remain unique-->
                                     </div>
                                 </div>
-                                <div class="admin-bi-date-filter-results admin-bi-date-filter-items">
+                                <div class="allSubCategoriesDropDownContainer admin-bi-date-filter-results admin-bi-date-filter-items">
                                 	<!-- NOTE: Even though an option result may be empty remember to add an empty div for it or if the user selects the empty option above in the click menu the previously selected item will continue to remain in view. -->
-                                    <div class="admin-bi-date-filter-selected-all-categories"></div>
-                                    <div class="admin-bi-date-filter-selected-ellada hidden">
-                                        <div class="admin-bi-date-filter-items">
-                                            <div class="admin-click-sub-menu-container">
-                                                <div class="admin-click-sub-menu-button">
-                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
-                                                </div>
-                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
-                                                    <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
-                                                        <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Ειδήσεις</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Εθνικά</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Παιδεία</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Αστυνομικό</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Δικαιοσύνη</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Πολιτισμός</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Αποκαλύψεις</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Εκκλησία</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Σεισμοί</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Άμυνα</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                    </ul> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="admin-bi-date-filter-selected-politikh hidden">
-                                        <div class="admin-bi-date-filter-items">
-                                            <div class="admin-click-sub-menu-container">
-                                                <div class="admin-click-sub-menu-button">
-                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
-                                                </div>
-                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
-                                                    <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
-                                                        <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Ειδήσεις</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Παραπολιτικά</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Βουλή</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Βαρόμετρο</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Εκλογές</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Αυτοδιοίκηση</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                    </ul> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="admin-bi-date-filter-selected-oikonomia hidden">
-                                        <div class="admin-bi-date-filter-items">
-                                            <div class="admin-click-sub-menu-container">
-                                                <div class="admin-click-sub-menu-button">
-                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
-                                                </div>
-                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
-                                                    <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
-                                                        <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Ειδήσεις</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Επιχειρήσεις</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Χρηματιστήριο</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Ναυτιλία</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Αγορές</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Τράπεζες</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Εργασία</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Ενέργεια</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                    </ul> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="admin-bi-date-filter-selected-ygeia hidden">
-                                        <div class="admin-bi-date-filter-items">
-                                            <div class="admin-click-sub-menu-container">
-                                                <div class="admin-click-sub-menu-button">
-                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
-                                                </div>
-                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
-                                                    <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
-                                                        <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Ειδήσεις</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Π.Ε.Δ.Υ.</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Φάρμακο</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Νοσοκομεία</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Γιατροί</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Συνεντέυξεις</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                    </ul> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="admin-bi-date-filter-selected-kosmos hidden">
-                                        <div class="admin-bi-date-filter-items">
-                                            <div class="admin-click-sub-menu-container">
-                                                <div class="admin-click-sub-menu-button">
-                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
-                                                </div>
-                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
-                                                    <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
-                                                        <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Ειδήσεις</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Ευρώπη</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Ρωσία</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Λατινική Αμερική</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Αυστραλία</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Αφρική</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Ασία</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                    </ul> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="admin-bi-date-filter-selected-athlitika hidden">
-                                        <div class="admin-bi-date-filter-items">
-                                            <div class="admin-click-sub-menu-container">
-                                                <div class="admin-click-sub-menu-button">
-                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
-                                                </div>
-                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
-                                                    <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
-                                                        <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Ειδήσεις</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Ποδόσφαιρο</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Μπάσκετ</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Σπορ</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Στοίχημα</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                    </ul> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="admin-bi-date-filter-selected-media hidden">
-                                        <div class="admin-bi-date-filter-items">
-                                            <div class="admin-click-sub-menu-container">
-                                                <div class="admin-click-sub-menu-button">
-                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
-                                                </div>
-                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
-                                                    <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
-                                                        <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Τηλεόραση</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Τύπος</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Ραδιόφωνο</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Internet</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                    </ul> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="admin-bi-date-filter-selected-kairos hidden">
-                                        <div class="admin-bi-date-filter-items">
-                                            <div class="admin-click-sub-menu-container">
-                                                <div class="admin-click-sub-menu-button">
-                                                    <p class="admin-click-sub-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Sub Category Filter"><i class="icon tpns-ai-sub-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Sub Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>
-                                                </div>
-                                                <div class="dropdown-menu admin-click-sub-menu-content admin-click-sub-menu-content-left hidden">
-                                                    <ul class="admin-click-menu-content-list admin-bi-sub-category-list">
-                                                        <li class="current"><a><span>All Sub Categories</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Πρόγνωση ΕΜΥ</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Έκτακτα Δελτία</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Πολιτική Προστασία</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                        <li><a><span>Χιονοδρομικά Κέντρα</span><i class="icon tpns-ai-selected"></i></a></li>
-                                                    </ul> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="admin-bi-date-filter-selected-kypros hidden"></div>
+                                        <!-- BACKBONE CODE INJECTION: content in ArticleListView (see all-article-views.js) -->
+                                        <!-- UNIQUE: allSubCategoriesDropDownContainer needs to remain unique-->
                                 </div>
                             </div>
                         </div>
@@ -639,7 +465,6 @@
     <script type="text/javascript" src="../global-module/global-js/cookies.js"></script>
     <!-- Models -->
     <script type="text/javascript" src="../global-module/global-js/models/article.js"></script>
-    <script type="text/javascript" src="../global-module/global-js/models/author.js"></script>
     <script type="text/javascript" src="../global-module/global-js/models/category.js"></script>
     <script type="text/javascript" src="../global-module/global-js/models/navigation.js"></script>
     <script type="text/javascript" src="../global-module/global-js/models/property.js"></script>

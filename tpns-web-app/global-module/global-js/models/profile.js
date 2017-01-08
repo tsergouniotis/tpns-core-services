@@ -11,3 +11,11 @@ var UserProfile = Backbone.Model.extend({
         });
     }
 });
+
+var UserProfiles = Backbone.Collection.extend({
+    model: UserProfile,
+    initialize: function () {
+	this.on('change', function () {
+        });
+    }
+});

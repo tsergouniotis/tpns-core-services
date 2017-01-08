@@ -2,11 +2,47 @@
 // To be replaced when integration occurs
 
 // global models and views
+
+// Profiles
+
+// selected profile
 var profile = new UserProfile();
 profile.set("first_name","Κατερίνα");
 profile.set("last_name","Παπαδοπούλου");
 profile.set("image","../staff-module/staff-images-50x50/staff6-50x50.jpg");
 profile.set("email","katerina.papadopoulos@tpns.com");
+
+var authors = new UserProfiles();
+
+var author1 = new UserProfile();
+author1.set("first_name","Nico");
+author1.set("last_name","Haitas");
+author1.set("image","../staff-module/staff-images-50x50/staff1-50x50.jpg");
+author1.set("email","nico.haitas@tpns.com");
+authors.add(author1);
+
+var author2 = new UserProfile();
+author2.set("first_name","Panos");
+author2.set("last_name","Zografos");
+author2.set("image","../staff-module/staff-images-50x50/staff2-50x50.jpg");
+author2.set("email","panos.zografos@tpns.com");
+authors.add(author2);
+
+var author3 = new UserProfile();
+author3.set("first_name","Thanassis");
+author3.set("last_name","Sergouniotis");
+author3.set("image","../staff-module/staff-images-50x50/staff3-50x50.jpg");
+author3.set("email","thanassis.sergouniotis@tpns.com");
+authors.add(author3);
+
+var author4 = new UserProfile();
+author4.set("first_name","Katerina");
+author4.set("last_name","Papadopoulos");
+author4.set("image","../staff-module/staff-images-50x50/staff4-50x50.jpg");
+author4.set("email","katerina.papadopoulos@tpns.com");
+authors.add(author4);
+
+
 
 var properties = new Properties();
 
@@ -62,13 +98,7 @@ var categories = new Categories();
 var cat1 = new Category();
 cat1.set("name", "Ελλάδα");
 cat1.set("slug", "ellada");
-
-var subcategories1 = new SubCategories();
-var s11 = new SubCategory();
-s11.set("name", "Ελλάδα");
-subcategories1.add(s11);
-
-cat1.set("subcategories", subcategories1);
+cat1.set("subcategories", ["Ειδήσεις", "Εθνικά", "Παιδεία", "Αστυνομικό", "Δικαιοσύνη", "Πολιτισμός", "Αποκαλύψεις", "Εκκλησία", "Σεισμοί", "Άμυνα"]);
 
 categories.add(cat1);
 
@@ -76,81 +106,56 @@ categories.add(cat1);
 var cat2 = new Category();
 cat2.set("name", "Πολιτική");
 cat2.set("slug", "politikh");
-
-var subcategories2 = new SubCategories();
-
-cat2.set("subcategories", subcategories2);
+cat2.set("subcategories", ["Ειδήσεις", "Παραπολιτικά", "Βουλή", "Βαρόμετρο", "Εκλογές", "Αυτοδιοίκηση"]);
 
 categories.add(cat2);
 
 var cat3 = new Category();
 cat3.set("name", "Οικονομία");
 cat3.set("slug", "oikonomia");
-
-var subcategories3 = new SubCategories();
-
-cat3.set("subcategories", subcategories3);
+cat3.set("subcategories", ["Ειδήσεις", "Επιχειρήσεις", "Χρηματιστήριο", "Ναυτιλία", "Αγορές", "Τράπεζες", "Εργασία", "Ενέργεια"]);
 
 categories.add(cat3);
-
 
 var cat4 = new Category();
 cat4.set("name", "Υγεία");
 cat4.set("slug", "ygeia");
-
-var subcategories4 = new SubCategories();
-
-cat4.set("subcategories", subcategories4);
+cat4.set("subcategories", ["Ειδήσεις", "Π.Ε.Δ.Υ.", "Φάρμακο", "Νοσοκομεία", "Γιατροί", "Συνεντέυξεις"]);
 
 categories.add(cat4);
 
 var cat5 = new Category();
 cat5.set("name", "Κόσμος");
 cat5.set("slug", "kosmos");
-
-var subcategories5 = new SubCategories();
-
-cat5.set("subcategories", subcategories5);
+cat4.set("subcategories", ["Ειδήσεις", "Ευρώπη", "Ρωσία", "Λατινική Αμερική", "Αυστραλία", "Αφρική", "Ασία"]);
 
 categories.add(cat5);
 
 var cat6 = new Category();
 cat6.set("name", "Αθλητικά");
 cat6.set("slug", "athlitika");
-
-var subcategories6 = new SubCategories();
-
-cat6.set("subcategories", subcategories6);
+cat6.set("subcategories", ["Ειδήσεις", "Ποδόσφαιρο", "Μπάσκετ", "Σπορ", "Στοίχημα"]);
 
 categories.add(cat6);
 
 var cat7 = new Category();
 cat7.set("name", "Media");
 cat7.set("slug", "media");
-
-var subcategories7 = new SubCategories();
-
-cat7.set("subcategories", subcategories7);
+cat7.set("subcategories", ["Τηλεόραση", "Τύπος", "Ραδιόφωνο", "Internet"]);
 
 categories.add(cat7);
 
 var cat8 = new Category();
 cat8.set("name", "Καιρός");
 cat8.set("slug", "kairos");
-
-var subcategories8 = new SubCategories();
-
-cat8.set("subcategories", subcategories8);
+cat8.set("subcategories", ["Πρόγνωση ΕΜΥ", "Έκτακτα Δελτία", "Πολιτική Προστασία", "Χιονοδρομικά Κέντρα"]);
 
 categories.add(cat8);
 
 var cat9 = new Category();
 cat9.set("name", "Κύπρος");
 cat9.set("slug", "kypros");
-
-var subcategories9 = new SubCategories();
-
-cat9.set("subcategories", subcategories9);
+cat9.set("subcategories", []);
 
 categories.add(cat9);
 
