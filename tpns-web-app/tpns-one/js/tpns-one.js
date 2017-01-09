@@ -314,14 +314,16 @@ $(document).ready(function() {
 				});
 			}
 			if ($(this).hasClass("position-two")) {
-				$(".per-category-closed-container-content-sidebar").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function(e){
-					var mailChimpPositionTwoWithBillboardInPositionOne = $(".billboard-container").height();
-					$(".mailchimp-newsletter-container").css('min-height', ((mailChimpPositionTwoWithBillboardInPositionOne)+'px'));
-					$(this).off(e);
-					if ($(".mailchimp-newsletter-container").hasClass("sidebar-slot-full")) {
-						$(".mailchimp-newsletter-container").removeAttr("style");
-					}
-				});
+				if ($(".billboard-container").hasClass("position-one")) {
+					$(".per-category-closed-container-content-sidebar").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function(e){
+						var mailChimpPositionTwoWithBillboardInPositionOne = $(".billboard-container").height();
+						$(".mailchimp-newsletter-container").css('min-height', ((mailChimpPositionTwoWithBillboardInPositionOne)+'px'));
+						$(this).off(e);
+						if ($(".mailchimp-newsletter-container").hasClass("sidebar-slot-full")) {
+							$(".mailchimp-newsletter-container").removeAttr("style");
+						}
+					});
+				}
 			}
 		});
 		// Do something with the Billboard
@@ -393,13 +395,19 @@ $(document).ready(function() {
 					if ($(".billboard-container").hasClass("position-two")) {
 						if ($(".billboard-container").hasClass("sidebar-slot-default")) {
 							$(this).parent().parent().find(".billboard-inner-container").addClass("sidebar-position-one-lt-six-large-social-buttons-billboard-control");
-							var BillboardWithSocialLargeInPositionTwoSlotDefault = $(".social-follow-container").height();
-							$(".billboard-inner-container").css('min-height', ((BillboardWithSocialLargeInPositionTwoSlotDefault*1-17)+'px'));
+							$(".per-category-closed-container-content-sidebar").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function(e){
+								var BillboardWithSocialLargeInPositionTwoSlotDefault = $(".social-follow-container").height();
+								$(".billboard-inner-container").css('min-height', ((BillboardWithSocialLargeInPositionTwoSlotDefault*1-17)+'px'));
+								$(this).off(e);
+							});
 						}
 						if ($(".billboard-container").hasClass("sidebar-slot-one")) {
 							$(this).parent().parent().find(".billboard-inner-container").addClass("sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control");
-							var BillboardWithSocialLargeInPositionTwoSlotOne = $(".social-follow-container").height();
-							$(".billboard-inner-container").css('min-height', ((BillboardWithSocialLargeInPositionTwoSlotOne*1-17)+'px'));
+							$(".per-category-closed-container-content-sidebar").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function(e){
+								var BillboardWithSocialLargeInPositionTwoSlotOne = $(".social-follow-container").height();
+								$(".billboard-inner-container").css('min-height', ((BillboardWithSocialLargeInPositionTwoSlotOne*1-17)+'px'));
+								$(this).off(e);
+							});
 						}
 					}
 					if ($(".mailchimp-newsletter-container").hasClass("sidebar-slot-full")) {
@@ -415,8 +423,11 @@ $(document).ready(function() {
 			if ($(this).children('li').size() > 2 )	{
 				if ($(this).parent().hasClass("sidebar-slot-default")) {
 					if ($(this).parent().parent().find(".mailchimp-newsletter-container").hasClass("position-one")) {
-						var mailChimpContainerPositionOneSlotDefaultGTTwo = $(".social-follow-container");
-						$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerPositionOneSlotDefaultGTTwo.height()*1.048)+'px'));
+						$(".per-category-closed-container-content-sidebar").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function(e){
+							var mailChimpContainerPositionOneSlotDefaultGTTwo = $(".social-follow-container");
+							$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerPositionOneSlotDefaultGTTwo.height()*1.048)+'px'));
+							$(this).off(e);
+						});
 					}
 				}
 				if ($(this).parent().hasClass("position-two")) {
@@ -474,8 +485,11 @@ $(document).ready(function() {
 			}
 			if ($(this).children('li').size() > 3 )	{
 				if ($(this).parent().hasClass("sidebar-slot-three")) {
-					var mailChimpContainerSlotThreeGTThree = $(".social-follow-container");
-					$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerSlotThreeGTThree.height()*1.056)+'px'));
+					$(".per-category-closed-container-content-sidebar").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function(e){
+						var mailChimpContainerSlotThreeGTThree = $(".social-follow-container");
+						$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerSlotThreeGTThree.height()*1.056)+'px'));
+						$(this).off(e);
+					});
 				}
 				if ($(this).parent().hasClass("position-one")) {
 					if ($(".billboard-container").hasClass("position-two")) {
@@ -497,17 +511,26 @@ $(document).ready(function() {
 			}
 			if ($(this).children('li').size() > 4 )	{
 				if ($(this).parent().hasClass("sidebar-slot-five")) {
-					var mailChimpContainerSlotFiveGTFour = $(".social-follow-container");
-					$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerSlotFiveGTFour.height()*1.018)+'px'));
+					$(".per-category-closed-container-content-sidebar").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function(e){
+						var mailChimpContainerSlotFiveGTFour = $(".social-follow-container");
+						$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerSlotFiveGTFour.height()*1.018)+'px'));
+						$(this).off(e);
+					});
 				}
 				if ($(this).parent().hasClass("sidebar-slot-six")) {
-					var mailChimpContainerSlotSixGTFour = $(".social-follow-container");
-					$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerSlotSixGTFour.height()*1.018)+'px'));
+					$(".per-category-closed-container-content-sidebar").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function(e){
+						var mailChimpContainerSlotSixGTFour = $(".social-follow-container");
+						$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerSlotSixGTFour.height()*1.018)+'px'));
+						$(this).off(e);
+					});
 				}
 				if ($(this).parent().hasClass("sidebar-slot-default")) {
 					if ($(this).parent().parent().find(".mailchimp-newsletter-container").hasClass("position-one")) {
-						var mailChimpContainerPositionOneSlotDefaultGTFour = $(".social-follow-container");
-						$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerPositionOneSlotDefaultGTFour.height()*1.07)+'px'));
+						$(".per-category-closed-container-content-sidebar").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function(e){
+							var mailChimpContainerPositionOneSlotDefaultGTFour = $(".social-follow-container");
+							$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerPositionOneSlotDefaultGTFour.height()*1.07)+'px'));
+							$(this).off(e);
+						});
 					}
 				}
 				if ($(this).parent().hasClass("position-one")) {
@@ -534,36 +557,54 @@ $(document).ready(function() {
 			if ($(this).children('li').size() > 6 )	{
 				if ($(this).parent().hasClass("sidebar-slot-default")) {
 					if ($(this).parent().parent().find(".mailchimp-newsletter-container").hasClass("position-one")) {
-						var mailChimpContainerPositionOneSlotDefaultGTSix = $(".social-follow-container");
-						$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerPositionOneSlotDefaultGTSix.height()*1.076)+'px'));
+						$(".per-category-closed-container-content-sidebar").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function(e){
+							var mailChimpContainerPositionOneSlotDefaultGTSix = $(".social-follow-container");
+							$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerPositionOneSlotDefaultGTSix.height()*1.076)+'px'));
+							$(this).off(e);
+						});
 					}
 				}
 				if ($(this).parent().hasClass("sidebar-slot-default")) {
 					if ($(this).parent().parent().find(".mailchimp-newsletter-container").hasClass("position-two")) {
-						var mailChimpContainerPositionTwoSlotDefaultGTSix = $(".social-follow-container");
-						$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerPositionTwoSlotDefaultGTSix.height()*1.028)+'px'));
+						$(".per-category-closed-container-content-sidebar").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function(e){
+							var mailChimpContainerPositionTwoSlotDefaultGTSix = $(".social-follow-container");
+							$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerPositionTwoSlotDefaultGTSix.height()*1.02)+'px'));
+							$(this).off(e);
+						});
 					}
 				}
 				if ($(this).parent().hasClass("sidebar-slot-three")) {
-					var mailChimpContainerSlotThreeGTSix = $(".social-follow-container");
-					$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerSlotThreeGTSix.height()*1.078)+'px'));
+					$(".per-category-closed-container-content-sidebar").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function(e){
+						var mailChimpContainerSlotThreeGTSix = $(".social-follow-container");
+						$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerSlotThreeGTSix.height()*1.078)+'px'));
+						$(this).off(e);
+					});
 				}
 				if ($(this).parent().hasClass("sidebar-slot-two")) {
-					var mailChimpContainerSlotTwoGTSix = $(".social-follow-container");
-					$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerSlotTwoGTSix.height()*1.028)+'px'));
+					$(".per-category-closed-container-content-sidebar").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function(e){
+						var mailChimpContainerSlotTwoGTSix = $(".social-follow-container");
+						$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerSlotTwoGTSix.height()*1.028)+'px'));
+						$(this).off(e);
+					});
 				}
 				if ($(this).parent().hasClass("position-one")) {
 					if ($(".billboard-container").hasClass("position-two")) {
 						if ($(".billboard-container").hasClass("sidebar-slot-default")) {
 							$(this).parent().parent().find(".closed-container-billboard-inner-right-container").addClass("sidebar-position-one-gt-six-large-social-buttons-billboard-control");
-							var BillboardWithSocialLargeInPositionTwoGTSixSlotDefault = $(".social-follow-container").height();
-							$(".billboard-inner-container").css('min-height', ((BillboardWithSocialLargeInPositionTwoGTSixSlotDefault*1-10)+'px'));
+							$(".per-category-closed-container-content-sidebar").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function(e){
+								var BillboardWithSocialLargeInPositionTwoGTSixSlotDefault = $(".social-follow-container").height();
+								$(".billboard-inner-container").css('min-height', ((BillboardWithSocialLargeInPositionTwoGTSixSlotDefault*1-10)+'px'));
+								$(this).off(e);
+							});
 						}
 						if ($(".billboard-container").hasClass("sidebar-slot-one")) {
 							$(this).parent().parent().find(".closed-container-billboard-inner-left-container").addClass("billboard-inner-container-gte-six");
 							$(this).parent().parent().find(".closed-container-billboard-inner-right-container").addClass("closed-container-billboard-inner-text-over-image");
-							var BillboardWithSocialLargeInPositionTwoGTSixSlotOne = $(".social-follow-container").height();
-							$(".billboard-inner-container").css('min-height', ((BillboardWithSocialLargeInPositionTwoGTSixSlotOne*1-10)+'px'));
+							$(".per-category-closed-container-content-sidebar").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function(e) {
+								var BillboardWithSocialLargeInPositionTwoGTSixSlotOne = $(".social-follow-container").height();
+								$(".billboard-inner-container").css('min-height', ((BillboardWithSocialLargeInPositionTwoGTSixSlotOne*1-10)+'px'));
+								$(this).off(e);
+							});
 						}
 						if ($(".billboard-container").hasClass("sidebar-slot-four")) {
 							$(this).parent().parent().find(".closed-container-billboard-container").removeClass("billboard-inner-container-slot-four-gt-three").addClass("billboard-inner-container-slot-four-gt-six");
@@ -597,17 +638,26 @@ $(document).ready(function() {
 			if ($(this).children('li').size() > 8 )	{
 				if ($(this).parent().hasClass("sidebar-slot-default")) {
 					if ($(this).parent().parent().find(".mailchimp-newsletter-container").hasClass("position-one")) {
-						var mailChimpContainerPositionOneSlotDefaultGTEight = $(".social-follow-container");
-						$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerPositionOneSlotDefaultGTEight.height()*1.076)+'px'));
+						$(".per-category-closed-container-content-sidebar").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function(e) {
+							var mailChimpContainerPositionOneSlotDefaultGTEight = $(".social-follow-container");
+							$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerPositionOneSlotDefaultGTEight.height()*1.076)+'px'));
+							$(this).off(e);
+						});
 					}
 				}
 				if ($(this).parent().hasClass("sidebar-slot-five")) {
-					var mailChimpContainerSlotFiveGTEight = $(".social-follow-container");
-					$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerSlotFiveGTEight.height()*1.028)+'px'));
+					$(".per-category-closed-container-content-sidebar").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function(e) {
+						var mailChimpContainerSlotFiveGTEight = $(".social-follow-container");
+						$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerSlotFiveGTEight.height()*1.028)+'px'));
+						$(this).off(e);
+					});
 				}
 				if ($(this).parent().hasClass("sidebar-slot-six")) {
-					var mailChimpContainerSlotSixGTEight = $(".social-follow-container");
-					$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerSlotSixGTEight.height()*1.028)+'px'));
+					$(".per-category-closed-container-content-sidebar").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function(e) {
+						var mailChimpContainerSlotSixGTEight = $(".social-follow-container");
+						$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerSlotSixGTEight.height()*1.028)+'px'));
+						$(this).off(e);
+					});
 				}
 				if ($(this).parent().hasClass("position-one")) {
 					if ($(".billboard-container").hasClass("position-two")) {
@@ -650,13 +700,19 @@ $(document).ready(function() {
 			if ($(this).children('li').size() > 9 )	{
 				if ($(this).parent().hasClass("sidebar-slot-default")) {
 					if ($(this).parent().parent().find(".mailchimp-newsletter-container").hasClass("position-one")) {
-						var mailChimpContainerPositionOneSlotDefaultGTNine = $(".social-follow-container");
-						$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerPositionOneSlotDefaultGTNine.height()*1.084)+'px'));
+						$(".per-category-closed-container-content-sidebar").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function(e) {
+							var mailChimpContainerPositionOneSlotDefaultGTNine = $(".social-follow-container");
+							$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerPositionOneSlotDefaultGTNine.height()*1.084)+'px'));
+							$(this).off(e);
+						});
 					}
 				}
 				if ($(this).parent().hasClass("sidebar-slot-three")) {
-					var mailChimpContainerSlotThreeGTNine = $(".social-follow-container");
-					$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerSlotThreeGTNine.height()*1.086)+'px'));
+					$(".per-category-closed-container-content-sidebar").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function(e) {
+						var mailChimpContainerSlotThreeGTNine = $(".social-follow-container");
+						$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerSlotThreeGTNine.height()*1.086)+'px'));
+						$(this).off(e);
+					});
 				}
 				if ($(this).parent().hasClass("position-one")) {
 					if ($(".billboard-container").hasClass("position-two")) {
@@ -679,8 +735,11 @@ $(document).ready(function() {
 			if ($(this).children('li').size() > 10 ) {
 				if ($(this).parent().hasClass("sidebar-slot-default")) {
 					if ($(this).parent().parent().find(".mailchimp-newsletter-container").hasClass("position-one")) {
-						var mailChimpContainerPositionOneSlotDefaultGTTen = $(".social-follow-container");
-						$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerPositionOneSlotDefaultGTTen.height()*1.086)+'px'));
+						$(".per-category-closed-container-content-sidebar").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function(e) {
+							var mailChimpContainerPositionOneSlotDefaultGTTen = $(".social-follow-container");
+							$(".mailchimp-newsletter-container").css('min-height', ((mailChimpContainerPositionOneSlotDefaultGTTen.height()*1.086)+'px'));
+							$(this).off(e);
+						});
 					}
 				}
 			}
@@ -696,16 +755,22 @@ $(document).ready(function() {
 					$(".per-category-open-container").removeClass("closed-small-mailchimp-newsletter");
 					$(".mailchimp-newsletter-container").removeClass("per-category-sidebar-container-more-than-eight");
 					$(this).parent().addClass("closed-small-mailchimp-newsletter");
-					var socialSmallBillboardLTETen = $(".social-follow-container");
-					$(this).find(".billboard-inner-container").css('min-height', ((socialSmallBillboardLTETen.height()*1.08-17)+'px'));
-					$(this).find(".mailchimp-newsletter-container").css('min-height', ((socialSmallBillboardLTETen.height()*1.08)+'px'));
+					$(".per-category-closed-container-content-sidebar").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function(e){
+						var socialSmallBillboardLTETen = $(".social-follow-container");
+						$(this).find(".billboard-inner-container").css('min-height', ((socialSmallBillboardLTETen.height()*1.08-17)+'px'));
+						$(this).find(".mailchimp-newsletter-container").css('min-height', ((socialSmallBillboardLTETen.height()*1.08)+'px'));
+						$(this).off(e);
+					});
 				}
 			}
 			if ($(this).children('li').size() > 8 )	{
 				$(this).parent().addClass("closed-small-mailchimp-newsletter");
 				$(".mailchimp-newsletter-container").addClass("per-category-sidebar-container-more-than-eight");
-				var mailChimpContainerGTEight = $(".per-category-sidebar-container-more-than-eight").height(174);
-				$(".per-category-sidebar-container-more-than-eight").css('height', (mailChimpContainerGTEight.height()));
+				$(".per-category-closed-container-content-sidebar").on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function(e){
+					var mailChimpContainerGTEight = $(".per-category-sidebar-container-more-than-eight").height(174);
+					$(".per-category-sidebar-container-more-than-eight").css('height', (mailChimpContainerGTEight.height()));
+					$(this).off(e);
+				});
 			}
 		});
 		$(".per-category-closed-container-content-sidebar").find(".editors-choice-container-middle").removeAttr("style");
