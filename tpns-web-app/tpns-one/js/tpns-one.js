@@ -108,11 +108,16 @@ var swiper = new Swiper('.swiper-container', {
 		$(".video-ad-vimeo").each(function() {
 			var elementPause = $(this).find("iframe");
 			pauseVideoVimeo(elementPause);
-			var newsStreamContainerTop = $(".news-stream-container-top").outerHeight();
-			var newsStreamContainerBottom = $(".news-stream-container-bottom").innerHeight();
-			var newsStreamContainerMiddle = $(".swiper-container").height();
-			var newsStreamContainerMiddleSum = newsStreamContainerMiddle - (newsStreamContainerTop + newsStreamContainerBottom);
-			$(".news-stream-container-middle").css('height', (newsStreamContainerMiddleSum));
+			var newsStreamSliderContainerTop = $(".news-stream").find(".news-stream-container-top").outerHeight();
+			var newsStreamSliderContainerBottom = $(".news-stream").find(".news-stream-container-bottom").innerHeight();
+			var newsStreamSliderContainerMiddle = $(".swiper-container").height();
+			var editorsChoiceSliderContainerTop = $(".news-stream").find(".editors-choice-container-top").outerHeight();
+			var editorsChoiceSliderContainerBottom = $(".news-stream").find(".editors-choice-container-bottom").innerHeight();
+			var editorsChoiceSliderContainerMiddle = $(".swiper-container").height();
+			var newsStreamSliderContainerMiddleSum = newsStreamSliderContainerMiddle - (newsStreamSliderContainerTop + newsStreamSliderContainerBottom);
+			var editorsChoiceSliderContainerMiddleSum = editorsChoiceSliderContainerMiddle - (editorsChoiceSliderContainerTop + editorsChoiceSliderContainerBottom);
+			$(".news-stream").find(".news-stream-container-middle").css('height', (newsStreamSliderContainerMiddleSum));
+			$(".news-stream").find(".editors-choice-container-middle").css('height', (editorsChoiceSliderContainerMiddleSum));
 		});
 	},
 	onSlideChangeEnd: function() {
@@ -127,11 +132,16 @@ var swiper = new Swiper('.swiper-container', {
 		$(".video-ad-vimeo.swiper-slide-active").each(function() {
 			var elementPlay = $(this).find("iframe");
 			playVideoVimeo(elementPlay);
-			var newsStreamContainerTop = $(".news-stream-container-top").outerHeight();
-			var newsStreamContainerBottom = $(".news-stream-container-bottom").innerHeight();
-			var newsStreamContainerMiddle = $(".swiper-container").height();
-			var newsStreamContainerMiddleSum = newsStreamContainerMiddle - (newsStreamContainerTop + newsStreamContainerBottom);
-			$(".news-stream-container-middle").css('height', (newsStreamContainerMiddleSum));
+			var newsStreamSliderContainerTop = $(".news-stream").find(".news-stream-container-top").outerHeight();
+			var newsStreamSliderContainerBottom = $(".news-stream").find(".news-stream-container-bottom").innerHeight();
+			var newsStreamSliderContainerMiddle = $(".swiper-container").height();
+			var editorsChoiceSliderContainerTop = $(".news-stream").find(".editors-choice-container-top").outerHeight();
+			var editorsChoiceSliderContainerBottom = $(".news-stream").find(".editors-choice-container-bottom").innerHeight();
+			var editorsChoiceSliderContainerMiddle = $(".swiper-container").height();
+			var newsStreamSliderContainerMiddleSum = newsStreamSliderContainerMiddle - (newsStreamSliderContainerTop + newsStreamSliderContainerBottom);
+			var editorsChoiceSliderContainerMiddleSum = editorsChoiceSliderContainerMiddle - (editorsChoiceSliderContainerTop + editorsChoiceSliderContainerBottom);
+			$(".news-stream").find(".news-stream-container-middle").css('height', (newsStreamSliderContainerMiddleSum));
+			$(".news-stream").find(".editors-choice-container-middle").css('height', (editorsChoiceSliderContainerMiddleSum));
 		});
 	}
 });
@@ -774,6 +784,7 @@ $(document).ready(function() {
 			}
 		});
 		$(".per-category-closed-container-content-sidebar").find(".editors-choice-container-middle").removeAttr("style");
+		$(".per-category-closed-container-content-sidebar").find(".news-stream-container-middle").removeAttr("style");
 				
 		
 		
@@ -825,11 +836,18 @@ $(document).ready(function() {
 		$(this).parent().parent().parent().parent().addClass("hidden");
 		
 		// Index per Category make sidebar the same height as the articles on the left
-		var editorsChoiceContainerTop = $(".per-category-sidebar-container").find(".editors-choice-container-top").outerHeight();
-		var editorsChoiceContainerBottom = $(".per-category-sidebar-container").find(".editors-choice-container-bottom").innerHeight();
-		var editorsChoiceContainerMiddle = $(".per-category-content-container").height();
-		var editorsChoiceContainerMiddleSum = editorsChoiceContainerMiddle - (editorsChoiceContainerTop + editorsChoiceContainerBottom);
-		$(".per-category-sidebar-container").find(".editors-choice-container-middle").css('height', (editorsChoiceContainerMiddleSum));
+		var editorsChoiceSidebarContainerTop = $(".per-category-sidebar-container").find(".editors-choice-container-top").outerHeight();
+		var editorsChoiceSidebarContainerBottom = $(".per-category-sidebar-container").find(".editors-choice-container-bottom").innerHeight();
+		var editorsChoiceSidebarContainerMiddle = $(".per-category-content-container").height();
+		var editorsChoiceSidebarContainerMiddleSum = editorsChoiceSidebarContainerMiddle - (editorsChoiceSidebarContainerTop + editorsChoiceSidebarContainerBottom);
+		$(".per-category-sidebar-container").find(".editors-choice-container-middle").css('height', (editorsChoiceSidebarContainerMiddleSum));
+		$(".per-category-closed-container-content-sidebar").find(".editors-choice-container-middle").removeAttr("style");
+		var newsStreamSidebarContainerTop = $(".per-category-sidebar-container").find(".news-stream-container-top").outerHeight();
+		var newsStreamSidebarContainerBottom = $(".per-category-sidebar-container").find(".news-stream-container-bottom").innerHeight();
+		var newsStreamSidebarContainerMiddle = $(".per-category-content-container").height();
+		var newsStreamSidebarContainerMiddleSum = newsStreamSidebarContainerMiddle - (newsStreamSidebarContainerTop + newsStreamSidebarContainerBottom);
+		$(".per-category-sidebar-container").find(".news-stream-container-middle").css('height', (newsStreamSidebarContainerMiddleSum));
+		$(".per-category-closed-container-content-sidebar").find(".news-stream-container-middle").removeAttr("style");
 		$(this).parent().parent().parent().parent().parent().find(".billboard-inner-container").removeAttr("style").removeClass("sidebar-triple-slot-one-lt-three-billboard-control").removeClass("sidebar-position-one-lt-six-large-social-buttons-billboard-control").removeClass("sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control").removeClass("billboard-inner-container-lte-twelve");
 		$(this).parent().parent().parent().parent().parent().find(".per-category-sidebar-container-more-than-eight").removeAttr("style");
 		$(this).parent().parent().parent().parent().parent().find(".mailchimp-newsletter-container").removeClass("per-category-sidebar-container-more-than-eight");
@@ -855,22 +873,33 @@ function PCViewUpdate() {
 		});
 		return false;
 	}
-	var newsStreamContainerTop = $(".news-stream-container-top").outerHeight();
-	var newsStreamContainerBottom = $(".news-stream-container-bottom").innerHeight();
-	var newsStreamContainerMiddle = $(".swiper-container").height();
-	var newsStreamContainerMiddleSum = newsStreamContainerMiddle - (newsStreamContainerTop + newsStreamContainerBottom);
-	$(".news-stream-container-middle").css('height', (newsStreamContainerMiddleSum));
+	var newsStreamSliderContainerTop = $(".news-stream").find(".news-stream-container-top").outerHeight();
+	var newsStreamSliderContainerBottom = $(".news-stream").find(".news-stream-container-bottom").innerHeight();
+	var newsStreamSliderContainerMiddle = $(".swiper-container").height();
+	var editorsChoiceSliderContainerTop = $(".news-stream").find(".editors-choice-container-top").outerHeight();
+	var editorsChoiceSliderContainerBottom = $(".news-stream").find(".editors-choice-container-bottom").innerHeight();
+	var editorsChoiceSliderContainerMiddle = $(".swiper-container").height();
+	var newsStreamSliderContainerMiddleSum = newsStreamSliderContainerMiddle - (newsStreamSliderContainerTop + newsStreamSliderContainerBottom);
+	var editorsChoiceSliderContainerMiddleSum = editorsChoiceSliderContainerMiddle - (editorsChoiceSliderContainerTop + editorsChoiceSliderContainerBottom);
+	$(".news-stream").find(".news-stream-container-middle").css('height', (newsStreamSliderContainerMiddleSum));
+	$(".news-stream").find(".editors-choice-container-middle").css('height', (editorsChoiceSliderContainerMiddleSum));
 	// Contain the index category seperator advertisement
 	var indexCategoryAdSeperatorWidth = $(".per-category-seperator-ad-container iframe").innerWidth();
 	var indexCategoryAdSeperatorSum = indexCategoryAdSeperatorWidth / 8.088888888888889;
 	$(".per-category-seperator-ad-container p").css('height', (indexCategoryAdSeperatorSum));
 	// Index per Category make sidebar the same height as the articles on the left
-	var editorsChoiceContainerTop = $(".per-category-sidebar-container").find(".editors-choice-container-top").outerHeight();
-	var editorsChoiceContainerBottom = $(".per-category-sidebar-container").find(".editors-choice-container-bottom").innerHeight();
-	var editorsChoiceContainerMiddle = $(".per-category-content-container").height();
-	var editorsChoiceContainerMiddleSum = editorsChoiceContainerMiddle - (editorsChoiceContainerTop + editorsChoiceContainerBottom);
-	$(".per-category-sidebar-container").find(".editors-choice-container-middle").css('height', (editorsChoiceContainerMiddleSum));
+	var editorsChoiceSidebarContainerTop = $(".per-category-sidebar-container").find(".editors-choice-container-top").outerHeight();
+	var editorsChoiceSidebarContainerBottom = $(".per-category-sidebar-container").find(".editors-choice-container-bottom").innerHeight();
+	var editorsChoiceSidebarContainerMiddle = $(".per-category-content-container").height();
+	var editorsChoiceSidebarContainerMiddleSum = editorsChoiceSidebarContainerMiddle - (editorsChoiceSidebarContainerTop + editorsChoiceSidebarContainerBottom);
+	$(".per-category-sidebar-container").find(".editors-choice-container-middle").css('height', (editorsChoiceSidebarContainerMiddleSum));
 	$(".per-category-closed-container-content-sidebar").find(".editors-choice-container-middle").removeAttr("style");
+	var newsStreamSidebarContainerTop = $(".per-category-sidebar-container").find(".news-stream-container-top").outerHeight();
+	var newsStreamSidebarContainerBottom = $(".per-category-sidebar-container").find(".news-stream-container-bottom").innerHeight();
+	var newsStreamSidebarContainerMiddle = $(".per-category-content-container").height();
+	var newsStreamSidebarContainerMiddleSum = newsStreamSidebarContainerMiddle - (newsStreamSidebarContainerTop + newsStreamSidebarContainerBottom);
+	$(".per-category-sidebar-container").find(".news-stream-container-middle").css('height', (newsStreamSidebarContainerMiddleSum));
+	$(".per-category-closed-container-content-sidebar").find(".news-stream-container-middle").removeAttr("style");
 }
 $(window).load(PCViewUpdate);
 $(window).resize(PCViewUpdate);
