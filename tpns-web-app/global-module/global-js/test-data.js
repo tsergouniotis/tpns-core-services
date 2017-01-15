@@ -6,11 +6,16 @@
 // Profiles
 
 // selected profile
+var pstats = new ProfileStats();
+pstats.set("notifications",5);
+pstats.set("messages",82);
+pstats.set("schedules_articles",96);
 var profile = new UserProfile();
 profile.set("first_name","Κατερίνα");
 profile.set("last_name","Παπαδοπούλου");
 profile.set("image","../staff-module/staff-images-50x50/staff6-50x50.jpg");
 profile.set("email","katerina.papadopoulos@tpns.com");
+profile.set("stats", pstats);
 
 var authors = new UserProfiles();
 

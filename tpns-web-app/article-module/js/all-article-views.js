@@ -219,5 +219,72 @@ var AuthorsListView = Backbone.View.extend({
 		this.$el.html(html);
 		return this;
 	}
-});         
+});     
+
+
+var ProfileNotificationsView = Backbone.View.extend({
+
+        notificationsTemplate: _.template('            <small><%=notifications %></small>'),
+
+    	render: function () {
+
+		if (!this.model) {
+			throw "Model is not set for this view";
+		}
+
+                var html = '<div class="admin-global-controllers-admin-info-container">';
+                html += '    <p><a href="../notifications-module/notifications.html" title="Preview your latest notifications"><i class="icon tpns-ai-notifications"></i>';
+                html += '        <span class="admin-global-controllers-totals">';
+                html += this.notificationsTemplate(this.model.toJSON().stats.toJSON());
+                html += '        </span>';
+                html += '    </a></p>';
+                html += '</div>';
+		this.$el.html(html);
+		return this;
+	}
+});   
+
+var ProfileMessagesView = Backbone.View.extend({
+
+        messagesTemplate: _.template('            <small><%=messages %></small>'),
+
+    	render: function () {
+
+		if (!this.model) {
+			throw "Model is not set for this view";
+		}
+
+                var html = '<div class="admin-global-controllers-admin-info-container">';
+                html += '    <p><a href="../messages-module/inbox.html" title="Preview your latest messages"><i class="icon tpns-ai-email-open"></i>';
+                html += '        <span class="admin-global-controllers-totals">';
+                html += this.messagesTemplate(this.model.toJSON().stats.toJSON());
+                html += '        </span>';
+                html += '    </a></p>';
+                html += '</div>';
+		this.$el.html(html);
+		return this;
+	}
+}); 
+
+
+var ProfileSelectedArticlesView = Backbone.View.extend({
+
+        sceduledArticelsTemplate: _.template('            <small><%=schedules_articles %></small>'),
+
+    	render: function () {
+
+		if (!this.model) {
+			throw "Model is not set for this view";
+		}
+                var html = '<div class="admin-global-controllers-admin-info-container">';
+                html += '    <p><a href="../calendar-module/calendar.html" title="Preview your scheduled articles"><i class="icon tpns-ai-calendar-month-number"></i>';
+                html += '        <span class="admin-global-controllers-totals">';
+                html += this.sceduledArticelsTemplate(this.model.toJSON().stats.toJSON());
+                html += '        </span>';
+                html += '    </a></p>';
+                html += '</div>';
+		this.$el.html(html);
+		return this;
+	}
+});  
 

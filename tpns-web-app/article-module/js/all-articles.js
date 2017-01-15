@@ -46,19 +46,25 @@ $(document).ready( function() {
 
 	var articlesView = new ArticlesListView({collection: articles});
 	var profileSummaryView = new ProfileSummaryView({model: profile});
+	var profileNotificationsView = new ProfileNotificationsView({model: profile});
+	var profileMessagesView = new ProfileMessagesView({model: profile});
+	var profileSelectedArticlesView = new ProfileSelectedArticlesView({model: profile});
 	var allNavigationLinksDropDownView = new AllNavigationLinksDropDownView({collection: availableNavigationLinks});
 	var selectedNavigationLinkView = new SelectedNavigationLinkView({model: selected_site});
 	var categoriesListView = new CategoriesListView({collection: categories});
 	var subCategoriesListView = new SubCategoriesListView({collection: categories});
 	var authorsListView = new AuthorsListView({collection: authors});
 
-	$('.allAuthorsContainer').append(authorsListView.render().el.childNodes);
-	$('.allCategoriesDropDownContainer').append(categoriesListView.render().el.childNodes);
-	$('.allSubCategoriesDropDownContainer').append(subCategoriesListView.render().el.childNodes);
-	$('.allPropertiesSelectionContainer').append(selectedNavigationLinkView.render().el.childNodes);
-	$('.allPropertiesDropDownContainer').append(allNavigationLinksDropDownView.render().el.childNodes);
+	$('.allArticlesAuthorsContainer').append(authorsListView.render().el.childNodes);
+	$('.allArticlesCategoriesDropDownContainer').append(categoriesListView.render().el.childNodes);
+	$('.allArticlesSubCategoriesDropDownContainer').append(subCategoriesListView.render().el.childNodes);
+	$('.allArticlesPropertiesSelectionContainer').append(selectedNavigationLinkView.render().el.childNodes);
+	$('.allArticlesPropertiesDropDownContainer').append(allNavigationLinksDropDownView.render().el.childNodes);
 	$('.allArticlesTableContainer').append(articlesView.render().el.childNodes);
 	$('.allArticlesProfileSummaryContainer').append(profileSummaryView.render().el.childNodes);	
+	$('.allArticlesSelectedProfileNotificationsContainer').append(profileMessagesView.render().el.childNodes);	
+	$('.allArticlesSelectedProfileMessagesContainer').append(profileNotificationsView.render().el.childNodes);	
+	$('.allArticlesSelectedProfileArticlesContainer').append(profileSelectedArticlesView.render().el.childNodes);	
 
         // TODO: move this to new article? 
 
