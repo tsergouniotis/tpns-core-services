@@ -144,7 +144,7 @@ var ArticlesListView = Backbone.View.extend({
 
 var CategoriesListView = Backbone.View.extend({
 
-        categoryTemplate: _.template('    <li class="<%=slug %>"><a><span><%=name %></span><i class="icon tpns-ai-selected"></i></a></li>'),
+        categoryTemplate: _.template('<li class="<%=slug %>"><a><span><%=name %></span><i class="icon tpns-ai-selected"></i></a></li>'),
 
     	render: function () {
 
@@ -152,12 +152,20 @@ var CategoriesListView = Backbone.View.extend({
 			throw "Collection is not set for this view";
 		}
 
-                var html = '<ul class="admin-click-menu-content-list admin-bi-category-list">';
-                html += '    <li class="all-categories current"><a><span>All Categories</span><i class="icon tpns-ai-selected"></i></a></li>';
+                var html = '';
+                html+= '<div class="admin-click-menu-button">';
+                html+= '    <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Category Filter"><i class="icon tpns-ai-category"></i><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Categories</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>';
+                html+= '</div>';
+                html+= '<div class=" dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">';
+                html+= '    <ul class="admin-click-menu-content-list admin-bi-category-list">';
+                html+= '        <li class="all-categories current"><a><span>All Categories</span><i class="icon tpns-ai-selected"></i></a></li>';
                 this.collection.each(function(category){
-                    html += this.categoryTemplate(category.toJSON());
+                    html += '        '+this.categoryTemplate(category.toJSON());
 	        }, this);
-                html+='</ul>';
+                html+='    </ul>';
+                html+= '</div>';
+
+
 		this.$el.html(html);
 		return this;
 	}
@@ -202,7 +210,7 @@ var SubCategoriesListView = Backbone.View.extend({
 
 var AuthorsListView = Backbone.View.extend({
 
-        authorsTemplate: _.template('    <li><a><u><img src="<%=image %>" alt="" /></u><span><%=first_name%> <%=last_name%></span><i class="icon tpns-ai-selected"></i></a></li>'),
+        authorsTemplate: _.template('<li><a><u><img src="<%=image %>" alt="" /></u><span><%=first_name%> <%=last_name%></span><i class="icon tpns-ai-selected"></i></a></li>'),
 
     	render: function () {
 
@@ -210,81 +218,20 @@ var AuthorsListView = Backbone.View.extend({
 			throw "Collection is not set for this view";
 		}
 
-                var html = '<ul class="admin-click-menu-content-list admin-bi-reporter-list">';
-                html += '    <li class="current"><a><u class="icon tpns-ai-staff"></u><span>All Reporters</span><i class="icon tpns-ai-selected"></i></a></li>';
+                var html = '';
+                html+= '<div class="admin-click-menu-button">';
+                html+= '<p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="Open the Reporters Filter"><span class="selected-admin-bi-reporter-image"><i class="icon tpns-ai-staff"></i></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">All Reporters</span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></span></a></p>';
+                html+= '</div>';
+                html+= '<div class=" dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">';
+                html+= '    <ul class="admin-click-menu-content-list admin-bi-reporter-list">';
+                html+= '        <li class="current"><a><u class="icon tpns-ai-staff"></u><span>All Reporters</span><i class="icon tpns-ai-selected"></i></a></li>';
                 this.collection.each(function(author){
-                    html += this.authorsTemplate(author.toJSON());
+                    html += '        '+this.authorsTemplate(author.toJSON());
 	        }, this);
-                html+='</ul>';
+                html+='    </ul>';
+                html+='</div>';
 		this.$el.html(html);
 		return this;
 	}
 });     
-
-
-var ProfileNotificationsView = Backbone.View.extend({
-
-        notificationsTemplate: _.template('            <small><%=notifications %></small>'),
-
-    	render: function () {
-
-		if (!this.model) {
-			throw "Model is not set for this view";
-		}
-
-                var html = '<div class="admin-global-controllers-admin-info-container">';
-                html += '    <p><a href="../notifications-module/notifications.html" title="Preview your latest notifications"><i class="icon tpns-ai-notifications"></i>';
-                html += '        <span class="admin-global-controllers-totals">';
-                html += this.notificationsTemplate(this.model.toJSON().stats.toJSON());
-                html += '        </span>';
-                html += '    </a></p>';
-                html += '</div>';
-		this.$el.html(html);
-		return this;
-	}
-});   
-
-var ProfileMessagesView = Backbone.View.extend({
-
-        messagesTemplate: _.template('            <small><%=messages %></small>'),
-
-    	render: function () {
-
-		if (!this.model) {
-			throw "Model is not set for this view";
-		}
-
-                var html = '<div class="admin-global-controllers-admin-info-container">';
-                html += '    <p><a href="../messages-module/inbox.html" title="Preview your latest messages"><i class="icon tpns-ai-email-open"></i>';
-                html += '        <span class="admin-global-controllers-totals">';
-                html += this.messagesTemplate(this.model.toJSON().stats.toJSON());
-                html += '        </span>';
-                html += '    </a></p>';
-                html += '</div>';
-		this.$el.html(html);
-		return this;
-	}
-}); 
-
-
-var ProfileSelectedArticlesView = Backbone.View.extend({
-
-        sceduledArticelsTemplate: _.template('            <small><%=schedules_articles %></small>'),
-
-    	render: function () {
-
-		if (!this.model) {
-			throw "Model is not set for this view";
-		}
-                var html = '<div class="admin-global-controllers-admin-info-container">';
-                html += '    <p><a href="../calendar-module/calendar.html" title="Preview your scheduled articles"><i class="icon tpns-ai-calendar-month-number"></i>';
-                html += '        <span class="admin-global-controllers-totals">';
-                html += this.sceduledArticelsTemplate(this.model.toJSON().stats.toJSON());
-                html += '        </span>';
-                html += '    </a></p>';
-                html += '</div>';
-		this.$el.html(html);
-		return this;
-	}
-});  
-
+     
