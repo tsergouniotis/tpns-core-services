@@ -11,7 +11,7 @@ Version: 1.0
 ------------------------------------------------------------------------------- */
 html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
 	margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; background: transparent; font-weight: normal;
-}									
+}
 
 article, aside, figure, footer, header, hgroup, nav, section { display: block; }
 /*
@@ -1112,26 +1112,8 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 }
 /* Sidebar LARGE Social Media Follow Area
 -------------------------------------------------------------------------------*/
-.social-follow-container:nth-child(2), 
-.billboard-container.position-one.sidebar-slot-full ~ .social-follow-container.position-two.sidebar-slot-full {
+.social-follow-container:nth-child(2), .billboard-container.position-one.sidebar-slot-full ~ .social-follow-container.position-two.sidebar-slot-full {
 	margin-top:20px;
-}
-.per-category-closed-container-content-sidebar .social-follow-container.position-one.sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-large-equal-to-one,
-.per-category-closed-container-content-sidebar .social-follow-container.position-one.sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-large-equal-to-two,
-.per-category-closed-container-content-sidebar .social-follow-container.position-one.sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-large-equal-to-three,
-.per-category-closed-container-content-sidebar .social-follow-container.position-one.sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-large-equal-to-one,
-.per-category-closed-container-content-sidebar .social-follow-container.position-one.sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-large-equal-to-two,
-.per-category-closed-container-content-sidebar .social-follow-container.position-one.sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-large-equal-to-three,
-.per-category-closed-container-content-sidebar .billboard-container.position-one ~ .social-follow-container.position-two.sidebar-slot-default .social-follow-buttons-large.social-follow-buttons-large-equal-to-one,
-.per-category-closed-container-content-sidebar .billboard-container.position-one ~ .social-follow-container.position-two.sidebar-slot-default .social-follow-buttons-large.social-follow-buttons-large-equal-to-two,
-.per-category-closed-container-content-sidebar .billboard-container.position-one ~ .social-follow-container.position-two.sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-large-equal-to-one,
-.per-category-closed-container-content-sidebar .billboard-container.position-one ~ .social-follow-container.position-two.sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-large-equal-to-two,
-.per-category-closed-container-content-sidebar .billboard-container.position-one ~ .social-follow-container.position-two.sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-large-equal-to-three,
-.per-category-closed-container-content-sidebar .billboard-container.position-one ~ .social-follow-container.position-two.sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-large-equal-to-one,
-.per-category-closed-container-content-sidebar .billboard-container.position-one ~ .social-follow-container.position-two.sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-large-equal-to-two,
-.per-category-closed-container-content-sidebar .billboard-container.position-one ~ .social-follow-container.position-two.sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-large-equal-to-three,
-.per-category-closed-container-content-sidebar .billboard-container.position-one ~ .social-follow-container.position-two.sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-large-equal-to-four {
-	margin-top:17px;
 }
 .per-category-closed-container-content-sidebar .social-follow-container:nth-child(2) {
 	margin-top:0px;
@@ -1139,106 +1121,49 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .social-follow-buttons-large:after {
 	clear:both; content:"\0020"; display:block; height:0; overflow:hidden;
 }
-.social-follow-buttons-large li:nth-child(3n+1), 
-.social-follow-buttons-large.social-follow-buttons-large-equal-to-four li:nth-child(3n+3), 
-.social-follow-buttons-large.social-follow-buttons-large-equal-to-seven li:nth-child(3n+6), 
-.social-follow-buttons-large.social-follow-buttons-large-equal-to-ten li:nth-child(3n+9), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large li:nth-child(2n+1) {
-	float:left; width:47%; margin:0 3% 6% 0;
+.social-follow-buttons-large li:nth-child(3n+1), .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(3n+3), .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(3n+6), .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(3n+9), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large li:nth-child(2n+1) {
+	float:left; width:47%; margin:0 3% 20px 0;
 }
-.social-follow-buttons-large li:nth-child(3n+2), 
-.social-follow-buttons-large.social-follow-buttons-large-equal-to-four li:nth-child(3n+4), 
-.social-follow-buttons-large.social-follow-buttons-large-equal-to-seven li:nth-child(3n+7), 
-.social-follow-buttons-large.social-follow-buttons-large-equal-to-ten li:nth-child(3n+10), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large li:nth-child(2n+2) {
-	float:left; width:47%; margin:0 0 6% 3%;
+.social-follow-buttons-large li:nth-child(3n+2), .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(3n+4), .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(3n+7), .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(3n+10), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large li:nth-child(2n+2) {
+	float:left; width:47%; margin:0 0 20px 3%;
 }
-.social-follow-buttons-large li:nth-child(3n+3),
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-one li:nth-child(1), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-three li:nth-child(3), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-five li:nth-child(5), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-seven li:nth-child(7), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-nine li:nth-child(9), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-eleven li:nth-child(11) {
-	float:left; width:100%; margin:0 0 6% 0;
+.social-follow-buttons-large li:nth-child(3n+3), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-one li:nth-child(1), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-three li:nth-child(3), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(5), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(7), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(9), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(11) {
+	float:left; width:100%; margin:0 0 20px 0;
 }
-.per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+1), 
-.per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+2), 
-.per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) {
+.per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+1), .per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+2), .per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) {
 	float:left; width:11.5%; margin:0 1.14% 0 0;
 }
-.social-follow-container:nth-child(2) .social-follow-buttons-large li:last-child, 
-.social-follow-container:nth-child(2) .social-follow-buttons-large li:nth-child(1), 
-.social-follow-container:nth-child(2) .social-follow-buttons-large-equal-to-four li:nth-child(3), 
-.social-follow-container:nth-child(2) .social-follow-buttons-large-equal-to-five li:nth-child(4), 
-.social-follow-container:nth-child(2) .social-follow-buttons-large-equal-to-seven li:nth-child(6), 
-.social-follow-container:nth-child(2) .social-follow-buttons-large-equal-to-eight li:nth-child(7), 
-.social-follow-container:nth-child(2) .social-follow-buttons-large-equal-to-ten li:nth-child(9), 
-.social-follow-container:nth-child(2) .social-follow-buttons-large-equal-to-eleven li:nth-child(10), 
-.social-follow-container:nth-child(3) .social-follow-buttons-large li:last-child, 
-.social-follow-container:nth-child(3) .social-follow-buttons-large li:nth-child(1), 
-.social-follow-container:nth-child(3) .social-follow-buttons-large-equal-to-four li:nth-child(3), 
-.social-follow-container:nth-child(3) .social-follow-buttons-large-equal-to-five li:nth-child(4), 
-.social-follow-container:nth-child(3) .social-follow-buttons-large-equal-to-seven li:nth-child(6), 
-.social-follow-container:nth-child(3) .social-follow-buttons-large-equal-to-eight li:nth-child(7), 
-.social-follow-container:nth-child(3) .social-follow-buttons-large-equal-to-ten li:nth-child(9), 
-.social-follow-container:nth-child(3) .social-follow-buttons-large-equal-to-eleven li:nth-child(10), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-one li:nth-child(1), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-two li:nth-child(1), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-two li:nth-child(2), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-three li:nth-child(2), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-three li:nth-child(3), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-four li:nth-child(3), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-four li:nth-child(4), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-five li:nth-child(4), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-five li:nth-child(5), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-six li:nth-child(5), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-six li:nth-child(6), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-seven li:nth-child(7), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-eight li:nth-child(7), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-eight li:nth-child(8), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-nine li:nth-child(9), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-ten li:nth-child(9), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-ten li:nth-child(10), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-eleven li:nth-child(10), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-eleven li:nth-child(11), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-twelve li:nth-child(11), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large-equal-to-twelve li:nth-child(12) {
+.social-follow-container:nth-child(2) .social-follow-buttons-large li:last-child, .social-follow-container:nth-child(2) .social-follow-buttons-large li:nth-child(1), .social-follow-container:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(3), .social-follow-container:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(4), .social-follow-container:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(6), .social-follow-container:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(7), .social-follow-container:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(9), .social-follow-container:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(10), .social-follow-container:nth-child(3) .social-follow-buttons-large li:last-child, .social-follow-container:nth-child(3) .social-follow-buttons-large li:nth-child(1), .social-follow-container:nth-child(3) .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(3), .social-follow-container:nth-child(3) .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(4), .social-follow-container:nth-child(3) .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(6), .social-follow-container:nth-child(3) .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(7), .social-follow-container:nth-child(3) .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(9), .social-follow-container:nth-child(3) .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(10), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-one li:nth-child(1), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-two li:nth-child(1), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-two li:nth-child(2), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-three li:nth-child(2), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-three li:nth-child(3), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(3), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(4), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(4), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(5), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-six li:nth-child(5), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-six li:nth-child(6), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(7), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(7), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(8), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(9), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(9), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(10), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(10), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(11), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-twelve li:nth-child(11), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-twelve li:nth-child(12) {
 	margin-bottom:0;
 }
 .per-category-closed-container-content-sidebar .social-follow-container:nth-child(1) .social-follow-buttons-large li:last-child {
 	margin-right:0;
 }
 /* Onload Sidebar Options */
-.social-follow-buttons-large.social-follow-buttons-large-equal-to-one li {
-	width:100%; margin:0 0 6% 0;
+.social-follow-buttons-large.social-follow-buttons-equal-to-one li {
+	width:100%; margin:0 0 20px 0;
 }
 /* Default Sidebar Slot*/
 .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large li {
 	float:left; width:14.33%; margin:0 2.8% 0 0;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large-equal-to-five li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large-equal-to-eleven li:nth-child(n+7) {
+.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-five li, .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(n+7) {
 	width:17.76%;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large-equal-to-four li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large-equal-to-ten li:nth-child(n+7) {
+.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-four li, .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(n+7) {
 	width:22.9%;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large-equal-to-three li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large-equal-to-nine li:nth-child(n+7) {
+.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-three li, .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(n+7) {
 	width:31.46%;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large-equal-to-two li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large-equal-to-eight li:nth-child(n+7) {
+.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-two li, .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(n+7) {
 	width:48.6%;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large-equal-to-one li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large-equal-to-seven li:nth-child(n+7) {
+.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-one li, .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(n+7) {
 	width:100%; margin:0;
 }
 .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large li:nth-child(n+7) {
-	margin:1.14% 2.8% 0 0;
+	margin:20px 2.8% 0 0;
 }
 /* Sidebar Slot Full Width */
 .per-category-closed-container-content-sidebar .social-follow-container.sidebar-slot-full:nth-child(3) {
@@ -1247,243 +1172,119 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large li {
 	float:left; width:11.5%; margin:0 1.14% 0 0;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large-equal-to-seven li {
+.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-seven li {
 	width:13.3%;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large-equal-to-six li {
+.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-six li {
 	width:15.71%;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large-equal-to-five li {
+.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-five li {
 	width:19.08%;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large-equal-to-four li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large-equal-to-twelve li:nth-child(n+9) {
+.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-four li, .per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-twelve li:nth-child(n+9) {
 	width:24.14%;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large-equal-to-three li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large-equal-to-eleven li:nth-child(n+9) {
+.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-three li, .per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(n+9) {
 	width:32.57%;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large-equal-to-two li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large-equal-to-ten li:nth-child(n+9) {
+.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-two li, .per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(n+9) {
 	width:49.43%;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large-equal-to-one li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large-equal-to-nine li:nth-child(9) {
+.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-one li, .per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(9) {
 	width:100%; margin:0;
 }
 .per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large li:nth-child(n+9) {
-	margin:1.14% 1.14% 0 0;
+	margin:20px 1.14% 0 0;
 }
 .per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large li:nth-child(8n+8) {
 	margin:0;
 }
 /* Sidebar Slot Two and Sidebar Slot Four */
-.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large li {
+.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large li, .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large li {
 	float:left; width:14.16%; margin:0 3% 0 0;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large-equal-to-five li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large-equal-to-eleven li:nth-child(n+7), 
-.per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large-equal-to-five li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large-equal-to-eleven li:nth-child(n+7) {
+.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-five li, .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(n+7), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-five li, .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(n+7) {
 	width:17.6%;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large-equal-to-four li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large-equal-to-ten li:nth-child(n+7), 
-.per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large-equal-to-four li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large-equal-to-ten li:nth-child(n+7) {
+.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-four li, .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(n+7), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-four li, .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(n+7) {
 	width:22.75%;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large-equal-to-three li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large-equal-to-three li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large-equal-to-nine li:nth-child(n+7), 
-.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large-equal-to-nine li:nth-child(n+7), 
-.per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large-equal-to-three li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large-equal-to-three li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large-equal-to-nine li:nth-child(n+7), 
-.per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large-equal-to-nine li:nth-child(n+7) {
+.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-three li, .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-three li, .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(n+7), .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(n+7), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-three li, .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-three li, .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(n+7), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(n+7) {
 	width:31.33%;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large-equal-to-two li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large-equal-to-eight li:nth-child(n+7), 
-.per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large-equal-to-two li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large-equal-to-eight li:nth-child(n+7) {
+.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-two li, .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(n+7), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-two li, .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(n+7) {
 	width:48.5%;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large-equal-to-one li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large-equal-to-seven li:nth-child(n+7), 
-.per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large-equal-to-one li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large-equal-to-seven li:nth-child(n+7) {
+.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-one li, .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(n+7), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-one li, .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(n+7) {
 	width:100%; margin:0;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large li:nth-child(n+7), 
-.per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large li:nth-child(n+7) {
-	margin:1.14% 3% 0 0;
+.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large li:nth-child(n+7), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large li:nth-child(n+7) {
+	margin:20px 3% 0 0;
 }
 /* Sidebar Slot Five */
-.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large li {
+.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large li, .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large li {
 	float:left; width:22%; margin:0 4% 0 0;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large-equal-to-three li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large-equal-to-seven li:nth-child(n+5), 
-.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large-equal-to-eleven li:nth-child(n+9), 
-.per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large-equal-to-three li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large-equal-to-seven li:nth-child(n+5), 
-.per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large-equal-to-eleven li:nth-child(n+9) {
+.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-three li, .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(n+5), .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(n+9), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-three li, .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(n+5), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(n+9) {
 	width:30.668%;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large-equal-to-two li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large-equal-to-ten li:nth-child(n+9), 
-.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large-equal-to-six li:nth-child(n+5), 
-.per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large-equal-to-two li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large-equal-to-ten li:nth-child(n+9), 
-.per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large-equal-to-six li:nth-child(n+5) {
+.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-two li, .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(n+9), .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-six li:nth-child(n+5), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-two li, .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(n+9), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-six li:nth-child(n+5) {
 	width:48%;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large-equal-to-one li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large-equal-to-nine li:nth-child(9), 
-.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large-equal-to-five li:nth-child(5), 
-.per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large-equal-to-one li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large-equal-to-nine li:nth-child(9), 
-.per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large-equal-to-five li:nth-child(5) {
+.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-one li, .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(9), .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(5), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-one li, .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(9), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(5) {
 	width:100%; margin:0;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large li:nth-child(n+5), 
-.per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large li:nth-child(n+5) {
-	margin:1.4% 4% 0 0;
+.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large li:nth-child(n+5), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large li:nth-child(n+5) {
+	margin:20px 4% 0 0;
 }
-.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large li:nth-child(3n+3), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large li:nth-child(6n+6), 
-.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large li:nth-child(3n+3), 
-.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large li:nth-child(6n+6), 
-.per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large li:nth-child(3n+3), 
-.per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large li:nth-child(6n+6), 
-.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large li:nth-child(4n+4), 
-.per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large li:nth-child(4n+4), 
-.per-category-closed-container-content-sidebar .social-follow-buttons-large-equal-to-two li:nth-child(2), 
-.per-category-closed-container-content-sidebar .social-follow-buttons-large-equal-to-three li:nth-child(3), 
-.per-category-closed-container-content-sidebar .social-follow-buttons-large-equal-to-four li:nth-child(4), 
-.per-category-closed-container-content-sidebar .social-follow-buttons-large-equal-to-five li:nth-child(5), 
-.per-category-closed-container-content-sidebar .social-follow-buttons-large-equal-to-six li:nth-child(6), 
-.per-category-closed-container-content-sidebar .social-follow-buttons-large-equal-to-seven li:nth-child(7) {
+.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large li:nth-child(3n+3), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large li:nth-child(6n+6), .per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large li:nth-child(3n+3), .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large li:nth-child(6n+6), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large li:nth-child(3n+3), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large li:nth-child(6n+6), .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large li:nth-child(4n+4), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large li:nth-child(4n+4), .per-category-closed-container-content-sidebar .social-follow-buttons-large.social-follow-buttons-equal-to-two li:nth-child(2), .per-category-closed-container-content-sidebar .social-follow-buttons-large.social-follow-buttons-equal-to-three li:nth-child(3), .per-category-closed-container-content-sidebar .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(4), .per-category-closed-container-content-sidebar .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(5), .per-category-closed-container-content-sidebar .social-follow-buttons-large.social-follow-buttons-equal-to-six li:nth-child(6), .per-category-closed-container-content-sidebar .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(7) {
 	margin:0;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large li:nth-child(6n+12), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large-equal-to-eleven li:nth-child(11), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large-equal-to-ten li:nth-child(10), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large-equal-to-nine li:nth-child(9), 
-.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large-equal-to-eight li:nth-child(8), 
-.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large li:nth-child(6n+12), 
-.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large-equal-to-eight li:nth-child(8), 
-.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large-equal-to-nine li:nth-child(9), 
-.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large-equal-to-ten li:nth-child(10), 
-.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large-equal-to-eleven li:nth-child(11), 
-.per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large li:nth-child(6n+12), 
-.per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large-equal-to-eight li:nth-child(8), 
-.per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large-equal-to-nine li:nth-child(9), 
-.per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large-equal-to-ten li:nth-child(10), 
-.per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large-equal-to-eleven li:nth-child(11), 
-.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large li:nth-child(4n+8), 
-.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large li:nth-child(4n+12), 
-.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large-equal-to-six li:nth-child(6), 
-.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large-equal-to-seven li:nth-child(7), 
-.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large-equal-to-ten li:nth-child(10), 
-.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large-equal-to-eleven li:nth-child(11), 
-.per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large li:nth-child(4n+8), 
-.per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large li:nth-child(4n+12), 
-.per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large-equal-to-six li:nth-child(6), 
-.per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large-equal-to-seven li:nth-child(7), 
-.per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large-equal-to-ten li:nth-child(10), 
-.per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large-equal-to-eleven li:nth-child(11), 
-.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large-equal-to-ten li:nth-child(10), 
-.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large-equal-to-eleven li:nth-child(11), 
-.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large-equal-to-twelve li:nth-child(12) {
-	margin:1.14% 0 0 0;
+.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large li:nth-child(6n+12), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(11), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(10), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(9), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(8), .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large li:nth-child(6n+12), .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(8), .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(9), .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(10), .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(11), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large li:nth-child(6n+12), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(8), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(9), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(10), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(11), .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large li:nth-child(4n+8), .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large li:nth-child(4n+12), .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-six li:nth-child(6), .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(7), .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(10), .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(11), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large li:nth-child(4n+8), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large li:nth-child(4n+12), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-six li:nth-child(6), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(7), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(10), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(11), .per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(9), .per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(10), .per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(11), .per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-twelve li:nth-child(12) {
+	margin:20px 0 0 0;
 }
 /* Sidebar Slot One and Slot Three */
-.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large li {
+.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large li, .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large li {
 	float:left; width:30%; margin:0 5% 0 0;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large-equal-to-two li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large-equal-to-five li:nth-child(n+4), 
-.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large-equal-to-eight li:nth-child(n+7), 
-.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large-equal-to-eleven li:nth-child(n+10),
-.per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large-equal-to-two li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large-equal-to-five li:nth-child(n+4), 
-.per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large-equal-to-eight li:nth-child(n+7), 
-.per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large-equal-to-eleven li:nth-child(n+10) {
+.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-two li, .per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(n+4), .per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(n+7), .per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(n+10), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-two li, .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(n+4), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(n+7), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(n+10) {
 	width:47.5%;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large-equal-to-two li:nth-child(2), 
-.per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large-equal-to-two li:nth-child(2) {
+.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-two li:nth-child(2), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-two li:nth-child(2) {
 	margin:0;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large-equal-to-one li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large-equal-to-four li:nth-child(4), 
-.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large-equal-to-seven li:nth-child(7), 
-.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large-equal-to-ten li:nth-child(10), 
-.per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large-equal-to-one li, 
-.per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large-equal-to-four li:nth-child(4), 
-.per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large-equal-to-seven li:nth-child(7), 
-.per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large-equal-to-ten li:nth-child(10) {
+.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-one li, .per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(4), .per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(7), .per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(10), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-one li, .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(4), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(7), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(10) {
 	width:100%; margin:0;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large li:nth-child(n+4), 
-.per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large li:nth-child(n+4){
-	margin:5% 5% 0 0;
+.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large li:nth-child(n+4), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large li:nth-child(n+4){
+	margin:20px 5% 0 0;
 }
-.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large li:nth-child(3n+6), 
-.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large-equal-to-five li:nth-child(5), 
-.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large-equal-to-eight li:nth-child(8), 
-.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large-equal-to-eleven li:nth-child(11), 
-.per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large li:nth-child(3n+6), 
-.per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large-equal-to-five li:nth-child(5), 
-.per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large-equal-to-eight li:nth-child(8), 
-.per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large-equal-to-eleven li:nth-child(11) {
-	margin:5% 0 0 0;
+.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large li:nth-child(3n+6), .per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(5), .per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(8), .per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(11), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large li:nth-child(3n+6), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(5), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(8), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(11) {
+	margin:20px 0 0 0;
 }
 /* Triple Sidebar Slot */
 .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large li {
 	width:30%; margin:0 5% 0 0;
 }
 .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large li:nth-child(n+4) {
-	margin:5% 5% 0 0;
+	margin:20px 5% 0 0;
 }
 .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large li:nth-child(3n+1) {
 	clear:both;
 }
-.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large-equal-to-one li, 
-.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large-equal-to-four li:nth-child(4), 
-.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large-equal-to-seven li:nth-child(7), 
-.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large-equal-to-ten li:nth-child(10) {
+.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-one li, .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(4), .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(7), .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(10) {
 	width:100%; margin:0;
 }
-.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large li:nth-child(3n+6), 
-.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large-equal-to-four li:nth-child(4), 
-.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large-equal-to-five li:nth-child(5), 
-.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large-equal-to-seven li:nth-child(7), 
-.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large-equal-to-eight li:nth-child(8), 
-.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large-equal-to-ten li:nth-child(10), 
-.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large-equal-to-eleven li:nth-child(11) {
-	margin:5% 0 0 0;
+.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large li:nth-child(3n+6), .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large.sidebar-slot-one .social-follow-buttons-equal-to-four li:nth-child(4), .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large.sidebar-slot-one .social-follow-buttons-equal-to-five li:nth-child(5), .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large.sidebar-slot-one .social-follow-buttons-equal-to-seven li:nth-child(7), .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large.sidebar-slot-one .social-follow-buttons-equal-to-eight li:nth-child(8), .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large.sidebar-slot-one .social-follow-buttons-equal-to-ten li:nth-child(10), .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large.sidebar-slot-one .social-follow-buttons-equal-to-eleven li:nth-child(11) {
+	margin:20px 0 0 0;
 }
-.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large-equal-to-two li, 
-.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large-equal-to-five li:nth-child(n+4), 
-.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large-equal-to-eight li:nth-child(n+7), 
-.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large-equal-to-eleven li:nth-child(n+10) {
+.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-two li, .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(n+4), .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(n+7), .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(n+10) {
 	width:47.5%;
 }
-.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large-equal-to-two li:nth-child(2) {
+.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-two li:nth-child(2) {
 	margin:0;
 }
-.social-follow-buttons-large li a, 
-.per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) a, 
-.social-follow-buttons-large.social-follow-buttons-large-equal-to-four li:nth-child(3n+3) a, 
-.social-follow-buttons-large.social-follow-buttons-large-equal-to-seven li:nth-child(3n+6) a, 
-.social-follow-buttons-large.social-follow-buttons-large-equal-to-ten li:nth-child(3n+9) a {
+.social-follow-buttons-large li a, .per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) a, .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(3n+3) a, .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(3n+6) a, .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(3n+9) a {
 	display:block; width:100%; height:130px; border:1px solid #CCCCCC; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; overflow:hidden;
 }
 .social-follow-buttons-large li:nth-child(3n+3) a {
@@ -1492,18 +1293,10 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .social-follow-buttons-large li a:hover, .social-follow-buttons-large li a:hover .social-follow-social-network-container {
 	text-decoration:none;
 }
-.social-follow-buttons-large li a .social-follow-social-network, 
-.per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) a .social-follow-social-network, 
-.social-follow-buttons-large.social-follow-buttons-large-equal-to-four li:nth-child(3n+3) a .social-follow-social-network, 
-.social-follow-buttons-large.social-follow-buttons-large-equal-to-seven li:nth-child(3n+6) a .social-follow-social-network, 
-.social-follow-buttons-large.social-follow-buttons-large-equal-to-ten li:nth-child(3n+9) a .social-follow-social-network {
+.social-follow-buttons-large li a .social-follow-social-network, .per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) a .social-follow-social-network, .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(3n+3) a .social-follow-social-network, .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(3n+6) a .social-follow-social-network, .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(3n+9) a .social-follow-social-network {
 	float:none; width:100%; line-height:62px; font-size:2.5em; padding:8px 0 0; margin:0; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
 }
-.social-follow-buttons-large li a:hover .social-follow-social-network, 
-.per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) a:hover .social-follow-social-network, 
-.social-follow-buttons-large.social-follow-buttons-large-equal-to-four li:nth-child(3n+3) a:hover .social-follow-social-network, 
-.social-follow-buttons-large.social-follow-buttons-large-equal-to-seven li:nth-child(3n+6) a:hover .social-follow-social-network, 
-.social-follow-buttons-large.social-follow-buttons-large-equal-to-ten li:nth-child(3n+9) a:hover .social-follow-social-network {
+.social-follow-buttons-large li a:hover .social-follow-social-network, .per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) a:hover .social-follow-social-network, .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(3n+3) a:hover .social-follow-social-network, .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(3n+6) a:hover .social-follow-social-network, .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(3n+9) a:hover .social-follow-social-network {
 	line-height:112px; font-size:5em; padding:16px 0 0; margin:0; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
 }
 .social-follow-buttons-large li:nth-child(3n+3) a .social-follow-social-network {
@@ -1516,18 +1309,10 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 	vertical-align:inherit;
 }
 /* ----- Follower quantity and type ----- */
-.social-follow-buttons-large li a .social-follow-social-network-container, 
-.per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) a .social-follow-social-network-container, 
-.social-follow-buttons-large.social-follow-buttons-large-equal-to-four li:nth-child(3n+3) a .social-follow-social-network-container, 
-.social-follow-buttons-large.social-follow-buttons-large-equal-to-seven li:nth-child(3n+6) a .social-follow-social-network-container, 
-.social-follow-buttons-large.social-follow-buttons-large-equal-to-ten li:nth-child(3n+9) a .social-follow-social-network-container {
+.social-follow-buttons-large li a .social-follow-social-network-container, .per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) a .social-follow-social-network-container, .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(3n+3) a .social-follow-social-network-container, .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(3n+6) a .social-follow-social-network-container, .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(3n+9) a .social-follow-social-network-container {
 	float:none; visibility:visible; width:100%; height:60px; border-left:none; border-top:1px solid #CCCCCC; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
 }
-.social-follow-buttons-large li a:hover .social-follow-social-network-container, 
-.per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) a:hover .social-follow-social-network-container, 
-.social-follow-buttons-large.social-follow-buttons-large-equal-to-four li:nth-child(3n+3) a:hover .social-follow-social-network-container, 
-.social-follow-buttons-large.social-follow-buttons-large-equal-to-seven li:nth-child(3n+6) a:hover .social-follow-social-network-container, 
-.social-follow-buttons-large.social-follow-buttons-large-equal-to-ten li:nth-child(3n+9) a:hover .social-follow-social-network-container {
+.social-follow-buttons-large li a:hover .social-follow-social-network-container, .per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) a:hover .social-follow-social-network-container, .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(3n+3) a:hover .social-follow-social-network-container, .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(3n+6) a:hover .social-follow-social-network-container, .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(3n+9) a:hover .social-follow-social-network-container {
 	float:none; visibility:hidden; width:100%; height:0px; border-left:none; border-top:1px solid #FFFFFF; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
 }
 .social-follow-buttons-large li:nth-child(3n+3) a .social-follow-social-network-container {
@@ -1550,20 +1335,26 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .social-follow-buttons-small {
 	display:table; font-size:1.875em; /* h5 up to h1 */ vertical-align:top; margin-bottom:20px;
 }
+.social-follow-container.position-two .social-follow-buttons-small {
+	margin-bottom:0px;
+}
 .per-category-closed-container-content-sidebar .social-follow-buttons-small {
 	margin:0;
 }
-.social-follow-buttons-small li, .per-category-closed-container-content-sidebar .social-follow-buttons-small li:nth-child(4n+1), .per-category-closed-container-content-sidebar .social-follow-buttons-small li:nth-child(4n+4) {
+.social-follow-buttons-small li {
 	float:left; padding:0; margin:0 6px 10px 7px;
-}
-.per-category-closed-container-content-sidebar .social-follow-buttons-small li, .per-category-closed-container-content-sidebar .social-follow-buttons-small li:nth-child(4n+1), .per-category-closed-container-content-sidebar .social-follow-buttons-small li:nth-child(4n+4) {
-	margin:10px 6px 10px 7px;
 }
 .social-follow-buttons-small li:nth-child(4n+1) {
 	margin-left:0px;
 }
 .social-follow-buttons-small li:nth-child(4n+4) {
 	margin-right:0px;
+}
+.per-category-closed-container-content-sidebar.sidebar-triple-slot-one-lte-five-small-social-buttons-control .social-follow-buttons-small {
+	margin:17px 0px;
+}
+.per-category-closed-container-content-sidebar .social-follow-buttons-small li {
+	margin:10px 5px;
 }
 .social-follow-buttons-small li a {
 	display:block; width:67px; height:67px;
@@ -1581,16 +1372,16 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 	line-height:65px; vertical-align:top; padding:0; margin:0;
 }
 .social-follow-buttons-small li a .social-follow-social-network-container, .per-category-closed-container-content-sidebar .social-follow-buttons-small li a .social-follow-social-network-container {
-	visibility:hidden; position:relative; width:67px; height:67px; color:#FFFFFF;
+	visibility:hidden; position:relative; width:68px; height:68px; color:#FFFFFF;
 }
 .social-follow-buttons-small li a:hover .social-follow-social-network-container {
-	visibility:visible; top:-120px; width:67px; height:67px;
+	visibility:visible; top:-120px; width:68px; height:68px;
 }
 .per-category-closed-container-content-sidebar .social-follow-buttons-small li a:hover .social-follow-social-network-container {
-	visibility:visible; top:-130px; width:67px; height:67px;
+	visibility:visible; top:-130px; width:68px; height:68px;
 }
 .social-follow-buttons-small li a .social-follow-social-network-container li, .per-category-closed-container-content-sidebar .social-follow-buttons-small li a .social-follow-social-network-container li {
-	display:block; position:absolute; width:80px; height:42px; background:#323031; padding:6px; margin-left:-13px; -webkit-border-radius:6px; border-radius:6px; z-index:100000;
+	display:block; position:absolute; width:80px; height:42px; background:#323031; padding:6px; margin-left:-12px; -webkit-border-radius:6px; border-radius:6px; z-index:100000;
 }
 .social-follow-buttons-small li a .social-follow-social-network-container li:after, .per-category-closed-container-content-sidebar .social-follow-buttons-small li a .social-follow-social-network-container li:after {
 	content:" "; position:absolute; top:100%; left:50%; height:0; width:0; pointer-events:none; border:solid transparent; border-color:rgba(50,48,49,0); border-top-color:#323031; border-width:10px; margin-left:-10px;
@@ -1718,18 +1509,44 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .mailchimp-newsletter-container {
 	position:relative; width:100%; height:130px; border:1px solid #CCCCCC; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
 }
-.mailchimp-newsletter-container.sidebar-slot-full.position-two, 
-.mailchimp-newsletter-container.sidebar-slot-one.position-three, 
-.mailchimp-newsletter-container.sidebar-slot-full.position-three,
-.billboard-container.position-one ~ .mailchimp-newsletter-container.position-two,
-.per-category-closed-container-content-sidebar .billboard-container.position-one.sidebar-slot-full ~ .mailchimp-newsletter-container.position-two.sidebar-slot-full {
+/* Newsletter and Billboard Height Adjustment dependant on Social Button Quantity
+-------------------------------------------------------------------------------*/
+/* Large Social Buttons */
+.per-category-closed-container-content-sidebar .billboard-inner-container, .per-category-closed-container-content-sidebar .mailchimp-newsletter-container.small-social-buttons-one-row {
+	height:auto;
+}
+.per-category-closed-container-content-sidebar .billboard-inner-container.large-social-buttons-one-row {
+	min-height:130px;
+}
+.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.large-social-buttons-two-rows, .per-category-closed-container-content-sidebar .billboard-inner-container.large-social-buttons-two-rows {
+	min-height:280px;
+}
+.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.large-social-buttons-three-rows, .per-category-closed-container-content-sidebar .billboard-inner-container.large-social-buttons-three-rows {
+	min-height:430px;
+}
+.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.large-social-buttons-four-rows, .per-category-closed-container-content-sidebar .billboard-inner-container.large-social-buttons-four-rows {
+	min-height:580px;
+}
+.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.large-social-buttons-five-rows, .per-category-closed-container-content-sidebar .billboard-inner-container.large-social-buttons-five-rows {
+	min-height:730px;
+}
+.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.large-social-buttons-six-rows, .per-category-closed-container-content-sidebar .billboard-inner-container.large-social-buttons-six-rows {
+	min-height:880px;
+}
+/* Small Social Buttons */
+.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.small-social-buttons-two-rows, .per-category-closed-container-content-sidebar .billboard-inner-container.small-social-buttons-two-rows {
+	min-height:174px;
+}
+.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.small-social-buttons-three-rows, .per-category-closed-container-content-sidebar .billboard-inner-container.small-social-buttons-three-rows {
+	min-height:261px;
+}
+.mailchimp-newsletter-container.sidebar-slot-one.position-three, .mailchimp-newsletter-container.sidebar-slot-full.position-three, .billboard-container.position-one ~ .mailchimp-newsletter-container.position-two, .per-category-closed-container-content-sidebar .social-follow-container.sidebar-slot-full.position-one ~ .mailchimp-newsletter-container.sidebar-slot-full.position-two, .per-category-closed-container-content-sidebar .mailchimp-newsletter-container.small-social-buttons-newsletter-position-two-slot-full-controller, .per-category-closed-container-content-sidebar .billboard-container.position-one.sidebar-slot-full ~ .mailchimp-newsletter-container.position-two.sidebar-slot-full {
 	margin-top:20px;
 }
-.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.sidebar-slot-full.position-one {
+.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.sidebar-slot-full.position-one, .per-category-closed-container-content-sidebar .mailchimp-newsletter-container.small-social-buttons-newsletter-position-one-slot-full-controller {
 	margin-bottom:20px;
 }
-.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.sidebar-slot-one.position-three, 
-.per-category-closed-container-content-sidebar .billboard-container.position-one ~ .mailchimp-newsletter-container.position-two {
+.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.sidebar-slot-one.position-three, .per-category-closed-container-content-sidebar .billboard-container.position-one ~ .mailchimp-newsletter-container.position-two {
 	margin-top:0;
 }
 .mailchimp-newsletter-title {
@@ -1783,16 +1600,20 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 }
 /* Sidebar Billboard Container
 -------------------------------------------------------------------------------*/
-.billboard-container:nth-child(2), .billboard-container.position-two:nth-child(2) {
-	padding:20px 0;
+.billboard-container.position-two {
+	margin-top:-17px; padding:20px 0;
 }
-.billboard-container:nth-child(3), 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-full:nth-child(2),
-.per-category-closed-container-content-sidebar .social-follow-container.position-one.sidebar-slot-full ~ .billboard-container.position-two.sidebar-slot-full {
-	padding-top:20px;
+.billboard-container.billboard-no-social-follow, .billboard-container.billboard-no-social-follow.position-two.sidebar-slot-full {
+	margin-top:0;
 }
-.per-category-closed-container-content-sidebar .billboard-container:nth-child(2)/*, .billboard-container.sidebar-slot-default:nth-child(2)*/, .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .billboard-container.position-three:nth-child(3), .per-category-closed-container-content-sidebar .billboard-container.position-two:nth-child(2) {
-	padding:0;
+.billboard-container.position-three, .per-category-closed-container-content-sidebar .billboard-container.position-two.sidebar-slot-full, .per-category-closed-container-content-sidebar .social-follow-container.position-one.sidebar-slot-full ~ .billboard-container.position-two.sidebar-slot-full {
+	margin-top:0; padding-top:20px;
+}
+.per-category-closed-container-content-sidebar .billboard-container.position-one, .per-category-closed-container-content-sidebar .billboard-container.position-two, .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .billboard-container.position-one, .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .billboard-container.position-two, .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .billboard-container.position-three, .per-category-closed-container-content-sidebar .billboard-container.billboard-no-social-follow {
+	margin-top:-17px; padding:0;
+}
+.per-category-closed-container-content-sidebar .billboard-container.position-two.billboard-no-social-follow.sidebar-slot-full {
+	margin-top:-17px; padding-top:20px;
 }
 /* Patterns Sourced from http://lea.verou.me/css3patterns/ */
 .billboard-inner-container {
@@ -1826,125 +1647,98 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .per-category-closed-container-content-sidebar .sidebar-slot-full .closed-container-billboard-container {
 	display:table; table-layout:fixed; width:70%; margin:0 auto;
 }
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-inner-container-slot-four-gt-three, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-two .closed-container-billboard-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .closed-container-billboard-container.billboard-inner-container-slot-six-gt-four, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-four, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three {
+.per-category-closed-container-content-sidebar .billboard-spacer {
+	margin-top:-17px;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-inner-container-slot-four-gt-three, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-two .closed-container-billboard-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .closed-container-billboard-container.billboard-inner-container-slot-six-gt-four, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-lte-ten, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-gt-ten, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .closed-container-billboard-container.billboard-inner-container-slot-default-gt-eight, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .closed-container-billboard-container.billboard-inner-container-slot-two-gt-five, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .closed-container-billboard-container.billboard-inner-container-slot-two-gt-ten, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .closed-container-billboard-container.billboard-inner-container-slot-default-lt-eight, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-four, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-default.position-one .closed-container-billboard-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-two .closed-container-billboard-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-four .closed-container-billboard-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-five .closed-container-billboard-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-six .closed-container-billboard-container {
 	display:table; table-layout:fixed; width:100%; margin:0;
 }
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-three .closed-container-billboard-inner-left-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-two .closed-container-billboard-inner-left-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-four .closed-container-billboard-inner-left-container, 
-.per-category-closed-container-content-sidebar .sidebar-slot-full .closed-container-billboard-inner-left-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two .closed-container-billboard-inner-left-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-four .closed-container-billboard-inner-left-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three .closed-container-billboard-inner-left-container {
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-three .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-two .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-four .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-gt-ten .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-lte-ten .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-eight .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-five .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-ten .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-eight .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .sidebar-slot-full .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-four .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-default.position-one .billboard-inner-container .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-two .closed-container-billboard-container .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-four .closed-container-billboard-container .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-five .closed-container-billboard-container .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-six .closed-container-billboard-container .closed-container-billboard-inner-left-container {
 	display:table-cell; width:30%; vertical-align:middle;
 }
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-three .closed-container-billboard-inner-right-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-two .closed-container-billboard-inner-right-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-four  .closed-container-billboard-inner-right-container, 
-.per-category-closed-container-content-sidebar .sidebar-slot-full .closed-container-billboard-inner-right-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two .closed-container-billboard-inner-right-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-four .closed-container-billboard-inner-right-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three .closed-container-billboard-inner-right-container {
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-three .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-two .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-four .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-gt-ten .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-lte-ten .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-eight .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-five .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-ten .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-eight .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .sidebar-slot-full .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-four .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-default.position-one .billboard-inner-container .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-two .closed-container-billboard-container .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-four .closed-container-billboard-container .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-five .closed-container-billboard-container .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-six .closed-container-billboard-container .closed-container-billboard-inner-right-container {
 	display:table-cell; width:70%; vertical-align:top; padding:0px 0px 0px 20px;
 }
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-three .closed-container-billboard-inner-left-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three .closed-container-billboard-inner-left-container {
-	width:47%;
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-eight .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-default.position-one .billboard-inner-container .closed-container-billboard-inner-left-container {
+	width:23%;
 }
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two .closed-container-billboard-inner-left-container {
-	width:40%;
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-lte-ten .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-five .closed-container-billboard-inner-left-container {
+	width:26%;
 }
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-four .closed-container-billboard-inner-left-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-four .closed-container-billboard-inner-left-container {
-	width:61%;
-}
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-three .closed-container-billboard-inner-right-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three .closed-container-billboard-inner-right-container {
-	width:53%;
-}
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two .closed-container-billboard-inner-right-container {
-	width:60%;
-}
-
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-four .closed-container-billboard-inner-right-container, 
 .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-four .closed-container-billboard-inner-right-container {
+	width:30%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-four .closed-container-billboard-inner-right-container {
+	width:34%;
+}
+.per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-five .closed-container-billboard-container .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-six .closed-container-billboard-container .closed-container-billboard-inner-right-container {
 	width:39%;
 }
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-three .per-category-articles-small-article-title, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-two .per-category-articles-small-article-title, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-four .per-category-articles-small-article-title, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-four .per-category-articles-small-article-title, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two .per-category-articles-small-article-title, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three .per-category-articles-small-article-title, 
-.per-category-closed-container-content-sidebar .sidebar-slot-full .per-category-articles-small-article-title {
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-eight .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-ten .closed-container-billboard-inner-left-container {
+	width:40%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-gt-ten .closed-container-billboard-inner-left-container {
+	width:47%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-three .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-three .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-gt-ten .closed-container-billboard-inner-right-container {
+	width:53%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-eight .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-ten .closed-container-billboard-inner-right-container {
+	width:60%;
+}
+.per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-five .closed-container-billboard-container .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-six .closed-container-billboard-container .closed-container-billboard-inner-left-container {
+	width:61%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-four .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-four .closed-container-billboard-inner-left-container {
+	width:66%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-lte-ten .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-five .closed-container-billboard-inner-right-container {
+	width:74%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-eight .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-default.position-one .billboard-inner-container .closed-container-billboard-inner-right-container {
+	width:77%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-three .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-two .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-four .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-eight .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-five .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-ten .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-eight .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-four .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .sidebar-slot-full .per-category-articles-small-article-title {
 	padding-top:0px;
 }
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-three .closed-container-billboard-inner-right-container .text204, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-nine .closed-container-billboard-inner-right-container .text204, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two .closed-container-billboard-inner-right-container .text204, 
-.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .billboard-container.position-one .billboard-inner-container-slot-default-lte-twelve .closed-container-billboard-inner-right-container .text204, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three .closed-container-billboard-inner-right-container .text204, 
-.per-category-closed-container-content-sidebar .sidebar-slot-full .closed-container-billboard-inner-right-container .text204 {
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-three .closed-container-billboard-inner-right-container .text204, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-nine .closed-container-billboard-inner-right-container .text204, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-gt-ten .closed-container-billboard-inner-right-container .text204, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two .closed-container-billboard-inner-right-container .text204, .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .billboard-container.position-one .billboard-inner-container-slot-default-lte-twelve .closed-container-billboard-inner-right-container .text204, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three .closed-container-billboard-inner-right-container .text204, .per-category-closed-container-content-sidebar .sidebar-slot-full .closed-container-billboard-inner-right-container .text204 {
     font-size:0.8em;
 }
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-three .closed-container-billboard-inner-right-container p, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-nine .closed-container-billboard-inner-right-container p, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two .closed-container-billboard-inner-right-container p, 
-.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .billboard-container.position-one .billboard-inner-container-slot-default-lte-twelve .closed-container-billboard-inner-right-container p, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three .closed-container-billboard-inner-right-container p, 
-.per-category-closed-container-content-sidebar .sidebar-slot-full .closed-container-billboard-inner-right-container p {
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-three .closed-container-billboard-inner-right-container p, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-nine .closed-container-billboard-inner-right-container p, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-gt-ten .closed-container-billboard-inner-right-container p, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two .closed-container-billboard-inner-right-container p, .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .billboard-container.position-one .billboard-inner-container-slot-default-lte-twelve .closed-container-billboard-inner-right-container p, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three .closed-container-billboard-inner-right-container p, .per-category-closed-container-content-sidebar .sidebar-slot-full .closed-container-billboard-inner-right-container p {
     font-size:1.286em;
 }
 .closed-container-billboard-container, .closed-container-billboard-inner-left-container, .closed-container-billboard-inner-right-container {
 	position:relative;
 }
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-four .closed-container-billboard-inner-left-container {
-	width:50%; margin:0 auto;
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-four .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-six .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-six .closed-container-billboard-inner-left-container {
+	width:60%; margin:0 auto;
 }
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-six .closed-container-billboard-inner-left-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-six .closed-container-billboard-inner-left-container {
-	width:58%; margin:0 auto;
-}
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-six .closed-container-billboard-inner-left-container {
-	width:80%; margin:0 auto;
-}
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-nine .closed-container-billboard-inner-left-container {
-	width:84%; margin:0 auto;
-}
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-nine .closed-container-billboard-inner-left-container {
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-six .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-nine .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-nine .closed-container-billboard-inner-left-container {
 	width:90%; margin:0 auto;
 }
 .billboard-inner-container-lte-six .closed-container-billboard-inner-left-container {
     width:99%; margin:0 auto;
 }
-.closed-container-billboard-inner-left-container.billboard-inner-container-slot-six-gte-eight, 
-.closed-container-billboard-inner-left-container.billboard-inner-container-slot-five-gt-eight {
+.closed-container-billboard-inner-left-container.billboard-inner-container-slot-six-gte-eight, .closed-container-billboard-inner-left-container.billboard-inner-container-slot-five-gt-eight {
     width:100%;
 }
-.billboard-inner-container-lte-twelve .closed-container-billboard-inner-right-container,
-.closed-container-billboard-inner-right-container.billboard-inner-container-slot-six-gte-eight-text-over-image,
-.closed-container-billboard-inner-right-container.billboard-inner-container-slot-five-gt-eight-text-over-image,
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-eight .closed-container-billboard-inner-right-container {
+.billboard-inner-container-lte-twelve .closed-container-billboard-inner-right-container, .closed-container-billboard-inner-right-container.billboard-inner-container-slot-six-gte-eight-text-over-image, .closed-container-billboard-inner-right-container.billboard-inner-container-slot-five-gt-eight-text-over-image,
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-eight .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-ten .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-ten .closed-container-billboard-inner-right-container {
 	font-size:150%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-five .closed-container-billboard-inner-right-container {
+	font-size:115%;
 }
 .closed-container-billboard-inner-left-container.billboard-inner-container-gte-six {
     width:93%; margin:0 auto;
 }
-.closed-container-billboard-inner-right-container.closed-container-billboard-inner-text-over-image, 
-.closed-container-billboard-inner-right-container.sidebar-position-one-gt-six-large-social-buttons-billboard-control,
-.closed-container-billboard-inner-right-container.billboard-inner-container-slot-three-gt-six-text-over-image,
-.closed-container-billboard-inner-right-container.billboard-inner-container-slot-six-gte-eight-text-over-image,
-.closed-container-billboard-inner-right-container.billboard-inner-container-slot-five-gt-eight-text-over-image {
+.closed-container-billboard-inner-right-container.closed-container-billboard-inner-text-over-image, .closed-container-billboard-inner-right-container.sidebar-position-one-gt-six-large-social-buttons-billboard-control, .closed-container-billboard-inner-right-container.billboard-inner-container-slot-three-gt-six-text-over-image, .closed-container-billboard-inner-right-container.billboard-inner-container-slot-six-gte-eight-text-over-image, .closed-container-billboard-inner-right-container.billboard-inner-container-slot-five-gt-eight-text-over-image {
 	position:absolute; top:1px; right:3px; bottom:1px; left:3px; background-color:rgba(0, 0, 0, 0.5); padding:10px 20px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
 }
-.closed-container-billboard-inner-right-container.billboard-inner-container-slot-six-gte-eight-text-over-image,
-.closed-container-billboard-inner-right-container.billboard-inner-container-slot-five-gt-eight-text-over-image,
-.closed-container-billboard-inner-right-container.billboard-inner-container-slot-three-gt-six-text-over-image {
+.closed-container-billboard-inner-right-container.billboard-inner-container-slot-three-gt-six-text-over-image, .closed-container-billboard-inner-right-container.billboard-inner-container-slot-six-gte-eight-text-over-image, .closed-container-billboard-inner-right-container.billboard-inner-container-slot-five-gt-eight-text-over-image {
+	right:1px; left:1px;
+}
+.closed-container-billboard-inner-right-container.billboard-inner-container-slot-six-gte-eight-text-over-image, .closed-container-billboard-inner-right-container.billboard-inner-container-slot-five-gt-eight-text-over-image, .closed-container-billboard-inner-right-container.billboard-inner-container-slot-three-gt-six-text-over-image {
 	background-color:rgba(0, 0, 0, 0.65);
 }
 .closed-container-billboard-inner-right-container.sidebar-position-one-gt-six-large-social-buttons-billboard-control {
@@ -1953,78 +1747,120 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .closed-container-billboard-inner-left-container.billboard-inner-container-gte-six ~ .closed-container-billboard-inner-right-container.closed-container-billboard-inner-text-over-image {
 	right:3.8%; left:3.8%;
 }
-.closed-container-billboard-inner-right-container.closed-container-billboard-inner-text-over-image:hover, 
-.closed-container-billboard-inner-right-container.sidebar-position-one-gt-six-large-social-buttons-billboard-control:hover,
-.closed-container-billboard-inner-right-container.billboard-inner-container-slot-three-gt-six-text-over-image:hover {
+.closed-container-billboard-inner-right-container.closed-container-billboard-inner-text-over-image:hover, .closed-container-billboard-inner-right-container.sidebar-position-one-gt-six-large-social-buttons-billboard-control:hover, .closed-container-billboard-inner-right-container.billboard-inner-container-slot-three-gt-six-text-over-image:hover {
 	background-color:rgba(0, 0, 0, 0.8);
 }
 /* Triple Slot One with Large Social Buttons less than or equal to three */
-.sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control .closed-container-billboard-inner-left-container, 
-.sidebar-position-one-lt-six-large-social-buttons-billboard-control .closed-container-billboard-inner-left-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-two .closed-container-billboard-inner-left-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-lt-three .closed-container-billboard-inner-left-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-three .closed-container-billboard-inner-left-container,
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-six .closed-container-billboard-inner-left-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lte-four .closed-container-billboard-inner-left-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lte-four .closed-container-billboard-inner-left-container {
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lte-four {
+	margin-top:-8px;
+}
+.sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control .closed-container-billboard-inner-left-container, .sidebar-triple-slot-one-lte-ten-small-social-buttons-billboard-control .closed-container-billboard-inner-left-container, .sidebar-position-one-lt-six-large-social-buttons-billboard-control .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-two .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-four .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-three .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-five .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-ten .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-gt-ten .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-six .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lte-four .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lt-eight .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-eight .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-lt-three .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lte-four .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-two .billboard-position-two-slot-default .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-lt-ten .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-gt-ten .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-position-two-slot-four-lte-five .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lt-eight .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-eight .closed-container-billboard-inner-left-container {
 	display:inline-block; width:30%; padding-right:4%; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
 }
-.sidebar-position-one-lt-six-large-social-buttons-billboard-control .closed-container-billboard-inner-left-container {
-	width:38%;
-}
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-lt-three .closed-container-billboard-inner-left-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-three .closed-container-billboard-inner-left-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-two .closed-container-billboard-inner-left-container {
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-four .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-five .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-position-two-slot-four-lte-five .closed-container-billboard-inner-left-container {
 	width:14%; padding-right:2%;
 }
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lte-four .closed-container-billboard-inner-left-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lte-four .closed-container-billboard-inner-left-container {
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-three .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-two .closed-container-billboard-inner-left-container {
+	width:16%; padding-right:2%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-lt-three .closed-container-billboard-inner-left-container {
+	width:18%; padding-right:2%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lt-eight .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lt-eight .closed-container-billboard-inner-left-container {
+	width:20%; padding-right:2%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lte-four .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-ten .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lte-four .closed-container-billboard-inner-left-container {
 	width:26%; padding-right:2%;
 }
-.sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control .closed-container-billboard-inner-right-container, 
-.sidebar-position-one-lt-six-large-social-buttons-billboard-control .closed-container-billboard-inner-right-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-two .closed-container-billboard-inner-right-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-lt-three .closed-container-billboard-inner-right-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-three .closed-container-billboard-inner-right-container,
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-six .closed-container-billboard-inner-right-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lte-four .closed-container-billboard-inner-right-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lte-four .closed-container-billboard-inner-right-container {
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-six .closed-container-billboard-inner-left-container {
+	width:38%;
+}
+.sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-eight .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-eight .closed-container-billboard-inner-left-container {
+	width:38%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-two .billboard-position-two-slot-default .closed-container-billboard-inner-left-container {
+	width:42%; padding-right:2%;
+}
+.sidebar-position-one-lt-six-large-social-buttons-billboard-control .closed-container-billboard-inner-left-container {
+	width:50%;
+}
+.sidebar-triple-slot-one-lte-ten-small-social-buttons-billboard-control .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-gt-ten .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-gt-ten .closed-container-billboard-inner-left-container {
+	width:59%;
+}
+.sidebar-position-one-lt-six-large-social-buttons-billboard-control .closed-container-billboard-inner-right-container, .sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control .closed-container-billboard-inner-right-container, .sidebar-triple-slot-one-lte-ten-small-social-buttons-billboard-control .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-two .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-four .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-five .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-three .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-six .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-ten .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-gt-ten .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lte-four .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lt-eight .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-eight .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-lt-three .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lte-four .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-two .billboard-position-two-slot-default .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-lt-ten .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-gt-ten .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-position-two-slot-four-lte-five .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lt-eight .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-eight .closed-container-billboard-inner-right-container {
 	display:inline-block; width:66%; vertical-align:top; padding:0; margin:0;
 }
+.sidebar-triple-slot-one-lte-ten-small-social-buttons-billboard-control .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-gt-ten .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-gt-ten .closed-container-billboard-inner-right-container {
+	width:40%;
+}
 .sidebar-position-one-lt-six-large-social-buttons-billboard-control .closed-container-billboard-inner-right-container {
-	width:58%; font-size:74%;
+	width:48%; font-size:74%;
 }
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-lt-three .closed-container-billboard-inner-right-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-three .closed-container-billboard-inner-right-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-two .closed-container-billboard-inner-right-container {
-	width:84%;
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-two .billboard-position-two-slot-default .closed-container-billboard-inner-right-container {
+	width:56%;
 }
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lte-four .closed-container-billboard-inner-right-container, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lte-four .closed-container-billboard-inner-right-container {
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-six .closed-container-billboard-inner-right-container {
+	width:58%;
+}
+.sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-eight .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-eight .closed-container-billboard-inner-right-container {
+	width:61%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lte-four .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lte-four .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-ten .closed-container-billboard-inner-right-container {
 	width:72%;
 }
-.sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control .closed-container-billboard-inner-right-container .article-billboard, 
-.sidebar-position-one-lt-six-large-social-buttons-billboard-control .closed-container-billboard-inner-right-container .article-billboard, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-six .closed-container-billboard-inner-right-container .article-billboard {
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lt-eight .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lt-eight .closed-container-billboard-inner-right-container {
+	width:78%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-three .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-lt-three .closed-container-billboard-inner-right-container {
+	width:80%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-two .closed-container-billboard-inner-right-container {
+	width:82%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-four .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-five .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-position-two-slot-four-lte-five .closed-container-billboard-inner-right-container {
+	width:84%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-four .closed-container-billboard-inner-right-container .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-five .closed-container-billboard-inner-right-container .per-category-articles-small-article-title {
+	font-size:74%;
+}
+.sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control .closed-container-billboard-inner-right-container .article-billboard, .sidebar-position-one-lt-six-large-social-buttons-billboard-control .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-six .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-four .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-ten .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-gt-ten .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lt-eight .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-five .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-two .billboard-position-two-slot-default .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-lt-ten .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-gt-ten .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-position-two-slot-four-lte-five .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lt-eight .closed-container-billboard-inner-right-container .article-billboard, .sidebar-triple-slot-one-lte-ten-small-social-buttons-billboard-control .closed-container-billboard-inner-right-container .article-billboard {
 	display:none;
 }
-.sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control .closed-container-billboard-container:hover .article-billboard, 
-.sidebar-position-one-lt-six-large-social-buttons-billboard-control .closed-container-billboard-container:hover .article-billboard, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-six:hover .closed-container-billboard-inner-right-container .article-billboard {
+.sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control .closed-container-billboard-container:hover .article-billboard, .sidebar-position-one-lt-six-large-social-buttons-billboard-control .closed-container-billboard-container:hover .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-six:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-four:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-gt-ten:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-ten:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lt-eight:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-five:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-two .billboard-position-two-slot-default:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-lt-ten:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-gt-ten:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-position-two-slot-four-lte-five:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lt-eight:hover .closed-container-billboard-inner-right-container .article-billboard, .sidebar-triple-slot-one-lte-ten-small-social-buttons-billboard-control .closed-container-billboard-container:hover .article-billboard {
 	display:block; position:absolute; top:-10%; right:-7%; bottom:-20%; left:-49%; background-color:rgba(0, 0, 0, 0.8); padding:5px 10px;
 }
-.sidebar-position-one-lt-six-large-social-buttons-billboard-control .closed-container-billboard-container:hover .article-billboard {
-	bottom:-52%; left:-70%; font-size:115%;
+.sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control .closed-container-billboard-container:hover .article-billboard {
+	top:-7%; right:-2%; bottom:-50%; left:-66%;
 }
-.sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control .per-category-articles-small-article-title, 
-.sidebar-position-one-lt-six-large-social-buttons-billboard-control .per-category-articles-small-article-title, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-two .per-category-articles-small-article-title, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-lt-three .per-category-articles-small-article-title, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-three .per-category-articles-small-article-title, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-six .per-category-articles-small-article-title, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lte-four .per-category-articles-small-article-title, 
-.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lte-four .per-category-articles-small-article-title {
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-six:hover .closed-container-billboard-inner-right-container .article-billboard {
+	top:-7%; right:-7%; bottom:-50%; left:-69%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lt-eight:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lt-eight:hover .closed-container-billboard-inner-right-container .article-billboard {
+	top:-10%; right:-2%; bottom:-150%; left:-27%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-ten:hover .closed-container-billboard-inner-right-container .article-billboard {
+	top:-10%; right:-4%; bottom:-12%; left:-40%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-two .billboard-position-two-slot-default:hover .closed-container-billboard-inner-right-container .article-billboard {
+	top:-10%; right:-7%; bottom:-20%; left:-82%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-position-two-slot-four-lte-five:hover .closed-container-billboard-inner-right-container .article-billboard {
+	top:-10%; right:-2%; bottom:-130%; left:-18%; font-size:115%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-four:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-five:hover .closed-container-billboard-inner-right-container .article-billboard {
+	top:-20%; right:-3%; bottom:-120%; left:-18%; font-size:115%;
+}
+.sidebar-triple-slot-one-lte-ten-small-social-buttons-billboard-control .closed-container-billboard-container:hover .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-gt-ten:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-gt-ten:hover .closed-container-billboard-inner-right-container .article-billboard {
+	top:-5%; right:-2%; bottom:-20%; left:-153%; font-size:115%;
+}
+.sidebar-position-one-lt-six-large-social-buttons-billboard-control .closed-container-billboard-container:hover .article-billboard {
+	bottom:-40%; left:-112%; font-size:125%;
+}
+.sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control .per-category-articles-small-article-title, .sidebar-position-one-lt-six-large-social-buttons-billboard-control .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-two .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-lt-three .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-three .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-six .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-four .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-ten .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-gt-ten .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lt-eight .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-eight .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-five .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lte-four .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lte-four .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-two .billboard-position-two-slot-default .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-lt-ten .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-gt-ten .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-position-two-slot-four-lte-five .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-eight .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lt-eight .per-category-articles-small-article-title, .sidebar-triple-slot-one-lte-ten-small-social-buttons-billboard-control .per-category-articles-small-article-title {
 	padding:0;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-two .billboard-position-two-slot-default .per-category-articles-small-article-title {
+	font-size:50%;
 }
 
 /* Editors Choice Area
@@ -2141,65 +1977,52 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 	content:" "; position:absolute; bottom:100%; left:10px; height:0; width:0; pointer-events:none; border:solid transparent; border-color:transparent; border-bottom-color:#F9B000; border-width:0 17px 14px;
 }
 /* Editors Choice and News Stream when in Sidebar and Sidebar is minized */
-.per-category-closed-container-content-sidebar .editors-choice-container:after, 
-.per-category-closed-container-content-sidebar .news-stream-container:after {
+.per-category-closed-container-content-sidebar .editors-choice-container:after, .per-category-closed-container-content-sidebar .news-stream-container:after {
 	content:""; display:block; position:absolute; top:0px; right:26px; height:100%; border-right:2px solid #F9B000; z-index:-1;
 }
 .per-category-closed-container-content-sidebar .news-stream-container:after {
 	border-right:2px solid #3b61a6;
 }
-.per-category-closed-container-content-sidebar .editors-choice-container-top:before, 
-.per-category-closed-container-content-sidebar .news-stream-container-top:before {
+.per-category-closed-container-content-sidebar .editors-choice-container-top:before, .per-category-closed-container-content-sidebar .news-stream-container-top:before {
     content:""; display:block; position:absolute; right:10px; bottom:1px; width:0; pointer-events:none; border-color:#F9B000 transparent; border-style:solid; border-width:14px 17px 0;
 }
 .per-category-closed-container-content-sidebar .news-stream-container-top:before {
 	border-color:#3b61a6 transparent;
 }
-.per-category-closed-container-content-sidebar .editors-choice-container-small-image, 
-.per-category-closed-container-content-sidebar .news-stream-container-small-image {
+.per-category-closed-container-content-sidebar .editors-choice-container-small-image, .per-category-closed-container-content-sidebar .news-stream-container-small-image {
 	display:none;
 }
-.per-category-closed-container-content-sidebar .editors-choice-container-large-image, 
-.per-category-closed-container-content-sidebar .news-stream-container-large-image {
+.per-category-closed-container-content-sidebar .editors-choice-container-large-image, .per-category-closed-container-content-sidebar .news-stream-container-large-image {
 	display:block;
 }
-.per-category-closed-container-content-sidebar .editors-choice-container-middle, 
-.per-category-closed-container-content-sidebar .news-stream-container-middle {
+.per-category-closed-container-content-sidebar .editors-choice-container-middle, .per-category-closed-container-content-sidebar .news-stream-container-middle {
 	height:100%;
 }
-.per-category-closed-container-content-sidebar .editors-choice-container-middle-item:nth-child(2n+2):before, 
-.per-category-closed-container-content-sidebar .news-stream-container-middle-item:nth-child(2n+2):before {
+.per-category-closed-container-content-sidebar .editors-choice-container-middle-item:nth-child(2n+2):before, .per-category-closed-container-content-sidebar .news-stream-container-middle-item:nth-child(2n+2):before {
 	content:""; display:block; position:absolute; right:26px; height:100%; border-right:2px solid #F9B000; border-left:none; z-index:-1;
 }
 .per-category-closed-container-content-sidebar .news-stream-container-middle-item:nth-child(2n+2):before {
 	border-right:2px solid #3b61a6;
 }
-.per-category-closed-container-content-sidebar .editors-choice-container-middle-item:nth-child(2n+2) .editors-choice-time-container, 
-.per-category-closed-container-content-sidebar .news-stream-container-middle-item:nth-child(2n+2) .news-stream-time-container {
+.per-category-closed-container-content-sidebar .editors-choice-container-middle-item:nth-child(2n+2) .editors-choice-time-container, .per-category-closed-container-content-sidebar .news-stream-container-middle-item:nth-child(2n+2) .news-stream-time-container {
 	float:right; margin:-10px -10px 0 0;
 }
-.per-category-closed-container-content-sidebar .editors-choice-container-middle-item:nth-child(2n+2) .editors-choice-title-container, 
-.per-category-closed-container-content-sidebar .news-stream-container-middle-item:nth-child(2n+2) .news-stream-title-container {
+.per-category-closed-container-content-sidebar .editors-choice-container-middle-item:nth-child(2n+2) .editors-choice-title-container, .per-category-closed-container-content-sidebar .news-stream-container-middle-item:nth-child(2n+2) .news-stream-title-container {
 	float:right;
 }
-.per-category-closed-container-content-sidebar .editors-choice-container-top a, 
-.per-category-closed-container-content-sidebar .news-stream-container-top a {
+.per-category-closed-container-content-sidebar .editors-choice-container-top a, .per-category-closed-container-content-sidebar .news-stream-container-top a {
 	text-align:center;
 }
-.per-category-closed-container-content-sidebar .editors-choice-container-top a img, 
-.per-category-closed-container-content-sidebar .news-stream-container-top a img {
+.per-category-closed-container-content-sidebar .editors-choice-container-top a img, .per-category-closed-container-content-sidebar .news-stream-container-top a img {
 	max-width:100%; width:auto;
 }
-.per-category-closed-container-content-sidebar .editors-choice-container-middle-item:nth-child(2n+1), 
-.per-category-closed-container-content-sidebar .news-stream-container-middle-item:nth-child(2n+1) {
+.per-category-closed-container-content-sidebar .editors-choice-container-middle-item:nth-child(2n+1), .per-category-closed-container-content-sidebar .news-stream-container-middle-item:nth-child(2n+1) {
 	clear:both; float:left; width:49%; margin-right:1%; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
 }
-.per-category-closed-container-content-sidebar .editors-choice-container-middle-item:nth-child(2n+2), 
-.per-category-closed-container-content-sidebar .news-stream-container-middle-item:nth-child(2n+2) {
+.per-category-closed-container-content-sidebar .editors-choice-container-middle-item:nth-child(2n+2), .per-category-closed-container-content-sidebar .news-stream-container-middle-item:nth-child(2n+2) {
 	float:left; width:50%; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
 }
-.per-category-closed-container-content-sidebar .editors-choice-container-bottom p, 
-.per-category-closed-container-content-sidebar .news-stream-container-bottom p {
+.per-category-closed-container-content-sidebar .editors-choice-container-bottom p, .per-category-closed-container-content-sidebar .news-stream-container-bottom p {
 	text-align:center; margin:0px 54px;
 }
 .per-category-closed-container-content-sidebar .editors-choice-container-bottom-base:before {
@@ -2224,14 +2047,23 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .per-category-seperator-ad-container a {
 	position:absolute; top:0; right:0; bottom:0; left:0;
 }
-
-
-
-
-
-
-
-
+/* TPNS Astrology Category Area
+----------------------------------------------------------------------------- */
+.tpns-astrology .global-table {
+	border-collapse:separate; border-spacing:16px;
+}
+.tpns-astrology .article-category-content-container.global-table-cell {
+	position:relative; width:15%; vertical-align:top; border-left-width:6px; border-bottom-width:6px; border-style:solid;
+}
+.tpns-astrology .global-article-category-container {
+	padding:10px 16px 16px; border-bottom-width:0px; border-left-width:0px; border-style:solid;
+}
+.tpns-astrology .global-article-category h5:before {
+	left:-6px; margin-bottom:0;
+}
+.tpns-astrology .gobal-article-image-controller {
+	margin: 0 0 10px;
+}
 
 
 

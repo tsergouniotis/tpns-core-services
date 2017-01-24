@@ -965,7 +965,7 @@
 														<div class="per-category-articles-small-article-title text204">
 															<h1 class="article-headline text102">«Ελισάβετ» θα ονομαστεί η νέα γραμμή μετρό του Λονδίνου</h1>
 														</div>
-														<!-- For the class of the paragraph below use the article-hard-lead, if nat available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
+														<!-- For the class of the paragraph below use the article-hard-lead, if not available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
 														<p class="article-hard-lead">Θα ονομαστεί «γραμμή Ελισάβετ» προς τιμή της βασίλισσας του Ηνωμένου Βασιλείου</p>
 													</a>
 													<!-- Only add this div if the article is sponsored -->
@@ -990,7 +990,7 @@
 														<div class="per-category-articles-small-article-title text204">
 															<h1 class="article-headline text102">Πόλεμος των Άστρων: Νεκρός στην βίλα του ο «μπαμπάς» του R2-D2</h1>
 														</div>
-														<!-- For the class of the paragraph below use the article-hard-lead, if nat available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
+														<!-- For the class of the paragraph below use the article-hard-lead, if not available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
 														<p class="article-hard-lead">Ο καθηγητής Τόνι Ντάισον, ο κατασκευαστής του θρυλικού R2-D2, του μικρού ρομπότ της σειράς ταινιών «Ο Πόλεμος των Άστρων», βρέθηκε...</p>
 													</a>
 													<!-- Only add this div if the article is sponsored -->
@@ -1017,7 +1017,7 @@
 														<div class="per-category-articles-large-main-article-title text205">
 															<h1 class="article-headline text102">Συρία: Το ISIS ανέλαβε την ευθύνη για την επίθεση στην Χαμά</h1>
 														</div>
-														<!-- For the class of the paragraph below use the article-hard-lead, if nat available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
+														<!-- For the class of the paragraph below use the article-hard-lead, if not available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
 														<h4 class="article-hard-lead">Η επίθεση αυτοκτονίας πραγματοποιήθηκε σήμερα στην είσοδο της πόλης Σαλαμίγι</h4>
 													</a>
 													<!-- Only add this div if the article is sponsored -->
@@ -1042,7 +1042,7 @@
 																<div class="per-category-articles-large-related-article-title text203">
 																	<h1 class="article-headline text102">Το Ισλαμικό Κράτος χάνει τη μάχη στο Ιράκ και τη Συρία</h1>
 																</div>
-																<!-- For the class of the paragraph below use the article-subhead, if nat available fall back to article-soft-lead  -->
+																<!-- For the class of the paragraph below use the article-subhead, if not available fall back to article-soft-lead  -->
 																<p class="article-subhead">«Το Ισλαμικό Κράτος δέχεται τώρα πίεση ταυτόχρονα από όλες τις πλευρές και αυτό θα συνεχιστεί και θα επιταχυνθεί» </p>
 															</a>
 														</article>
@@ -1053,7 +1053,7 @@
 																<div class="per-category-articles-large-related-article-title text203">
 																	<h1 class="article-headline text102">Επίθεση από την Τουρκία καταγγέλλουν οι Κούρδοι στη βορειοανατολική Συρία</h1>
 																</div>
-																<!-- For the class of the paragraph below use the article-subhead, if nat available fall back to article-soft-lead  -->
+																<!-- For the class of the paragraph below use the article-subhead, if not available fall back to article-soft-lead  -->
 																<p class="article-subhead">Η Τουρκία έχει χαρακτηρίσει τις Κουρδικές Ομάδες Λαϊκής Προστασίας, ως «τρομοκρατική οργάνωση»</p>
 															</a>
 														</article>
@@ -1064,7 +1064,7 @@
 																<div class="per-category-articles-large-related-article-title text203">
 																	<h1 class="article-headline text102">Στους 687 οι νεκροί στη Συρία την πρώτη εβδομάδα εφαρμογής της εκεχειρίας</h1>
 																</div>
-																<!-- For the class of the paragraph below use the article-subhead, if nat available fall back to article-soft-lead  -->
+																<!-- For the class of the paragraph below use the article-subhead, if not available fall back to article-soft-lead  -->
 																<p class="article-subhead">Στους 687 έφτασαν οι νεκροί στη Συρία κατά την πρώτη εβδομάδα εφαρμογής της εκεχειρίας, σύμφωνα με τα στοιχεία του Συριακού...</p>
 															</a>
 														</article>
@@ -1087,11 +1087,12 @@
 							<div class="per-category-sidebar-container">
 								<!-- If the user chooses to add social buttons then add the entire div social-follow-container below regardless of whether they are large or small buttons -->
 								<!-- Note: the sidebars have 9 slots to accomodate different positions, please read the documentation for more info. -->
+                                <!-- If the user chooses not to add a Mailchimp Newsletter then remove the entire div below -->
 								<div class="social-follow-container sidebar-slot-default">
 									<!-- to show the small social buttons replace social-follow-buttons-large with social-follow-buttons-small below -->
 									<ul class="social-follow-buttons-large textc">
 										<!-- Social button loop STARTS HERE -->
-										<!-- To remove a Social Button remove the entire li, important do not add class hidden -->
+										<!-- To remove a Social Button remove the entire li, important do not add class hidden to the li -->
 										<li class="facebook-official-colour">
 											<a href="#" title="">
 												<h5 class="social-follow-social-network"><i class="icon tpns-one-facebook"></i><span class="hidden">Facebook</span></h5>
@@ -1115,7 +1116,7 @@
 												</ul>
 											</a>
 										</li>
-										<!--
+										
 										<li class="linkedin-official-colour">
 											<a href="#" title="">
 												<h5 class="social-follow-social-network"><i class="icon tpns-one-linkedin"></i><span class="hidden">LinkedIn</span></h5>
@@ -1127,7 +1128,7 @@
 												</ul>
 											</a>
 										</li>
-										-->
+										<!--
 										<li class="rss-official-colour">
 											<a href="#" title="">
 												<h5 class="social-follow-social-network"><i class="icon tpns-one-rss"></i><span class="hidden">RSS</span></h5>
@@ -1139,7 +1140,7 @@
 												</ul>
 											</a>
 										</li>
-										
+										-->
 										<li class="youtube-official-colour">
 											<a href="#" title="">
 												<h5 class="social-follow-social-network"><i class="icon tpns-one-youtube"></i><span class="hidden">YouTube</span></h5>
@@ -1163,7 +1164,6 @@
 												</ul>
 											</a>
 										</li>
-										
 										<li class="instagram-official-colour">
 											<a href="#" title="">
 												<h5 class="social-follow-social-network"><i class="icon tpns-one-instagram"></i><span class="hidden">Instagram</span></h5>
@@ -1175,7 +1175,6 @@
 												</ul>
 											</a>
 										</li>
-										-->
 										<li class="pinterest-official-colour">
 											<a href="#" title="">
 												<h5 class="social-follow-social-network"><i class="icon tpns-one-pinterest"></i><span class="hidden">Pinterest</span></h5>
@@ -1187,7 +1186,7 @@
 												</ul>
 											</a>
 										</li>
-										<!--
+										
 										<li class="google-plus-official-colour">
 											<a href="#" title="">
 												<h5 class="social-follow-social-network"><i class="icon tpns-one-google-plus"></i><span class="hidden">Google&#43;</span></h5>
@@ -1211,7 +1210,7 @@
 												</ul>
 											</a>
 										</li>
-										<!--
+										
 										<li class="digg-official-colour">
 											<a href="#" title="">
 												<h5 class="social-follow-social-network"><i class="icon tpns-one-digg"></i><span class="hidden">Digg</span></h5>
@@ -1223,7 +1222,7 @@
 												</ul>
 											</a>
 										</li>
-										
+										<!--
 										<li class="reddit-official-colour">
 											<a href="#" title="">
 												<h5 class="social-follow-social-network"><i class="icon tpns-one-reddit"></i><span class="hidden">Reddit</span></h5>
@@ -1287,7 +1286,7 @@
 															<div class="per-category-articles-small-article-title text204">
 																<h1 class="article-headline text102">Επίδομα ενοικίου: Εγκρίθηκε η 16η δόση</h1>
 															</div>
-															<!-- For the class of the paragraph below use the article-hard-lead, if nat available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
+															<!-- For the class of the paragraph below use the article-hard-lead, if not available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
 															<p class="article-billboard">Δημοσιεύθηκε στη διαύγεια η απόφαση για την πίστωση των χρημάτων στους δικαιούχους της ΙΣΤ δόσης (16ης) για το επίδομα ενοικίου.</p>
 														</div>
 													</div>
@@ -1400,7 +1399,7 @@
 														<div class="per-category-articles-small-article-title text204">
                                                         	<h1 class="article-headline text102">Mercedes GLA: Τo πολυτάλαντο SUV</h1>
                                                         </div>
-														<!-- For the class of the paragraph below use the article-hard-lead, if nat available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
+														<!-- For the class of the paragraph below use the article-hard-lead, if not available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
                                                         <p class="article-hard-lead">Η μεγάλη επιτυχία της Mercedes GLA είναι απόλυτα δικαιολογημένη, καθώς πρόκειται για το αυτοκίνητο που αντιπροσωπεύει με τον καλύτερο δυνατό...</p>
                                                     </a>
                                                     <!-- Only add this div if the article is sponsored -->
@@ -1423,7 +1422,7 @@
 														<div class="per-category-articles-small-article-title text204">
                                                         	<h1 class="article-headline text102">57ο Φεστιβάλ Κινηματογράφου Θεσσαλονίκης: τα highlights, τα βραβεία και οι αναμνήσεις μας σε καρέ</h1>
                                                         </div>
-														<!-- For the class of the paragraph below use the article-hard-lead, if nat available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
+														<!-- For the class of the paragraph below use the article-hard-lead, if not available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
                                                         <p class="article-hard-lead">Με το δράμα εποχής “Η χορεύτρια” της Στεφανί ντι Τζιούστο, με πρωταγωνίστρια την Γαλλίδα Soko αλλά και...</p>
                                                     </a>
                                                     <!-- Only add this div if the article is sponsored -->
@@ -1450,7 +1449,7 @@
 														<div class="per-category-articles-small-article-title text204">
                                                         	<h1 class="article-headline text102">«Ελισάβετ» θα ονομαστεί η νέα γραμμή μετρό του Λονδίνου</h1>
                                                         </div>
-														<!-- For the class of the paragraph below use the article-hard-lead, if nat available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
+														<!-- For the class of the paragraph below use the article-hard-lead, if not available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
                                                         <p class="article-hard-lead">Θα ονομαστεί «γραμμή Ελισάβετ» προς τιμή της βασίλισσας του Ηνωμένου Βασιλείου</p>
                                                     </a>
                                                     <!-- Only add this div if the article is sponsored -->
@@ -1475,7 +1474,7 @@
 														<div class="per-category-articles-small-article-title text204">
                                                         	<h1 class="article-headline text102">Πόλεμος των Άστρων: Νεκρός στην βίλα του ο «μπαμπάς» του R2-D2</h1>
                                                         </div>
-														<!-- For the class of the paragraph below use the article-hard-lead, if nat available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
+														<!-- For the class of the paragraph below use the article-hard-lead, if not available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
                                                         <p class="article-hard-lead">Ο καθηγητής Τόνι Ντάισον, ο κατασκευαστής του θρυλικού R2-D2, του μικρού ρομπότ της σειράς ταινιών «Ο Πόλεμος των Άστρων», βρέθηκε...</p>
                                                     </a>
                                                     <!-- Only add this div if the article is sponsored -->
@@ -1502,7 +1501,7 @@
 														<div class="per-category-articles-large-main-article-title text205">
                                                         	<h1 class="article-headline text102">Συρία: Το ISIS ανέλαβε την ευθύνη για την επίθεση στην Χαμά</h1>
                                                         </div>
-														<!-- For the class of the paragraph below use the article-hard-lead, if nat available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
+														<!-- For the class of the paragraph below use the article-hard-lead, if not available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
                                                         <h4 class="article-hard-lead">Η επίθεση αυτοκτονίας πραγματοποιήθηκε σήμερα στην είσοδο της πόλης Σαλαμίγι</h4>
                                                     </a>
                                                 </article>
@@ -1516,7 +1515,7 @@
 																<div class="per-category-articles-large-related-article-title text203">
                                                                 	<h1 class="article-headline text102">Το Ισλαμικό Κράτος χάνει τη μάχη στο Ιράκ και τη Συρία</h1>
                                                                 </div>
-                                                                <!-- For the class of the paragraph below use the article-subhead, if nat available fall back to article-soft-lead  -->
+                                                                <!-- For the class of the paragraph below use the article-subhead, if not available fall back to article-soft-lead  -->
                                                                 <p class="article-subhead">«Το Ισλαμικό Κράτος δέχεται τώρα πίεση ταυτόχρονα από όλες τις πλευρές και αυτό θα συνεχιστεί και θα επιταχυνθεί» </p>
                                                             </a>
                                                         </article>
@@ -1527,7 +1526,7 @@
 																<div class="per-category-articles-large-related-article-title text203">
                                                                 	<h1 class="article-headline text102">Επίθεση από την Τουρκία καταγγέλλουν οι Κούρδοι στη βορειοανατολική Συρία</h1>
                                                                 </div>
-                                                                <!-- For the class of the paragraph below use the article-subhead, if nat available fall back to article-soft-lead  -->
+                                                                <!-- For the class of the paragraph below use the article-subhead, if not available fall back to article-soft-lead  -->
                                                                 <p class="article-subhead">Η Τουρκία έχει χαρακτηρίσει τις Κουρδικές Ομάδες Λαϊκής Προστασίας, ως «τρομοκρατική οργάνωση»</p>
                                                             </a>
                                                         </article>
@@ -1538,7 +1537,7 @@
 																<div class="per-category-articles-large-related-article-title text203">
                                                                 	<h1 class="article-headline text102">Στους 687 οι νεκροί στη Συρία την πρώτη εβδομάδα εφαρμογής της εκεχειρίας</h1>
                                                                 </div>
-                                                                <!-- For the class of the paragraph below use the article-subhead, if nat available fall back to article-soft-lead  -->
+                                                                <!-- For the class of the paragraph below use the article-subhead, if not available fall back to article-soft-lead  -->
                                                                 <p class="article-subhead">Στους 687 έφτασαν οι νεκροί στη Συρία κατά την πρώτη εβδομάδα εφαρμογής της εκεχειρίας, σύμφωνα με τα στοιχεία του Συριακού...</p>
                                                             </a>
                                                         </article>
@@ -1679,7 +1678,7 @@
 														<div class="per-category-articles-small-article-title text204">
                                                         	<h1 class="article-headline text102">57ο Φεστιβάλ Κινηματογράφου Θεσσαλονίκης: τα highlights, τα βραβεία και οι αναμνήσεις μας σε καρέ</h1>
                                                         </div>
-														<!-- For the class of the paragraph below use the article-hard-lead, if nat available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
+														<!-- For the class of the paragraph below use the article-hard-lead, if not available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
                                                         <p class="article-hard-lead">Με το δράμα εποχής “Η χορεύτρια” της Στεφανί ντι Τζιούστο, με πρωταγωνίστρια την Γαλλίδα Soko αλλά και...</p>
                                                     </a>
                                                     <!-- Only add this div if the article is sponsored -->
@@ -1706,7 +1705,7 @@
 														<div class="per-category-articles-small-article-title text204">
                                                         	<h1 class="article-headline text102">«Ελισάβετ» θα ονομαστεί η νέα γραμμή μετρό του Λονδίνου</h1>
                                                         </div>
-														<!-- For the class of the paragraph below use the article-hard-lead, if nat available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
+														<!-- For the class of the paragraph below use the article-hard-lead, if not available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
                                                         <p class="article-hard-lead">Θα ονομαστεί «γραμμή Ελισάβετ» προς τιμή της βασίλισσας του Ηνωμένου Βασιλείου</p>
                                                     </a>
                                                     <!-- Only add this div if the article is sponsored -->
@@ -1731,7 +1730,7 @@
 														<div class="per-category-articles-small-article-title text204">
                                                         	<h1 class="article-headline text102">Πόλεμος των Άστρων: Νεκρός στην βίλα του ο «μπαμπάς» του R2-D2</h1>
                                                         </div>
-														<!-- For the class of the paragraph below use the article-hard-lead, if nat available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
+														<!-- For the class of the paragraph below use the article-hard-lead, if not available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
                                                         <p class="article-hard-lead">Ο καθηγητής Τόνι Ντάισον, ο κατασκευαστής του θρυλικού R2-D2, του μικρού ρομπότ της σειράς ταινιών «Ο Πόλεμος των Άστρων», βρέθηκε...</p>
                                                     </a>
                                                     <!-- Only add this div if the article is sponsored -->
@@ -1758,7 +1757,7 @@
 														<div class="per-category-articles-large-main-article-title text205">
                                                         	<h1 class="article-headline text102">Συρία: Το ISIS ανέλαβε την ευθύνη για την επίθεση στην Χαμά</h1>
                                                         </div>
-														<!-- For the class of the paragraph below use the article-hard-lead, if nat available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
+														<!-- For the class of the paragraph below use the article-hard-lead, if not available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
                                                         <h4 class="article-hard-lead">Η επίθεση αυτοκτονίας πραγματοποιήθηκε σήμερα στην είσοδο της πόλης Σαλαμίγι</h4>
                                                     </a>
                                                 </article>
@@ -1772,7 +1771,7 @@
 																<div class="per-category-articles-large-related-article-title text203">
                                                                 	<h1 class="article-headline text102">Το Ισλαμικό Κράτος χάνει τη μάχη στο Ιράκ και τη Συρία</h1>
                                                                 </div>
-                                                                <!-- For the class of the paragraph below use the article-subhead, if nat available fall back to article-soft-lead  -->
+                                                                <!-- For the class of the paragraph below use the article-subhead, if not available fall back to article-soft-lead  -->
                                                                 <p class="article-subhead">«Το Ισλαμικό Κράτος δέχεται τώρα πίεση ταυτόχρονα από όλες τις πλευρές και αυτό θα συνεχιστεί και θα επιταχυνθεί» </p>
                                                             </a>
                                                         </article>
@@ -1783,7 +1782,7 @@
 																<div class="per-category-articles-large-related-article-title text203">
                                                                 	<h1 class="article-headline text102">Επίθεση από την Τουρκία καταγγέλλουν οι Κούρδοι στη βορειοανατολική Συρία</h1>
                                                                 </div>
-                                                                <!-- For the class of the paragraph below use the article-subhead, if nat available fall back to article-soft-lead  -->
+                                                                <!-- For the class of the paragraph below use the article-subhead, if not available fall back to article-soft-lead  -->
                                                                 <p class="article-subhead">Η Τουρκία έχει χαρακτηρίσει τις Κουρδικές Ομάδες Λαϊκής Προστασίας, ως «τρομοκρατική οργάνωση»</p>
                                                             </a>
                                                         </article>
@@ -1794,7 +1793,7 @@
 																<div class="per-category-articles-large-related-article-title text203">
                                                                 	<h1 class="article-headline text102">Στους 687 οι νεκροί στη Συρία την πρώτη εβδομάδα εφαρμογής της εκεχειρίας</h1>
                                                                 </div>
-                                                                <!-- For the class of the paragraph below use the article-subhead, if nat available fall back to article-soft-lead  -->
+                                                                <!-- For the class of the paragraph below use the article-subhead, if not available fall back to article-soft-lead  -->
                                                                 <p class="article-subhead">Στους 687 έφτασαν οι νεκροί στη Συρία κατά την πρώτη εβδομάδα εφαρμογής της εκεχειρίας, σύμφωνα με τα στοιχεία του Συριακού...</p>
                                                             </a>
                                                         </article>
@@ -1957,7 +1956,7 @@
 														<div class="per-category-articles-small-article-title text204">
                                                         	<h1 class="article-headline text102">«Ελισάβετ» θα ονομαστεί η νέα γραμμή μετρό του Λονδίνου</h1>
                                                         </div>
-														<!-- For the class of the paragraph below use the article-hard-lead, if nat available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
+														<!-- For the class of the paragraph below use the article-hard-lead, if not available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
                                                         <p class="article-hard-lead">Θα ονομαστεί «γραμμή Ελισάβετ» προς τιμή της βασίλισσας του Ηνωμένου Βασιλείου</p>
                                                     </a>
                                                     <!-- Only add this div if the article is sponsored -->
@@ -1982,7 +1981,7 @@
 														<div class="per-category-articles-small-article-title text204">
                                                         	<h1 class="article-headline text102">Πόλεμος των Άστρων: Νεκρός στην βίλα του ο «μπαμπάς» του R2-D2</h1>
                                                         </div>
-														<!-- For the class of the paragraph below use the article-hard-lead, if nat available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
+														<!-- For the class of the paragraph below use the article-hard-lead, if not available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
                                                         <p class="article-hard-lead">Ο καθηγητής Τόνι Ντάισον, ο κατασκευαστής του θρυλικού R2-D2, του μικρού ρομπότ της σειράς ταινιών «Ο Πόλεμος των Άστρων», βρέθηκε...</p>
                                                     </a>
                                                     <!-- Only add this div if the article is sponsored -->
@@ -2007,7 +2006,7 @@
 														<div class="per-category-articles-large-main-article-title text205">
                                                         	<h1 class="article-headline text102">Συρία: Το ISIS ανέλαβε την ευθύνη για την επίθεση στην Χαμά</h1>
                                                         </div>
-														<!-- For the class of the paragraph below use the article-hard-lead, if nat available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
+														<!-- For the class of the paragraph below use the article-hard-lead, if not available fall back to article-soft-lead, only if neither are available do we fall back to the article-subhead -->
                                                         <h4 class="article-hard-lead">Η επίθεση αυτοκτονίας πραγματοποιήθηκε σήμερα στην είσοδο της πόλης Σαλαμίγι</h4>
                                                     </a>
                                                 </article>
@@ -2021,7 +2020,7 @@
 																<div class="per-category-articles-large-related-article-title text203">
                                                                 	<h1 class="article-headline text102">Το Ισλαμικό Κράτος χάνει τη μάχη στο Ιράκ και τη Συρία</h1>
                                                                 </div>
-                                                                <!-- For the class of the paragraph below use the article-subhead, if nat available fall back to article-soft-lead  -->
+                                                                <!-- For the class of the paragraph below use the article-subhead, if not available fall back to article-soft-lead  -->
                                                                 <p class="article-subhead">«Το Ισλαμικό Κράτος δέχεται τώρα πίεση ταυτόχρονα από όλες τις πλευρές και αυτό θα συνεχιστεί και θα επιταχυνθεί» </p>
                                                             </a>
                                                         </article>
@@ -2032,7 +2031,7 @@
 																<div class="per-category-articles-large-related-article-title text203">
                                                                 	<h1 class="article-headline text102">Επίθεση από την Τουρκία καταγγέλλουν οι Κούρδοι στη βορειοανατολική Συρία</h1>
                                                                 </div>
-                                                                <!-- For the class of the paragraph below use the article-subhead, if nat available fall back to article-soft-lead  -->
+                                                                <!-- For the class of the paragraph below use the article-subhead, if not available fall back to article-soft-lead  -->
                                                                 <p class="article-subhead">Η Τουρκία έχει χαρακτηρίσει τις Κουρδικές Ομάδες Λαϊκής Προστασίας, ως «τρομοκρατική οργάνωση»</p>
                                                             </a>
                                                         </article>
@@ -2043,7 +2042,7 @@
 																<div class="per-category-articles-large-related-article-title text203">
                                                                 	<h1 class="article-headline text102">Στους 687 οι νεκροί στη Συρία την πρώτη εβδομάδα εφαρμογής της εκεχειρίας</h1>
                                                                 </div>
-                                                                <!-- For the class of the paragraph below use the article-subhead, if nat available fall back to article-soft-lead  -->
+                                                                <!-- For the class of the paragraph below use the article-subhead, if not available fall back to article-soft-lead  -->
                                                                 <p class="article-subhead">Στους 687 έφτασαν οι νεκροί στη Συρία κατά την πρώτη εβδομάδα εφαρμογής της εκεχειρίας, σύμφωνα με τα στοιχεία του Συριακού...</p>
                                                             </a>
                                                         </article>
@@ -2418,6 +2417,276 @@
                         </div>
                     </div>
                     <!-- Per category container loop ENDS HERE -->
+                    <!-- Per category Astrology container loop STARTS HERE -->
+                    <div class="per-category-container tpns-astrology">
+                    	<div class="per-category-open-container">
+							<div class="per-category-content-container per-category-open-container-no-sidebar">
+								<div class="global-table">
+									<!-- Astrology per star loop STARTS HERE -->
+									<div class="article-category-content-container global-table-cell krios">
+										<div class="global-article-category">
+											<h5 class="text100 textup">Κριός</h5>
+										</div>
+										<div class="clearfix"></div>
+										<div class="global-article-category-container">
+											<article>
+												<a href="" title="Διαβάστε εδώ - Κριός (23/01/2017)">
+													<div class="gobal-article-image-controller">
+														<img src="../media-library-module/uploads/2017/01/350x350/aries-350x350.jpg" alt="Κριός (23/01/2017)" />
+													</div>
+													<div class="per-category-articles-small-article-title text204 hidden">
+														<h1 class="article-headline text102">Κριός (23/01/2017)</h1>
+													</div>
+													<p class="article-nutshell">Ένα άτομο από το φιλικό σου περιβάλλον μπορεί να σου προσφέρει λύσεις, που δυσκολεύεσαι να δεις από μόνος/η σου, ενώ...</p>
+												</a>
+											</article>
+										</div>
+									</div>
+									<!-- Astrology per star loop ENDS HERE -->
+									<!-- Astrology per star loop STARTS HERE -->
+									<div class="article-category-content-container global-table-cell tauros">
+										<div class="global-article-category">
+											<h5 class="text100 textup">Ταύρος</h5>
+										</div>
+										<div class="clearfix"></div>
+										<div class="global-article-category-container">
+											<article>
+												<a href="" title="Διαβάστε εδώ - Ταύρος (23/01/2017)">
+													<div class="gobal-article-image-controller">
+														<img src="../media-library-module/uploads/2017/01/350x350/taurus-350x350.jpg" alt="Ταύρος (23/01/2017)" />
+													</div>
+													<div class="per-category-articles-small-article-title text204 hidden">
+														<h1 class="article-headline text102">Ταύρος (23/01/2017)</h1>
+													</div>
+													<p class="article-nutshell">Καλό είναι να «παίξεις» ομαδικά, αξιοποιώντας και τα πλεονεκτήματα που σου παρέχει ο Ήλιος στον Υδροχόο, ο οποίος μπορεί να...</p>
+												</a>
+											</article>
+										</div>
+									</div>
+									<!-- Astrology per star loop ENDS HERE -->
+									<!-- Astrology per star loop STARTS HERE -->
+									<div class="article-category-content-container global-table-cell didumoi">
+										<div class="global-article-category">
+											<h5 class="text100 textup">Δίδυμοι</h5>
+										</div>
+										<div class="clearfix"></div>
+										<div class="global-article-category-container">
+											<article>
+												<a href="" title="Διαβάστε εδώ - Δίδυμοι (23/01/2017)">
+													<div class="gobal-article-image-controller">
+														<img src="../media-library-module/uploads/2017/01/350x350/gemini-350x350.jpg" alt="Δίδυμοι (23/01/2017)" />
+													</div>
+													<div class="per-category-articles-small-article-title text204 hidden">
+														<h1 class="article-headline text102">Δίδυμοι (23/01/2017)</h1>
+													</div>
+													<p class="article-nutshell">Διευρύνεται ο κοινωνικός σου κύκλος, κάτι που μπορεί να εξυπηρετήσει άριστα τα σχέδια σου ανοίγοντας «πόρτες», που μέχρι χθες ήταν...</p>
+												</a>
+											</article>
+										</div>
+									</div>
+									<!-- Astrology per star loop ENDS HERE -->
+									<!-- Astrology per star loop STARTS HERE -->
+									<div class="article-category-content-container global-table-cell karkinos">
+										<div class="global-article-category">
+											<h5 class="text100 textup">Καρκίνος</h5>
+										</div>
+										<div class="clearfix"></div>
+										<div class="global-article-category-container">
+											<article>
+												<a href="" title="Διαβάστε εδώ - Καρκίνος (23/01/2017)">
+													<div class="gobal-article-image-controller">
+														<img src="../media-library-module/uploads/2017/01/350x350/cancer-350x350.jpg" alt="Καρκίνος" />
+													</div>
+													<div class="per-category-articles-small-article-title text204 hidden">
+														<h1 class="article-headline text102">Καρκίνος (23/01/2017)</h1>
+													</div>
+													<p class="article-nutshell">Η Σελήνη στον Τοξότη σε καλεί να διεκπεραιώσεις πολλά ζητήματα της καθημερινότητάς σου, ακόμη κι αν σε πρώτη φάση σου...</p>
+												</a>
+											</article>
+										</div>
+									</div>
+									<!-- Astrology per star loop ENDS HERE -->
+									<!-- Astrology per star loop STARTS HERE -->
+									<div class="article-category-content-container global-table-cell leon">
+										<div class="global-article-category">
+											<h5 class="text100 textup">Λέων</h5>
+										</div>
+										<div class="clearfix"></div>
+										<div class="global-article-category-container">
+											<article>
+												<a href="" title="Διαβάστε εδώ - Λέων (23/01/2017)">
+													<div class="gobal-article-image-controller">
+														<img src="../media-library-module/uploads/2017/01/350x350/leo-350x350.jpg" alt="Λέων" />
+													</div>
+													<div class="per-category-articles-small-article-title text204 hidden">
+														<h1 class="article-headline text102">Λέων (23/01/2017)</h1>
+													</div>
+													<p class="article-nutshell">Η σύνοδος Αφροδίτης-Χείρωνα ευνοεί τα οικονομικά σου κι ίσως λάβεις ένα οικογενειακό βοήθημα ή αποκτήσεις ένα αντικείμενο ιδιαίτερης...</p>
+												</a>
+											</article>
+										</div>
+									</div>
+									<!-- Astrology per star loop ENDS HERE -->
+									<!-- Astrology per star loop STARTS HERE -->
+									<div class="article-category-content-container global-table-cell parthenos">
+										<div class="global-article-category">
+											<h5 class="text100 textup">Παρθένος</h5>
+										</div>
+										<div class="clearfix"></div>
+										<div class="global-article-category-container">
+											<article>
+												<a href="" title="Διαβάστε εδώ - Παρθένος (23/01/2017)">
+													<div class="gobal-article-image-controller">
+														<img src="../media-library-module/uploads/2017/01/350x350/virgo-350x350.jpg" alt="Παρθένος" />
+													</div>
+													<div class="per-category-articles-small-article-title text204 hidden">
+														<h1 class="article-headline text102">Παρθένος (23/01/2017)</h1>
+													</div>
+													<p class="article-nutshell">Ο Ήλιος στον Υδροχόο ευνοεί τις επαγγελματικές σου δραστηριότητες, παρέχοντάς σου την δυνατότητα να αξιοποιήσεις επαφές με ειδικούς που θα...</p>
+												</a>
+											</article>
+										</div>
+									</div>
+									<!-- Astrology per star loop ENDS HERE -->
+									<!-- Astrology per star loop STARTS HERE -->
+									<div class="article-category-content-container global-table-cell zugos">
+										<div class="global-article-category">
+											<h5 class="text100 textup">Ζυγός</h5>
+										</div>
+										<div class="clearfix"></div>
+										<div class="global-article-category-container">
+											<article>
+												<a href="" title="Διαβάστε εδώ - Ζυγός (23/01/2017)">
+													<div class="gobal-article-image-controller">
+														<img src="../media-library-module/uploads/2017/01/350x350/libra-350x350.jpg" alt="Ζυγός" />
+													</div>
+													<div class="per-category-articles-small-article-title text204 hidden">
+														<h1 class="article-headline text102">Ζυγός (23/01/2017)</h1>
+													</div>
+													<p class="article-nutshell">Η καθημερινότητά σου μπορεί να εξελιχθεί εν μέσω καθυστερήσεων ή άλλων προβλημάτων. Το πρώτο που έχεις να κάνεις λοιπόν είναι...</p>
+												</a>
+											</article>
+										</div>
+									</div>
+									<!-- Astrology per star loop ENDS HERE -->
+									<!-- Astrology per star loop STARTS HERE -->
+									<div class="article-category-content-container global-table-cell skorpios">
+										<div class="global-article-category">
+											<h5 class="text100 textup">Σκορπιός</h5>
+										</div>
+										<div class="clearfix"></div>
+										<div class="global-article-category-container">
+											<article>
+												<a href="" title="Διαβάστε εδώ - Σκορπιός (23/01/2017)">
+													<div class="gobal-article-image-controller">
+														<img src="../media-library-module/uploads/2017/01/350x350/aries-350x350.jpg" alt="Σκορπιός" />
+													</div>
+													<div class="per-category-articles-small-article-title text204 hidden">
+														<h1 class="article-headline text102">Σκορπιός (23/01/2017)</h1>
+													</div>
+													<p class="article-nutshell">Η οικονομική σου πολιτική θα πρέπει να προσανατολιστεί στην κάλυψη των υποχρεώσεών σου, πολύ περισσότερο που δεν ευνοούνται οι...</p>
+												</a>
+											</article>
+										</div>
+									</div>
+									<!-- Astrology per star loop ENDS HERE -->
+									<!-- Astrology per star loop STARTS HERE -->
+									<div class="article-category-content-container global-table-cell toksoths">
+										<div class="global-article-category">
+											<h5 class="text100 textup">Τοξότης</h5>
+										</div>
+										<div class="clearfix"></div>
+										<div class="global-article-category-container">
+											<article>
+												<a href="" title="Διαβάστε εδώ - Τοξότης (23/01/2017)">
+													<div class="gobal-article-image-controller">
+														<img src="../media-library-module/uploads/2017/01/350x350/sagitarius-350x350.jpg" alt="Τοξότης" />
+													</div>
+													<div class="per-category-articles-small-article-title text204 hidden">
+														<h1 class="article-headline text102">Τοξότης (23/01/2017)</h1>
+													</div>
+													<p class="article-nutshell">Η σύνοδος Αφροδίτη-Χείρωνα σε καλεί να αναζητήσεις οικονομική και συναισθηματική υποστήριξη σε οικεία πρόσωπα αλλά και να...</p>
+												</a>
+											</article>
+										</div>
+									</div>
+									<!-- Astrology per star loop ENDS HERE -->
+									<!-- Astrology per star loop STARTS HERE -->
+									<div class="article-category-content-container global-table-cell aigokeros">
+										<div class="global-article-category">
+											<h5 class="text100 textup">Αιγόκερως</h5>
+										</div>
+										<div class="clearfix"></div>
+										<div class="global-article-category-container">
+											<article>
+												<a href="" title="Διαβάστε εδώ - Αιγόκερως (23/01/2017)">
+													<div class="gobal-article-image-controller">
+														<img src="../media-library-module/uploads/2017/01/350x350/capricorn-350x350.jpg" alt="Αιγόκερως" />
+													</div>
+													<div class="per-category-articles-small-article-title text204 hidden">
+														<h1 class="article-headline text102">Αιγόκερως (23/01/2017)</h1>
+													</div>
+													<p class="article-nutshell">Καλείσαι να μοιράσεις τον χρόνο σου με παρέες ή ενδιαφέροντα που σε «γεμίζουν» συναισθηματικά, ενώ δεν αποκλείεται να συναντήσεις κι...</p>
+												</a>
+											</article>
+										</div>
+									</div>
+									<!-- Astrology per star loop ENDS HERE -->
+									<!-- Astrology per star loop STARTS HERE -->
+									<div class="article-category-content-container global-table-cell ydroxoos">
+										<div class="global-article-category">
+											<h5 class="text100 textup">Υδροχόος</h5>
+										</div>
+										<div class="clearfix"></div>
+										<div class="global-article-category-container">
+											<article>
+												<a href="" title="Διαβάστε εδώ - Υδροχόος (23/01/2017)">
+													<div class="gobal-article-image-controller">
+														<img src="../media-library-module/uploads/2017/01/350x350/aquarius-350x350.jpg" alt="Υδροχόος" />
+													</div>
+													<div class="per-category-articles-small-article-title text204 hidden">
+														<h1 class="article-headline text102">Υδροχόος (23/01/2017)</h1>
+													</div>
+													<p class="article-nutshell">Η Σελήνη στον Τοξότη «απαιτεί» από σένα μεγαλύτερη υπομονή στις φιλικές σχέσεις σου, αφού οι καταστάσεις που θα προκύψουν δεν...</p>
+												</a>
+											</article>
+										</div>
+									</div>
+									<!-- Astrology per star loop ENDS HERE -->
+									<!-- Astrology per star loop STARTS HERE -->
+									<div class="article-category-content-container global-table-cell ixthues">
+										<div class="global-article-category">
+											<h5 class="text100 textup">Ιχθύες</h5>
+										</div>
+										<div class="clearfix"></div>
+										<div class="global-article-category-container">
+											<article>
+												<a href="" title="Διαβάστε εδώ - Ιχθύες (23/01/2017)">
+													<div class="gobal-article-image-controller">
+														<img src="../media-library-module/uploads/2017/01/350x350/pisces-350x350.jpg" alt="Ιχθύες" />
+													</div>
+													<div class="per-category-articles-small-article-title text204 hidden">
+														<h1 class="article-headline text102">Ιχθύες (23/01/2017)</h1>
+													</div>
+													<p class="article-nutshell">Το «ραντεβού» της Αφροδίτης με τον Χείρωνα μπορεί να σε κάνει πολύ πιο συναισθηματικό/η και ίσως «υποφέρεις» από παλινδρομήσεις ή...</p>
+												</a>
+											</article>
+										</div>
+									</div>
+									<!-- Astrology per star loop ENDS HERE -->
+								</div>
+								<div class="per-category-seperator-ad-container textc">
+									<p>
+										<iframe src="../in-house-adverts-module/in-house-adverts/728x90/canderel_stevia/canderel_stevia-728x90.htm" frameborder="0" scrolling="no" allowtransparency="true" width="728" height="90"></iframe>
+										<a href="http://www.canderel.gr/" target="_blank" title="Μάθετε περισσότερα για το Canderel εδώ"></a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+                    <!-- Per category Astrology container loop ENDS HERE -->
+                    
+                    
                     
                     
                     
