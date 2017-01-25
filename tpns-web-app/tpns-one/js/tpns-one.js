@@ -162,12 +162,12 @@ if ($(window).width() <= 600) {
 		$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(2).wrap('<div class="global-table-row"></div>');
 	}
 }
-if ($(window).width() <= 1000) {
+if ($(window).width() <= 1200) {
 	if ($(window).width() > 600) {
 		$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(3).wrap('<div class="global-table-row"></div>');
 	}
 }
-if ($(window).width() > 1000) {
+if ($(window).width() > 1200) {
 	$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(6).wrap('<div class="global-table-row"></div>');
 }
 // jQuery
@@ -1068,20 +1068,23 @@ function PCViewUpdate() {
 		$(this).headerMainNav();
 	});
 	$(".header-mainnav-overflow-items:not(:has(li))").parent().parent().parent().addClass("hidden").removeClass("global-table-cell").removeAttr("style");
-	var resizeDelay;
-	function resizedw(){
-		if ($(window).width() <= 350) {
-			$(".tpns-astrology").find(".article-category-content-container").unwrap('<div class="global-table-cell"></div>');
-			$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(1).wrap('<div class="global-table-row"></div>');
-			$(".header-mainnav-menu li").queue(function(){
-				$(this).each(function() {
-					$(this).prependTo(".header-mainnav-overflow-items").dequeue();
-				});
-				return false;
-			});
+	var rtime;
+	var timeout = false;
+	var delta = 100;
+	$(window).resize(function() {
+		rtime = new Date();
+		if (timeout === false) {
+			timeout = true;
+			setTimeout(resizeend, delta);
 		}
-		if ($(window).width() <= 500) {
-			if ($(window).width() > 350) {
+	});
+
+	function resizeend() {
+		if (new Date() - rtime < delta) {
+			setTimeout(resizeend, delta);
+		} else {
+			timeout = false;
+			if ($(window).width() <= 350) {
 				$(".tpns-astrology").find(".article-category-content-container").unwrap('<div class="global-table-cell"></div>');
 				$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(1).wrap('<div class="global-table-row"></div>');
 				$(".header-mainnav-menu li").queue(function(){
@@ -1091,30 +1094,36 @@ function PCViewUpdate() {
 					return false;
 				});
 			}
-		}
-		if ($(window).width() <= 600) {
-			if ($(window).width() > 500) {
-				$(".tpns-astrology").find(".article-category-content-container").unwrap('<div class="global-table-cell"></div>');
-				$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(2).wrap('<div class="global-table-row"></div>');
+			if ($(window).width() <= 500) {
+				if ($(window).width() > 350) {
+					$(".tpns-astrology").find(".article-category-content-container").unwrap('<div class="global-table-cell"></div>');
+					$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(1).wrap('<div class="global-table-row"></div>');
+					$(".header-mainnav-menu li").queue(function(){
+						$(this).each(function() {
+							$(this).prependTo(".header-mainnav-overflow-items").dequeue();
+						});
+						return false;
+					});
+				}
 			}
-		}
-		if ($(window).width() <= 1000) {
-			if ($(window).width() > 600) {
-				$(".tpns-astrology").find(".article-category-content-container").unwrap('<div class="global-table-cell"></div>');
-				$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(3).wrap('<div class="global-table-row"></div>');
+			if ($(window).width() <= 600) {
+				if ($(window).width() > 500) {
+					$(".tpns-astrology").find(".article-category-content-container").unwrap('<div class="global-table-cell"></div>');
+					$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(2).wrap('<div class="global-table-row"></div>');
+				}
 			}
-		}
-		if ($(window).width() > 1000) {
-			$(".tpns-astrology").find(".article-category-content-container").unwrap('<div class="global-table-cell"></div>');
-			$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(6).wrap('<div class="global-table-row"></div>');
-		}
+			if ($(window).width() <= 1200) {
+				if ($(window).width() > 600) {
+					$(".tpns-astrology").find(".article-category-content-container").unwrap('<div class="global-table-cell"></div>');
+					$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(3).wrap('<div class="global-table-row"></div>');
+				}
+			}
+			if ($(window).width() > 1200) {
+				$(".tpns-astrology").find(".article-category-content-container").unwrap('<div class="global-table-cell"></div>');
+				$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(6).wrap('<div class="global-table-row"></div>');
+			}
+		}               
 	}
-	window.onresize = function() {
-		clearTimeout(resizeDelay);
-		resizeDelay = setTimeout(function() {
-			resizedw();
-		}, 100);
-	};
 	var newsStreamSliderContainerTop = $(".news-stream").find(".news-stream-container-top").outerHeight();
 	var newsStreamSliderContainerBottom = $(".news-stream").find(".news-stream-container-bottom").innerHeight();
 	var newsStreamSliderContainerMiddle = $(".swiper-container").height();
