@@ -154,21 +154,26 @@ $.fn.wrapMatchingDivs = function(size) {
     }
     return this.pushStack(arr, "wrapMatchingDivs", size);
 };
-if ($(window).width() <= 350) {
-	$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(1).wrap('<div class="global-table-row"></div>');
-}
-if ($(window).width() <= 600) {
-	if ($(window).width() > 350) {
-		$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(2).wrap('<div class="global-table-row"></div>');
-	}
+if ($(window).width() > 1200) {
+	$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(6).wrap('<div class="global-table-row"></div>');
 }
 if ($(window).width() <= 1200) {
 	if ($(window).width() > 600) {
 		$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(3).wrap('<div class="global-table-row"></div>');
 	}
 }
-if ($(window).width() > 1200) {
-	$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(6).wrap('<div class="global-table-row"></div>');
+if ($(window).width() <= 600) {
+	if ($(window).width() > 500) {
+		$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(2).wrap('<div class="global-table-row"></div>');
+	}
+}
+if ($(window).width() <= 500) {
+	if ($(window).width() > 300) {
+		$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(2).wrap('<div class="global-table-row"></div>');
+	}
+}
+if ($(window).width() <= 300) {
+	$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(1).wrap('<div class="global-table-row"></div>');
 }
 // jQuery
 $(document).ready(function() {
@@ -1078,24 +1083,29 @@ function PCViewUpdate() {
 			setTimeout(resizeend, delta);
 		}
 	});
-
 	function resizeend() {
 		if (new Date() - rtime < delta) {
 			setTimeout(resizeend, delta);
 		} else {
 			timeout = false;
-			if ($(window).width() <= 350) {
+			if ($(window).width() > 1200) {
 				$(".tpns-astrology").find(".article-category-content-container").unwrap('<div class="global-table-cell"></div>');
-				$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(1).wrap('<div class="global-table-row"></div>');
-				$(".header-mainnav-menu li").queue(function(){
-					$(this).each(function() {
-						$(this).prependTo(".header-mainnav-overflow-items").dequeue();
-					});
-					return false;
-				});
+				$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(6).wrap('<div class="global-table-row"></div>');
+			}
+			if ($(window).width() <= 1200) {
+				if ($(window).width() > 600) {
+					$(".tpns-astrology").find(".article-category-content-container").unwrap('<div class="global-table-cell"></div>');
+					$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(3).wrap('<div class="global-table-row"></div>');
+				}
+			}
+			if ($(window).width() <= 600) {
+				if ($(window).width() > 500) {
+					$(".tpns-astrology").find(".article-category-content-container").unwrap('<div class="global-table-cell"></div>');
+					$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(2).wrap('<div class="global-table-row"></div>');
+				}
 			}
 			if ($(window).width() <= 500) {
-				if ($(window).width() > 350) {
+				if ($(window).width() > 300) {
 					$(".tpns-astrology").find(".article-category-content-container").unwrap('<div class="global-table-cell"></div>');
 					$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(1).wrap('<div class="global-table-row"></div>');
 					$(".header-mainnav-menu li").queue(function(){
@@ -1106,21 +1116,15 @@ function PCViewUpdate() {
 					});
 				}
 			}
-			if ($(window).width() <= 600) {
-				if ($(window).width() > 500) {
-					$(".tpns-astrology").find(".article-category-content-container").unwrap('<div class="global-table-cell"></div>');
-					$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(2).wrap('<div class="global-table-row"></div>');
-				}
-			}
-			if ($(window).width() <= 1200) {
-				if ($(window).width() > 600) {
-					$(".tpns-astrology").find(".article-category-content-container").unwrap('<div class="global-table-cell"></div>');
-					$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(3).wrap('<div class="global-table-row"></div>');
-				}
-			}
-			if ($(window).width() > 1200) {
+			if ($(window).width() <= 300) {
 				$(".tpns-astrology").find(".article-category-content-container").unwrap('<div class="global-table-cell"></div>');
-				$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(6).wrap('<div class="global-table-row"></div>');
+				$(".tpns-astrology").find(".article-category-content-container").wrapMatchingDivs(1).wrap('<div class="global-table-row"></div>');
+				$(".header-mainnav-menu li").queue(function(){
+					$(this).each(function() {
+						$(this).prependTo(".header-mainnav-overflow-items").dequeue();
+					});
+					return false;
+				});
 			}
 		}               
 	}
