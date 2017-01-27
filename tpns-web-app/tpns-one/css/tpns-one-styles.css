@@ -913,8 +913,9 @@ header {
 .content-inner-placeholder {
 	position:relative; z-index:99999;
 }
+/* NOTE: overflow below must be hidden, or the flipbook will move about when hovering over it */
 .content-area-container {
-	position:relative; width:100%; height:auto; padding:0px 20px; margin:20px 0px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+	position:relative; width:100%; height:auto; padding:0px 20px; margin:20px 0px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; overflow:hidden;
 }
 
 /* Index Open Article Category Controllers
@@ -2036,7 +2037,7 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 	display:none;
 }
 .per-category-seperator-ad-container {
-	margin:40px 0px 0px;
+	position: relative; margin:40px 0px 0px; z-index:1000;
 }
 .per-category-seperator-ad-container p {
 	display:inline-block; position:relative; line-height:100%; padding:0; margin:0; overflow:hidden;
@@ -2065,15 +2066,40 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 	margin: 0 0 10px;
 }
 
+/* TPNS Lifestyle Magazine Category Area
+----------------------------------------------------------------------------- */
+.lifestyle-magazine-viewport {
+	position:relative;
+    width: 100%;
+    height: 100%;
+	margin:0;
+	padding:0;
+	z-index: 1001;
+}
+.lifestyle-magazine {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.lifestyle-magazine .page {
+    height: 100%;
+}
 
-
-
-
-
-
-
-
-
+.lifestyle-magazine .page img {
+	position:absolute; top:0; right:0; bottom:0; left:0; height:100%;
+}
+.lifestyle-magazine .page.even img {
+    right:50%;
+}
+.lifestyle-magazine .page.odd img {
+    left: -100%;
+}
 
 
 
