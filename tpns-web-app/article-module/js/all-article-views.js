@@ -1,5 +1,6 @@
 var ArticleRowView = Backbone.View.extend({
 
+	//TEMPLATES
         featuredTemplate: _.template(
 	    '<div class="new-article-form-content-related-info articles-form-content-featured-info">'
            +'    <div class="admin-click-menu-container">'
@@ -9,20 +10,12 @@ var ArticleRowView = Backbone.View.extend({
            +'        <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">'
            +'            <ul class="admin-click-menu-content-list">'
            +'                <li class="current"><a><u class="icon tpns-ai-favourite"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>'
-           +'                <li><a><u class="icon tpns-ai-favourite-active"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>'
-           +'                <li><a><u class="icon tpns-ai-favourite-active"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>'
-           +'                <li><a><u class="icon tpns-ai-favourite-active"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>'
-           +'                <li><a><u class="icon tpns-ai-favourite-active"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>'
-           +'                <li><a><u class="icon tpns-ai-favourite-active"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>'
-           +'                <li><a><u class="icon tpns-ai-favourite-active"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>'
-           +'                <li><a><u class="icon tpns-ai-favourite-active"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>'
-           +'                <li><a><u class="icon tpns-ai-favourite-active"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>'
-           +'                <li><a><u class="icon tpns-ai-favourite-active"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>'
-           +'                <li><a><u class="icon tpns-ai-favourite-active"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>'
+           +'                <% for (i = 1; i < 10; i++) { %><li><a><u class="icon tpns-ai-favourite-active"></u><span><%=i %></span><i class="icon tpns-ai-selected"></i></a></li><% } %>'
            +'            </ul>'
 	   +'        </div>'
 	   +'    </div>'
            +'</div>'),
+
         editorsChoiceTemplate: _.template(
 	    '<div class="new-article-form-content-related-info articles-form-content-featured-info">'
            +'    <div class="admin-click-menu-container">'
@@ -32,21 +25,14 @@ var ArticleRowView = Backbone.View.extend({
            +'        <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-left hidden">'
            +'            <ul class="admin-click-menu-content-list">'
            +'                <li class="current"><a><u class="icon tpns-ai-editors-choice"></u><span>--</span><i class="icon tpns-ai-selected"></i></a></li>'
-           +'                <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>1</span><i class="icon tpns-ai-selected"></i></a></li>'
-           +'                <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>2</span><i class="icon tpns-ai-selected"></i></a></li>'
-           +'                <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>3</span><i class="icon tpns-ai-selected"></i></a></li>'
-           +'                <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>4</span><i class="icon tpns-ai-selected"></i></a></li>'
-           +'                <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>5</span><i class="icon tpns-ai-selected"></i></a></li>'
-           +'                <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>6</span><i class="icon tpns-ai-selected"></i></a></li>'
-           +'                <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>7</span><i class="icon tpns-ai-selected"></i></a></li>'
-           +'                <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>8</span><i class="icon tpns-ai-selected"></i></a></li>'
-           +'                <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>9</span><i class="icon tpns-ai-selected"></i></a></li>'
-           +'                <li><a><u class="icon tpns-ai-editors-choice-selected"></u><span>10</span><i class="icon tpns-ai-selected"></i></a></li>'
+           +'                <% for (i = 1; i < 10; i++) { %><li><a><u class="icon tpns-ai-editors-choice-selected"></u><span><%=i %></span><i class="icon tpns-ai-selected"></i></a></li><% } %>'
            +'            </ul>'
 	   +'        </div>'
 	   +'    </div>'
            +'</div>'),
+
 	uniqueVisitorsTemplate: _.template('<p class="admin-decimals"><%= unique_visitors %></p>'),
+
 	contentTemplate: _.template(
 	   '<p><%= content %></p>'
 	   +'<div class="article-shortcut-controllers">'
@@ -56,17 +42,26 @@ var ArticleRowView = Backbone.View.extend({
            +'    <div class="admin-local-controllers-right-items admin-article-search-container"><p class="articles-content-button stop-button"><a><i class="icon tpns-ai-cloud-download"></i>Unpublish</a></p></div>'
 	   +'    <div class="article-shortcut-controllers-items"><p class="articles-content-button warning-button"><a><i class="icon tpns-ai-trash"></i>Trash</a></p></div>'
 	   +'</div>'),
+
 	authorTemplate: _.template('     <p><u><img src="<%=author.image%>" alt="" /></u><span><%=author.first_name%> <%=author.last_name%></span></p>'),
+
 	categoriesTemplate: _.template('<ul><%$.each(categories, function(i) { %><li><p><%=categories[i]%></p></li><% }); %></ul>'),
+
 	tagsTemplate: _.template('<% if(tags && tags.length) { %><p><%=tags.length%></p><% } else { %><p>--</p><% } %>'),
+
 	imagesTemplate: _.template('<% if(images && images.length) { %><p><%=images.length%></p><% } else { %><p>--</p><% } %>'),
+
 	audioTemplate: _.template('<% if(audio && audio.length) { %><p><%=audio.length%></p><% } else { %><p>--</p><% } %>'),
+
 	videoTemplate: _.template('<% if(video && video.length) { %><p><%=video.length%></p><% } else { %><p>--</p><% } %>'),
+
 	commentsTemplate: _.template('<p><%=comments%></p>'),
+
 	statusTemplate: _.template(
 	    '<% if(status && status=="Draft") { %><p class="article-draft">Draft</p><%}%>'
 	   +'<% if(status && status=="Published") { %><p class="article-published">Published</p><%}%>'),
 
+	// RENDER
     	render: function () {
 
 		if (!this.model) {
