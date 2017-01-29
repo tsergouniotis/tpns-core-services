@@ -25,7 +25,7 @@ var ProfileSummaryView = Backbone.View.extend({
                 html+='        </a>';
                 html+='    </div>';
                 html+='    <div class="dropdown-menu admin-global-controllers-tab-content admin-global-controllers-tab-content-right hidden textl">';
-		html+='        <div class="allArticlesProfileSummaryContainer global-table admin-user-profile-preview-content-details">';
+		html+='        <div class="global-table admin-user-profile-preview-content-details">';
                 html+='            <div class="global-table-row">';
                 html+='                <div class="global-table-cell">';
                 html+='                    <div class="admin-user-profile-preview-content-image">';
