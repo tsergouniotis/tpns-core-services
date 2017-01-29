@@ -1,6 +1,6 @@
 var HeadlineView = Backbone.View.extend({
 
-        headlineTextTemplate: _.template('<textarea class="new-article-textbox" id="new-article-headline" maxlength="100" placeholder="Add Headline here..."><%= headline %></textarea>'),
+        headlineTextTemplate: _.template('<textarea class="new-article-textbox" name="headlineEditor" id="headlineEditor" maxlength="100" placeholder="Add Headline here..."><%= headline %></textarea>'),
 
     	render: function () {
 
@@ -20,7 +20,7 @@ var HeadlineView = Backbone.View.extend({
 
 var SubheadView = Backbone.View.extend({
 
-        subheadTextTemplate: _.template('<textarea class="new-article-textbox" id="new-article-subhead" maxlength="150" placeholder="Add Subhead here..."><%= subhead %></textarea>'),
+        subheadTextTemplate: _.template('<textarea class="new-article-textbox" name="subheadEditor" id="subheadEditor" maxlength="150" placeholder="Add Subhead here..."><%= subhead %></textarea>'),
 
     	render: function () {
 
@@ -37,7 +37,7 @@ var SubheadView = Backbone.View.extend({
 
 var SoftleadView = Backbone.View.extend({
 
-        softleadTextTemplate: _.template('<textarea name="softLeadEditor" id="softLeadEditor" rows="10" cols="80" placeholder="Add Soft-lead Sentence here..."><%= softlead %></textarea>'),
+        softleadTextTemplate: _.template('<textarea class="new-article-textbox" name="softLeadEditor" id="softLeadEditor" rows="10" cols="80" placeholder="Add Soft-lead Sentence here..."><%= softlead %></textarea>'),
 
     	render: function () {
 
@@ -53,7 +53,7 @@ var SoftleadView = Backbone.View.extend({
 
 var HardleadView = Backbone.View.extend({
 
-        hardleadTextTemplate: _.template('<textarea name="hardLeadEditor" id="hardLeadEditor" rows="10" cols="80" placeholder="Add Hard-lead Paragraph here..."><%= hardlead %></textarea>'),
+        hardleadTextTemplate: _.template('<textarea class="new-article-textbox" name="hardLeadEditor" id="hardLeadEditor" rows="10" cols="80" placeholder="Add Hard-lead Paragraph here..."><%= hardlead %></textarea>'),
 
     	render: function () {
 
@@ -69,7 +69,7 @@ var HardleadView = Backbone.View.extend({
 
 var ContentView = Backbone.View.extend({
 
-        contentTextTemplate: _.template('<textarea name="articleEditor" id="articleEditor" rows="10" cols="80" placeholder="Add New Article here..."><%= content %></textarea>'),
+        contentTextTemplate: _.template('<textarea class="new-article-textbox" name="articleEditor" id="articleEditor" rows="10" cols="80" placeholder="Add New Article here..."><%= content %></textarea>'),
 
     	render: function () {
 
@@ -85,7 +85,7 @@ var ContentView = Backbone.View.extend({
 
 var KickerView = Backbone.View.extend({
 
-        kickerTextTemplate: _.template('<textarea class="new-article-textbox" id="new-article-kicker" maxlength="50" placeholder="Add Kicker here..."><%= kicker %></textarea>'),
+        kickerTextTemplate: _.template('<textarea class="new-article-textbox" name="kickerEditor" id="kickerEditor" maxlength="50" placeholder="Add Kicker here..."><%= kicker %></textarea>'),
 
     	render: function () {
 
@@ -109,7 +109,7 @@ var KickerView = Backbone.View.extend({
 
 var NutshellView = Backbone.View.extend({
 
-        nutshellTextTemplate: _.template('<textarea name="nutshellEditor" id="nutshellEditor" rows="10" cols="80" placeholder="Add Nutshell text here..."><%= nutshell %></textarea>'),
+        nutshellTextTemplate: _.template('<textarea class="new-article-textbox" name="nutshellEditor" id="nutshellEditor" rows="10" cols="80" placeholder="Add Nutshell text here..."><%= nutshell %></textarea>'),
 
     	render: function () {
 
@@ -132,7 +132,7 @@ var NutshellView = Backbone.View.extend({
 
 var BillboardView = Backbone.View.extend({
 
-        billboardTextTemplate: _.template('<textarea name="billboardEditor" id="billboardEditor" rows="10" cols="80" placeholder="Add Billboard text here..."><%= billboard %></textarea>'),
+        billboardTextTemplate: _.template('<textarea class="new-article-textbox" name="billboardEditor" id="billboardEditor" rows="10" cols="80" placeholder="Add Billboard text here..."><%= billboard %></textarea>'),
 
     	render: function () {
 
@@ -156,7 +156,7 @@ var BillboardView = Backbone.View.extend({
 
 var GuestArticleView = Backbone.View.extend({
 
-        guestArticleTextTemplate: _.template('<textarea name="guestArticleEditor" id="guestArticleEditor" rows="10" cols="80" placeholder="Add Guest Article content here..."><%= guest_article %></textarea>'),
+        guestArticleTextTemplate: _.template('<textarea class="new-article-textbox" name="guestArticleEditor" id="guestArticleEditor" rows="10" cols="80" placeholder="Add Guest Article content here..."><%= guest_article %></textarea>'),
 
     	render: function () {
 

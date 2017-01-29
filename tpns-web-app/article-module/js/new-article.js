@@ -39,13 +39,15 @@ $(document).ready( function() {
 	$('.billboardContainer').append(billboardView.render().el.childNodes);
 	$('.guestArticleContainer').append(guestArticleView.render().el.childNodes);
 
-	/* CKEDITOR.replace( 'softLeadEditor', { customConfig : 'tpns-custom-editors/softleadconfig.js' });
-	CKEDITOR.replace( 'hardLeadEditor', { customConfig : 'tpns-custom-editors/hardleadconfig.js' });
-	CKEDITOR.replace( 'articleEditor', { customConfig : 'tpns-custom-editors/articleconfig.js' });
-	CKEDITOR.replace( 'guestArticleEditor', { customConfig : 'tpns-custom-editors/guestarticleconfig.js' });
-	CKEDITOR.replace( 'billboardEditor', { customConfig : 'tpns-custom-editors/billboardconfig.js' });
-	CKEDITOR.replace( 'editorsNotesEditor', { customConfig : 'tpns-custom-editors/editorsnotesconfig.js' });
-	CKEDITOR.replace( 'nutshellEditor', { customConfig : 'tpns-custom-editors/nutshellconfig.js' });*/
+	$('.new-article-textbox').on({
+	  'focus' : function() {
+		$(this).addClass('tinymce');
+		addEditors();
+	   },
+	   'blur' : function() {
+		$(this).removeClass('tinymce');
+	   }
+	});
 
 	// Initialize jquery-uploader
 	/* Dev Docs can be found here... http://hayageek.com/docs/jquery-upload-file.php */
@@ -156,3 +158,17 @@ $(document).ready( function() {
 	});*/
 
 });
+
+function addEditors(){
+	tinymce.init({
+	  selector: 'textarea.tinymce',
+	  menubar: false,
+	  plugins: [
+	    'advlist autolink lists link image charmap print preview anchor',
+	    'searchreplace visualblocks code fullscreen',
+	    'insertdatetime media table contextmenu paste code'
+	  ],
+	  toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+	  content_css: '//www.tinymce.com/css/codepen.min.css'
+	});
+}
