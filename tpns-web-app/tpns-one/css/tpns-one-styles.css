@@ -11,7 +11,7 @@ Version: 1.0
 ------------------------------------------------------------------------------- */
 html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
 	margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; background: transparent; font-weight: normal;
-}									
+}
 
 article, aside, figure, footer, header, hgroup, nav, section { display: block; }
 /*
@@ -159,27 +159,38 @@ mark { background-color:#364150; color:#c6cfda; font-style:italic; font-weight: 
 }
 .tpns-one-add-user:before { content: "\61"; }
 .tpns-one-remove-user:before { content: "\62"; }
-.tpns-one-rss:before { content: "\63"; }
-.tpns-one-arrow-down:before { content: "\64"; }
-.tpns-one-arrow-left:before { content: "\65"; }
-.tpns-one-search:before { content: "\66"; }
-.tpns-one-twitter:before { content: "\67"; }
-.tpns-one-arrow-right:before { content: "\68"; }
-.tpns-one-arrow-up:before { content: "\69"; }
-.tpns-one-audio:before { content: "\6a"; }
-.tpns-one-camera:before { content: "\6b"; }
-.tpns-one-category-identifier:before { content: "\6c"; }
-.tpns-one-facebook:before { content: "\6e"; }
-.tpns-one-mobile-menu:before { content: "\6f"; }
-.tpns-one-preview-hide:before { content: "\70"; }
-.tpns-one-preview-show:before { content: "\71"; }
-.tpns-one-email:before { content: "\6d"; }
-.tpns-one-category-identifier-slider:before { content: "\72"; }
-.tpns-one-close:before { content: "\73"; }
-.tpns-one-home:before { content: "\74"; }
-.tpns-one-tag:before { content: "\75"; }
-.tpns-one-add-property:before { content: "\76"; }
-.tpns-one-video:before {   content: "\77"; }
+.tpns-one-arrow-down:before { content: "\63"; }
+.tpns-one-arrow-left:before { content: "\64"; }
+.tpns-one-search:before { content: "\65"; }
+.tpns-one-arrow-right:before { content: "\66"; }
+.tpns-one-arrow-up:before { content: "\67"; }
+.tpns-one-audio:before { content: "\68"; }
+.tpns-one-camera:before { content: "\69"; }
+.tpns-one-category-identifier:before { content: "\6a"; }
+.tpns-one-mobile-menu:before { content: "\6b"; }
+.tpns-one-preview-hide:before { content: "\6c"; }
+.tpns-one-preview-show:before { content: "\6d"; }
+.tpns-one-email:before { content: "\6e"; }
+.tpns-one-category-identifier-slider:before { content: "\6f"; }
+.tpns-one-close:before { content: "\70"; }
+.tpns-one-home:before { content: "\71"; }
+.tpns-one-tag:before { content: "\72"; }
+.tpns-one-add-property:before { content: "\73"; }
+.tpns-one-video:before { content: "\74"; }
+.tpns-one-facebook:before { content: "\75"; }
+.tpns-one-snapchat:before { content: "\76"; }
+.tpns-one-rss:before { content: "\77"; }
+.tpns-one-pinterest:before { content: "\78"; }
+.tpns-one-linkedin:before { content: "\79"; }
+.tpns-one-youtube:before { content: "\7a"; }
+.tpns-one-vimeo:before { content: "\41"; }
+.tpns-one-google-plus:before { content: "\42"; }
+.tpns-one-twitter:before { content: "\43"; }
+.tpns-one-instagram:before { content: "\44"; }
+.tpns-one-mailchimp:before { content: "\45"; }
+.tpns-one-digg:before { content: "\46"; }
+.tpns-one-reddit:before { content: "\47"; }
+
 
 
  
@@ -278,6 +289,13 @@ i, u { text-decoration:none; }
 .text203 {
 	font-size:0.467em; /* h1 down to p */
 }
+.text204 {
+	font-size:0.600em; /* h1 down to h4 */
+}
+.text205 {
+	font-size:0.800em; /* h1 down to h2 */
+}
+
 
 
 
@@ -385,6 +403,11 @@ header {
 .header-mainnav-search-container {
 	position:absolute; top:100%; left:0; width:100%; z-index:1;
 }
+.header-mainnav-search-container:before, .header-mainnav-search-container:after {
+	content:""; position:absolute; top:0; bottom:0; width:9999px;
+}
+.header-mainnav-search-container:before { right:100%; }
+.header-mainnav-search-container:after { left:100%; }
 .header-mainnav-search-container .global-table-cell {
 	vertical-align:top; height:55px; padding-top:5px;
 }
@@ -648,6 +671,13 @@ header {
 ------------------------------------------------------------------------------- */
 /* Global Content Area Controllers
 ------------------------------------------------------------------------------- */
+/* height of iframe divided by the width = aspect ratio in this case it is 16:9 */
+.gobal-article-image-controller {
+	position:relative; background:#323031; padding:0; padding-top:56.25%; margin:0; overflow:hidden;
+}
+.gobal-article-image-controller img, .gobal-article-image-controller iframe {
+	position:absolute; width:100%; left:0; top:50%; -moz-transform:translateY(-50%); -webkit-transform:translateY(-50%); -o-transform:translateY(-50%); -ms-transform:translateY(-50%); transform:translateY(-50%);
+}
 
 	
 
@@ -671,6 +701,9 @@ header {
 ------------------------------------------------------------------------------- */
 .headline-slider-container {
 	display:table-cell; width:74%; height:auto; vertical-align:top; padding-right:2%;
+}
+.headline-slider-no-news-stream-container {
+	width:100%; padding-right:0;
 }
 .swiper-container {
 	width:100%; height:auto;
@@ -709,14 +742,7 @@ header {
 	left:0;
 }
 /* Slider Slides */
-/* height of iframe divided by the width = aspect ratio */
-.article-kicker-image {
-	position:relative; background:#323031; padding:0; padding-top:56.25%; /* 16:9 */ margin:0; overflow:hidden;
-}
-.article-kicker-image img, .article-kicker-image iframe {
-	position:absolute; width:100%; left:0; top:50%; -moz-transform:translateY(-50%); -webkit-transform:translateY(-50%); -o-transform:translateY(-50%); -ms-transform:translateY(-50%); transform:translateY(-50%);
-}
-.article-kicker-image iframe {
+.gobal-article-image-controller iframe {
 	min-height:100%; max-height:100%;
 }
 .article-slider-headline-container {
@@ -735,12 +761,11 @@ header {
 	border:none; padding:0; margin-bottom:20px;
 }
 .global-article-category-container h1 {
-	line-height:110%; padding:10px;
+	line-height:110%;
 }
 .video-ad-youtube-title h1, .video-ad-vimeo-title h1 {
 	line-height:110%; padding:0px;
 }
-
 /* News Stream Area
 ------------------------------------------------------------------------------- */
 .news-stream {
@@ -849,16 +874,18 @@ header {
 	position:relative; display:block; width:100%; background:#3b61a6; line-height:34px; color:#FFFFFF;
 }
 .news-stream-container-bottom h4 a:hover {
-	color:#323031; text-decoration:none;
+	color:#323031 !important; text-decoration:none;
 }
-
 /* Index Catgory Area
 -------------------------------------------------------------------------------*/
-.per-category-open-container, .per-category-closed-container {
+.per-category-open-container {
 	margin-top:40px;
 }
 .per-category-content-container {
 	float:left; width:73.5%; height:auto; padding-right:2%;
+}
+.per-category-content-container.per-category-open-container-no-sidebar {
+	float:none; width:100%; padding:0; margin:0;
 }
 /* Index Article Category
 ------------------------------------------------------------------------------- */
@@ -872,7 +899,7 @@ header {
 	content:""; position:absolute; top:34px; left:0px; height:10px; border-left-width:3px; border-style:solid;
 }
 .global-article-category-container {
-	border-left-width:6px; border-bottom-width:6px; border-style:solid;
+	border-left-width:6px; border-bottom-width:6px; border-style:solid; padding:10px 10px 16px 16px;
 }
 .global-article-category-container a {
 	display:block; color:#323031;
@@ -886,9 +913,11 @@ header {
 .content-inner-placeholder {
 	position:relative; z-index:99999;
 }
+/* NOTE: overflow below must be hidden, or the flipbook will move about when hovering over it */
 .content-area-container {
-	position:relative; width:100%; height:auto; padding:0px 20px; margin:20px 0px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+	position:relative; width:100%; height:auto; padding:0px 20px; margin:20px 0px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; overflow:hidden;
 }
+
 /* Index Open Article Category Controllers
 ------------------------------------------------------------------------------- */
 .global-article-category-controller-container {
@@ -930,8 +959,68 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .index-subcategories li h6 a {
 	display:block; width:auto; padding:0px 12px;
 }
+.per-category-container:nth-child(2n+1) .per-category-articles-small-container {
+	float:left; width:36%; height:auto; padding:0 20px 0 0; margin:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.per-category-container:nth-child(2n+2) .per-category-articles-small-container {
+	float:right; width:36%; height:auto; padding:0 0 0 20px; margin:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.per-category-container:nth-child(2n+1) .per-category-open-container-no-sidebar .per-category-articles-small-container {
+	float:left; width:26%; height:auto; padding:0; padding-right:20px; margin:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.per-category-container:nth-child(2n+2) .per-category-open-container-no-sidebar .per-category-articles-small-container {
+	float:right; width:26%; height:auto; padding:0; padding-left:20px; margin:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.per-category-articles-small-article {
+	margin-bottom:40px;
+}
+.per-category-articles-small-article:last-child {
+	margin-bottom:0px;
+}
+.per-category-articles-small-article-title, .per-category-articles-large-main-article-title, .per-category-articles-large-related-article-title, .per-category-articles-large-related-container-title {
+	padding:10px 0px;
+}
+.per-category-container:nth-child(2n+1) .per-category-articles-large-container {
+	float:left; width:64%; height:auto; padding:0; margin:0;
+}
+.per-category-container:nth-child(2n+2) .per-category-articles-large-container {
+	float:right; width:64%; height:auto; padding:0; margin:0;
+}
+.per-category-container:nth-child(2n+1) .per-category-open-container-no-sidebar .per-category-articles-large-container {
+	float:left; width:48%; height:auto; padding:0; margin:0;
+}
+.per-category-container:nth-child(2n+2) .per-category-open-container-no-sidebar .per-category-articles-large-container {
+	float:right; width:48%; height:auto; padding:0; margin:0;
+}
+.per-category-articles-small-article-title h1, .per-category-articles-small-article p, .per-category-articles-large-container p, .per-category-articles-large-related-article-title h1 {
+	line-height:140%;
+}
+.per-category-articles-large-main-article-title h1 {
+	line-height:130%;
+}
+.per-category-articles-large-related-inner-container .global-table-cell {
+	width:33%; vertical-align:top; padding:15px 10px 10px; border-right-width:1px; border-top-width:1px; border-style:solid; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.per-category-articles-large-related-inner-container .global-table-cell:last-child {
+	border-right-width:0px; padding-right:0px;
+}
+.per-category-articles-large-related-inner-container .global-table-cell:first-child {
+	padding-left:0px;
+}
+.article-sponsor-title {
+	padding:6px 0px; border-bottom-width:1px; border-style:solid; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.article-sponsor-logo img {
+	margin:6px 0px 0px;
+}
 /* Index Closed Article Category Controllers
 ------------------------------------------------------------------------------- */
+.per-category-closed-container {
+	margin-top:20px;
+}
+.per-category-content-container.per-category-closed-container-no-advetisement {
+	width:100%; padding:0;
+}
 .per-category-closed-container-category {
 	padding:0px 30px;
 }
@@ -975,60 +1064,1042 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 .per-category-closed-container .per-category-sidebar-container img {
 	width:100%; height:auto;
 }
-
 /* Index Catgory Sidebar Area
 -------------------------------------------------------------------------------*/
 .per-category-sidebar-container {
 	float:left; width:24.5%; height:auto;
 }
+.per-category-closed-container-content-sidebar {
+	float:right; width:100%; height:auto; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
+}
+.per-category-closed-container-no-advetisement + .per-category-sidebar-container {
+	display:none;
+}
+/* Sidebar Slot One (When open semantically first, when closed = left column)
+/* and
+/* Sidebar Slot Two (When open semantically second, when closed = right column)
+/* NOTE:
+/* If needed this may be overwritten locally to match the needs of the widget
+-------------------------------------------------------------------------------*/
+.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2n+1) {
+	float:left; height:auto; margin-right:2%; width:73.5%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2n+2) {
+	float:left; width:24.5%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-one, .per-category-closed-container-content-sidebar .sidebar-slot-three, .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one:nth-child(3n+1), .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one:nth-child(3n+3)  {
+	float:left; width:32.33333333333333%; margin:0;
+}
+.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one:nth-child(3n+2)/*, .global-closed-small-mailchimp-newsletter.sidebar-triple-slot-one .mailchimp-newsletter-container.sidebar-slot-one*/ {
+	float:left; width:32.33333333333333%; margin:0% 1.5%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-two, .per-category-closed-container-content-sidebar .sidebar-slot-four {
+	float:left; width:65.66666666666666%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-two {
+	margin-right:2%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-four {
+	margin-left:2%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-five {
+	clear:both; float:left; width:49%; margin-right:1%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-six {
+	float:left; width:49%; margin-left:1%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-full {
+	display:inline-block; clear:both; position:relative; width:100%;
+}
+/* Sidebar LARGE Social Media Follow Area
+-------------------------------------------------------------------------------*/
+.social-follow-container:nth-child(2), .billboard-container.position-one.sidebar-slot-full ~ .social-follow-container.position-two.sidebar-slot-full {
+	margin-top:20px;
+}
+.per-category-closed-container-content-sidebar .social-follow-container:nth-child(2) {
+	margin-top:0px;
+}
+.social-follow-buttons-large:after {
+	clear:both; content:"\0020"; display:block; height:0; overflow:hidden;
+}
+.social-follow-buttons-large li:nth-child(3n+1), .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(3n+3), .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(3n+6), .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(3n+9), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large li:nth-child(2n+1) {
+	float:left; width:47%; margin:0 3% 20px 0;
+}
+.social-follow-buttons-large li:nth-child(3n+2), .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(3n+4), .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(3n+7), .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(3n+10), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large li:nth-child(2n+2) {
+	float:left; width:47%; margin:0 0 20px 3%;
+}
+.social-follow-buttons-large li:nth-child(3n+3), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-one li:nth-child(1), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-three li:nth-child(3), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(5), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(7), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(9), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(11) {
+	float:left; width:100%; margin:0 0 20px 0;
+}
+.per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+1), .per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+2), .per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) {
+	float:left; width:11.5%; margin:0 1.14% 0 0;
+}
+.social-follow-container:nth-child(2) .social-follow-buttons-large li:last-child, .social-follow-container:nth-child(2) .social-follow-buttons-large li:nth-child(1), .social-follow-container:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(3), .social-follow-container:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(4), .social-follow-container:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(6), .social-follow-container:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(7), .social-follow-container:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(9), .social-follow-container:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(10), .social-follow-container:nth-child(3) .social-follow-buttons-large li:last-child, .social-follow-container:nth-child(3) .social-follow-buttons-large li:nth-child(1), .social-follow-container:nth-child(3) .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(3), .social-follow-container:nth-child(3) .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(4), .social-follow-container:nth-child(3) .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(6), .social-follow-container:nth-child(3) .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(7), .social-follow-container:nth-child(3) .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(9), .social-follow-container:nth-child(3) .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(10), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-one li:nth-child(1), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-two li:nth-child(1), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-two li:nth-child(2), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-three li:nth-child(2), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-three li:nth-child(3), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(3), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(4), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(4), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(5), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-six li:nth-child(5), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-six li:nth-child(6), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(7), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(7), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(8), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(9), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(9), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(10), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(10), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(11), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-twelve li:nth-child(11), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(2) .social-follow-buttons-large.social-follow-buttons-equal-to-twelve li:nth-child(12) {
+	margin-bottom:0;
+}
+.per-category-closed-container-content-sidebar .social-follow-container:nth-child(1) .social-follow-buttons-large li:last-child {
+	margin-right:0;
+}
+/* Onload Sidebar Options */
+.social-follow-buttons-large.social-follow-buttons-equal-to-one li {
+	width:100%; margin:0 0 20px 0;
+}
+/* Default Sidebar Slot*/
+.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large li {
+	float:left; width:14.33%; margin:0 2.8% 0 0;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-five li, .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(n+7) {
+	width:17.76%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-four li, .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(n+7) {
+	width:22.9%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-three li, .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(n+7) {
+	width:31.46%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-two li, .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(n+7) {
+	width:48.6%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-one li, .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(n+7) {
+	width:100%; margin:0;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large li:nth-child(n+7) {
+	margin:20px 2.8% 0 0;
+}
+/* Sidebar Slot Full Width */
+.per-category-closed-container-content-sidebar .social-follow-container.sidebar-slot-full:nth-child(3) {
+	padding-top:20px;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large li {
+	float:left; width:11.5%; margin:0 1.14% 0 0;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-seven li {
+	width:13.3%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-six li {
+	width:15.71%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-five li {
+	width:19.08%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-four li, .per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-twelve li:nth-child(n+9) {
+	width:24.14%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-three li, .per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(n+9) {
+	width:32.57%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-two li, .per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(n+9) {
+	width:49.43%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-one li, .per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(9) {
+	width:100%; margin:0;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large li:nth-child(n+9) {
+	margin:20px 1.14% 0 0;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large li:nth-child(8n+8) {
+	margin:0;
+}
+/* Sidebar Slot Two and Sidebar Slot Four */
+.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large li, .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large li {
+	float:left; width:14.16%; margin:0 3% 0 0;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-five li, .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(n+7), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-five li, .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(n+7) {
+	width:17.6%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-four li, .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(n+7), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-four li, .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(n+7) {
+	width:22.75%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-three li, .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-three li, .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(n+7), .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(n+7), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-three li, .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-three li, .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(n+7), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(n+7) {
+	width:31.33%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-two li, .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(n+7), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-two li, .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(n+7) {
+	width:48.5%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-one li, .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(n+7), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-one li, .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(n+7) {
+	width:100%; margin:0;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large li:nth-child(n+7), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large li:nth-child(n+7) {
+	margin:20px 3% 0 0;
+}
+/* Sidebar Slot Five */
+.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large li, .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large li {
+	float:left; width:22%; margin:0 4% 0 0;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-three li, .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(n+5), .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(n+9), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-three li, .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(n+5), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(n+9) {
+	width:30.668%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-two li, .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(n+9), .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-six li:nth-child(n+5), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-two li, .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(n+9), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-six li:nth-child(n+5) {
+	width:48%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-one li, .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(9), .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(5), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-one li, .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(9), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(5) {
+	width:100%; margin:0;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large li:nth-child(n+5), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large li:nth-child(n+5) {
+	margin:20px 4% 0 0;
+}
+.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large li:nth-child(3n+3), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large li:nth-child(6n+6), .per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large li:nth-child(3n+3), .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large li:nth-child(6n+6), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large li:nth-child(3n+3), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large li:nth-child(6n+6), .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large li:nth-child(4n+4), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large li:nth-child(4n+4), .per-category-closed-container-content-sidebar .social-follow-buttons-large.social-follow-buttons-equal-to-two li:nth-child(2), .per-category-closed-container-content-sidebar .social-follow-buttons-large.social-follow-buttons-equal-to-three li:nth-child(3), .per-category-closed-container-content-sidebar .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(4), .per-category-closed-container-content-sidebar .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(5), .per-category-closed-container-content-sidebar .social-follow-buttons-large.social-follow-buttons-equal-to-six li:nth-child(6), .per-category-closed-container-content-sidebar .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(7) {
+	margin:0;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large li:nth-child(6n+12), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(11), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(10), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(9), .per-category-closed-container-content-sidebar .sidebar-slot-default:nth-child(1) .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(8), .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large li:nth-child(6n+12), .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(8), .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(9), .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(10), .per-category-closed-container-content-sidebar .sidebar-slot-two .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(11), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large li:nth-child(6n+12), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(8), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(9), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(10), .per-category-closed-container-content-sidebar .sidebar-slot-four .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(11), .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large li:nth-child(4n+8), .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large li:nth-child(4n+12), .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-six li:nth-child(6), .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(7), .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(10), .per-category-closed-container-content-sidebar .sidebar-slot-five .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(11), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large li:nth-child(4n+8), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large li:nth-child(4n+12), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-six li:nth-child(6), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(7), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(10), .per-category-closed-container-content-sidebar .sidebar-slot-six .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(11), .per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-nine li:nth-child(9), .per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(10), .per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(11), .per-category-closed-container-content-sidebar .sidebar-slot-full .social-follow-buttons-large.social-follow-buttons-equal-to-twelve li:nth-child(12) {
+	margin:20px 0 0 0;
+}
+/* Sidebar Slot One and Slot Three */
+.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large li, .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large li {
+	float:left; width:30%; margin:0 5% 0 0;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-two li, .per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(n+4), .per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(n+7), .per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(n+10), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-two li, .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(n+4), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(n+7), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(n+10) {
+	width:47.5%;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-two li:nth-child(2), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-two li:nth-child(2) {
+	margin:0;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-one li, .per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(4), .per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(7), .per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(10), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-one li, .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(4), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(7), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(10) {
+	width:100%; margin:0;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large li:nth-child(n+4), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large li:nth-child(n+4){
+	margin:20px 5% 0 0;
+}
+.per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large li:nth-child(3n+6), .per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(5), .per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(8), .per-category-closed-container-content-sidebar .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(11), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large li:nth-child(3n+6), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(5), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(8), .per-category-closed-container-content-sidebar .sidebar-slot-three .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(11) {
+	margin:20px 0 0 0;
+}
+/* Triple Sidebar Slot */
+.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large li {
+	width:30%; margin:0 5% 0 0;
+}
+.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large li:nth-child(n+4) {
+	margin:20px 5% 0 0;
+}
+.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large li:nth-child(3n+1) {
+	clear:both;
+}
+.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-one li, .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(4), .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(7), .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(10) {
+	width:100%; margin:0;
+}
+.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large li:nth-child(3n+6), .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large.sidebar-slot-one .social-follow-buttons-equal-to-four li:nth-child(4), .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large.sidebar-slot-one .social-follow-buttons-equal-to-five li:nth-child(5), .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large.sidebar-slot-one .social-follow-buttons-equal-to-seven li:nth-child(7), .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large.sidebar-slot-one .social-follow-buttons-equal-to-eight li:nth-child(8), .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large.sidebar-slot-one .social-follow-buttons-equal-to-ten li:nth-child(10), .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .social-follow-buttons-large.sidebar-slot-one .social-follow-buttons-equal-to-eleven li:nth-child(11) {
+	margin:20px 0 0 0;
+}
+.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-two li, .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-five li:nth-child(n+4), .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-eight li:nth-child(n+7), .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-eleven li:nth-child(n+10) {
+	width:47.5%;
+}
+.per-category-closed-container-content-sidebar.sidebar-triple-slot-one .sidebar-slot-one .social-follow-buttons-large.social-follow-buttons-equal-to-two li:nth-child(2) {
+	margin:0;
+}
+.social-follow-buttons-large li a, .per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) a, .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(3n+3) a, .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(3n+6) a, .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(3n+9) a {
+	display:block; width:100%; height:130px; border:1px solid #CCCCCC; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; overflow:hidden;
+}
+.social-follow-buttons-large li:nth-child(3n+3) a {
+	height:60px;
+}
+.social-follow-buttons-large li a:hover, .social-follow-buttons-large li a:hover .social-follow-social-network-container {
+	text-decoration:none;
+}
+.social-follow-buttons-large li a .social-follow-social-network, .per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) a .social-follow-social-network, .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(3n+3) a .social-follow-social-network, .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(3n+6) a .social-follow-social-network, .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(3n+9) a .social-follow-social-network {
+	float:none; width:100%; line-height:62px; font-size:2.5em; padding:8px 0 0; margin:0; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
+}
+.social-follow-buttons-large li a:hover .social-follow-social-network, .per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) a:hover .social-follow-social-network, .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(3n+3) a:hover .social-follow-social-network, .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(3n+6) a:hover .social-follow-social-network, .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(3n+9) a:hover .social-follow-social-network {
+	line-height:112px; font-size:5em; padding:16px 0 0; margin:0; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
+}
+.social-follow-buttons-large li:nth-child(3n+3) a .social-follow-social-network {
+	float:left; width:50%; line-height:56px; font-size:2.5em; padding:4px 0 0; margin:0; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
+}
+.social-follow-buttons-large li:nth-child(3n+3) a:hover .social-follow-social-network {
+	width:100%; line-height:55px; font-size:3em; padding:5px 0 0; margin:0; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
+}
+.social-follow-buttons-large a .social-follow-social-network [class^="tpns-one-"]:before, .social-follow-buttons-large a .social-follow-social-network [class*=" tpns-one-"]:before {
+	vertical-align:inherit;
+}
+/* ----- Follower quantity and type ----- */
+.social-follow-buttons-large li a .social-follow-social-network-container, .per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) a .social-follow-social-network-container, .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(3n+3) a .social-follow-social-network-container, .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(3n+6) a .social-follow-social-network-container, .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(3n+9) a .social-follow-social-network-container {
+	float:none; visibility:visible; width:100%; height:60px; border-left:none; border-top:1px solid #CCCCCC; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
+}
+.social-follow-buttons-large li a:hover .social-follow-social-network-container, .per-category-closed-container-content-sidebar .social-follow-buttons-large li:nth-child(3n+3) a:hover .social-follow-social-network-container, .social-follow-buttons-large.social-follow-buttons-equal-to-four li:nth-child(3n+3) a:hover .social-follow-social-network-container, .social-follow-buttons-large.social-follow-buttons-equal-to-seven li:nth-child(3n+6) a:hover .social-follow-social-network-container, .social-follow-buttons-large.social-follow-buttons-equal-to-ten li:nth-child(3n+9) a:hover .social-follow-social-network-container {
+	float:none; visibility:hidden; width:100%; height:0px; border-left:none; border-top:1px solid #FFFFFF; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
+}
+.social-follow-buttons-large li:nth-child(3n+3) a .social-follow-social-network-container {
+	float:left; visibility:visible; width:50%; height:60px; border-left:1px solid #CCCCCC; border-top:none; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
+}
+.social-follow-buttons-large li:nth-child(3n+3) a:hover .social-follow-social-network-container {
+	float:left; visibility:hidden; width:0px; height:58px; border-left:1px solid #FFFFFF; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
+}
+.social-follow-buttons-large a .social-follow-social-network-container li {
+	float:none; position:relative; width:100% !important; height:auto; margin:0;
+}
+.social-follow-buttons-large a .social-follow-social-network-size {
+	width:100%; height:auto; line-height:24px; color:#323031; font-size:1.7em; padding-top:6px;
+}
+.social-follow-buttons-large a .social-follow-social-network-type {
+	width:100%; height:auto; line-height:14px; color:#CCCCCC; padding-top:4px;
+}
+/* Sidebar SMALL Social Media Follow Area
+-------------------------------------------------------------------------------*/
+.social-follow-buttons-small {
+	display:table; font-size:1.875em; /* h5 up to h1 */ vertical-align:top; margin-bottom:20px;
+}
+.social-follow-container.position-two .social-follow-buttons-small {
+	margin-bottom:0px;
+}
+.per-category-closed-container-content-sidebar .social-follow-buttons-small {
+	margin:0;
+}
+.social-follow-buttons-small li {
+	float:left; padding:0; margin:0 6px 10px 7px;
+}
+.social-follow-buttons-small li:nth-child(4n+1) {
+	margin-left:0px;
+}
+.social-follow-buttons-small li:nth-child(4n+4) {
+	margin-right:0px;
+}
+.per-category-closed-container-content-sidebar.sidebar-triple-slot-one-lte-five-small-social-buttons-control .social-follow-buttons-small {
+	margin:17px 0px;
+}
+.per-category-closed-container-content-sidebar .social-follow-buttons-small li {
+	margin:10px 5px;
+}
+.social-follow-buttons-small li a {
+	display:block; width:67px; height:67px;
+}
+.social-follow-buttons-small li a:hover {
+	text-decoration:none;
+}
+.social-follow-buttons-small li a h5 {
+	width:67px; height:67px; background:#FFFFFF; padding:0; margin:0; border:1px solid #CCCCCC; -webkit-border-radius:100%; border-radius:100%; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear; overflow:hidden;
+}
+.social-follow-buttons-small li a:hover h5 {
+	border:none; transition:all 0.3s linear; -o-transition:all 0.3s linear; -moz-transition:all 0.3s linear;
+}
+.social-follow-buttons-small li h5, .social-follow-buttons-small a [class^="tpns-one-"]:before, .social-follow-buttons-small a [class*=" tpns-one-"]:before, .per-category-closed-container-content-sidebar .social-follow-buttons-small li h5, .per-category-closed-container-content-sidebar .social-follow-buttons-small a [class^="tpns-one-"]:before, .per-category-closed-container-content-sidebar .social-follow-buttons-small a [class*=" tpns-one-"]:before {
+	line-height:65px; vertical-align:top; padding:0; margin:0;
+}
+.social-follow-buttons-small li a .social-follow-social-network-container, .per-category-closed-container-content-sidebar .social-follow-buttons-small li a .social-follow-social-network-container {
+	visibility:hidden; position:relative; width:68px; height:68px; color:#FFFFFF;
+}
+.social-follow-buttons-small li a:hover .social-follow-social-network-container {
+	visibility:visible; top:-120px; width:68px; height:68px;
+}
+.per-category-closed-container-content-sidebar .social-follow-buttons-small li a:hover .social-follow-social-network-container {
+	visibility:visible; top:-130px; width:68px; height:68px;
+}
+.social-follow-buttons-small li a .social-follow-social-network-container li, .per-category-closed-container-content-sidebar .social-follow-buttons-small li a .social-follow-social-network-container li {
+	display:block; position:absolute; width:80px; height:42px; background:#323031; padding:6px; margin-left:-12px; -webkit-border-radius:6px; border-radius:6px; z-index:100000;
+}
+.social-follow-buttons-small li a .social-follow-social-network-container li:after, .per-category-closed-container-content-sidebar .social-follow-buttons-small li a .social-follow-social-network-container li:after {
+	content:" "; position:absolute; top:100%; left:50%; height:0; width:0; pointer-events:none; border:solid transparent; border-color:rgba(50,48,49,0); border-top-color:#323031; border-width:10px; margin-left:-10px;
+}
+.social-follow-buttons-small .social-follow-social-network-type, .per-category-closed-container-content-sidebar .social-follow-buttons-small .social-follow-social-network-type {
+	font-size:0.467em; /* h1 down to p */
+}
+.social-follow-buttons-small a .social-follow-social-network-size {
+	font-size:0.786em; /* h6 down to 9px */
+}
+/* ----- Colours Sourced from http://designpieces.com/2012/12/social-media-colours-hex-and-rgb/ ----- */
+.facebook-official-colour a .social-follow-social-network {
+	color:#3B5998;
+}
+.facebook-official-colour a:hover .social-follow-social-network {
+	color:#FFFFFF !important; background:#3B5998 !important;
+}
+.social-follow-buttons-large .facebook-official-colour a:hover {
+	border:1px solid #3B5998;
+}
+.twitter-official-colour a .social-follow-social-network {
+	color:#55acee;
+}
+.twitter-official-colour a:hover .social-follow-social-network {
+	color:#FFFFFF !important; background:#55acee !important;
+}
+.social-follow-buttons-large .twitter-official-colour a:hover {
+	border:1px solid #55acee;
+}
+.linkedin-official-colour a .social-follow-social-network {
+	color:#007bb5;
+}
+.linkedin-official-colour a:hover .social-follow-social-network {
+	color:#FFFFFF !important; background:#007bb5 !important;
+}
+.social-follow-buttons-large .linkedin-official-colour a:hover {
+	border:1px solid #007bb5 !important;
+}
+.rss-official-colour a .social-follow-social-network {
+	color:#ff6600;
+}
+.rss-official-colour a:hover .social-follow-social-network {
+	color:#FFFFFF !important; background:#ff6600 !important;
+}
+.social-follow-buttons-large .rss-official-colour a:hover {
+	border:1px solid #ff6600;
+}
+.youtube-official-colour a .social-follow-social-network {
+	color:#bb0000;
+}
+.youtube-official-colour a:hover .social-follow-social-network {
+	color:#FFFFFF !important; background:#bb0000 !important;
+}
+.social-follow-buttons-large .youtube-official-colour a:hover {
+	border:1px solid #bb0000;
+}
+.vimeo-official-colour a .social-follow-social-network {
+	color:#aad450;
+}
+.vimeo-official-colour a:hover .social-follow-social-network {
+	color:#FFFFFF !important; background:#aad450 !important;
+}
+.social-follow-buttons-large .vimeo-official-colour a:hover {
+	border:1px solid #aad450 !important;
+}
+.instagram-official-colour a .social-follow-social-network {
+	color:#125688;
+}
+.instagram-official-colour a:hover .social-follow-social-network {
+	color:#FFFFFF !important; background:#125688 !important;
+}
+.social-follow-buttons-large .instagram-official-colour a:hover {
+	border:1px solid #125688;
+}
+.pinterest-official-colour a .social-follow-social-network {
+	color:#cb2027;
+}
+.pinterest-official-colour a:hover .social-follow-social-network {
+	color:#FFFFFF !important; background:#cb2027 !important;
+}
+.social-follow-buttons-large .pinterest-official-colour a:hover {
+	border:1px solid #cb2027;
+}
+.google-plus-official-colour a .social-follow-social-network {
+	color:#dd4b39;
+}
+.google-plus-official-colour a:hover .social-follow-social-network {
+	color:#FFFFFF !important; background:#dd4b39 !important;
+}
+.social-follow-buttons-large .google-plus-official-colour a:hover {
+	border:1px solid #dd4b39 !important;
+}
+.snapchat-official-colour a .social-follow-social-network {
+	color:#000000;
+}
+.snapchat-official-colour a:hover .social-follow-social-network {
+	color:#FFFFFF !important; background:#fffc00 !important;
+}
+.social-follow-buttons-large .snapchat-official-colour a:hover {
+	border:1px solid #fffc00;
+}
+.snapchat-official-colour a:hover .social-follow-social-network [class^="tpns-one-"]:before, .snapchat-official-colour a:hover .social-follow-social-network [class*=" tpns-one-"]:before {
+	text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000; 
+}
+.digg-official-colour a .social-follow-social-network {
+	color:#0093CC;
+}
+.digg-official-colour a:hover .social-follow-social-network {
+	color:#FFFFFF !important; background:#0093CC !important;
+}
+.social-follow-buttons-large .digg-official-colour a:hover {
+	border:1px solid #0093CC;
+}
+.reddit-official-colour a .social-follow-social-network {
+	color:#FF5700;
+}
+.reddit-official-colour a:hover .social-follow-social-network {
+	color:#FFFFFF !important; background:#FF5700 !important;
+}
+.social-follow-buttons-large .reddit-official-colour a:hover {
+	border:1px solid #FF5700 !important;
+}
+/* Sidebar Mailchimp Newsletter Container
+-------------------------------------------------------------------------------*/
+.mailchimp-newsletter-container {
+	position:relative; width:100%; height:130px; border:1px solid #CCCCCC; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+/* Newsletter and Billboard Height Adjustment dependant on Social Button Quantity
+-------------------------------------------------------------------------------*/
+/* Large Social Buttons */
+.per-category-closed-container-content-sidebar .billboard-inner-container, .per-category-closed-container-content-sidebar .mailchimp-newsletter-container.small-social-buttons-one-row {
+	height:auto;
+}
+.per-category-closed-container-content-sidebar .billboard-inner-container.large-social-buttons-one-row {
+	min-height:130px;
+}
+.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.large-social-buttons-two-rows, .per-category-closed-container-content-sidebar .billboard-inner-container.large-social-buttons-two-rows {
+	min-height:280px;
+}
+.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.large-social-buttons-three-rows, .per-category-closed-container-content-sidebar .billboard-inner-container.large-social-buttons-three-rows {
+	min-height:430px;
+}
+.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.large-social-buttons-four-rows, .per-category-closed-container-content-sidebar .billboard-inner-container.large-social-buttons-four-rows {
+	min-height:580px;
+}
+.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.large-social-buttons-five-rows, .per-category-closed-container-content-sidebar .billboard-inner-container.large-social-buttons-five-rows {
+	min-height:730px;
+}
+.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.large-social-buttons-six-rows, .per-category-closed-container-content-sidebar .billboard-inner-container.large-social-buttons-six-rows {
+	min-height:880px;
+}
+/* Small Social Buttons */
+.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.small-social-buttons-two-rows, .per-category-closed-container-content-sidebar .billboard-inner-container.small-social-buttons-two-rows {
+	min-height:174px;
+}
+.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.small-social-buttons-three-rows, .per-category-closed-container-content-sidebar .billboard-inner-container.small-social-buttons-three-rows {
+	min-height:261px;
+}
+.mailchimp-newsletter-container.sidebar-slot-one.position-three, .mailchimp-newsletter-container.sidebar-slot-full.position-three, .billboard-container.position-one ~ .mailchimp-newsletter-container.position-two, .per-category-closed-container-content-sidebar .social-follow-container.sidebar-slot-full.position-one ~ .mailchimp-newsletter-container.sidebar-slot-full.position-two, .per-category-closed-container-content-sidebar .mailchimp-newsletter-container.small-social-buttons-newsletter-position-two-slot-full-controller, .per-category-closed-container-content-sidebar .billboard-container.position-one.sidebar-slot-full ~ .mailchimp-newsletter-container.position-two.sidebar-slot-full {
+	margin-top:20px;
+}
+.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.sidebar-slot-full.position-one, .per-category-closed-container-content-sidebar .mailchimp-newsletter-container.small-social-buttons-newsletter-position-one-slot-full-controller {
+	margin-bottom:20px;
+}
+.per-category-closed-container-content-sidebar .mailchimp-newsletter-container.sidebar-slot-one.position-three, .per-category-closed-container-content-sidebar .billboard-container.position-one ~ .mailchimp-newsletter-container.position-two {
+	margin-top:0;
+}
+.mailchimp-newsletter-title {
+	line-height:35px; padding:0px 10px; border-bottom:1px solid #CCCCCC; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.mailchimp-newsletter-title [class^="tpns-one-"]:before, .mailchimp-newsletter-title [class*=" tpns-one-"]:before {
+	font-size:160%; padding-left:0px;
+}
+.mc_form_inside {
+	padding:10px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.mc_form_inside #mc_message {
+	margin:0px 0px 10px;
+}
+.mc_form_inside #mc_message strong {
+	font-family:Roboto-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+.mc_form_inside #mc_message strong.mc_success_msg {
+	color:green;
+}
+.mc_form_inside #mc_message strong.mc_error_msg {
+	color:red;
+}
+.mc_merge_var input {
+	width:100%; background:#f6f6f6; font-family:Roboto-Regular, "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:1.143em; line-height:18px; padding:5px; margin:0px 0px 10px; border:1px solid #CCCCCC; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.mc_merge_var ::-webkit-input-placeholder {
+   color:#999999; font-family:Roboto-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+.mc_merge_var :-moz-placeholder {
+   color:#999999; font-family:Roboto-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+.mc_merge_var ::-moz-placeholder {
+   color:#999999; font-family:Roboto-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+.mc_merge_var :-ms-input-placeholder {
+   color:#999999; font-family:Roboto-Italic, "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+.mc_signup_submit button {
+	background:#FFFFFF; font-size:1.143em; color:#4c9174; line-height:18px; padding:5px 10px; margin:0; border:1px solid #4c9174; -webkit-border-radius:none; border-radius:none;
+}
+.mc_signup_submit button:hover {
+	background:#4c9174; color:#FFFFFF;
+}
+/* Triple Slot One with Large Social Buttons less than or equal to three */
+.global-closed-small-mailchimp-newsletter .mc_merge_var {
+	float:left; width:calc(100% - 120px);
+}
+.global-closed-small-mailchimp-newsletter .mc_merge_var input {
+	line-height:20px; margin:0;
+}
+/* Sidebar Billboard Container
+-------------------------------------------------------------------------------*/
+.billboard-container.position-two {
+	margin-top:-17px; padding:20px 0;
+}
+.billboard-container.billboard-no-social-follow, .billboard-container.billboard-no-social-follow.position-two.sidebar-slot-full {
+	margin-top:0;
+}
+.billboard-container.position-three, .per-category-closed-container-content-sidebar .billboard-container.position-two.sidebar-slot-full, .per-category-closed-container-content-sidebar .social-follow-container.position-one.sidebar-slot-full ~ .billboard-container.position-two.sidebar-slot-full {
+	margin-top:0; padding-top:20px;
+}
+.per-category-closed-container-content-sidebar .billboard-container.position-one, .per-category-closed-container-content-sidebar .billboard-container.position-two, .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .billboard-container.position-one, .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .billboard-container.position-two, .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .billboard-container.position-three, .per-category-closed-container-content-sidebar .billboard-container.billboard-no-social-follow {
+	margin-top:-17px; padding:0;
+}
+.per-category-closed-container-content-sidebar .billboard-container.position-two.billboard-no-social-follow.sidebar-slot-full {
+	margin-top:-17px; padding-top:20px;
+}
+/* Patterns Sourced from http://lea.verou.me/css3patterns/ */
+.billboard-inner-container {
+	background:radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px; background-color:#282828; background-size:16px 16px; line-height:100%; margin-top:17px;
+}
+.billboard-container .global-article-category {
+	display:inherit; text-align:center; line-height:100%;
+}
+.billboard-container .global-article-category h5 {
+	margin-top:-17px; margin-bottom:0; vertical-align:bottom;
+}
+.billboard-container .global-article-category h5:before {
+	content:""; position:relative; top:0px; left:0px; width:0px; height:0px; border:none;
+}
+.billboard-container-sidebar-article {
+	padding:20px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.billboard-container-sidebar-article a {
+	color:#FFFFFF;
+}
+.billboard-container-sidebar-article a:hover {
+	text-decoration:none;
+}
+.billboard-container-sidebar-article a .gobal-article-image-controller {
+	border:1px solid #FFFFFF;
+}
+.billboard-container-sidebar-article .article-sponsor-title {
+	padding:10px 0;
+}
+/* per Category Closed Billboard */
+.per-category-closed-container-content-sidebar .sidebar-slot-full .closed-container-billboard-container {
+	display:table; table-layout:fixed; width:70%; margin:0 auto;
+}
+.per-category-closed-container-content-sidebar .billboard-spacer {
+	margin-top:-17px;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-inner-container-slot-four-gt-three, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-two .closed-container-billboard-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .closed-container-billboard-container.billboard-inner-container-slot-six-gt-four, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-lte-ten, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-gt-ten, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .closed-container-billboard-container.billboard-inner-container-slot-default-gt-eight, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .closed-container-billboard-container.billboard-inner-container-slot-two-gt-five, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .closed-container-billboard-container.billboard-inner-container-slot-two-gt-ten, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .closed-container-billboard-container.billboard-inner-container-slot-default-lt-eight, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-four, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-default.position-one .closed-container-billboard-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-two .closed-container-billboard-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-four .closed-container-billboard-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-five .closed-container-billboard-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-six .closed-container-billboard-container {
+	display:table; table-layout:fixed; width:100%; margin:0;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-three .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-two .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-four .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-gt-ten .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-lte-ten .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-eight .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-five .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-ten .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-eight .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .sidebar-slot-full .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-four .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-default.position-one .billboard-inner-container .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-two .closed-container-billboard-container .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-four .closed-container-billboard-container .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-five .closed-container-billboard-container .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-six .closed-container-billboard-container .closed-container-billboard-inner-left-container {
+	display:table-cell; width:30%; vertical-align:middle;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-three .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-two .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-four .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-gt-ten .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-lte-ten .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-eight .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-five .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-ten .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-eight .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .sidebar-slot-full .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-four .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-default.position-one .billboard-inner-container .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-two .closed-container-billboard-container .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-four .closed-container-billboard-container .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-five .closed-container-billboard-container .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-six .closed-container-billboard-container .closed-container-billboard-inner-right-container {
+	display:table-cell; width:70%; vertical-align:top; padding:0px 0px 0px 20px;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-eight .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-default.position-one .billboard-inner-container .closed-container-billboard-inner-left-container {
+	width:23%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-lte-ten .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-five .closed-container-billboard-inner-left-container {
+	width:26%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-four .closed-container-billboard-inner-right-container {
+	width:30%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-four .closed-container-billboard-inner-right-container {
+	width:34%;
+}
+.per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-five .closed-container-billboard-container .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-six .closed-container-billboard-container .closed-container-billboard-inner-right-container {
+	width:39%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-eight .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-ten .closed-container-billboard-inner-left-container {
+	width:40%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-gt-ten .closed-container-billboard-inner-left-container {
+	width:47%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-three .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-three .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-gt-ten .closed-container-billboard-inner-right-container {
+	width:53%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-eight .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-ten .closed-container-billboard-inner-right-container {
+	width:60%;
+}
+.per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-five .closed-container-billboard-container .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-six .closed-container-billboard-container .closed-container-billboard-inner-left-container {
+	width:61%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-four .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-four .closed-container-billboard-inner-left-container {
+	width:66%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-lte-ten .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-five .closed-container-billboard-inner-right-container {
+	width:74%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-eight .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-no-social-follow.sidebar-slot-default.position-one .billboard-inner-container .closed-container-billboard-inner-right-container {
+	width:77%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-three .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-two .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-four .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-eight .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-five .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-ten .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-eight .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-four .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .sidebar-slot-full .per-category-articles-small-article-title {
+	padding-top:0px;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-three .closed-container-billboard-inner-right-container .text204, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-nine .closed-container-billboard-inner-right-container .text204, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-gt-ten .closed-container-billboard-inner-right-container .text204, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two .closed-container-billboard-inner-right-container .text204, .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .billboard-container.position-one .billboard-inner-container-slot-default-lte-twelve .closed-container-billboard-inner-right-container .text204, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three .closed-container-billboard-inner-right-container .text204, .per-category-closed-container-content-sidebar .sidebar-slot-full .closed-container-billboard-inner-right-container .text204 {
+    font-size:0.8em;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-three .closed-container-billboard-inner-right-container p, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-nine .closed-container-billboard-inner-right-container p, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .closed-container-billboard-container.billboard-position-two-slot-four-gt-ten .closed-container-billboard-inner-right-container p, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-two .closed-container-billboard-inner-right-container p, .per-category-closed-container-content-sidebar.sidebar-triple-slot-one .billboard-container.position-one .billboard-inner-container-slot-default-lte-twelve .closed-container-billboard-inner-right-container p, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-three .closed-container-billboard-inner-right-container p, .per-category-closed-container-content-sidebar .sidebar-slot-full .closed-container-billboard-inner-right-container p {
+    font-size:1.286em;
+}
+.closed-container-billboard-container, .closed-container-billboard-inner-left-container, .closed-container-billboard-inner-right-container {
+	position:relative;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-four .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-six .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-six .closed-container-billboard-inner-left-container {
+	width:60%; margin:0 auto;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-six .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-gt-nine .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-nine .closed-container-billboard-inner-left-container {
+	width:90%; margin:0 auto;
+}
+.billboard-inner-container-lte-six .closed-container-billboard-inner-left-container {
+    width:99%; margin:0 auto;
+}
+.closed-container-billboard-inner-left-container.billboard-inner-container-slot-six-gte-eight, .closed-container-billboard-inner-left-container.billboard-inner-container-slot-five-gt-eight {
+    width:100%;
+}
+.billboard-inner-container-lte-twelve .closed-container-billboard-inner-right-container, .closed-container-billboard-inner-right-container.billboard-inner-container-slot-six-gte-eight-text-over-image, .closed-container-billboard-inner-right-container.billboard-inner-container-slot-five-gt-eight-text-over-image,
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-eight .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-ten .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-gt-ten .closed-container-billboard-inner-right-container {
+	font-size:150%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-gt-five .closed-container-billboard-inner-right-container {
+	font-size:115%;
+}
+.closed-container-billboard-inner-left-container.billboard-inner-container-gte-six {
+    width:93%; margin:0 auto;
+}
+.closed-container-billboard-inner-right-container.closed-container-billboard-inner-text-over-image, .closed-container-billboard-inner-right-container.sidebar-position-one-gt-six-large-social-buttons-billboard-control, .closed-container-billboard-inner-right-container.billboard-inner-container-slot-three-gt-six-text-over-image, .closed-container-billboard-inner-right-container.billboard-inner-container-slot-six-gte-eight-text-over-image, .closed-container-billboard-inner-right-container.billboard-inner-container-slot-five-gt-eight-text-over-image {
+	position:absolute; top:1px; right:3px; bottom:1px; left:3px; background-color:rgba(0, 0, 0, 0.5); padding:10px 20px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.closed-container-billboard-inner-right-container.billboard-inner-container-slot-three-gt-six-text-over-image, .closed-container-billboard-inner-right-container.billboard-inner-container-slot-six-gte-eight-text-over-image, .closed-container-billboard-inner-right-container.billboard-inner-container-slot-five-gt-eight-text-over-image {
+	right:1px; left:1px;
+}
+.closed-container-billboard-inner-right-container.billboard-inner-container-slot-six-gte-eight-text-over-image, .closed-container-billboard-inner-right-container.billboard-inner-container-slot-five-gt-eight-text-over-image, .closed-container-billboard-inner-right-container.billboard-inner-container-slot-three-gt-six-text-over-image {
+	background-color:rgba(0, 0, 0, 0.65);
+}
+.closed-container-billboard-inner-right-container.sidebar-position-one-gt-six-large-social-buttons-billboard-control {
+	font-size:85%; right:1px; left:1px;
+}
+.closed-container-billboard-inner-left-container.billboard-inner-container-gte-six ~ .closed-container-billboard-inner-right-container.closed-container-billboard-inner-text-over-image {
+	right:3.8%; left:3.8%;
+}
+.closed-container-billboard-inner-right-container.closed-container-billboard-inner-text-over-image:hover, .closed-container-billboard-inner-right-container.sidebar-position-one-gt-six-large-social-buttons-billboard-control:hover, .closed-container-billboard-inner-right-container.billboard-inner-container-slot-three-gt-six-text-over-image:hover {
+	background-color:rgba(0, 0, 0, 0.8);
+}
+/* Triple Slot One with Large Social Buttons less than or equal to three */
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lte-four {
+	margin-top:-8px;
+}
+.sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control .closed-container-billboard-inner-left-container, .sidebar-triple-slot-one-lte-ten-small-social-buttons-billboard-control .closed-container-billboard-inner-left-container, .sidebar-position-one-lt-six-large-social-buttons-billboard-control .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-two .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-four .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-three .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-five .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-ten .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-gt-ten .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-six .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lte-four .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lt-eight .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-eight .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-lt-three .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lte-four .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-two .billboard-position-two-slot-default .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-lt-ten .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-gt-ten .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-position-two-slot-four-lte-five .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lt-eight .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-eight .closed-container-billboard-inner-left-container {
+	display:inline-block; width:30%; padding-right:4%; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-four .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-five .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-position-two-slot-four-lte-five .closed-container-billboard-inner-left-container {
+	width:14%; padding-right:2%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-three .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-two .closed-container-billboard-inner-left-container {
+	width:16%; padding-right:2%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-lt-three .closed-container-billboard-inner-left-container {
+	width:18%; padding-right:2%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lt-eight .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lt-eight .closed-container-billboard-inner-left-container {
+	width:20%; padding-right:2%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lte-four .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-ten .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lte-four .closed-container-billboard-inner-left-container {
+	width:26%; padding-right:2%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-six .closed-container-billboard-inner-left-container {
+	width:38%;
+}
+.sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-eight .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-eight .closed-container-billboard-inner-left-container {
+	width:38%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-two .billboard-position-two-slot-default .closed-container-billboard-inner-left-container {
+	width:42%; padding-right:2%;
+}
+.sidebar-position-one-lt-six-large-social-buttons-billboard-control .closed-container-billboard-inner-left-container {
+	width:50%;
+}
+.sidebar-triple-slot-one-lte-ten-small-social-buttons-billboard-control .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-gt-ten .closed-container-billboard-inner-left-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-gt-ten .closed-container-billboard-inner-left-container {
+	width:59%;
+}
+.sidebar-position-one-lt-six-large-social-buttons-billboard-control .closed-container-billboard-inner-right-container, .sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control .closed-container-billboard-inner-right-container, .sidebar-triple-slot-one-lte-ten-small-social-buttons-billboard-control .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-two .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-four .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-five .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-three .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-six .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-ten .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-gt-ten .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lte-four .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lt-eight .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-eight .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-lt-three .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lte-four .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-two .billboard-position-two-slot-default .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-lt-ten .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-gt-ten .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-position-two-slot-four-lte-five .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lt-eight .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-eight .closed-container-billboard-inner-right-container {
+	display:inline-block; width:66%; vertical-align:top; padding:0; margin:0;
+}
+.sidebar-triple-slot-one-lte-ten-small-social-buttons-billboard-control .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-gt-ten .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-gt-ten .closed-container-billboard-inner-right-container {
+	width:40%;
+}
+.sidebar-position-one-lt-six-large-social-buttons-billboard-control .closed-container-billboard-inner-right-container {
+	width:48%; font-size:74%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-two .billboard-position-two-slot-default .closed-container-billboard-inner-right-container {
+	width:56%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-six .closed-container-billboard-inner-right-container {
+	width:58%;
+}
+.sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-eight .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-eight .closed-container-billboard-inner-right-container {
+	width:61%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lte-four .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lte-four .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-ten .closed-container-billboard-inner-right-container {
+	width:72%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lt-eight .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lt-eight .closed-container-billboard-inner-right-container {
+	width:78%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-three .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-lt-three .closed-container-billboard-inner-right-container {
+	width:80%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-two .closed-container-billboard-inner-right-container {
+	width:82%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-four .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-five .closed-container-billboard-inner-right-container, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-position-two-slot-four-lte-five .closed-container-billboard-inner-right-container {
+	width:84%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-four .closed-container-billboard-inner-right-container .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-five .closed-container-billboard-inner-right-container .per-category-articles-small-article-title {
+	font-size:74%;
+}
+.sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control .closed-container-billboard-inner-right-container .article-billboard, .sidebar-position-one-lt-six-large-social-buttons-billboard-control .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-six .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-four .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-ten .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-gt-ten .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lt-eight .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-five .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-two .billboard-position-two-slot-default .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-lt-ten .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-gt-ten .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-position-two-slot-four-lte-five .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lt-eight .closed-container-billboard-inner-right-container .article-billboard, .sidebar-triple-slot-one-lte-ten-small-social-buttons-billboard-control .closed-container-billboard-inner-right-container .article-billboard {
+	display:none;
+}
+.sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control .closed-container-billboard-container:hover .article-billboard, .sidebar-position-one-lt-six-large-social-buttons-billboard-control .closed-container-billboard-container:hover .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-six:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-four:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-gt-ten:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-ten:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lt-eight:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-five:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-two .billboard-position-two-slot-default:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-lt-ten:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-gt-ten:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-position-two-slot-four-lte-five:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lt-eight:hover .closed-container-billboard-inner-right-container .article-billboard, .sidebar-triple-slot-one-lte-ten-small-social-buttons-billboard-control .closed-container-billboard-container:hover .article-billboard {
+	display:block; position:absolute; top:-10%; right:-7%; bottom:-20%; left:-49%; background-color:rgba(0, 0, 0, 0.8); padding:5px 10px;
+}
+.sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control .closed-container-billboard-container:hover .article-billboard {
+	top:-7%; right:-2%; bottom:-50%; left:-66%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-six:hover .closed-container-billboard-inner-right-container .article-billboard {
+	top:-7%; right:-7%; bottom:-50%; left:-69%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lt-eight:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lt-eight:hover .closed-container-billboard-inner-right-container .article-billboard {
+	top:-10%; right:-2%; bottom:-150%; left:-27%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-ten:hover .closed-container-billboard-inner-right-container .article-billboard {
+	top:-10%; right:-4%; bottom:-12%; left:-40%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-two .billboard-position-two-slot-default:hover .closed-container-billboard-inner-right-container .article-billboard {
+	top:-10%; right:-7%; bottom:-20%; left:-82%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-position-two-slot-four-lte-five:hover .closed-container-billboard-inner-right-container .article-billboard {
+	top:-10%; right:-2%; bottom:-130%; left:-18%; font-size:115%;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-four:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-five:hover .closed-container-billboard-inner-right-container .article-billboard {
+	top:-20%; right:-3%; bottom:-120%; left:-18%; font-size:115%;
+}
+.sidebar-triple-slot-one-lte-ten-small-social-buttons-billboard-control .closed-container-billboard-container:hover .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-gt-ten:hover .closed-container-billboard-inner-right-container .article-billboard, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-gt-ten:hover .closed-container-billboard-inner-right-container .article-billboard {
+	top:-5%; right:-2%; bottom:-20%; left:-153%; font-size:115%;
+}
+.sidebar-position-one-lt-six-large-social-buttons-billboard-control .closed-container-billboard-container:hover .article-billboard {
+	bottom:-40%; left:-112%; font-size:125%;
+}
+.sidebar-triple-slot-one-lt-three-large-social-buttons-billboard-control .per-category-articles-small-article-title, .sidebar-position-one-lt-six-large-social-buttons-billboard-control .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-two .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-inner-container-slot-four-lt-three .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-three .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-six .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-one .billboard-inner-container-slot-default-lt-four .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-lt-ten .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-three.position-one .billboard-inner-container-slot-three-gt-ten .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lt-eight .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-gt-eight .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-two.position-one .billboard-inner-container-slot-two-lte-five .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-five.position-one .billboard-inner-container-slot-five-lte-four .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lte-four .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-two .billboard-position-two-slot-default .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-lt-ten .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-one.position-two .billboard-position-two-slot-one-gt-ten .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-four.position-two .billboard-position-two-slot-four-lte-five .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-gt-eight .per-category-articles-small-article-title, .per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-six.position-two .billboard-inner-container-slot-six-lt-eight .per-category-articles-small-article-title, .sidebar-triple-slot-one-lte-ten-small-social-buttons-billboard-control .per-category-articles-small-article-title {
+	padding:0;
+}
+.per-category-closed-container-content-sidebar .billboard-container.sidebar-slot-default.position-two .billboard-position-two-slot-default .per-category-articles-small-article-title {
+	font-size:50%;
+}
 
-
-
-
+/* Editors Choice Area
+------------------------------------------------------------------------------- */
+.editors-choice-container {
+	position:relative; width:100%; height:auto;
+}
+.editors-choice-container:before {
+	content:""; display:block; position:absolute; left:26px; height:100%; border-left:2px solid #F9B000;
+}
+.editors-choice-container-top {
+	position:relative; width:100%; height:auto; padding-bottom:1px; margin-bottom:5px;
+}
+.editors-choice-container-top:after {
+    content:""; display:block; position:absolute; left:10px; bottom:1px; width:0; pointer-events:none; border-color:#F9B000 transparent; border-style:solid; border-width:14px 17px 0;
+}
+.editors-choice-container-top a {
+	display:block; background:#F9B000; background:-moz-linear-gradient(top, #fCCE0B 0%, #F9B000 100%); background:-webkit-linear-gradient(top, #fCCE0B 0%,#F9B000 100%); background:linear-gradient(to bottom, #fCCE0B 0%,#F9B000 100%); filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#fCCE0B', endColorstr='#F9B000',GradientType=0 ); color:#FFFFFF; line-height:0; padding:0; margin:0 0 14px;
+}
+.editors-choice-container-top a img {
+	width:100%; height:auto; padding:0; margin:0;
+}
+.editors-choice-container-small-image, 
+.news-stream-container-small-image {
+	display:block;
+}
+.editors-choice-container-large-image, 
+.news-stream-container-large-image {
+	display:none;
+}
+.editors-choice-top-no-ad a, .editors-choice-container-top .editors-choice-top-no-ad-text {
+	display:none;
+}
+.editors-choice-top-no-ad .editors-choice-top-no-ad-text {
+	display:block; background:#F9B000; color:#FFFFFF; line-height:34px; padding:0; margin:0 0 14px;
+}
+.per-category-sidebar-container .editors-choice-container-middle {
+	position:relative; width:100%; height:450px; overflow-y:auto;
+}
+.news-stream .editors-choice-container-middle {
+	position:relative; width:100%; height:350px; overflow-y:auto;
+}
+.editors-choice-container-middle-item {
+	position:relative; background:#f6f6f6; padding:10px; margin-bottom:10px; z-index:10000;
+}
+.editors-choice-container-middle-item:hover {
+	background:#dcdcdc;
+}
+.editors-choice-container-middle-item:before {
+	content:""; display:block; position:absolute; left:26px; height:100%; border-left:2px solid #F9B000;
+}
+.editors-choice-time-container {
+	float:left; width:44px; padding:0px 5px; margin:-10px 0 0 -10px;
+}
+.editors-choice-time-container h6 {
+	position:relative; background:#f6f6f6; padding:10px 0 2px 0; border-bottom:2px solid #F9B000; z-index:10001;
+}
+.editors-choice-container-middle-item:hover .editors-choice-time-container h6 {
+	background:#dcdcdc;
+}
+.editors-choice-title-container {
+	float:left; width:-webkit-calc(100% - 44px); width:expression(100% - 44px); width:-moz-calc(100% - 44px); width:-o-calc(100% - 44px); width:calc(100% - 44px);
+}
+.editors-choice-title-container h1 {
+	margin-bottom:5px;
+}
+.editors-choice-title-container h1 a {
+	display:block; color:#323031;
+}
+.editors-choice-title-container h1 a:hover, 
+.news-stream-title-container h1 a:hover {
+	color:#3598dc !important; text-decoration:none;
+}
+.editors-choice-category-container {
+	float:left;
+}
+.editors-choice-category-container [class^="tpns-one-"]:before, .editors-choice-category-container [class*=" tpns-one-"]:before {
+	padding-left:0px;
+}
+.editors-choice-contains-container {
+	float:right;
+}
+.editors-choice-contains-container li {
+	display:inline-block;
+}
+.editors-choice-contains-container li.hidden {
+	display:none;
+}
+.editors-choice-contains-container li [class^="tpns-one-"]:before, .editors-choice-contains-container li [class*=" tpns-one-"]:before {
+	padding-right:0px;
+}
+.editors-choice-contains-container .breaking-news-header-symbol [class^="tpns-one-"]:before, .editors-choice-contains-container .breaking-news-header-symbol [class*=" tpns-one-"]:before {
+	color:#af1e23; padding:0 0 0 5px;
+}
+.editors-choice-container-bottom {
+	position:relative; width:100%; height:auto; padding-top:5px;
+}
+.editors-choice-container-bottom p {
+	background:#F9B000; text-align:right; line-height:0; padding:0; margin:0 0 0 54px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.editors-choice-container-bottom p a img {
+	max-width:100%; height:auto;
+}
+.editors-choice-bottom-no-ad {
+	padding-top:20px;
+}
+.editors-choice-bottom-no-ad p {
+	display:none;
+}
+.editors-choice-container-bottom-base {
+	position:relative; height:10px; background:#F9B000;
+}
+.editors-choice-container-bottom-base:after {
+	content:" "; position:absolute; bottom:100%; left:10px; height:0; width:0; pointer-events:none; border:solid transparent; border-color:transparent; border-bottom-color:#F9B000; border-width:0 17px 14px;
+}
+/* Editors Choice and News Stream when in Sidebar and Sidebar is minized */
+.per-category-closed-container-content-sidebar .editors-choice-container:after, .per-category-closed-container-content-sidebar .news-stream-container:after {
+	content:""; display:block; position:absolute; top:0px; right:26px; height:100%; border-right:2px solid #F9B000; z-index:-1;
+}
+.per-category-closed-container-content-sidebar .news-stream-container:after {
+	border-right:2px solid #3b61a6;
+}
+.per-category-closed-container-content-sidebar .editors-choice-container-top:before, .per-category-closed-container-content-sidebar .news-stream-container-top:before {
+    content:""; display:block; position:absolute; right:10px; bottom:1px; width:0; pointer-events:none; border-color:#F9B000 transparent; border-style:solid; border-width:14px 17px 0;
+}
+.per-category-closed-container-content-sidebar .news-stream-container-top:before {
+	border-color:#3b61a6 transparent;
+}
+.per-category-closed-container-content-sidebar .editors-choice-container-small-image, .per-category-closed-container-content-sidebar .news-stream-container-small-image {
+	display:none;
+}
+.per-category-closed-container-content-sidebar .editors-choice-container-large-image, .per-category-closed-container-content-sidebar .news-stream-container-large-image {
+	display:block;
+}
+.per-category-closed-container-content-sidebar .editors-choice-container-middle, .per-category-closed-container-content-sidebar .news-stream-container-middle {
+	height:100%;
+}
+.per-category-closed-container-content-sidebar .editors-choice-container-middle-item:nth-child(2n+2):before, .per-category-closed-container-content-sidebar .news-stream-container-middle-item:nth-child(2n+2):before {
+	content:""; display:block; position:absolute; right:26px; height:100%; border-right:2px solid #F9B000; border-left:none; z-index:-1;
+}
+.per-category-closed-container-content-sidebar .news-stream-container-middle-item:nth-child(2n+2):before {
+	border-right:2px solid #3b61a6;
+}
+.per-category-closed-container-content-sidebar .editors-choice-container-middle-item:nth-child(2n+2) .editors-choice-time-container, .per-category-closed-container-content-sidebar .news-stream-container-middle-item:nth-child(2n+2) .news-stream-time-container {
+	float:right; margin:-10px -10px 0 0;
+}
+.per-category-closed-container-content-sidebar .editors-choice-container-middle-item:nth-child(2n+2) .editors-choice-title-container, .per-category-closed-container-content-sidebar .news-stream-container-middle-item:nth-child(2n+2) .news-stream-title-container {
+	float:right;
+}
+.per-category-closed-container-content-sidebar .editors-choice-container-top a, .per-category-closed-container-content-sidebar .news-stream-container-top a {
+	text-align:center;
+}
+.per-category-closed-container-content-sidebar .editors-choice-container-top a img, .per-category-closed-container-content-sidebar .news-stream-container-top a img {
+	max-width:100%; width:auto;
+}
+.per-category-closed-container-content-sidebar .editors-choice-container-middle-item:nth-child(2n+1), .per-category-closed-container-content-sidebar .news-stream-container-middle-item:nth-child(2n+1) {
+	clear:both; float:left; width:49%; margin-right:1%; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.per-category-closed-container-content-sidebar .editors-choice-container-middle-item:nth-child(2n+2), .per-category-closed-container-content-sidebar .news-stream-container-middle-item:nth-child(2n+2) {
+	float:left; width:50%; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+.per-category-closed-container-content-sidebar .editors-choice-container-bottom p, .per-category-closed-container-content-sidebar .news-stream-container-bottom p {
+	text-align:center; margin:0px 54px;
+}
+.per-category-closed-container-content-sidebar .editors-choice-container-bottom-base:before {
+	content:" "; position:absolute; bottom:100%; right:10px; height:0; width:0; pointer-events:none; border:solid transparent; border-color:transparent; border-bottom-color:#F9B000; border-width:0 17px 14px;
+}
 
 
 /* Index Catgory Area - Banner Seperator
 -------------------------------------------------------------------------------*/
+.article-category-content-container.per-category-open-container-no-advetisement + .per-category-seperator-ad-container {
+	display:none;
+}
 .per-category-seperator-ad-container {
-	margin:40px 0px;
+	position: relative; margin:40px 0px 0px; z-index:1000;
 }
 .per-category-seperator-ad-container p {
 	display:inline-block; position:relative; line-height:100%; padding:0; margin:0; overflow:hidden;
 }
-.per-category-seperator-ad-container iframe {
+.per-category-seperator-ad-container iframe, .per-category-seperator-ad-container img {
 	position:relative; max-width:100%; height:auto; padding:0; margin:0; border:none;
 }
 .per-category-seperator-ad-container a {
 	position:absolute; top:0; right:0; bottom:0; left:0;
 }
-/*
-.per-category-seperator-ad-container {
-	position:relative; line-height:100%; padding-top:10.1304347826087%; margin:0 auto;
+/* TPNS Astrology Category Area
+----------------------------------------------------------------------------- */
+.tpns-astrology .global-table {
+	border-collapse:separate; border-spacing:16px;
 }
-.per-category-seperator-ad-container iframe {
-	position:absolute; max-width:100%; max-height:100%; padding:0; margin:0; left:50%; top:50%; -moz-transform:translateX(-50%) translateY(-50%); -webkit-transform:translateX(-50%) translateY(-50%); -o-transform:translateX(-50%) translateY(-50%); -ms-transform:translateX(-50%) translateY(-50%); transform:translateX(-50%) translateY(-50%); border:none;
+.tpns-astrology .article-category-content-container.global-table-cell {
+	position:relative; width:15%; vertical-align:top; border-left-width:6px; border-bottom-width:6px; border-style:solid;
 }
-.per-category-seperator-ad-container a {
-	position:absolute; top:0; right:0; bottom:0; left:50%; -moz-transform:translateX(-50%); -webkit-transform:translateX(-50%); -o-transform:translateX(-50%); -ms-transform:translateX(-50%); transform:translateX(-50%); 
+.tpns-astrology .global-article-category-container {
+	padding:10px 16px 16px; border-bottom-width:0px; border-left-width:0px; border-style:solid;
 }
-*/
+.tpns-astrology .global-article-category h5:before {
+	left:-6px; margin-bottom:0;
+}
+.tpns-astrology .gobal-article-image-controller {
+	margin: 0 0 10px;
+}
 
+/* TPNS Lifestyle Magazine Category Area
+----------------------------------------------------------------------------- */
+.lifestyle-magazine-viewport {
+	position:relative;
+    width: 100%;
+    height: 100%;
+	margin:0;
+	padding:0;
+	z-index: 1001;
+}
+.lifestyle-magazine {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.lifestyle-magazine .page {
+    height: 100%;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.lifestyle-magazine .page img {
+	position:absolute; top:0; right:0; bottom:0; left:0; height:100%;
+}
+.lifestyle-magazine .page.even img {
+    right:50%;
+}
+.lifestyle-magazine .page.odd img {
+    left: -100%;
+}
 
 
 

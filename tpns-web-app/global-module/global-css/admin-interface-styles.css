@@ -43,7 +43,7 @@ mark { background-color:#364150; color:#c6cfda; font-style:italic; font-weight: 
 .new-article-form-content-container-half-width {
 	float:left; position:relative; width:49%; padding:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; border:1px solid #dce0ec; margin:0px 0px 20px;
 }
-.new-article-form-content-container-half-width:nth-child(2n+1) {
+.new-article-form-content-container-half-width.new-article-form-content-container-half-left {
 	margin-right:2%;
 }
 .new-article-form-content-header {
@@ -856,13 +856,19 @@ border-radius: 0 10px 10px 0;
 .main-nav-other p a {
 	display:block; line-height:20px;
 }
+.main-nav-other.system-error p a {
+	color:#e7505a;
+}
+.main-nav-other.system-error p a:hover {
+	color:#FFFFFF;
+}
 .main-nav-other.textc p a {
 	padding:0; padding-top:10px;
 }
 .main-nav-other p a span:first-child {
 	font-size:120%; padding-right:10px;
 }
-.main-nav-other p a [class^="tpns-ai-"]::before, .main-nav-other p a [class*=" tpns-ai-"]::before {
+.main-nav-other p a [class^="tpns-ai-"]:before, .main-nav-other p a [class*=" tpns-ai-"]:before {
 	padding:0;
 }
 /* ----- Main Nav Open Hover State ----- */

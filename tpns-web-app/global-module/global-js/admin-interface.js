@@ -37,31 +37,7 @@ function check() {
 		*/
 	}
 }
-$("input[type=checkbox]").each(check).change(check);
-/* Activate options dropdown menu for articles */
-/* Select all checkboxes */
-$(".select-all-rows-button-check, .select-all-rows-button-uncheck").on("click", function () {
-	'use strict';
-	var check = $("input.single-article-checkbox:checkbox").is(":checked") ? false:true;
-	$("input.single-article-checkbox:checkbox").prop('checked', check).attr('checked','checked').parent().parent().parent().parent().removeClass("admin-global-checkbox-checked");
-	if ($("input.single-article-checkbox:checkbox").is(':checked')) {
-		$(".admin-articles-bulk-actions-controller").removeClass("hidden");
-		$("input.single-article-checkbox:checkbox").parent().parent().parent().parent().addClass("admin-global-checkbox-checked");
-		$(".select-all-rows-button-check").addClass("hidden");
-		$(".select-all-rows-button-uncheck").removeClass("hidden");
-	}
-});
-$(".select-all-rows-button-uncheck").on("click", function () {
-	'use strict';
-	var uncheck = $("input.single-article-checkbox:checkbox").is(":checked") ? false:true;
-	$("input.single-article-checkbox:checkbox").attr('checked', uncheck).removeAttr('checked');
-	if ($("input.single-article-checkbox:checkbox").is(':checked') !== true) {
-		$(".admin-articles-bulk-actions-controller").addClass("hidden");
-		$("input.single-article-checkbox:checkbox").parent().parent().parent().parent().removeClass("admin-global-checkbox-checked");
-		$(".select-all-rows-button-check").removeClass("hidden");
-		$(".select-all-rows-button-uncheck").addClass("hidden");
-	}
-});
+
 
 $(document).ready( function() {
 	'use strict';
@@ -219,6 +195,32 @@ $(document).ready( function() {
 		$(this).parent().parent().parent().parent().find(".admin-click-menu-button-pc-close, .admin-click-sub-menu-button-pc-close").addClass("hidden").removeClass("open");
 		$(this).parent().parent().parent().parent().find(".admin-click-menu-content, .admin-click-sub-menu-content").removeAttr("style").addClass("hidden");
 		$(this).parent().parent().parent().parent().find(".admin-click-menu-button-pc-open, .admin-click-sub-menu-button-pc-open").removeClass("hidden").removeAttr("style");
+	});
+
+	$("input[type=checkbox]").each(check).change(check);
+	/* Activate options dropdown menu for articles */
+	/* Select all checkboxes */
+	$(".select-all-rows-button-check, .select-all-rows-button-uncheck").on("click", function () {
+		'use strict';
+		var check = $("input.single-article-checkbox:checkbox").is(":checked") ? false:true;
+		$("input.single-article-checkbox:checkbox").prop('checked', check).attr('checked','checked').parent().parent().parent().parent().removeClass("admin-global-checkbox-checked");
+		if ($("input.single-article-checkbox:checkbox").is(':checked')) {
+			$(".admin-articles-bulk-actions-controller").removeClass("hidden");
+			$("input.single-article-checkbox:checkbox").parent().parent().parent().parent().addClass("admin-global-checkbox-checked");
+			$(".select-all-rows-button-check").addClass("hidden");
+			$(".select-all-rows-button-uncheck").removeClass("hidden");
+		}
+	});
+	$(".select-all-rows-button-uncheck").on("click", function () {
+		'use strict';
+		var uncheck = $("input.single-article-checkbox:checkbox").is(":checked") ? false:true;
+		$("input.single-article-checkbox:checkbox").attr('checked', uncheck).removeAttr('checked');
+		if ($("input.single-article-checkbox:checkbox").is(':checked') !== true) {
+			$(".admin-articles-bulk-actions-controller").addClass("hidden");
+			$("input.single-article-checkbox:checkbox").parent().parent().parent().parent().removeClass("admin-global-checkbox-checked");
+			$(".select-all-rows-button-check").removeClass("hidden");
+			$(".select-all-rows-button-uncheck").addClass("hidden");
+		}
 	});
 });
 
