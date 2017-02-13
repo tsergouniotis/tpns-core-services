@@ -4,11 +4,26 @@ import java.io.Serializable;
 
 public class ArticleInfo implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private String text;
 
 	private String image;
 
 	private ImageSettings settings;
+
+	protected ArticleInfo() {
+
+	}
+
+	protected ArticleInfo(ArticleInfo info) {
+		setImage(info.getImage());
+		setSettings(info.getSettings());
+		setText(info.getText());
+	}
 
 	public String getText() {
 		return text;

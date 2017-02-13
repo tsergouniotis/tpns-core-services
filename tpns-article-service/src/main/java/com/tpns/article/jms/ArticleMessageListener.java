@@ -44,7 +44,6 @@ public class ArticleMessageListener implements MessageListener {
 
 				String action = objectMessage.getStringProperty(ACTION);
 				String owner = objectMessage.getStringProperty(OWNER);
-				article.setOwner(!"tpnsone".equals(owner));
 
 				process(article, action);
 
@@ -90,12 +89,12 @@ public class ArticleMessageListener implements MessageListener {
 	}
 
 	private void sendToSuccessQ(Article article) {
-		Article a = Article.create(article.getGuid(), article.isOwner(), article.getContent(), null, article.getAuthor(), article.getStatus(), null, null, null, null);
+		Article a = Article.create(article.getGuid(), article.getContent(), null, article.getAuthor(), article.getStatus(), null, null, null, null);
 		successJmsTemplate.send(new ArticleJmsMessageCreator(a));
 	}
 
 	private void sendToErrorQ(Article article) {
-		Article a = Article.create(article.getGuid(), article.isOwner(), article.getContent(), null, article.getAuthor(), article.getStatus(), null, null, null, null);
+		Article a = Article.create(article.getGuid(), article.getContent(), null, article.getAuthor(), article.getStatus(), null, null, null, null);
 		failureJmsTemplate.send(new ArticleJmsMessageCreator(a));
 	}
 

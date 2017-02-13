@@ -1,15 +1,15 @@
 package com.tpns.domain.article;
 
-public class Nutshell extends ArticleInfoExtended {
+public class Kicker extends ArticleInfoExtended {
 
 	/**
 	 * JPA constructor
 	 */
-	public Nutshell() {
+	public Kicker() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Nutshell(ArticleInfo info) {
+	public Kicker(ArticleInfo info) {
 		super(info);
 	}
 

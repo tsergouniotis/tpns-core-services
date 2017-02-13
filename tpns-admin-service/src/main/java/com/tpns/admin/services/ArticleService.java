@@ -1,7 +1,5 @@
 package com.tpns.admin.services;
 
-import java.util.UUID;
-
 import javax.validation.Validator;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,8 +34,11 @@ public class ArticleService {
 
 			ValidationUtils.invokeValidator(article, validator);
 
-			UUID guid = getNextUUID(article.vanilla());
-			article.setGuid(guid);
+			Article vanilla = article.vanilla();
+
+			Article saved = articleRepository.saveAndFlush(vanilla);
+
+			article.setGuid(saved.getGuid());
 
 			// send to owner
 			send(article, article.getOwner(), article.getOwner());
@@ -53,14 +54,6 @@ public class ArticleService {
 		} catch (Exception e) {
 			throw new GenericException(e);
 		}
-
-	}
-
-	private UUID getNextUUID(Article article) {
-		// flush in order to persist the article in the database
-		Article id = articleRepository.saveAndFlush(article);
-		id = articleRepository.findOne(id.getId());
-		return id.getGuid();
 	}
 
 	private void send(AdminArticle article, String owner, String destination) {

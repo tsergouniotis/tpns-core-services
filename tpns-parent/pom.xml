@@ -52,8 +52,9 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<main.basedir>${basedir}/../..</main.basedir>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spring.boot.version>1.3.5.RELEASE</spring.boot.version>
+		<spring.boot.version>1.3.6.RELEASE</spring.boot.version>
 		<plugins.version.jgitflow-maven-plugin>1.0-m5.1</plugins.version.jgitflow-maven-plugin>
+		<docker.maven.plugin.version>0.4.13</docker.maven.plugin.version>
 		<plugins.version.maven-surefire-plugin>2.12.4</plugins.version.maven-surefire-plugin>
 		<docker.image.prefix>pzografos</docker.image.prefix>
 	</properties>
@@ -191,7 +192,7 @@
 				<plugin>
 					<groupId>com.spotify</groupId>
 					<artifactId>docker-maven-plugin</artifactId>
-					<version>0.2.3</version>
+					<version>${docker.maven.plugin.version}</version>
 					<configuration>
 						<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
 						<dockerDirectory>${project.basedir}</dockerDirectory>

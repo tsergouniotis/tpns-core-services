@@ -36,20 +36,25 @@
 				<constraints unique="true" />
 			</column>
 			<column name="author" type="TEXT" />
+			
 			<column name="kicker_text" type="TEXT" />
 			<column name="kicker_image_url" type="TEXT" />
 			<column name="kicker_image_settings" type="TEXT" />
+			
 			<column name="soft_lead" type="TEXT" />
 			<column name="hard_lead" type="TEXT" />
 			<column name="headline" type="TEXT" />
 			<column name="sub_head" type="TEXT" />
 			<column name="content" type="TEXT" />
+			
 			<column name="nutshell_text" type="TEXT" />
 			<column name="nutshell_image_url" type="TEXT" />
 			<column name="nutshell_image_settings" type="TEXT" />
+			
 			<column name="billboard_text" type="TEXT" />
 			<column name="billboard_image_url" type="TEXT" />
-			<column name="billboard_image_settings" type="TEXT" />
+			<column name="billboard_image_settings" type="TEXT" />			
+			
 			<column name="status" type="TEXT">
 				<constraints nullable="false" />
 			</column>

@@ -32,7 +32,7 @@ public class Article implements Serializable {
 
 	private String content;
 
-	private Billboard billboard;
+	private ArticleInfo billboard;
 
 	private ArticleInfo nutshell;
 
@@ -43,8 +43,6 @@ public class Article implements Serializable {
 	private List<MediaResource> resources = new ArrayList<MediaResource>();
 
 	private Set<Keyword> keywords;
-
-	private boolean owner;
 
 	private LocalDateTime createdAt;
 
@@ -133,11 +131,11 @@ public class Article implements Serializable {
 		this.content = content;
 	}
 
-	public Billboard getBillboard() {
+	public ArticleInfo getBillboard() {
 		return billboard;
 	}
 
-	public void setBillboard(Billboard billboard) {
+	public void setBillboard(ArticleInfo billboard) {
 		this.billboard = billboard;
 	}
 
@@ -163,14 +161,6 @@ public class Article implements Serializable {
 
 	public void setKeywords(Set<Keyword> keywords) {
 		this.keywords = keywords;
-	}
-
-	public boolean isOwner() {
-		return owner;
-	}
-
-	public void setOwner(boolean owner) {
-		this.owner = owner;
 	}
 
 	public Set<Category> getCategories() {
@@ -280,11 +270,10 @@ public class Article implements Serializable {
 		return new Article(id, content);
 	}
 
-	public static Article create(UUID guid, boolean owner, String content, Set<Category> categories, String author, ArticleStatus status, LocalDateTime createdAt,
-			LocalDateTime updatedAt, LocalDateTime postedAt, List<MediaResource> mediaResources) {
+	public static Article create(UUID guid, String content, Set<Category> categories, String author, ArticleStatus status, LocalDateTime createdAt, LocalDateTime updatedAt,
+			LocalDateTime postedAt, List<MediaResource> mediaResources) {
 		Article article = new Article();
 		article.setGuid(guid);
-		article.setOwner(owner);
 		article.setContent(content);
 		article.setCategories(categories);
 		article.setAuthor(author);

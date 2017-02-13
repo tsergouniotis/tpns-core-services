@@ -32,15 +32,11 @@
 			<column name="guid" type="UUID" />
 			<column name="is_owner" type="BOOLEAN"/>
 			<column name="author" type="TEXT" />
-			<column name="kicker_text" type="TEXT" />
-			<column name="kicker_image_url" type="TEXT" />
-			<column name="kicker_image_settings" type="TEXT" />
+
 			<column name="headline" type="TEXT" />
 			<column name="sub_head" type="TEXT" />
 			<column name="content" type="TEXT" />
-			<column name="nutshell_text" type="TEXT" />
-			<column name="nutshell_image_url" type="TEXT" />
-			<column name="nutshell_image_settings" type="TEXT" />
+
 			<column name="status" type="TEXT">
 				<constraints nullable="false" />
 			</column>
@@ -85,11 +81,12 @@
 
 
 	<changeSet id="create-billboard-table" author="thanassis.sergouniotis">
+	
 		<createTable tableName="billboards">
 			<column name="article_sid" type="BIGINT" />
-			<column name="billboard_text" type="TEXT" />
-			<column name="billboard_image_url" type="TEXT" />
-			<column name="billboard_image_settings" type="TEXT" />
+			<column name="content_text" type="TEXT" />
+			<column name="image_url" type="TEXT" />
+			<column name="image_settings" type="TEXT" />
 		</createTable>
 
 		<addPrimaryKey tableName="billboards" columnNames="article_sid"
@@ -100,6 +97,42 @@
 			baseTableName="billboards" referencedColumnNames="database_id" />
 
 	</changeSet>
+	
+	<changeSet id="create-kicker-table" author="thanassis.sergouniotis">
+	
+		<createTable tableName="kickers">
+			<column name="article_sid" type="BIGINT" />
+			<column name="content_text" type="TEXT" />
+			<column name="image_url" type="TEXT" />
+			<column name="image_settings" type="TEXT" />
+		</createTable>
+
+		<addPrimaryKey tableName="kickers" columnNames="article_sid"
+			constraintName="kickers_pk" />
+
+		<addForeignKeyConstraint constraintName="article_kickers_fk"
+			referencedTableName="articles" baseColumnNames="article_sid"
+			baseTableName="kickers" referencedColumnNames="database_id" />
+
+	</changeSet>
+	
+	<changeSet id="create-nutshell-table" author="thanassis.sergouniotis">
+	
+		<createTable tableName="nutshells">
+			<column name="article_sid" type="BIGINT" />
+			<column name="content_text" type="TEXT" />
+			<column name="image_url" type="TEXT" />
+			<column name="image_settings" type="TEXT" />
+		</createTable>
+
+		<addPrimaryKey tableName="nutshells" columnNames="article_sid"
+			constraintName="nutshells_pk" />
+
+		<addForeignKeyConstraint constraintName="article_nutshells_fk"
+			referencedTableName="articles" baseColumnNames="article_sid"
+			baseTableName="nutshells" referencedColumnNames="database_id" />
+
+	</changeSet>		
 
 
 	<changeSet id="create-lead-table" author="thanassis.sergouniotis">

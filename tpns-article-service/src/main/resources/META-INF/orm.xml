@@ -11,6 +11,48 @@
 		</persistence-unit-defaults>
 	</persistence-unit-metadata>
 
+
+	<mapped-superclass class="com.tpns.domain.article.ArticleInfoExtended"
+		access="PROPERTY">
+		<attributes>
+			<id name="articleId">
+				<column name="article_sid" />
+				<generated-value strategy="IDENTITY" />
+			</id>
+			<basic name="text">
+				<column name="content_text" />
+			</basic>
+			<basic name="image">
+				<column name="image_url" />
+			</basic>
+			<basic name="settings">
+				<column name="image_settings" />
+				<enumerated>STRING</enumerated>
+			</basic>
+		</attributes>
+	</mapped-superclass>
+
+	<entity class="com.tpns.domain.article.Kicker">
+		<table name="kickers" />
+		<attributes>
+			<one-to-one name="article" mapped-by="kicker" />
+		</attributes>
+	</entity>
+
+	<entity class="com.tpns.domain.article.Billboard">
+		<table name="billboards" />
+		<attributes>
+			<one-to-one name="article" mapped-by="billboard" />
+		</attributes>
+	</entity>
+
+	<entity class="com.tpns.domain.article.Nutshell">
+		<table name="nutshells" />
+		<attributes>
+			<one-to-one name="article" mapped-by="nutshell" />
+		</attributes>
+	</entity>
+
 	<entity class="com.tpns.domain.article.Article" name="Article"
 		cacheable="true" access="FIELD">
 		<table name="articles" />
@@ -28,7 +70,7 @@
 					sequence-name="ARTICLESEQ" allocation-size="1" />
 			</id>
 			<basic name="guid">
-				<column name="guid" updatable="false" />
+				<column name="guid" updatable="false" column-definition="uuid"/>
 			</basic>
 			<basic name="owner">
 				<column name="is_owner" />
@@ -67,7 +109,15 @@
 				<join-column name="article_sid" />
 			</one-to-many>
 
-			<one-to-one name="billboard">
+			<one-to-one name="billboard" target-entity="com.tpns.domain.article.Billboard">
+				<primary-key-join-column name="article_sid" />
+			</one-to-one>
+
+			<one-to-one name="kicker" target-entity="com.tpns.domain.article.Kicker">
+				<primary-key-join-column name="article_sid" />
+			</one-to-one>
+
+			<one-to-one name="nutshell" target-entity="com.tpns.domain.article.Nutshell">
 				<primary-key-join-column name="article_sid" />
 			</one-to-one>
 
@@ -94,50 +144,7 @@
 				</join-table>
 			</many-to-many>
 
-			<embedded name="kicker">
-				<attribute-override name="text">
-					<column name="kicker_text" />
-				</attribute-override>
-				<attribute-override name="image">
-					<column name="kicker_image_url" />
-				</attribute-override>
-				<attribute-override name="settings">
-					<column name="kicker_image_settings" />
-				</attribute-override>
-			</embedded>
-			<embedded name="nutshell">
-				<attribute-override name="text">
-					<column name="nutshell_text" />
-				</attribute-override>
-				<attribute-override name="image">
-					<column name="nutshell_image_url" />
-				</attribute-override>
-				<attribute-override name="settings">
-					<column name="nutshell_image_settings" />
-				</attribute-override>
-			</embedded>
-			<transient name="destinations"/>
-		</attributes>
-	</entity>
-
-	<entity class="com.tpns.domain.article.Billboard" access="FIELD">
-		<attributes>
-			<id name="articleId">
-				<column name="article_sid" />
-				<generated-value strategy="IDENTITY" />
-			</id>
-			<one-to-one name="article" mapped-by="billboard" />
-			<embedded name="info">
-				<attribute-override name="text">
-					<column name="billboard_text" />
-				</attribute-override>
-				<attribute-override name="image">
-					<column name="billboard_image" />
-				</attribute-override>
-				<attribute-override name="settings">
-					<column name="billboard_settings" />
-				</attribute-override>
-			</embedded>
+			<transient name="destinations" />
 		</attributes>
 	</entity>
 
@@ -245,26 +252,14 @@
 		</attributes>
 	</entity>
 
-	<embeddable class="com.tpns.domain.article.ArticleInfo">
-		<attributes>
-			<basic name="text">
-				<column name="content_text" />
-			</basic>
-			<basic name="image">
-				<column name="image_url" />
-			</basic>
-			<basic name="settings">
-				<column name="image_settings" />
-				<enumerated>STRING</enumerated>
-			</basic>
-		</attributes>
-	</embeddable>
-
 	<converter class="com.tpns.jpa.common.converters.LocalDateAttributeConverter"
 		auto-apply="true" />
 
 	<converter
 		class="com.tpns.jpa.common.converters.LocalDateTimeAttributeConverter"
+		auto-apply="true" />
+
+	<converter class="com.tpns.jpa.postgres.converters.UUIDConverter"
 		auto-apply="true" />
 
 </entity-mappings>

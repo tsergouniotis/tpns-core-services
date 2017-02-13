@@ -79,7 +79,7 @@
 			<version name="version" />
 
 			<element-collection name="resources">
-				<collection-table name="article_resources">
+				<collection-table name="resources">
 					<join-column name="article_sid" />
 				</collection-table>
 			</element-collection>
@@ -106,10 +106,18 @@
 					<column name="nutshell_image_settings" />
 				</attribute-override>
 			</embedded>
+			<embedded name="billboard">
+				<attribute-override name="text">
+					<column name="billboard_text" />
+				</attribute-override>
+				<attribute-override name="image">
+					<column name="billboard_image_url" />
+				</attribute-override>
+				<attribute-override name="settings">
+					<column name="billboard_image_settings" />
+				</attribute-override>
+			</embedded>			
 			<embedded name="lead" />
-			<!-- For some reason the Hibernate need the attributes to be overriden 
-				here too -->
-			<embedded name="billboard"/>
 			<transient name="owner"/>
 			<transient name="destinations" />
 			<transient name="audits" />
@@ -152,24 +160,8 @@
 			<basic name="hard">
 				<column name="hard_lead" />
 			</basic>
-		</attributes>
-	</embeddable>
-
-	<embeddable class="com.tpns.domain.article.Billboard"
-		access="PROPERTY">
-		<attributes>
-			<basic name="text">
-				<column name="billboard_text" />
-			</basic>
-			<basic name="image">
-				<column name="billboard_image_url" />
-			</basic>
-			<basic name="settings">
-				<column name="billboard_image_settings" />
-			</basic>
-			<transient name="articleId" />
-			<transient name="article" />
-			<transient name="info"/>
+			<transient name="article"/>
+			<transient name="articleId"/>
 		</attributes>
 	</embeddable>
 
@@ -185,6 +177,8 @@
 				<column name="image_settings" />
 				<enumerated>STRING</enumerated>
 			</basic>
+			<transient name="article"/>
+			<transient name="articleId"/>
 		</attributes>
 	</embeddable>
 

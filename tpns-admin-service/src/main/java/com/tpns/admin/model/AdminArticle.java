@@ -57,7 +57,7 @@ public class AdminArticle extends Article {
 
 	public Article vanilla() {
 		// @formatter:off
-		return Article.create(getGuid(), isOwner(), getContent(), getCategories(), getAuthor(), getStatus(), getCreatedAt(), getUpdatedAt(), getPostedAt(), getResources());
+		return Article.create(getGuid(), getContent(), getCategories(), getAuthor(), getStatus(), getCreatedAt(), getUpdatedAt(), getPostedAt(), getResources());
 		// @formatter:on
 	}
 

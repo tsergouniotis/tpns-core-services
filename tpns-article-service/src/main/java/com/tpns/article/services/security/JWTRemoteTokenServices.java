@@ -36,7 +36,7 @@ public class JWTRemoteTokenServices implements ResourceServerTokenServices {
 	private final static String tokenParameterName = "token";
 	private final static String clientIdKeyName = "client_id";
 
-	private final static Logger log = LoggerFactory.getLogger(JWTRemoteTokenServices.class);
+	private final static Logger LOGGER = LoggerFactory.getLogger(JWTRemoteTokenServices.class);
 
 	private RestOperations restTemplate;
 
@@ -91,14 +91,15 @@ public class JWTRemoteTokenServices implements ResourceServerTokenServices {
 	}
 
 	private String getAuthorizationHeader(String clientId, String clientSecret) {
-		String creds = String.format("%s:%s", clientId, clientSecret);
 		try {
+			String creds = String.format("%s:%s", clientId, clientSecret);
 			return "Basic " + new String(Base64.encode(creds.getBytes("UTF-8")));
 		} catch (UnsupportedEncodingException e) {
 			throw new IllegalStateException("Could not convert String");
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	private Map<String, Object> postForMap(String path, String clientId, String accessToken) {
 
 		HttpHeaders headers = new HttpHeaders();
@@ -108,10 +109,8 @@ public class JWTRemoteTokenServices implements ResourceServerTokenServices {
 		UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(path).queryParam(tokenParameterName, accessToken);
 		String url = builder.build().toUriString();
 
-		@SuppressWarnings({ "rawtypes", "unchecked" })
-		Map<String, Object> map = restTemplate.exchange(url, HttpMethod.POST, new HttpEntity<MultiValueMap<String, String>>(null, headers), Map.class).getBody();
+		return restTemplate.exchange(url, HttpMethod.POST, new HttpEntity<MultiValueMap<String, String>>(null, headers), Map.class).getBody();
 
-		return map;
 	}
 
 	private String getClientIdFromToken(String token) {
