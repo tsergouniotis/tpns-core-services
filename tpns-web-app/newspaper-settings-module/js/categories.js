@@ -1,36 +1,48 @@
 $(document).ready( function() {
 	'use strict';
+
+	readCookie();
+
 	// Categories Sort Items
-    $(".reorder-up, .sub-reorder-up").click(function(){
-      var $current = $(this).closest('li').fadeOut("slow").slideUp("slow");
-      var $previous = $current.prev('li');
-      if($previous.length !== 0){
-        $current.insertBefore($previous).fadeIn("slow").slideDown("slow");
-      }
-      return false;
-    });
-    $(".reorder-down, .sub-reorder-down").click(function(){
-      var $current = $(this).closest('li').fadeOut("slow").slideUp("slow");
-      var $next = $current.next('li');
-      if($next.length !== 0){
-        $current.insertAfter($next).fadeIn("slow").slideDown("slow");
-      }
-      return false;
-    });
+	$(".reorder-up, .sub-reorder-up").click(function(){
+
+		var $current = $(this).closest('li').fadeOut("slow").slideUp("slow");
+
+		var $previous = $current.prev('li');
+		if($previous.length !== 0){
+			$current.insertBefore($previous).fadeIn("slow").slideDown("slow");
+		}
+		return false;
+	});
+	$(".reorder-down, .sub-reorder-down").click(function(){
+		var $current = $(this).closest('li').fadeOut("slow").slideUp("slow");
+		var $next = $current.next('li');
+		if($next.length !== 0){
+			$current.insertAfter($next).fadeIn("slow").slideDown("slow");
+		}
+		return false;
+	});
+
+	var selectedNavigationLinkView = new SelectedNavigationLinkView({model: selected_site});
+	var allNavigationLinksDropDownView = new AllNavigationLinksDropDownView({collection: availableNavigationLinks});
+
+	$('.categoriesPropertiesSelectionContainer').append(selectedNavigationLinkView.render().el.childNodes);
+	$('.categoriesPropertiesDropDownContainer').append(allNavigationLinksDropDownView.render().el.childNodes);
+
 	// Categories - Test to see if we have a child ul in a category parent li then do...
 	$(".categories-data-inner:not(:has(ul))").find(".show-sub-categories").hide();
 	$(".categories-data-inner:not(:has(ul))").find(".sub-categories-total-container").addClass("hidden");
 	$(".show-hide-sub-categories p").click(function() {
-		$(this).toggleClass("hide-sub-categories");
-		$(this).toggleClass("show-sub-categories");
-		$(this).find(".tpns-ai-preview-hide").toggleClass("hidden");
-		$(this).find(".tpns-ai-preview-show").toggleClass("hidden");
-		$(this).parent().parent().find(".sub-categories-total-container").toggleClass("hidden");
-		$(this).parent().parent().parent().find(".sub-categories-data-inner-table").toggleClass("hidden");
+	$(this).toggleClass("hide-sub-categories");
+	$(this).toggleClass("show-sub-categories");
+	$(this).find(".tpns-ai-preview-hide").toggleClass("hidden");
+	$(this).find(".tpns-ai-preview-show").toggleClass("hidden");
+	$(this).parent().parent().find(".sub-categories-total-container").toggleClass("hidden");
+	$(this).parent().parent().parent().find(".sub-categories-data-inner-table").toggleClass("hidden");
 	});
 	// Show total Sub-categories in parent Category if Sub-categories are hidden
 	$(".sub-categories-total-number").text(function(){
-	   return $(this).parent().parent().parent().parent().next().find('li').length;
+		return $(this).parent().parent().parent().parent().next().find('li').length;
 	});
 });
 
@@ -52,11 +64,7 @@ function PCViewUpdate() {
 	$(".sub-categories-data-items:nth-child(5n+4)").css('width', (CategoriesColumnFour.width()));
 	var CategoriesColumnFive = $(".categories-data-header-items:nth-child(5)");
 	$(".categories-data-items:nth-child(5n+5)").css('width', (CategoriesColumnFive.width()));
-	
-	
-	
-	
-	
 }
+
 $(window).load(PCViewUpdate);
 $(window).resize(PCViewUpdate);
