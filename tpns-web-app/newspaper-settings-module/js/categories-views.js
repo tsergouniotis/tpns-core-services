@@ -5,14 +5,14 @@ var CategoryRowView = Backbone.View.extend({
         
         headerTemplate: _.template('<p class="textn"><%=name%><small class="sub-categories-total-container"> - has <%=subcategories.length %> sub-categories</small></p>'),
         slugTemplate: _.template('<small><%=slug%></small>'),
-        subCategoriesTemplate: _.template('<ul class="sub-categories-data-inner-table hidden>'+
+        subCategoriesTemplate: _.template('<ul class="sub-categories-data-inner-table hidden">'+
                         '<%$.each(subcategories, function(i) { %>' +
 		        '    <li class="sub-categories-data-inner">'+            
 		        '        <div class="sub-categories-data-items">'+            
 		        '            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked></span></label></p>'+            
 		        '        </div>'+            
 		        '        <div class="sub-categories-data-items">'+            
-		        '            <p><%=subcategories[i] %></p>'+            
+		        '            <p><%= subcategories[i] %></p>'+            
 		        '            <div class="categories-table-controllers">'+            
 		        '                <div class="article-shortcut-controllers-items">'+            
 		        '                    <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>'+            
@@ -23,7 +23,7 @@ var CategoryRowView = Backbone.View.extend({
 		        '            </div>'+
 		        '        </div>'+            
 		        '        <div class="sub-categories-data-items">'+
-		        '            <small><%=subcategories[i] %></small>'+
+		        '            <small><%= subcategories[i] %></small>'+
 		        '        </div>'+
 		        '        <div class="sub-categories-data-items">'+
 		        '            <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>'+
