@@ -3,6 +3,16 @@ $(document).ready( function() {
 
 	readCookie();
 
+	var selectedNavigationLinkView = new SelectedNavigationLinkView({model: selected_site});
+	var allNavigationLinksDropDownView = new AllNavigationLinksDropDownView({collection: availableNavigationLinks});
+
+	var categoriesListView = new CategoriesListView({collection: categories});
+
+	$('.categoriesPropertiesSelectionContainer').append(selectedNavigationLinkView.render().el.childNodes);
+	$('.categoriesPropertiesDropDownContainer').append(allNavigationLinksDropDownView.render().el.childNodes);
+	$('.categoriesAllCategoriesListContainer').append(categoriesListView.render().el);
+
+
 	// Categories Sort Items
 	$(".reorder-up, .sub-reorder-up").click(function(){
 
@@ -14,6 +24,7 @@ $(document).ready( function() {
 		}
 		return false;
 	});
+
 	$(".reorder-down, .sub-reorder-down").click(function(){
 		var $current = $(this).closest('li').fadeOut("slow").slideUp("slow");
 		var $next = $current.next('li');
@@ -23,26 +34,17 @@ $(document).ready( function() {
 		return false;
 	});
 
-	var selectedNavigationLinkView = new SelectedNavigationLinkView({model: selected_site});
-	var allNavigationLinksDropDownView = new AllNavigationLinksDropDownView({collection: availableNavigationLinks});
-
-	$('.categoriesPropertiesSelectionContainer').append(selectedNavigationLinkView.render().el.childNodes);
-	$('.categoriesPropertiesDropDownContainer').append(allNavigationLinksDropDownView.render().el.childNodes);
-
 	// Categories - Test to see if we have a child ul in a category parent li then do...
 	$(".categories-data-inner:not(:has(ul))").find(".show-sub-categories").hide();
 	$(".categories-data-inner:not(:has(ul))").find(".sub-categories-total-container").addClass("hidden");
+
 	$(".show-hide-sub-categories p").click(function() {
-	$(this).toggleClass("hide-sub-categories");
-	$(this).toggleClass("show-sub-categories");
-	$(this).find(".tpns-ai-preview-hide").toggleClass("hidden");
-	$(this).find(".tpns-ai-preview-show").toggleClass("hidden");
-	$(this).parent().parent().find(".sub-categories-total-container").toggleClass("hidden");
-	$(this).parent().parent().parent().find(".sub-categories-data-inner-table").toggleClass("hidden");
-	});
-	// Show total Sub-categories in parent Category if Sub-categories are hidden
-	$(".sub-categories-total-number").text(function(){
-		return $(this).parent().parent().parent().parent().next().find('li').length;
+		$(this).toggleClass("hide-sub-categories");
+		$(this).toggleClass("show-sub-categories");
+		$(this).find(".tpns-ai-preview-hide").toggleClass("hidden");
+		$(this).find(".tpns-ai-preview-show").toggleClass("hidden");
+		$(this).parent().parent().find(".sub-categories-total-container").toggleClass("hidden");
+		$(this).parent().parent().parent().find(".sub-categories-data-inner-table").toggleClass("hidden");
 	});
 });
 
