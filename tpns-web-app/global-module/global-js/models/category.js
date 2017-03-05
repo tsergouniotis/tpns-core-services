@@ -1,3 +1,15 @@
+var SubCategory = Backbone.Model.extend({
+    defaults: {
+        name: '',
+        slug: '',
+    },
+    initialize: function () {
+	this.on('change', function () {
+        });
+    }
+});
+
+
 var Category = Backbone.Model.extend({
     defaults: {
         name: '',
