@@ -3,14 +3,24 @@ $(document).ready( function() {
 
 	readCookie();
 
+	var profileSummaryView = new ProfileSummaryView({model: profile});
+	var profileNotificationsView = new ProfileNotificationsView({model: profile});
+	var profileMessagesView = new ProfileMessagesView({model: profile});
+	var profileSelectedArticlesView = new ProfileSelectedArticlesView({model: profile});
 	var selectedNavigationLinkView = new SelectedNavigationLinkView({model: selected_site});
 	var allNavigationLinksDropDownView = new AllNavigationLinksDropDownView({collection: availableNavigationLinks});
 
+        var categoryAddView = new CategoryAddView({collection: categories});
 	var categoriesListView = new CategoriesListView({collection: categories});
 
 	$('.categoriesPropertiesSelectionContainer').append(selectedNavigationLinkView.render().el.childNodes);
 	$('.categoriesPropertiesDropDownContainer').append(allNavigationLinksDropDownView.render().el.childNodes);
-	$('.categoriesAllCategoriesListContainer').append(categoriesListView.render().el);
+	$('.categoriesCentralContainer').append(categoryAddView.render().el);
+	$('.categoriesCentralContainer').append(categoriesListView.render().el);
+	$('.categoriesProfileSummaryContainer').append(profileSummaryView.render().el.childNodes);	
+	$('.categoriesSelectedProfileNotificationsContainer').append(profileMessagesView.render().el.childNodes);	
+	$('.categoriesSelectedProfileMessagesContainer').append(profileNotificationsView.render().el.childNodes);	
+	$('.categoriesSelectedProfileArticlesContainer').append(profileSelectedArticlesView.render().el.childNodes);	
 
 
 	// Categories Sort Items
