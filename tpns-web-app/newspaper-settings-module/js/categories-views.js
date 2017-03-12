@@ -94,10 +94,14 @@ var CategoriesListView = Backbone.View.extend({
 	tagName: "div", 
 	className: "categories-main-content-right", 
 
+	initialize: function() {
+        	this.listenTo(this.collection, 'add', this.render);
+	},
+
 	render: function(){
             
 		if (!this.collection) {
-		throw "Collection is not set for this view";
+			throw "Collection is not set for this view";
 		}
 
 		var html ='';
@@ -150,15 +154,20 @@ var CategoryAddView = Backbone.View.extend({
 	className: 'categories-main-content-left',
 
 	events:{
-		"click #add-book":"addBook"
+		"click #addCategoryBtn":"addCategory"
 	},
 
-	addBook:function(e){
+	addCategory:function(e){
+
 		e.preventDefault();
 
-		var title = this.$el.find("#title").val();
-		var image = this.$el.find("#image").val();
-		var bookModel = new app.Book({title:"title",image:'image'});    
+		var category = new Category();
+		category.set("name", this.$el.find("#new-article-category-name").val());
+		category.set("slug", this.$el.find("#new-article-category-slug").val());
+		category.set("subcategories", []);
+
+		this.collection.add(category);
+
 	},
 
 	render: function () {
@@ -245,13 +254,13 @@ var CategoryAddView = Backbone.View.extend({
                 html += '                </div>';
                 html += '            </div>';
                 html += '        </div>';
-                html += '    </div';
-                html += '    <p class="articles-content-button textr"><button type="submit">Add New Category</button></p>';
+                html += '    </div>';
+                html += '    <p class="articles-content-button textr"><button id="addCategoryBtn" type="submit">Add New Category</button></p>';
                 html += '</form>';
 		this.$el.html(html);
 		return this;
 	}
-});                   
+});                 
 
    
 

@@ -13,6 +13,8 @@ $(document).ready( function() {
         var categoryAddView = new CategoryAddView({collection: categories});
 	var categoriesListView = new CategoriesListView({collection: categories});
 
+	Backbone.history.start();
+
 	$('.categoriesPropertiesSelectionContainer').append(selectedNavigationLinkView.render().el.childNodes);
 	$('.categoriesPropertiesDropDownContainer').append(allNavigationLinksDropDownView.render().el.childNodes);
 	$('.categoriesCentralContainer').append(categoryAddView.render().el);
@@ -56,6 +58,7 @@ $(document).ready( function() {
 		$(this).parent().parent().find(".sub-categories-total-container").toggleClass("hidden");
 		$(this).parent().parent().parent().find(".sub-categories-data-inner-table").toggleClass("hidden");
 	});
+
 });
 
 // Check the width of the window and do...

@@ -9,12 +9,19 @@ var SubCategory = Backbone.Model.extend({
     }
 });
 
+var SubCategories = Backbone.Collection.extend({
+    model: Category,
+    initialize: function () {
+	this.on('change', function () {
+        });
+    }
+});
 
 var Category = Backbone.Model.extend({
     defaults: {
         name: '',
         slug: '',
-	subcategories: [],
+	subcategories: new SubCategories(),
     },
     initialize: function () {
 	this.on('change', function () {
