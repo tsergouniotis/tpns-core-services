@@ -16,6 +16,7 @@ setInterval(function() {
     }
 }, 250);
 function hasScrolled() {
+	'use strict';
     var st = $(this).scrollTop();
     if(Math.abs(lastScrollTop - st) <= delta) {
         return;

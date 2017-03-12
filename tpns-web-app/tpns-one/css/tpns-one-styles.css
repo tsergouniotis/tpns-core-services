@@ -689,16 +689,19 @@ header {
 /* Breadcrumbs Area
 ------------------------------------------------------------------------------- */
 .breadcrumbs-container {
-	position:relative; width:100%; margin-bottom:20px;
+	position:relative; width:100%; margin-bottom:-20px;
 }
 .breadcrumbs-container p, .breadcrumbs-container p span [class^="tpns-one-"]:before, .breadcrumbs-container p span [class*=" tpns-one-"]:before {
 	padding:0;
 }
-.headline-container {
-	display:table; width:100%; table-layout:fixed;
+.breadcrumbs-container-hidden {
+	visibility:hidden; height:0px; margin-bottom:-40px;
 }
 /* Kicker - Swipper Area
 ------------------------------------------------------------------------------- */
+.headline-container {
+	display:table; width:100%; table-layout:fixed; margin-top:40px;
+}
 .headline-slider-container {
 	display:table-cell; width:74%; height:auto; vertical-align:top; padding-right:2%;
 }
@@ -907,15 +910,15 @@ header {
 .global-article-category-container a:hover {
 	color:#3598dc; text-decoration:none;
 }
+/* NOTE: overflow below must be hidden, or the flipbook will move about when hovering over it */
 .content-outer-container {
-	clear:both; position:relative; width:100%; height:auto; padding:0; margin:0; z-index:99998;
+	clear:both; position:relative; width:100%; height:auto; padding:0; margin:0; z-index:99999; overflow:hidden;
 }
 .content-inner-placeholder {
 	position:relative; z-index:99999;
 }
-/* NOTE: overflow below must be hidden, or the flipbook will move about when hovering over it */
 .content-area-container {
-	position:relative; width:100%; height:auto; padding:0px 20px; margin:20px 0px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; overflow:hidden;
+	position:relative; width:100%; height:auto; padding:0px 20px; margin:20px 0px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
 }
 
 /* Index Open Article Category Controllers
@@ -2069,28 +2072,14 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
 /* TPNS Lifestyle Magazine Category Area
 ----------------------------------------------------------------------------- */
 .lifestyle-magazine-viewport {
-	position:relative;
-    width: 100%;
-    height: 100%;
-	margin:0;
-	padding:0;
-	z-index: 1001;
+	position:relative; width:100%; height:100%; padding:0; margin:0; z-index:1001;
 }
 .lifestyle-magazine {
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+	width:100%; height:100%; margin:0 auto; -webkit-touch-callout:none; -webkit-user-select:none; -khtml-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none;
 }
 .lifestyle-magazine .page {
-    height: 100%;
+    height:100%;
 }
-
 .lifestyle-magazine .page img {
 	position:absolute; top:0; right:0; bottom:0; left:0; height:100%;
 }
@@ -2098,10 +2087,20 @@ h6.index-subcategories-button a, .global-article-category-controller-container .
     right:50%;
 }
 .lifestyle-magazine .page.odd img {
-    left: -100%;
+    left:-100%;
 }
 
-
+/* Footer
+-------------------------------------------------------------------------------*/
+.footer {
+	clear:both; position:relative; width:100%; height:500px; background:#323031; padding:0; margin:50px 0 0; z-index: 99998;
+}
+.footer:before, .footer:after {
+	content:""; background-color:#323031; position:absolute; top:0; bottom:0; width:9999px;
+}
+.footer:before { right:100%; }
+.footer:after { left:100%; }
+.footer:nth-of-type(1), .footer:nth-of-type(1):before, .footer:nth-of-type(1):after { background-color:#323031; }
 
 
 
