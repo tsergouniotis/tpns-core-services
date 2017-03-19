@@ -43,17 +43,18 @@ $(document).ready( function() {
 	'use strict';
 
 	readCookie();
+	
+	var loggedUserProfileView = new LoggedUserProfileView({model: profile});
 
-	var articlesView = new ArticlesListView({collection: articles});
-	var profileSummaryView = new ProfileSummaryView({model: profile});
-	var profileNotificationsView = new ProfileNotificationsView({model: profile});
-	var profileMessagesView = new ProfileMessagesView({model: profile});
-	var profileSelectedArticlesView = new ProfileSelectedArticlesView({model: profile});
+	var articlesView = new TrashListView({collection: articles});
+
 	var allNavigationLinksDropDownView = new AllNavigationLinksDropDownView({collection: availableNavigationLinks});
 	var selectedNavigationLinkView = new SelectedNavigationLinkView({model: selected_site});
 	var categoriesListView = new CategoriesListView({collection: categories});
 	var subCategoriesListView = new SubCategoriesListView({collection: categories});
 	var authorsListView = new AuthorsListView({collection: authors});
+
+	$('.trashLoggedUserContainer').append(loggedUserProfileView.render().el);	
 
 	$('.trashAuthorsContainer').append(authorsListView.render().el.childNodes);
 	$('.trashCategoriesDropDownContainer').append(categoriesListView.render().el.childNodes);
@@ -61,9 +62,4 @@ $(document).ready( function() {
 	$('.trashPropertiesSelectionContainer').append(selectedNavigationLinkView.render().el.childNodes);
 	$('.trashPropertiesDropDownContainer').append(allNavigationLinksDropDownView.render().el.childNodes);
 	$('.trashTableContainer').append(articlesView.render().el.childNodes);
-	$('.trashProfileSummaryContainer').append(profileSummaryView.render().el.childNodes);	
-	$('.trashSelectedProfileNotificationsContainer').append(profileMessagesView.render().el.childNodes);	
-	$('.trashSelectedProfileMessagesContainer').append(profileNotificationsView.render().el.childNodes);	
-	$('.trashSelectedProfileArticlesContainer').append(profileSelectedArticlesView.render().el.childNodes);	
-
 });

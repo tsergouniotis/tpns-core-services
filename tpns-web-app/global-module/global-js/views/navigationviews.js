@@ -45,7 +45,3 @@ var SelectedNavigationLinkView = Backbone.View.extend({
 		return this;
 	}
 });
-
-
-// groupTemplate: _.template('<li><a href="../<%= dashboard%>"><span><%= group_name%></span><i class="icon tpns-ai-selected"></i></a></li>'),
-// html+='    '+this.groupTemplate(this.model.toJSON());
