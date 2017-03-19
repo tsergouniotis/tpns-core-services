@@ -10,7 +10,7 @@ $(document).ready( function() {
 	var selectedNavigationLinkView = new SelectedNavigationLinkView({model: selected_site});
 	var allNavigationLinksDropDownView = new AllNavigationLinksDropDownView({collection: availableNavigationLinks});
 
-        var categoryAddView = new CategoryAddView({collection: categories});
+    var categoryAddView = new CategoryAddView({collection: categories});
 	var categoriesListView = new CategoriesListView({collection: categories});
 
 	Backbone.history.start();
@@ -27,9 +27,7 @@ $(document).ready( function() {
 
 	// Categories Sort Items
 	$(".reorder-up, .sub-reorder-up").click(function(){
-
 		var $current = $(this).closest('li').fadeOut("slow").slideUp("slow");
-
 		var $previous = $current.prev('li');
 		if($previous.length !== 0){
 			$current.insertBefore($previous).fadeIn("slow").slideDown("slow");

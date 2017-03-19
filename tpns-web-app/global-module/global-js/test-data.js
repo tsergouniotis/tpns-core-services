@@ -166,32 +166,32 @@ var scats2 = new SubCategories();
 var scat21 = new SubCategory();
 scat21.set("name", "Ειδήσεις");
 scat21.set("slug", "eidhseis");
-scat2.add(scat21);
+scats2.add(scat21);
 
 var scat22 = new SubCategory();
 scat22.set("name", "Παραπολιτικά");
 scat22.set("slug", "parapolitika");
-scat2.add(scat22);
+scats2.add(scat22);
 
 var scat23 = new SubCategory();
 scat23.set("name", "Βουλή");
 scat23.set("slug", "vouli");
-scat2.add(scat23);
+scats2.add(scat23);
 
 var scat24 = new SubCategory();
 scat24.set("name", "Βαρόμετρο");
 scat24.set("slug", "varometro");
-scat2.add(scat24);
+scats2.add(scat24);
 
 var scat25 = new SubCategory();
 scat25.set("name", "Εκλογές");
 scat25.set("slug", "ekloges");
-scat2.add(scat25);
+scats2.add(scat25);
 
 var scat26 = new SubCategory();
 scat26.set("name", "Αυτοδιοίκηση");
 scat26.set("slug", "autpdioikish");
-scat2.add(scat26);
+scats2.add(scat26);
 
 var cat2 = new Category();
 cat2.set("name", "Πολιτική");
@@ -419,7 +419,7 @@ scat82.set("slug", "ektakta");
 scats8.add(scat82);
 
 var scat83 = new SubCategory();
-scat83.set("name", "Πολιτική Προστασία"");
+scat83.set("name", "Πολιτική Προστασία");
 scat83.set("slug", "pprostasia");
 scats8.add(scat83);
 

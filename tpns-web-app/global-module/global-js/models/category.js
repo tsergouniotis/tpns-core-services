@@ -10,7 +10,7 @@ var SubCategory = Backbone.Model.extend({
 });
 
 var SubCategories = Backbone.Collection.extend({
-    model: Category,
+    model: SubCategory,
     initialize: function () {
 	this.on('change', function () {
         });

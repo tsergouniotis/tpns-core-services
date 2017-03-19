@@ -1,88 +1,93 @@
 var CategoryRowView = Backbone.View.extend({
 
-	tagName: "li", 
-	className: "categories-data-inner", 
-        
-        headerTemplate: _.template('<p class="textn"><%=name%><small class="sub-categories-total-container"> - has <%=subcategories.length %> sub-categories</small></p>'),
-        slugTemplate: _.template('<small><%=slug%></small>'),
-        subCategoriesTemplate: _.template('<ul class="sub-categories-data-inner-table hidden">'+
-                        '<%$.each(subcategories, function(i) { %>' +
-		        '    <li class="sub-categories-data-inner">'+            
-		        '        <div class="sub-categories-data-items">'+            
-		        '            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked></span></label></p>'+            
-		        '        </div>'+            
-		        '        <div class="sub-categories-data-items">'+            
-		        '            <p><%= subcategories[i] %></p>'+            
-		        '            <div class="categories-table-controllers">'+            
-		        '                <div class="article-shortcut-controllers-items">'+            
-		        '                    <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>'+            
-		        '                </div>'+                             	
-		        '                <div class="article-shortcut-controllers-items">'+            
-		        '                    <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>'+
-		        '                </div>'+            
-		        '            </div>'+
-		        '        </div>'+            
-		        '        <div class="sub-categories-data-items">'+
-		        '            <small><%= subcategories[i] %></small>'+
-		        '        </div>'+
-		        '        <div class="sub-categories-data-items">'+
-		        '            <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>'+
-		        '        </div>'+
-		        '    </li>'+
-                        '<% }); %>'+
-                        '</ul>'),
+	tagName : "li",
+	className : "categories-data-inner",
 
-    	render: function () {
+	headerTemplate : _
+		.template('<p class="textn"><%=name%><small class="sub-categories-total-container"> - has <%=subcategories.length %> sub-categories</small></p>'),
+	slugTemplate : _.template('<small><%=slug%></small>'),
+	subCategoriesTemplate : _
+		.template('<ul class="sub-categories-data-inner-table hidden">'
+		+ '<%subcategories.each(function(subcategory){ %>'
+		+ '    <li class="sub-categories-data-inner">'
+		+ '        <div class="sub-categories-data-items">'
+		+ '            <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox sub-cat" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked></span></label></p>'
+		+ '        </div>'
+		+ '        <div class="sub-categories-data-items">'
+		+ '            <p><%= subcategory.toJSON().name %></p>'
+		+ '            <div class="categories-table-controllers">'
+		+ '                <div class="article-shortcut-controllers-items">'
+		+ '                    <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>'
+		+ '                </div>'
+		+ '                <div class="article-shortcut-controllers-items">'
+		+ '                    <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>'
+		+ '                </div>'
+		+ '            </div>'
+		+ '        </div>'
+		+ '        <div class="sub-categories-data-items">'
+		+ '            <small><%= subcategory.toJSON().slug %></small>'
+		+ '        </div>'
+		+ '        <div class="sub-categories-data-items">'
+		+ '            <p><a class="sub-reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="sub-reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>'
+		+ '        </div>'
+		+ '    </li>'
+		+ '<% }); %>'
+		+ '</ul>'),
 
-		if (!this.model) {
-			throw "Model is not set for this view";
-		}
-		
-		var html ='';
-                html += '<div class="categories-data-inner-table">';   
-                html += '    <div class="categories-data-items">';  
-		html += '        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>';         
-		html += '    </div>';    
-                html += '    <div class="categories-data-items">';
-		html += '        '+this.headerTemplate(this.model.toJSON());
-                html += '        <div class="categories-table-controllers">';
-                html += '            <div class="article-shortcut-controllers-items">';
-                html += '                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>';
-                html += '            </div>';
-                html += '            <div class="article-shortcut-controllers-items">';
-                html += '                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>';
-                html += '            </div>';
-                html += '        </div>';
-		html += '    </div>'; 
-                html += '    <div class="categories-data-items">'; 
-		html += '        '+this.slugTemplate(this.model.toJSON());    
-		html += '    </div>';
-                html += '    <div class="categories-data-items">';     
-		html += '        <p class="reorder-categories"><a class="reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>';
-		html += '    </div>';
-		html += '    <div class="categories-data-items show-hide-sub-categories" title="Show/Hide Sub-categories">';
-		html += '        <p class="show-sub-categories"><u class="icon tpns-ai-preview-hide hidden" title="Hide the sub-categories below"></u><u class="icon tpns-ai-preview-show" title="Show the sub-categories below"></u></p>';
-		html += '    </div>';
-		html += '</div>';    
-                html += this.subCategoriesTemplate(this.model.toJSON());
-		this.$el.html(html);
-		return this;
+		render : function() {
+
+			if (!this.model) {
+				throw "Model is not set for this view";
+			}
+
+			var html = '';
+			html += '<div class="categories-data-inner-table">';
+			html += '    <div class="categories-data-items">';
+			html += '        <p class="admin-global-checkbox"><label><input type="checkbox" class="single-article-checkbox" name="single-article-checkbox"><span class="admin-global-checkbox-label" checked ></span></label></p>';
+			html += '    </div>';
+			html += '    <div class="categories-data-items">';
+			html += '        ' + this.headerTemplate(this.model.toJSON());
+			html += '        <div class="categories-table-controllers">';
+			html += '            <div class="article-shortcut-controllers-items">';
+			html += '                <p class="articles-content-button"><a><i class="icon tpns-ai-edit"></i>Edit</a></p>';
+			html += '            </div>';
+			html += '            <div class="article-shortcut-controllers-items">';
+			html += '                <p class="articles-content-button stop-button"><a><i class="icon tpns-ai-delete"></i>Delete</a></p>';
+			html += '            </div>';
+			html += '        </div>';
+			html += '    </div>';
+			html += '    <div class="categories-data-items">';
+			html += '        ' + this.slugTemplate(this.model.toJSON());
+			html += '    </div>';
+			html += '    <div class="categories-data-items">';
+			html += '        <p class="reorder-categories"><a class="reorder-up" title="Move this item one row up"><i class="icon tpns-ai-sort-up"></i></a><a class="reorder-down" title="Move this item one row down"><i class="icon tpns-ai-sort-down"></i></a></p>';
+			html += '    </div>';
+			html += '    <div class="categories-data-items show-hide-sub-categories" title="Show/Hide Sub-categories">';
+			html += '        <p class="show-sub-categories"><u class="icon tpns-ai-preview-hide hidden" title="Hide the sub-categories below"></u><u class="icon tpns-ai-preview-show" title="Show the sub-categories below"></u></p>';
+			html += '    </div>';
+			html += '</div>';
+			html += this.subCategoriesTemplate(this.model.toJSON());
+			this.$el.html(html);
+			return this;
 	}
 });
 
 var CategoriesInnerListView = Backbone.View.extend({
-	tagName: "ul", 
-	className: "categories-data-header",
+	
+	tagName : "ul",
+	className : "categories-data-header",
 
-	render: function(){
-            
+	render : function() {
+
 		if (!this.collection) {
-		throw "Collection is not set for this view";
+			throw "Collection is not set for this view";
 		}
 
-		this.collection.each(function(category){
-			var categoryRowView = new CategoryRowView({ model: category });
-                	this.$el.append(categoryRowView.render().el);
+		this.collection.each(function(category) {
+			var categoryRowView = new CategoryRowView({
+				model : category
+			});
+			this.$el.append(categoryRowView.render().el);
 		}, this);
 
 		return this;
@@ -91,20 +96,21 @@ var CategoriesInnerListView = Backbone.View.extend({
 
 var CategoriesListView = Backbone.View.extend({
 
-	tagName: "div", 
-	className: "categories-main-content-right", 
+	tagName : "div",
+	className : "categories-main-content-right",
 
-	initialize: function() {
-        	this.listenTo(this.collection, 'add', this.render);
+	initialize : function() {
+		this.listenTo(this.collection, 'add', this.render);
+		this.listenTo(this.collection, 'change', this.render);
 	},
 
-	render: function(){
-            
+	render : function() {
+
 		if (!this.collection) {
 			throw "Collection is not set for this view";
 		}
 
-		var html ='';
+		var html = '';
 		html += '<h2><i class="icon tpns-ai-category"></i>All Categories</h2>';
 		html += '<div class="categories-data-container">';
 		html += '    <ul class="categories-data-header">';
@@ -141,126 +147,137 @@ var CategoriesListView = Backbone.View.extend({
 		html += '</div>';
 		this.$el.html(html);
 
-		var categoriesInnerListView = new CategoriesInnerListView({ collection: this.collection });
-        	this.$el.append(categoriesInnerListView.render().el);
+		var categoriesInnerListView = new CategoriesInnerListView({
+			collection : this.collection
+		});
+		this.$el.append(categoriesInnerListView.render().el);
 
 		return this;
 	}
-});   
+});
 
 var CategoryAddView = Backbone.View.extend({
 
-	tagName: 'div',
-	className: 'categories-main-content-left',
+	tagName : 'div',
+	className : 'categories-main-content-left',
 
-	events:{
-		"click #addCategoryBtn":"addCategory"
+	events : {
+		"click #addCategoryBtn" : "addCategory"
 	},
 
-	addCategory:function(e){
+	addCategory : function(e) {
 
 		e.preventDefault();
 
-		var category = new Category();
-		category.set("name", this.$el.find("#new-article-category-name").val());
-		category.set("slug", this.$el.find("#new-article-category-slug").val());
-		category.set("subcategories", []);
+		var parentName = $('.categeriesDropDown li.current').text();
 
-		this.collection.add(category);
+		if (parentName.valueOf() == new String('No Parent').valueOf()) {
+			
+			var category = new Category();
+			category.set("name", this.$el.find("#new-article-category-name").val());
+			category.set("slug", this.$el.find("#new-article-category-slug").val());
+			category.set("subcategories", new SubCategories());
+
+			this.collection.add(category);
+		} else {
+			
+			this.collection.each(function(category) {
+				
+				if (category.toJSON().name == parentName.valueOf()){
+					var subcategory = new SubCategory();
+					subcategory.set("name", this.$el.find("#new-article-category-name").val());
+					subcategory.set("slug", this.$el.find("#new-article-category-slug").val());
+					var sucategories = category.get("subcategories");
+					sucategories.add(subcategory);
+					category.trigger('change', category);
+				}
+			}, this);
+		}
 
 	},
 
-	render: function () {
-		var html ='';
-                html += '<h2><i class="icon tpns-ai-category"></i>Add New Category</h2>';   
-                html += '<form id="addCategory" action="#">';
-                html += '    <div class="new-article-form-content-container-full-width">';
-                html += '        <div class="new-article-form-content-header">';
-                html += '            <div class="new-article-form-content-header-left">';
-                html += '                <h3><label for="new-article-category-name">Category Name</label></h3>';
-                html += '            </div>';
-                html += '            <div class="new-article-form-content-header-right">';
-                html += '                <div class="admin-click-menu-container">';
-                html += '                    <div class="admin-click-menu-button">';
-                html += '                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="More information can be found here">?</a></p>';
-                html += '                    </div>';
-                html += '                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">';
-                html += '                        <p>The name is how it appears on the <span class="newspaper-name">TPNS One</span> Newspaper.</p>';
-                html += '                    </div>';
-                html += '                </div>';
-                html += '            </div>';
-                html += '        </div>';
-                html += '        <div class="new-article-form-content-body">';
-                html += '            <input type="text" id="new-article-category-name" placeholder="Add new category or sub-category here..." />';
-                html += '        </div>';
-                html += '    </div>';
-                html += '    <div class="new-article-form-content-container-full-width">';
-                html += '        <div class="new-article-form-content-header">';
-                html += '            <div class="new-article-form-content-header-left">';
-                html += '                <h3><label for="new-article-category-slug">Category Slug</label></h3>';
-                html += '            </div>';
-                html += '            <div class="new-article-form-content-header-right">';
-                html += '                <div class="admin-click-menu-container">';
-                html += '                    <div class="admin-click-menu-button">';
-                html += '                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="More information can be found here">?</a></p>';
-                html += '                    </div>';
-                html += '                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">';
-                html += '                        <p>The “slug” is the URL-friendly version of the name. It is all lowercase LATIN characters and contains only letters, numbers, and hyphens.</p>';
-                html += '                        <p><span class="textb">Important!</span> Do not leave any spaces between words, seperate them using a hyphen</p>';
-                html += '                    </div>';
-                html += '                </div>';
-                html += '            </div>';
-                html += '        </div>';
-                html += '        <div class="new-article-form-content-body">';
-                html += '            <input type="text" id="new-article-category-slug" placeholder="Add the Slug here..." />';
-                html += '        </div>';
-                html += '    </div>';
-                html += '    <div class="new-article-form-content-container-full-width">';
-                html += '        <div class="new-article-form-content-header">';
-                html += '            <div class="new-article-form-content-header-left">';
-                html += '                <h3>Sub-category&#39;s Parent</h3>';
-                html += '            </div>';
-                html += '            <div class="new-article-form-content-header-right">';
-                html += '                <div class="admin-click-menu-container">';
-                html += '                    <div class="admin-click-menu-button">';
-                html += '               <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="More information can be found here">?</a></p>';
-                html += '                    </div>';
-                html += '                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">';
-                html += '                        <p>Categories have a hierarchy. You might have a &quot;Politics&quot; category, and under that have children categories for &quot;Elections&quot; and &quot;Local Government&quot;, and as you can imagine children categories are totally optional.</p>';
-                html += '                    </div>';
-                html += '                </div>';
-                html += '            </div>';
-                html += '        </div>';
-                html += '        <div class="new-article-form-content-body">';
-                html += '            <div class="new-article-form-content-category-info">';
-                html += '                <div class="admin-click-menu-container">';
-                html += '                    <div class="admin-click-menu-button admin-click-menu-articles-table">';
-                html += '                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">No Parent</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>';
-                html += '                    </div>';
-                html += '                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">';
-                html += '                        <ul class="admin-click-menu-content-list">';
-                html += '                            <li class="no-parent current"><a><span>No Parent</span><i class="icon tpns-ai-selected"></i></a></li>';
-                html += '                            <li class="ellada"><a><span>Ελλάδα</span><i class="icon tpns-ai-selected"></i></a></li>';
-                html += '                            <li class="politikh"><a><span>Πολιτική</span><i class="icon tpns-ai-selected"></i></a></li>';
-                html += '                            <li class="oikonomia"><a><span>Οικονομία</span><i class="icon tpns-ai-selected"></i></a></li>';
-                html += '                            <li class="ygeia"><a><span>Υγεία</span><i class="icon tpns-ai-selected"></i></a></li>';
-                html += '                            <li class="kosmos"><a><span>Κόσμος</span><i class="icon tpns-ai-selected"></i></a></li>';
-                html += '                            <li class="athlitika"><a><span>Αθλητικά</span><i class="icon tpns-ai-selected"></i></a></li>';
-                html += '                            <li class="media"><a><span>Media</span><i class="icon tpns-ai-selected"></i></a></li>';
-                html += '                            <li class="kairos"><a><span>Καιρός</span><i class="icon tpns-ai-selected"></i></a></li>';
-                html += '                            <li class="kypros"><a><span>Κύπρος</span><i class="icon tpns-ai-selected"></i></a></li>';
-                html += '                        </ul>';
-                html += '                    </div>';
-                html += '                </div>';
-                html += '            </div>';
-                html += '        </div>';
-                html += '    </div>';
-                html += '    <p class="articles-content-button textr"><button id="addCategoryBtn" type="submit">Add New Category</button></p>';
-                html += '</form>';
+	render : function() {
+		var html = '';
+		html += '<h2><i class="icon tpns-ai-category"></i>Add New Category</h2>';
+		html += '<form id="addCategory" action="#">';
+		html += '    <div class="new-article-form-content-container-full-width">';
+		html += '        <div class="new-article-form-content-header">';
+		html += '            <div class="new-article-form-content-header-left">';
+		html += '                <h3><label for="new-article-category-name">Category Name</label></h3>';
+		html += '            </div>';
+		html += '            <div class="new-article-form-content-header-right">';
+		html += '                <div class="admin-click-menu-container">';
+		html += '                    <div class="admin-click-menu-button">';
+		html += '                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="More information can be found here">?</a></p>';
+		html += '                    </div>';
+		html += '                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">';
+		html += '                        <p>The name is how it appears on the <span class="newspaper-name">TPNS One</span> Newspaper.</p>';
+		html += '                    </div>';
+		html += '                </div>';
+		html += '            </div>';
+		html += '        </div>';
+		html += '        <div class="new-article-form-content-body">';
+		html += '            <input type="text" id="new-article-category-name" placeholder="Add new category or sub-category here..." />';
+		html += '        </div>';
+		html += '    </div>';
+		html += '    <div class="new-article-form-content-container-full-width">';
+		html += '        <div class="new-article-form-content-header">';
+		html += '            <div class="new-article-form-content-header-left">';
+		html += '                <h3><label for="new-article-category-slug">Category Slug</label></h3>';
+		html += '            </div>';
+		html += '            <div class="new-article-form-content-header-right">';
+		html += '                <div class="admin-click-menu-container">';
+		html += '                    <div class="admin-click-menu-button">';
+		html += '                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="More information can be found here">?</a></p>';
+		html += '                    </div>';
+		html += '                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">';
+		html += '                        <p>The “slug” is the URL-friendly version of the name. It is all lowercase LATIN characters and contains only letters, numbers, and hyphens.</p>';
+		html += '                        <p><span class="textb">Important!</span> Do not leave any spaces between words, seperate them using a hyphen</p>';
+		html += '                    </div>';
+		html += '                </div>';
+		html += '            </div>';
+		html += '        </div>';
+		html += '        <div class="new-article-form-content-body">';
+		html += '            <input type="text" id="new-article-category-slug" placeholder="Add the Slug here..." />';
+		html += '        </div>';
+		html += '    </div>';
+		html += '    <div class="new-article-form-content-container-full-width">';
+		html += '        <div class="new-article-form-content-header">';
+		html += '            <div class="new-article-form-content-header-left">';
+		html += '                <h3>Sub-category&#39;s Parent</h3>';
+		html += '            </div>';
+		html += '            <div class="new-article-form-content-header-right">';
+		html += '                <div class="admin-click-menu-container">';
+		html += '                    <div class="admin-click-menu-button">';
+		html += '                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc"><a class="dropdown" title="More information can be found here">?</a></p>';
+		html += '                    </div>';
+		html += '                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">';
+		html += '                        <p>Categories have a hierarchy. You might have a &quot;Politics&quot; category, and under that have children categories for &quot;Elections&quot; and &quot;Local Government&quot;, and as you can imagine children categories are totally optional.</p>';
+		html += '                    </div>';
+		html += '                </div>';
+		html += '            </div>';
+		html += '        </div>';
+		html += '        <div class="new-article-form-content-body">';
+		html += '            <div class="new-article-form-content-category-info">';
+		html += '                <div class="admin-click-menu-container">';
+		html += '                    <div class="admin-click-menu-button admin-click-menu-articles-table">';
+		html += '                        <p class="admin-click-menu-button-pc-open admin-click-menu-filter-pc textn"><a class="dropdown"><span class="selected-admin-bi-reporter-image"></span><span class="admin-click-menu-mobile"><span class="selected-admin-bi-date-filter">No Parent</span></span><span class="icon tpns-ai-arrow-down"></span><span class="icon tpns-ai-close hidden"></span></a></p>';
+		html += '                    </div>';
+		html += '                    <div class="dropdown-menu admin-click-menu-content admin-click-menu-content-right hidden">';
+		html += '                        <ul class="categeriesDropDown admin-click-menu-content-list">';
+		html += '                            <li class="no-parent current"><a><span>No Parent</span><i class="icon tpns-ai-selected"></i></a></li>';
+		this.collection.each(function(category) {
+			html += '                            <li class="ellada"><a><span>'+category.toJSON().name+'</span><i class="icon tpns-ai-selected"></i></a></li>';
+		}, this);
+		html += '                        </ul>';
+		html += '                    </div>';
+		html += '                </div>';
+		html += '            </div>';
+		html += '        </div>';
+		html += '    </div>';
+		html += '    <p class="articles-content-button textr"><button id="addCategoryBtn" type="submit">Add New Category</button></p>';
+		html += '</form>';
 		this.$el.html(html);
 		return this;
 	}
-});                 
-
-   
-
+});
